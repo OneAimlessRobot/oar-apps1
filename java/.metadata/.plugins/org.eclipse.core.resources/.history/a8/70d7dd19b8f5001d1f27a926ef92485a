@@ -1,0 +1,11 @@
+package playGround.aux;
+
+public class AuxClass {
+	
+	public static int sumArr(int[] array,int pos) {
+		
+		if()
+		
+	}
+
+}

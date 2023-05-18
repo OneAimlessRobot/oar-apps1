@@ -1,0 +1,22 @@
+package playGround;
+import playGround.*;
+import java.util.*;
+import playGround.aux.AuxClass;
+
+import java.util.Scanner;
+
+public class Tester {
+
+	public static void main(String[] args) {
+		Scanner input=new Scanner(System.in); 
+		Integer value= new Integer(input.nextInt());
+		 System.out.printf("Hello! %d\n",value);
+		 input.close();
+		 
+		 Integer[] arr=AuxClass.randomArr(9999, 0, 120);
+		 
+		 System.out.println(Arrays.toString(arr));
+		 System.out.println(AuxClass.sumArr(arr)/9999);
+	}
+
+}

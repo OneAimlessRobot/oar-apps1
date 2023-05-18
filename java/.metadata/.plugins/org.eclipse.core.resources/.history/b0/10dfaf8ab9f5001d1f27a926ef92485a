@@ -1,0 +1,13 @@
+package playGround.adt;
+
+public interface Stack<T> {
+	
+	int size();
+	
+	void push(T elem);
+	
+	T pop();
+	
+	T top();
+
+}

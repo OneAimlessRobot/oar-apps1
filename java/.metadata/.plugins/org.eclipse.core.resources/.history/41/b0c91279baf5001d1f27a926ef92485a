@@ -1,0 +1,55 @@
+package playGround.aux;
+
+public class AuxClass {
+	
+	
+	
+	public static int sumArr(int[] arr) {
+		
+		return sumArrAux(arr,1);
+	}
+	
+	public static int sumArrAux(int[] array,int pos) {
+		
+		if(pos>=array.length-1) {
+			
+			return array[pos];
+		}
+		else {
+			
+			return array[pos]+sumArrAux(array,pos+1);
+		}
+		
+	}
+	
+	public static int randNumBetween(int max, int min) {
+		
+		if(max<min) {
+			int tmp=max;
+			max=min;
+			min=tmp;
+			
+			
+			
+		}
+		
+		return (int) Math.round((Math.random()*(max-min))+min);
+		
+		
+	}
+	
+	public static int[] randomArr(int size,int min, int max) {
+		
+		int[] arr= new int[size];
+		for(int i=0;i<size;i++) {
+			
+			arr[i]=randNumBetween(max,min);
+		}
+		return arr;
+		
+	}
+	
+	
+	
+
+}
