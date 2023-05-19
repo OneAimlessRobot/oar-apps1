@@ -1,4 +1,4 @@
 *.out
 *.cmo
-*.cml
+*.cmi
 *.class
