@@ -6,9 +6,9 @@ public class Tester {
 	
 	public static void main(String[] args) {
 		
-		Integer[] arr= AuxAlgorithms.randArrAux(1000, 420, 60);
-		Stack<Integer> stack=new StackInArray<>(arr);
-		System.out.printf("Hello world!!!!Esta e a stack:\n %s\n",stack);
+		String[] arr= AuxAlgorithms.randStringArrAux(3,10, 60);
+		Stack<String> stack=new StackInArray<>(arr);
+		System.out.printf("Hello world!!!!\nEsta e a stack:\n    %s\n",stack);
 	}
 
 }

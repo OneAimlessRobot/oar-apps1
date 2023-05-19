@@ -14,4 +14,14 @@ public class AuxNumeric {
 		return (int) Math.round(Math.random()*(max-min)+min);
 		
 	}
+	public static String randString(int size) {
+		
+		String result="";
+		for(int i=0;i<size;i++) {
+			
+			char c= (char) boundedRandNum(32, 127);
+			result+=c;
+		}
+		return result;
+	}
 }

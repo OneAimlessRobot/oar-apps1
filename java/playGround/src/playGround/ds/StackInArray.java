@@ -68,6 +68,7 @@ public class StackInArray<T> implements  Stack<T>{
 		return elem;
 		
 	}
+	//tentei adicionar um indicador bonitinho do topo da stack mas ndn
 	public String toString() {
 		
 		if(isEmpty()){
@@ -79,10 +80,7 @@ public class StackInArray<T> implements  Stack<T>{
 			
 			str+= arr[i].toString()+", ";
 		}
-		str+="]\n";
-		str+="   ^\n";
-		str+="   |\n";
-		str+="  TOP\n";
+		str+="]";
 				
 		return str;
 		

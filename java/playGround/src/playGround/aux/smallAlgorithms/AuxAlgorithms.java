@@ -3,11 +3,23 @@ import playGround.aux.numeric.*;
 public class AuxAlgorithms {
 	
 	
-	public static Integer[] randArrAux(int max,int min,int size) {
+	public static Integer[] randIntArrAux(int max,int min,int size) {
 		Integer[] arr= new Integer[size];
 		for(int i=0;i<arr.length;i++) {
 			
 			arr[i]=AuxNumeric.boundedRandNum(max, min);
+			
+		}
+		return arr;
+		
+		
+	}
+
+	public static String[] randStringArrAux(int minSize,int maxSize,int size) {
+		String[] arr= new String[size];
+		for(int i=0;i<arr.length;i++) {
+			
+			arr[i]=AuxNumeric.randString(AuxNumeric.boundedRandNum(minSize,maxSize));
 			
 		}
 		return arr;
