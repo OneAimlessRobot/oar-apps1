@@ -1,7 +1,15 @@
 package playGround.adt;
 
-public interface Stack<T> {
+import playGround.adt.exceptions.*;
+public interface Stack<T>{
 	
 	void push(T elem);
+	
+	T pop() throws StackEmptyException;
+	
+	T top() throws StackEmptyException;	
+	
+	boolean isEmpty();
+	String toString();
 
 }
