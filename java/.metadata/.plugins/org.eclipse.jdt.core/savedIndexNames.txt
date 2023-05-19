@@ -1,4 +1,0 @@
-INDEX VERSION 1.132+/home/k/scripts/java/.metadata/.plugins/org.eclipse.jdt.core
-1865797976.index
-1188900853.index
-2949097923.index

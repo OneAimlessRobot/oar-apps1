@@ -1,5 +1,0 @@
-package playGround.adt;
-
-public interface Stack<T> {
-
-}
