@@ -1,4 +1,6 @@
 package playGround.aux.smallAlgorithms;
+import playGround.adt.collections.List;
+import playGround.ds.SingleLinkedList;
 import playGround.aux.numeric.*;
 public class AuxAlgorithms {
 	
@@ -37,6 +39,21 @@ public class AuxAlgorithms {
 			
 			return sumArr(arr,pos-1)+ arr[pos];
 		}
+		
+		
+	}
+	public static <T> List<T> toList(T[] arr){
+		
+		List<T> list=new SingleLinkedList<>();
+		
+		for(int i=0;i<arr.length;i++) {
+			
+			list.add(arr[i]);
+			
+		}
+		return list;
+		
+		
 		
 		
 	}

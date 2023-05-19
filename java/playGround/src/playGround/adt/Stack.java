@@ -10,6 +10,8 @@ public interface Stack<T>{
 	T top() throws StackEmptyException;	
 	
 	boolean isEmpty();
+	
 	String toString();
-
+	
+	int size();
 }

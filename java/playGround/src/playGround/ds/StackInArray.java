@@ -75,10 +75,10 @@ public class StackInArray<T> implements  Stack<T>{
 			
 			return "[ ]";
 		}
-		String str="[";
+		String str="[ ";
 		for(int i=this.topPos;i>-1;i--) {
 			
-			str+= arr[i].toString()+", ";
+			str+= arr[i].toString()+" ";
 		}
 		str+="]";
 				
@@ -96,6 +96,10 @@ public class StackInArray<T> implements  Stack<T>{
 			throw new StackEmptyException();
 		}
 		return arr[topPos];
+	}
+	@Override
+	public int size() {
+		return topPos;
 	}
 			
 
