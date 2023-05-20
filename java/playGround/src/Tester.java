@@ -1,23 +1,30 @@
 import java.util.Arrays;
-
-import playGround.adt.*;
-import playGround.adt.collections.List;
+import java.util.Scanner;
 import playGround.ds.*;
+import playGround.adt.collections.List;
+import playGround.adt.collections.Set;
 import playGround.aux.smallAlgorithms.CollectionAlgorithms;
 public class Tester {
 	
 	public static void main(String[] args) {
 		
-		Integer[] intArr= CollectionAlgorithms.randIntArrAux(0, 1000, 1111111);
-		
-		long time1=System.currentTimeMillis();
-		Stack<Integer> arrStck= new StackInArray<>(intArr);
-		long time2=System.currentTimeMillis();
-		Stack<Integer> lnkdStck= new StackInLinkedList<>(intArr);
-		long time3=System.currentTimeMillis();
-		System.out.printf("Tempo primeira stack: %d\nTempo segunda stack: %d\n",(time2-time1),(time3-time2));
-		
+		Scanner in = new Scanner(System.in);
+		String str = "";
+		List<Integer> intVec= new ListInVector<>();
+		Set<Integer> tree= new TreeSet<>();
+		do {
+			int value= in.nextInt();
+			intVec.add(value);
+			in.nextLine();
 
+			System.out.printf("Continue? (*/N)");
+			str=in.nextLine();
+			
+			
+			
+		}while(!str.equals("N"));
+		System.out.println(intVec);
+		in.close();
 }
 }
 //import java.util.*;

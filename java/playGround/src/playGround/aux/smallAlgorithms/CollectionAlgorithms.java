@@ -1,6 +1,8 @@
 package playGround.aux.smallAlgorithms;
 import playGround.adt.collections.List;
+import playGround.adt.collections.Set;
 import playGround.ds.DoubleLinkedList;
+import playGround.ds.TreeSet;
 import playGround.ds.LinkedList;
 import playGround.aux.numeric.*;
 public class CollectionAlgorithms {
@@ -53,6 +55,21 @@ public class CollectionAlgorithms {
 			
 		}
 		return list;
+		
+		
+		
+		
+	}
+	public static <T extends Comparable<T>> Set<T> toTSet(T[] arr){
+		
+		Set<T> set= new TreeSet<>();
+		
+		for(int i=0;i<arr.length;i++) {
+			
+			set.add(arr[i]);
+			
+		}
+		return set;
 		
 		
 		

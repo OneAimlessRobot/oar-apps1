@@ -246,7 +246,7 @@ public class DoubleLinkedList<T> implements List<T> {
 
 	@Override
 	public Iterator<T> iterator() {
-		return null;
+		return (Iterator<T>) new DLLIterator<T>(this);
 	}
 	
 	public int size() {
