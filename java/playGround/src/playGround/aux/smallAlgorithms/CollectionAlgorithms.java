@@ -1,8 +1,9 @@
 package playGround.aux.smallAlgorithms;
 import playGround.adt.collections.List;
-import playGround.ds.SingleLinkedList;
+import playGround.ds.DoubleLinkedList;
+import playGround.ds.LinkedList;
 import playGround.aux.numeric.*;
-public class AuxAlgorithms {
+public class CollectionAlgorithms {
 	
 	
 	public static Integer[] randIntArrAux(int max,int min,int size) {
@@ -44,7 +45,22 @@ public class AuxAlgorithms {
 	}
 	public static <T> List<T> toList(T[] arr){
 		
-		List<T> list=new SingleLinkedList<>();
+		List<T> list=new LinkedList<>();
+		
+		for(int i=0;i<arr.length;i++) {
+			
+			list.add(arr[i]);
+			
+		}
+		return list;
+		
+		
+		
+		
+	}
+	public static <T> List<T> toDList(T[] arr){
+		
+		List<T> list=new DoubleLinkedList<>();
 		
 		for(int i=0;i<arr.length;i++) {
 			

@@ -14,5 +14,6 @@ public interface Collection<T> {
 	
 	String toString();
 	
+	void destroy();
 	
 }

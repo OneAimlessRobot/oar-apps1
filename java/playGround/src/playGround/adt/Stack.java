@@ -14,4 +14,6 @@ public interface Stack<T>{
 	String toString();
 	
 	int size();
+	
+	void destroy();
 }

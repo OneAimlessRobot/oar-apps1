@@ -64,7 +64,8 @@ public class StackInArray<T> implements  Stack<T>{
 			
 			throw new StackEmptyException();
 		}
-		T elem= arr[topPos--];
+		T elem= arr[topPos];
+		arr[topPos--]=null;
 		return elem;
 		
 	}
@@ -99,7 +100,21 @@ public class StackInArray<T> implements  Stack<T>{
 	}
 	@Override
 	public int size() {
-		return topPos;
+		return topPos+1;
+	}
+	@Override
+	public void destroy() {
+		try {
+		while(topPos!=-1) {
+			
+			this.pop();
+		}
+		}
+		catch(StackEmptyException e) {
+			
+			System.out.println("Stack vazia em Stack.destroy()!!!!!\n");
+		}
+		
 	}
 			
 
