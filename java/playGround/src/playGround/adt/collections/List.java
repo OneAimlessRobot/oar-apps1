@@ -9,4 +9,6 @@ public interface List<T> extends Collection<T> {
 	T get(int index);
 	
 	void add(T elem, int index);
+	
+	void remove(int pos);
 }

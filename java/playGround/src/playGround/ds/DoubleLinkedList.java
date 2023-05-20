@@ -293,7 +293,7 @@ public class DoubleLinkedList<T> implements List<T> {
 			
 			result= head.getElem();
 		}
-		else if(index >= length) {
+		else if(index >= length-1) {
 			
 			result= trail.getElem();
 		}
@@ -329,6 +329,82 @@ public class DoubleLinkedList<T> implements List<T> {
 		i.destroy();
 		length--;
 		}
+	}
+	@Override
+	public void remove() {
+		if(isEmpty()) {
+			
+			return;
+		}
+		else {
+			
+			removeLast();
+			
+		}
+		length--;
+	}
+	
+	private void removeLast() {
+		
+		Node<T> node=trail.getPrev();
+		trail.destroy();
+		trail=node;
+		
+		
+	}
+	private void removeFirst() {
+		
+		Node<T> node=head.getNext();
+		head.destroy();
+		head=node;
+		
+		
+	}
+	private void removeMiddle(int index) {
+		
+
+		Node<T> j = null;
+		int i;
+		if(index>length/2) {
+			
+			i=length-1;
+			j=trail;
+			for(;i>index;i--,j=j.getPrev());
+				
+		}
+		else if(index<=length/2) {
+			
+			i=0;
+			j=head;
+			for(;i<index;i++,j=j.getNext());
+		}
+
+		j.getNext().setPrev(j.getPrev());
+		j.getPrev().setNext(j.getNext());
+		j.destroy();
+		
+	}
+	@Override
+	public void remove(int index) {
+		if(isEmpty()) {
+		
+			return;
+		
+		}
+		else if(index <0) {
+			
+			removeFirst();
+		}
+		else if(index >=length) {
+
+			removeLast();
+		}
+		else {
+			
+			removeMiddle(index);
+		
+		}
+		length--;
 	}
 	
 	

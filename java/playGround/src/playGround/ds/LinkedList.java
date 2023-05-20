@@ -126,11 +126,11 @@ public class LinkedList<T> implements List<T> {
 			return;
 		
 		}
-		else if(index <0) {
+		else if(index <=0) {
 			
 			addFirst(node);
 		}
-		else if(index >=length) {
+		else if(index >=length-1) {
 		
 			addLast(node);
 		}
@@ -241,16 +241,16 @@ public class LinkedList<T> implements List<T> {
 	@Override
 	public T get(int index) {
 
-		Node<T> j = null;
+		Node<T> j = head;
 		T result=null;
 		int i=0;
-		if(index <0) {
+		if(index <=0) {
 			
 			result= head.getElem();
 		}
-		else if(index >= length) {
+		else if(index >= length-1) {
 			
-			for(;i<length;i++,j=j.getNext());
+			for(;i<length-1;i++,j=j.getNext());
 			result= j.getElem();
 		}
 		else {
@@ -273,6 +273,76 @@ public class LinkedList<T> implements List<T> {
 		}
 		}
 	}
+
+	@Override
+	public void remove() {
+		if(isEmpty()) {
+			
+			return;
+		}
+		else {
+			
+			removeLast();
+			
+		}
+		length--;
+	}
+
+	private void removeLast() {
+
+		Node<T> j = null;
+		j=head;
+		for(;j.getNext()!=null;j=j.getNext());
+		j.destroy();
+		j=null;
+		
+		
+	}
+	private void removeFirst() {
+		
+		Node<T> node=head.getNext();
+		head.destroy();
+		head=node;
+		
+		
+	}
+	private void removeMiddle(int index) {
+		
+
+		Node<T> j = null;
+		int i;
+		i=0;
+		j=head;
+		for(;i<index;i++,j=j.getNext());
+		
+		j.setNext(j.getNext().getNext());
+		j.destroy();
+		
+	}
+	@Override
+	public void remove(int index) {
+		if(isEmpty()) {
+		
+			return;
+		
+		}
+		else if(index <0) {
+			
+			removeFirst();
+		}
+		else if(index >=length) {
+
+			removeLast();
+		}
+		else {
+			
+			removeMiddle(index);
+		
+		}
+		length--;
+	}
+	
+	
 	
 	
 

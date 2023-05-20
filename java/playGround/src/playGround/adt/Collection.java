@@ -16,4 +16,6 @@ public interface Collection<T> {
 	
 	void destroy();
 	
+	void remove();
+	
 }

@@ -6,7 +6,7 @@ import playGround.adt.exceptions.StackEmptyException;
 public class StackInArray<T> implements  Stack<T>{
 	
 	private T[] arr;
-	private static final int INIT_SIZE=10;
+	private static final int INIT_SIZE=1;
 	private int topPos,size;
 	//Constroi uma stack vazia
 	public StackInArray() {
@@ -20,11 +20,10 @@ public class StackInArray<T> implements  Stack<T>{
 	//que estao nele (ultimo elemento em cima, primeiro em baixo)
 	public StackInArray(T[] elems) {
 		
-		arr= (T[])new Object[elems.length];
+		arr= (T[])new Object[INIT_SIZE];
 		topPos=-1;
-		size=elems.length;
+		size=INIT_SIZE;
 		for(int i=0;i<elems.length;i++) {
-			
 			this.push(elems[i]);
 		}
 		
@@ -52,7 +51,7 @@ public class StackInArray<T> implements  Stack<T>{
 	}
 	private boolean isFull() {
 		
-		return topPos==size;
+		return topPos==size-1;
 		
 	}
 	@Override
