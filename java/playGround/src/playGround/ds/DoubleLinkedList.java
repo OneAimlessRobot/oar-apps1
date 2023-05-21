@@ -10,12 +10,10 @@ public class DoubleLinkedList<T> implements List<T> {
 
 	private static class DLLIterator<T> implements TwoWayIterator<T>{
 
-		private DoubleLinkedList<T> list;
-		private Node<T> next,prev;
+		private Node<T> next;
 		
 		public DLLIterator(DoubleLinkedList<T> list) {
-			this.list=list;
-			this.next=this.prev=this.list.head;
+			next=list.head;
 			
 			
 			
@@ -23,14 +21,13 @@ public class DoubleLinkedList<T> implements List<T> {
 		@Override
 		public T next() {
 			T elem=next.getElem();
-			prev=next;
 			next=next.getNext();
 			return elem;
 		}
 
 		@Override
 		public boolean hasNext() {
-			return next!=null;
+			return next.getNext()!=null;
 		}
 
 		@Override
@@ -42,9 +39,8 @@ public class DoubleLinkedList<T> implements List<T> {
 		}
 		@Override
 		public T prev() {
-			T elem=prev.getElem();
-			next=prev;
-			prev=prev.getPrev();
+			T elem=next.getElem();
+			next=next.getPrev();
 			return elem;
 		}
 		@Override
@@ -57,7 +53,12 @@ public class DoubleLinkedList<T> implements List<T> {
 		@Override
 		public boolean hasPrev() {
 			
-			return prev!=null;
+			return next.getPrev()!=null;
+		}
+		@Override
+		public void close() {
+			next=null;
+			
 		}
 		
 		
@@ -238,6 +239,7 @@ public class DoubleLinkedList<T> implements List<T> {
 			str+= it.prev().toString()+" ";
 		}
 		str+="]";
+		it.close();
 		return str;
 		
 		

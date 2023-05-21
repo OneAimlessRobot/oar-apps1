@@ -40,6 +40,11 @@ public class ListInVector<T> implements List<T> {
 		public boolean hasPrev() {
 			return currPos!=-1;
 		}
+		@Override
+		public void close() {
+			support=null;
+			
+		}
 		
 		
 		
@@ -262,6 +267,7 @@ public class ListInVector<T> implements List<T> {
 			
 		}
 		str+=" ]";
+		it.close();
 		return str;
 				
 		

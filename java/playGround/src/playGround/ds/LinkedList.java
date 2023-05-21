@@ -5,17 +5,15 @@ import playGround.adt.exceptions.StackEmptyException;
 import playGround.adt.Iterator;
 import playGround.adt.Stack;
 import playGround.adt.TwoWayIterator;
-
+//TODO: Acrescentar variaveis que indiquem final de iteraçao e um rewind para as mudar ( e mudalas no next)
 public class LinkedList<T> implements List<T> {
 
 	private static class LLIterator<T> implements Iterator<T>{
 
-		private LinkedList<T> list;
-		private Node<T> next;
+		private Node<T> next,head;
 		
 		public LLIterator(LinkedList<T> list) {
-			this.list=list;
-			this.next=this.list.head;
+			next=head=list.head;
 			
 			
 			
@@ -29,13 +27,19 @@ public class LinkedList<T> implements List<T> {
 
 		@Override
 		public boolean hasNext() {
-			return next!=null;
+			return next.getNext()!=null;
 		}
 
 		@Override
 		public void rewind() {
-			next=list.head;
+			next=head;
 			
+			
+		}
+		@Override
+		public void close() {
+			next=null;
+			head=null;
 			
 		}
 		
@@ -190,6 +194,7 @@ public class LinkedList<T> implements List<T> {
 			str+= it.next().toString()+" ";
 		}
 		str+="]";
+		it.close();
 		return str;
 		
 	}

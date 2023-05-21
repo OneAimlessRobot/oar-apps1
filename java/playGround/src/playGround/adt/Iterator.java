@@ -7,5 +7,7 @@ public interface Iterator<T> {
 	boolean hasNext();
 	
 	void rewind();
+	
+	void close();
 
 }

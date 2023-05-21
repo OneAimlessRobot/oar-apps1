@@ -1,4 +1,5 @@
 package playGround.aux.smallAlgorithms;
+import playGround.adt.Iterator;
 import playGround.adt.collections.List;
 import playGround.adt.collections.Set;
 import playGround.ds.DoubleLinkedList;
@@ -60,15 +61,15 @@ public class CollectionAlgorithms {
 		
 		
 	}
-	public static <T extends Comparable<T>> Set<T> toTSet(T[] arr){
+	public static <T extends Comparable<T>> Set<T> toTSet(List<T> arr){
 		
 		Set<T> set= new TreeSet<>();
-		
-		for(int i=0;i<arr.length;i++) {
+		Iterator<T> it= arr.iterator();
+		while(it.hasNext()) {
 			
-			set.add(arr[i]);
-			
+			set.add(it.next());
 		}
+		it.close();
 		return set;
 		
 		

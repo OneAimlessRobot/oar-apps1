@@ -1,30 +1,36 @@
-import java.util.Arrays;
-import java.util.Scanner;
-import playGround.ds.*;
+
+
+import playGround.adt.TwoWayIterator;
 import playGround.adt.collections.List;
 import playGround.adt.collections.Set;
-import playGround.aux.smallAlgorithms.CollectionAlgorithms;
+import playGround.aux.smallAlgorithms.*;
 public class Tester {
 	
+	private static final String PATH ="/home/k/oar-apps1/java/playGround/src/testStuff/numberLists/mediumTree.txt";
 	public static void main(String[] args) {
 		
-		Scanner in = new Scanner(System.in);
-		String str = "";
-		List<Integer> intVec= new ListInVector<>();
-		Set<Integer> tree= new TreeSet<>();
-		do {
-			int value= in.nextInt();
-			intVec.add(value);
-			in.nextLine();
+		List<Integer> list= FileOperations.loadFileIntoList(PATH);
+		System.out.println(list);
+		Set<Integer> set= CollectionAlgorithms.toTSet(list);
+		System.out.println(set);
+		TwoWayIterator<Integer> it= set.twoWayIterator();
+		int i=0;
+		while(i<20&&it.hasNext()) {
+			
+			System.out.println(it.next());
+			i++;
+		}
+		i=0;
+		System.out.println(it.hasPrev());
+		while(i<5&&it.hasPrev()) {
 
-			System.out.printf("Continue? (*/N)");
-			str=in.nextLine();
+			System.out.println(it.prev());
+			i++;
 			
-			
-			
-		}while(!str.equals("N"));
-		System.out.println(intVec);
-		in.close();
+		}
+		set.destroy();
+		list.destroy();
+	
 }
 }
 //import java.util.*;
