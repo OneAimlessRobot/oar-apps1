@@ -15,14 +15,14 @@ public class Tester {
 		System.out.println(set);
 		TwoWayIterator<Integer> it= set.twoWayIterator();
 		int i=0;
-		while(i<20&&it.hasNext()) {
+		while(i<10&&it.hasNext()) {
 			
 			System.out.println(it.next());
 			i++;
 		}
 		i=0;
 		System.out.println(it.hasPrev());
-		while(i<5&&it.hasPrev()) {
+		while(i<8&&it.hasPrev()) {
 
 			System.out.println(it.prev());
 			i++;
