@@ -2,6 +2,7 @@ package playGround.ds;
 
 import playGround.adt.collections.List;
 import playGround.adt.exceptions.StackEmptyException;
+import playGround.adt.InvIterator;
 import playGround.adt.Iterator;
 import playGround.adt.Stack;
 import playGround.adt.TwoWayIterator;
@@ -10,12 +11,23 @@ public class DoubleLinkedList<T> implements List<T> {
 
 	private static class DLLIterator<T> implements TwoWayIterator<T>{
 
-		private Node<T> next;
+		private Node<T> next,smallest,largest;
 		
-		public DLLIterator(DoubleLinkedList<T> list) {
-			next=list.head;
+		public DLLIterator(Node<T> initNode) {
+			
+			init( initNode);
 			
 			
+			
+		}
+		private void init(Node<T>  initNode) {
+			next= initNode;
+			Node<T> node=next;
+			while(node.getNext()!=null) {
+				node=node.getNext();
+			}
+			largest=node;
+			node=null;
 			
 		}
 		@Override
@@ -27,7 +39,7 @@ public class DoubleLinkedList<T> implements List<T> {
 
 		@Override
 		public boolean hasNext() {
-			return next.getNext()!=null;
+			return next!=largest;
 		}
 
 		@Override
@@ -53,12 +65,17 @@ public class DoubleLinkedList<T> implements List<T> {
 		@Override
 		public boolean hasPrev() {
 			
-			return next.getPrev()!=null;
+			return next!=smallest;
 		}
 		@Override
 		public void close() {
-			next=null;
-			
+//			next.destroy();
+//			next=null;
+//			largest.destroy();
+//			largest=null;
+//			smallest.destroy();
+//			smallest=null;
+//			
 		}
 		
 		
@@ -230,13 +247,12 @@ public class DoubleLinkedList<T> implements List<T> {
 
 		if(isEmpty()){
 			
-			return "";
+			return "[ ]";
 		}
 		String str="[ ";
 		TwoWayIterator<T> it=this.twoWayIterator();
-		it.fullForward();
-		while(it.hasPrev()) {
-			str+= it.prev().toString()+" ";
+		while(it.hasNext()) {
+			str+= it.next().toString()+" ";
 		}
 		str+="]";
 		it.close();
@@ -248,7 +264,7 @@ public class DoubleLinkedList<T> implements List<T> {
 
 	@Override
 	public Iterator<T> iterator() {
-		return (Iterator<T>) new DLLIterator<T>(this);
+		return (Iterator<T>) new DLLIterator<T>(head);
 	}
 	
 	public int size() {
@@ -258,7 +274,7 @@ public class DoubleLinkedList<T> implements List<T> {
 
 	@Override
 	public TwoWayIterator<T> twoWayIterator() {
-		return new DLLIterator<T>(this);
+		return new DLLIterator<T>(head);
 	}
 	@Override
 	public void invert() {
@@ -408,6 +424,11 @@ public class DoubleLinkedList<T> implements List<T> {
 		}
 		length--;
 	}
+	@Override
+	public InvIterator<T> backwardIterator() {
+		return (InvIterator<T>) new DLLIterator<>(head);
+	}
+	
 	
 	
 	

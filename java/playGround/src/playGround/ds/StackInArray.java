@@ -46,6 +46,9 @@ public class StackInArray<T> implements  Stack<T>{
 			
 			aux[i]=arr[i];
 		}
+		for(int i=0;i<size;i++) {
+			arr[i]=null;
+		}
 		size*=2;
 		arr=aux;		
 	}

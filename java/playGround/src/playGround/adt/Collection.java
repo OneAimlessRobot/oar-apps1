@@ -12,6 +12,8 @@ public interface Collection<T> {
 
 	Iterator<T> iterator();
 	
+	InvIterator<T> backwardIterator();
+	
 	String toString();
 	
 	void destroy();

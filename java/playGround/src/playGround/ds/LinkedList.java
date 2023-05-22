@@ -2,6 +2,7 @@ package playGround.ds;
 
 import playGround.adt.collections.List;
 import playGround.adt.exceptions.StackEmptyException;
+import playGround.adt.InvIterator;
 import playGround.adt.Iterator;
 import playGround.adt.Stack;
 import playGround.adt.TwoWayIterator;
@@ -345,6 +346,10 @@ public class LinkedList<T> implements List<T> {
 		
 		}
 		length--;
+	}
+	@Override
+	public InvIterator<T> backwardIterator() {
+		return null;
 	}
 	
 	

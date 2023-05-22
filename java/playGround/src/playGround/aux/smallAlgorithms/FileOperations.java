@@ -63,4 +63,34 @@ public class FileOperations {
 		
 		
 	}
+	
+
+	public static List<String> loadStrFileIntoList(String fileName){
+		
+		File file= new File(fileName);
+		List<String> list= new ListInVector<>();
+		try {
+			FileReader fwrite= new FileReader(file);
+			Scanner in= new Scanner(fwrite);
+			while(in.hasNext()) {
+
+				String value= in.next();
+				list.add(value);
+			}
+			fwrite.close();
+			in.close();
+		} catch (FileNotFoundException e) {
+			System.out.println("Ficheiro nao encontrado!!!!\n");
+			list.destroy();
+			return new ListInVector<>();
+		} catch (IOException e) {
+
+			System.out.println("Erro de escrita!!!!\n");
+			list.destroy();
+			return new ListInVector<>();
+		}
+		return list;
+		
+		
+	}
 }

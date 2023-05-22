@@ -1,5 +1,6 @@
 package playGround.ds;
 
+import playGround.adt.InvIterator;
 import playGround.adt.Iterator;
 import playGround.adt.TwoWayIterator;
 import playGround.adt.collections.List;
@@ -89,6 +90,9 @@ public class ListInVector<T> implements List<T> {
 		for(int i=0;i<size;i++) {
 			
 			aux[i]=arr[i];
+		}
+		for(int i=0;i<size;i++) {
+			arr[i]=null;
 		}
 		size*=2;
 		arr=aux;		
@@ -271,5 +275,10 @@ public class ListInVector<T> implements List<T> {
 		return str;
 				
 		
+	}
+	@Override
+	public InvIterator<T> backwardIterator() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
