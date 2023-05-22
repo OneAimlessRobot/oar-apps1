@@ -12,6 +12,7 @@ public class TreeSet<T extends Comparable<T>> implements Set<T>{
 
 		private TreeNode<T> root;
 		private Stack<TreeNode<T>> trail;
+		private boolean forward;
 		private TreeNode<T> next,biggest,smallest;
 		public TreeSetIterator(TreeNode<T> root) {
 			this.root=root;
@@ -26,6 +27,10 @@ public class TreeSet<T extends Comparable<T>> implements Set<T>{
 		@Override
 		public T next() {
 			try {
+				if(!forward) {
+					changeDirection();
+					
+				}
 				next=trail.pop();
 				if(next.getRight()!=null) {
 					TreeNode<T> node= next.getRight();
@@ -63,12 +68,17 @@ public class TreeSet<T extends Comparable<T>> implements Set<T>{
 				trail.push(node);
 				node=node.getLeft();
 				}
+			forward=true;
 			
 			
 		}
 		@Override
 		public T prev() {
 			try {
+				if(forward) {
+					changeDirection();
+					
+				}
 				next=trail.pop();
 				if(next.getLeft()!=null) {
 					TreeNode<T> node= next.getLeft();
@@ -104,10 +114,43 @@ public class TreeSet<T extends Comparable<T>> implements Set<T>{
 			trail.push(node);
 			node=node.getRight();
 			}
+			forward=false;
 			
 			
 		}
+		private void changeDirection() {
+			
+			TreeSetIterator<T> it= new TreeSetIterator<>(root);
+			
+			if(forward) {
+				forward=false;
+				it.fullForward();
+				while(it.next!=this.next) {
+					it.prev();
+				}
+				
+			}
+			else {
+				
+				forward= true;
+				it.rewind();
+				while(it.next!=this.next) {
+					it.next();
+				}
+			}
+			this.close();
+			copyIterator(it);
+			it=null;
+		}
+		private void copyIterator(TreeSetIterator<T> it) {
+			
 
+			this.next=it.next;
+			this.smallest=it.smallest;
+			this.biggest=it.biggest;
+			this.root=it.root;
+			this.trail=it.trail;
+		}
 		@Override
 		public boolean hasPrev() {
 			return next!=smallest;

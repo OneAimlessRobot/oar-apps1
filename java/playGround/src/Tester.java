@@ -22,12 +22,13 @@ public class Tester {
 		}
 		i=0;
 		System.out.println(it.hasPrev());
-		while(i<8&&it.hasPrev()) {
+		while(i<100&&it.hasPrev()) {
 
 			System.out.println(it.prev());
 			i++;
 			
 		}
+		it.close();
 		set.destroy();
 		list.destroy();
 	
