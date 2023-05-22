@@ -11,8 +11,6 @@ public interface Stack<T>{
 	
 	boolean isEmpty();
 	
-	String toString();
-	
 	int size();
 	
 	void destroy();

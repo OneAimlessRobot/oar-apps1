@@ -161,6 +161,8 @@ public class TreeSet<T extends Comparable<T>> implements Set<T>{
 			trail.destroy();
 			trail=null;
 			root=null;
+			smallest=null;
+			biggest=null;
 			
 		}
 		
