@@ -94,7 +94,6 @@ public class TreeSetBeta<T extends Comparable<T>> implements Set<T>{
 			}
 			return next.getElem();
 		}
-		@Override
 		public void init() {
 			fullForward();
 			trail.destroy();

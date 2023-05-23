@@ -85,8 +85,6 @@ public class TreeSet<T extends Comparable<T>> implements Set<T>{
 			}
 			return next.getElem();
 		}
-		
-		@Override
 		public void init() throws CollectionEmptyException{
 			if(root.noChildren()) {
 				throw new CollectionEmptyException();

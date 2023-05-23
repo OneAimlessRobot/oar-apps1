@@ -15,20 +15,19 @@ public class LinkedHashSet<T extends Comparable<T>> implements Set<T> {
 		private int mainPos,size,first,last;
 		private TwoWayIterator<T> current;
 		private LinkedHashSet<T> set;
-		public LinkedHashSetIterator(LinkedHashSet<T> set) throws CollectionEmptyException {
+		public LinkedHashSetIterator(LinkedHashSet<T> set){
 			
 			size=set.spineSize;
 			this.set=set;
 			init();
-			rewind();
-			first=mainPos;
 			fullForward();
 			last=mainPos;
+			rewind();
+			first=mainPos;
 		}
 		@Override
 		public T next() {
 			if(!current.hasNext()) {
-				skipOneListForward();
 				skipEmptyListsForward();
 				
 			}
@@ -52,36 +51,19 @@ public class LinkedHashSet<T extends Comparable<T>> implements Set<T> {
 		private void skipEmptyListsForward() {
 			DoubleLinkedList<T>[] spine=(DoubleLinkedList<T>[])set.entries;
 	
-					while(spine[mainPos].isEmpty()) {
-					try {
-					TwoWayIterator<T> it=spine[++mainPos].twoWayIterator();
-					current=it;
-					} catch (CollectionEmptyException e) {
+					while(spine[mainPos].isEmpty()) {mainPos++;}
 					
-				}
-					}
+					current =spine[mainPos].twoWayIterator();
+					
 		}
-		private void skipOneListForward() {
-			
-			DoubleLinkedList<T> currList=((DoubleLinkedList<T>)set.entries[++mainPos]);
-				
-					try {
-						current=currList.twoWayIterator();
-					} catch (CollectionEmptyException e) {
-					}
-				}
 		private void skipEmptyListsBackwards() {
-
-					while(((DoubleLinkedList<T>[])set.entries)[--mainPos].isEmpty());
-					try {
-						this.current=((DoubleLinkedList<T>[])set.entries)[mainPos].twoWayIterator();
-						int i=0;
-						boolean value= i<5;
-						i++;
-						current=current;
-						System.out.println(i);
-					} catch (CollectionEmptyException e) {
-					}
+			DoubleLinkedList<T>[] spine=(DoubleLinkedList<T>[])set.entries;
+			
+					while(spine[mainPos].isEmpty()){mainPos--;}
+					
+						this.current=spine[mainPos].twoWayIterator();
+					
+					
 		}
 		@Override
 		public void close() {
@@ -89,24 +71,16 @@ public class LinkedHashSet<T extends Comparable<T>> implements Set<T> {
 			
 		}
 
-		private void backstepIterator() {
-			DoubleLinkedList<T>[] spineFromSet=((DoubleLinkedList<T>[])set.entries);
-
-			try {
-				current=spineFromSet[mainPos--].twoWayIterator();
-			} catch (CollectionEmptyException e) {
-			}
-			spineFromSet=null;
-			
-		}
 		@Override
 		public T prev() {
 			if(!current.hasPrev()) {
 				skipEmptyListsBackwards();
+				current.fullForward();
+				
 				
 			}
 			
-			return current.next();
+			return current.prev();
 		}
 
 		@Override
@@ -122,12 +96,7 @@ public class LinkedHashSet<T extends Comparable<T>> implements Set<T> {
 
 			return current.hasPrev()&&mainPos>=first;
 		}
-		@Override
-		public void init() throws CollectionEmptyException {
-			if(set.isEmpty()) {
-				throw new CollectionEmptyException();
-			}
-			
+		public void init() {
 		}
 		
 		
@@ -242,19 +211,34 @@ public class LinkedHashSet<T extends Comparable<T>> implements Set<T> {
 		
 	}
 
+//	@Override
+//	public TwoWayIterator<T> twoWayIterator() throws CollectionEmptyException {
+//
+//		return (TwoWayIterator<T>) new LinkedHashSetIterator<>(this);
+//	}
+//
+//	@Override
+//	public Iterator<T> iterator() throws CollectionEmptyException {
+//		return (Iterator<T>) new LinkedHashSetIterator<>(this);
+//	}
+//
+//	@Override
+//	public InvIterator<T> backwardIterator() throws CollectionEmptyException {
+//		return (InvIterator<T>) new LinkedHashSetIterator<>(this);
+//	}
 	@Override
-	public TwoWayIterator<T> twoWayIterator() throws CollectionEmptyException {
+	public TwoWayIterator<T> twoWayIterator(){
 
 		return (TwoWayIterator<T>) new LinkedHashSetIterator<>(this);
 	}
 
 	@Override
-	public Iterator<T> iterator() throws CollectionEmptyException {
+	public Iterator<T> iterator()  {
 		return (Iterator<T>) new LinkedHashSetIterator<>(this);
 	}
 
 	@Override
-	public InvIterator<T> backwardIterator() throws CollectionEmptyException {
+	public InvIterator<T> backwardIterator() {
 		return (InvIterator<T>) new LinkedHashSetIterator<>(this);
 	}
 
@@ -267,13 +251,43 @@ public class LinkedHashSet<T extends Comparable<T>> implements Set<T> {
 		}
 		}
 	}
-	
+//	
+//	public String toString() {
+//		
+//
+//		try {
+//
+//			String str="";
+//			Iterator<T> it= this.iterator();
+//			while(it.hasNext()) {
+//				T elem= it.next();
+//				System.out.println(elem);
+//				str+=elem.toString() +" ";
+//			}
+//			str+="\n";
+//			return str;
+//		} catch (CollectionEmptyException e) {
+//			return "[ ]";
+//		}
+//		
+////		DoubleLinkedList<T>[] itArr= (DoubleLinkedList<T>[]) entries;
+////		for(int i=0;i<spineSize;i++) {
+////			
+////			System.out.println(itArr[i].size());
+////			str+=itArr[i].toString()+ "\n";
+////		
+////		}
+//		
+//	}
+
 	public String toString() {
 		
 
-		try {
-
 			String str="";
+			if(isEmpty()) {
+				return "[ ]";
+			
+			}
 			Iterator<T> it= this.iterator();
 			while(it.hasNext()) {
 				T elem= it.next();
@@ -282,10 +296,6 @@ public class LinkedHashSet<T extends Comparable<T>> implements Set<T> {
 			}
 			str+="\n";
 			return str;
-		} catch (CollectionEmptyException e) {
-			return "[ ]";
-		}
-		
 //		DoubleLinkedList<T>[] itArr= (DoubleLinkedList<T>[]) entries;
 //		for(int i=0;i<spineSize;i++) {
 //			
@@ -301,7 +311,32 @@ public class LinkedHashSet<T extends Comparable<T>> implements Set<T> {
 		// TODO Auto-generated method stub
 		
 	}
-	
+//	
+//	private boolean exists(T elem) {
+//
+//			int pos= Math.abs(elem.hashCode() % spineSize);
+//			DoubleLinkedList<T> list= ((DoubleLinkedList<T>) entries[pos]);
+//			if(list.isEmpty()) {
+//				list=null;
+//				return false;
+//			}
+//			Iterator<T> it;
+//			try {
+//				it = list.iterator();
+//				while(it.hasNext()) {
+//					if(elem.equals(it.next())) {
+//						it.close();
+//						list=null;
+//						return true;
+//					}
+//				}
+//				it.close();
+//			} catch (CollectionEmptyException e) {
+//			}
+//			
+//			return false;
+//	}
+
 	private boolean exists(T elem) {
 
 			int pos= Math.abs(elem.hashCode() % spineSize);
@@ -310,9 +345,7 @@ public class LinkedHashSet<T extends Comparable<T>> implements Set<T> {
 				list=null;
 				return false;
 			}
-			Iterator<T> it;
-			try {
-				it = list.iterator();
+			Iterator<T> it = list.iterator();
 				while(it.hasNext()) {
 					if(elem.equals(it.next())) {
 						it.close();
@@ -321,8 +354,7 @@ public class LinkedHashSet<T extends Comparable<T>> implements Set<T> {
 					}
 				}
 				it.close();
-			} catch (CollectionEmptyException e) {
-			}
+			
 			
 			return false;
 	}

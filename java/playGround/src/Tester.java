@@ -19,7 +19,8 @@ public class Tester {
 		while(it.hasNext()) {
 			AlphabeticalString elem= it.next();
 			System.out.println(elem);
-		}while(it.hasPrev()) {
+		}
+		while(it.hasPrev()) {
 			AlphabeticalString elem= it.prev();
 			System.out.println(elem);
 		}

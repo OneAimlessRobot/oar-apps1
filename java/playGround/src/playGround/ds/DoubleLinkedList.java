@@ -15,7 +15,7 @@ public class DoubleLinkedList<T> implements List<T> {
 		private Node<T> next,smallest;
 		private int status;
 		
-		public DLLIterator(Node<T> initNode) throws CollectionEmptyException {
+		public DLLIterator(Node<T> initNode) {
 			next= initNode;
 			init();
 			while(initNode.getNext()!=null) {
@@ -28,12 +28,13 @@ public class DoubleLinkedList<T> implements List<T> {
 			
 			
 		}
-		@Override
-		public void init() throws CollectionEmptyException {
-			if(smallest==null) {
-				throw new CollectionEmptyException();
-			}
-		}
+//		public void init() throws CollectionEmptyException {
+//			if(smallest==null) {
+//				throw new CollectionEmptyException();
+//			}
+//		}
+		public void init(){
+	}
 		@Override
 		public T next() {
 			if(status==1) {
@@ -264,39 +265,65 @@ public class DoubleLinkedList<T> implements List<T> {
 		
 	}
 	
+//	public String toString() {
+//
+//		String str="[ ";
+//		TwoWayIterator<T> it;
+//		try {
+//			it = this.twoWayIterator();
+//			while(it.hasNext()) {
+//				str+= it.next().toString()+" ";
+//			}
+//			str+="]";
+//			it.close();
+//		} catch (CollectionEmptyException e) {
+//			it=null;
+//			return "[ ]";
+//		}
+//		return str;
+//		
+//		
+//	}
 	public String toString() {
 
+		if(isEmpty()) {
+			
+
+			return "[ ]";
+		}
 		String str="[ ";
 		TwoWayIterator<T> it;
-		try {
 			it = this.twoWayIterator();
 			while(it.hasNext()) {
 				str+= it.next().toString()+" ";
 			}
 			str+="]";
 			it.close();
-		} catch (CollectionEmptyException e) {
-			it=null;
-			return "[ ]";
-		}
 		return str;
 		
 		
 	}
 
-
+//	@Override
+//	public Iterator<T> iterator() throws CollectionEmptyException {
+//		return (Iterator<T>) new DLLIterator<T>(head);
+//	}
 	@Override
-	public Iterator<T> iterator() throws CollectionEmptyException {
+	public Iterator<T> iterator() {
 		return (Iterator<T>) new DLLIterator<T>(head);
 	}
-	
 	public int size() {
 		
 		return length;
 	}
-
+//
+//	@Override
+//	public TwoWayIterator<T> twoWayIterator() throws CollectionEmptyException {
+//		return new DLLIterator<T>(head);
+//	}
+	
 	@Override
-	public TwoWayIterator<T> twoWayIterator() throws CollectionEmptyException {
+	public TwoWayIterator<T> twoWayIterator() {
 		return new DLLIterator<T>(head);
 	}
 	@Override
@@ -448,11 +475,14 @@ public class DoubleLinkedList<T> implements List<T> {
 		}
 		length--;
 	}
+//	@Override
+//	public InvIterator<T> backwardIterator() throws CollectionEmptyException {
+//		return (InvIterator<T>) new DLLIterator<>(head);
+//	}
 	@Override
-	public InvIterator<T> backwardIterator() throws CollectionEmptyException {
+	public InvIterator<T> backwardIterator() {
 		return (InvIterator<T>) new DLLIterator<>(head);
 	}
-	
 	
 	
 	

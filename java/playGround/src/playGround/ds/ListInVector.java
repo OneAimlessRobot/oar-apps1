@@ -47,7 +47,6 @@ public class ListInVector<T> implements List<T> {
 			support=null;
 			
 		}
-		@Override
 		public void init() throws CollectionEmptyException {
 			if(support.isEmpty()) {
 				throw new CollectionEmptyException();
