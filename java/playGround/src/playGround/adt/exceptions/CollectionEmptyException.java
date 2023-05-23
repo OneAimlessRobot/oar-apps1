@@ -7,7 +7,7 @@ public class CollectionEmptyException extends Exception {
 
 	public CollectionEmptyException() {
 		
-		super("Queue vazia!!!!");
+		super("Coleçao vazia!!!!");
 		
 	}
 	

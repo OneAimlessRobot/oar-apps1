@@ -3,14 +3,16 @@ package playGround.aux.smallAlgorithms;
 import java.io.*;
 import java.util.Scanner;
 
+import myClasses.AlphabeticalString;
 import playGround.adt.Iterator;
 import playGround.adt.collections.List;
+import playGround.adt.exceptions.CollectionEmptyException;
 import playGround.ds.*;
 
 public class FileOperations {
 	
 
-	public static <T> void loadListIntoFile(List<T> list,String fileName){
+	public static <T> void loadListIntoFile(List<T> list,String fileName) throws CollectionEmptyException{
 		
 		
 		File file= new File(fileName);
@@ -65,16 +67,16 @@ public class FileOperations {
 	}
 	
 
-	public static List<String> loadStrFileIntoList(String fileName){
+	public static List<AlphabeticalString> loadStrFileIntoList(String fileName){
 		
 		File file= new File(fileName);
-		List<String> list= new ListInVector<>();
+		List<AlphabeticalString> list= new ListInVector<>();
 		try {
 			FileReader fwrite= new FileReader(file);
 			Scanner in= new Scanner(fwrite);
 			while(in.hasNext()) {
 
-				String value= in.next();
+				AlphabeticalString value= new AlphabeticalString(in.next());
 				list.add(value);
 			}
 			fwrite.close();

@@ -5,6 +5,7 @@ import playGround.adt.Iterator;
 import playGround.adt.Stack;
 import playGround.adt.TwoWayIterator;
 import playGround.adt.collections.Set;
+import playGround.adt.exceptions.CollectionEmptyException;
 import playGround.adt.exceptions.StackEmptyException;
 
 public class TreeSet<T extends Comparable<T>> implements Set<T>{
@@ -14,9 +15,9 @@ public class TreeSet<T extends Comparable<T>> implements Set<T>{
 		private TreeNode<T> root;
 		private Stack<TreeNode<T>> trail;
 		private TreeNode<T> next,biggest,smallest;
-		public TreeSetIterator(TreeNode<T> root) {
+		public TreeSetIterator(TreeNode<T> root) throws CollectionEmptyException {
+
 			this.root=root;
-			trail=new StackInArray<>();
 			init();
 			
 			
@@ -84,8 +85,13 @@ public class TreeSet<T extends Comparable<T>> implements Set<T>{
 			}
 			return next.getElem();
 		}
-
-		public void init() {
+		
+		@Override
+		public void init() throws CollectionEmptyException{
+			if(root.noChildren()) {
+				throw new CollectionEmptyException();
+			}
+			trail=new StackInArray<>();
 			fullForward();
 			trail.destroy();
 			rewind();
@@ -252,17 +258,17 @@ public class TreeSet<T extends Comparable<T>> implements Set<T>{
 		return root==null;
 	}
 	@Override
-	public TwoWayIterator<T> twoWayIterator() {
+	public TwoWayIterator<T> twoWayIterator() throws CollectionEmptyException {
 		
 		return new TreeSetIterator<T>(root);
 	}
 	@Override
-	public Iterator<T> iterator() {
+	public Iterator<T> iterator() throws CollectionEmptyException {
 		return (Iterator<T>)new TreeSetIterator<T>(root);
 	}
 
 	@Override
-	public InvIterator<T> backwardIterator() {
+	public InvIterator<T> backwardIterator() throws CollectionEmptyException {
 		return (InvIterator<T>)new TreeSetIterator<T>(root);
 	}
 	@Override
@@ -312,12 +318,14 @@ public class TreeSet<T extends Comparable<T>> implements Set<T>{
 	}
 	public String toString() {
 
-		if(isEmpty()) {
-			
-			return "[ ]";
-		}
 		String str="[ ";
-		TwoWayIterator<T> it= this.twoWayIterator();
+		TwoWayIterator<T> it;
+		try {
+			it = this.twoWayIterator();
+		} catch (CollectionEmptyException e) {
+
+				return "[ ]";
+		}
 		while(it.hasNext()) {
 					
 			

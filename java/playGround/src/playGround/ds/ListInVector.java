@@ -4,6 +4,7 @@ import playGround.adt.InvIterator;
 import playGround.adt.Iterator;
 import playGround.adt.TwoWayIterator;
 import playGround.adt.collections.List;
+import playGround.adt.exceptions.CollectionEmptyException;
 
 public class ListInVector<T> implements List<T> {
 
@@ -11,8 +12,8 @@ public class ListInVector<T> implements List<T> {
 		
 		private ListInVector<T> support;
 		private int currPos;
-		public VectorIterator(ListInVector<T> support) {
-			
+		public VectorIterator(ListInVector<T> support) throws CollectionEmptyException {
+			init();
 			this.support=support;
 			currPos=0;
 			
@@ -44,6 +45,13 @@ public class ListInVector<T> implements List<T> {
 		@Override
 		public void close() {
 			support=null;
+			
+		}
+		@Override
+		public void init() throws CollectionEmptyException {
+			if(support.isEmpty()) {
+				throw new CollectionEmptyException();
+			}
 			
 		}
 		
@@ -146,11 +154,11 @@ public class ListInVector<T> implements List<T> {
 		}
 	}
 	@Override
-	public TwoWayIterator<T> twoWayIterator() {
+	public TwoWayIterator<T> twoWayIterator() throws CollectionEmptyException {
 		return new VectorIterator<>(this);
 	}
 	@Override
-	public Iterator<T> iterator() {
+	public Iterator<T> iterator() throws CollectionEmptyException {
 		return (Iterator<T>) new VectorIterator<>(this);
 	}
 	@Override
@@ -258,20 +266,22 @@ public class ListInVector<T> implements List<T> {
 	
 	public String toString() {
 		
-		if(isEmpty()) {
-			
+		String str="[ ";
+		Iterator<T> it;
+		try {
+			it = this.iterator();
+			while(it.hasNext()) {
+				
+				str+= it.next().toString() + " ";
+				
+				
+			}
+			str+=" ]";
+			it.close();
+		} catch (CollectionEmptyException e) {
+			it=null;
 			return "[ ]";
 		}
-		String str="[ ";
-		Iterator<T> it= this.iterator();
-		while(it.hasNext()) {
-			
-			str+= it.next().toString() + " ";
-			
-			
-		}
-		str+=" ]";
-		it.close();
 		return str;
 				
 		
