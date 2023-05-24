@@ -1,11 +1,13 @@
 package playGround.ds;
 
+import playGround.abstractClasses.AbstractCollection;
+import playGround.adt.Collection;
 import playGround.adt.InvIterator;
 import playGround.adt.Iterator;
 import playGround.adt.TwoWayIterator;
 import playGround.adt.collections.Set;
 
-public class LinkedHashSet<T extends Comparable<T>> implements Set<T> {
+public class LinkedHashSet<T extends Comparable<T>> extends AbstractCollection<T> implements Set<T> {
 
 	private static class LinkedHashSetIterator<T extends Comparable<T>> implements TwoWayIterator<T>{
 		
@@ -128,9 +130,11 @@ public class LinkedHashSet<T extends Comparable<T>> implements Set<T> {
 	}
 	private DoubleLinkedList<?>[] entries;
 	private static final int START_SIZE =10;
-	private int threshold,spineSize;
+	private int VectorSizeForCollision,spineSize,fullBucketThreshold;
+
 	public LinkedHashSet() {
-		threshold=5;
+		VectorSizeForCollision=5;
+		fullBucketThreshold=4;
 		spineSize=START_SIZE;
 		init();
 		
@@ -152,43 +156,25 @@ public class LinkedHashSet<T extends Comparable<T>> implements Set<T> {
 		
 		DoubleLinkedList<T>[] aux= (DoubleLinkedList<T>[]) new DoubleLinkedList<?>[spineSize*2];
 		int i=0,nextSize=spineSize*2;
-		
+
+		fullBucketThreshold*=2;
 		for(;i<spineSize;i++) {
-			
-			aux[i]=(DoubleLinkedList<T>) entries[i];
+
+			aux[i]=(DoubleLinkedList<T>) entries[i].copy();
+			entries[i].destroy();
+			entries[i]=null;
 		}
 		for(;i<nextSize;i++) {
 
 			aux[i]=new DoubleLinkedList<T>(); 
 			
 		}
-		i=0;
-		for(;i<spineSize;i++) {
-			((DoubleLinkedList<T>) entries[i]).destroy();
-			entries[i]=null;
-		}
 		spineSize=nextSize;
 		entries=aux;		
 	}
-
-	private int maxEntryLen() {
-		
-		int result=0;
-		for(int i=0;i<spineSize;i++) {
-			
-			DoubleLinkedList<T> cur= ((DoubleLinkedList<T>) entries[i]);
-			
-			result=cur.size()< result ? result :  cur.size();
-			
-			
-			
-		}
-		return result;
-		
-	}
 	private boolean isFull() {
 		
-		return maxEntryLen()>threshold;
+		return countFullLists()>fullBucketThreshold;
 		
 		
 	}
@@ -217,6 +203,19 @@ public class LinkedHashSet<T extends Comparable<T>> implements Set<T> {
 			
 		}
 		return result;
+	}
+	private int countFullLists() {
+		DoubleLinkedList<T>[] entrs= (DoubleLinkedList<T>[]) entries;
+		int result=0;
+		for(int i=0;i<spineSize;i++) {
+			
+			if(entrs[i].size()>VectorSizeForCollision) {
+				result++;
+			}
+		}
+		return result;
+		
+		
 	}
 	@Override
 	public boolean isEmpty() {
@@ -263,23 +262,6 @@ public class LinkedHashSet<T extends Comparable<T>> implements Set<T> {
 	}
 
 
-	public String toString() {
-		
-
-			if(isEmpty()) {
-				return "[ ]";
-			
-			}
-			String str="[ ";
-			Iterator<T> it= this.iterator();
-			while(it.hasNext()) {
-				T elem= it.next();
-				str+=elem.toString() +" ";
-			}
-			str+="]\n";
-			return str;
-	}
-
 	@Override
 	public void remove() {
 		// TODO Auto-generated method stub
@@ -297,7 +279,7 @@ public class LinkedHashSet<T extends Comparable<T>> implements Set<T> {
 			}
 			Iterator<T> it = list.iterator();
 				while(it.hasNext()) {
-					if(elem.equals(it.next())) {
+					if(elem.compareTo(it.next())==0) {
 						it.close();
 						list=null;
 						return true;
@@ -307,6 +289,21 @@ public class LinkedHashSet<T extends Comparable<T>> implements Set<T> {
 			
 			
 			return false;
+	}
+
+	@Override
+	public Collection<T> copy() {
+		Collection<T> collection= new LinkedHashSet<>();
+		if(isEmpty()) {
+			return collection;
+		}
+		Iterator<T> it= iterator();
+		while(it.hasNext()) {
+			
+			collection.add(it.next());
+		}
+		return collection;
+		
 	}
 
 }

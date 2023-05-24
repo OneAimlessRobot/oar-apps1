@@ -1,12 +1,13 @@
 package playGround.ds;
 
+import playGround.abstractClasses.AbstractCollection;
+import playGround.adt.Collection;
 import playGround.adt.InvIterator;
 import playGround.adt.Iterator;
 import playGround.adt.TwoWayIterator;
 import playGround.adt.collections.List;
-import playGround.adt.exceptions.CollectionEmptyException;
 
-public class Vector<T> implements List<T> {
+public class Vector<T> extends AbstractCollection<T> implements List<T> {
 
 	private static class VectorIterator<T> implements TwoWayIterator<T>{
 		
@@ -51,7 +52,7 @@ public class Vector<T> implements List<T> {
 		
 	}
 	private T[] arr;
-	private static final int INIT_SIZE=100000;
+	private static final int INIT_SIZE=7;
 	private int currPos,size;
 	//Constroi uma stack vazia
 	public Vector() {
@@ -265,5 +266,20 @@ public class Vector<T> implements List<T> {
 	@Override
 	public InvIterator<T> backwardIterator() {
 		return (InvIterator<T>) new VectorIterator<>(this);
+	}
+
+	@Override
+	public Collection<T> copy() {
+		Collection<T> collection= new Vector<>();
+		if(isEmpty()) {
+			return collection;
+		}
+		Iterator<T> it= iterator();
+		while(it.hasNext()) {
+			
+			collection.add(it.next());
+		}
+		return collection;
+		
 	}
 }

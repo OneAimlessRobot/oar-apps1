@@ -2,6 +2,7 @@ package playGround.ds;
 
 import playGround.adt.collections.List;
 import playGround.adt.exceptions.StackEmptyException;
+import playGround.adt.Collection;
 import playGround.adt.InvIterator;
 import playGround.adt.Iterator;
 import playGround.adt.Stack;
@@ -450,6 +451,21 @@ public class DoubleLinkedList<T> implements List<T> {
 	@Override
 	public InvIterator<T> backwardIterator() {
 		return (InvIterator<T>) new DLLIterator<>(head);
+	}
+
+	@Override
+	public Collection<T> copy() {
+		Collection<T> collection= new DoubleLinkedList<>();
+		if(isEmpty()) {
+			return collection;
+		}
+		Iterator<T> it= iterator();
+		while(it.hasNext()) {
+			
+			collection.add(it.next());
+		}
+		return collection;
+		
 	}
 	
 	

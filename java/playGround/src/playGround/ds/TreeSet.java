@@ -1,5 +1,7 @@
 package playGround.ds;
 
+import playGround.abstractClasses.AbstractCollection;
+import playGround.adt.Collection;
 import playGround.adt.InvIterator;
 import playGround.adt.Iterator;
 import playGround.adt.Stack;
@@ -8,17 +10,21 @@ import playGround.adt.collections.Set;
 import playGround.adt.exceptions.CollectionEmptyException;
 import playGround.adt.exceptions.StackEmptyException;
 
-public class TreeSet<T extends Comparable<T>> implements Set<T>{
+public class TreeSet<T extends Comparable<T>>  extends AbstractCollection<T> implements Set<T>{
 
 	private static class TreeSetIterator<T extends Comparable<T>> implements TwoWayIterator<T>{
 
 		private TreeNode<T> root;
 		private Stack<TreeNode<T>> trail;
 		private TreeNode<T> next,biggest,smallest;
-		public TreeSetIterator(TreeNode<T> root) throws CollectionEmptyException {
+		public TreeSetIterator(TreeNode<T> root) {
 
 			this.root=root;
-			init();
+			trail=new StackInArray<>();
+			fullForward();
+			trail.destroy();
+			rewind();
+			
 			
 			
 			
@@ -84,16 +90,6 @@ public class TreeSet<T extends Comparable<T>> implements Set<T>{
 				System.out.println("Stack vazia!!!!!!\n");
 			}
 			return next.getElem();
-		}
-		public void init() throws CollectionEmptyException{
-			if(root.noChildren()) {
-				throw new CollectionEmptyException();
-			}
-			trail=new StackInArray<>();
-			fullForward();
-			trail.destroy();
-			rewind();
-			
 		}
 		@Override
 		public void fullForward() {
@@ -256,17 +252,17 @@ public class TreeSet<T extends Comparable<T>> implements Set<T>{
 		return root==null;
 	}
 	@Override
-	public TwoWayIterator<T> twoWayIterator() throws CollectionEmptyException {
+	public TwoWayIterator<T> twoWayIterator() {
 		
 		return new TreeSetIterator<T>(root);
 	}
 	@Override
-	public Iterator<T> iterator() throws CollectionEmptyException {
+	public Iterator<T> iterator(){
 		return (Iterator<T>)new TreeSetIterator<T>(root);
 	}
 
 	@Override
-	public InvIterator<T> backwardIterator() throws CollectionEmptyException {
+	public InvIterator<T> backwardIterator(){
 		return (InvIterator<T>)new TreeSetIterator<T>(root);
 	}
 	@Override
@@ -314,28 +310,6 @@ public class TreeSet<T extends Comparable<T>> implements Set<T>{
 		// TODO Auto-generated method stub
 		
 	}
-	public String toString() {
-
-		String str="[ ";
-		TwoWayIterator<T> it;
-		try {
-			it = this.twoWayIterator();
-		} catch (CollectionEmptyException e) {
-
-				return "[ ]";
-		}
-		while(it.hasNext()) {
-					
-			
-			
-			str+= it.next().toString() + " ";
-			
-			
-		}
-		str+=" ]";
-		it.close();
-		return str;
-	}
 	
 	private boolean exists(T elem) {
 		
@@ -361,5 +335,20 @@ public class TreeSet<T extends Comparable<T>> implements Set<T>{
 			return true;
 		}
 		return false;
+	}
+
+	@Override
+	public Collection<T> copy() {
+		Collection<T> collection= new TreeSet<>();
+		if(isEmpty()) {
+			return collection;
+		}
+		Iterator<T> it= iterator();
+		while(it.hasNext()) {
+			
+			collection.add(it.next());
+		}
+		return collection;
+		
 	}
 }

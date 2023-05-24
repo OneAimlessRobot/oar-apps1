@@ -1,11 +1,13 @@
 package playGround.ds;
 
+import playGround.abstractClasses.AbstractCollection;
+import playGround.adt.Collection;
 import playGround.adt.InvIterator;
 import playGround.adt.Iterator;
 import playGround.adt.TwoWayIterator;
 import playGround.adt.collections.Set;
 
-public class VectorHashSet<T extends Comparable<T>> implements Set<T> {
+public class VectorHashSet<T extends Comparable<T>> extends AbstractCollection<T> implements Set<T> {
 
 	private static class VectorHashSetIterator<T extends Comparable<T>> implements TwoWayIterator<T>{
 		
@@ -128,9 +130,10 @@ public class VectorHashSet<T extends Comparable<T>> implements Set<T> {
 	}
 	private Vector<?>[] entries;
 	private static final int START_SIZE =10;
-	private int threshold,spineSize;
+	private int VectorSizeForCollision,spineSize,fullBucketThreshold;
 	public VectorHashSet() {
-		threshold=5;
+		VectorSizeForCollision=5;
+		fullBucketThreshold=4;
 		spineSize=START_SIZE;
 		init();
 		
@@ -139,7 +142,7 @@ public class VectorHashSet<T extends Comparable<T>> implements Set<T> {
 	}
 	private void init() {
 		
-		entries=(Vector<T>[])new Vector<?>[START_SIZE];
+		entries=new Vector<?>[START_SIZE];
 
 		for(int i=0;i<START_SIZE;i++) {
 			
@@ -152,43 +155,24 @@ public class VectorHashSet<T extends Comparable<T>> implements Set<T> {
 		
 		Vector<T>[] aux= (Vector<T>[]) new Vector<?>[spineSize*2];
 		int i=0,nextSize=spineSize*2;
-		
+		fullBucketThreshold*=2;
 		for(;i<spineSize;i++) {
 			
-			aux[i]=(Vector<T>) entries[i];
+			aux[i]=(Vector<T>) entries[i].copy();
+			entries[i].destroy();
+			entries[i]=null;
 		}
 		for(;i<nextSize;i++) {
 
-			aux[i]=new Vector<T>(); 
+			aux[i]=new Vector<>(); 
 			
-		}
-		i=0;
-		for(;i<spineSize;i++) {
-			((Vector<T>) entries[i]).destroy();
-			entries[i]=null;
 		}
 		spineSize=nextSize;
 		entries=aux;		
 	}
-
-	private int maxEntryLen() {
-		
-		int result=0;
-		for(int i=0;i<spineSize;i++) {
-			
-			Vector<T> cur= ((Vector<T>) entries[i]);
-			
-			result=cur.size()< result ? result :  cur.size();
-			
-			
-			
-		}
-		return result;
-		
-	}
 	private boolean isFull() {
 		
-		return maxEntryLen()>threshold;
+		return countFullLists()>fullBucketThreshold;
 		
 		
 	}
@@ -201,7 +185,9 @@ public class VectorHashSet<T extends Comparable<T>> implements Set<T> {
 			return;
 		}
 		int pos= Math.abs(elem.hashCode() % spineSize);
-		((Vector<T>) entries[pos]).add(elem);
+
+		Vector<T> l=((Vector<T>) entries[pos]);
+		l.add(elem);
 		
 	}
 
@@ -217,6 +203,20 @@ public class VectorHashSet<T extends Comparable<T>> implements Set<T> {
 			
 		}
 		return result;
+	}
+	
+	private int countFullLists() {
+		Vector<T>[] entrs= (Vector<T>[]) entries;
+		int result=0;
+		for(int i=0;i<spineSize;i++) {
+			
+			if(entrs[i].size()>VectorSizeForCollision) {
+				result++;
+			}
+		}
+		return result;
+		
+		
 	}
 	@Override
 	public boolean isEmpty() {
@@ -238,12 +238,12 @@ public class VectorHashSet<T extends Comparable<T>> implements Set<T> {
 	@Override
 	public TwoWayIterator<T> twoWayIterator(){
 
-		return (TwoWayIterator<T>) new VectorHashSetIterator<>(this);
+		return new VectorHashSetIterator<>(this);
 	}
 
 	@Override
 	public Iterator<T> iterator()  {
-		return (Iterator<T>) new VectorHashSetIterator<>(this);
+		return new VectorHashSetIterator<>(this);
 	}
 
 	@Override
@@ -258,26 +258,7 @@ public class VectorHashSet<T extends Comparable<T>> implements Set<T> {
 			((Vector<T>) entries[i]).destroy();
 			entries[i]=null;
 		}
-		entries=null;
 		}
-	}
-
-
-	public String toString() {
-		
-
-			if(isEmpty()) {
-				return "[ ]";
-			
-			}
-			String str="[ ";
-			Iterator<T> it= this.iterator();
-			while(it.hasNext()) {
-				T elem= it.next();
-				str+=elem.toString() +" ";
-			}
-			str+="]\n";
-			return str;
 	}
 
 	@Override
@@ -291,13 +272,14 @@ public class VectorHashSet<T extends Comparable<T>> implements Set<T> {
 
 			int pos= Math.abs(elem.hashCode() % spineSize);
 			Vector<T> list= ((Vector<T>) entries[pos]);
+			
 			if(list.isEmpty()) {
 				list=null;
 				return false;
 			}
 			Iterator<T> it = list.iterator();
 				while(it.hasNext()) {
-					if(elem.equals(it.next())) {
+					if(it.next().compareTo(elem)==0) {
 						it.close();
 						list=null;
 						return true;
@@ -307,6 +289,21 @@ public class VectorHashSet<T extends Comparable<T>> implements Set<T> {
 			
 			
 			return false;
+	}
+
+	@Override
+	public Collection<T> copy() {
+		Collection<T> collection= new VectorHashSet<>();
+		if(isEmpty()) {
+			return collection;
+		}
+		Iterator<T> it= iterator();
+		while(it.hasNext()) {
+			
+			collection.add(it.next());
+		}
+		return collection;
+		
 	}
 
 }

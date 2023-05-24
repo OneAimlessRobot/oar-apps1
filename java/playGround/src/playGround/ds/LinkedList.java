@@ -2,12 +2,14 @@ package playGround.ds;
 
 import playGround.adt.collections.List;
 import playGround.adt.exceptions.StackEmptyException;
+import playGround.abstractClasses.AbstractCollection;
+import playGround.adt.Collection;
 import playGround.adt.InvIterator;
 import playGround.adt.Iterator;
 import playGround.adt.Stack;
 import playGround.adt.TwoWayIterator;
 //TODO: Acrescentar variaveis que indiquem final de iteraçao e um rewind para as mudar ( e mudalas no next)
-public class LinkedList<T> implements List<T> {
+public class LinkedList<T> extends AbstractCollection<T> implements List<T> {
 
 	private static class LLIterator<T> implements Iterator<T>{
 
@@ -183,22 +185,6 @@ public class LinkedList<T> implements List<T> {
 		}
 		
 	}
-	public String toString() {
-
-		if(isEmpty()){
-			
-			return "";
-		}
-		String str="[ ";
-		Iterator<T> it=this.iterator();
-		while(it.hasNext()) {
-			str+= it.next().toString()+" ";
-		}
-		str+="]";
-		it.close();
-		return str;
-		
-	}
 
 
 	@Override
@@ -350,6 +336,20 @@ public class LinkedList<T> implements List<T> {
 	@Override
 	public InvIterator<T> backwardIterator() {
 		return null;
+	}
+	@Override
+	public Collection<T> copy() {
+		Collection<T> collection= new LinkedList<>();
+		if(isEmpty()) {
+			return collection;
+		}
+		Iterator<T> it= iterator();
+		while(it.hasNext()) {
+			
+			collection.add(it.next());
+		}
+		return collection;
+		
 	}
 	
 	

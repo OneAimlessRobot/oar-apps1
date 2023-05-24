@@ -12,6 +12,17 @@ public class AlphabeticalString implements Comparable<AlphabeticalString>{
 			
 		}
 		setValue(String.copyValueOf(arr));
+		value.replaceAll("\\P{Print}", "");
+	}
+	public int getLength() {
+		
+		return this.value.length();
+	}
+	public boolean equals(AlphabeticalString str) {
+		System.out.println(this.value.length()+" "+str.value.length());
+		return this.value.equals(str.value);
+		
+		
 	}
 	public String getValue() {
 		return value;

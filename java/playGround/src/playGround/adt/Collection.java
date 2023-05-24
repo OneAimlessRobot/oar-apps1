@@ -8,6 +8,8 @@ public interface Collection<T> {
 	
 	int size();
 	
+	Collection<T> copy();
+	
 	boolean isEmpty();
 	
 	TwoWayIterator<T> twoWayIterator() throws CollectionEmptyException;

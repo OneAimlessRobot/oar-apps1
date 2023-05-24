@@ -10,11 +10,11 @@ public class Tester {
 
 	public static void main(String[] args) throws CollectionEmptyException {
 		
-		List<String> list= CollectionAlgorithms.toVList(CollectionAlgorithms.randStringArrAux(99, 1000, 1000));
+		List<AlphabeticalString> list= FileOperations.loadStrFileIntoList(PATH);
 		
-		Set<String> list2= new VectorHashSet<>();
-		Set<String> list3= new LinkedHashSet<>();
-		Set<String> list4= new TreeSet<>();
+		Set<AlphabeticalString> list2= new VectorHashSet<>();
+		Set<AlphabeticalString> list3= new LinkedHashSet<>();
+		Set<AlphabeticalString> list4= new TreeSet<>();
 		long time= System.nanoTime()/1000;
 		for(int i=0;i<list.size();i++) {
 			list2.add(list.get(i));
@@ -36,6 +36,9 @@ public class Tester {
 		System.out.println("Tempo: "+ (time2-time)+" "+"\n");
 		System.out.println("Tempo: "+ (time4-time3)+" "+"\n");
 		System.out.println("Tempo: "+ (time6-time5)+" "+"\n");
+		System.out.println(list2);
+		System.out.println(list3);
+		System.out.println(list4);
 		list.destroy();
 		list=null;
 		list2.destroy();

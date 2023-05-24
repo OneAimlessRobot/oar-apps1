@@ -1,5 +1,6 @@
 package playGround.ds;
 
+import playGround.adt.Collection;
 import playGround.adt.InvIterator;
 import playGround.adt.Iterator;
 import playGround.adt.Stack;
@@ -94,7 +95,7 @@ public class TreeSetBeta<T extends Comparable<T>> implements Set<T>{
 			}
 			return next.getElem();
 		}
-		public void init() {
+		private void init() {
 			fullForward();
 			trail.destroy();
 			rewind();
@@ -398,5 +399,18 @@ public class TreeSetBeta<T extends Comparable<T>> implements Set<T>{
 			return true;
 		}
 		return false;
+	}
+	@Override
+	public Collection<T> copy() {
+		Collection<T> collection= new TreeSetBeta<>();
+		if(isEmpty()) {
+			return collection;
+		}
+		Iterator<T> it= iterator();
+		while(it.hasNext()) {
+			
+			collection.add(it.next());
+		}
+		return collection;
 	}
 }
