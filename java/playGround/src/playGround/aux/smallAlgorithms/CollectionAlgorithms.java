@@ -4,6 +4,7 @@ import playGround.adt.collections.List;
 import playGround.adt.collections.Set;
 import playGround.adt.exceptions.CollectionEmptyException;
 import playGround.ds.DoubleLinkedList;
+import playGround.ds.Vector;
 import playGround.ds.TreeSet;
 import playGround.ds.LinkedList;
 import playGround.aux.numeric.*;
@@ -50,7 +51,7 @@ public class CollectionAlgorithms {
 	public static <T> List<T> toList(T[] arr){
 		
 		List<T> list=new LinkedList<>();
-		
+
 		for(int i=0;i<arr.length;i++) {
 			
 			list.add(arr[i]);
@@ -80,7 +81,22 @@ public class CollectionAlgorithms {
 	public static <T> List<T> toDList(T[] arr){
 		
 		List<T> list=new DoubleLinkedList<>();
+
+		for(int i=0;i<arr.length;i++) {
+			
+			list.add(arr[i]);
+			
+		}
+		return list;
 		
+		
+		
+		
+	}
+	public static <T> List<T> toVList(T[] arr){
+		
+		List<T> list=new Vector<>();
+
 		for(int i=0;i<arr.length;i++) {
 			
 			list.add(arr[i]);

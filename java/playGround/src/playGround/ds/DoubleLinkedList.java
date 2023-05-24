@@ -1,7 +1,6 @@
 package playGround.ds;
 
 import playGround.adt.collections.List;
-import playGround.adt.exceptions.CollectionEmptyException;
 import playGround.adt.exceptions.StackEmptyException;
 import playGround.adt.InvIterator;
 import playGround.adt.Iterator;
@@ -265,25 +264,6 @@ public class DoubleLinkedList<T> implements List<T> {
 		
 	}
 	
-//	public String toString() {
-//
-//		String str="[ ";
-//		TwoWayIterator<T> it;
-//		try {
-//			it = this.twoWayIterator();
-//			while(it.hasNext()) {
-//				str+= it.next().toString()+" ";
-//			}
-//			str+="]";
-//			it.close();
-//		} catch (CollectionEmptyException e) {
-//			it=null;
-//			return "[ ]";
-//		}
-//		return str;
-//		
-//		
-//	}
 	public String toString() {
 
 		if(isEmpty()) {
@@ -304,10 +284,6 @@ public class DoubleLinkedList<T> implements List<T> {
 		
 	}
 
-//	@Override
-//	public Iterator<T> iterator() throws CollectionEmptyException {
-//		return (Iterator<T>) new DLLIterator<T>(head);
-//	}
 	@Override
 	public Iterator<T> iterator() {
 		return (Iterator<T>) new DLLIterator<T>(head);
@@ -316,12 +292,7 @@ public class DoubleLinkedList<T> implements List<T> {
 		
 		return length;
 	}
-//
-//	@Override
-//	public TwoWayIterator<T> twoWayIterator() throws CollectionEmptyException {
-//		return new DLLIterator<T>(head);
-//	}
-	
+
 	@Override
 	public TwoWayIterator<T> twoWayIterator() {
 		return new DLLIterator<T>(head);
@@ -475,10 +446,7 @@ public class DoubleLinkedList<T> implements List<T> {
 		}
 		length--;
 	}
-//	@Override
-//	public InvIterator<T> backwardIterator() throws CollectionEmptyException {
-//		return (InvIterator<T>) new DLLIterator<>(head);
-//	}
+
 	@Override
 	public InvIterator<T> backwardIterator() {
 		return (InvIterator<T>) new DLLIterator<>(head);

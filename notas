@@ -1,2 +1,11 @@
 fazer um parser de algebra em alguma linguagem. Isto e como fazelo em Programaçao orientada a Objétos
 Tenho de deixar github para outra altura
+
+
+Uma tarefa é um conjunto sequencial de açoes que um individuo escolhe cumprir por iniciativa propria.
+
+Um problema é um conjunto sequencial de açoes que um individuo não escolhe cumprir por iniciativa propria, mas cuja responsabilidade está nesse mesmo individuo
+
+Um desafio é uma tarefa ou problema com restriçoes adicionais para alem do seu cumprimento
+
+Uma competição é um desafio com um ou mais restrições que são "móveis".

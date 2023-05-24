@@ -6,14 +6,13 @@ import playGround.adt.TwoWayIterator;
 import playGround.adt.collections.List;
 import playGround.adt.exceptions.CollectionEmptyException;
 
-public class ListInVector<T> implements List<T> {
+public class Vector<T> implements List<T> {
 
 	private static class VectorIterator<T> implements TwoWayIterator<T>{
 		
-		private ListInVector<T> support;
+		private Vector<T> support;
 		private int currPos;
-		public VectorIterator(ListInVector<T> support) throws CollectionEmptyException {
-			init();
+		public VectorIterator(Vector<T> support) {
 			this.support=support;
 			currPos=0;
 			
@@ -47,21 +46,15 @@ public class ListInVector<T> implements List<T> {
 			support=null;
 			
 		}
-		public void init() throws CollectionEmptyException {
-			if(support.isEmpty()) {
-				throw new CollectionEmptyException();
-			}
-			
-		}
 		
 		
 		
 	}
 	private T[] arr;
-	private static final int INIT_SIZE=1;
+	private static final int INIT_SIZE=100000;
 	private int currPos,size;
 	//Constroi uma stack vazia
-	public ListInVector() {
+	public Vector() {
 		
 		arr= (T[])new Object[INIT_SIZE];
 		currPos=-1;
@@ -70,7 +63,7 @@ public class ListInVector<T> implements List<T> {
 	}
 	//Constroi uma stack com elementos de um Array ordenados pela ordem em
 	//que estao nele (ultimo elemento em cima, primeiro em baixo)
-	public ListInVector(T[] elems) {
+	public Vector(T[] elems) {
 		
 		arr= (T[])new Object[INIT_SIZE];
 		currPos=-1;
@@ -120,23 +113,7 @@ public class ListInVector<T> implements List<T> {
 		arr[currPos--]=null;
 		
 	}
-	//tentei adicionar um indicador bonitinho do topo da stack mas ndn
-//	public String toString() {
-//		
-//		if(isEmpty()){
-//			
-//			return "[ ]";
-//		}
-//		String str="[ ";
-//		for(int i=0;i<this.size();i--) {
-//			
-//			str+= arr[i].toString()+" ";
-//		}
-//		str+="]";
-//				
-//		return str;
-//		
-//	}
+	
 	public boolean isEmpty() {
 		
 		return this.currPos==-1;
@@ -151,13 +128,14 @@ public class ListInVector<T> implements List<T> {
 			
 			this.remove();
 		}
+		this.arr=null;
 	}
 	@Override
-	public TwoWayIterator<T> twoWayIterator() throws CollectionEmptyException {
+	public TwoWayIterator<T> twoWayIterator()  {
 		return new VectorIterator<>(this);
 	}
 	@Override
-	public Iterator<T> iterator() throws CollectionEmptyException {
+	public Iterator<T> iterator()  {
 		return (Iterator<T>) new VectorIterator<>(this);
 	}
 	@Override
@@ -168,7 +146,7 @@ public class ListInVector<T> implements List<T> {
 	public T get(int index) {
 		if(index >= this.size()|| index < 0) {
 			
-			return null;
+			throw new IndexOutOfBoundsException();
 		}
 			
 		return arr[index];
@@ -265,29 +243,27 @@ public class ListInVector<T> implements List<T> {
 	
 	public String toString() {
 		
+		if(this.isEmpty()) {
+			
+			return "[ ]";
+		}
+			
 		String str="[ ";
-		Iterator<T> it;
-		try {
-			it = this.iterator();
+			Iterator<T> it = this.iterator();
 			while(it.hasNext()) {
 				
 				str+= it.next().toString() + " ";
 				
 				
 			}
-			str+=" ]";
+			str+="]";
 			it.close();
-		} catch (CollectionEmptyException e) {
-			it=null;
-			return "[ ]";
-		}
 		return str;
 				
 		
 	}
 	@Override
 	public InvIterator<T> backwardIterator() {
-		// TODO Auto-generated method stub
-		return null;
+		return (InvIterator<T>) new VectorIterator<>(this);
 	}
 }

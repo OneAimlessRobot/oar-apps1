@@ -40,7 +40,7 @@ public class FileOperations {
 	public static List<Integer> loadFileIntoList(String fileName){
 		
 		File file= new File(fileName);
-		List<Integer> list= new ListInVector<>();
+		List<Integer> list= new Vector<>();
 		try {
 			FileReader fwrite= new FileReader(file);
 			Scanner in= new Scanner(fwrite);
@@ -54,12 +54,12 @@ public class FileOperations {
 		} catch (FileNotFoundException e) {
 			System.out.println("Ficheiro nao encontrado!!!!\n");
 			list.destroy();
-			return new ListInVector<>();
+			return new Vector<>();
 		} catch (IOException e) {
 
 			System.out.println("Erro de escrita!!!!\n");
 			list.destroy();
-			return new ListInVector<>();
+			return new Vector<>();
 		}
 		return list;
 		
@@ -70,7 +70,7 @@ public class FileOperations {
 	public static List<AlphabeticalString> loadStrFileIntoList(String fileName){
 		
 		File file= new File(fileName);
-		List<AlphabeticalString> list= new ListInVector<>();
+		List<AlphabeticalString> list= new Vector<>();
 		try {
 			FileReader fwrite= new FileReader(file);
 			Scanner in= new Scanner(fwrite);
@@ -84,12 +84,12 @@ public class FileOperations {
 		} catch (FileNotFoundException e) {
 			System.out.println("Ficheiro nao encontrado!!!!\n");
 			list.destroy();
-			return new ListInVector<>();
+			return new Vector<>();
 		} catch (IOException e) {
 
 			System.out.println("Erro de escrita!!!!\n");
 			list.destroy();
-			return new ListInVector<>();
+			return new Vector<>();
 		}
 		return list;
 		
