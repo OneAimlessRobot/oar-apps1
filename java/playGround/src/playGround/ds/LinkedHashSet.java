@@ -6,6 +6,7 @@ import playGround.adt.InvIterator;
 import playGround.adt.Iterator;
 import playGround.adt.TwoWayIterator;
 import playGround.adt.collections.Set;
+import playGround.aux.smallAlgorithms.CollectionAlgorithms;
 
 public class LinkedHashSet<T extends Comparable<T>> extends AbstractCollection<T> implements Set<T> {
 
@@ -73,7 +74,7 @@ public class LinkedHashSet<T extends Comparable<T>> extends AbstractCollection<T
 				current.close();
 			}
 
-			this.current=entries[++mainPos].twoWayIterator();	
+			mainPos++;	
 		}
 
 		private void skipOneListBackwards() {
@@ -81,7 +82,7 @@ public class LinkedHashSet<T extends Comparable<T>> extends AbstractCollection<T
 				current.close();
 			}
 
-			this.current=entries[--mainPos].twoWayIterator();
+			mainPos--;
 		}
 		@Override
 		public void close() {
@@ -129,13 +130,21 @@ public class LinkedHashSet<T extends Comparable<T>> extends AbstractCollection<T
 		
 	}
 	private DoubleLinkedList<?>[] entries;
-	private static final int START_SIZE =10;
-	private int VectorSizeForCollision,spineSize,fullBucketThreshold;
-
+	private static final int START_SIZE =1000;
+	private int numOfStoredElems,spineSize;
+	private static final double loadFactorThreshold=0.9;
 	public LinkedHashSet() {
-		VectorSizeForCollision=5;
-		fullBucketThreshold=4;
 		spineSize=START_SIZE;
+		numOfStoredElems=0;
+		init();
+		
+		
+		
+	}
+	private LinkedHashSet(int size,int numOfInserted) {
+
+		spineSize=size;
+		numOfStoredElems=numOfInserted;
 		init();
 		
 		
@@ -143,38 +152,18 @@ public class LinkedHashSet<T extends Comparable<T>> extends AbstractCollection<T
 	}
 	private void init() {
 		
-		entries=(DoubleLinkedList<T>[])new DoubleLinkedList<?>[START_SIZE];
+		entries=(DoubleLinkedList<T>[])new DoubleLinkedList<?>[spineSize];
 
-		for(int i=0;i<START_SIZE;i++) {
+		for(int i=0;i<spineSize;i++) {
 			
 			entries[i]= new DoubleLinkedList<>();
 		}
 		
 		
 	}
-	private void grow() {
-		
-		DoubleLinkedList<T>[] aux= (DoubleLinkedList<T>[]) new DoubleLinkedList<?>[spineSize*2];
-		int i=0,nextSize=spineSize*2;
-
-		fullBucketThreshold*=2;
-		for(;i<spineSize;i++) {
-
-			aux[i]=(DoubleLinkedList<T>) entries[i].copy();
-			entries[i].destroy();
-			entries[i]=null;
-		}
-		for(;i<nextSize;i++) {
-
-			aux[i]=new DoubleLinkedList<T>(); 
-			
-		}
-		spineSize=nextSize;
-		entries=aux;		
-	}
 	private boolean isFull() {
 		
-		return countFullLists()>fullBucketThreshold;
+		return getLoadFactor()<0.75;
 		
 		
 	}
@@ -184,10 +173,11 @@ public class LinkedHashSet<T extends Comparable<T>> extends AbstractCollection<T
 			return;
 		}
 		if(isFull()) {
-			grow();
+			reHash();
 		}
 		int pos= Math.abs(elem.hashCode() % spineSize);
 		((DoubleLinkedList<T>) entries[pos]).add(elem);
+		numOfStoredElems++;
 		
 	}
 
@@ -204,19 +194,19 @@ public class LinkedHashSet<T extends Comparable<T>> extends AbstractCollection<T
 		}
 		return result;
 	}
-	private int countFullLists() {
-		DoubleLinkedList<T>[] entrs= (DoubleLinkedList<T>[]) entries;
-		int result=0;
-		for(int i=0;i<spineSize;i++) {
-			
-			if(entrs[i].size()>VectorSizeForCollision) {
-				result++;
-			}
-		}
-		return result;
-		
-		
-	}
+//	private int countFullLists() {
+//		DoubleLinkedList<T>[] entrs= (DoubleLinkedList<T>[]) entries;
+//		int result=0;
+//		for(int i=0;i<spineSize;i++) {
+//			
+//			if(entrs[i].size()>VectorSizeForCollision) {
+//				result++;
+//			}
+//		}
+//		return result;
+//		
+//		
+//	}
 	@Override
 	public boolean isEmpty() {
 		
@@ -304,6 +294,21 @@ public class LinkedHashSet<T extends Comparable<T>> extends AbstractCollection<T
 		}
 		return collection;
 		
+	}
+	private double getLoadFactor() {
+		
+		return (double)this.numOfStoredElems/(double)this.spineSize;
+	}
+	private void reHash() {
+		LinkedHashSet<T> collection= new LinkedHashSet<>(spineSize*=2,this.numOfStoredElems);
+		Iterator<T> it= this.iterator();
+		while(it.hasNext()) {
+			
+			collection.add(it.next());
+		}
+		this.entries=collection.entries;
+		this.numOfStoredElems=collection.numOfStoredElems;
+		collection=null;
 	}
 
 }

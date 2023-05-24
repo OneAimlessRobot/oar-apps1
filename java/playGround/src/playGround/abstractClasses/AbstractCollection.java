@@ -40,8 +40,7 @@ public abstract class AbstractCollection<T> implements Collection<T> {
 			return "[ ]";
 		}
 		String str="[ ";
-		TwoWayIterator<T> it;
-			it = twoWayIterator();
+		Iterator<T> it = iterator();
 			while(it.hasNext()) {
 				str+= it.next().toString()+" ";
 			}
