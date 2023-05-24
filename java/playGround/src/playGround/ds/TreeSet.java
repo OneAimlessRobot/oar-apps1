@@ -183,13 +183,13 @@ public class TreeSet<T extends Comparable<T>>  extends AbstractCollection<T> imp
 	}
 	@Override
 	public void add(T elem) {
-	
+		if(exists(elem)) {
+			return;
+		}
 		if(isEmpty()) {
 			root=new TreeNode<>(elem,null,null);
 		}
-		else if(!exists(elem)) {
 			addRec(elem,root);
-		}
 		
 	}
 	private void addRec(T elem, TreeNode<T> aux) {

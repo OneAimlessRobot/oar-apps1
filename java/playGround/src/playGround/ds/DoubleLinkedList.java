@@ -264,26 +264,6 @@ public class DoubleLinkedList<T> implements List<T> {
 		}
 		
 	}
-	
-	public String toString() {
-
-		if(isEmpty()) {
-			
-
-			return "[ ]";
-		}
-		String str="[ ";
-		TwoWayIterator<T> it;
-			it = this.twoWayIterator();
-			while(it.hasNext()) {
-				str+= it.next().toString()+" ";
-			}
-			str+="]";
-			it.close();
-		return str;
-		
-		
-	}
 
 	@Override
 	public Iterator<T> iterator() {

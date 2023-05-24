@@ -180,11 +180,11 @@ public class LinkedHashSet<T extends Comparable<T>> extends AbstractCollection<T
 	}
 	@Override
 	public void add(T elem) {
-		if(isFull()) {
-			grow();
-		}
 		if(exists(elem)) {
 			return;
+		}
+		if(isFull()) {
+			grow();
 		}
 		int pos= Math.abs(elem.hashCode() % spineSize);
 		((DoubleLinkedList<T>) entries[pos]).add(elem);
