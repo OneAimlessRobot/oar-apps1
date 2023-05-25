@@ -129,95 +129,69 @@ public class VectorHashSet<T extends Comparable<T>> extends AbstractCollection<T
 		
 	}
 	private Vector<?>[] entries;
-	private static final int START_SIZE =10;
-	private int VectorSizeForCollision,spineSize,fullBucketThreshold;
+	private static final double LOAD_FACTOR=0.75;//(filas/numeroElems)
+	private static final int INIT_SPINE_SIZE =1000;
+	private static final int GROW_FACTOR=2;
+	private int numOfStoredElems,spineSize;
 	public VectorHashSet() {
-		VectorSizeForCollision=5;
-		fullBucketThreshold=4;
-		spineSize=START_SIZE;
+		spineSize=INIT_SPINE_SIZE;
+		numOfStoredElems=0;
+		init();
+		
+		
+		
+	}private VectorHashSet(int size,int numOfInserted) {
+
+		spineSize=size;
+		numOfStoredElems=numOfInserted;
 		init();
 		
 		
 		
 	}
-	private void init() {
+private void init() {
 		
-		entries=new Vector<?>[START_SIZE];
+		entries=(Vector<T>[])new Vector<?>[spineSize];
 
-		for(int i=0;i<START_SIZE;i++) {
+		for(int i=0;i<spineSize;i++) {
 			
 			entries[i]= new Vector<>();
 		}
 		
 		
 	}
-	private void grow() {
-		
-		Vector<T>[] aux= (Vector<T>[]) new Vector<?>[spineSize*2];
-		int i=0,nextSize=spineSize*2;
-		fullBucketThreshold*=2;
-		for(;i<spineSize;i++) {
-			
-			aux[i]=(Vector<T>) entries[i].copy();
-			entries[i].destroy();
-			entries[i]=null;
-		}
-		for(;i<nextSize;i++) {
-
-			aux[i]=new Vector<>(); 
-			
-		}
-		spineSize=nextSize;
-		entries=aux;		
-	}
-	private boolean isFull() {
-		
-		return countFullLists()>fullBucketThreshold;
-		
-		
-	}
-	@Override
-	public void add(T elem) {
-		if(isFull()) {
-			grow();
-		}
-		if(exists(elem)) {
-			return;
-		}
-		int pos= Math.abs(elem.hashCode() % spineSize);
-
-		Vector<T> l=((Vector<T>) entries[pos]);
-		l.add(elem);
-		
-	}
-
-	@Override
-	public int size() {
-
-		int result=0;
-		for(int i=0;i<spineSize;i++) {
-			
-			Vector<T> cur= ((Vector<T>) entries[i]);
-			
-			result+=cur.size();
-			
-		}
-		return result;
-	}
+private boolean isFull() {
 	
-	private int countFullLists() {
-		Vector<T>[] entrs= (Vector<T>[]) entries;
-		int result=0;
-		for(int i=0;i<spineSize;i++) {
-			
-			if(entrs[i].size()>VectorSizeForCollision) {
-				result++;
-			}
-		}
-		return result;
-		
-		
+	return getLoadFactor()<LOAD_FACTOR;
+	
+	
+}
+private double getLoadFactor() {
+	
+	return (double)spineSize/(double)numOfStoredElems;
+}
+@Override
+public void add(T elem) {
+	if(exists(elem)) {
+		return;
 	}
+	if(isFull()) {
+		reHash();
+	}
+	int pos= Math.abs(elem.hashCode() % spineSize);
+	((Vector<T>) entries[pos]).add(elem);
+	numOfStoredElems++;
+	
+}
+private void addNoChecks(T elem) {
+	int pos= Math.abs(elem.hashCode() % spineSize);
+	((Vector<T>) entries[pos]).add(elem);
+	
+}
+private int computeElemPos(T elem) {
+
+	return Math.abs(elem.hashCode() % spineSize);
+}
 	@Override
 	public boolean isEmpty() {
 		
@@ -260,7 +234,24 @@ public class VectorHashSet<T extends Comparable<T>> extends AbstractCollection<T
 		}
 		}
 	}
+	private void reHash() {
+	    int oldSize = spineSize;
+	    spineSize *= GROW_FACTOR;
+	    VectorHashSet<T> set = new VectorHashSet<>(spineSize, numOfStoredElems);
 
+	    for (int i = 0; i < oldSize; i++) {
+	        Vector<T> list = (Vector<T>) entries[i];
+	        if (!list.isEmpty()) {
+	            int pos = computeElemPos(list.get(0));
+	            set.entries[pos]=list;
+	            
+	        }
+	    }
+
+	    entries = set.entries;
+	    set.entries = null;
+	    set = null;
+	}
 	@Override
 	public void remove() {
 		// TODO Auto-generated method stub
@@ -304,6 +295,11 @@ public class VectorHashSet<T extends Comparable<T>> extends AbstractCollection<T
 		}
 		return collection;
 		
+	}
+
+	@Override
+	public int size() {
+		return numOfStoredElems;
 	}
 
 }

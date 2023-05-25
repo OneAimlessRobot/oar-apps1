@@ -17,24 +17,11 @@ public class DoubleLinkedList<T> implements List<T> {
 		
 		public DLLIterator(Node<T> initNode) {
 			next= initNode;
-			init();
-			while(initNode.getNext()!=null) {
-				
-				initNode=initNode.getNext();
-				
-			}
 			status=1;
 			
 			
 			
 		}
-//		public void init() throws CollectionEmptyException {
-//			if(smallest==null) {
-//				throw new CollectionEmptyException();
-//			}
-//		}
-		public void init(){
-	}
 		@Override
 		public T next() {
 			if(status==1) {
@@ -92,12 +79,8 @@ public class DoubleLinkedList<T> implements List<T> {
 		}
 		@Override
 		public void close() {
-//			next.destroy();
-//			next=null;
-//			largest.destroy();
-//			largest=null;
-//			smallest.destroy();
-//			smallest=null;
+			next=null;
+			smallest=null;
 //			
 		}
 		
@@ -158,7 +141,7 @@ public class DoubleLinkedList<T> implements List<T> {
 	}
 	
 	private Node<T> head,trail;
-	private int length;
+	int length;
 	//O valor da cabeça nao importa
 	public DoubleLinkedList() {
 		
@@ -278,6 +261,25 @@ public class DoubleLinkedList<T> implements List<T> {
 	public TwoWayIterator<T> twoWayIterator() {
 		return new DLLIterator<T>(head);
 	}
+	public String toString() {
+
+		if(isEmpty()) {
+			
+
+			return "[ ]";
+		}
+		String str="[ ";
+		Iterator<T> it = iterator();
+			while(it.hasNext()) {
+				str+= it.next().toString()+" ";
+			}
+			str+="]";
+			it.close();
+		return str;
+		
+		
+	}
+
 	@Override
 	public void invert() {
 		
@@ -445,6 +447,17 @@ public class DoubleLinkedList<T> implements List<T> {
 			collection.add(it.next());
 		}
 		return collection;
+		
+	}
+	void append(DoubleLinkedList<T> doubleLinkedList) {
+		if(isEmpty()) {
+			this.head=doubleLinkedList.head;
+		}
+		else{
+			this.trail.setNext(doubleLinkedList.head);
+		}
+		this.trail=doubleLinkedList.trail;
+		this.length+=doubleLinkedList.size();
 		
 	}
 	

@@ -7,14 +7,14 @@ import playGround.adt.Iterator;
 import playGround.adt.TwoWayIterator;
 import playGround.adt.collections.MySet;
 
-public class LinkedHashSet<T extends Comparable<T>> extends AbstractCollection<T> implements MySet<T> {
+public class MyHashSet<T extends Comparable<T>> extends AbstractCollection<T> implements MySet<T> {
 
 	private static class LinkedHashSetIterator<T extends Comparable<T>> implements TwoWayIterator<T>{
 		
 		private int mainPos,first,last;
 		private TwoWayIterator<T> current;
 		private DoubleLinkedList<T>[] entries;
-		public LinkedHashSetIterator(LinkedHashSet<T> set){
+		public LinkedHashSetIterator(MyHashSet<T> set){
 			
 			this.entries=(DoubleLinkedList<T>[]) set.entries;
 			fullForward();
@@ -129,11 +129,11 @@ public class LinkedHashSet<T extends Comparable<T>> extends AbstractCollection<T
 		
 	}
 	private DoubleLinkedList<?>[] entries;
-	private static final int INIT_SPINE_SIZE =1;
-	private static final double LOAD_FACTOR=0.75;
+	private static final double LOAD_FACTOR=0.6;//(filas/numeroElems)
+	private static final int INIT_SPINE_SIZE =3;
 	private static final int GROW_FACTOR=10;
 	private int numOfStoredElems,spineSize;
-	public LinkedHashSet() {
+	public MyHashSet() {
 		spineSize=INIT_SPINE_SIZE;
 		numOfStoredElems=0;
 		init();
@@ -141,7 +141,7 @@ public class LinkedHashSet<T extends Comparable<T>> extends AbstractCollection<T
 		
 		
 	}
-	private LinkedHashSet(int size,int numOfInserted) {
+	private MyHashSet(int size,int numOfInserted) {
 
 		spineSize=size;
 		numOfStoredElems=numOfInserted;
@@ -180,7 +180,15 @@ public class LinkedHashSet<T extends Comparable<T>> extends AbstractCollection<T
 		numOfStoredElems++;
 		
 	}
+	private void addNoChecks(T elem) {
+		int pos= Math.abs(elem.hashCode() % spineSize);
+		((DoubleLinkedList<T>) entries[pos]).add(elem);
+		
+	}
+	private int computeElemPos(T elem,int size) {
 
+		return Math.abs(elem.hashCode() % size);
+	}
 	@Override
 	public int size() {
 
@@ -270,7 +278,7 @@ public class LinkedHashSet<T extends Comparable<T>> extends AbstractCollection<T
 
 	@Override
 	public Collection<T> copy() {
-		Collection<T> collection= new LinkedHashSet<>();
+		Collection<T> collection= new MyHashSet<>();
 		if(isEmpty()) {
 			return collection;
 		}
@@ -285,19 +293,91 @@ public class LinkedHashSet<T extends Comparable<T>> extends AbstractCollection<T
 	private double getLoadFactor() {
 		
 		return (double)spineSize/(double)numOfStoredElems;
+	}public String toString() {
+
+		if(isEmpty()) {
+			
+
+			return "[ ]";
+		}
+		String str="[ ";
+		for(int i=0;i<spineSize;i++) {
+			
+			DoubleLinkedList<T> list= (DoubleLinkedList<T>) entries[i];
+			str+=list.toString()+"\n";
+			
+		}
+		str+=" ]";
+		return str;
+		
+		
 	}
 	private void reHash() {
-		LinkedHashSet<T> collection= new LinkedHashSet<>(spineSize*GROW_FACTOR,this.numOfStoredElems);
-		Iterator<T> it= this.iterator();
-		while(it.hasNext()) {
-			
-			collection.add(it.next());
-		}
-		it.close();
-		entries=collection.entries;
-		spineSize*=GROW_FACTOR;
-		numOfStoredElems=collection.numOfStoredElems;
-		collection=null;
+	    spineSize *= GROW_FACTOR;
+	    MyHashSet<T> newSet= new MyHashSet<>(spineSize,numOfStoredElems);
+	    Iterator<T> it= iterator();
+	    while(it.hasNext()) {
+	    	newSet.addNoChecks(it.next());
+	    }
+
+	    entries = newSet.entries;
+	    newSet.entries=null;
+	    newSet=null;
 	}
 
+//	private void reHash() {
+//		int oldSize=spineSize;
+//	    spineSize *= GROW_FACTOR;
+//	    HashSet<T> set= new HashSet<>(spineSize,numOfStoredElems);
+//	    for(int i=0;i<oldSize;i++) {
+//	    	DoubleLinkedList<T> list=((DoubleLinkedList<T>)entries[i]);
+//	    	if(!list.isEmpty()) {
+//		    	int pos=computeElemPos(list.get(0));
+//		    	if(set.entries[pos].isEmpty()) {
+//	    	((DoubleLinkedList<T>)set.entries[pos]).append(list);
+//		    	}
+//	    	}
+//	    }
+//	    
+//
+//	    entries = set.entries;
+//	    set.entries=null;
+//	    set=null;
+//	}
+//	private boolean checkExistenceOfList(DoubleLinkedList<T> list) {
+//		
+//		for(int i=0;i<spineSize;i++) {
+//			
+//			if(entries[i]==list) {
+//				return true;
+//			}
+//		}
+//		return false;
+//		
+//	}
+//	private void reHash() {
+//	    int oldSize = spineSize;
+//	    spineSize *= GROW_FACTOR;
+//	    MyHashSet<T> set = new MyHashSet<>(spineSize, numOfStoredElems);
+//
+//	    for (int i = 0; i < oldSize; i++) {
+//	        DoubleLinkedList<T> list = (DoubleLinkedList<T>) entries[i];
+//	        if (!list.isEmpty()) {
+//	            int pos = this.computeElemPos(list.get(0),spineSize);
+//	            
+//	            if(set.entries[pos]!=list) {
+//	            	((DoubleLinkedList<T>)set.entries[pos]).append((DoubleLinkedList<T>)list.copy());
+//	            }
+//	            
+//	        }
+//	    }
+//
+//	    entries = set.entries;
+//	    set.entries = null;
+//	    set = null;
+//	}
+//	public boolean intersects(MySet<T> collection) {
+//		// TODO Auto-generated method stub
+//		return false;
+//	}
 }

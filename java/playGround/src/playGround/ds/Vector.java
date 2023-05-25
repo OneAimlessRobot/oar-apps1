@@ -52,7 +52,7 @@ public class Vector<T> extends AbstractCollection<T> implements List<T> {
 		
 	}
 	private T[] arr;
-	private static final int INIT_SIZE=7;
+	private static final int INIT_SIZE=1000;
 	private int currPos,size;
 	//Constroi uma stack vazia
 	public Vector() {
