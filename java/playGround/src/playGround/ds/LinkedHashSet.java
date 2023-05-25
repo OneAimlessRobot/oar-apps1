@@ -6,7 +6,6 @@ import playGround.adt.InvIterator;
 import playGround.adt.Iterator;
 import playGround.adt.TwoWayIterator;
 import playGround.adt.collections.Set;
-import playGround.aux.smallAlgorithms.CollectionAlgorithms;
 
 public class LinkedHashSet<T extends Comparable<T>> extends AbstractCollection<T> implements Set<T> {
 
@@ -130,9 +129,9 @@ public class LinkedHashSet<T extends Comparable<T>> extends AbstractCollection<T
 		
 	}
 	private DoubleLinkedList<?>[] entries;
-	private static final int START_SIZE =1000;
+	private static final int START_SIZE =100;
+	private static final double LOAD_FACTOR=0.7;
 	private int numOfStoredElems,spineSize;
-	private static final double loadFactorThreshold=0.9;
 	public LinkedHashSet() {
 		spineSize=START_SIZE;
 		numOfStoredElems=0;
@@ -163,7 +162,7 @@ public class LinkedHashSet<T extends Comparable<T>> extends AbstractCollection<T
 	}
 	private boolean isFull() {
 		
-		return getLoadFactor()<0.75;
+		return getLoadFactor()<LOAD_FACTOR;
 		
 		
 	}
@@ -194,19 +193,6 @@ public class LinkedHashSet<T extends Comparable<T>> extends AbstractCollection<T
 		}
 		return result;
 	}
-//	private int countFullLists() {
-//		DoubleLinkedList<T>[] entrs= (DoubleLinkedList<T>[]) entries;
-//		int result=0;
-//		for(int i=0;i<spineSize;i++) {
-//			
-//			if(entrs[i].size()>VectorSizeForCollision) {
-//				result++;
-//			}
-//		}
-//		return result;
-//		
-//		
-//	}
 	@Override
 	public boolean isEmpty() {
 		
@@ -297,17 +283,18 @@ public class LinkedHashSet<T extends Comparable<T>> extends AbstractCollection<T
 	}
 	private double getLoadFactor() {
 		
-		return (double)this.numOfStoredElems/(double)this.spineSize;
+		return (double)spineSize/(double)numOfStoredElems;
 	}
 	private void reHash() {
-		LinkedHashSet<T> collection= new LinkedHashSet<>(spineSize*=2,this.numOfStoredElems);
+		LinkedHashSet<T> collection= new LinkedHashSet<>(spineSize*2,this.numOfStoredElems);
 		Iterator<T> it= this.iterator();
 		while(it.hasNext()) {
 			
 			collection.add(it.next());
 		}
-		this.entries=collection.entries;
-		this.numOfStoredElems=collection.numOfStoredElems;
+		entries=collection.entries;
+		spineSize*=2;
+		numOfStoredElems=collection.numOfStoredElems;
 		collection=null;
 	}
 
