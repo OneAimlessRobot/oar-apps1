@@ -130,7 +130,7 @@ public class MyHashSet<T extends Comparable<T>> extends AbstractCollection<T> im
 	}
 	private DoubleLinkedList<?>[] entries;
 	private static final double LOAD_FACTOR=0.6;//(filas/numeroElems)
-	private static final int INIT_SPINE_SIZE =3;
+	private static final int INIT_SPINE_SIZE =100;
 	private static final int GROW_FACTOR=10;
 	private int numOfStoredElems,spineSize;
 	public MyHashSet() {
@@ -172,12 +172,13 @@ public class MyHashSet<T extends Comparable<T>> extends AbstractCollection<T> im
 		if(exists(elem)) {
 			return;
 		}
-		if(isFull()) {
-			reHash();
-		}
 		int pos= Math.abs(elem.hashCode() % spineSize);
 		((DoubleLinkedList<T>) entries[pos]).add(elem);
 		numOfStoredElems++;
+
+		if(isFull()) {
+			reHash();
+		}
 		
 	}
 	private void addNoChecks(T elem) {

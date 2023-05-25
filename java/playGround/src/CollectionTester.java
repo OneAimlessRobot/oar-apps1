@@ -9,7 +9,7 @@ public class CollectionTester {
 	private static final String PATH="/home/k/oar-apps1/java/playGround/src/testStuff/stringFiles/hashTableStrings.txt";
 
 	private static final String HEADER_PATH="/home/k/oar-apps1/java/playGround/src/playGround/res/HEADER";
-	private static final int DEFAULT_SIZE=15000;
+	private static final int DEFAULT_SIZE=9999;
 	public static void main(String[] args){
 		int intValue=DEFAULT_SIZE;
 		if (args.length > 0) {
