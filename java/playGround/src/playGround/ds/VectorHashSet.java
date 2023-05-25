@@ -5,9 +5,9 @@ import playGround.adt.Collection;
 import playGround.adt.InvIterator;
 import playGround.adt.Iterator;
 import playGround.adt.TwoWayIterator;
-import playGround.adt.collections.Set;
+import playGround.adt.collections.MySet;
 
-public class VectorHashSet<T extends Comparable<T>> extends AbstractCollection<T> implements Set<T> {
+public class VectorHashSet<T extends Comparable<T>> extends AbstractCollection<T> implements MySet<T> {
 
 	private static class VectorHashSetIterator<T extends Comparable<T>> implements TwoWayIterator<T>{
 		

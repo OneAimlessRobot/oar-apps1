@@ -35,6 +35,28 @@ public class FileOperations {
 		
 	}
 	
+	public static void catFile(String fileName) {
+		
+
+		File file= new File(fileName);
+		try {
+			FileReader fwrite= new FileReader(file);
+			Scanner in= new Scanner(fwrite);
+			while(in.hasNext()) {
+
+				String line= in.nextLine();
+				System.out.println(line);
+			}
+			fwrite.close();
+			in.close();
+		} catch (FileNotFoundException e) {
+			System.out.println("Ficheiro nao encontrado!!!!\n");
+		} catch (IOException e) {
+
+			System.out.println("Erro de escrita!!!!\n");
+		}
+		
+	}
 	
 	
 	public static List<Integer> loadFileIntoList(String fileName){

@@ -1,7 +1,7 @@
 package playGround.aux.smallAlgorithms;
 import playGround.adt.Iterator;
 import playGround.adt.collections.List;
-import playGround.adt.collections.Set;
+import playGround.adt.collections.MySet;
 import playGround.adt.exceptions.CollectionEmptyException;
 import playGround.ds.DoubleLinkedList;
 import playGround.ds.Vector;
@@ -63,9 +63,9 @@ public class CollectionAlgorithms {
 		
 		
 	}
-	public static <T extends Comparable<T>> Set<T> toTSet(List<T> arr) throws CollectionEmptyException{
+	public static <T extends Comparable<T>> MySet<T> toTSet(List<T> arr) throws CollectionEmptyException{
 		
-		Set<T> set= new TreeSet<>();
+		MySet<T> set= new TreeSet<>();
 		Iterator<T> it= arr.iterator();
 		while(it.hasNext()) {
 			

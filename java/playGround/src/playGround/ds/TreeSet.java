@@ -6,11 +6,11 @@ import playGround.adt.InvIterator;
 import playGround.adt.Iterator;
 import playGround.adt.Stack;
 import playGround.adt.TwoWayIterator;
-import playGround.adt.collections.Set;
+import playGround.adt.collections.MySet;
 import playGround.adt.exceptions.CollectionEmptyException;
 import playGround.adt.exceptions.StackEmptyException;
 
-public class TreeSet<T extends Comparable<T>>  extends AbstractCollection<T> implements Set<T>{
+public class TreeSet<T extends Comparable<T>>  extends AbstractCollection<T> implements MySet<T>{
 
 	private static class TreeSetIterator<T extends Comparable<T>> implements TwoWayIterator<T>{
 

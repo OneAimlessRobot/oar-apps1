@@ -5,9 +5,9 @@ import playGround.adt.Collection;
 import playGround.adt.InvIterator;
 import playGround.adt.Iterator;
 import playGround.adt.TwoWayIterator;
-import playGround.adt.collections.Set;
+import playGround.adt.collections.MySet;
 
-public class LinkedHashSet<T extends Comparable<T>> extends AbstractCollection<T> implements Set<T> {
+public class LinkedHashSet<T extends Comparable<T>> extends AbstractCollection<T> implements MySet<T> {
 
 	private static class LinkedHashSetIterator<T extends Comparable<T>> implements TwoWayIterator<T>{
 		
@@ -129,11 +129,12 @@ public class LinkedHashSet<T extends Comparable<T>> extends AbstractCollection<T
 		
 	}
 	private DoubleLinkedList<?>[] entries;
-	private static final int START_SIZE =100;
-	private static final double LOAD_FACTOR=0.7;
+	private static final int INIT_SPINE_SIZE =1;
+	private static final double LOAD_FACTOR=0.75;
+	private static final int GROW_FACTOR=10;
 	private int numOfStoredElems,spineSize;
 	public LinkedHashSet() {
-		spineSize=START_SIZE;
+		spineSize=INIT_SPINE_SIZE;
 		numOfStoredElems=0;
 		init();
 		
@@ -286,14 +287,15 @@ public class LinkedHashSet<T extends Comparable<T>> extends AbstractCollection<T
 		return (double)spineSize/(double)numOfStoredElems;
 	}
 	private void reHash() {
-		LinkedHashSet<T> collection= new LinkedHashSet<>(spineSize*2,this.numOfStoredElems);
+		LinkedHashSet<T> collection= new LinkedHashSet<>(spineSize*GROW_FACTOR,this.numOfStoredElems);
 		Iterator<T> it= this.iterator();
 		while(it.hasNext()) {
 			
 			collection.add(it.next());
 		}
+		it.close();
 		entries=collection.entries;
-		spineSize*=2;
+		spineSize*=GROW_FACTOR;
 		numOfStoredElems=collection.numOfStoredElems;
 		collection=null;
 	}
