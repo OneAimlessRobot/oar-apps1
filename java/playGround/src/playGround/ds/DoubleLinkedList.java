@@ -12,7 +12,7 @@ public class DoubleLinkedList<T> implements List<T> {
 
 	private static class DLLIterator<T> implements TwoWayIterator<T>{
 
-		private Node<T> next,smallest;
+		private Node<T> next;
 		private int status;
 		
 		public DLLIterator(Node<T> initNode) {
@@ -80,7 +80,6 @@ public class DoubleLinkedList<T> implements List<T> {
 		@Override
 		public void close() {
 			next=null;
-			smallest=null;
 //			
 		}
 		
@@ -446,11 +445,20 @@ public class DoubleLinkedList<T> implements List<T> {
 	}
 	@Override
 	public int getIndex(T elem) {
-		
+		if(isEmpty()) {
+			return -1;
+		}
 		Node<T> node=this.head;
 		int i=0;
-		while(node.getNext()!=null&&!node.getElem().equals(elem)) {i++;}
+		while(node!=null&&!node.getElem().equals(elem)) {node=node.getNext();i++;}
+		if(node==null) {
+			return -1;
+		}
 		return i;
+	}
+	@Override
+	public boolean contains(T elem) {
+		return getIndex(elem)!=-1;
 	}
 	
 	

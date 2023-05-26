@@ -114,7 +114,9 @@ public class TreeSet<T extends Comparable<T>>  extends AbstractCollection<T> imp
 		@Override
 		public void close() {
 			next=null;
+			if(trail!=null) {
 			trail.destroy();
+			}
 			trail=null;
 			root=null;
 			smallest=null;
@@ -183,7 +185,7 @@ public class TreeSet<T extends Comparable<T>>  extends AbstractCollection<T> imp
 	}
 	@Override
 	public void add(T elem) {
-		if(exists(elem)) {
+		if(contains(elem)) {
 			return;
 		}
 		if(isEmpty()) {
@@ -311,7 +313,8 @@ public class TreeSet<T extends Comparable<T>>  extends AbstractCollection<T> imp
 		
 	}
 	
-	private boolean exists(T elem) {
+	@Override
+	public  boolean contains(T elem) {
 		
 		if(isEmpty()) {
 			return false;

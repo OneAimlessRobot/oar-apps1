@@ -57,7 +57,23 @@ public class FileOperations {
 		}
 		
 	}
-	
+
+	public static void printToFile(String fileName,String data) {
+		
+
+		File file= new File(fileName);
+		try {
+			FileWriter fwrite= new FileWriter(file,true);
+			fwrite.append(data);
+			fwrite.close();
+		} catch (FileNotFoundException e) {
+			System.out.println("Ficheiro nao encontrado!!!!\n");
+		} catch (IOException e) {
+
+			System.out.println("Erro de escrita!!!!\n");
+		}
+		
+	}
 	
 	public static List<Integer> loadFileIntoList(String fileName){
 		

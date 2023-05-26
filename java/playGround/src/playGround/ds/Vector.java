@@ -1,13 +1,13 @@
 package playGround.ds;
 
-import playGround.abstractClasses.AbstractCollection;
+import playGround.abstractClasses.AbstractList;
 import playGround.adt.Collection;
 import playGround.adt.InvIterator;
 import playGround.adt.Iterator;
 import playGround.adt.TwoWayIterator;
 import playGround.adt.collections.List;
 
-public class Vector<T> extends AbstractCollection<T> implements List<T> {
+public class Vector<T> extends AbstractList<T> implements List<T> {
 
 	private static class VectorIterator<T> implements TwoWayIterator<T>{
 		
@@ -210,8 +210,18 @@ public class Vector<T> extends AbstractCollection<T> implements List<T> {
 	}
 	@Override
 	public int getIndex(T elem) {
+		if(isEmpty()) {
+			return -1;
+		}
 		int i=0;
 		for(;i<currPos&&!get(i).equals(elem);i++);
+		if(arr[i]==null) {
+			return -1;
+		}
 		return i;
+	}
+	@Override
+	public boolean contains(T elem) {
+		return getIndex(elem)!=-1;
 	}
 }

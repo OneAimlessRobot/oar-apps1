@@ -3,13 +3,14 @@ package playGround.ds;
 import playGround.adt.collections.List;
 import playGround.adt.exceptions.StackEmptyException;
 import playGround.abstractClasses.AbstractCollection;
+import playGround.abstractClasses.AbstractList;
 import playGround.adt.Collection;
 import playGround.adt.InvIterator;
 import playGround.adt.Iterator;
 import playGround.adt.Stack;
 import playGround.adt.TwoWayIterator;
 //TODO: Acrescentar variaveis que indiquem final de iteraçao e um rewind para as mudar ( e mudalas no next)
-public class LinkedList<T> extends AbstractCollection<T> implements List<T> {
+public class LinkedList<T> extends AbstractList<T> implements List<T> {
 
 	private static class LLIterator<T> implements Iterator<T>{
 
@@ -354,16 +355,23 @@ public class LinkedList<T> extends AbstractCollection<T> implements List<T> {
 		return collection;
 		
 	}
-
 	@Override
 	public int getIndex(T elem) {
-		
+		if(isEmpty()) {
+			return -1;
+		}
 		Node<T> node=this.head;
 		int i=0;
-		while(node.getNext()!=null&&!node.getElem().equals(elem)) {i++;}
+		while(node!=null&&!node.getElem().equals(elem)) {i++;}
+		if(node==null) {
+			return -1;
+		}
 		return i;
 	}
-	
+	@Override
+	public boolean contains(T elem) {
+		return getIndex(elem)!=-1;
+	}
 	
 	
 	

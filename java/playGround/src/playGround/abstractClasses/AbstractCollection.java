@@ -4,6 +4,8 @@ import playGround.adt.Collection;
 import playGround.adt.InvIterator;
 import playGround.adt.Iterator;
 import playGround.adt.TwoWayIterator;
+import playGround.adt.collections.List;
+import playGround.adt.exceptions.CollectionEmptyException;
 
 public abstract class AbstractCollection<T> implements Collection<T> {
 
@@ -50,5 +52,8 @@ public abstract class AbstractCollection<T> implements Collection<T> {
 		
 		
 	}
+	
+	public abstract void remove(T elem);
+	
 
 }

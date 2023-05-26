@@ -129,9 +129,9 @@ public class MyHashSet<T> extends AbstractCollection<T> implements MySet<T> {
 		
 	}
 	private DoubleLinkedList<?>[] entries;
-	private static final double LOAD_FACTOR=0.5;//(filas/numeroElems)
-	private static final int INIT_SPINE_SIZE =3;
-	private static final int GROW_FACTOR=20;
+	private static final double LOAD_FACTOR=0.75;//(filas/numeroElems)
+	private static final int INIT_SPINE_SIZE =64;
+	private static final int GROW_FACTOR=2;
 	private int numOfStoredElems,spineSize;
 	public MyHashSet() {
 		spineSize=INIT_SPINE_SIZE;
@@ -169,7 +169,7 @@ public class MyHashSet<T> extends AbstractCollection<T> implements MySet<T> {
 	}
 	@Override
 	public void add(T elem) {
-		if(exists(elem)) {
+		if(contains(elem)) {
 			return;
 		}
 		int pos= computeElemPos(elem,spineSize);
@@ -234,29 +234,43 @@ public class MyHashSet<T> extends AbstractCollection<T> implements MySet<T> {
 		// TODO Auto-generated method stub
 		
 	}
-
-
-	private boolean exists(T elem) {
+	@Override
+	public boolean contains(T elem) {
 
 			int pos= Math.abs(elem.hashCode() % spineSize);
-			DoubleLinkedList<T> list= ((DoubleLinkedList<T>) entries[pos]);
-			if(list.isEmpty()) {
-				list=null;
+			DoubleLinkedList<T> col= ((DoubleLinkedList<T>)entries[pos]);
+			if(col.isEmpty()) {
+				col=null;
 				return false;
 			}
-			Iterator<T> it = list.iterator();
-				while(it.hasNext()) {
-					if(it.next().equals(elem)) {
-						it.close();
-						list=null;
-						return true;
-					}
-				}
-				it.close();
-			
-			
-			return false;
+			boolean contains=col.contains(elem);			
+
+			return contains;
 	}
+
+//
+//	@Override
+//	public boolean contains(T elem) {
+//
+//			int pos= Math.abs(elem.hashCode() % spineSize);
+//			DoubleLinkedList<T> list= ((DoubleLinkedList<T>) entries[pos]);
+//			if(list.isEmpty()) {
+//				list=null;
+//				return false;
+//			}
+//			Iterator<T> it = list.iterator();
+//				while(it.hasNext()) {
+//					if(it.next().equals(elem)) {
+//						it.close();
+//						list=null;
+//						return true;
+//					}
+//				}
+//				it.close();
+//			
+//			
+//			return false;
+//	}
 
 	@Override
 	public Collection<T> copy() {
@@ -291,7 +305,7 @@ public class MyHashSet<T> extends AbstractCollection<T> implements MySet<T> {
 	}
 	@Override
 	public void remove(T elem) {
-		if(exists(elem)) {
+		if(contains(elem)) {
 			
 			int pos=computeElemPos(elem,spineSize);
 			DoubleLinkedList<T> list=(DoubleLinkedList<T>) this.entries[pos];

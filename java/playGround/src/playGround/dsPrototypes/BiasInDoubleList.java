@@ -1,4 +1,4 @@
-package playGround.ds;
+package playGround.dsPrototypes;
 import playGround.adt.Bias;
 import playGround.adt.exceptions.StackEmptyException;
 

@@ -12,16 +12,18 @@ public interface Collection<T> {
 	
 	boolean isEmpty();
 	
-	TwoWayIterator<T> twoWayIterator() throws CollectionEmptyException;
+	TwoWayIterator<T> twoWayIterator();
 
-	Iterator<T> iterator() throws CollectionEmptyException;
+	Iterator<T> iterator();
 	
-	InvIterator<T> backwardIterator() throws CollectionEmptyException;
+	InvIterator<T> backwardIterator();
 	
 	String toString();
 	
 	void destroy();
 	
 	void remove();
+	
+	boolean contains(T elem);
 	
 }

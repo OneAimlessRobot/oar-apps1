@@ -1,5 +1,6 @@
-package playGround.ds;
+package playGround.dsPrototypes;
 
+import playGround.abstractClasses.AbstractSet;
 import playGround.adt.Collection;
 import playGround.adt.InvIterator;
 import playGround.adt.Iterator;
@@ -7,8 +8,9 @@ import playGround.adt.Stack;
 import playGround.adt.TwoWayIterator;
 import playGround.adt.collections.MySet;
 import playGround.adt.exceptions.StackEmptyException;
+import playGround.ds.StackInArray;
 
-public class TreeSetBeta<T extends Comparable<T>> implements MySet<T>{
+public class TreeSetBeta<T extends Comparable<T>> extends AbstractSet<T> implements MySet<T>{
 
 	private static class TreeSetIterator<T extends Comparable<T>> implements TwoWayIterator<T>{
 
@@ -232,7 +234,7 @@ public class TreeSetBeta<T extends Comparable<T>> implements MySet<T>{
 		if(isEmpty()) {
 			root=new TreeNode<>(elem,null,null);
 		}
-		else if(!exists(elem)) {
+		else if(!contains(elem)) {
 			addRec(elem,root);
 		}
 		
@@ -375,7 +377,8 @@ public class TreeSetBeta<T extends Comparable<T>> implements MySet<T>{
 		it.close();
 		return str;
 	}
-	private boolean exists(T elem) {
+	@Override
+	public boolean contains(T elem) {
 		
 		if(isEmpty()) {
 			return false;

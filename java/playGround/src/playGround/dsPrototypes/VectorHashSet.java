@@ -1,4 +1,4 @@
-package playGround.ds;
+package playGround.dsPrototypes;
 
 import playGround.abstractClasses.AbstractCollection;
 import playGround.adt.Collection;
@@ -6,6 +6,7 @@ import playGround.adt.InvIterator;
 import playGround.adt.Iterator;
 import playGround.adt.TwoWayIterator;
 import playGround.adt.collections.MySet;
+import playGround.ds.Vector;
 
 public class VectorHashSet<T> extends AbstractCollection<T> implements MySet<T> {
 
@@ -172,7 +173,7 @@ private double getLoadFactor() {
 }
 @Override
 public void add(T elem) {
-	if(exists(elem)) {
+	if(contains(elem)) {
 		return;
 	}
 	if(isFull()) {
@@ -258,8 +259,8 @@ private int computeElemPos(T elem,int size) {
 		
 	}
 
-
-	private boolean exists(T elem) {
+	@Override
+	public boolean contains(T elem) {
 
 			int pos= Math.abs(elem.hashCode() % spineSize);
 			Vector<T> list= ((Vector<T>) entries[pos]);
@@ -304,7 +305,7 @@ private int computeElemPos(T elem,int size) {
 
 	@Override
 	public void remove(T elem) {
-		if(exists(elem)) {
+		if(contains(elem)) {
 			
 			int pos=computeElemPos(elem,spineSize);
 			Vector<T> list=(Vector<T>) this.entries[pos];
