@@ -295,9 +295,8 @@ public class MyHashSet<T> extends AbstractCollection<T> implements MySet<T> {
 			
 			int pos=computeElemPos(elem,spineSize);
 			DoubleLinkedList<T> list=(DoubleLinkedList<T>) this.entries[pos];
-			Iterator<T> it=list.iterator();
-			while(it.hasNext()&&!elem.equals(it.next()));
 			list.remove(list.getIndex(elem));
+			list=null;
 			numOfStoredElems--;
 		}
 		
