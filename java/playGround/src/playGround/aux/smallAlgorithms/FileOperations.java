@@ -89,16 +89,16 @@ public class FileOperations {
 	}
 	
 
-	public static List<AlphabeticalString> loadStrFileIntoList(String fileName){
+	public static List<String> loadStrFileIntoList(String fileName){
 		
 		File file= new File(fileName);
-		List<AlphabeticalString> list= new Vector<>();
+		List<String> list= new Vector<>();
 		try {
 			FileReader fwrite= new FileReader(file);
 			Scanner in= new Scanner(fwrite);
 			while(in.hasNext()) {
 
-				AlphabeticalString value= new AlphabeticalString(in.next());
+				String value= in.next();
 				list.add(value);
 			}
 			fwrite.close();

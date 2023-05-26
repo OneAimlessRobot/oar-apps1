@@ -318,11 +318,14 @@ public class LinkedList<T> extends AbstractCollection<T> implements List<T> {
 			return;
 		
 		}
-		else if(index <0) {
+		if(length==1) {
+			removeFirst();
+		}
+		else if(index <=0) {
 			
 			removeFirst();
 		}
-		else if(index >=length) {
+		else if(index >=length-1) {
 
 			removeLast();
 		}
@@ -350,6 +353,15 @@ public class LinkedList<T> extends AbstractCollection<T> implements List<T> {
 		}
 		return collection;
 		
+	}
+
+	@Override
+	public int getIndex(T elem) {
+		
+		Node<T> node=this.head;
+		int i=0;
+		while(node.getNext()!=null&&!node.getElem().equals(elem)) {i++;}
+		return i;
 	}
 	
 	

@@ -413,4 +413,9 @@ public class TreeSetBeta<T extends Comparable<T>> implements MySet<T>{
 		}
 		return collection;
 	}
+	@Override
+	public void remove(T elem) {
+		// TODO Auto-generated method stub
+		
+	}
 }

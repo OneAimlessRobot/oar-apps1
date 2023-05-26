@@ -52,7 +52,7 @@ public class Vector<T> extends AbstractCollection<T> implements List<T> {
 		
 	}
 	private T[] arr;
-	private static final int INIT_SIZE=1000;
+	private static final int INIT_SIZE=10;
 	private int currPos,size;
 	//Constroi uma stack vazia
 	public Vector() {
@@ -154,46 +154,15 @@ public class Vector<T> extends AbstractCollection<T> implements List<T> {
 	}
 	@Override
 	public void add(T elem, int index) {
+		if(index<0||index>currPos-1) {
+			return;
+		}
 		if(isFull()) {
-			
 			grow();
 		}
-
 		currPos++;
-		if(index <=0) {
-			
-			addFirst(elem);
-		}
-		else if(index >=currPos) {
-		
-			addLast(elem);
-		}
-		else {
-			
-			addMiddle(elem,index);
-		
-		}
-		
-	}
-	private void addFirst(T elem) {
-		int i=this.currPos-1;
-		for(;i>0;i--) {
-			
-			arr[i+1]=arr[i];
-			
-			
-		}
-		arr[0]=elem;
-		
-	}
-	private void addLast(T elem) {
-		arr[currPos]=elem;
-		
-		
-	}
-	private void addMiddle(T elem, int index) {
-		int i=this.currPos-1;
-		for(;i>index;i--) {
+		int i=this.currPos;
+		for(;i>=index;i--) {
 			
 			arr[i+1]=arr[i];
 			
@@ -201,66 +170,23 @@ public class Vector<T> extends AbstractCollection<T> implements List<T> {
 		}
 		arr[index]=elem;
 	}
-	private void removeFirst() {
-		
-		for(int i=0;i<currPos-1;i++) {
-			arr[i]=arr[i+1];
-			
-		}
-		
-	}
-	private void removeLast() {
-		arr[currPos]=null;
-	}
-	private void removeMiddle(int index) {
-		for(int i=index;i<currPos-1;i++) {
-			arr[i]=arr[i+1];
-			
-		}
-		
-	}
+
 	@Override
 	public void remove(int index) {
+		if(index<0||index>currPos) {
+			return;
+		}
 		if(isEmpty()) {
 		
 			return;
 		
 		}
+		arr[index]=null;
+		for(int i=index;i<=currPos;i++) {
+			arr[i]=arr[i+1];
+			
+		}
 		currPos--;
-		if(index <0) {
-			
-			removeFirst();
-		}
-		else if(index >=currPos) {
-
-			removeLast();
-		}
-		else {
-			
-			removeMiddle(index);
-		
-		}
-	}
-	
-	public String toString() {
-		
-		if(this.isEmpty()) {
-			
-			return "[ ]";
-		}
-			
-		String str="[ ";
-			Iterator<T> it = this.iterator();
-			while(it.hasNext()) {
-				
-				str+= it.next().toString() + " ";
-				
-				
-			}
-			str+="]";
-			it.close();
-		return str;
-				
 		
 	}
 	@Override
@@ -281,5 +207,11 @@ public class Vector<T> extends AbstractCollection<T> implements List<T> {
 		}
 		return collection;
 		
+	}
+	@Override
+	public int getIndex(T elem) {
+		int i=0;
+		for(;i<currPos&&!get(i).equals(elem);i++);
+		return i;
 	}
 }

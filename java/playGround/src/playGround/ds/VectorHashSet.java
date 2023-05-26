@@ -7,9 +7,9 @@ import playGround.adt.Iterator;
 import playGround.adt.TwoWayIterator;
 import playGround.adt.collections.MySet;
 
-public class VectorHashSet<T extends Comparable<T>> extends AbstractCollection<T> implements MySet<T> {
+public class VectorHashSet<T> extends AbstractCollection<T> implements MySet<T> {
 
-	private static class VectorHashSetIterator<T extends Comparable<T>> implements TwoWayIterator<T>{
+	private static class VectorHashSetIterator<T> implements TwoWayIterator<T>{
 		
 		private int mainPos,first,last;
 		private TwoWayIterator<T> current;
@@ -188,9 +188,9 @@ private void addNoChecks(T elem) {
 	((Vector<T>) entries[pos]).add(elem);
 	
 }
-private int computeElemPos(T elem) {
+private int computeElemPos(T elem,int size) {
 
-	return Math.abs(elem.hashCode() % spineSize);
+	return Math.abs(elem.hashCode() % size);
 }
 	@Override
 	public boolean isEmpty() {
@@ -242,7 +242,7 @@ private int computeElemPos(T elem) {
 	    for (int i = 0; i < oldSize; i++) {
 	        Vector<T> list = (Vector<T>) entries[i];
 	        if (!list.isEmpty()) {
-	            int pos = computeElemPos(list.get(0));
+	            int pos = computeElemPos(list.get(0),spineSize);
 	            set.entries[pos]=list;
 	            
 	        }
@@ -270,7 +270,7 @@ private int computeElemPos(T elem) {
 			}
 			Iterator<T> it = list.iterator();
 				while(it.hasNext()) {
-					if(it.next().compareTo(elem)==0) {
+					if(it.next().equals(elem)) {
 						it.close();
 						list=null;
 						return true;
@@ -300,6 +300,20 @@ private int computeElemPos(T elem) {
 	@Override
 	public int size() {
 		return numOfStoredElems;
+	}
+
+	@Override
+	public void remove(T elem) {
+		if(exists(elem)) {
+			
+			int pos=computeElemPos(elem,spineSize);
+			Vector<T> list=(Vector<T>) this.entries[pos];
+			Iterator<T> it=list.iterator();
+			while(it.hasNext()&&!elem.equals(it.next()));
+			list.remove(list.getIndex(elem));
+			numOfStoredElems--;
+		}
+		
 	}
 
 }

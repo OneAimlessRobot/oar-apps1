@@ -12,5 +12,7 @@ public interface List<T> extends Collection<T> {
 	
 	void remove(int pos);
 	
+	int getIndex(T elem);
+	
 	
 }

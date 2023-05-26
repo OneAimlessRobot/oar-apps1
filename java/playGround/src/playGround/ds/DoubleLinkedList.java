@@ -261,25 +261,6 @@ public class DoubleLinkedList<T> implements List<T> {
 	public TwoWayIterator<T> twoWayIterator() {
 		return new DLLIterator<T>(head);
 	}
-	public String toString() {
-
-		if(isEmpty()) {
-			
-
-			return "[ ]";
-		}
-		String str="[ ";
-		Iterator<T> it = iterator();
-			while(it.hasNext()) {
-				str+= it.next().toString()+" ";
-			}
-			str+="]";
-			it.close();
-		return str;
-		
-		
-	}
-
 	@Override
 	public void invert() {
 		
@@ -414,7 +395,10 @@ public class DoubleLinkedList<T> implements List<T> {
 			return;
 		
 		}
-		else if(index <0) {
+		if(length==1) {
+			removeFirst();
+		}
+		else if(index <=0) {
 			
 			removeFirst();
 		}
@@ -459,6 +443,14 @@ public class DoubleLinkedList<T> implements List<T> {
 		this.trail=doubleLinkedList.trail;
 		this.length+=doubleLinkedList.size();
 		
+	}
+	@Override
+	public int getIndex(T elem) {
+		
+		Node<T> node=this.head;
+		int i=0;
+		while(node.getNext()!=null&&!node.getElem().equals(elem)) {i++;}
+		return i;
 	}
 	
 	

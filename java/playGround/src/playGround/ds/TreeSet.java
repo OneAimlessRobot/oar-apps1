@@ -7,10 +7,10 @@ import playGround.adt.Iterator;
 import playGround.adt.Stack;
 import playGround.adt.TwoWayIterator;
 import playGround.adt.collections.MySet;
-import playGround.adt.exceptions.CollectionEmptyException;
+import playGround.adt.collections.MySortedSet;
 import playGround.adt.exceptions.StackEmptyException;
 
-public class TreeSet<T extends Comparable<T>>  extends AbstractCollection<T> implements MySet<T>{
+public class TreeSet<T extends Comparable<T>>  extends AbstractCollection<T> implements MySet<T>,MySortedSet<T>{
 
 	private static class TreeSetIterator<T extends Comparable<T>> implements TwoWayIterator<T>{
 
@@ -349,6 +349,11 @@ public class TreeSet<T extends Comparable<T>>  extends AbstractCollection<T> imp
 			collection.add(it.next());
 		}
 		return collection;
+		
+	}
+	@Override
+	public void remove(T elem) {
+		// TODO Auto-generated method stub
 		
 	}
 }
