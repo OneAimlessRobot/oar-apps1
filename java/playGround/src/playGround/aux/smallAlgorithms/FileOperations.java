@@ -91,12 +91,12 @@ public class FileOperations {
 			in.close();
 		} catch (FileNotFoundException e) {
 			System.out.println("Ficheiro nao encontrado!!!!\n");
-			list.destroy();
+			list.clear();
 			return new Vector<>();
 		} catch (IOException e) {
 
 			System.out.println("Erro de escrita!!!!\n");
-			list.destroy();
+			list.clear ();
 			return new Vector<>();
 		}
 		return list;
@@ -121,12 +121,12 @@ public class FileOperations {
 			in.close();
 		} catch (FileNotFoundException e) {
 			System.out.println("Ficheiro nao encontrado!!!!\n");
-			list.destroy();
+			list.clear();
 			return new Vector<>();
 		} catch (IOException e) {
 
 			System.out.println("Erro de escrita!!!!\n");
-			list.destroy();
+			list.clear();
 			return new Vector<>();
 		}
 		return list;

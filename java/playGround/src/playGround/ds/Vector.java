@@ -124,7 +124,7 @@ public class Vector<T> extends AbstractList<T> implements List<T> {
 		return currPos+1;
 	}
 	@Override
-	public void destroy() {
+	public void finalize() {
 		while(currPos!=-1) {
 			
 			this.remove();

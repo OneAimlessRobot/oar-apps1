@@ -313,7 +313,7 @@ public class TreeSetBeta<T extends Comparable<T>> extends AbstractSet<T> impleme
 		return (InvIterator<T>)new TreeSetIterator<T>(root);
 	}
 	@Override
-	public void destroy() {
+	public void finalize() {
 		if(isEmpty()) {
 			return;
 		}
@@ -328,7 +328,7 @@ public class TreeSetBeta<T extends Comparable<T>> extends AbstractSet<T> impleme
 	}
 	@Override
 	public void clear() {
-		destroy();
+		finalize();
 		
 	}
 	//FUNCIONA!!!!!!! se meteres prints no final de cada linha de chamada recursiva, has de reparar que o tamanho desce por 1!!!!

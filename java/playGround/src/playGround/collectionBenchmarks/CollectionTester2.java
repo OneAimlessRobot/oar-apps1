@@ -38,7 +38,7 @@ public class CollectionTester2 {
 			
 		}
 		set.clear();
-		System.out.println("Finished warming-up VM");
+		System.out.println("Finished warming-up VM"+set.size());
 		
 		long time1= System.nanoTime()/1000;
 		for(int i=0;i<list.size();i++) {
@@ -47,9 +47,8 @@ public class CollectionTester2 {
 		}
 		long time2=System.nanoTime()/1000;		
 		FileOperations.printToFile(PATH_TO_DS,arg1+","+(time2-time1)+"\n");
-		list.destroy();
 		list=null;
-		set.destroy();
+		set.clear();
 		set=null;
 	}
 }

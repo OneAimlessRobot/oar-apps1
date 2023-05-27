@@ -283,7 +283,7 @@ public class DoubleLinkedList<T> extends AbstractList<T> implements List<T> {
 			System.out.println("Stack vazia(????????)");
 		}
 		stck.destroy();
-		this.destroy();
+		this.finalize();
 		this.head=aux.head;
 	}
 	@Override
@@ -318,7 +318,7 @@ public class DoubleLinkedList<T> extends AbstractList<T> implements List<T> {
 		}
 		return result;
 	}
-	public void destroy() {
+	public void finalize() {
 		if(!isEmpty()) {
 		Node<T> i=null;
 		for(i=head;i.getNext()!=null;) {
@@ -462,7 +462,7 @@ public class DoubleLinkedList<T> extends AbstractList<T> implements List<T> {
 	}
 	@Override
 	public void clear() {
-		this.destroy();
+		this.finalize();
 		
 	}
 	

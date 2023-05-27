@@ -1,5 +1,7 @@
 package playGround.collectionBenchmarks;
 
+import java.io.IOException;
+
 import playGround.adt.collections.*;
 import playGround.ds.*;
 import playGround.aux.smallAlgorithms.*;
@@ -36,21 +38,24 @@ public class CollectionTester {
 			set.add(list.get(i));
 			
 		}
+		System.out.println(set.size());
 		set.clear();
+		System.out.println(set.size());
 		System.out.println("Finished warming-up VM");
-
-		
 		long time1= System.nanoTime()/1000;
 		for(int i=0;i<list.size();i++) {
 			set.add(list.get(i));
 			
 		}
-		long time2=System.nanoTime()/1000;		
+		long time2=System.nanoTime()/1000;	
+		System.out.println(set.size());	
 		FileOperations.printToFile(PATH_TO_DS,arg1+","+(time2-time1)+"\n");
-		
-		list.destroy();
+
+		list.clear();
 		list=null;
-		set.destroy();
+		set.clear();
+		System.out.println(set.size());
 		set=null;
+		
 	}
 }

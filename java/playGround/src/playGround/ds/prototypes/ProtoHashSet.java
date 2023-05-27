@@ -221,10 +221,9 @@ public class ProtoHashSet<T extends Comparable<T>> extends AbstractSet<T> implem
 	}
 
 	@Override
-	public void destroy() {
+	public void finalize() {
 		if(!isEmpty()) {
 		for(int i=0;i<spineSize;i++) {
-			((AbstractCollection<T>) entries[i]).destroy();
 			entries[i]=null;
 		}
 		entries=null;
@@ -321,7 +320,7 @@ public class ProtoHashSet<T extends Comparable<T>> extends AbstractSet<T> implem
 	public void clear() {
 		if(!isEmpty()) {
 		for(int i=0;i<spineSize;i++) {
-			((AbstractCollection<T>) entries[i]).destroy();
+			entries[i]=null;
 		}
 		numOfStoredElems=0;
 		}

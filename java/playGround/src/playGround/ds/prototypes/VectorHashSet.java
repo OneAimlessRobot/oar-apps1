@@ -228,10 +228,10 @@ private int computeElemPos(T elem,int size) {
 	}
 
 	@Override
-	public void destroy() {
+	public void finalize() {
 		if(!isEmpty()) {
 		for(int i=0;i<spineSize;i++) {
-			((Vector<T>) entries[i]).destroy();
+			
 			entries[i]=null;
 		}
 		numOfStoredElems=0;
@@ -322,7 +322,7 @@ private int computeElemPos(T elem,int size) {
 	public void clear() {
 		if(!isEmpty()) {
 		for(int i=0;i<spineSize;i++) {
-			((Vector<T>) entries[i]).destroy();
+			((Vector<T>) entries[i]).finalize();
 		}
 		numOfStoredElems=0;
 		}

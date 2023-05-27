@@ -20,8 +20,6 @@ public interface Collection<T> {
 	
 	String toString();
 	
-	void destroy();
-	
 	void clear();
 	
 	void remove();

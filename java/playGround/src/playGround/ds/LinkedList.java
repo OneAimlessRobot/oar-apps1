@@ -223,7 +223,7 @@ public class LinkedList<T> extends AbstractList<T> implements List<T> {
 			System.out.println("Stack vazia(????????)");
 		}
 		stck.destroy();
-		this.destroy();
+		this.finalize();
 		this.head=aux.head;
 		
 		
@@ -252,8 +252,7 @@ public class LinkedList<T> extends AbstractList<T> implements List<T> {
 		}
 		return result;
 	}
-	@Override
-	public void destroy() {
+	public void finalize() {
 		if(!isEmpty()) {
 		Node<T> i=null;
 		for(i=head;i.getNext()!=null;) {
@@ -374,7 +373,7 @@ public class LinkedList<T> extends AbstractList<T> implements List<T> {
 	@Override
 	public void clear() {
 		
-		this.destroy();
+		this.finalize();
 	}
 	
 	

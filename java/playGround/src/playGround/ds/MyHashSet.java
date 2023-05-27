@@ -213,12 +213,10 @@ public class MyHashSet<T> extends AbstractCollection<T> implements MySet<T> {
 		return (InvIterator<T>) new HashSetIterator<>(this);
 	}
 
-	@Override
-	public void destroy() {
+	public void finalize() {
 		if(!isEmpty()) {
 		for(int i=0;i<spineSize;i++) {
 			int size=((DoubleLinkedList<T>) entries[i]).size();
-			((DoubleLinkedList<T>) entries[i]).destroy();
 			numOfStoredElems-=size;
 			entries[i]=null;
 		}
@@ -302,7 +300,7 @@ public class MyHashSet<T> extends AbstractCollection<T> implements MySet<T> {
 		if(!isEmpty()) {
 		for(int i=0;i<spineSize;i++) {
 			int size=((DoubleLinkedList<T>) entries[i]).size();
-			((DoubleLinkedList<T>) entries[i]).destroy();
+			((DoubleLinkedList<T>) entries[i]).finalize();
 			numOfStoredElems-=size;
 		}
 		}

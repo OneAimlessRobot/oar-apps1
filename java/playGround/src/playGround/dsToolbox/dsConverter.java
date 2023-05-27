@@ -14,7 +14,7 @@ public class dsConverter<T> {
 	public Collection<T> rebuild(Collection<T> collectionSrc,Collection<T> collectionDst){
 		
 		Iterator<T> it;
-			collectionDst.destroy();
+			collectionDst.clear();
 			it = collectionSrc.iterator();
 			while(it.hasNext()) {
 				

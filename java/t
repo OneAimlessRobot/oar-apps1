@@ -1,0 +1,1 @@
+/usr/lib/jvm/java-17-openjdk-amd64/bin/java -Dfile.encoding=UTF-8 -classpath /home/k/oar-apps1/java/playGround/bin   playGround.collectionBenchmarks.CollectionTester 1000000
