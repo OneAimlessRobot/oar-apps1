@@ -1,4 +1,4 @@
-package playGround.abstractClasses;
+package playGround.adt.abstractClasses;
 
 import playGround.adt.Collection;
 import playGround.adt.InvIterator;
@@ -9,6 +9,7 @@ import playGround.adt.exceptions.CollectionEmptyException;
 
 public abstract class AbstractCollection<T> implements Collection<T> {
 
+	private int destroyed;
 	@Override
 	abstract public void add(T elem);
 
@@ -28,8 +29,6 @@ public abstract class AbstractCollection<T> implements Collection<T> {
 	@Override
 	abstract public InvIterator<T> backwardIterator();
 
-	@Override
-	abstract public void destroy();
 
 	@Override
 	abstract public void remove();

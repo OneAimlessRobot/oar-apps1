@@ -1,24 +1,25 @@
-package playGround.dsPrototypes;
+package playGround.ds.prototypes;
 
-import playGround.abstractClasses.AbstractCollection;
 import playGround.adt.Collection;
 import playGround.adt.InvIterator;
 import playGround.adt.Iterator;
 import playGround.ds.*;
 import playGround.adt.TwoWayIterator;
+import playGround.adt.abstractClasses.AbstractCollection;
+import playGround.adt.abstractClasses.AbstractSet;
 import playGround.adt.collections.MySet;
 import playGround.adt.collections.MySortedSet;
 
-public class ProtoHashSet<T extends Comparable<T>> extends AbstractCollection<T> implements MySet<T>,MySortedSet<T> {
+public class ProtoHashSet<T extends Comparable<T>> extends AbstractSet<T> implements MySet<T>,MySortedSet<T> {
 
 	private static class HashSetIterator<T extends Comparable<T>> implements TwoWayIterator<T>{
 		
 		private int mainPos,first,last;
 		private TwoWayIterator<T> current;
-		private Collection<T>[] entries;
+		private AbstractCollection<T>[] entries;
 		public HashSetIterator(ProtoHashSet<T> set){
 			
-			this.entries=(Collection<T>[]) set.entries;
+			this.entries=(AbstractCollection<T>[]) set.entries;
 			fullForward();
 			last=mainPos;
 			rewind();
@@ -130,7 +131,7 @@ public class ProtoHashSet<T extends Comparable<T>> extends AbstractCollection<T>
 		
 		
 	}
-	private Collection<?>[] entries;
+	private AbstractCollection<?>[] entries;
 	private static final double LOAD_FACTOR=0.1;//(filas/numeroElems)
 	private static final int INIT_SPINE_SIZE =16;
 	private static final int GROW_FACTOR=2;
@@ -155,7 +156,7 @@ public class ProtoHashSet<T extends Comparable<T>> extends AbstractCollection<T>
 	}
 	private void init() {
 		
-		entries=(Collection<T>[])new Collection<?>[spineSize];
+		entries=(AbstractCollection<T>[])new AbstractCollection<?>[spineSize];
 
 		for(int i=0;i<spineSize;i++) {
 			
@@ -223,7 +224,7 @@ public class ProtoHashSet<T extends Comparable<T>> extends AbstractCollection<T>
 	public void destroy() {
 		if(!isEmpty()) {
 		for(int i=0;i<spineSize;i++) {
-			((Collection<T>) entries[i]).destroy();
+			((AbstractCollection<T>) entries[i]).destroy();
 			entries[i]=null;
 		}
 		entries=null;
@@ -304,11 +305,11 @@ public class ProtoHashSet<T extends Comparable<T>> extends AbstractCollection<T>
 		if(entries[pos] instanceof DoubleLinkedList) {
 			
 			MySet<T> set= new TreeSet<>();
-			Iterator<T> it= ((Collection<T>)entries[pos]).iterator();
+			Iterator<T> it= ((AbstractCollection<T>)entries[pos]).iterator();
 			while(it.hasNext()) {
 				set.add(it.next());
 			}
-			entries[pos]=set;
+			(entries[pos])=(AbstractCollection<T>)set;
 			
 			
 			
@@ -316,6 +317,16 @@ public class ProtoHashSet<T extends Comparable<T>> extends AbstractCollection<T>
 		
 		
 	}
+	@Override
+	public void clear() {
+		if(!isEmpty()) {
+		for(int i=0;i<spineSize;i++) {
+			((AbstractCollection<T>) entries[i]).destroy();
+		}
+		numOfStoredElems=0;
+		}
+	}
+
 
 
 

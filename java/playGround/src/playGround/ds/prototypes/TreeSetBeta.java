@@ -1,11 +1,11 @@
-package playGround.dsPrototypes;
+package playGround.ds.prototypes;
 
-import playGround.abstractClasses.AbstractSet;
 import playGround.adt.Collection;
 import playGround.adt.InvIterator;
 import playGround.adt.Iterator;
 import playGround.adt.Stack;
 import playGround.adt.TwoWayIterator;
+import playGround.adt.abstractClasses.AbstractSet;
 import playGround.adt.collections.MySet;
 import playGround.adt.exceptions.StackEmptyException;
 import playGround.ds.StackInArray;
@@ -323,6 +323,12 @@ public class TreeSetBeta<T extends Comparable<T>> extends AbstractSet<T> impleme
 		}
 		destroyAux(root,0);
 		root.destroy();
+		root=null;
+		
+	}
+	@Override
+	public void clear() {
+		destroy();
 		
 	}
 	//FUNCIONA!!!!!!! se meteres prints no final de cada linha de chamada recursiva, has de reparar que o tamanho desce por 1!!!!

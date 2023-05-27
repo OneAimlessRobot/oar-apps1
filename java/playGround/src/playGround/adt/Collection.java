@@ -22,6 +22,8 @@ public interface Collection<T> {
 	
 	void destroy();
 	
+	void clear();
+	
 	void remove();
 	
 	boolean contains(T elem);

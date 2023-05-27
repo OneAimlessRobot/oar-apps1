@@ -1,4 +1,4 @@
-package playGround.abstractClasses;
+package playGround.adt.abstractClasses;
 import playGround.adt.collections.List;
 
 public abstract class AbstractList<T> extends AbstractCollection<T> implements List<T>{

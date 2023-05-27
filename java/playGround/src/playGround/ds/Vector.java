@@ -1,10 +1,10 @@
 package playGround.ds;
 
-import playGround.abstractClasses.AbstractList;
 import playGround.adt.Collection;
 import playGround.adt.InvIterator;
 import playGround.adt.Iterator;
 import playGround.adt.TwoWayIterator;
+import playGround.adt.abstractClasses.AbstractList;
 import playGround.adt.collections.List;
 
 public class Vector<T> extends AbstractList<T> implements List<T> {
@@ -223,5 +223,12 @@ public class Vector<T> extends AbstractList<T> implements List<T> {
 	@Override
 	public boolean contains(T elem) {
 		return getIndex(elem)!=-1;
+	}
+	@Override
+	public void clear() {
+		while(currPos!=-1) {
+			
+			this.remove();
+		}
 	}
 }

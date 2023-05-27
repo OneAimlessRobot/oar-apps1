@@ -1,11 +1,12 @@
-package playGround.dsPrototypes;
+package playGround.ds.prototypes;
 
-import playGround.abstractClasses.AbstractCollection;
 import playGround.adt.Collection;
 import playGround.adt.InvIterator;
 import playGround.adt.Iterator;
 import playGround.adt.TwoWayIterator;
+import playGround.adt.abstractClasses.AbstractCollection;
 import playGround.adt.collections.MySet;
+import playGround.ds.DoubleLinkedList;
 import playGround.ds.Vector;
 
 public class VectorHashSet<T> extends AbstractCollection<T> implements MySet<T> {
@@ -233,6 +234,7 @@ private int computeElemPos(T elem,int size) {
 			((Vector<T>) entries[i]).destroy();
 			entries[i]=null;
 		}
+		numOfStoredElems=0;
 		}
 	}
 	private void reHash() {
@@ -316,5 +318,15 @@ private int computeElemPos(T elem,int size) {
 		}
 		
 	}
+	@Override
+	public void clear() {
+		if(!isEmpty()) {
+		for(int i=0;i<spineSize;i++) {
+			((Vector<T>) entries[i]).destroy();
+		}
+		numOfStoredElems=0;
+		}
+	}
+
 
 }

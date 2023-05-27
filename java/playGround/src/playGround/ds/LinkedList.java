@@ -2,13 +2,12 @@ package playGround.ds;
 
 import playGround.adt.collections.List;
 import playGround.adt.exceptions.StackEmptyException;
-import playGround.abstractClasses.AbstractCollection;
-import playGround.abstractClasses.AbstractList;
 import playGround.adt.Collection;
 import playGround.adt.InvIterator;
 import playGround.adt.Iterator;
 import playGround.adt.Stack;
 import playGround.adt.TwoWayIterator;
+import playGround.adt.abstractClasses.AbstractList;
 //TODO: Acrescentar variaveis que indiquem final de iteraçao e um rewind para as mudar ( e mudalas no next)
 public class LinkedList<T> extends AbstractList<T> implements List<T> {
 
@@ -371,6 +370,11 @@ public class LinkedList<T> extends AbstractList<T> implements List<T> {
 	@Override
 	public boolean contains(T elem) {
 		return getIndex(elem)!=-1;
+	}
+	@Override
+	public void clear() {
+		
+		this.destroy();
 	}
 	
 	

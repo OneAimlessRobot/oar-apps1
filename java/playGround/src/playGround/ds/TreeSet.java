@@ -1,11 +1,11 @@
 package playGround.ds;
 
-import playGround.abstractClasses.AbstractCollection;
 import playGround.adt.Collection;
 import playGround.adt.InvIterator;
 import playGround.adt.Iterator;
 import playGround.adt.Stack;
 import playGround.adt.TwoWayIterator;
+import playGround.adt.abstractClasses.AbstractCollection;
 import playGround.adt.collections.MySet;
 import playGround.adt.collections.MySortedSet;
 import playGround.adt.exceptions.StackEmptyException;
@@ -185,11 +185,12 @@ public class TreeSet<T extends Comparable<T>>  extends AbstractCollection<T> imp
 	}
 	@Override
 	public void add(T elem) {
-		if(contains(elem)) {
-			return;
-		}
 		if(isEmpty()) {
 			root=new TreeNode<>(elem,null,null);
+			return;
+		}
+		if(contains(elem)) {
+			return;
 		}
 			addRec(elem,root);
 		
@@ -278,6 +279,12 @@ public class TreeSet<T extends Comparable<T>>  extends AbstractCollection<T> imp
 		}
 		destroyAux(root,0);
 		root.destroy();
+		root=null;
+		
+	}
+	@Override
+	public void clear() {
+		destroy();
 		
 	}
 	//FUNCIONA!!!!!!! se meteres prints no final de cada linha de chamada recursiva, has de reparar que o tamanho desce por 1!!!!

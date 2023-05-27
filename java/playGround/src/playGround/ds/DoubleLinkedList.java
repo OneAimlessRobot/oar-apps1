@@ -7,8 +7,9 @@ import playGround.adt.InvIterator;
 import playGround.adt.Iterator;
 import playGround.adt.Stack;
 import playGround.adt.TwoWayIterator;
+import playGround.adt.abstractClasses.AbstractList;
 
-public class DoubleLinkedList<T> implements List<T> {
+public class DoubleLinkedList<T> extends AbstractList<T> implements List<T> {
 
 	private static class DLLIterator<T> implements TwoWayIterator<T>{
 
@@ -317,7 +318,6 @@ public class DoubleLinkedList<T> implements List<T> {
 		}
 		return result;
 	}
-	@Override
 	public void destroy() {
 		if(!isEmpty()) {
 		Node<T> i=null;
@@ -460,7 +460,11 @@ public class DoubleLinkedList<T> implements List<T> {
 	public boolean contains(T elem) {
 		return getIndex(elem)!=-1;
 	}
-	
+	@Override
+	public void clear() {
+		this.destroy();
+		
+	}
 	
 	
 

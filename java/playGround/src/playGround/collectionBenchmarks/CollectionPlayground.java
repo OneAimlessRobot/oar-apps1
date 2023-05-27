@@ -1,7 +1,8 @@
+package playGround.collectionBenchmarks;
 
 import playGround.adt.collections.*;
 import playGround.ds.*;
-import playGround.dsPrototypes.ProtoHashSet;
+import playGround.ds.prototypes.ProtoHashSet;
 public class CollectionPlayground {
 
 	public static void main(String[] args) {

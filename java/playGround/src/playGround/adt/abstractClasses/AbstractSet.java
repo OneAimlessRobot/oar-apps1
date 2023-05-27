@@ -1,4 +1,4 @@
-package playGround.abstractClasses;
+package playGround.adt.abstractClasses;
 
 import playGround.adt.collections.MySet;
 
