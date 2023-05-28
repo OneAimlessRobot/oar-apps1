@@ -1,6 +1,5 @@
 package playGround.collectionBenchmarks;
 
-import java.io.IOException;
 
 import playGround.adt.collections.*;
 import playGround.ds.*;
