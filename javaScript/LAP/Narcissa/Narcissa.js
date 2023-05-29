@@ -25,6 +25,12 @@ const IMAGE_NAME_EMPTY = "empty";
 const IMAGE_NAME_INVALID = "invalid";
 const IMAGE_NAME_SHRUB = "shrub";
 const IMAGE_NAME_BERRY_BLUE = "berryBlue";
+const IMAGE_NAME_BERRY_BROWN = "berryBrown"; 
+const IMAGE_NAME_BERRY_CYAN = "berryCyan"; 
+const IMAGE_NAME_BERRY_DGREEN = "berryDarkGreen"; 
+const IMAGE_NAME_BERRY_GREEN = "berryGreen"; 
+const IMAGE_NAME_BERRY_ORANGE = "berryOrange"; 
+const IMAGE_NAME_BERRY_PURPLE = "berryPurple"; 
 const IMAGE_NAME_SNAKE_HEAD = "snakeHead";
 const IMAGE_NAME_SNAKE_MODULE = "snakeHead";
 
@@ -32,8 +38,8 @@ const IMAGE_NAME_SNAKE_MODULE = "snakeHead";
 // GLOBAL VARIABLES
 
 let control;	// Try not no define more global variables
-let pause=0;
-let time=0
+let pause=true;
+let gameOver=false
 // ACTORS
 
 class Actor {
@@ -42,6 +48,7 @@ class Actor {
 		this.y = y;
 		this.atime = 0;	// This has a very technical role in the control of the animations
 		this.imageName = imageName;
+		this.neighbourPositions=[]
 		this.show();
 	}
 	draw(x, y, image) {
@@ -62,7 +69,26 @@ class Actor {
 		this.y += dy;
 		this.show();
 	}
-	handleObjects(){
+	handleBehaviour(){
+	}
+	eyes(){
+		this.neighbourPositions=[
+		[this.x-1,this.y-1],//1
+		[this.x+1,this.y+1],//2
+		[this.x-1,this.y],//3
+		[this.x,this.y+1],//4
+		[this.x+1,this.y],//5
+		[this.x,this.y-1],//6
+		[this.x-1,this.y+1],//7
+		[this.x+1,this.y-1]//8
+		]
+		
+		/*     168 	
+		       3S5	
+		       742	
+		*/
+		
+		
 	}
 	animation(x, y) {
 	}
@@ -92,11 +118,52 @@ class Shrub extends Actor {
 	constructor(x, y, color) { 
 	super(x, y, IMAGE_NAME_SHRUB); 
 	this.components=[]
+	this.nextGrowtime=this.getNextGrowTimeInc()
 	
 	
 	}
-	grow(){
+	getNextGrowTimeInc(){
 	
+		return 4*(3+rand(4));
+	
+		}
+	
+	getNextGrowTime(){		
+	
+	this.nextGrowtime=this.nextGrowtime+this.getNextGrowTimeInc();
+	}
+	growInSize(){
+		let slot=rand(this.neighbourPositions.length);
+		let pos=this.neighbourPositions[slot]
+		//Escolhe nova posiçao caso a que calhou seja invalida.
+		//Fazer este loop ate calhar uma que funcione
+		if(pos[0]>=70||pos[0]<0||pos[1]<0||pos[1]>=40
+					||
+		control.world[pos[0]][pos[1]].imageName==="shrub"){
+		
+		slot=rand(this.neighbourPositions.length);
+			pos=this.neighbourPositions[slot]
+		}
+		control.world[pos[0]][pos[1]]=new Shrub(pos[0],pos[1]);
+	
+	
+	}
+	animation(x,y){
+	
+		this.handleBehaviour();
+	
+	}
+	handleBehaviour(){
+		this.eyes()
+		if(control.time== this.nextGrowtime){
+		
+			this.growInSize();
+			this.getNextGrowTime();
+			
+		}
+	
+		
+		
 	
 	
 	}
@@ -119,9 +186,38 @@ class Invalid extends Actor {
 class Berry extends Actor {
 	constructor(x, y, color) {
 		super(x, y, color);
+		switch(color){
+		case "berryBlue": this.score=1;
+		case "berryBrown": this.score=2;
+		case "berryCyan": this.score=3;
+		case "berryDarkGreen": this.score=4;
+		case "berryGreen": this.score=5;
+		case "berryOrange": this.score=6;
+		case "berryPurple": this.score=7;
+		
+		
+		
+		}
 	}
+	getColor(){
+	
+		return this.imageName;
+	}
+	getScore(){
+		
+		return this.score;
+	}
+	
 }
 
+class EatenBerry extends Berry{
+
+	constructor(x,y,color){
+	
+		super(x,y,color);
+	}
+
+}
 
 class SnakeModule extends Actor {
 	constructor(x,y) {
@@ -132,11 +228,20 @@ class SnakeModule extends Actor {
 class Snake extends Actor {
 	constructor(x, y) {
 		super(x, y, IMAGE_NAME_SNAKE_HEAD);
+		this.startSize=4;
+		this.maxStomachSize=5;
+		this.dead=false;
 		[this.movex, this.movey] = [1,0];
-		this.eatables=[IMAGE_NAME_BERRY_BLUE,IMAGE_NAME_SHRUB]
-		this.objectsAround=[]
-		this.lastPositions=[]
-		this.trailLength=0
+		this.body=[]
+		this.stomach=[]
+		
+		for(let i=0;i<this.startSize;i++){
+			
+			this.body.push(
+		[this.x-i,this.y]);
+		
+		}
+		this.trailSize=this.startSize
 	}
 	handleKey() {
 		let k = control.getKey();
@@ -154,91 +259,124 @@ class Snake extends Actor {
 			//mesg("change direction == " + k)
 		}
 	}
-	getPos(){
+	filterUsefulNeigbhours()
+	{
 	
-		return [this.x,this.y]
-	}
-	setPos(newX,newY){
-		[this.x,this.y]=[newX,newY]
-		
-	}
-	handleObjects(){
-		if(this.objectsAround.find(e => e.imageName === 'shrub')){
-			this.die();
-		}
-		if(this.objectsAround.find(e => e.imageName === "berryBlue")){
-			let k=0;
-			for(;k<this.objectsAround.length;k++){
-				let j=this.objectsAround[k]
-				if(j.imageName==="berryBlue"){
+		let size=this.neighbourPositions.length;
+		for(let i=0;i<size;i++){
+			let pos=this.neighbourPositions[i]
+			if(control.world[pos[0]]===undefined){
 				
-					j.hide()
-					this.eat();
-				}	
+				this.neighbourPositions.splice(i,1);
+				break;
+			
+			
+			}
+			if(control.world[pos[0]][pos[1]]===undefined){
 				
+				this.neighbourPositions.splice(i,1);
+				break;
+			
 			
 			}
 		}
 	
-	}
-	renderTrail(){
-		for(let i=0;i<this.trailLength;i++){
-			control.world[this.lastPositions[i][0]][this.lastPositions[i][1]]=new SnakeModule(this.lastPositions[i][0],this.lastPositions[i][1])
-			control.world[this.lastPositions[i][0]][this.lastPositions[i][1]].show()
-		}
-		
 		
 	
+	
+	}
+	handleBehaviour(){
+		
+		this.eyes()
+		let size=this.neighbourPositions.length;
+		this.filterUsefulNeigbhours();
+		for(let i=0;i<size;i++){
+		
+			let pos=this.neighbourPositions[i]
+			if(control.world[pos[0]][pos[1]].imageName==="shrub"){
+				
+				this.die();
+				break;
+			
+			
+			}
+			if(control.world[pos[0]][pos[1]].constructor.name === Berry.name){
+				let berry=control.world[pos[0]][pos[1]];
+				berry.hide()
+				this.eat(berry);
+				break;
+			
+		}
+		}
+		}
+		
+	renderTrail(){
+		console.log("corpo: "+this.body+" estomago: "+this.stomach)
+		if(this.body.length>0){
+		
+		for(let i=0;i<this.stomach.length;i++){
+			let pos=this.body[i]
+		if(!(pos[0]>=70||pos[0]<0||pos[1]<0||pos[1]>=40)){
+			control.world[pos[0]][pos[1]]=new	EatenBerry(pos[0],pos[1],this.stomach[i])
+		}
+		}
+		for(let i=this.stomach.length;i<this.body.length;i++){
+		let pos=this.body[i]
+		if(!(pos[0]>=70||pos[0]<0||pos[1]<0||pos[1]>=40)){
+			control.world[pos[0]][pos[1]]=new	SnakeModule(pos[0],pos[1])
+		}
+			
+		}
+	}
 	}
 	hideTrail(){
-		for(let i=0;i<this.lastPositions.length;i++){
-			control.world[this.lastPositions[i][0]][this.lastPositions[i][1]].hide()
+		if(this.body.length>0){
+		for(let i=0;i<this.body.length;i++){
+			let pos=this.body[i]
+		//if manhoso para permitir deslocaçoes pseudoesfericas com
+		//cauda nao vazia
+		if(!(pos[0]>=70||pos[0]<0||pos[1]<0||pos[1]>=40)){ 
+			control.world[pos[0]][pos[1]].hide()
 		}
-		
-		
+		}
+		}
+	}
+	updateTrail(){
+	
+		this.body.push(
+		[this.x,this.y]
+		)
+		if(this.body.length>this.trailSize){
+		this.body.shift()
+		}
+	
 	
 	}
-	eat(){
-		this.trailLength+=1
+	eat(berry){
+		//for(let i=0;i<berry.getScore();i++){
+		this.trailSize+=1
+		this.body.push(
+		[this.x-this.movex,this.y-this.movey]
+		)
+		//}
+		this.stomach.push(
+		[berry.getColor()]
+		)
+		if(this.stomach.length>this.maxStomachSize){
+		this.stomach.shift();
 		}
+	}
 	animation(x, y) {
 		this.handleKey();
-		if(this.lastPositions.length>0){
 		this.hideTrail();
-		}
-		this.move(this.movex, this.movey);
 		this.eyes()
-		this.lastPositions.push([this.x-this.movex,this.y-this.movey])
-		if(this.lastPositions.length>this.trailLength){
-		this.lastPositions.shift();
-		}
-		if(this.lastPositions.length>0){
-		this.renderTrail();
-		}
-	}
-	eyes(){
-		this.objectsAround=[
-		control.world[this.x-1][this.y-1],//1
-		control.world[this.x+1][this.y+1],//2
-		control.world[this.x-1][this.y],//3
-		control.world[this.x][this.y+1],//4
-		control.world[this.x+1][this.y],//5
-		control.world[this.x][this.y-1],//6
-		control.world[this.x-1][this.y+1],//7
-		control.world[this.x+1][this.y-1]//8
-		]
-		
-		/*     168 	
-		       3S5	
-		       742	
-		*/
-		
-		
+		this.updateTrail();
+		this.move(this.movex, this.movey);
+		this.handleBehaviour()
+		this.renderTrail()
 	}
 	die(){
-	
-		this.hide()
-		this.hideTrail()
+		gameOver=true;
 	}
 }
 
@@ -301,19 +439,23 @@ class GameControl {
 		setInterval(() => this.animationEvent(), 1000 / ANIMATION_EVENTS_PER_SECOND);
 	}
 	animationEvent() {
+	if(!pause&&!gameOver){
+		getTime(this.time);
 		this.time++;
-		time++;
 		for(let x=0 ; x < WORLD_WIDTH ; x++)
 			for(let y=0 ; y < WORLD_HEIGHT ; y++) {
 				let a = this.world[x][y];
 				if( a.atime < this.time ) {
-					if(pause==0){
 					a.atime = this.time;
 					a.animation(x, y);
-					a.handleObjects();
-				}
 				}
 			}
+		}
+	else if(gameOver){
+	
+		document.getElementById("timer").innerHTML= "Acabou"
+	
+	}
 	}
 	keyDownEvent(e) {
 		this.key = e.keyCode;
@@ -325,23 +467,33 @@ class GameControl {
 
 // Functions called from the HTML page
 function togglePause(){
-	if(pause==1){
+	if(pause==true){
 	
-		pause=0
+		pause=false
 	}
 	else{
 	
-		pause=1;
+		pause=true;
 	}	
 	
+}
+function start(){
+
+	let startButton=document.getElementById("startButton")
+	startButton.style.display="none";
+	onLoad();
+	togglePause();
+	let pauseButton=document.getElementById("pauseButton");
+	 pauseButton.style.display = "block";
 }
 function onLoad() {
 	// Asynchronously load the images an then run the game
 	GameImages.loadAll(() => new GameControl());
 }
-function getTime(){
+function getTime(timeValue){
 
-	return time;
+	let timer=document.getElementById("pauseButton");
+	timer.innerHTML="The time: "+ timeValue
 }
 
 function b1() { mesg("button1") }
