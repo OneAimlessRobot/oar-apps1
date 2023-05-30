@@ -570,7 +570,7 @@ class GameControl {
 	}
 	getNextBerriesTime(){
 	
-	this.nextBerriesTime+=1+rand(10x)
+	this.nextBerriesTime+=1+rand(10)
 	
 	}
 	keyDownEvent(e) {
