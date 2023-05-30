@@ -31,21 +31,30 @@ const IMAGE_NAME_BERRY_DGREEN = "berryDarkGreen";
 const IMAGE_NAME_BERRY_GREEN = "berryGreen"; 
 const IMAGE_NAME_BERRY_ORANGE = "berryOrange"; 
 const IMAGE_NAME_BERRY_PURPLE = "berryPurple"; 
+const IMAGE_NAME_BERRY_RED = "berryRed"; 
 const IMAGE_NAME_SNAKE_HEAD = "snakeHead";
-const IMAGE_NAME_SNAKE_MODULE = "snakeHead";
 
-
+const goodBerryColours=["berryBlue",
+			"berryCyan",
+			"berryGreen",
+			"berryDarkGreen",
+			"berryOrange",
+			"berryPurple",
+			"berryRed"]
+			
+			
+const GAME_ENDING_SCORE= 1000;
 // GLOBAL VARIABLES
 
 let control;	// Try not no define more global variables
-let pause=true;
-let gameOver=false
+
 // ACTORS
 
 class Actor {
 	constructor(x, y, imageName) {
 		this.x = x;
 		this.y = y;
+		this.checkPosition();
 		this.atime = 0;	// This has a very technical role in the control of the animations
 		this.imageName = imageName;
 		this.neighbourPositions=[]
@@ -71,7 +80,7 @@ class Actor {
 	}
 	handleBehaviour(){
 	}
-	eyes(){
+	getPositionsAround(){
 		this.neighbourPositions=[
 		[this.x-1,this.y-1],//1
 		[this.x+1,this.y+1],//2
@@ -91,6 +100,26 @@ class Actor {
 		
 	}
 	animation(x, y) {
+	}
+	checkPositionVar(xPos,yPos) {
+			if(xPos>=70){
+			
+				return [1,yPos]
+			}
+			if(xPos<=0){
+			
+				return [69,yPos]
+			}
+			if(yPos>=40){
+			
+				return [xPos,1]
+			}
+			if(yPos<=0){
+			
+				return [xPos,39]
+			}
+			return [xPos,yPos]
+		 
 	}
 	checkPosition() {
 			if(this.x>=70){
@@ -113,8 +142,20 @@ class Actor {
 	}
 }
 
+class DeadlyEntity extends Actor{
 
-class Shrub extends Actor {
+	constructor(x, y, image) { 
+	super(x, y, image);
+	
+	
+	}
+
+
+
+
+}
+
+class Shrub extends DeadlyEntity {
 	constructor(x, y, color) { 
 	super(x, y, IMAGE_NAME_SHRUB); 
 	this.components=[]
@@ -124,37 +165,38 @@ class Shrub extends Actor {
 	}
 	getNextGrowTimeInc(){
 	
-		return 4*(3+rand(4));
-	
+		return 20+rand(80);
 		}
 	
 	getNextGrowTime(){		
 	
-	this.nextGrowtime=this.nextGrowtime+this.getNextGrowTimeInc();
+	this.nextGrowtime+=this.getNextGrowTimeInc();
 	}
 	growInSize(){
-		let slot=rand(this.neighbourPositions.length);
-		let pos=this.neighbourPositions[slot]
-		//Escolhe nova posiçao caso a que calhou seja invalida.
-		//Fazer este loop ate calhar uma que funcione
-		if(pos[0]>=70||pos[0]<0||pos[1]<0||pos[1]>=40
-					||
-		control.world[pos[0]][pos[1]].imageName==="shrub"){
-		
-		slot=rand(this.neighbourPositions.length);
-			pos=this.neighbourPositions[slot]
+		let x=this.neighbourPositions.length;
+		let arr=this.neighbourPositions;
+		for(let i=0;i<x;i++){
+			let betterPos=this.checkPositionVar(arr[i][0],arr[i][1])			
+			let object=control.world[betterPos[0]][betterPos[1]];
+			
+			if(!(object instanceof Shrub)){
+			
+			object=new Shrub(betterPos[0],betterPos[1])
+				
+			
+			}
 		}
-		control.world[pos[0]][pos[1]]=new Shrub(pos[0],pos[1]);
 	
 	
 	}
 	animation(x,y){
-	
+		this.hide()
 		this.handleBehaviour();
+		this.show()
 	
 	}
 	handleBehaviour(){
-		this.eyes()
+		this.getPositionsAround()
 		if(control.time== this.nextGrowtime){
 		
 			this.growInSize();
@@ -182,44 +224,69 @@ class Invalid extends Actor {
 	constructor(x, y) { super(x, y, IMAGE_NAME_INVALID); }
 }
 
+class Edible extends Actor{
+constructor(x, y, image) { 
+	super(x, y, image);
+	
+	
+	}
 
-class Berry extends Actor {
+}
+class Berry extends Edible {
 	constructor(x, y, color) {
 		super(x, y, color);
-		switch(color){
-		case "berryBlue": this.score=1;
-		case "berryBrown": this.score=2;
-		case "berryCyan": this.score=3;
-		case "berryDarkGreen": this.score=4;
-		case "berryGreen": this.score=5;
-		case "berryOrange": this.score=6;
-		case "berryPurple": this.score=7;
-		
-		
-		
-		}
+		this.afloat=true;
+		this.deadLine=control.time+20+rand(80)
+		this.score=1;
 	}
 	getColor(){
 	
 		return this.imageName;
 	}
+	animation(x,y){
+	if(this.afloat){
+		this.hide()
+		this.show()
+		this.handleBehaviour();
+	
+	}
+	}
+	handleBehaviour(){
+	
+		if(control.time==this.deadLine){
+			
+			this.despawn()
+			this.hide()
+		
+		}
+		else if(this.deadLine-control.time<=10){
+		
+			this.score=2;	
+			control.world[this.x][this.y].imageName="berryBrown"
+		}
+	
+	}
 	getScore(){
 		
 		return this.score;
 	}
+	despawn(){
+	
+		this.afloat=false;
+	
+	}
 	
 }
 
-class EatenBerry extends Berry{
+class EatenBerry extends DeadlyEntity{
 
-	constructor(x,y,color){
+	constructor(x,y,image){
 	
-		super(x,y,color);
+		super(x,y,image);
 	}
 
 }
-
-class SnakeModule extends Actor {
+class SnakeModule extends DeadlyEntity {
 	constructor(x,y) {
 		super(x,y, IMAGE_NAME_SNAKE_HEAD);
 	}
@@ -228,8 +295,8 @@ class SnakeModule extends Actor {
 class Snake extends Actor {
 	constructor(x, y) {
 		super(x, y, IMAGE_NAME_SNAKE_HEAD);
-		this.startSize=4;
-		this.maxStomachSize=5;
+		this.startTrailSize=4;
+		this.maxStomachSize=3;
 		this.dead=false;
 		[this.movex, this.movey] = [1,0];
 		this.body=[]
@@ -241,11 +308,11 @@ class Snake extends Actor {
 		[this.x-i,this.y]);
 		
 		}
-		this.trailSize=this.startSize
+		this.trailSize=this.startTrailSize
 	}
 	handleKey() {
 		let k = control.getKey();
-		if (k === null)	// ignore
+		if (k === null ||k===undefined)	// ignore
 			;
 		else if (typeof(k) === "string"){	// special command
 			// special command
@@ -253,130 +320,141 @@ class Snake extends Actor {
 			i=1
 			}
 			//mesg("special command == " + k)
-		else {	// change direction
-			let kx, ky;
-			[this.movex, this.movey] = k;
+		else{	// change direction
+			if(!k[2]){
+			[this.movex, this.movey] = [k[0],k[1]];
+			}
+			else{
+			this.shiftBody([k[0],k[1]]);
+			
+			
+			}
 			//mesg("change direction == " + k)
 		}
 	}
-	filterUsefulNeigbhours()
-	{
-	
-		let size=this.neighbourPositions.length;
-		for(let i=0;i<size;i++){
-			let pos=this.neighbourPositions[i]
-			if(control.world[pos[0]]===undefined){
-				
-				this.neighbourPositions.splice(i,1);
-				break;
-			
-			
-			}
-			if(control.world[pos[0]][pos[1]]===undefined){
-				
-				this.neighbourPositions.splice(i,1);
-				break;
-			
-			
-			}
-		}
-	
+	shiftBody(key){
+	this.hide()
+	this.hideTrail()
+		this.x+=key[0];
+		this.y+=key[1]
+		for(let i=0;i<this.body.length;i++){
 		
+			this.body[i][0]+=key[0];
+			this.body[i][1]+=key[1]
+		
+		}
+	this.show()
+	this.renderTrail()
+		
+	
+	}
+	getFront(){
+	
+					  let p=this.checkPositionVar(this.x+this.movex,this.y+this.movey)
+					 return p
 	
 	
 	}
 	handleBehaviour(){
 		
-		this.eyes()
-		let size=this.neighbourPositions.length;
-		this.filterUsefulNeigbhours();
-		for(let i=0;i<size;i++){
+		let vision=this.getFront()
+		let frontObject=control.world[vision[0]][vision[1]]
+		if(frontObject instanceof DeadlyEntity){
 		
-			let pos=this.neighbourPositions[i]
-			if(control.world[pos[0]][pos[1]].imageName==="shrub"){
-				
-				this.die();
-				break;
-			
-			
-			}
-			if(control.world[pos[0]][pos[1]].constructor.name === Berry.name){
-				let berry=control.world[pos[0]][pos[1]];
-				berry.hide()
-				this.eat(berry);
-				break;
-			
+			this.die()
+			return;
 		}
+		if(frontObject instanceof Edible){
+		
+			frontObject.hide()
+			this.eat(frontObject)
+			return;
 		}
 		}
 		
 	renderTrail(){
-		console.log("corpo: "+this.body+" estomago: "+this.stomach)
+		let i=this.body.length-1;
+		let j=0;
 		if(this.body.length>0){
 		
-		for(let i=0;i<this.stomach.length;i++){
+		for(;j<this.stomach.length;i--,j++){
 			let pos=this.body[i]
-		if(!(pos[0]>=70||pos[0]<0||pos[1]<0||pos[1]>=40)){
-			control.world[pos[0]][pos[1]]=new	EatenBerry(pos[0],pos[1],this.stomach[i])
+			let current=control.world[pos[0]][pos[1]];
+		current=new EatenBerry(pos[0],pos[1],this.stomach[j])
 		}
-		}
-		for(let i=this.stomach.length;i<this.body.length;i++){
+		for(;j<this.body.length;i--,j++){
 		let pos=this.body[i]
-		if(!(pos[0]>=70||pos[0]<0||pos[1]<0||pos[1]>=40)){
-			control.world[pos[0]][pos[1]]=new	SnakeModule(pos[0],pos[1])
-		}
+		let current=control.world[pos[0]][pos[1]];
+		current=new SnakeModule(pos[0],pos[1])
 			
 		}
 	}
-	}
-	hideTrail(){
+	} 
+	hideTrail(){                                                        
 		if(this.body.length>0){
 		for(let i=0;i<this.body.length;i++){
 			let pos=this.body[i]
-		//if manhoso para permitir deslocaçoes pseudoesfericas com
-		//cauda nao vazia
-		if(!(pos[0]>=70||pos[0]<0||pos[1]<0||pos[1]>=40)){ 
 			control.world[pos[0]][pos[1]].hide()
 		}
 		}
 		}
-	}
 	updateTrail(){
 	
 		this.body.push(
 		[this.x,this.y]
 		)
-		if(this.body.length>this.trailSize){
+		while(this.body.length>this.trailSize){
 		this.body.shift()
 		}
 	
 	
 	}
 	eat(berry){
-		//for(let i=0;i<berry.getScore();i++){
-		this.trailSize+=1
+		if(this.stomach.includes(berry.getColor())&&this.trailSize>=10){
+			this.trailSize=parseInt(this.trailSize*0.5);
+			
+		
+		
+		}
+		else{
+		this.trailSize+=berry.getScore()
+		for(let i=0;i<berry.getScore();i++){
 		this.body.push(
-		[this.x-this.movex,this.y-this.movey]
+		[this.x,this.y]
 		)
-		//}
+		}
+		}
 		this.stomach.push(
-		[berry.getColor()]
+		berry.getColor()
 		)
-		if(this.stomach.length>this.maxStomachSize){
+	
+		while(this.stomach.length>this.maxStomachSize){
 		this.stomach.shift();
 		}
 	}
+	move(dx,dy){
+	
+	
+		this.hide();
+		this.hideTrail();
+		this.updateTrail();
+		this.renderTrail()
+		this.x += dx;
+		this.y += dy;
+		this.show();
+	
+	
+	}
 	animation(x, y) {
 		this.handleKey();
-		this.hideTrail();
-		this.eyes()
-		this.updateTrail();
-		this.move(this.movex, this.movey);
 		this.handleBehaviour()
-		this.renderTrail()
+		this.move(this.movex, this.movey);
+		this.checkPosition()
+		control.score=this.trailSize+1
 	}
+	
 	die(){
-		gameOver=true;
+		control.gameOver=true;
 	}
 }
 
@@ -390,6 +468,10 @@ class GameControl {
 		control = this;	// setup global var
 		this.key = 0;
 		this.time = 0;
+		this.nextBerriesTime=this.time+1+rand(11)
+		this.pause=false;
+		this.gameOver=false
+		this.score=0;
 		this.ctx = document.getElementById("canvas1").getContext("2d");
 		this.empty = new Empty();	// only one empty actor needed, global var
 		this.world = this.createWorld();
@@ -423,13 +505,16 @@ class GameControl {
 		let k = this.key;
 		this.key = 0;
 		switch( k ) {
-			case 37: case 79: case 74: return [-1, 0];	// LEFT, O, J
-			case 38: case 81: case 73: return [0, -1];	// UP, Q, I
-			case 39: case 80: case 76: return [1, 0];	// RIGHT, P, L
-			case 40: case 65: case 75: return [0,1];	// DOWN, A, K
+			case 37: return [-1, 0,false];	// LEFT, O, J
+			case 79: case 74: return [-1,0,true];
+			case 38: return [0, -1,false];	// UP, Q, I
+			case 81: case 73: return [0,-1,true];
+			case 39: return [1, 0,false];	// RIGHT, P, L
+			case 80: case 76: return [1,0,true];
+			case 40: return [0,1,false];	// DOWN, A, K
+			case 65: case 75: return [0,1,true];
 			case 32: togglePause()
 			case 0: return null;
-			default: return String.fromCharCode(k);
 		// http://www.cambiaresearch.com/articles/15/javascript-char-codes-key-codes
 		};	
 	}
@@ -439,8 +524,8 @@ class GameControl {
 		setInterval(() => this.animationEvent(), 1000 / ANIMATION_EVENTS_PER_SECOND);
 	}
 	animationEvent() {
-	if(!pause&&!gameOver){
-		getTime(this.time);
+	if(!(this.pause||this.gameOver)){
+		getStats(this.time,this.score);
 		this.time++;
 		for(let x=0 ; x < WORLD_WIDTH ; x++)
 			for(let y=0 ; y < WORLD_HEIGHT ; y++) {
@@ -448,14 +533,45 @@ class GameControl {
 				if( a.atime < this.time ) {
 					a.atime = this.time;
 					a.animation(x, y);
+					if(this.score>=GAME_ENDING_SCORE){
+					
+					this.gameOver=true;
+					}
 				}
 			}
+		if(this.time==this.nextBerriesTime){
+		
+			this.genBerries(1+rand(5))
+			this.getNextBerriesTime();
 		}
-	else if(gameOver){
+	}
+	else if(this.gameOver){
 	
-		document.getElementById("timer").innerHTML= "Acabou"
+		let result= document.getElementById("timer");
+		result.innerHTML="Perdeste"
+		let pauseButton=document.getElementById("pauseButton");
+	 	pauseButton.style.display = "none";
+		if(this.score>=GAME_ENDING_SCORE){
+					
+		result.innerHTML= "Ganhaste!!!!"+"\nThe time: "+ this.time+ "\nThe score: "+this.score
+		
+		}
 	
 	}
+	}
+	genBerries(num){
+	for(let i=0;i<num;i++){
+	let pos= [rand(70),rand(40)]
+		let len= goodBerryColours.length;
+		let colour= goodBerryColours[rand(len)]
+		this.world[pos[0]][pos[1]]=new Berry(pos[0],pos[1],colour)
+	
+	}
+	}
+	getNextBerriesTime(){
+	
+	this.nextBerriesTime+=1+rand(10)
+	
 	}
 	keyDownEvent(e) {
 		this.key = e.keyCode;
@@ -467,13 +583,18 @@ class GameControl {
 
 // Functions called from the HTML page
 function togglePause(){
-	if(pause==true){
+	if(control===undefined){
+		return;
+		}
+	if(control.pause){
 	
-		pause=false
+		control.pause=false
 	}
 	else{
 	
-		pause=true;
+		let result= document.getElementById("timer");
+		result.innerHTML= "PAUSADO!!!!!!!"
+		control.pause=true;
 	}	
 	
 }
@@ -490,10 +611,10 @@ function onLoad() {
 	// Asynchronously load the images an then run the game
 	GameImages.loadAll(() => new GameControl());
 }
-function getTime(timeValue){
+function getStats(timeValue,score){
 
-	let timer=document.getElementById("pauseButton");
-	timer.innerHTML="The time: "+ timeValue
+	let timer=document.getElementById("timer");
+	timer.innerHTML="The time: "+ timeValue+ "\nThe score: "+parseInt(score)
 }
 
 function b1() { mesg("button1") }
