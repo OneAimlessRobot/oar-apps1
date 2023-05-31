@@ -1,4 +1,3 @@
-1
 /*	Narcissa
 
 Aluno 1: 62411 Adriano Antonio Campos Valente <-- mandatory to fill
@@ -20,7 +19,7 @@ implementação que possam ser menos óbvios para o avaliador.
 
 // GLOBAL CONSTANTS
 
-const ANIMATION_EVENTS_PER_SECOND = 60;
+const ANIMATION_EVENTS_PER_SECOND =4;
 
 const IMAGE_NAME_EMPTY = "empty";
 const IMAGE_NAME_INVALID = "invalid";
@@ -35,6 +34,8 @@ const IMAGE_NAME_BERRY_PURPLE = "berryPurple";
 const IMAGE_NAME_BERRY_RED = "berryRed";
 const IMAGE_NAME_SNAKE_HEAD = "snakeHead";
 
+//Cores aleatorias que podem ser geradas para berries
+
 const goodBerryColours = ["berryBlue",
 	"berryCyan",
 	"berryGreen",
@@ -45,7 +46,7 @@ const goodBerryColours = ["berryBlue",
 ]
 
 
-const GAME_ENDING_SCORE = 1000;
+const GAME_ENDING_SCORE = 300;
 // GLOBAL VARIABLES
 
 let control; // Try not no define more global variables
@@ -82,25 +83,10 @@ class Actor {
 	}
 	handleBehaviour() {}
 	getPositionsAround() {
-		this.neighbourPositions = [
-			[this.x - 1, this.y - 1], //1
-			[this.x + 1, this.y + 1], //2
-			[this.x - 1, this.y], //3
-			[this.x, this.y + 1], //4
-			[this.x + 1, this.y], //5
-			[this.x, this.y - 1], //6
-			[this.x - 1, this.y + 1], //7
-			[this.x + 1, this.y - 1] //8
-		]
-
-		/*     168 	
-		       3S5	
-		       742	
-		*/
-
+	this.neighbourPositions = this.getPositionsAroundPoint(this.x,this.y)
 
 	}
-	
+	//funcao que devolve os vizinhos de um ponto excluindo o vizinho
 	getPositionsAroundPoint(xPos,yPos) {
 		return [
 			[xPos- 1, yPos - 1], //1
@@ -114,13 +100,18 @@ class Actor {
 		]
 
 		/*     168 	
-		       3S5	
+		       3S5	S is snake Head
 		       742	
 		*/
 
 
 	}
 	animation(x, y) {}
+	// funcao que devolve uma versao filtrada de um vetor.Essencial para
+	// lidar com tudo o que seja lidar com o que acontece quando se da
+	// "uma volta ao canvas". 
+	// Mas devido a forma como funciona, causa um bug de quando a 
+	// Snake cresce quando esta a exatamente 1 posicao da margem.
 	checkPositionVar(xPos, yPos) {
 		if (xPos >= 70) {
 
@@ -142,26 +133,11 @@ class Actor {
 
 	}
 	checkPosition() {
-		if (this.x >= 70) {
-
-			this.x = 1
-		}
-		if (this.x <= 0) {
-
-			this.x = 69
-		}
-		if (this.y >= 40) {
-
-			this.y = 1
-		}
-		if (this.y <= 0) {
-
-			this.y = 39
-		}
+		[this.x,this.y]=this.checkPositionVar(this.x,this.y)
 
 	}
 }
-
+//Tudo o que mate a cobra extende esta classe
 class DeadlyEntity extends Actor {
 
 	constructor(x, y, image) {
@@ -183,58 +159,62 @@ class Shrub extends DeadlyEntity {
 
 
 	}
+	//O enunciado dizia: entre 20 a 100 (20+80) segundos, 
+	//um shrub cresce uma celula
 	getNextGrowTimeInc() {
 
-		return (20 + rand(80));
+		return 4*(20 + rand(80));
 	}
 
 	getNextGrowTime() {
 
 		this.nextGrowtime += this.getNextGrowTimeInc();
 	}
-	
+	//Tentei fatorizar o loop gigante dentro do if e for principais, mas não consegui fazer com que isso funcionasse.
 	growInSize() {
 		if(this.components.length==0){
 		
 		this.getPositionsAround();
 		let around=this.neighbourPositions;
 		let x = around.length;
+		
 		for (let i = 0; i < x; i++) {
 			let betterPos = this.checkPositionVar(around[i][0], around[i][1])
 			let object = control.world[betterPos[0]][betterPos[1]];
 
-			if (!(object instanceof ShrubModule)) {
+			if (!(object instanceof ShrubModule)&&!(object instanceof Shrub)) {
 
 				this.components.push([betterPos[0],betterPos[1]])
 				return;
 
 			}
 		}
-		
-		
+			
 		
 		}
 		for(let j=0;j<this.components.length;j++){
 		let pos=this.components[j]
 		let around=this.getPositionsAroundPoint(pos[0],pos[1]);
 		let x = around.length;
+			
 		for (let i = 0; i < x; i++) {
 			let betterPos = this.checkPositionVar(around[i][0], around[i][1])
 			let object = control.world[betterPos[0]][betterPos[1]];
 
-			if (!(object instanceof ShrubModule)) {
-				
-				object=new ShrubModule(betterPos[0],betterPos[1])
+			if (!(object instanceof ShrubModule)&&!(object instanceof Shrub)) {
+
 				this.components.push([betterPos[0],betterPos[1]])
 				return;
 
 			}
 		}
+			
 		}
 
 
 	}
-	renderCells(){
+	//Estes são analogos aos dos metodos da cauda da Snake
+	updateCells(){
 	
 		for(let i=0;i<this.components.length;i++){
 			let pos= this.components[i]
@@ -245,7 +225,17 @@ class Shrub extends DeadlyEntity {
 	
 	
 	}
+	renderCells(){
 	
+		for(let i=0;i<this.components.length;i++){
+			let pos= this.components[i]
+			let object=control.world[pos[0]][pos[1]]
+			object=new ShrubModule(pos[0],pos[1])
+		}
+	
+	
+	
+	}
 	hideCells(){
 		for(let i=0;i<this.components.length;i++){
 			let pos= this.components[i]
@@ -259,9 +249,10 @@ class Shrub extends DeadlyEntity {
 	animation(x, y) {
 		this.hide()
 		this.hideCells()
+		this.updateCells()
 		this.renderCells()
-		this.show()
 		this.handleBehaviour();
+		this.show()
 
 	}
 	handleBehaviour() {
@@ -303,7 +294,7 @@ class Invalid extends Actor {
 		super(x, y, IMAGE_NAME_INVALID);
 	}
 }
-
+//Tudo o que a cobra coma extende esta classe
 class Edible extends Actor {
 	constructor(x, y, image) {
 		super(x, y, image);
@@ -316,7 +307,9 @@ class Berry extends Edible {
 	constructor(x, y, color) {
 		super(x, y, color);
 		this.afloat = true;
-		this.deadLine = control.time + 20 + rand(80)
+		//O enunciado dizia: entre 20 a 100 (20+80) segundos, 
+	//uma berry esta boa
+		this.deadLine = control.time + 4*(20 + rand(80))
 		this.score = 1;
 	}
 	getColor() {
@@ -341,6 +334,7 @@ class Berry extends Edible {
 		} else if (this.deadLine - control.time <= 10) {
 
 			this.score = 2;
+			//Eis o que eu escolhi que acontecesse quando uma berry ficasse podre
 			control.world[this.x][this.y].imageName = "berryBrown"
 		}
 
@@ -356,7 +350,6 @@ class Berry extends Edible {
 	}
 
 }
-
 class EatenBerry extends DeadlyEntity {
 
 	constructor(x, y, image) {
@@ -398,7 +391,6 @@ class Snake extends DeadlyEntity {
 			let i = 0
 			i = 1
 		}
-		//mesg("special command == " + k)
 		else { // change direction
 			if (!k[2]) {
 				[this.movex, this.movey] = [k[0], k[1]];
@@ -407,9 +399,18 @@ class Snake extends DeadlyEntity {
 
 
 			}
-			//mesg("change direction == " + k)
 		}
 	}
+	//Funçao invocada quando se da shift do corpo todo da Snake 
+	/*
+	
+		........				........	
+		..SSSS..	shift Down	........
+	 	........	By one		..SSSS..
+		........	======>		........
+	
+	
+	*/
 	shiftBody(key) {
 		this.hide()
 		this.hideTrail()
@@ -421,11 +422,13 @@ class Snake extends DeadlyEntity {
 			this.body[i][1] += key[1]
 
 		}
-		this.show()
 		this.renderTrail()
+		this.show()
 
 
 	}
+	//Isto e invocado quando queremos ver a posicao diretamente a frente
+	//Da cabeca da cobra, sendo que "diretamente a frente" depende da direçao de movimento atual.
 	getFront() {
 
 		return this.checkPositionVar(this.x + this.movex, this.y + this.movey)
@@ -449,7 +452,18 @@ class Snake extends DeadlyEntity {
 			return;
 		}
 	}
-
+	//
+	//            
+		
+	/*	   	-------->i----------->
+		H B1 B2 B3 C1 C2 C3...... CN
+		  i
+	      |
+	   ultima
+	   posiçao
+	
+	
+	*/
 	renderTrail() {
 		let i = this.body.length - 1;
 		let j = 0;
@@ -483,6 +497,7 @@ class Snake extends DeadlyEntity {
 
 	}
 	eat(berry) {
+	//n >= 5 => 2*n >= 10
 		if (this.stomach.includes(berry.getColor()) && this.trailSize >= 10) {
 
 			this.trailSize = parseInt(this.trailSize * 0.5);
@@ -522,7 +537,6 @@ class Snake extends DeadlyEntity {
 		this.handleKey();
 		this.handleBehaviour()
 		this.move(this.movex, this.movey);
-		this.checkPosition()
 		control.score = this.trailSize + 1
 	}
 
@@ -578,6 +592,10 @@ class GameControl {
 		let k = this.key;
 		this.key = 0;
 		switch (k) {
+		//Os booleanos sao o que uso para distinguir se
+		// devo fazer uma mudanca de direcao ou um shift.
+		// Falso se quiser mudar de direçao.
+		// True, caso contrario
 			case 37:
 				return [-1, 0, false]; // LEFT, O, J
 			case 79:
@@ -612,7 +630,7 @@ class GameControl {
 	}
 	animationEvent() {
 		if (!(this.pause || this.gameOver)) {
-			getStats(this.time, this.score);
+			printStats(this.time, this.score);
 			this.time++;
 			for (let x = 0; x < WORLD_WIDTH; x++)
 				for (let y = 0; y < WORLD_HEIGHT; y++) {
@@ -628,20 +646,21 @@ class GameControl {
 				}
 			if (this.time == this.nextBerriesTime) {
 
-				this.genBerries(1 + rand(5))
+				this.genBerries(this.getNextNumOfBerries())
 				this.getNextBerriesTime();
 			}
 		} else if (this.gameOver) {
 
 			let result = document.getElementById("timer");
-			result.innerHTML = "Perdeste"
+			result.innerHTML = "Perdeste!!!!"
 			let pauseButton = document.getElementById("pauseButton");
 			pauseButton.style.display = "none";
 			if (this.score >= GAME_ENDING_SCORE) {
 
-				result.innerHTML = "Ganhaste!!!!" + "\nThe time: " + parseInt(this.time/4) + "\nThe score: " + this.score
-
+				result.innerHTML = "Ganhaste!!!!" 
 			}
+			result.innerHTML+=getStats()
+
 
 		}
 	}
@@ -663,10 +682,17 @@ class GameControl {
 
 		}
 	}
+	//O enunciado dizia: entre 1 a 11 (1+10) segundos, 
+	//aparecem mais berries
 	getNextBerriesTime() {
 
 		this.nextBerriesTime += 4*(1 + rand(10))
 
+	}
+	//E que quando aparecem berries, eram de 1 a 5
+	getNextNumOfBerries(){
+	
+		return 1 + rand(4);
 	}
 	keyDownEvent(e) {
 		this.key = e.keyCode;
@@ -674,8 +700,16 @@ class GameControl {
 	keyUpEvent(e) {}
 }
 
-
 // Functions called from the HTML page
+
+
+
+function getStats(){
+
+
+	return " The time: " + parseInt(control.time) + "\nThe score: " + parseInt(control.score)
+}
+
 function togglePause() {
 	if (control === undefined) {
 		return;
@@ -686,8 +720,8 @@ function togglePause() {
 	} else {
 
 		let result = document.getElementById("timer");
-		result.innerHTML = "PAUSADO!!!!!!!"
-		control.pause = true;
+		result.innerHTML = "PAUSADO!!!!!!!" +getStats()
+		control.pause=true
 	}
 
 }
@@ -707,10 +741,10 @@ function onLoad() {
 	GameImages.loadAll(() => new GameControl());
 }
 
-function getStats(timeValue, score) {
+function printStats() {
 
 	let timer = document.getElementById("timer");
-	timer.innerHTML = "The time: " + parseInt(timeValue/4) + "\nThe score: " + parseInt(score)
+	timer.innerHTML = getStats();
 }
 
 function b1() {

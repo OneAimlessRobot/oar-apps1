@@ -4,10 +4,10 @@ import playGround.adt.Collection;
 import playGround.adt.InvIterator;
 import playGround.adt.Iterator;
 import playGround.adt.TwoWayIterator;
-import playGround.adt.abstractClasses.AbstractCollection;
+import playGround.adt.abstractClasses.*;
 import playGround.adt.collections.MySet;
 
-public class MyHashSet<T> extends AbstractCollection<T> implements MySet<T> {
+public class MyHashSet<T> extends AbstractSet<T> implements MySet<T> {
 
 	private static class HashSetIterator<T> implements TwoWayIterator<T>{
 		

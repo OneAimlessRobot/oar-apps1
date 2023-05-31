@@ -317,11 +317,7 @@ public class LinkedList<T> extends AbstractList<T> implements List<T> {
 			return;
 		
 		}
-		if(length==1) {
-			removeFirst();
-		}
-		else if(index <=0) {
-			
+		if(length==1||index <=0) {
 			removeFirst();
 		}
 		else if(index >=length-1) {

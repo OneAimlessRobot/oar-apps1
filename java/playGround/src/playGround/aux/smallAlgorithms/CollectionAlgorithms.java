@@ -1,12 +1,11 @@
 package playGround.aux.smallAlgorithms;
 import playGround.adt.Iterator;
+import playGround.adt.*;
 import playGround.adt.collections.List;
 import playGround.adt.collections.MySet;
 import playGround.adt.exceptions.CollectionEmptyException;
-import playGround.ds.DoubleLinkedList;
-import playGround.ds.Vector;
-import playGround.ds.TreeSet;
-import playGround.ds.LinkedList;
+import playGround.adt.exceptions.StackEmptyException;
+import playGround.ds.*;
 import playGround.aux.numeric.*;
 public class CollectionAlgorithms {
 	
@@ -103,6 +102,48 @@ public class CollectionAlgorithms {
 			
 		}
 		return list;
+		
+		
+		
+		
+	}
+	
+	public static  <T> boolean listIsPalindrome(List<T> list){
+		if(list.isEmpty()) {
+			
+			return false;
+			
+		}
+		Stack<T> aux= new StackInLinkedList<>();
+		int length= list.size();
+		int middle=(int) Math.floor(length/2);
+		for(int i=middle;i<length;i++) {
+			
+			aux.push(list.get(i));
+			
+		}
+		try {
+			for(int i=0;i<middle;i++) {
+				
+				if(!aux.pop().equals(list.get(i))) {
+					
+					
+					return false;
+				}
+				
+				
+			}
+			
+			
+			
+			
+		}catch(StackEmptyException e) {
+			
+			System.out.println("Stack vazia no algoritmo de listas palindromos!!!!!\n");
+			
+		}
+		return true;
+		
 		
 		
 		
