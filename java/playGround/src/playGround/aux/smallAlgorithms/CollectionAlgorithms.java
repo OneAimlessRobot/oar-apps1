@@ -130,14 +130,9 @@ public class CollectionAlgorithms {
 					
 					return false;
 				}
-				
-				
 			}
-			
-			
-			
-			
-		}catch(StackEmptyException e) {
+		}
+		catch(StackEmptyException e) {
 			
 			System.out.println("Stack vazia no algoritmo de listas palindromos!!!!!\n");
 			

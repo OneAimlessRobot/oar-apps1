@@ -3,7 +3,6 @@ package playGround.aux.smallAlgorithms;
 import java.io.*;
 import java.util.Scanner;
 
-import myClasses.AlphabeticalString;
 import playGround.adt.Iterator;
 import playGround.adt.collections.List;
 import playGround.adt.exceptions.CollectionEmptyException;
@@ -34,6 +33,58 @@ public class FileOperations {
 		
 		
 	}
+	public static <T> void serializeObjectList(List<T> list,String fileName) throws CollectionEmptyException{
+		
+		
+		File file= new File(fileName);
+		try {
+			Iterator<T> it= list.iterator();				
+			ObjectOutputStream stream= new ObjectOutputStream(new FileOutputStream(fileName,true));
+
+			while(it.hasNext()) {
+				stream.writeObject(it.next());
+			}
+			printToFile(fileName," ");
+			stream.close();
+			
+		} catch (FileNotFoundException e) {
+			System.out.println("Ficheiro nao encontrado!!!!\n");
+		} catch (IOException e) {
+
+			System.out.println("Erro de escrita!!!!\n");
+		}
+		
+		
+		
+	}
+	public static <T> List<T> deserializeObjectList(String fileName) throws CollectionEmptyException{
+		
+		
+		File file= new File(fileName);
+		List<T> list =new Vector<>();
+		try {				
+			ObjectInputStream stream= new ObjectInputStream(new FileInputStream(fileName));
+	
+			while(true) {
+				
+				list.add((T)stream.readObject());
+				
+			}
+		} catch (FileNotFoundException e) {
+			System.out.println("Ficheiro nao encontrado!!!!\n");
+		} catch (IOException e) {
+
+			System.out.println("Erro de escrita!!!!\n");
+			return list;
+		} catch (ClassNotFoundException e) {
+			System.out.println("Classes incompativeis!!!!!");
+		}
+		return list;
+		
+		
+		
+	}
+	
 	
 	public static void catFile(String fileName) {
 		
