@@ -4,39 +4,91 @@ import playGround.adt.collections.List;
 import playGround.ds.Vector;
 
 public class SortingAlgorithms extends CollectionAlgorithms {
-	
-	private static class Partition<T extends Comparable<T>> {
+	public class myQuickSort{
 		
-		private List<T> first,second;
-		public Partition(List<T> first,List<T> second) {
+
+		private static class Partition<T extends Comparable<T>> {
 			
-			this.first=first;
-			this.second=second;
-			
+			private List<T> first,second;
+			public Partition(List<T> first,List<T> second) {
+				
+				this.first=first;
+				this.second=second;
+				
+				
+				
+			}
+			public String toString() {
+				
+				return "["+ first.toString()+"\n"+second.toString()+"]";
+				
+			}
+			public List<T> getFirst() {
+				return first;
+			}
+			public void setFirst(List<T> first) {
+				this.first = first;
+			}
+			public List<T> getSecond() {
+				return second;
+			}
+			public void setSecond(List<T> second) {
+				this.second = second;
+			}
 			
 			
 		}
-		public String toString() {
+
+		private static <T extends Comparable<T>> Partition<T> splitList(T elem,List<T> list){
+			if(list.isEmpty()) {
+				
+				return new Partition<T>(new Vector<>(),new Vector<>());
+			}
+			if(!list.contains(elem)) {
+				
+				return null;
+			}
+				T pivot= list.get(list.size()-1);
+				list.remove();
+				Partition<T> p=splitList(elem,list);
+				if(pivot.compareTo(elem)<=0) {
+
+					 p.getFirst().add(pivot);
+					return p;
+					
+				}
+				else 
+				{
+
+					p.getSecond().add(pivot);
+					return p;
+					
+				}
 			
-			return "["+ first.toString()+"\n"+second.toString()+"]";
 			
 		}
-		public List<T> getFirst() {
-			return first;
+		public static <T extends Comparable<T>> List<T> sort(List<T> list){
+			
+			if(list.isEmpty()) {
+				
+				return (List<T>) list.copy();
+			}
+			T elem=list.get(0);
+			list.remove(0);
+			Partition<T> p=splitList(elem,(List<T>) list.copy());
+			List<T> l1=p.getFirst(),l2=p.getSecond(),l3=new Vector<>();
+			ListConcatenator lc= new ListConcatenatorWithRAM();
+			return 	 lc.concatenate(sort(l1), lc.concatenate(l3,sort(l2)));
+
+			
+			
 		}
-		public void setFirst(List<T> first) {
-			this.first = first;
-		}
-		public List<T> getSecond() {
-			return second;
-		}
-		public void setSecond(List<T> second) {
-			this.second = second;
-		}
-		
 		
 	}
-	private static <T extends Comparable<T>> int betterSplitList(List<T> list,int start,int end){
+	
+	public class QuickSort{
+		
+	private static <T extends Comparable<T>> int splitList(List<T> list,int start,int end){
 		
 		T pivot= list.get(end);
 		int balancePoint=start;
@@ -53,71 +105,28 @@ public class SortingAlgorithms extends CollectionAlgorithms {
 			
 			
 		}
+		
 		T tmp=list.get(end);
 
 		list.update(list.get(balancePoint),end);
 		list.update(tmp,balancePoint);
 		return balancePoint;
 	}
-	private static <T extends Comparable<T>> Partition<T> mySplitList(T elem,List<T> list){
-		if(list.isEmpty()) {
-			
-			return new Partition<T>(new Vector<>(),new Vector<>());
-		}
-		if(!list.contains(elem)) {
-			
-			return null;
-		}
-			T pivot= list.get(list.size()-1);
-			list.remove();
-			Partition<T> p=mySplitList(elem,list);
-			if(pivot.compareTo(elem)<=0) {
-
-				 p.getFirst().add(pivot);
-				return p;
-				
-			}
-			else 
-			{
-
-				p.getSecond().add(pivot);
-				return p;
-				
-			}
+	public static <T extends Comparable<T>> void sort(List<T> list) {
+		
+		sortAux(list,0,list.size()-1);
 		
 		
 	}
-	public static <T extends Comparable<T>> List<T> myQuickSort(List<T> list){
-		
-		if(list.isEmpty()) {
-			
-			return (List<T>) list.copy();
-		}
-		T elem=list.get(0);
-		list.remove(0);
-		Partition<T> p=mySplitList(elem,(List<T>) list.copy());
-		List<T> l1=p.getFirst(),l2=p.getSecond(),l3=new Vector<>();
-		ListConcatenator lc= new ListConcatenatorWithRAM();
-		return 	 lc.concatenate(myQuickSort(l1), lc.concatenate(l3,myQuickSort(l2)));
-
-		
-		
-	}
-	public static <T extends Comparable<T>> void betterQuickSort(List<T> list) {
-		
-		betterQuickSortAux(list,0,0);
-		
-		
-	}
-	private static <T extends Comparable<T>> void betterQuickSortAux(List<T> list,int init,int end){
+	private static <T extends Comparable<T>> void sortAux(List<T> list,int init,int end){
 		
 		if(init>=end) {
 			
 			return ;
 		}
-		int pivot= betterSplitList(list,init,end);
-		betterQuickSortAux(list,pivot+1,end);
-		betterQuickSortAux(list,init,pivot-1);
+		int pivot= splitList(list,init,end);
+		sortAux(list,pivot+1,end);
+		sortAux(list,init,pivot-1);
 		
 		
 
@@ -125,8 +134,13 @@ public class SortingAlgorithms extends CollectionAlgorithms {
 		
 	}
 	
+	
+	
+}
+	public class BubbleSort{
+	
 
-	public static <T extends Comparable<T>> void bubbleSort(List<T> list){
+	public static <T extends Comparable<T>> void sort(List<T> list){
 		
 		for(int i=0;i<list.size()-1;i++) {
 
@@ -147,6 +161,26 @@ public class SortingAlgorithms extends CollectionAlgorithms {
 		
 		
 		
+	}
+	}
+	
+	public static <T extends Comparable<T>> boolean isSorted(List<T> list,int index,boolean orientation) {
+		if(list.isEmpty()||list.size()==1) {
+			
+			return true;
+		}
+		if(index==list.size()-1) {
+			
+			return true;
+		}
+		if(orientation) {
+		return list.get(index).compareTo(list.get(index+1))<=0 && isSorted(list,index+1,orientation);
+		}
+		else {
+			return list.get(index).compareTo(list.get(index+1))>=0 && isSorted(list,index+1,orientation);
+		
+			
+		}
 	}
 
 }

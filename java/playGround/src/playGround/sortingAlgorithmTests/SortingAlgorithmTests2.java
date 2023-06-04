@@ -1,13 +1,14 @@
+package playGround.sortingAlgorithmTests;
 import playGround.ds.*;
 import playGround.adt.collections.*;
 import playGround.adt.exceptions.CollectionEmptyException;
 import playGround.aux.smallAlgorithms.*;
-public class SortingAlgorithmTests1 {
-	private static final String PATH_TO_SA="/home/k/oar-apps1/java/playGround/src/testStuff/stringFiles/FirstSortingResults";
+public class SortingAlgorithmTests2 {
+	private static final String PATH_TO_SA="/home/k/oar-apps1/java/playGround/src/testStuff/stringFiles/SecondSortingResults";
 
 
 	private static final String HEADER_PATH="/home/k/oar-apps1/java/playGround/src/playGround/res/sTestHeader";
-	private static final int DEFAULT_SIZE=64;
+	private static final int DEFAULT_SIZE=10000;
 
 	public static void main(String[] args) {
 
@@ -24,7 +25,9 @@ public class SortingAlgorithmTests1 {
 	        } else {
 	            System.out.println("No command-line arguments provided.");
 	        }
-			List<Integer> list= CollectionAlgorithms.toVList(CollectionAlgorithms.randIntArrAux(99, 0,intValue));
+			List<String> list= CollectionAlgorithms.toVList(CollectionAlgorithms.randStringArrAux(99, 0,intValue));
+
+			List<String> list2= (List<String>)list.copy();
 			
 			
 			System.out.println("Cheguei!! Init");
@@ -32,17 +35,15 @@ public class SortingAlgorithmTests1 {
 
 			System.out.println("Warming-up VM");
 
-			SortingAlgorithms.betterQuickSort(list);
+			SortingAlgorithms.BubbleSort.sort(list);
 			
 			System.out.println("Finished warming-up VM");
 			long time1= System.nanoTime()/1000;
-			SortingAlgorithms.betterQuickSort(list);
+			SortingAlgorithms.BubbleSort.sort(list2);
 			long time2=System.nanoTime()/1000;
-			System.out.println(list);
 			FileOperations.printToFile(PATH_TO_SA,intValue+","+(time2-time1)+"\n");
 
 			
 		
 	}
-
 }
