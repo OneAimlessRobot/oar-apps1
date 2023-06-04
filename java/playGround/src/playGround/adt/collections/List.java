@@ -14,5 +14,7 @@ public interface List<T> extends Collection<T> {
 	
 	int getIndex(T elem);
 	
+	void update(T elem, int index);
+	
 	
 }

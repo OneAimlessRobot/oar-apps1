@@ -2,6 +2,7 @@ package playGround.ds;
 
 import playGround.adt.collections.List;
 import playGround.adt.exceptions.StackEmptyException;
+
 import playGround.adt.Collection;
 import playGround.adt.InvIterator;
 import playGround.adt.Iterator;
@@ -370,6 +371,53 @@ public class LinkedList<T> extends AbstractList<T> implements List<T> {
 	public void clear() {
 		
 		this.finalize();
+	}
+	@Override
+	public void update(T elem, int index) {
+		if(isEmpty()) {
+			
+			return;
+		
+		}
+		if(length==1) {
+			updateFirst(elem);
+		}
+		else if(index <=0) {
+
+			updateFirst(elem);
+		}
+		else if(index >=length) {
+
+			updateLast(elem);
+		}
+		else {
+
+			updateMiddle(elem,index);
+		
+		}
+		
+	}
+	private void updateFirst(T elem) {
+		
+		head.setElem(elem);
+		
+		
+	}
+	private void updateLast(T elem) {
+
+		Node<T> j = null;
+		j=head;
+		for(;j.getNext()!=null;j=j.getNext());
+		j.setElem(elem);
+		
+	}
+	private void updateMiddle(T elem,int index) {
+
+		Node<T> j = head;
+		int i=0;
+		for(;i<index;j=j.getNext(),i++);
+		j.setElem(elem);
+		
 	}
 	
 	

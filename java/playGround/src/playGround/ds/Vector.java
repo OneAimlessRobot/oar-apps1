@@ -182,7 +182,7 @@ public class Vector<T> extends AbstractList<T> implements List<T> {
 		
 		}
 		arr[index]=null;
-		for(int i=index;i<=currPos;i++) {
+		for(int i=index;i<currPos;i++) {
 			arr[i]=arr[i+1];
 			
 		}
@@ -230,5 +230,16 @@ public class Vector<T> extends AbstractList<T> implements List<T> {
 			
 			this.remove();
 		}
+	}
+	@Override
+	public void update(T elem, int index) {
+		if(isEmpty()) {
+			
+			return;
+		
+		}
+		int i=0;
+		for(;i<currPos&&i<index&&index>-1;i++);
+		arr[i]=elem;
 	}
 }

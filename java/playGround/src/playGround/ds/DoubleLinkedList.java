@@ -465,6 +465,63 @@ public class DoubleLinkedList<T> extends AbstractList<T> implements List<T> {
 		this.finalize();
 		
 	}
+	@Override
+	public void update(T elem, int index) {
+		if(isEmpty()) {
+			
+			return;
+		
+		}
+		if(length==1) {
+			updateFirst(elem);
+		}
+		else if(index <=0) {
+
+			updateFirst(elem);
+		}
+		else if(index >=length) {
+
+			updateLast(elem);
+		}
+		else {
+
+			updateMiddle(elem,index);
+		
+		}
+	}
+	private void updateFirst(T elem) {
+		
+		head.setElem(elem);
+		
+		
+	}
+	private void updateMiddle(T elem,int index) {
+
+
+		Node<T> j = null;
+		int i;
+		if(index>length/2) {
+			
+			i=length-1;
+			j=trail;
+			for(;i>index;i--,j=j.getPrev());
+				
+		}
+		else if(index<=length/2) {
+			
+			i=0;
+			j=head;
+			for(;i<index;i++,j=j.getNext());
+		}
+
+		j.setElem(elem);
+		
+	}
+	private void updateLast( T elem) {
+		
+		trail.setElem(elem);
+		
+	}
 	
 	
 

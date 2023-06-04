@@ -16,7 +16,7 @@ public class FileOperations {
 		
 		File file= new File(fileName);
 		try {
-			FileWriter fwrite= new FileWriter(file);
+			FileWriter fwrite= new FileWriter(file,true);
 			Iterator<T> it= list.iterator();
 			while(it.hasNext()) {
 				
@@ -44,7 +44,6 @@ public class FileOperations {
 			while(it.hasNext()) {
 				stream.writeObject(it.next());
 			}
-			printToFile(fileName," ");
 			stream.close();
 			
 		} catch (FileNotFoundException e) {
