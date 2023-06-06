@@ -1,4 +1,4 @@
-open Trees
+
 let weirdSum x=
 
 let rec g x=
@@ -18,6 +18,6 @@ in
 f x
 
 let main ()=
-	let nums= [1;3;5;8;10;2;12;79;40;30;20] in
-	print_int (Trees.height (Trees.listToBinTree nums)); print_newline ()
-main ();;
+	let nums= [1;8;10;2;12;40;30;20] in
+	print_int (Trees.height (Trees.listToBinTree nums)); print_newline ();;
+main ()
