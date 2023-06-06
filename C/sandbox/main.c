@@ -31,7 +31,10 @@ int fact(int n,Fun k){
 
 
 }
+int fact(){
 
+    return 0;
+}
 int main(void){
     int res=fact(4,ret);
 
