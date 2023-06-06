@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1685489262 source:/home/k/oar-apps1/C/sandbox/aux.c
+
+1685986359 source:/home/k/oar-apps1/C/sandbox/main.c
+	<stdio.h>
+
