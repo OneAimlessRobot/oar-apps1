@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>playGround</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>Ocaml.ocamlbuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>ocaml.ocamlnature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>External files/stdlib.mli</name>
+			<type>1</type>
+			<location>/usr/lib/ocaml/stdlib.mli</location>
+		</link>
+	</linkedResources>
+</projectDescription>
