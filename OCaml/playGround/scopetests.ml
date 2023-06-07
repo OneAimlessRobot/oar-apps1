@@ -1,6 +1,6 @@
 
+open NTrees
 let weirdSum x=
-
 let rec g x=
 	h (x+1)
 	

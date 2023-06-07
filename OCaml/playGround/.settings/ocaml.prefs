@@ -1,5 +1,8 @@
-compil_mode/<project>=byte-code
+compil_mode/<project>=native
+compil_mode/ntrees.exe=native
 compil_mode/scopetests.exe=byte-code
+compil_mode/trees.exe=native
 eclipse.preferences.version=1
-flags/<project>=-g\u00A0
+make_exe/ntrees.ml=ntrees.exe
 make_exe/scopetests.ml=scopetests.exe
+make_exe/trees.ml=trees.exe
