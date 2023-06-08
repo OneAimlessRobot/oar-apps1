@@ -21,13 +21,8 @@ and insertInTree  x t=
 in
 
 
-let rec invList l=
-	match l with
-	|[]->[]
-	|head::trail -> (invList trail)@[head]
-in
 
-listToBinTreeAux (invList l)
+listToBinTreeAux (Sets.invList l)
 
 
 

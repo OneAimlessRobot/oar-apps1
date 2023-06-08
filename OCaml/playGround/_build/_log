@@ -1,16 +1,22 @@
 ### Starting build.
-# Target: scopetests.ml.depends, tags: { extension:ml, file:scopetests.ml, ocaml, ocamldep, quiet }
-/usr/bin/ocamldep.opt -modules scopetests.ml > scopetests.ml.depends
-# Target: Operationalize.mli.depends, tags: { extension:mli, file:Operationalize.mli, ocaml, ocamldep, quiet }
-/usr/bin/ocamldep.opt -modules Operationalize.mli > Operationalize.mli.depends
-# Target: Operationalize.cmi, tags: { byte, compile, extension:mli, file:Operationalize.mli, interf, ocaml, quiet }
-/usr/bin/ocamlc.opt -c -o Operationalize.cmi Operationalize.mli
-# Target: scopetests.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:scopetests.cmo, file:scopetests.ml, implem, ocaml, quiet }
-/usr/bin/ocamlc.opt -c -o scopetests.cmo scopetests.ml
-+ /usr/bin/ocamlc.opt -c -o scopetests.cmo scopetests.ml
-File "scopetests.ml", line 20, characters 12-25:
-20 | 	print_int (NTrees.height [NTrees.g]);print_newline ();print_int (Operationalize.computeDifficulty Operationalize.example); print_newline ();
-                 ^^^^^^^^^^^^^
-Error: Unbound module NTrees
-Command exited with code 2.
-# Compilation unsuccessful.
+# Target: scopetests.ml.depends, tags: { extension:ml, file:scopetests.ml, ocaml, ocamldep, quiet, traverse }
+/usr/bin/ocamldep.opt -modules scopetests.ml > scopetests.ml.depends # cached
+# Target: treeModule/ntrees.ml.depends, tags: { extension:ml, file:treeModule/ntrees.ml, ocaml, ocamldep, quiet, traverse }
+/usr/bin/ocamldep.opt -modules treeModule/ntrees.ml > treeModule/ntrees.ml.depends # cached
+# Target: treeModule/ntrees.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:treeModule/ntrees.cmo, file:treeModule/ntrees.ml, implem, ocaml, quiet, traverse }
+/usr/bin/ocamlc.opt -c -I treeModule -I taskModule -I setModule -o treeModule/ntrees.cmo treeModule/ntrees.ml # cached
+# Target: taskModule/Operationalize.ml.depends, tags: { extension:ml, file:taskModule/Operationalize.ml, ocaml, ocamldep, quiet, traverse }
+/usr/bin/ocamldep.opt -modules taskModule/Operationalize.ml > taskModule/Operationalize.ml.depends # cached
+# Target: taskModule/Operationalize.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:taskModule/Operationalize.cmo, file:taskModule/Operationalize.ml, implem, ocaml, quiet, traverse }
+/usr/bin/ocamlc.opt -c -I taskModule -I treeModule -I setModule -o taskModule/Operationalize.cmo taskModule/Operationalize.ml # cached
+# Target: scopetests.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:scopetests.cmo, file:scopetests.ml, implem, ocaml, quiet, traverse }
+/usr/bin/ocamlc.opt -c -I taskModule -I treeModule -I setModule -o scopetests.cmo scopetests.ml # cached
+# Target: treeModule/ntrees.cmx, tags: { compile, extension:cmx, extension:ml, file:treeModule/ntrees.cmx, file:treeModule/ntrees.ml, implem, native, ocaml, quiet, traverse }
+/usr/bin/ocamlopt.opt -c -I treeModule -I taskModule -I setModule -o treeModule/ntrees.cmx treeModule/ntrees.ml # cached
+# Target: taskModule/Operationalize.cmx, tags: { compile, extension:cmx, extension:ml, file:taskModule/Operationalize.cmx, file:taskModule/Operationalize.ml, implem, native, ocaml, quiet, traverse }
+/usr/bin/ocamlopt.opt -c -I taskModule -I treeModule -I setModule -o taskModule/Operationalize.cmx taskModule/Operationalize.ml # cached
+# Target: scopetests.cmx, tags: { compile, extension:cmx, extension:ml, file:scopetests.cmx, file:scopetests.ml, implem, native, ocaml, quiet, traverse }
+/usr/bin/ocamlopt.opt -c -I taskModule -I treeModule -I setModule -o scopetests.cmx scopetests.ml # cached
+# Target: scopetests.native, tags: { dont_link_with, extension:native, file:scopetests.native, link, native, ocaml, program, quiet, traverse }
+/usr/bin/ocamlopt.opt -I taskModule -I treeModule taskModule/Operationalize.cmx treeModule/ntrees.cmx scopetests.cmx -o scopetests.native # cached
+# Compilation successful.
