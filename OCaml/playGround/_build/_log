@@ -1,0 +1,16 @@
+### Starting build.
+# Target: scopetests.ml.depends, tags: { extension:ml, file:scopetests.ml, ocaml, ocamldep, quiet }
+/usr/bin/ocamldep.opt -modules scopetests.ml > scopetests.ml.depends
+# Target: Operationalize.mli.depends, tags: { extension:mli, file:Operationalize.mli, ocaml, ocamldep, quiet }
+/usr/bin/ocamldep.opt -modules Operationalize.mli > Operationalize.mli.depends
+# Target: Operationalize.cmi, tags: { byte, compile, extension:mli, file:Operationalize.mli, interf, ocaml, quiet }
+/usr/bin/ocamlc.opt -c -o Operationalize.cmi Operationalize.mli
+# Target: scopetests.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:scopetests.cmo, file:scopetests.ml, implem, ocaml, quiet }
+/usr/bin/ocamlc.opt -c -o scopetests.cmo scopetests.ml
++ /usr/bin/ocamlc.opt -c -o scopetests.cmo scopetests.ml
+File "scopetests.ml", line 20, characters 12-25:
+20 | 	print_int (NTrees.height [NTrees.g]);print_newline ();print_int (Operationalize.computeDifficulty Operationalize.example); print_newline ();
+                 ^^^^^^^^^^^^^
+Error: Unbound module NTrees
+Command exited with code 2.
+# Compilation unsuccessful.

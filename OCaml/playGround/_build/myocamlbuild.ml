@@ -17,5 +17,5 @@ in
 f x
 
 let main ()=
-	print_newline ();print_int (Operationalize.computeDifficulty Operationalize.example); print_newline ();
+	print_int (NTrees.height [g]);print_newline ();print_int (Operationalize.computeDifficulty Operationalize.example); print_newline ();
 main ()

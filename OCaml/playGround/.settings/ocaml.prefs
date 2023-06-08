@@ -1,8 +1,10 @@
 compil_mode/<project>=native
+compil_mode/Operationalize.exe=native
 compil_mode/ntrees.exe=native
-compil_mode/scopetests.exe=byte-code
+compil_mode/scopetests.exe=native
 compil_mode/trees.exe=native
 eclipse.preferences.version=1
+make_exe/Operationalize.ml=Operationalize.exe
 make_exe/ntrees.ml=ntrees.exe
 make_exe/scopetests.ml=scopetests.exe
 make_exe/trees.ml=trees.exe
