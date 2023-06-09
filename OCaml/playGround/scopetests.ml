@@ -1,25 +1,11 @@
-let weirdSum x=
-
-let rec g x=
-	h (x+1)
-	
-and h x =
-	if x>=3 then
-	 x
-	else
-	 g x
-in
-let f x=
-	
-	g (x+1)
-	
-in
-f x
-
-
-
+open RandLists
+open TimeFunctions
+open SortingAlgorithms
 
 let main ()=
+	let l= generate_random_list 1000 1000 in
+	time (bubbleSort) l;
+	time (quickSort) l;
+	()
 
-	 print_newline ();;
-main ()
+let res= main ()

@@ -2,3 +2,5 @@
 "taskModule": include
 "treeModule": include
 "graphModule":include
+"auxModule":include
+"scopetests.ml": use_unix

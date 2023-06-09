@@ -1,1 +1,1 @@
-scopetests.ml:
+scopetests.ml: RandLists SortingAlgorithms TimeFunctions

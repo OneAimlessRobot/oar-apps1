@@ -15,14 +15,14 @@ let rec validate g =
   
 
 let makeChainGraph init num=
-
-if num<init then
-  failwith "num less than init!!!"
-else
+let start= num in
 let rec makeVexes num=
   match num with
   |n when n= init ->[n]
-  |x-> x::(makeVexes (x-1))
+  |x-> if(start> init) then
+        x::(makeVexes (x-1))
+else
+        x::(makeVexes(x+1))
   in
 
 let rec linkTogether list=
@@ -71,8 +71,6 @@ if belongs v g.vexes = false then
 else
         union (next v g) (prev v g)
 
-let linear = makeChainGraph (1)
-
 let nextOfList nl g=
 if validate g= false then 
   failwith "Invalid graph!!!!"
@@ -100,7 +98,7 @@ let rec uniteGraphs g1 g2=
 if validate g1= false ||validate g2= false then 
   failwith "Invalid graph!!!!"
 else
-  {vexes= union g1.vexes g2.vexes; edges= union g1.edges g2.edges}
+  {vexes= union g1.vexes g2.vexes; edges= g1.edges@g2.edges}
 
 
 let graphConnectsSets s1 s2 g= 
@@ -152,14 +150,68 @@ let fixGraph g=
                       fixEdges trail
                       else
                       (a,b)::(fixEdges trail)
-                      in
+    in
     let rec fixVexes vs=
     match vs with
     |[]->[]
     |head::trail-> if adjacent head g=[] then
                     fixVexes trail
-    else
-                head::(fixVexes trail)
+                    else
+                    head::(fixVexes trail)
     in
 
     {vexes= fixVexes( make g.vexes); edges= fixEdges (make g.edges)}
+
+
+let rec isConnected g =
+    length (islands g) = 1
+
+let hasCycles g =
+
+  if not (validate g) then
+    failwith "Invalid graph in hasCycles!!!!"
+    
+  else
+    let rec countVexes isl =
+      match isl with
+      |[]->0
+      |head::trail-> let remaining= minus trail (adjacent  head g) in
+                     (numberOfConnections head g.edges) + (countVexes remaining)
+    
+      and numberOfConnections v es=
+          match es with
+          |[]->0
+          |(a,b)::trail-> if a=v || b= v then
+                          1+ (numberOfConnections v trail)
+          else
+                  numberOfConnections v trail
+        
+          in
+  let sumOfSearchedVexes=sum (map (fun x->(countVexes x)+1) (islands g)) in
+  let totalIslandPopulations= sum (map (fun x-> length x) (islands g)) in
+        sumOfSearchedVexes>totalIslandPopulations
+
+
+
+    (*(print_int (sum (map (fun x->(countVexes x)+1) (islands g))));(print_int (sum (map (fun x-> length x) (islands g))));*)
+
+let nTreefy g =
+    if not(validate g) then
+      failwith "invalid graph in nTreefy"
+    else if hasCycles g then
+      failwith "Graph isnt acyclic!!!!"
+    else if not(isConnected g) then
+      failwith "Graph isnt connected!!!"
+    else
+      let rec nTreefyAux vs=
+          match vs with
+          | []-> NNil
+          | head::trail-> NNode(head,nTreefyAuxl (adjacent head g))
+      and  nTreefyAuxl vs=
+          match vs with
+          |[]->[]
+          |head::trail->(nTreefyAux [head])::NNode(head,nTreefyAuxl (adjacent head g))
+    in
+    nTreefyAux g.vexes
+
+    (*Acabar mais tarde*)

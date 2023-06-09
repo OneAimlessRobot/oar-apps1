@@ -17,7 +17,13 @@ let h =
 				])
 			])
 		])
-
+		let random_ntree =
+			NNode (1,
+				[ NNode (2, [ NNode (3, []); NNode (4, []) ]);
+					NNode (5, []);
+					NNode (6, [ NNode (7, []); NNode (8, []); NNode (9, []) ])
+				])
+				
 let example_tree =
 	NNode (1,
 		[ NNode (2, []);
@@ -93,7 +99,7 @@ let rec height g =
 	|[]->0
 	| head:: trail -> Stdlib.max (nHeight head) (height trail)
 
-let rec map f l =
+let rec tmap f l =
 	
 	let rec nMap m t =
 		match t with
@@ -109,9 +115,9 @@ let rec map f l =
 	
 	match l with
 	|[]->[]
-	| head:: trail -> (nMap f head):: (map f trail)
+	| head:: trail -> (nMap f head):: (tmap f trail)
 
-let rec sum g =
+let rec tsum g =
 	
 	let rec nSum g =
 		match g with
@@ -126,7 +132,7 @@ let rec sum g =
 	
 	match g with
 	|[]->0
-	| head:: trail -> nSum head + sum trail
+	| head:: trail -> nSum head + tsum trail
 
 let rec ntreelist l =
 	let rec nTreeToList t =

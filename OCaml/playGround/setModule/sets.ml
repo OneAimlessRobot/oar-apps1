@@ -105,7 +105,7 @@ let rec mapAux f l=
         |[]->[]
         |head::trail-> (f head)::(mapAux f trail)
       in
-make (mapAux f l)
+(mapAux f l)
 
 
 let mapForAll f bf l=
@@ -131,3 +131,14 @@ let rec powerAux l=
                       (map (fun x -> head::x) a)@a
     in
 powerAux (make l)
+
+
+let rec length s=
+    match s with
+    | []->0
+    |head::trail -> 1+ length trail
+
+let rec sum s=
+    match s with
+    | []->0
+    |head::trail -> head+ sum trail
