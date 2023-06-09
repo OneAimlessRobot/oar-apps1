@@ -1,3 +1,4 @@
 "setModule": include
 "taskModule": include
 "treeModule": include
+"graphModule":include

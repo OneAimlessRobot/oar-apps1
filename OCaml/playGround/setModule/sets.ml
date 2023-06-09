@@ -14,29 +14,12 @@ let rec belongs x l=
                     belongs x trail
 
 
-let rec clean l=
-  match l with
-  |[]->[]
-  |head::trail-> if belongs head trail then
-                  clean trail
-                  else
-                    head:: (clean trail)
-
-let union l1 l2=
-let rec unionAux l1 l2=
-    match l1 with
-    | []-> l2
-    |head::trail-> if belongs head trail then
-                    unionAux trail l2
-                    else
-                  head::(unionAux trail l2)
-    in
-    clean (unionAux l1 l2)
 
 
 
 
 
+let make l=
 
 let rec sort l=
 
@@ -53,8 +36,98 @@ let rec partition x l=
     |[]->[]
     |head::trail-> let (l,r)= partition head trail in
                         (sort l)@ [head]@ (sort r)
+                  in
 
-
-let make l=
+let rec clean l=
+  match l with
+  |[]->[]
+  |head::trail-> if belongs head trail then
+                  clean trail
+                  else
+                    head:: (clean trail)
+                  in
       sort (clean l)
-                
+
+
+
+let union l1 l2=
+let rec unionAux l1 l2=
+    match l1 with
+    | []-> l2
+    |head::trail-> if belongs head trail then
+                    unionAux trail l2
+                    else
+                  head::(unionAux trail l2)
+    in
+    make (unionAux l1 l2)
+
+
+let minus l1 l2=
+
+    let rec minusAux l1 l2=
+      match l1 with
+      |[]->[]
+      |head::trail-> let set= minusAux trail l2 in
+                      if belongs head l2 then
+                        set
+                      else 
+                        head::set
+                      in
+make (minusAux l1 l2)
+let rec isContained l1 l2=  
+      match l1 with
+      |[]-> true
+      |head::trail-> if belongs head l2 = false then
+                      false
+                      else
+                      isContained trail l2
+
+  let rec invMap f l e=
+  match l with
+  |[]-> e
+  |head::trail-> f head (invMap f trail e)
+
+
+let inter l1 l2=   
+let rec interAux l1 l2=
+        match l1 with
+        | []->[]
+        |head::trail-> if belongs head l2 then
+                        head:: (interAux trail l2)
+        else
+        interAux trail l2
+        in
+make (interAux l1 l2)
+
+let map f l=
+let rec mapAux f l=
+        match l with
+        |[]->[]
+        |head::trail-> (f head)::(mapAux f trail)
+      in
+make (mapAux f l)
+
+
+let mapForAll f bf l=
+
+let rec mapForAllAux l=
+        match l with
+        |[]->[]
+        |head::trail-> if bf head then
+                    (f head)::(mapForAllAux trail)
+        else
+
+          (head)::(mapForAllAux trail)
+      in
+make (mapForAllAux l)
+
+
+
+let power l=
+let rec powerAux l=
+      match l with
+      |[]->[[]]
+      |head::trail-> let a= powerAux trail in
+                      (map (fun x -> head::x) a)@a
+    in
+powerAux (make l)

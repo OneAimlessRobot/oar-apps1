@@ -16,6 +16,10 @@ let f x=
 in
 f x
 
+
+
+
 let main ()=
-	print_int (Ntrees.height [Ntrees.g]);print_newline ();print_int (Operationalize.computeDifficulty Operationalize.example); print_newline ();;
+
+	 print_newline ();;
 main ()
