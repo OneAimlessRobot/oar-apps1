@@ -193,25 +193,46 @@ let hasCycles g =
 
 
 
-    (*(print_int (sum (map (fun x->(countVexes x)+1) (islands g))));(print_int (sum (map (fun x-> length x) (islands g))));*)
+let betterHasCycles g =
+
+  
+    let rec sumDegrees vs =
+      match vs with
+      |[]->0
+      |head::trail-> (length (adjacent head g)) + (sumDegrees trail)
+    in
+    let islandHasCycles vs=
+      (2*(length vs) -2) <> sumDegrees vs
+    in
+    let rec isCyclic vss=
+      match vss with
+      |[]-> true
+      |head::trail-> (islandHasCycles head) && (isCyclic trail)
+  in
+            isCyclic (islands g)
 
 let nTreefy g =
     if not(validate g) then
       failwith "invalid graph in nTreefy"
-    else if hasCycles g then
+    else if betterHasCycles g then
       failwith "Graph isnt acyclic!!!!"
     else if not(isConnected g) then
       failwith "Graph isnt connected!!!"
     else
-      let rec nTreefyAux vs=
-          match vs with
-          | []-> NNil
-          | head::trail-> NNode(head,nTreefyAuxl (adjacent head g))
-      and  nTreefyAuxl vs=
+      let rec nTreefyAux v gr=
+      
+      let gs={vexes= minus gr.vexes [v]; edges= gr.edges} in
+      NNode(v,nTreefyAuxl  (adjacent v gr) gs)
+      
+      and  nTreefyAuxl vs gl=
           match vs with
           |[]->[]
-          |head::trail->(nTreefyAux [head])::NNode(head,nTreefyAuxl (adjacent head g))
+          |head::trail-> if not(belongs head gl.vexes) then
+                        (nTreefyAuxl trail gl)
+                       else 
+                        (nTreefyAux head gl)::(nTreefyAuxl trail gl)
+                          
     in
-    nTreefyAux g.vexes
-
-    (*Acabar mais tarde*)
+      match g.vexes with
+      |[]->failwith "Weird stuff happened in nTreefy"
+      |head::trail-> nTreefyAux head g
