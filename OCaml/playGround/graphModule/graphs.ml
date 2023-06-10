@@ -234,5 +234,4 @@ let nTreefy g =
                           
     in
       match g.vexes with
-      |[]->failwith "Weird stuff happened in nTreefy"
       |head::trail-> nTreefyAux head g
