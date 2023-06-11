@@ -235,3 +235,24 @@ let nTreefy g =
     in
       match g.vexes with
       |head::trail-> nTreefyAux head g
+
+
+
+let allPaths g a b =
+  if not (belongs a g.vexes) || not( belongs b g.vexes) then
+    failwith "One of the vexes in call to shortestPath does not belong to the given graph!!!!"
+
+  else
+    let rec allPathsAux gt vs b=
+      match vs with
+      |[]->[]
+      |n when belongs b n->[b]
+      |head::trail-> let gs={vexes= minus gt.vexes [head]; edges= gt.edges} in
+      if not(belongs head gt.vexes) then
+        set
+      else
+                      let set= allPathsAux gs (adjacent head gt) b in
+                                head::set
+                              in
+
+            allPathsAux g [a] b

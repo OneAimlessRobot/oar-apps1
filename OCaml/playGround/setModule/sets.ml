@@ -15,6 +15,16 @@ let rec belongs x l=
 
 
 
+let rec belongsWithStringSets x l=
+match l with
+|[]->false
+|head::trail-> if String.equal head x then
+                true
+                else
+                  belongs x trail
+
+
+
 
 
 
@@ -82,6 +92,17 @@ let rec isContained l1 l2=
                       else
                       isContained trail l2
 
+
+
+let rec isContainedWithStringSets l1 l2=  
+      match l1 with
+      |[]-> true
+      |head::trail-> if belongsWithStringSets head l2 = false then
+                      false
+                      else
+                      isContained trail l2
+
+                      
   let rec invMap f l e=
   match l with
   |[]-> e
@@ -142,3 +163,8 @@ let rec sum s=
     match s with
     | []->0
     |head::trail -> head+ sum trail
+
+let equalSets s1 s2=
+let s1m= make s1 in
+let s2m=make s2 in
+(isContainedWithStringSets s1m s2m) && (isContainedWithStringSets s2m s1m)

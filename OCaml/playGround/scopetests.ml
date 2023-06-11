@@ -1,4 +1,5 @@
 open RandLists
+open TreeLiterals
 open TimeFunctions
 open SortingAlgorithms
 

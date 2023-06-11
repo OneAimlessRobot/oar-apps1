@@ -1,5 +1,8 @@
 
-type graph= {vexes: int list; edges: (int*int) list}
+type 'a agraph= {vexes: 'a list; edges: ('a*'a) list}
+type  graph= {vexes: int list; edges: (int*int) list}
+
+
 
 
 
