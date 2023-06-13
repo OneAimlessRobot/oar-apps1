@@ -1,1 +1,1 @@
-scopetests.ml: RandLists SortingAlgorithms TimeFunctions TreeLiterals
+scopetests.ml: Operationalize RandLists SortingAlgorithms TimeFunctions TreeLiterals

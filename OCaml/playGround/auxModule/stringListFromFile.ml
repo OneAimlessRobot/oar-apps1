@@ -1,8 +1,3 @@
-
-
-
-
-
 let fileInString fileName=
   let input= open_in fileName in
     let rec convertIntoString ch=

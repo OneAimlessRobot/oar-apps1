@@ -1,44 +1,46 @@
 ### Starting build.
 # Target: scopetests.ml.depends, tags: { extension:ml, file:scopetests.ml, ocaml, ocamldep, quiet, traverse, use_unix }
-/usr/bin/ocamldep.opt -modules scopetests.ml > scopetests.ml.depends # cached
+/usr/bin/ocamldep.opt -modules scopetests.ml > scopetests.ml.depends
+# Target: taskModule/Operationalize.ml.depends, tags: { extension:ml, file:taskModule/Operationalize.ml, ocaml, ocamldep, quiet, traverse }
+/usr/bin/ocamldep.opt -modules taskModule/Operationalize.ml > taskModule/Operationalize.ml.depends # cached
+# Target: taskModule/challengeLiterals.ml.depends, tags: { extension:ml, file:taskModule/challengeLiterals.ml, ocaml, ocamldep, quiet, traverse }
+/usr/bin/ocamldep.opt -modules taskModule/challengeLiterals.ml > taskModule/challengeLiterals.ml.depends # cached
+# Target: taskModule/challengeLiterals.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:taskModule/challengeLiterals.cmo, file:taskModule/challengeLiterals.ml, implem, ocaml, quiet, traverse }
+/usr/bin/ocamlc.opt -c -I /usr/lib/ocaml -I taskModule -I auxModule -I treeModule -I setModule -I graphModule -o taskModule/challengeLiterals.cmo taskModule/challengeLiterals.ml # cached
+# Target: taskModule/Operationalize.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:taskModule/Operationalize.cmo, file:taskModule/Operationalize.ml, implem, ocaml, quiet, traverse }
+/usr/bin/ocamlc.opt -c -I /usr/lib/ocaml -I taskModule -I auxModule -I treeModule -I setModule -I graphModule -o taskModule/Operationalize.cmo taskModule/Operationalize.ml # cached
 # Target: auxModule/randLists.ml.depends, tags: { extension:ml, file:auxModule/randLists.ml, ocaml, ocamldep, quiet, traverse }
 /usr/bin/ocamldep.opt -modules auxModule/randLists.ml > auxModule/randLists.ml.depends # cached
+# Target: auxModule/randLists.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:auxModule/randLists.cmo, file:auxModule/randLists.ml, implem, ocaml, quiet, traverse }
+/usr/bin/ocamlc.opt -c -I /usr/lib/ocaml -I auxModule -I taskModule -I treeModule -I setModule -I graphModule -o auxModule/randLists.cmo auxModule/randLists.ml # cached
 # Target: auxModule/sortingAlgorithms.ml.depends, tags: { extension:ml, file:auxModule/sortingAlgorithms.ml, ocaml, ocamldep, quiet, traverse }
-/usr/bin/ocamldep.opt -modules auxModule/sortingAlgorithms.ml > auxModule/sortingAlgorithms.ml.depends # cached
+/usr/bin/ocamldep.opt -modules auxModule/sortingAlgorithms.ml > auxModule/sortingAlgorithms.ml.depends
 # Target: auxModule/timeFunctions.ml.depends, tags: { extension:ml, file:auxModule/timeFunctions.ml, ocaml, ocamldep, quiet, traverse }
 /usr/bin/ocamldep.opt -modules auxModule/timeFunctions.ml > auxModule/timeFunctions.ml.depends # cached
+# Target: auxModule/timeFunctions.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:auxModule/timeFunctions.cmo, file:auxModule/timeFunctions.ml, implem, ocaml, quiet, traverse }
+/usr/bin/ocamlc.opt -c -I /usr/lib/ocaml -I auxModule -I taskModule -I treeModule -I setModule -I graphModule -o auxModule/timeFunctions.cmo auxModule/timeFunctions.ml # cached
 # Target: treeModule/treeLiterals.ml.depends, tags: { extension:ml, file:treeModule/treeLiterals.ml, ocaml, ocamldep, quiet, traverse }
 /usr/bin/ocamldep.opt -modules treeModule/treeLiterals.ml > treeModule/treeLiterals.ml.depends # cached
-# Target: auxModule/randLists.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:auxModule/randLists.cmo, file:auxModule/randLists.ml, implem, ocaml, quiet, traverse }
-/usr/bin/ocamlc.opt -c -I /usr/lib/ocaml -I auxModule -I taskModule -I treeModule -I setModule -I graphModule -o auxModule/randLists.cmo auxModule/randLists.ml
+# Target: treeModule/treeLiterals.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:treeModule/treeLiterals.cmo, file:treeModule/treeLiterals.ml, implem, ocaml, quiet, traverse }
+/usr/bin/ocamlc.opt -c -I /usr/lib/ocaml -I treeModule -I taskModule -I auxModule -I setModule -I graphModule -o treeModule/treeLiterals.cmo treeModule/treeLiterals.ml # cached
 # Target: auxModule/sortingAlgorithms.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:auxModule/sortingAlgorithms.cmo, file:auxModule/sortingAlgorithms.ml, implem, ocaml, quiet, traverse }
 /usr/bin/ocamlc.opt -c -I /usr/lib/ocaml -I auxModule -I taskModule -I treeModule -I setModule -I graphModule -o auxModule/sortingAlgorithms.cmo auxModule/sortingAlgorithms.ml
-# Target: auxModule/timeFunctions.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:auxModule/timeFunctions.cmo, file:auxModule/timeFunctions.ml, implem, ocaml, quiet, traverse }
-/usr/bin/ocamlc.opt -c -I /usr/lib/ocaml -I auxModule -I taskModule -I treeModule -I setModule -I graphModule -o auxModule/timeFunctions.cmo auxModule/timeFunctions.ml
-+ /usr/bin/ocamlc.opt -c -I /usr/lib/ocaml -I auxModule -I taskModule -I treeModule -I setModule -I graphModule -o auxModule/timeFunctions.cmo auxModule/timeFunctions.ml
-File "auxModule/timeFunctions.ml", line 4, characters 6-8:
-4 |   let fx = f x in
-          ^^
-Warning 26: unused variable fx.
-# Target: treeModule/treeLiterals.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:treeModule/treeLiterals.cmo, file:treeModule/treeLiterals.ml, implem, ocaml, quiet, traverse }
-/usr/bin/ocamlc.opt -c -I /usr/lib/ocaml -I treeModule -I taskModule -I auxModule -I setModule -I graphModule -o treeModule/treeLiterals.cmo treeModule/treeLiterals.ml
 # Target: scopetests.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:scopetests.cmo, file:scopetests.ml, implem, ocaml, quiet, traverse, use_unix }
 /usr/bin/ocamlc.opt -c -I /usr/lib/ocaml -I taskModule -I auxModule -I treeModule -I setModule -I graphModule -o scopetests.cmo scopetests.ml
+# Target: taskModule/challengeLiterals.cmx, tags: { compile, extension:cmx, extension:ml, file:taskModule/challengeLiterals.cmx, file:taskModule/challengeLiterals.ml, implem, native, ocaml, quiet, traverse }
+/usr/bin/ocamlopt.opt -c -I /usr/lib/ocaml -I taskModule -I auxModule -I treeModule -I setModule -I graphModule -o taskModule/challengeLiterals.cmx taskModule/challengeLiterals.ml # cached
+# Target: taskModule/Operationalize.cmx, tags: { compile, extension:cmx, extension:ml, file:taskModule/Operationalize.cmx, file:taskModule/Operationalize.ml, implem, native, ocaml, quiet, traverse }
+/usr/bin/ocamlopt.opt -c -I /usr/lib/ocaml -I taskModule -I auxModule -I treeModule -I setModule -I graphModule -o taskModule/Operationalize.cmx taskModule/Operationalize.ml # cached
 # Target: auxModule/randLists.cmx, tags: { compile, extension:cmx, extension:ml, file:auxModule/randLists.cmx, file:auxModule/randLists.ml, implem, native, ocaml, quiet, traverse }
-/usr/bin/ocamlopt.opt -c -I /usr/lib/ocaml -I auxModule -I taskModule -I treeModule -I setModule -I graphModule -o auxModule/randLists.cmx auxModule/randLists.ml
+/usr/bin/ocamlopt.opt -c -I /usr/lib/ocaml -I auxModule -I taskModule -I treeModule -I setModule -I graphModule -o auxModule/randLists.cmx auxModule/randLists.ml # cached
+# Target: auxModule/timeFunctions.cmx, tags: { compile, extension:cmx, extension:ml, file:auxModule/timeFunctions.cmx, file:auxModule/timeFunctions.ml, implem, native, ocaml, quiet, traverse }
+/usr/bin/ocamlopt.opt -c -I /usr/lib/ocaml -I auxModule -I taskModule -I treeModule -I setModule -I graphModule -o auxModule/timeFunctions.cmx auxModule/timeFunctions.ml # cached
+# Target: treeModule/treeLiterals.cmx, tags: { compile, extension:cmx, extension:ml, file:treeModule/treeLiterals.cmx, file:treeModule/treeLiterals.ml, implem, native, ocaml, quiet, traverse }
+/usr/bin/ocamlopt.opt -c -I /usr/lib/ocaml -I treeModule -I taskModule -I auxModule -I setModule -I graphModule -o treeModule/treeLiterals.cmx treeModule/treeLiterals.ml # cached
 # Target: auxModule/sortingAlgorithms.cmx, tags: { compile, extension:cmx, extension:ml, file:auxModule/sortingAlgorithms.cmx, file:auxModule/sortingAlgorithms.ml, implem, native, ocaml, quiet, traverse }
 /usr/bin/ocamlopt.opt -c -I /usr/lib/ocaml -I auxModule -I taskModule -I treeModule -I setModule -I graphModule -o auxModule/sortingAlgorithms.cmx auxModule/sortingAlgorithms.ml
-# Target: auxModule/timeFunctions.cmx, tags: { compile, extension:cmx, extension:ml, file:auxModule/timeFunctions.cmx, file:auxModule/timeFunctions.ml, implem, native, ocaml, quiet, traverse }
-/usr/bin/ocamlopt.opt -c -I /usr/lib/ocaml -I auxModule -I taskModule -I treeModule -I setModule -I graphModule -o auxModule/timeFunctions.cmx auxModule/timeFunctions.ml
-+ /usr/bin/ocamlopt.opt -c -I /usr/lib/ocaml -I auxModule -I taskModule -I treeModule -I setModule -I graphModule -o auxModule/timeFunctions.cmx auxModule/timeFunctions.ml
-File "auxModule/timeFunctions.ml", line 4, characters 6-8:
-4 |   let fx = f x in
-          ^^
-Warning 26: unused variable fx.
-# Target: treeModule/treeLiterals.cmx, tags: { compile, extension:cmx, extension:ml, file:treeModule/treeLiterals.cmx, file:treeModule/treeLiterals.ml, implem, native, ocaml, quiet, traverse }
-/usr/bin/ocamlopt.opt -c -I /usr/lib/ocaml -I treeModule -I taskModule -I auxModule -I setModule -I graphModule -o treeModule/treeLiterals.cmx treeModule/treeLiterals.ml
 # Target: scopetests.cmx, tags: { compile, extension:cmx, extension:ml, file:scopetests.cmx, file:scopetests.ml, implem, native, ocaml, quiet, traverse, use_unix }
 /usr/bin/ocamlopt.opt -c -I /usr/lib/ocaml -I taskModule -I auxModule -I treeModule -I setModule -I graphModule -o scopetests.cmx scopetests.ml
 # Target: scopetests.native, tags: { dont_link_with, extension:native, file:scopetests.native, link, native, ocaml, program, quiet, traverse }
-/usr/bin/ocamlopt.opt -I /usr/lib/ocaml /usr/lib/ocaml/unix.cmxa -I auxModule -I treeModule auxModule/randLists.cmx auxModule/sortingAlgorithms.cmx auxModule/timeFunctions.cmx treeModule/treeLiterals.cmx scopetests.cmx -o scopetests.native
+/usr/bin/ocamlopt.opt -I /usr/lib/ocaml /usr/lib/ocaml/unix.cmxa -I auxModule -I taskModule -I treeModule auxModule/randLists.cmx auxModule/sortingAlgorithms.cmx auxModule/timeFunctions.cmx taskModule/challengeLiterals.cmx taskModule/Operationalize.cmx treeModule/treeLiterals.cmx scopetests.cmx -o scopetests.native
 # Compilation successful.

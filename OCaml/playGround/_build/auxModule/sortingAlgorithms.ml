@@ -36,3 +36,30 @@ let rec bubbleSort lst =
     lst
   else
     bubbleSort sortedLst
+
+
+let isSorted list way=
+
+let rec isSortedAsc list=
+    match list with
+    |[]->true
+    |[x]->true
+    |head::sHead::trail-> if head <= sHead then
+                            isSortedAsc (sHead::trail)
+    else
+      false
+    in
+let rec isSortedDesc list=
+    match list with
+    |[]->true
+    |[x]->true
+    |head::sHead::trail-> if head >= sHead then
+      isSortedDesc ( sHead::trail)
+else
+false
+in
+  if way then
+    isSortedAsc list
+  else
+    isSortedDesc list
+
