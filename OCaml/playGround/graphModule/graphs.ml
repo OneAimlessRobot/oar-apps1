@@ -35,6 +35,26 @@ in
 {vexes= (invList (makeVexes num));edges= linkTogether (invList (makeVexes num))}
 
 
+let makeWheel num=
+let start= num in
+let rec makeVexes num=
+  match num with
+  |n when n= start ->[n]
+  |x-> x::(makeVexes(x+1))
+  in
+
+let rec linkTogether list center=
+  match list with
+  |[]->[]
+  |head::trail-> (center,head)::(linkTogether trail center)
+in
+let set= makeVexes 1 in
+let rays= List.tl set in
+let eset=linkTogether rays (List.hd set) in
+
+
+{vexes= set;edges= eset}
+
 let next v g=
   if belongs v g.vexes = false then
     failwith "No such vertex to calculate next of in given graph"
@@ -236,23 +256,104 @@ let nTreefy g =
       match g.vexes with
       |head::trail-> nTreefyAux head g
 
+let maxDegree g =
+  let rec maxDegreeAux bg v=
+  let sg ={vexes= minus bg.vexes [v];edges= bg.edges} in
+                 Stdlib.max (length (adjacent v bg)) (maxDegreeAux2 sg (adjacent v bg))
+  and maxDegreeAux2 sg vs=
+  match vs with
+  |[]->0
+  |head::trail-> if not(belongs head sg.vexes) then
+                  
+    (maxDegreeAux2 sg trail)
+              else
+    
+                  Stdlib.max (maxDegreeAux sg head) (maxDegreeAux2 sg trail)
+in
+match g.vexes with
+|[]->0
+|head::trail-> maxDegreeAux g head
+
+
+let binTreefy g =
+    if not(validate g) then
+      failwith "invalid graph in nTreefy"
+    else if betterHasCycles g then
+      failwith "Graph isnt acyclic!!!!"
+    else if not(isConnected g) then
+      failwith "Graph isnt connected!!!"
+    else
+      let rec nTreefyAux v gr=
+      
+      let gs={vexes= minus gr.vexes [v]; edges= gr.edges} in
+      NNode(v,nTreefyAuxl  (adjacent v gr) gs)
+      
+      and  nTreefyAuxl vs gl=
+          match vs with
+          |[]->[]
+          |head::trail-> if not(belongs head gl.vexes) then
+                        (nTreefyAuxl trail gl)
+                       else 
+                        (nTreefyAux head gl)::(nTreefyAuxl trail gl)
+                          
+    in
+      match g.vexes with
+      |head::trail-> nTreefyAux head g
+
 
 
 let allPaths g a b =
   if not (belongs a g.vexes) || not( belongs b g.vexes) then
-    failwith "One of the vexes in call to shortestPath does not belong to the given graph!!!!"
+    failwith "One of the vexes in call to allPaths does not belong to the given graph!!!!"
 
   else
-    let rec allPathsAux gt vs b=
+    let rec allPathsAux bg a b=
+    let sg = {vexes=minus bg.vexes [a];edges=bg.edges} in
+    let z=(allPathsAuxl sg (adjacent a bg) b) in
+    map (fun x->a::x) z
+
+    and allPathsAuxl sg s b=
+    match s with
+    |[]->[]
+    |head::trail->if not (belongs head sg.vexes)then
+                  allPathsAuxl sg trail b
+    else
+                  if head=b then
+                    [head]::(allPathsAuxl sg trail b)
+                  else
+                  (allPathsAux sg head b)@(allPathsAuxl sg trail b)
+                  
+                in
+      allPathsAux g a b
+
+let shortestPath g a b=
+      let rec minLength ll=
+      match ll with
+      |[]->0
+      |[l]->length l
+      |head::trail->Stdlib.min (length head) (minLength trail)
+      in
+      let paths = allPaths g a b in
+      let minLength = minLength paths in
+      filter (fun x-> length x <= minLength) paths
+
+let deleteVex g v=
+      let rec deleteVexFromSet vs v=
       match vs with
       |[]->[]
-      |n when belongs b n->[b]
-      |head::trail-> let gs={vexes= minus gt.vexes [head]; edges= gt.edges} in
-      if not(belongs head gt.vexes) then
-        set
+      |head::trail-> if head= v then
+                      deleteVexFromSet trail v
       else
-                      let set= allPathsAux gs (adjacent head gt) b in
-                                head::set
-                              in
+                      head::(deleteVexFromSet trail v)
+      in
+      let rec deleteConnsAux es v=
+      match es with
+      |[]->[]
+      |(a,b)::trail-> if a= v ||b =v then
+                      deleteConnsAux trail v
+      else
+                      (a,b)::(deleteConnsAux trail v)
+      in
+    
+{vexes= deleteVexFromSet g.vexes v; edges = deleteConnsAux g.edges v}
 
-            allPathsAux g [a] b

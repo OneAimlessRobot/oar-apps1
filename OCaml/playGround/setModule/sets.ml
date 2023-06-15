@@ -168,3 +168,11 @@ let equalSets s1 s2=
 let s1m= make s1 in
 let s2m=make s2 in
 (isContainedWithStringSets s1m s2m) && (isContainedWithStringSets s2m s1m)
+
+let rec filter bf l=
+    match l with
+    |[]->[]
+    |head::trail-> if bf head then
+                    head::(filter bf trail)
+    else
+                  filter bf trail
