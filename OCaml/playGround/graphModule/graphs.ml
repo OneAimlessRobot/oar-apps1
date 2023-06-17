@@ -304,7 +304,7 @@ let binTreefy g =
 
 let allPaths g a b =
   if not (belongs a g.vexes) || not( belongs b g.vexes) then
-    failwith "One of the vexes in call to allPaths does not belong to the given graph!!!!"
+    failwith "Its not possible to find a path between the two vertices."
 
   else
     let rec allPathsAux bg a b=
@@ -319,7 +319,7 @@ let allPaths g a b =
                   allPathsAuxl sg trail b
     else
                   if head=b then
-                    [head]::(allPathsAuxl sg trail b)
+                    [b]::(allPathsAuxl sg trail b)
                   else
                   (allPathsAux sg head b)@(allPathsAuxl sg trail b)
                   

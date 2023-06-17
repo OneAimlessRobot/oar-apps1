@@ -1,0 +1,16 @@
+### Starting build.
+# Target: menuTest.ml.depends, tags: { extension:ml, file:menuTest.ml, ocaml, ocamldep, quiet }
+/usr/bin/ocamldep.opt -modules menuTest.ml > menuTest.ml.depends
+# Target: menuEntries.ml.depends, tags: { extension:ml, file:menuEntries.ml, ocaml, ocamldep, quiet }
+/usr/bin/ocamldep.opt -modules menuEntries.ml > menuEntries.ml.depends # cached
+# Target: menuEntries.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:menuEntries.cmo, file:menuEntries.ml, implem, ocaml, quiet }
+/usr/bin/ocamlc.opt -c -o menuEntries.cmo menuEntries.ml # cached
+# Target: menuTest.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:menuTest.cmo, file:menuTest.ml, implem, ocaml, quiet }
+/usr/bin/ocamlc.opt -c -o menuTest.cmo menuTest.ml
+# Target: menuEntries.cmx, tags: { compile, extension:cmx, extension:ml, file:menuEntries.cmx, file:menuEntries.ml, implem, native, ocaml, quiet }
+/usr/bin/ocamlopt.opt -c -o menuEntries.cmx menuEntries.ml # cached
+# Target: menuTest.cmx, tags: { compile, extension:cmx, extension:ml, file:menuTest.cmx, file:menuTest.ml, implem, native, ocaml, quiet }
+/usr/bin/ocamlopt.opt -c -o menuTest.cmx menuTest.ml
+# Target: menuTest.native, tags: { dont_link_with, extension:native, file:menuTest.native, link, native, ocaml, program, quiet }
+/usr/bin/ocamlopt.opt menuEntries.cmx menuTest.cmx -o menuTest.native
+# Compilation successful.
