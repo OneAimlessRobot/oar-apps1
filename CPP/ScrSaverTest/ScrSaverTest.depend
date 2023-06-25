@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1687626743 source:/home/k/oar-apps1/CPP/ScrSaverTest/main.cpp
+	<SDL2/SDL.h>
+	<iostream>
+
+1687626639 source:/home/k/oar-apps1/CPP/ScrSaverTest/Types/Entity.cpp
+
+1687626752 source:/home/k/oar-apps1/CPP/ScrSaverTest/Types/GVector.cpp
+	<iostream>
+
+1687626693 source:/home/k/oar-apps1/CPP/ScrSaverTest/Types/Manager.cpp
+
