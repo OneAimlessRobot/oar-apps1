@@ -43,13 +43,13 @@ void Entity::translate(){
 
 }
 
-Entity* Entity::randEnt(float width, float height){
+Entity* Entity::randEnt(float width, float height,float maxSize,float maxSpeed){
 
-float size= Aux::getRandomFloat(10,10);
+float size= Aux::getRandomFloat(10,maxSize);
 float x= Aux::getRandomFloat(0,width-size);
 float y=Aux::getRandomFloat(0,height-size);
-float dx= Aux::getRandomFloat(0,2);
-float dy=Aux::getRandomFloat(0,2);
+float dx= Aux::getRandomFloat(0,maxSpeed);
+float dy=Aux::getRandomFloat(0,maxSpeed);
 SDL_Color color= Aux::randColor();
 GVector* resmoveVec= new GVector(dx,dy);
 Entity* result=new Entity(color,x,y,size,size);

@@ -14,7 +14,7 @@ Entity(SDL_Color clr,float x, float y, float w, float h);
 void render(SDL_Renderer*ren);
 void setPos(SDL_FPoint point);
 void translate();
-static Entity* randEnt(float x, float y);
+static Entity* randEnt(float x, float y,float maxSize,float maxSpeed);
 SDL_FPoint getPos();
 SDL_FPoint getLastPos();
 GVector* getVec();

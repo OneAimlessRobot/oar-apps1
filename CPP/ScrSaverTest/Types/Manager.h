@@ -13,7 +13,7 @@ SDL_Texture * bgr,*ents;
 std::list<Entity*> entList;
 SDL_Color bgrclr;
 public:
-Manager();
+Manager(float maxSpeed,float maxSize,int ammount);
 ~Manager();
 void initMovements();
 void mainLoop();

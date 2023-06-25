@@ -10,7 +10,7 @@
 #include <iostream>
 #include "Manager.h"
 
-Manager::Manager(){
+Manager::Manager(float maxSpeed,float maxSize,int ammount){
 
 std::cout<<"Initializing video\n";
 SDL_Init(SDL_INIT_EVERYTHING);
@@ -39,9 +39,9 @@ std::cout<<"Done!\n";
 this->bgrclr=(SDL_Color){255,255,255,255};
 this->arena= new Collider(SDL_FALSE,bgrclr,0,0,WIDTH,HEIGHT,50);
 this->entList= {};
-for(int i =0;i<1000;i++){
+for(int i =0;i<ammount;i++){
 
-    this->entList.emplace(this->entList.begin(),Entity::randEnt(WIDTH,HEIGHT));
+    this->entList.emplace(this->entList.begin(),Entity::randEnt(WIDTH,HEIGHT,maxSize,maxSpeed));
 }
 }
 
