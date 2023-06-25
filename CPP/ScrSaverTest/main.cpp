@@ -1,9 +1,7 @@
-#include <SDL2/SDL.h>
-#include <iostream>
-
-
+#include "includes.h"
 int main(void){
 
-
+Manager * mgr= new Manager();
+mgr->mainLoop();
 return 0;
 }

@@ -40,6 +40,9 @@
 		<Unit filename="Types/GVector.h" />
 		<Unit filename="Types/Manager.cpp" />
 		<Unit filename="Types/Manager.h" />
+		<Unit filename="aux.cpp" />
+		<Unit filename="aux.h" />
+		<Unit filename="includes.h" />
 		<Unit filename="main.cpp" />
 		<Extensions />
 	</Project>
