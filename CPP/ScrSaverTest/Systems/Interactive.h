@@ -4,6 +4,7 @@
 #define HEIGHT 600
 #define FRAMERATE 60
 constexpr int selectFrameInt= 1000;
+constexpr int homingSpeed= 5;
 class Interactive{
 private:
 SDL_Window* win;

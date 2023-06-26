@@ -269,7 +269,7 @@ void Interactive::homming(){
     std::list<Entity*>::iterator it;
     for (it = this->entList.begin(); it != this->entList.end(); ++it) {
         GVector* newVec=Aux::makeUnitVector((*it)->getPos(),(SDL_FPoint){this->mouseX,this->mouseY});
-        Aux::scaleVec(newVec,5);
+        Aux::scaleVec(newVec,homingSpeed);
         (*it)->setVec(newVec);
 
 
