@@ -62,6 +62,7 @@ const Uint8* KEYS = SDL_GetKeyboardState(nullptr);
 
 while(!quit){
 
+int startTime= SDL_GetTicks();
 
     SDL_GetMouseState(&this->mouseX,&this->mouseY);
     while(SDL_PollEvent(&e)){
@@ -79,31 +80,24 @@ while(!quit){
     handleContPresses(KEYS);
     if(!this->pause){
     handleMovements();
-    makeSelection();
     this->thetime++;
+    makeSelection();
     }
 
     doRendering();
+int endTime= SDL_GetTicks();
+
+if((endTime-startTime)<((1/FRAMERATE)*1000)){
+
+SDL_Delay(((1/FRAMERATE)*1000)-(endTime-startTime));
+}
 
 
 }
 }
-//void Interactive::keyboard(SDL_Event event) {
-//            switch (event.type) {
-//            case SDL_KEYDOWN:
-//                this->KEYS[event.key.keysym.sym] = true;
-//                break;
-//            case SDL_KEYUP:
-//                this->KEYS[event.key.keysym.sym] = false;
-//                break;
-//            default:
-//                break;
-//            }
-//}
-
 void Interactive::makeSelection(){
 
-    if(this->thetime%selectFrameInt==0&&this->thetime !=0){
+    if(this->thetime%selectFrameInt==0){
         float selectSpeed=getAverageSpeed();
         std::list<Entity*>::iterator it;
             for (it = this->entList.begin(); it != this->entList.end(); ++it) {

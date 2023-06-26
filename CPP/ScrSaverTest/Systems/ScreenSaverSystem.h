@@ -2,7 +2,7 @@
 #define MGR_H
 #define WIDTH 800
 #define HEIGHT 600
-#define FRAMERATE 60
+#define FRAMERATE 60.0
 class ScreenSaverSystem{
 private:
 

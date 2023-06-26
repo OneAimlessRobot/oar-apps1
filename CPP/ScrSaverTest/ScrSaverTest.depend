@@ -47,7 +47,7 @@
 
 1687728428 /home/k/oar-apps1/CPP/ScrSaverTest/Types/Manager.h
 
-1687816843 /home/k/oar-apps1/CPP/ScrSaverTest/aux.h
+1687822235 /home/k/oar-apps1/CPP/ScrSaverTest/aux.h
 	<SDL2/SDL.h>
 	"Types/GVector.h"
 
@@ -79,11 +79,11 @@
 	<iostream>
 	"ScreenSaverSystem.h"
 
-1687776879 /home/k/oar-apps1/CPP/ScrSaverTest/Systems/ScreenSaverSystem.h
+1687822184 /home/k/oar-apps1/CPP/ScrSaverTest/Systems/ScreenSaverSystem.h
 
-1687818854 /home/k/oar-apps1/CPP/ScrSaverTest/Systems/Interactive.h
+1687821701 /home/k/oar-apps1/CPP/ScrSaverTest/Systems/Interactive.h
 
-1687817942 source:/home/k/oar-apps1/CPP/ScrSaverTest/Systems/Interactive.cpp
+1687821862 source:/home/k/oar-apps1/CPP/ScrSaverTest/Systems/Interactive.cpp
 	<list>
 	<SDL2/SDL.h>
 	<random>

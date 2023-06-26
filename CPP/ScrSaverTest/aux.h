@@ -1,7 +1,7 @@
 #ifndef AUX_H
 #define AUX_H
 
-#define COLLDISTANCE 10
+#define COLLDISTANCE 2
 #define TRAILLENGTH (COLLDISTANCE + 0)
 
 #include <SDL2/SDL.h>

@@ -2,8 +2,9 @@
 #define INT_H
 #define WIDTH 800
 #define HEIGHT 600
-#define FRAMERATE 60
-constexpr int selectFrameInt= 1000;
+#define FRAMERATE 60.0
+constexpr int selectFrameInt= 600;
+constexpr int addMoreInt= 120;
 constexpr int homingSpeed= 5;
 class Interactive{
 private:
