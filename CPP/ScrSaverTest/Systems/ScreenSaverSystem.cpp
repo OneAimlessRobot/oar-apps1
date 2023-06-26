@@ -4,13 +4,13 @@
 #include <random>
 #include <cmath>
 #include "../aux.h"
-#include "Collider.h"
-#include "GVector.h"
-#include "Entity.h"
+#include "../Types/Collider.h"
+#include "../Types/GVector.h"
+#include "../Types/Entity.h"
 #include <iostream>
-#include "Manager.h"
+#include "ScreenSaverSystem.h"
 
-Manager::Manager(float maxSpeed,float maxSize,int ammount){
+ScreenSaverSystem::ScreenSaverSystem(float maxSpeed,float maxSize,int ammount){
 
 std::cout<<"Initializing video\n";
 SDL_Init(SDL_INIT_EVERYTHING);
@@ -37,16 +37,16 @@ this->ents= SDL_CreateTexture(ren,SDL_PIXELFORMAT_RGBA8888,SDL_TEXTUREACCESS_TAR
 
 std::cout<<"Done!\n";
 this->bgrclr=(SDL_Color){255,255,255,255};
-this->arena= new Collider(SDL_FALSE,bgrclr,0,0,WIDTH,HEIGHT,50);
+this->arena= new Collider(SDL_FALSE,bgrclr,0,0,WIDTH,HEIGHT,50,1);
 this->entList= {};
 for(int i =0;i<ammount;i++){
 
-    this->entList.emplace(this->entList.begin(),Entity::randEnt(WIDTH,HEIGHT,maxSize,maxSpeed));
+    this->entList.emplace(this->entList.begin(),Entity::randEnt(WIDTH,HEIGHT,1,maxSize,maxSpeed));
 }
 }
 
 
-void Manager::mainLoop(){
+void ScreenSaverSystem::mainLoop(){
 SDL_Event e;
 SDL_bool quit=SDL_FALSE;
 while(!quit){
@@ -69,7 +69,7 @@ delete this;
 
 }
 
-void Manager::doRendering(){
+void ScreenSaverSystem::doRendering(){
 
     SDL_SetRenderDrawColor(this->ren,this->bgrclr.r,this->bgrclr.g,this->bgrclr.b,this->bgrclr.a);
     SDL_SetRenderTarget(ren,bgr);
@@ -86,7 +86,7 @@ void Manager::doRendering(){
 
 }
 
-void Manager::handleMovements(){
+void ScreenSaverSystem::handleMovements(){
 
 
     std::list<Entity*>::iterator it;
@@ -118,7 +118,7 @@ void Manager::handleMovements(){
 
 }
 }
-Manager::~Manager(){
+ScreenSaverSystem::~ScreenSaverSystem(){
 
     std::list<Entity*>::iterator it;
     for (it = this->entList.begin(); it != this->entList.end(); ++it) {

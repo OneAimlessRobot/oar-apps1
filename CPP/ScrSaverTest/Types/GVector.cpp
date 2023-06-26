@@ -36,6 +36,12 @@
     velocity->y = velocity->y - 2.0f * dotProduct * collisionNormal->y;
     delete collisionNormal;
     }
+    GVector* GVector::add(GVector* v1, GVector* v2){
+
+        return new GVector(v1->getX()+v2->getX(),v1->getY()+v2->getY());
+
+
+    }
     GVector::~GVector(){
 
 

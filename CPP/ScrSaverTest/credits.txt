@@ -1,0 +1,13 @@
+
+Keyboard controls:
+
+https://stackoverflow.com/questions/3741055/inputs-in-sdl-on-key-pressed
+
+Multilayer Textures
+
+https://stackoverflow.com/questions/51121457/sdl-layered-rendering-system
+
+Chat GPT implemented workhorse tedious functions
+
+https://chat.openai.com/share/ca138f93-ddf2-4151-aec4-ac81b8fcd60b
+

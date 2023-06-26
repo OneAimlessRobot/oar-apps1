@@ -2,6 +2,12 @@
 #include <random>
 #include <cmath>
 #include "aux.h"
+typedef struct gameState{
+
+
+int pause,homing,orbit;
+
+}gameState;
 float Aux::getRandomFloat(float min, float max) {
     std::random_device rd;                          // Obtain a random seed from the hardware
     std::mt19937 eng(rd());                         // Seed the generator
@@ -33,5 +39,30 @@ bool Aux::AreFRectsEqual(const SDL_FRect& rect1, const SDL_FRect& rect2) {
            (std::abs(rect1.y - rect2.y) < FLOAT_EPSILON) &&
            (std::abs(rect1.w - rect2.w) < FLOAT_EPSILON) &&
            (std::abs(rect1.h - rect2.h) < FLOAT_EPSILON);
+}
+
+GVector* Aux::makeUnitVector(SDL_FPoint origin, SDL_FPoint head){
+
+
+    float dx= head.x-origin.x;
+    float dy= head.y-origin.y;
+
+    float udx=std::cos(std::atan2(dy,dx));
+    float udy=std::sin(std::atan2(dy,dx));
+
+    return new GVector(udx,udy);
+
+
+
+}
+void Aux::scaleVec(GVector* vec,float scalar){
+
+    float dx= vec->getX();
+    float dy= vec->getY();
+    dx*=scalar;
+    dy*=scalar;
+    vec->setX(dx);
+    vec->setY(dy);
+
 }
 

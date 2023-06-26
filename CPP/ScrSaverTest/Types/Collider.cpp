@@ -3,7 +3,7 @@
 #include "Collider.h"
 
 
-Collider::Collider(SDL_bool type,SDL_Color color,float x,float y,float w,float h,float thickness){
+Collider::Collider(SDL_bool type,SDL_Color color,float x,float y,float w,float h,float thickness,float airDensity){
 
 this->left=(SDL_FRect){-thickness,0,thickness,h};
 this->right=(SDL_FRect){w,0,thickness,h};
@@ -11,6 +11,7 @@ this->top=(SDL_FRect){0,-thickness,w,thickness};
 this->bottom=(SDL_FRect){0,h,w,thickness};
 this->containedObject=(SDL_FRect){0,0,w,h};
 this->bodyColor = color;
+this->airDensity=airDensity;
 
 
 
@@ -36,6 +37,10 @@ void Collider::render(SDL_Renderer* ren){
 
 
 
+}
+float Collider::getAirDensity(){
+
+    return this->airDensity;
 }
 int Collider::whereIsColliding(SDL_FRect rect){
 

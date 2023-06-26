@@ -7,14 +7,23 @@ private:
 SDL_Color bodyColor;
 SDL_FRect body;
 SDL_FPoint pos,lastPos;
-GVector* moveVec;
+GVector* moveVec,*lastVec;
+std::vector<SDL_FPoint> lastPositions;
+int historyLen;
+float elasticity,mass,Car;
 public:
 
-Entity(SDL_Color clr,float x, float y, float w, float h);
+Entity(SDL_Color clr,float x, float y, float w, float h,float e,float m,float Car);
 void render(SDL_Renderer*ren);
 void setPos(SDL_FPoint point);
 void translate();
-static Entity* randEnt(float x, float y,float maxSize,float maxSpeed);
+void bounce();
+float getElasticity();
+float getDragConstant();
+void setLastPos(SDL_FPoint lp);
+float getMass();
+float getSpeedLoss();
+static Entity* randEnt(float width, float height,float maxMass,float maxSize,float maxSpeed);
 SDL_FPoint getPos();
 SDL_FPoint getLastPos();
 GVector* getVec();

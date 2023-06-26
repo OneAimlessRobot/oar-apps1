@@ -34,14 +34,22 @@
 		<Linker>
 			<Add option="-lSDL2 -lm -lpthread" />
 		</Linker>
+		<Unit filename="Systems/Interactive.cpp" />
+		<Unit filename="Systems/Interactive.h" />
+		<Unit filename="Systems/ScreenSaverSystem.cpp" />
+		<Unit filename="Systems/ScreenSaverSystem.h" />
+		<Unit filename="Types/Collider.cpp" />
+		<Unit filename="Types/Collider.h" />
 		<Unit filename="Types/Entity.cpp" />
 		<Unit filename="Types/Entity.h" />
 		<Unit filename="Types/GVector.cpp" />
 		<Unit filename="Types/GVector.h" />
-		<Unit filename="Types/Manager.cpp" />
-		<Unit filename="Types/Manager.h" />
+		<Unit filename="Types/physicsAux.cpp" />
+		<Unit filename="Types/physicsAux.h" />
+		<Unit filename="Untitled2" />
 		<Unit filename="aux.cpp" />
 		<Unit filename="aux.h" />
+		<Unit filename="credits.txt" />
 		<Unit filename="includes.h" />
 		<Unit filename="main.cpp" />
 		<Extensions />

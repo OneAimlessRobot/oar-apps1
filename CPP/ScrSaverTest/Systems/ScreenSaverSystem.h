@@ -3,7 +3,7 @@
 #define WIDTH 800
 #define HEIGHT 600
 #define FRAMERATE 60
-class Manager{
+class ScreenSaverSystem{
 private:
 
 SDL_Window* win;
@@ -13,8 +13,8 @@ SDL_Texture * bgr,*ents;
 std::list<Entity*> entList;
 SDL_Color bgrclr;
 public:
-Manager(float maxSpeed,float maxSize,int ammount);
-~Manager();
+ScreenSaverSystem(float maxSpeed,float maxSize,int ammount);
+~ScreenSaverSystem();
 void initMovements();
 void mainLoop();
 void handleKeyboard();

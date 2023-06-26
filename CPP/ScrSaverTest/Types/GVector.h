@@ -14,6 +14,7 @@ public:
     void setY(float newY);
     float getNorm();
     static void Reflect(GVector* velocity, GVector* collisionNormal);
+    static GVector* add(GVector* v1, GVector* v2);
     ~GVector();
 
 
