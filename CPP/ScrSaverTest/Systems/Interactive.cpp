@@ -45,6 +45,7 @@ for(int i =0;i<ammount;i++){
     this->entList.emplace(this->entList.begin(),Entity::randEnt(WIDTH,HEIGHT,maxMass,maxSize,maxSpeed));
 }
 this->pause=SDL_FALSE;
+this->thetime=0;
 
 }
 
@@ -73,6 +74,8 @@ while(!quit){
     handleContPresses(KEYS);
     if(!this->pause){
     handleMovements();
+    makeSelection();
+    this->thetime++;
     }
 
     doRendering();
@@ -92,6 +95,23 @@ while(!quit){
 //                break;
 //            }
 //}
+
+void Interactive::makeSelection(){
+
+    if(this->thetime%selectFrameInt==0&&this->thetime !=0){
+        std::list<Entity*>::iterator it;
+            for (it = this->entList.begin(); it != this->entList.end(); ++it) {
+
+                if((*it)->getVec()->getNorm()<selectSpeed){
+                    it=this->entList.erase(it);
+
+                }
+
+        }
+
+
+}
+}
 void Interactive::doRendering(){
 
     SDL_SetRenderDrawColor(this->ren,this->bgrclr.r,this->bgrclr.g,this->bgrclr.b,this->bgrclr.a);
