@@ -30,6 +30,18 @@
         return Aux::calculateDistance((SDL_FPoint){0,0},(SDL_FPoint){this->x,this->y});
 
     }
+    float GVector::angleBetween(GVector* v1,GVector* v2){
+
+        return std::acos(GVector::dotProduct(v1,v2)/(v1->getNorm()*v2->getNorm()));
+
+
+    }
+    float GVector::dotProduct(GVector*v1,GVector*v2){
+
+        return v1->getX()*v2->getX()+v1->getY()*v2->getY();
+
+
+    }
     void GVector::Reflect(GVector* velocity, GVector* collisionNormal) {
     float dotProduct = velocity->x * collisionNormal->x + velocity->y * collisionNormal->y;
     velocity->x = velocity->x - 2.0f * dotProduct * collisionNormal->x;

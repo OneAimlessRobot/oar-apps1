@@ -1,14 +1,13 @@
 #ifndef AUX_H
 #define AUX_H
 
-#define COLLDISTANCE 4
+#define COLLDISTANCE 10
 #define TRAILLENGTH (COLLDISTANCE + 0)
 
 #include <SDL2/SDL.h>
 #include "Types/GVector.h"
 
 namespace Aux{
-
 float getRandomFloat(float min, float max);
 float calculateDistance(SDL_FPoint p1,  SDL_FPoint p2);
 SDL_Color randColor();

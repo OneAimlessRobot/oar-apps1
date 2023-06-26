@@ -3,8 +3,7 @@
 #define WIDTH 800
 #define HEIGHT 600
 #define FRAMERATE 60
-constexpr int selectFrameInt= 500;
-constexpr int selectSpeed= 1;
+constexpr int selectFrameInt= 1000;
 class Interactive{
 private:
 SDL_Window* win;
@@ -14,16 +13,20 @@ SDL_Texture * bgr,*ents;
 std::list<Entity*> entList;
 SDL_Color bgrclr;
 SDL_bool pause;
+float maxSpeed, maxSize, ammount,maxMass, airDensity;
 int thetime;
 int mouseX,mouseY;
 void keyboard(SDL_Event event);
 void handleCollisions();
 void orbit();
+void handleInterparticleCollisions();
+void handleCollisionsWithArena();
 void homming();
 void handleForces();
 void handleDrag();
 void printSpeedsAndPoss();
 void makeSelection();
+float getAverageSpeed();
 public:
 Interactive(float maxSpeed,float maxSize,int ammount,float maxMass,float airDensity);
 ~Interactive();

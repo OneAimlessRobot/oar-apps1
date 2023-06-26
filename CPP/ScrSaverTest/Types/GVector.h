@@ -15,6 +15,8 @@ public:
     float getNorm();
     static void Reflect(GVector* velocity, GVector* collisionNormal);
     static GVector* add(GVector* v1, GVector* v2);
+    static float dotProduct(GVector*v1,GVector*v2);
+    static float angleBetween(GVector* v1,GVector* v2);
     ~GVector();
 
 

@@ -5,8 +5,8 @@
 #include <iterator>
 #include <iostream>
 #include "GVector.h"
-#include "physicsAux.h"
 #include "Entity.h"
+#include "physicsAux.h"
 
 Entity::Entity(SDL_Color clr,float x, float y, float w, float h,float e, float m,float Car){
 
@@ -126,7 +126,20 @@ SDL_FRect Entity::getBody(){
 
     return (this->body);
 }
+float Entity::getRadius(){
 
+    return Aux::calculateDistance(this->pos,this->getCenter());
+
+}
+
+SDL_FPoint Entity::getCenter(){
+
+    float x=this->pos.x+this->body.w*0.5;
+    float y=this->pos.y+this->body.h*0.5;
+    return (SDL_FPoint){x,y};
+
+
+}
 void Entity::setVec(GVector * vec){
 delete this->lastVec;
 this->lastVec=this->moveVec;

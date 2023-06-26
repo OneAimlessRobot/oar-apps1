@@ -46,6 +46,11 @@ for(int i =0;i<ammount;i++){
 }
 this->pause=SDL_FALSE;
 this->thetime=0;
+this->maxSpeed=maxSpeed;
+this->maxSize=maxSize;
+this->ammount=ammount;
+this->maxMass=maxMass;
+this->airDensity=airDensity;
 
 }
 
@@ -99,6 +104,7 @@ while(!quit){
 void Interactive::makeSelection(){
 
     if(this->thetime%selectFrameInt==0&&this->thetime !=0){
+        float selectSpeed=getAverageSpeed();
         std::list<Entity*>::iterator it;
             for (it = this->entList.begin(); it != this->entList.end(); ++it) {
 
@@ -111,6 +117,18 @@ void Interactive::makeSelection(){
 
 
 }
+}
+float Interactive::getAverageSpeed(){
+    float speedSum=0;
+    int totalBodies=0;
+        std::list<Entity*>::iterator it;
+            for (it = this->entList.begin(); it != this->entList.end(); ++it) {
+
+                speedSum+=(*it)->getVec()->getNorm();
+                totalBodies++;
+
+        }
+        return speedSum/totalBodies;
 }
 void Interactive::doRendering(){
 
@@ -129,7 +147,30 @@ void Interactive::doRendering(){
 
 }
 
-void Interactive::handleCollisions(){
+void Interactive::handleInterparticleCollisions(){
+
+
+    std::list<Entity*>::iterator it,it2,endOfSecond;
+    for (it = this->entList.begin(); it != this->entList.end(); ++it) {
+        endOfSecond=this->entList.end();
+        endOfSecond--;
+        Entity *current= (*it);
+
+    for (it2=it; it2 !=endOfSecond;) {
+        ++it2;
+        Entity *current2= *(it2);
+        if(Aux::calculateDistance(current->getCenter(),current2->getCenter())<=current->getRadius()+current2->getRadius()){
+            PhysicsAux::separateEntities(current,current2);
+            PhysicsAux::rebound(current,current2);
+        }
+
+    }
+
+
+
+}
+}
+void Interactive::handleCollisionsWithArena(){
 
 
     std::list<Entity*>::iterator it;
@@ -163,6 +204,13 @@ void Interactive::handleCollisions(){
 
 
 }
+}
+void Interactive::handleCollisions(){
+
+    handleCollisionsWithArena();
+    //broken. Maybe will fix
+//    handleInterparticleCollisions();
+
 }
 void Interactive::handleForces(){
 
@@ -221,7 +269,7 @@ void Interactive::homming(){
     std::list<Entity*>::iterator it;
     for (it = this->entList.begin(); it != this->entList.end(); ++it) {
         GVector* newVec=Aux::makeUnitVector((*it)->getPos(),(SDL_FPoint){this->mouseX,this->mouseY});
-        Aux::scaleVec(newVec,2);
+        Aux::scaleVec(newVec,5);
         (*it)->setVec(newVec);
 
 
@@ -256,7 +304,7 @@ void Interactive::handleContPresses(const Uint8*KEYS){
     }
     if(KEYS[SDL_SCANCODE_DOWN]) {
     }
-    if(KEYS[SDL_SCANCODE_Q]) {
+    if(KEYS[SDL_SCANCODE_G]) {
     }
     if(KEYS[SDL_SCANCODE_R]) {
     }
@@ -277,7 +325,13 @@ void Interactive::handleToggles(const Uint8*KEYS){
         this->pause=SDL_TRUE;
     }
     }
+    if(KEYS[SDL_SCANCODE_S]) {
+    Entity* ent=Entity::randEnt(WIDTH,HEIGHT,maxMass,maxSize,maxSpeed);
+    ent->setPos((SDL_FPoint){this->mouseX,this->mouseY});
+    this->entList.emplace(this->entList.begin(),ent);
+    }
 }
+
 Interactive::~Interactive(){
 
     std::list<Entity*>::iterator it;

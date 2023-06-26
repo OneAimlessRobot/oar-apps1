@@ -28,6 +28,8 @@ SDL_FPoint getPos();
 SDL_FPoint getLastPos();
 GVector* getVec();
 SDL_FRect getBody();
+SDL_FPoint getCenter();
+float getRadius();
 
 void setVec(GVector * vec);
 
