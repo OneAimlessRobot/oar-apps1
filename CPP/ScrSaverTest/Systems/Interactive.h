@@ -3,8 +3,8 @@
 #define WIDTH 800
 #define HEIGHT 600
 #define FRAMERATE 180.0
-constexpr int selectFrameInt= 480;
-constexpr int addMoreInt= 160;
+constexpr int selectFrameInt= 180;
+constexpr int addMoreInt= 60;
 constexpr int howManyToAdd= 5;
 constexpr int homingSpeed= 5;
 class Interactive{
