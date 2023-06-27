@@ -108,7 +108,7 @@ float newMass=Aux::getRandomFloat(0,maxMass);
 float coeffOfAirR=Aux::getRandomFloat(0,1);
 float dx= std::cos(maxAngle);
 float dy=std::sin(maxAngle);
-float speed=Aux::getRandomFloat(0,maxSpeed);
+float speed=Aux::getRandomFloat(maxSpeed,maxSpeed);
 SDL_Color color= Aux::randColor();
 GVector* resmoveVec= Aux::makeUnitVector((SDL_FPoint){x,y},(SDL_FPoint){x+dx,y+dy});
 Aux::scaleVec(resmoveVec,speed);
@@ -132,6 +132,12 @@ float Entity::getRadius(){
 
 }
 
+float Entity::getQuality(){
+//quanto mais pequeno "e", melhor
+    return (getVec()->getNorm())/(getDragConstant()*getElasticity());
+
+
+}
 SDL_FPoint Entity::getCenter(){
 
     float x=this->pos.x+this->body.w*0.5;

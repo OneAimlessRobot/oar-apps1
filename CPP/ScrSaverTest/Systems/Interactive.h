@@ -2,9 +2,10 @@
 #define INT_H
 #define WIDTH 800
 #define HEIGHT 600
-#define FRAMERATE 60.0
-constexpr int selectFrameInt= 600;
-constexpr int addMoreInt= 120;
+#define FRAMERATE 180.0
+constexpr int selectFrameInt= 480;
+constexpr int addMoreInt= 160;
+constexpr int howManyToAdd= 5;
 constexpr int homingSpeed= 5;
 class Interactive{
 private:
@@ -14,10 +15,9 @@ SDL_Renderer* ren;
 SDL_Texture * bgr,*ents;
 std::list<Entity*> entList;
 SDL_Color bgrclr;
-SDL_bool pause;
+SDL_bool pause,rendering;
 float maxSpeed, maxSize, ammount,maxMass, airDensity;
-int thetime;
-int mouseX,mouseY;
+int thetime,mouseX,mouseY,genCount;
 void keyboard(SDL_Event event);
 void handleCollisions();
 void orbit();
@@ -28,7 +28,9 @@ void handleForces();
 void handleDrag();
 void printSpeedsAndPoss();
 void makeSelection();
+void addMore();
 float getAverageSpeed();
+float getAverageQuality();
 public:
 Interactive(float maxSpeed,float maxSize,int ammount,float maxMass,float airDensity);
 ~Interactive();

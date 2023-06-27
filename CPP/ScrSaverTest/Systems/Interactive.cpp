@@ -45,7 +45,9 @@ for(int i =0;i<ammount;i++){
     this->entList.emplace(this->entList.begin(),Entity::randEnt(WIDTH,HEIGHT,maxMass,maxSize,maxSpeed));
 }
 this->pause=SDL_FALSE;
+this->rendering=SDL_TRUE;
 this->thetime=0;
+this->genCount=0;
 this->maxSpeed=maxSpeed;
 this->maxSize=maxSize;
 this->ammount=ammount;
@@ -81,11 +83,12 @@ int startTime= SDL_GetTicks();
     if(!this->pause){
     handleMovements();
     this->thetime++;
+    addMore();
     makeSelection();
     }
-
+    if(this->rendering){
     doRendering();
-int endTime= SDL_GetTicks();
+    int endTime= SDL_GetTicks();
 
 if((endTime-startTime)<((1/FRAMERATE)*1000)){
 
@@ -93,16 +96,27 @@ SDL_Delay(((1/FRAMERATE)*1000)-(endTime-startTime));
 }
 
 
+    }
+
 }
+}
+void Interactive::addMore(){
+if(this->thetime%addMoreInt==0){
+for(int i =0;i<howManyToAdd;i++){
+
+    this->entList.emplace(this->entList.begin(),Entity::randEnt(WIDTH,HEIGHT,maxMass,maxSize,maxSpeed));
+}
+}
+
 }
 void Interactive::makeSelection(){
 
     if(this->thetime%selectFrameInt==0){
-        float selectSpeed=getAverageSpeed();
+        float selectQuality=getAverageQuality();
         std::list<Entity*>::iterator it;
             for (it = this->entList.begin(); it != this->entList.end(); ++it) {
 
-                if((*it)->getVec()->getNorm()<selectSpeed){
+                if((*it)->getQuality()<selectQuality){
                     it=this->entList.erase(it);
 
                 }
@@ -110,6 +124,8 @@ void Interactive::makeSelection(){
         }
 
 
+    std::cout<<"Geraçao numero: "<<this->genCount<<"\n";
+this->genCount++;
 }
 }
 float Interactive::getAverageSpeed(){
@@ -123,6 +139,18 @@ float Interactive::getAverageSpeed(){
 
         }
         return speedSum/totalBodies;
+}
+float Interactive::getAverageQuality(){
+    float qualitySum=0;
+    int totalBodies=0;
+        std::list<Entity*>::iterator it;
+            for (it = this->entList.begin(); it != this->entList.end(); ++it) {
+
+                qualitySum+=(*it)->getQuality();
+                totalBodies++;
+
+        }
+        return qualitySum/totalBodies;
 }
 void Interactive::doRendering(){
 
@@ -300,8 +328,6 @@ void Interactive::handleContPresses(const Uint8*KEYS){
     }
     if(KEYS[SDL_SCANCODE_G]) {
     }
-    if(KEYS[SDL_SCANCODE_R]) {
-    }
 
     if(KEYS[SDL_SCANCODE_ESCAPE]) {
     }
@@ -323,6 +349,14 @@ void Interactive::handleToggles(const Uint8*KEYS){
     Entity* ent=Entity::randEnt(WIDTH,HEIGHT,maxMass,maxSize,maxSpeed);
     ent->setPos((SDL_FPoint){this->mouseX,this->mouseY});
     this->entList.emplace(this->entList.begin(),ent);
+    }
+    if(KEYS[SDL_SCANCODE_R]) {
+    if(this->rendering){
+        this->rendering=SDL_FALSE;
+    }
+    else{
+        this->rendering=SDL_TRUE;
+    }
     }
 }
 

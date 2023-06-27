@@ -30,6 +30,7 @@ GVector* getVec();
 SDL_FRect getBody();
 SDL_FPoint getCenter();
 float getRadius();
+float getQuality();
 
 void setVec(GVector * vec);
 
