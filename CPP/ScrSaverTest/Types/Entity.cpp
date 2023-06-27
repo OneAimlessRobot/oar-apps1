@@ -6,6 +6,7 @@
 #include <iostream>
 #include "GVector.h"
 #include "Entity.h"
+#include "Collider.h"
 #include "physicsAux.h"
 
 Entity::Entity(SDL_Color clr,float x, float y, float w, float h,float e, float m,float Car){
@@ -98,7 +99,6 @@ void Entity::bounce(){
 }
 
 Entity* Entity::randEnt(float width, float height,float maxMass,float maxSize,float maxSpeed){
-
 float size= Aux::getRandomFloat(10,maxSize);
 float x= Aux::getRandomFloat(0,width-size);
 float y=Aux::getRandomFloat(0,height-size);
@@ -128,7 +128,7 @@ SDL_FRect Entity::getBody(){
 }
 float Entity::getRadius(){
 
-    return Aux::calculateDistance(this->pos,this->getCenter());
+    return this->body.w*0.5;
 
 }
 
@@ -147,8 +147,7 @@ SDL_FPoint Entity::getCenter(){
 
 }
 void Entity::setVec(GVector * vec){
-delete this->lastVec;
-this->lastVec=this->moveVec;
+delete this->moveVec;
 this->moveVec=vec;
 }
 Entity::~Entity(){

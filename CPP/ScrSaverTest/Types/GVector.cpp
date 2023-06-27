@@ -1,7 +1,9 @@
-
+#define _USE_MATH_DEFINES
+#include <cmath>
 #include "GVector.h"
 #include <SDL2/SDL.h>
 #include "../aux.h"
+#include <iostream>
     GVector::GVector(float x,float y){
 
     this->x=x;
@@ -31,7 +33,11 @@
 
     }
     float GVector::angleBetween(GVector* v1,GVector* v2){
+        float result=(GVector::dotProduct(v1,v2)/(v1->getNorm()*v2->getNorm()));
+        if(std::fabs(result)>1){
+            return 3.14159;
 
+        }
         return std::acos(GVector::dotProduct(v1,v2)/(v1->getNorm()*v2->getNorm()));
 
 

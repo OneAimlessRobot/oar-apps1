@@ -10,6 +10,7 @@ float gravForce(SDL_FPoint p1,SDL_FPoint p2,float m1,float m2);
 float dragNeutralWind(float k, float airD,float speed);
 
 void separateEntities(Entity* a,Entity *b);
+void separateEntityFromCollider(Entity* a,Collider *col,int where);
 
 }
 #endif

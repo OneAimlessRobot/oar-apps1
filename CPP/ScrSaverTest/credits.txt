@@ -11,3 +11,21 @@ Chat GPT implemented workhorse tedious functions
 
 https://chat.openai.com/share/ca138f93-ddf2-4151-aec4-ac81b8fcd60b
 
+multithreading
+
+https://www.geeksforgeeks.org/multithreading-in-cpp/
+https://stackoverflow.com/questions/50175002/invalid-use-of-non-static-member-function-c-thread-linux
+
+physics
+
+https://en.m.wikipedia.org/wiki/Inelastic_collision
+https://www.google.com/search?q=normal+vector+in+a+collision&oq=normal+vector+in+a+collision&aqs=chrome..69i57j0i15i22i30j0i390i650l3.10149j0j4&client=ms-android-samsung-gj-rev1&sourceid=chrome-mobile&ie=UTF-8
+https://en.m.wikipedia.org/wiki/Coefficient_of_restitution
+
+
+lists
+
+https://cplusplus.com/reference/list/list/erase/
+
+https://cplusplus.com/reference/list/list/
+

@@ -1,4 +1,4 @@
-
+#include <thread>
 #include <list>
 #include <SDL2/SDL.h>
 #include <random>
@@ -46,9 +46,15 @@ for(int i =0;i<ammount;i++){
 }
 this->pause=SDL_FALSE;
 this->rendering=SDL_TRUE;
+this->selection=SDL_FALSE;
+this->collisions=SDL_TRUE;
 this->thetime=0;
 this->genCount=0;
 this->maxSpeed=maxSpeed;
+
+if(std::fabs(this->maxSpeed)==0){
+    this->maxSpeed=0.00001;
+}
 this->maxSize=maxSize;
 this->ammount=ammount;
 this->maxMass=maxMass;
@@ -82,9 +88,9 @@ int startTime= SDL_GetTicks();
     handleContPresses(KEYS);
     if(!this->pause){
     handleMovements();
-    this->thetime++;
-    addMore();
-    makeSelection();
+    if(this->selection){
+    generationHandling();
+    }
     }
     if(this->rendering){
     doRendering();
@@ -102,9 +108,13 @@ SDL_Delay(((1/FRAMERATE)*1000)-(endTime-startTime));
 }
 void Interactive::addMore(){
 if(this->thetime%addMoreInt==0){
+float average=getAverageQuality();
 for(int i =0;i<howManyToAdd;i++){
 
-    this->entList.emplace(this->entList.begin(),Entity::randEnt(WIDTH,HEIGHT,maxMass,maxSize,maxSpeed));
+    Entity* ent=Entity::randEnt(WIDTH,HEIGHT,maxMass,maxSize,maxSpeed);
+
+    this->entList.emplace(this->entList.begin(),ent);
+
 }
 }
 
@@ -112,11 +122,11 @@ for(int i =0;i<howManyToAdd;i++){
 void Interactive::makeSelection(){
 
     if(this->thetime%selectFrameInt==0){
-        float selectQuality=getAverageQuality();
+        float selectQuality=getAverageSpeed();
         std::list<Entity*>::iterator it;
             for (it = this->entList.begin(); it != this->entList.end(); ++it) {
 
-                if((*it)->getQuality()<selectQuality){
+                if((*it)->getVec()->getNorm()<selectQuality){
                     it=this->entList.erase(it);
 
                 }
@@ -168,7 +178,14 @@ void Interactive::doRendering(){
     SDL_RenderPresent(ren);
 
 }
+void Interactive::generationHandling(){
 
+    this->thetime++;
+    addMore();
+    makeSelection();
+
+
+}
 void Interactive::handleInterparticleCollisions(){
 
 
@@ -182,8 +199,11 @@ void Interactive::handleInterparticleCollisions(){
         ++it2;
         Entity *current2= *(it2);
         if(Aux::calculateDistance(current->getCenter(),current2->getCenter())<=current->getRadius()+current2->getRadius()){
-            PhysicsAux::separateEntities(current,current2);
+
+
             PhysicsAux::rebound(current,current2);
+            PhysicsAux::separateEntities(current,current2);
+
         }
 
     }
@@ -204,7 +224,7 @@ void Interactive::handleCollisionsWithArena(){
 
         int where=this->arena->whereIsColliding(currBody);
             current->bounce();
-            current->setPos(current->getLastPos());
+            PhysicsAux::separateEntityFromCollider(current,this->arena,where);
             GVector* vec=current->getVec();
     if (where==1) {
         GVector::Reflect(vec, new GVector(-1.0f, 0.0f));
@@ -229,9 +249,12 @@ void Interactive::handleCollisionsWithArena(){
 }
 void Interactive::handleCollisions(){
 
-    handleCollisionsWithArena();
     //broken. Maybe will fix
-//    handleInterparticleCollisions();
+    if(this->collisions){
+    handleInterparticleCollisions();
+    }
+
+    handleCollisionsWithArena();
 
 }
 void Interactive::handleForces(){
@@ -259,6 +282,7 @@ void Interactive::handleDrag(){
 void Interactive::handleMovements(){
 
     handleForces();
+
     handleCollisions();
 
 
@@ -356,6 +380,22 @@ void Interactive::handleToggles(const Uint8*KEYS){
     }
     else{
         this->rendering=SDL_TRUE;
+    }
+    }
+    if(KEYS[SDL_SCANCODE_C]) {
+    if(this->collisions){
+        this->collisions=SDL_FALSE;
+    }
+    else{
+        this->collisions=SDL_TRUE;
+    }
+    }
+    if(KEYS[SDL_SCANCODE_N]) {
+    if(this->selection){
+        this->selection=SDL_FALSE;
+    }
+    else{
+        this->selection=SDL_TRUE;
     }
     }
 }

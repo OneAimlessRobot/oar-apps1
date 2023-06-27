@@ -1,16 +1,18 @@
 #include <random>
 #include <cmath>
 #include "../aux.h"
+#include <iostream>
 #include "GVector.h"
 #include "Entity.h"
+#include "Collider.h"
 #include "physicsAux.h"
 
 float PhysicsAux::getReboundSpeed(float initSpeed,float coeff){
 return initSpeed-(initSpeed*coeff);
 }
 void PhysicsAux::separateEntities(Entity *a ,Entity* b){
-GVector*va=a->getVec(),
-        *vb=b->getVec();
+GVector*va=new GVector(a->getVec()->getX(),a->getVec()->getY()),
+        *vb=new GVector(b->getVec()->getX(),b->getVec()->getY());
     GVector* separatorB=Aux::makeUnitVector(a->getCenter(),b->getCenter());
     GVector* separatorA=Aux::makeUnitVector(b->getCenter(),a->getCenter());
     a->setVec(separatorA);
@@ -25,29 +27,48 @@ GVector*va=a->getVec(),
 
 
 }
+void PhysicsAux::separateEntityFromCollider(Entity* a,Collider *col,int where){
+    if(where==0){
+        return;
+    }
+    GVector *og= new GVector(a->getVec()->getX(),a->getVec()->getY());
+    GVector *inv= Aux::makeUnitVector((SDL_FPoint){0,0},(SDL_FPoint){-a->getVec()->getX(),-a->getVec()->getY()});
+    a->setVec(inv);
+    do{
+    where=col->whereIsColliding(a->getBody());
+    a->translate();
 
+    }while(where!=0);
+    a->setVec(og);
+
+
+}
 void PhysicsAux::rebound(Entity *a ,Entity* b){
 float ma=a->getMass(),mb=b->getMass();
-GVector * direction=Aux::makeUnitVector(a->getCenter(),b->getCenter()),
-        * deltaA=new GVector(-direction->getY(),direction->getX()),
-        * deltaB=new GVector(-direction->getY(),direction->getX());
 
-float normalAngleA=GVector::angleBetween(direction,a->getVec());
-float normalAngleB=GVector::angleBetween(direction,b->getVec());
-GVector *va=a->getVec();
-Aux::scaleVec(va,std::cos(normalAngleA));
-GVector* vb=b->getVec();
-Aux::scaleVec(vb,std::cos(normalAngleB));
-GVector* firstresult=GVector::add(va,vb);
+GVector * directionA=Aux::makeUnitVector(a->getCenter(),b->getCenter()),
+        * directionB=Aux::makeUnitVector(a->getCenter(),b->getCenter());
+
+float normalAngleA=GVector::angleBetween(a->getVec(),directionA);
+float normalAngleB=GVector::angleBetween(b->getVec(),directionA);
+//tudo bem.
+GVector *pva=a->getVec();
+Aux::scaleVec(pva,std::cos(normalAngleA));
+GVector* pvb=b->getVec();
+Aux::scaleVec(pvb,std::cos(normalAngleB));
+//tudo bem.
+Aux::scaleVec(pva,-1);
+GVector* firstresult=GVector::add(pva,pvb);
+//tudo bem
 float coeff=1+ (a->getElasticity()*b->getElasticity());
 float bigCoeff=(((ma*mb)/(ma+mb))*coeff);
-Aux::scaleVec(va,-1);
+
 Aux::scaleVec(firstresult,bigCoeff);
-float Jn=GVector::dotProduct(firstresult,deltaA);
-Aux::scaleVec(deltaA,Jn/ma);
-Aux::scaleVec(deltaB,-Jn/mb);
-a->setVec(GVector::add(deltaA,va));
-b->setVec(GVector::add(deltaB,vb));
+float Jn=GVector::dotProduct(firstresult,directionA);
+Aux::scaleVec(directionA,Jn/ma);
+Aux::scaleVec(directionB,-Jn/mb);
+a->setVec(GVector::add(directionA,a->getVec()));
+b->setVec(GVector::add(directionB,b->getVec()));
 
 }
 
