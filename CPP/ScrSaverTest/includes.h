@@ -8,6 +8,7 @@
 #include <SDL2/SDL.h>
 #include <vector>
 #include "Types/Entity.h"
+#include "Types/Gun.h"
 #include "Types/Collider.h"
 #include "Types/physicsAux.h"
 #include <list>

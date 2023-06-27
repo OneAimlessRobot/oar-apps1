@@ -1,7 +1,7 @@
 #define _USE_MATH_DEFINES
 #include <cmath>
-#include "GVector.h"
 #include <SDL2/SDL.h>
+#include "GVector.h"
 #include "../aux.h"
 #include <iostream>
     GVector::GVector(float x,float y){
@@ -27,36 +27,46 @@
         this->y=newY;
 
     }
-    float GVector::getNorm(){
+    void GVector::setCoords(SDL_FPoint point){
 
-        return Aux::calculateDistance((SDL_FPoint){0,0},(SDL_FPoint){this->x,this->y});
+        this->x=point.x;
+        this->y=point.y;
 
     }
-    float GVector::angleBetween(GVector* v1,GVector* v2){
-        float result=(GVector::dotProduct(v1,v2)/(v1->getNorm()*v2->getNorm()));
+    SDL_FPoint GVector::getCoords(){
+
+        return (SDL_FPoint){this->x,this->y};
+    }
+    float GVector::getNorm(SDL_FPoint vec){
+
+        return Aux::calculateDistance((SDL_FPoint){0,0},vec);
+
+    }
+    float GVector::angleBetween(SDL_FPoint v1,SDL_FPoint v2){
+        float result=(GVector::dotProduct(v1,v2)/(GVector::getNorm(v1)*GVector::getNorm(v2)));
         if(std::fabs(result)>1){
             return 3.14159;
 
         }
-        return std::acos(GVector::dotProduct(v1,v2)/(v1->getNorm()*v2->getNorm()));
+        return result;
 
 
     }
-    float GVector::dotProduct(GVector*v1,GVector*v2){
+    float GVector::dotProduct(SDL_FPoint v1,SDL_FPoint v2){
 
-        return v1->getX()*v2->getX()+v1->getY()*v2->getY();
+        return v1.x*v2.x+v1.y*v2.y;
 
 
     }
-    void GVector::Reflect(GVector* velocity, GVector* collisionNormal) {
+    void GVector::Reflect(SDL_FPoint* velocity, GVector* collisionNormal) {
     float dotProduct = velocity->x * collisionNormal->x + velocity->y * collisionNormal->y;
     velocity->x = velocity->x - 2.0f * dotProduct * collisionNormal->x;
     velocity->y = velocity->y - 2.0f * dotProduct * collisionNormal->y;
     delete collisionNormal;
     }
-    GVector* GVector::add(GVector* v1, GVector* v2){
+    SDL_FPoint GVector::add(SDL_FPoint v1, SDL_FPoint v2){
 
-        return new GVector(v1->getX()+v2->getX(),v1->getY()+v2->getY());
+        return (SDL_FPoint){v1.x+v2.x,v1.y+v2.y};
 
 
     }

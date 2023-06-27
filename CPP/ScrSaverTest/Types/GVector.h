@@ -12,11 +12,13 @@ public:
     float getY();
     void setX(float newX);
     void setY(float newY);
-    float getNorm();
-    static void Reflect(GVector* velocity, GVector* collisionNormal);
-    static GVector* add(GVector* v1, GVector* v2);
-    static float dotProduct(GVector*v1,GVector*v2);
-    static float angleBetween(GVector* v1,GVector* v2);
+    static float getNorm(SDL_FPoint point);
+    SDL_FPoint getCoords();
+    void setCoords(SDL_FPoint point);
+    static void Reflect(SDL_FPoint* velocity, GVector* collisionNormal);
+    static SDL_FPoint add(SDL_FPoint v1, SDL_FPoint v2);
+    static float dotProduct(SDL_FPoint v1,SDL_FPoint v2);
+    static float angleBetween(SDL_FPoint v1,SDL_FPoint v2);
     ~GVector();
 
 

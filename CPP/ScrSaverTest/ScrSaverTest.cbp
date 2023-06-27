@@ -44,6 +44,8 @@
 		<Unit filename="Types/Entity.h" />
 		<Unit filename="Types/GVector.cpp" />
 		<Unit filename="Types/GVector.h" />
+		<Unit filename="Types/Gun.cpp" />
+		<Unit filename="Types/Gun.h" />
 		<Unit filename="Types/physicsAux.cpp" />
 		<Unit filename="Types/physicsAux.h" />
 		<Unit filename="Untitled2" />

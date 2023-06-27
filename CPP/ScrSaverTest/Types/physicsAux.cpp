@@ -11,13 +11,13 @@ float PhysicsAux::getReboundSpeed(float initSpeed,float coeff){
 return initSpeed-(initSpeed*coeff);
 }
 void PhysicsAux::separateEntities(Entity *a ,Entity* b){
-GVector*va=new GVector(a->getVec()->getX(),a->getVec()->getY()),
-        *vb=new GVector(b->getVec()->getX(),b->getVec()->getY());
-    GVector* separatorB=Aux::makeUnitVector(a->getCenter(),b->getCenter());
-    GVector* separatorA=Aux::makeUnitVector(b->getCenter(),a->getCenter());
+SDL_FPoint va=a->getVec(),
+        vb=b->getVec();
+    SDL_FPoint separatorB=Aux::makeUnitVector(a->getCenter(),b->getCenter());
+    SDL_FPoint separatorA=Aux::makeUnitVector(b->getCenter(),a->getCenter());
     a->setVec(separatorA);
     b->setVec(separatorB);
-    while(Aux::calculateDistance(a->getCenter(),b->getCenter())<=a->getRadius()+b->getRadius()){
+    while(Entity::areTouching(a,b)){
     a->translate();
     b->translate();
 
@@ -31,8 +31,8 @@ void PhysicsAux::separateEntityFromCollider(Entity* a,Collider *col,int where){
     if(where==0){
         return;
     }
-    GVector *og= new GVector(a->getVec()->getX(),a->getVec()->getY());
-    GVector *inv= Aux::makeUnitVector((SDL_FPoint){0,0},(SDL_FPoint){-a->getVec()->getX(),-a->getVec()->getY()});
+    SDL_FPoint og= (SDL_FPoint){a->getVec().x,a->getVec().y};
+   SDL_FPoint inv= Aux::makeUnitVector((SDL_FPoint){0,0},(SDL_FPoint){-og.x,-og.y});
     a->setVec(inv);
     do{
     where=col->whereIsColliding(a->getBody());
@@ -46,31 +46,62 @@ void PhysicsAux::separateEntityFromCollider(Entity* a,Collider *col,int where){
 void PhysicsAux::rebound(Entity *a ,Entity* b){
 float ma=a->getMass(),mb=b->getMass();
 
-GVector * directionA=Aux::makeUnitVector(a->getCenter(),b->getCenter()),
-        * directionB=Aux::makeUnitVector(a->getCenter(),b->getCenter());
+SDL_FPoint directionA=Aux::makeUnitVector(a->getCenter(),b->getCenter()),
+            directionB=Aux::makeUnitVector(a->getCenter(),b->getCenter());
 
 float normalAngleA=GVector::angleBetween(a->getVec(),directionA);
 float normalAngleB=GVector::angleBetween(b->getVec(),directionA);
 //tudo bem.
-GVector *pva=a->getVec();
-Aux::scaleVec(pva,std::cos(normalAngleA));
-GVector* pvb=b->getVec();
-Aux::scaleVec(pvb,std::cos(normalAngleB));
+SDL_FPoint pva=a->getVec();
+Aux::scaleVec(&pva,std::cos(normalAngleA));
+SDL_FPoint pvb=b->getVec();
+Aux::scaleVec(&pvb,std::cos(normalAngleB));
 //tudo bem.
-Aux::scaleVec(pva,-1);
-GVector* firstresult=GVector::add(pva,pvb);
+Aux::scaleVec(&pva,-1);
+SDL_FPoint firstresult=GVector::add(pva,pvb);
 //tudo bem
 float coeff=1+ (a->getElasticity()*b->getElasticity());
 float bigCoeff=(((ma*mb)/(ma+mb))*coeff);
 
-Aux::scaleVec(firstresult,bigCoeff);
+Aux::scaleVec(&firstresult,bigCoeff);
 float Jn=GVector::dotProduct(firstresult,directionA);
-Aux::scaleVec(directionA,Jn/ma);
-Aux::scaleVec(directionB,-Jn/mb);
+Aux::scaleVec(&directionA,Jn/ma);
+Aux::scaleVec(&directionB,-Jn/mb);
 a->setVec(GVector::add(directionA,a->getVec()));
 b->setVec(GVector::add(directionB,b->getVec()));
 
 }
+//void PhysicsAux::rebound(Entity *a ,Entity* b){
+//float ma=a->getMass(),mb=b->getMass();
+//
+//GVector * directionA=Aux::makeUnitVector(a->getCenter(),b->getCenter()),
+//        * directionB=Aux::makeUnitVector(a->getCenter(),b->getCenter());
+//
+//float normalAngleA=GVector::angleBetween(a->getVec(),directionA);
+//float normalAngleB=GVector::angleBetween(b->getVec(),directionB);
+////tudo bem.
+//GVector *finalA=a->getVec();
+//GVector* finalB=b->getVec();
+//GVector *pva= new GVector(finalA->getX(),finalA->getY());
+//GVector *pvb= new GVector(finalB->getX(),finalB->getY());
+//Aux::scaleVec(pva,std::cos(normalAngleA));
+//Aux::scaleVec(pvb,std::cos(normalAngleB));
+////tudo bem.
+//Aux::scaleVec(pva,-1);
+//GVector::add(pva,pvb);
+////tudo bem
+//float coeff=1+ (a->getElasticity()*b->getElasticity());
+//float bigCoeff=(((ma*mb)/(ma+mb))*coeff);
+//
+//Aux::scaleVec(pva,bigCoeff);
+//float Jn=GVector::dotProduct(pva,directionA);
+//Aux::scaleVec(directionA,Jn/ma);
+//Aux::scaleVec(directionB,-Jn/mb);
+//GVector::add(a->getVec(),directionA);
+//GVector::add(b->getVec(),directionB);
+//delete pva;
+//delete pvb;
+//}
 
 
 float PhysicsAux::gravForce(SDL_FPoint p1,SDL_FPoint p2,float m1,float m2){

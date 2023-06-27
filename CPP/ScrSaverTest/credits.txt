@@ -29,3 +29,7 @@ https://cplusplus.com/reference/list/list/erase/
 
 https://cplusplus.com/reference/list/list/
 
+class Hierarchy
+
+
+https://chat.openai.com/share/19a67ae7-0baf-400e-815a-c28771dd93c5

@@ -12,8 +12,8 @@ float getRandomFloat(float min, float max);
 float calculateDistance(SDL_FPoint p1,  SDL_FPoint p2);
 SDL_Color randColor();
 bool AreFRectsEqual(const SDL_FRect& rect1, const SDL_FRect& rect2);
-GVector* makeUnitVector(SDL_FPoint origin, SDL_FPoint head);
-void scaleVec(GVector* vec,float scalar);
+SDL_FPoint makeUnitVector(SDL_FPoint origin, SDL_FPoint head);
+void scaleVec(SDL_FPoint* vec,float scalar);
 }
 
 #endif

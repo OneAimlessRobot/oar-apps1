@@ -12,10 +12,15 @@
 Entity::Entity(SDL_Color clr,float x, float y, float w, float h,float e, float m,float Car){
 
     this->bodyColor=clr;
+    if(w<=0){
+        w=1;
+    }
+    if(h<=0){
+        h=1;
+    }
     this->body=(SDL_FRect){x,y,w,h};
     this->pos=(SDL_FPoint){x,y};
     this->moveVec= new GVector(0,0);
-    this->lastVec= new GVector(0,0);
     this->lastPositions={};
     this->elasticity=e;
     this->mass=m;
@@ -76,13 +81,7 @@ void Entity::translate(){
     this->body.y+=this->moveVec->getY();
 
 }
-float Entity::getSpeedLoss(){
-    float vel= this->getVec()->getNorm();
-    float currEnergy=this->mass*vel*vel;
 
-
-
-}
 float Entity::getElasticity(){
 
     return this->elasticity;
@@ -91,36 +90,43 @@ float Entity::getMass(){
  return this->mass;
 }
 void Entity::bounce(){
-    float newSpeed=PhysicsAux::getReboundSpeed(this->getVec()->getNorm(),this->elasticity);
-    GVector* newVector=Aux::makeUnitVector((SDL_FPoint){0,0},(SDL_FPoint){this->moveVec->getX(),this->moveVec->getY()});
-    Aux::scaleVec(newVector,newSpeed);
-    this->moveVec=newVector;
+    float newSpeed=PhysicsAux::getReboundSpeed(GVector::getNorm(this->getVec()),this->elasticity);
+    SDL_FPoint newVector=Aux::makeUnitVector((SDL_FPoint){0,0},(SDL_FPoint){this->moveVec->getX(),this->moveVec->getY()});
+    Aux::scaleVec(&newVector,newSpeed);
+    this->setVec(newVector);
 
 }
+int Entity::areTouching(Entity*a,Entity*b){
 
+
+ return (Aux::calculateDistance(a->getCenter(),b->getCenter()))<=a->getRadius()+b->getRadius();
+
+}
 Entity* Entity::randEnt(float width, float height,float maxMass,float maxSize,float maxSpeed){
-float size= Aux::getRandomFloat(10,maxSize);
+float size= Aux::getRandomFloat(1,maxSize);
 float x= Aux::getRandomFloat(0,width-size);
 float y=Aux::getRandomFloat(0,height-size);
 float maxAngle=Aux::getRandomFloat(0,2*3.14159);
 float e=Aux::getRandomFloat(0,1);
+//float e=1;
+
 float newMass=Aux::getRandomFloat(0,maxMass);
 float coeffOfAirR=Aux::getRandomFloat(0,1);
 float dx= std::cos(maxAngle);
 float dy=std::sin(maxAngle);
 float speed=Aux::getRandomFloat(maxSpeed,maxSpeed);
 SDL_Color color= Aux::randColor();
-GVector* resmoveVec= Aux::makeUnitVector((SDL_FPoint){x,y},(SDL_FPoint){x+dx,y+dy});
-Aux::scaleVec(resmoveVec,speed);
+SDL_FPoint resmoveVec= Aux::makeUnitVector((SDL_FPoint){x,y},(SDL_FPoint){x+dx,y+dy});
+Aux::scaleVec(&resmoveVec,speed);
 Entity* result=new Entity(color,x,y,size,size,1-e,newMass,coeffOfAirR);
 result->setVec(resmoveVec);
 return result;
 
 
 }
-GVector* Entity::getVec(){
+SDL_FPoint Entity::getVec(){
 
-return this->moveVec;
+return this->moveVec->getCoords();
 }
 SDL_FRect Entity::getBody(){
 
@@ -132,9 +138,16 @@ float Entity::getRadius(){
 
 }
 
+float Entity::getTotalEnergy(){
+    float v=GVector::getNorm(this->getVec()),m=this->getMass();
+    return v*v*m*0.5;
+
+}
+
+
 float Entity::getQuality(){
 //quanto mais pequeno "e", melhor
-    return (getVec()->getNorm())/(getDragConstant()*getElasticity());
+    return (GVector::getNorm(this->getVec()))/(getDragConstant()*getElasticity());
 
 
 }
@@ -146,9 +159,10 @@ SDL_FPoint Entity::getCenter(){
 
 
 }
-void Entity::setVec(GVector * vec){
-delete this->moveVec;
-this->moveVec=vec;
+    SDL_FPoint getCoords();
+    void setCoords(SDL_FPoint point);
+void Entity::setVec(SDL_FPoint coords){
+this->moveVec->setCoords(coords);
 }
 Entity::~Entity(){
 delete this->moveVec;

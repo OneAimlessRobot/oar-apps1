@@ -24,15 +24,17 @@ void setLastPos(SDL_FPoint lp);
 float getMass();
 float getSpeedLoss();
 static Entity* randEnt(float width, float height,float maxMass,float maxSize,float maxSpeed);
+static int areTouching(Entity*a,Entity*b);
 SDL_FPoint getPos();
 SDL_FPoint getLastPos();
-GVector* getVec();
+SDL_FPoint getVec();
 SDL_FRect getBody();
 SDL_FPoint getCenter();
 float getRadius();
 float getQuality();
+float getTotalEnergy();
 
-void setVec(GVector * vec);
+void setVec(SDL_FPoint point);
 
 ~Entity();
 

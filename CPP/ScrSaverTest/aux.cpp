@@ -41,7 +41,7 @@ bool Aux::AreFRectsEqual(const SDL_FRect& rect1, const SDL_FRect& rect2) {
            (std::abs(rect1.h - rect2.h) < FLOAT_EPSILON);
 }
 
-GVector* Aux::makeUnitVector(SDL_FPoint origin, SDL_FPoint head){
+SDL_FPoint Aux::makeUnitVector(SDL_FPoint origin, SDL_FPoint head){
 
 
     float dx= head.x-origin.x;
@@ -50,19 +50,19 @@ GVector* Aux::makeUnitVector(SDL_FPoint origin, SDL_FPoint head){
     float udx=std::cos(std::atan2(dy,dx));
     float udy=std::sin(std::atan2(dy,dx));
 
-    return new GVector(udx,udy);
+    return (SDL_FPoint){udx,udy};
 
 
 
 }
-void Aux::scaleVec(GVector* vec,float scalar){
+void Aux::scaleVec(SDL_FPoint* vec,float scalar){
 
-    float dx= vec->getX();
-    float dy= vec->getY();
+    float dx= vec->x;
+    float dy= vec->y;
     dx*=scalar;
     dy*=scalar;
-    vec->setX(dx);
-    vec->setY(dy);
+    vec->x=dx;
+    vec->y=dy;
 
 }
 
