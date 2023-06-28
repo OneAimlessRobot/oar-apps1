@@ -1,0 +1,15 @@
+#include <thread>
+#include <iostream>
+#include <cmath>
+#include <random>
+#include <iterator>
+#include "aux.h"
+#include "Types/GVector.h"
+#include <SDL2/SDL.h>
+#include <vector>
+#include "Types/Entity.h"
+#include "Types/Gun.h"
+#include "Types/Collider.h"
+#include "Types/physicsAux.h"
+#include <list>
+#include "Systems/Interactive.h"

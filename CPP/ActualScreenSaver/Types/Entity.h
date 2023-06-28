@@ -10,15 +10,15 @@ SDL_FPoint pos,lastPos;
 GVector* moveVec,*lastVec;
 std::vector<SDL_FPoint> lastPositions;
 int historyLen;
-float elasticity,mass,Car;
+float inve,mass,Car;
 public:
 
-Entity(SDL_Color clr,float x, float y, float w, float h,float e,float m,float Car);
+Entity(SDL_Color clr,float x, float y, float w, float h,float inve,float m,float Car);
 void render(SDL_Renderer*ren);
 void setPos(SDL_FPoint point);
 void translate();
 void bounce();
-float getElasticity();
+float getInvElasticity();
 float getDragConstant();
 void setLastPos(SDL_FPoint lp);
 float getMass();

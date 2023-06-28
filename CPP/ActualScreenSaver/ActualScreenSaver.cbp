@@ -2,12 +2,12 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="ScrSaverTest" />
+		<Option title="ActualScreenSaver" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin/Debug/ScrSaverTest" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Debug/ActualScreenSaver" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -16,7 +16,7 @@
 				</Compiler>
 			</Target>
 			<Target title="Release">
-				<Option output="bin/Release/ScrSaverTest" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Release/ActualScreenSaver" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -34,8 +34,6 @@
 		<Linker>
 			<Add option="-lSDL2 -lm -lpthread" />
 		</Linker>
-		<Unit filename="Systems/Interactive.cpp" />
-		<Unit filename="Systems/Interactive.h" />
 		<Unit filename="Systems/ScreenSaverSystem.cpp" />
 		<Unit filename="Systems/ScreenSaverSystem.h" />
 		<Unit filename="Types/Collider.cpp" />
@@ -44,14 +42,10 @@
 		<Unit filename="Types/Entity.h" />
 		<Unit filename="Types/GVector.cpp" />
 		<Unit filename="Types/GVector.h" />
-		<Unit filename="Types/Gun.cpp" />
-		<Unit filename="Types/Gun.h" />
 		<Unit filename="Types/physicsAux.cpp" />
 		<Unit filename="Types/physicsAux.h" />
-		<Unit filename="Untitled2" />
 		<Unit filename="aux.cpp" />
 		<Unit filename="aux.h" />
-		<Unit filename="credits.txt" />
 		<Unit filename="includes.h" />
 		<Unit filename="main.cpp" />
 		<Extensions />

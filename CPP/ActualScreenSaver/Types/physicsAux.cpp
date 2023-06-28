@@ -60,7 +60,7 @@ Aux::scaleVec(&pvb,std::cos(normalAngleB));
 Aux::scaleVec(&pva,-1);
 SDL_FPoint firstresult=GVector::add(pva,pvb);
 //tudo bem
-float coeff=1+ (a->getElasticity()*b->getElasticity());
+float coeff=1+ ((1-a->getInvElasticity())*(1-b->getInvElasticity()));
 float bigCoeff=(((ma*mb)/(ma+mb))*coeff);
 
 Aux::scaleVec(&firstresult,bigCoeff);
@@ -71,38 +71,6 @@ a->setVec(GVector::add(directionA,a->getVec()));
 b->setVec(GVector::add(directionB,b->getVec()));
 
 }
-//void PhysicsAux::rebound(Entity *a ,Entity* b){
-//float ma=a->getMass(),mb=b->getMass();
-//
-//GVector * directionA=Aux::makeUnitVector(a->getCenter(),b->getCenter()),
-//        * directionB=Aux::makeUnitVector(a->getCenter(),b->getCenter());
-//
-//float normalAngleA=GVector::angleBetween(a->getVec(),directionA);
-//float normalAngleB=GVector::angleBetween(b->getVec(),directionB);
-////tudo bem.
-//GVector *finalA=a->getVec();
-//GVector* finalB=b->getVec();
-//GVector *pva= new GVector(finalA->getX(),finalA->getY());
-//GVector *pvb= new GVector(finalB->getX(),finalB->getY());
-//Aux::scaleVec(pva,std::cos(normalAngleA));
-//Aux::scaleVec(pvb,std::cos(normalAngleB));
-////tudo bem.
-//Aux::scaleVec(pva,-1);
-//GVector::add(pva,pvb);
-////tudo bem
-//float coeff=1+ (a->getElasticity()*b->getElasticity());
-//float bigCoeff=(((ma*mb)/(ma+mb))*coeff);
-//
-//Aux::scaleVec(pva,bigCoeff);
-//float Jn=GVector::dotProduct(pva,directionA);
-//Aux::scaleVec(directionA,Jn/ma);
-//Aux::scaleVec(directionB,-Jn/mb);
-//GVector::add(a->getVec(),directionA);
-//GVector::add(b->getVec(),directionB);
-//delete pva;
-//delete pvb;
-//}
-
 
 float PhysicsAux::gravForce(SDL_FPoint p1,SDL_FPoint p2,float m1,float m2){
 float dist=Aux::calculateDistance(p1,p2);

@@ -65,7 +65,6 @@ while(!quit){
 
 
 }
-delete this;
 
 }
 
@@ -97,20 +96,21 @@ void ScreenSaverSystem::handleMovements(){
         if(this->arena->whereIsColliding(currBody)>0){
         int where=this->arena->whereIsColliding(currBody);
             current->setPos(current->getLastPos());
-            GVector* vec=current->getVec();
+            SDL_FPoint vec=current->getVec();
     if (where==1) {
-        GVector::Reflect(vec, new GVector(-1.0f, 0.0f));
+        GVector::Reflect(&vec, new GVector(-1.0f, 0.0f));
     } else if (where==2) {
 
-        GVector::Reflect(vec, new GVector(1.0f, 0.0f));
+        GVector::Reflect(&vec, new GVector(1.0f, 0.0f));
 
     } else if (where==3) {
 
-        GVector::Reflect(vec, new GVector(0.0f, -1.0f));
+        GVector::Reflect(&vec, new GVector(0.0f, -1.0f));
     } else if (where==4) {
 
-        GVector::Reflect(vec, new GVector(0.0f, 1.0f));
+        GVector::Reflect(&vec, new GVector(0.0f, 1.0f));
         }
+        current->setVec(vec);
         //Problema com colisões diagonais (qual eixo de reflexão escolher?)
     }
 
@@ -121,9 +121,10 @@ void ScreenSaverSystem::handleMovements(){
 ScreenSaverSystem::~ScreenSaverSystem(){
 
     std::list<Entity*>::iterator it;
-    for (it = this->entList.begin(); it != this->entList.end(); ++it) {
+    for (it = this->entList.begin(); it != this->entList.end(); ) {
 
     delete (*it);
+    it=this->entList.erase(it);
     }
 SDL_DestroyTexture(this->bgr);
 SDL_DestroyTexture(this->ents);

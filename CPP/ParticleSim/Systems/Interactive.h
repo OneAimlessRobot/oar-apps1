@@ -2,7 +2,7 @@
 #define INT_H
 #define WIDTH 800
 #define HEIGHT 600
-#define FRAMERATE 180.0
+#define FRAMERATE 60.0
 constexpr int selectFrameInt= 180;
 constexpr int addMoreInt= 60;
 constexpr int howManyToAdd= 5;

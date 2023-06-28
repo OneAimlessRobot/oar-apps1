@@ -3,7 +3,7 @@
 
 #define COLLDISTANCE 2
 #define TRAILLENGTH (COLLDISTANCE + 0)
-
+#include <ctime>
 #include <SDL2/SDL.h>
 #include "Types/GVector.h"
 

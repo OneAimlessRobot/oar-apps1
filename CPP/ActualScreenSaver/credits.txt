@@ -21,7 +21,7 @@ physics
 https://en.m.wikipedia.org/wiki/Inelastic_collision
 https://www.google.com/search?q=normal+vector+in+a+collision&oq=normal+vector+in+a+collision&aqs=chrome..69i57j0i15i22i30j0i390i650l3.10149j0j4&client=ms-android-samsung-gj-rev1&sourceid=chrome-mobile&ie=UTF-8
 https://en.m.wikipedia.org/wiki/Coefficient_of_restitution
-
+https://chat.openai.com/share/59786070-52db-4d0d-bd8a-d2c0809fb095
 
 lists
 
@@ -33,3 +33,7 @@ class Hierarchy
 
 
 https://chat.openai.com/share/19a67ae7-0baf-400e-815a-c28771dd93c5
+
+
+
+Nota: nao ha memory leaks deste programa. Só das bibliotecas externas de SDL que uso!

@@ -12,6 +12,7 @@ void fullRender(SDL_Renderer* ren);
 void render(SDL_Renderer* ren);
 int whereIsColliding(SDL_FRect rect);
 float getAirDensity();
+SDL_FRect getInter(SDL_FRect body,int where);
 
 
 };

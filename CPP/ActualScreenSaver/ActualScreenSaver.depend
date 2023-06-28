@@ -1,0 +1,84 @@
+# depslib dependency file v1.0
+1687897739 source:/home/k/oar-apps1/CPP/ActualScreenSaver/aux.cpp
+	<random>
+	<cmath>
+	"aux.h"
+
+1687897712 /home/k/oar-apps1/CPP/ActualScreenSaver/aux.h
+	<SDL2/SDL.h>
+	"Types/GVector.h"
+
+1687898609 /home/k/oar-apps1/CPP/ActualScreenSaver/Types/GVector.h
+
+1687947207 source:/home/k/oar-apps1/CPP/ActualScreenSaver/Systems/ScreenSaverSystem.cpp
+	<list>
+	<SDL2/SDL.h>
+	<random>
+	<cmath>
+	"../aux.h"
+	"../Types/Collider.h"
+	"../Types/GVector.h"
+	"../Types/Entity.h"
+	<iostream>
+	"ScreenSaverSystem.h"
+
+1687796454 /home/k/oar-apps1/CPP/ActualScreenSaver/Types/Collider.h
+
+1687946452 /home/k/oar-apps1/CPP/ActualScreenSaver/Types/Entity.h
+
+1687822184 /home/k/oar-apps1/CPP/ActualScreenSaver/Systems/ScreenSaverSystem.h
+
+1687796478 source:/home/k/oar-apps1/CPP/ActualScreenSaver/Types/Collider.cpp
+	"../aux.h"
+	<SDL2/SDL.h>
+	"Collider.h"
+
+1687946675 source:/home/k/oar-apps1/CPP/ActualScreenSaver/Types/Entity.cpp
+	<SDL2/SDL.h>
+	"../aux.h"
+	<vector>
+	<iterator>
+	<iostream>
+	"GVector.h"
+	"Entity.h"
+	"Collider.h"
+	"physicsAux.h"
+
+1687868047 /home/k/oar-apps1/CPP/ActualScreenSaver/Types/physicsAux.h
+
+1687905003 source:/home/k/oar-apps1/CPP/ActualScreenSaver/Types/GVector.cpp
+	<cmath>
+	<SDL2/SDL.h>
+	"GVector.h"
+	"../aux.h"
+	<iostream>
+
+1687947283 source:/home/k/oar-apps1/CPP/ActualScreenSaver/main.cpp
+	"includes.h"
+
+1687947181 /home/k/oar-apps1/CPP/ActualScreenSaver/includes.h
+	<thread>
+	<iostream>
+	<cmath>
+	<random>
+	<iterator>
+	"aux.h"
+	"Types/GVector.h"
+	<SDL2/SDL.h>
+	<vector>
+	"Types/Entity.h"
+	"Types/Collider.h"
+	"Types/physicsAux.h"
+	<list>
+	"Systems/ScreenSaverSystem.h"
+
+1687946599 source:/home/k/oar-apps1/CPP/ActualScreenSaver/Types/physicsAux.cpp
+	<random>
+	<cmath>
+	"../aux.h"
+	<iostream>
+	"GVector.h"
+	"Entity.h"
+	"Collider.h"
+	"physicsAux.h"
+
