@@ -7,6 +7,7 @@ constexpr int selectFrameInt= 180;
 constexpr int addMoreInt= 60;
 constexpr int howManyToAdd= 5;
 constexpr int homingSpeed= 5;
+
 class Interactive{
 private:
 SDL_Window* win;
@@ -20,24 +21,20 @@ SDL_bool pause,rendering,collisions,selection;
 float maxSpeed, maxSize, ammount,maxMass, airDensity;
 int thetime,mouseX,mouseY,genCount;
 void keyboard(SDL_Event event);
-void handleCollisions();
-void orbit();
-void handleInterparticleCollisions();
-void handleCollisionsWithArena();
-void homming();
-void handleForces();
-void handleDrag();
-void printSpeedsAndPos();
-void generationHandling();
+
 void makeSelection();
 void addMore();
-float getAverageSpeed();
-float getAverageQuality();
-float getTotalEnergy();
 void destroyGuns();
 void monitorGuns();
 void shootGuns();
-void spawnGun(float reloadTime,int capacity,float force,float barrelLen,float x,float y);
+void printGunMenu();
+void generationHandling();
+void processGunMenu(Gun * gun,float x,float y);
+void destroyEntities();
+void processDeletion();
+
+void processGunChoice(Gun * gun,float x,float y);
+void spawnGun(Gun* gun,const char* filePath,float x,float y);
 public:
 Interactive(float maxSpeed,float maxSize,int ammount,float maxMass,float airDensity);
 ~Interactive();
@@ -47,9 +44,7 @@ void mainLoop();
 void handleToggles(const Uint8* KEYS);
 void handleContPresses(const Uint8* KEYS);
 void doRendering();
-void handleMovements();
 
 
 };
-
 #endif

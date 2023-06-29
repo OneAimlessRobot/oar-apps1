@@ -5,10 +5,10 @@
 
 Collider::Collider(SDL_bool type,SDL_Color color,float x,float y,float w,float h,float thickness,float airDensity){
 
-this->left=(SDL_FRect){x-thickness,y,thickness,h-thickness};
-this->right=(SDL_FRect){w,y,thickness,h-thickness};
-this->top=(SDL_FRect){x,y-thickness,w-thickness,thickness};
-this->bottom=(SDL_FRect){x,h,w-thickness,thickness};
+this->left=(SDL_FRect){x-thickness,y,thickness,h};
+this->top=(SDL_FRect){x,y-thickness,w,thickness};
+this->right=(SDL_FRect){left.x+w+thickness,y,thickness,h};
+this->bottom=(SDL_FRect){x,left.y+h,w,thickness};
 this->containedObject=(SDL_FRect){x,y,w,h};
 this->bodyColor = color;
 this->airDensity=airDensity;

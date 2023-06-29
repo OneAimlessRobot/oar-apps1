@@ -41,7 +41,8 @@ void Entity::render(SDL_Renderer*ren){
 void Entity::setPos(SDL_FPoint point){
 
     this->lastPos=pos;
-    this->pos=point;
+    this->pos.x=point.x;
+    this->pos.y=point.y;
     this->body.x=point.x;
     this->body.y=point.y;
 
@@ -103,7 +104,7 @@ int Entity::areTouching(Entity*a,Entity*b){
 
 }
 Entity* Entity::randEnt(float width, float height,float maxMass,float maxSize,float maxSpeed){
-float size= Aux::getRandomFloat(1,maxSize);
+float size= Aux::getRandomFloat(10,maxSize);
 float x= Aux::getRandomFloat(0,width-size);
 float y=Aux::getRandomFloat(0,height-size);
 float maxAngle=Aux::getRandomFloat(0,2*3.14159);

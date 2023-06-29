@@ -1,5 +1,7 @@
 #include <thread>
 #include <list>
+#include <vector>
+#include "../resourcePaths.h"
 #include <SDL2/SDL.h>
 #include <random>
 #include <cmath>
@@ -45,7 +47,7 @@ this->ents= SDL_CreateTexture(ren,SDL_PIXELFORMAT_RGBA8888,SDL_TEXTUREACCESS_TAR
 
 std::cout<<"Done!\n";
 this->bgrclr=(SDL_Color){255,255,255,255};
-this->arena= new Collider(SDL_FALSE,bgrclr,0,0,WIDTH,HEIGHT,50,airDensity);
+this->arena= new Collider(SDL_FALSE,bgrclr,0,0,WIDTH,HEIGHT,500,airDensity);
 this->entList= {};
 for(int i =0;i<ammount;i++){
 
@@ -93,12 +95,9 @@ int startTime= SDL_GetTicks();
 
     }
     handleContPresses(KEYS);
-    if(!this->pause){
-    handleMovements();
-    if(this->selection){
-    generationHandling();
-    }
-    }
+
+        std::thread entityWorker(&Interactive::handleEntities,this);
+        entityWorker.detach();
 
     if(this->rendering){
     doRendering();
@@ -113,6 +112,20 @@ SDL_Delay(((1/FRAMERATE)*1000)-(endTime-startTime));
     }
 
 }
+}
+
+
+
+void Interactive::handleEntities(){
+
+    if(!this->pause){
+    PhysicsCommands::handleMovements(this->collisions,this->entList,this->arena,this->gunList);
+    if(this->selection){
+    generationHandling();
+    }
+    }
+
+
 }
 void Interactive::addMore(){
 if(this->thetime%addMoreInt==0){
@@ -129,7 +142,7 @@ for(int i =0;i<howManyToAdd;i++){
 void Interactive::makeSelection(){
 
     if(this->thetime%selectFrameInt==0){
-        float selectQuality=getAverageSpeed();
+        float selectQuality=PhysicsCommands::getAverageSpeed(this->entList);
         std::list<Entity*>::iterator it;
             for (it = this->entList.begin(); it != this->entList.end(); ) {
 
@@ -148,41 +161,6 @@ void Interactive::makeSelection(){
     std::cout<<"Geraçao numero: "<<this->genCount<<"\n";
 this->genCount++;
 }
-}
-float Interactive::getAverageSpeed(){
-    float speedSum=0;
-    int totalBodies=0;
-        std::list<Entity*>::iterator it;
-            for (it = this->entList.begin(); it != this->entList.end(); ++it) {
-
-                speedSum+=GVector::getNorm((*it)->getVec());
-                totalBodies++;
-
-        }
-        return speedSum/totalBodies;
-}
-float Interactive::getAverageQuality(){
-    float qualitySum=0;
-    int totalBodies=0;
-        std::list<Entity*>::iterator it;
-            for (it = this->entList.begin(); it != this->entList.end(); ++it) {
-
-                qualitySum+=(*it)->getQuality();
-                totalBodies++;
-
-        }
-        return qualitySum/totalBodies;
-}
-float Interactive::getTotalEnergy(){
-    float energySum=0;
-        std::list<Entity*>::iterator it;
-            for (it = this->entList.begin(); it != this->entList.end(); ++it) {
-
-                energySum+=(*it)->getTotalEnergy();
-
-        }
-        std::cout<<"Energia total: "<<energySum<<"\n";
-        return energySum;
 }
 void Interactive::doRendering(){
 
@@ -213,147 +191,6 @@ void Interactive::generationHandling(){
 
 
 }
-void Interactive::handleInterparticleCollisions(){
-
-
-    std::list<Entity*>::iterator it,it2,endOfSecond;
-    for (it = this->entList.begin(); it != this->entList.end(); ++it) {
-        endOfSecond=this->entList.end();
-        endOfSecond--;
-        Entity *current= (*it);
-
-    for (it2=it; it2 !=endOfSecond;) {
-        ++it2;
-        Entity *current2= *(it2);
-        if(Entity::areTouching(current,current2)){
-
-
-            PhysicsAux::rebound(current,current2);
-            PhysicsAux::separateEntities(current,current2);
-
-        }
-
-    }
-
-
-
-}
-}
-void Interactive::handleCollisionsWithArena(){
-
-
-    std::list<Entity*>::iterator it;
-    for (it = this->entList.begin(); it != this->entList.end(); ++it) {
-        Entity *current= (*it);
-        SDL_FRect currBody=current->getBody();
-        current->translate();
-        if(this->arena->whereIsColliding(currBody)>0){
-
-        int where=this->arena->whereIsColliding(currBody);
-            current->bounce();
-            PhysicsAux::separateEntityFromCollider(current,this->arena,where);
-            SDL_FPoint vec=current->getVec();
-    if (where==1) {
-        GVector::Reflect(&vec, new GVector(-1.0f, 0.0f));
-    } else if (where==2) {
-
-        GVector::Reflect(&vec, new GVector(1.0f, 0.0f));
-
-    } else if (where==3) {
-
-        GVector::Reflect(&vec, new GVector(0.0f, -1.0f));
-    } else if (where==4) {
-
-        GVector::Reflect(&vec, new GVector(0.0f, 1.0f));
-    }
-        current->setVec(vec);
-
-        //Problema com colisões diagonais (qual eixo de reflexão escolher?)
-    }
-
-
-
-}
-}
-void Interactive::handleCollisions(){
-
-    //broken. Maybe will fix
-    if(this->collisions){
-    handleInterparticleCollisions();
-    }
-
-    handleCollisionsWithArena();
-
-}
-void Interactive::handleForces(){
-
-    handleDrag();
-
-}
-void Interactive::handleDrag(){
-
-
-    std::list<Entity*>::iterator it;
-    for (it = this->entList.begin(); it != this->entList.end(); ++it) {
-   SDL_FPoint currentVec= (*it)->getVec();
-        SDL_FPoint newVec=Aux::makeUnitVector((SDL_FPoint){0,0},(SDL_FPoint){-currentVec.x,-currentVec.y});
-        float dragMagnitude= PhysicsAux::dragNeutralWind(((*it)->getDragConstant()),this->arena->getAirDensity(),GVector::getNorm(currentVec));
-        Aux::scaleVec(&newVec,dragMagnitude);
-        (*it)->setVec(GVector::add(newVec,currentVec));
-
-
-}
-
-
-
-}
-void Interactive::handleMovements(){
-
-    handleForces();
-
-    handleCollisions();
-
-    monitorGuns();
-
-
-
-}
-void Interactive::orbit(){
-
-
-    std::list<Entity*>::iterator it;
-    for (it = this->entList.begin(); it != this->entList.end(); ++it) {
-    SDL_FPoint master=(SDL_FPoint){this->mouseX*1.0,this->mouseY*1.0},
-                slave=(*it)->getPos();
-        SDL_FPoint newVec=Aux::makeUnitVector(slave,master);
-        float magnitude= PhysicsAux::gravForce(slave,master,1000,(*it)->getMass());
-        if(Aux::calculateDistance(master ,slave)<=50){
-            Aux::scaleVec(&newVec,1);
-        }
-        else{
-        Aux::scaleVec(&newVec,magnitude);
-        }
-        (*it)->setVec(GVector::add(newVec,(*it)->getVec()));
-
-}
-
-}
-void Interactive::homming(){
-
-
-    std::list<Entity*>::iterator it;
-    for (it = this->entList.begin(); it != this->entList.end(); ++it) {
-    SDL_FPoint master=(SDL_FPoint){this->mouseX*1.0,this->mouseY*1.0},
-                slave=(*it)->getPos();
-        SDL_FPoint newVec=Aux::makeUnitVector(slave,master);
-        Aux::scaleVec(&newVec,homingSpeed);
-
-        (*it)->setVec(newVec);
-
-
-}
-
-}
 void Interactive::printSpeedsAndPos(){
 
 
@@ -374,11 +211,14 @@ void Interactive::printSpeedsAndPos(){
 }
 void Interactive::handleContPresses(const Uint8*KEYS){
     if(KEYS[SDL_SCANCODE_LEFT]) {
-        orbit();
+        PhysicsCommands::orbit(this->entList,this->mouseX*1.0,this->mouseY*1.0);
     }
     if(KEYS[SDL_SCANCODE_RIGHT]) {
 
-        homming();
+        PhysicsCommands::homming(this->entList,this->mouseX*1.0,this->mouseY*1.0);
+    }
+    if(KEYS[SDL_SCANCODE_M]) {
+        PhysicsCommands::doBlast(this->entList,this->mouseX*1.0,this->mouseY*1.0);
     }
     if(KEYS[SDL_SCANCODE_DOWN]) {
         shootGuns();
@@ -395,6 +235,17 @@ void Interactive::destroyGuns(){
             it=this->gunList.erase(it);
     }
 
+
+
+}
+void Interactive::destroyEntities(){
+
+
+    std::list<Entity*>::iterator it;
+    for (it = this->entList.begin(); it != this->entList.end();) {
+        delete (*it);
+        it=this->entList.erase(it);
+    }
 
 
 }
@@ -424,9 +275,14 @@ void Interactive::shootGuns(){
     bullet->setPos((*it)->getCenter());
     //dou-lhe o pointer para o vetor da gun. Mais tarde, quando apago as guns, apago o vetor. quando
     //tento apagar as entities, dá merda.
-    bullet->setVec((*it)->getShootVec());
-    this->entList.emplace(this->entList.begin(),bullet);
+    SDL_FPoint tiltedVec=GVector::tiltVector((*it)->getShootVec(),(*it)->getTilt());
+    bullet->setVec(tiltedVec);
+    PhysicsAux::railAcceleration(bullet,(*it)->getShootVec(),(*it)->getBarrelLength());
+    (*it)->setShootVec(tiltedVec);
+    Aux::scaleVec(&tiltedVec,-(*it)->getRecoilFactor());
     (*it)->shoot();
+    (*it)->setVec(GVector::add(tiltedVec,((*it)->getVec())));
+    this->entList.emplace(this->entList.begin(),bullet);
     }
     }
 
@@ -435,10 +291,12 @@ void Interactive::shootGuns(){
 
 
 }
-void Interactive::spawnGun(float reloadTime,int capacity,float force,float barrelLen,float x,float y){
 
+void Interactive::spawnGun(Gun* gun,const char* filePath,float x, float y){
 
-    Gun* gun= new Gun(Aux::randColor(),this->mouseX*1.0,this->mouseY*1.0,10,10,1,10000000,1,5,5,5,200);
+    delete gun;
+    gun=Gun::parseGun(filePath);
+    gun->setPos((SDL_FPoint){x,y});
     this->gunList.emplace(this->gunList.begin(),gun);
 }
 void Interactive::handleToggles(const Uint8*KEYS){
@@ -490,29 +348,138 @@ void Interactive::handleToggles(const Uint8*KEYS){
     }
     }
     if(KEYS[SDL_SCANCODE_G]) {
-
-        spawnGun(0,10,10,0,this->mouseX,this->mouseY);
+        Gun* gun=Gun::defaultGun();
+        std::thread newGun(&Interactive::processGunMenu,this,gun,this->mouseX*1.0,this->mouseY*1.0);
+        newGun.detach();
 
     }
 
     if(KEYS[SDL_SCANCODE_D]) {
-        destroyGuns();
 
-    std::list<Entity*>::iterator it;
-    for (it = this->entList.begin(); it != this->entList.end();) {
-        delete (*it);
-                    it=this->entList.erase(it);
-    }
+        std::thread deletion(&Interactive::processDeletion,this);
+        deletion.detach();
+
     }
 }
+void Interactive::processDeletion(){
+int choice;
+std::cout<<"Queres apagar...\n";
+Resources::printMenu(Resources::generateDeleteMenu());
+std::cin>>choice;
+switch (choice){
+    case 0:{
+        destroyEntities();
+        destroyGuns();
 
+    break;
+    }
+    case 1:{
+
+
+        destroyGuns();
+
+
+    break;
+    }
+    case 2:{
+
+
+        destroyEntities();
+
+
+    break;
+    }
+
+
+
+}
+
+
+
+
+}
+void Interactive::processGunMenu(Gun * gun,float x,float y){
+
+    processGunChoice(gun,x,y);
+
+}
+void Interactive::processGunChoice(Gun * gun,float x,float y){
+
+std::cout<<"0- Spawnar uma arma\n";
+std::cout<<"1- Ve informacoes de uma arma\n";
+
+    int choice,whatToDo;
+    std::cin>>whatToDo;
+    Resources::printMenu(Resources::generateGunMenu());
+    std::cin>>choice;
+    switch(choice){
+        case(SRIFLE):{
+                if(!whatToDo){
+                spawnGun(gun,SRIFLE_PATH,x,y);
+                }
+                else{
+                Gun::printGunInfo(SRIFLE_PATH);
+
+                }
+
+
+            break;
+        }
+        case(ARIFLE):{
+
+                if(!whatToDo){
+                spawnGun(gun,ARIFLE_PATH,x,y);
+                }
+                else{
+                Gun::printGunInfo(ARIFLE_PATH);
+
+                }
+
+
+            break;
+
+        }
+        case(SMG):{
+
+
+                if(!whatToDo){
+                spawnGun(gun,SMG_PATH,x,y);
+                }
+                else{
+                Gun::printGunInfo(SMG_PATH);
+
+                }
+
+
+            break;
+        }
+        case(PISTOL):{
+
+                if(!whatToDo){
+                spawnGun(gun,PISTOL_PATH,x,y);
+                }
+                else{
+                Gun::printGunInfo(PISTOL_PATH);
+
+                }
+
+
+            break;
+        }
+        default:{
+
+            break;
+        }
+
+
+    }
+
+
+
+}
 Interactive::~Interactive(){
 
-    std::list<Entity*>::iterator it;
-    for (it = this->entList.begin(); it != this->entList.end();) {
-        delete (*it);
-        it=this->entList.erase(it);
-    }
+    this->destroyEntities();
     this->destroyGuns();
     delete this->arena;
 SDL_DestroyTexture(this->bgr);

@@ -7,25 +7,33 @@ class Gun: public Entity{
 
 private:
 
-float barrelLen,force,x,y,shootperiod;
-int capacity,currAmmo,reloadTime,shootCounter,reloadCounter,existenceTime;
+float barrelLen,force,spreadMaxAngle,recoilFactor;
+int capacity,currAmmo,reloadTime,shootCounter,reloadCounter,existenceTime,shootperiod;
+caliber bulletType;
 GVector* shootVec;
 int ready();
 public:
 
-Gun(SDL_Color clr,float x, float y, float w, float h,float e,float m,float Car,float force,float barrelLen,int capacity,int reloatTime);
-Gun(Entity* ent,float force,float barrelLen,int capacity,int reloatTime);
+Gun(SDL_Color clr,float x, float y, float w, float h,float e,float m,float Car,float force,float recoilFactor,float barrelLen,float spreadIndex,int capacity,int reloadTime,int shootperiod);
 void reload();
+static Gun* parseGun(std::string filePath);
 int isEmpty();
+void setCaliber(caliber bType);
 int inCooldown();
 void updateGun();
 int canShoot();
 int getReloadTime();
 void shoot();
+float getBarrelLength();
+float getRecoilFactor();
+void render(SDL_Renderer* ren);
+static void printGunInfo(std::string filePath);
 float getShootingForce();
+float getTilt();
 void setShootVec(SDL_FPoint newVec);
 SDL_FPoint getShootVec();
 static Gun* randGun(float width, float height,float maxMass,float maxSize,float maxSpeed,int capacity,float force);
+static Gun* defaultGun();
 SDL_FPoint getPos();
 ~Gun();
 

@@ -58,6 +58,18 @@
 
 
     }
+
+    SDL_FPoint GVector::tiltVector(SDL_FPoint v,float angle){
+        float norm=GVector::getNorm(v);
+        float vAngle=std::atan2(v.y,v.x);
+        float newX=std::cos(vAngle)*std::cos(angle)-std::sin(vAngle)*std::sin(angle);
+        float newY=std::sin(vAngle)*std::cos(angle)+std::cos(vAngle)*std::sin(angle);
+        SDL_FPoint newVec= Aux::makeUnitVector((SDL_FPoint){0,0},(SDL_FPoint){newX,newY});
+        Aux::scaleVec(&newVec,norm);
+        return newVec;
+
+
+    }
     void GVector::Reflect(SDL_FPoint* velocity, GVector* collisionNormal) {
     float dotProduct = velocity->x * collisionNormal->x + velocity->y * collisionNormal->y;
     velocity->x = velocity->x - 2.0f * dotProduct * collisionNormal->x;

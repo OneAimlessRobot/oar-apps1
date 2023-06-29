@@ -19,6 +19,7 @@ public:
     static SDL_FPoint add(SDL_FPoint v1, SDL_FPoint v2);
     static float dotProduct(SDL_FPoint v1,SDL_FPoint v2);
     static float angleBetween(SDL_FPoint v1,SDL_FPoint v2);
+    static SDL_FPoint tiltVector(SDL_FPoint v,float angle);
     ~GVector();
 
 

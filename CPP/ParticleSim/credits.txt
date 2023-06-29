@@ -37,3 +37,10 @@ https://chat.openai.com/share/19a67ae7-0baf-400e-815a-c28771dd93c5
 
 
 Nota: nao ha memory leaks deste programa. Só das bibliotecas externas de SDL que uso!
+
+
+Eu inicializo a gun com ponto 0,0 antes de lhe dar parsing com ficheiro. A posiçao lida e a correta so que a GUn nao usa isso para se orientar.
+
+
+
+Nao tenho leaks com as funcionalidades das armas!!!! Nem dos menus!!!!!

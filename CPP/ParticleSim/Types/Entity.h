@@ -1,14 +1,15 @@
 #ifndef ENT_H
 #define ENT_H
 class Entity{
+protected:
 
-private:
-
-SDL_Color bodyColor;
 SDL_FRect body;
+SDL_Color bodyColor;
 SDL_FPoint pos,lastPos;
 GVector* moveVec,*lastVec;
 std::vector<SDL_FPoint> lastPositions;
+private:
+
 int historyLen;
 float inve,mass,Car;
 public:
