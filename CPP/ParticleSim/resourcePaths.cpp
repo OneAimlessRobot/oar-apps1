@@ -53,6 +53,23 @@ return deleteMenu;
 
 }
 
+
+std::vector<std::string> Resources::generateBulletMenu(){
+
+std::vector<std::string> bulletMenu={};
+std::ifstream bulletMenuReader(CALIBERMENU_PATH);
+std::string line;
+while(std::getline(bulletMenuReader,line)){
+
+    bulletMenu.push_back(line);
+
+}
+
+return bulletMenu;
+
+
+}
+
 void Resources::printMenu(std::vector<std::string> menu){
 
 

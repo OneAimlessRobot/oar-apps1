@@ -1,9 +1,14 @@
 #include <list>
+#include <vector>
+#include <iostream>
 #include <iterator>
+#include <SDL2/SDL.h>
 #include "../Types/GVector.h"
+#include "../Types/Bullet.h"
 #include "../Types/Entity.h"
-#include "../Types/physicsAux.h"
+#include "../Types/Gun.h"
 #include "../Types/Collider.h"
+#include "../Types/physicsAux.h"
 #include "../aux.h"
 #include "physicsCommands.h"
 
@@ -11,23 +16,37 @@
 
 
 
-void PhysicsCommands::handleCollisions(int collisionsEnabled,std::list<Entity*> entList,std::list<Gun*> gunList){
+void PhysicsCommands::handleCollisions(int collisionsEnabled,std::list<Entity*>& entList,std::list<Gun*>& gunList,Collider* arena){
 
     //broken. Maybe will fix
     if(collisionsEnabled){
+    deleteFreaks<Entity>(entList);
       handleInterparticleCollisions<Entity>(entList);
     }
 
-     handleCollisionsWithArena<Entity>(entList);
-    handleCollisionsWithArena<Gun>(gunList);
+    deleteFreaks<Entity>(entList);
+     handleCollisionsWithArena<Entity>(entList,arena);
+    deleteFreaks<Gun>(gunList);
+    handleCollisionsWithArena<Gun>(gunList,arena);
 
 }
-void PhysicsCommands::handleForces(std::list<Entity*> entList,Collider* arena){
+void PhysicsCommands::handleForces(int gravityEnabled,int dragEnabled,std::list<Entity*>& entList,Collider* arena){
+
+    if(gravityEnabled){
+    deleteFreaks<Entity>(entList);
+      handleInterparticleGravity<Entity>(entList);
+
+
+    }
+    if(dragEnabled){
 
     handleDrag(entList, arena);
 
+    }
+    deleteFreaks<Entity>(entList);
+
 }
-void PhysicsCommands::handleDrag(std::list<Entity*> entList,Collider* arena){
+void PhysicsCommands::handleDrag(std::list<Entity*>& entList,Collider* arena){
 
 
     std::list<Entity*>::iterator it;
@@ -42,16 +61,16 @@ void PhysicsCommands::handleDrag(std::list<Entity*> entList,Collider* arena){
 
 
 }
-void PhysicsCommands::handleMovements(int collisionsEnabled,std::list<Entity*> entList,Collider* arena,std::list<Gun*> gunList){
+void PhysicsCommands::handleMovements(int collisionsEnabled,int gravityEnabled,int dragEnabled,std::list<Entity*>& entList,Collider* arena,std::list<Gun*>& gunList){
 
-    handleForces(entList,arena);
+    handleForces(gravityEnabled,dragEnabled,entList,arena);
 
-    handleCollisions(collisionsEnabled,entList,gunList);
+    handleCollisions(collisionsEnabled,entList,gunList,arena);
 
 
 
 }
-void PhysicsCommands::doBlast(std::list<Entity*> entList,float x, float y){
+void PhysicsCommands::doBlast(std::list<Entity*>& entList,float x, float y){
 
 
     std::list<Entity*>::iterator it;
@@ -64,20 +83,20 @@ void PhysicsCommands::doBlast(std::list<Entity*> entList,float x, float y){
 }
 
 }
-void PhysicsCommands::orbit(std::list<Entity*> entList,float x, float y){
+void PhysicsCommands::orbit(std::list<Entity*>& entList,float x, float y){
 
 
     std::list<Entity*>::iterator it;
     for (it = entList.begin(); it != entList.end(); ++it) {
     SDL_FPoint master=(SDL_FPoint){x,y},
                 slave=(*it)->getPos();
-        SDL_FPoint forceVec=PhysicsAux::gravVector(master,slave,10000,(*it)->getMass());
+        SDL_FPoint forceVec=PhysicsAux::gravVector(master,slave,1000000,(*it)->getMass());
         PhysicsAux::accelerateEntity((*it),forceVec);
 
 }
 
 }
-void PhysicsCommands::homming(std::list<Entity*> entList,float x, float y){
+void PhysicsCommands::homming(std::list<Entity*>& entList,float x, float y){
 
     std::list<Entity*>::iterator it;
     for (it = entList.begin(); it != entList.end(); ++it) {
@@ -90,9 +109,10 @@ void PhysicsCommands::homming(std::list<Entity*> entList,float x, float y){
 
 
 }
+}
 
 
-float PhysicsCommands::getAverageSpeed(std::list<Entity*> entList){
+float PhysicsCommands::getAverageSpeed(std::list<Entity*>& entList){
     float speedSum=0;
     int totalBodies=0;
         std::list<Entity*>::iterator it;
@@ -107,7 +127,7 @@ float PhysicsCommands::getAverageSpeed(std::list<Entity*> entList){
 }
 
 
-float PhysicsCommands::getAverageQuality(std::list<Entity*> entList){
+float PhysicsCommands::getAverageQuality(std::list<Entity*>& entList){
     float qualitySum=0;
     int totalBodies=0;
         std::list<Entity*>::iterator it;
@@ -119,7 +139,7 @@ float PhysicsCommands::getAverageQuality(std::list<Entity*> entList){
         }
         return qualitySum/totalBodies;
 }
-float PhysicsCommands::getTotalEnergy(std::list<Entity*> entList){
+float PhysicsCommands::getTotalEnergy(std::list<Entity*>& entList){
     float energySum=0;
         std::list<Entity*>::iterator it;
             for (it = entList.begin(); it != entList.end(); ++it) {

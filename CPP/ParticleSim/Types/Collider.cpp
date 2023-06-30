@@ -1,9 +1,15 @@
 #include "../aux.h"
+#include <fstream>
+#include <string>
+#include <iostream>
 #include <SDL2/SDL.h>
+#include "../constantHeaders/colliderSettings.h"
+#include "../constantHeaders/IOSettings.h"
+
 #include "Collider.h"
 
 
-Collider::Collider(SDL_bool type,SDL_Color color,float x,float y,float w,float h,float thickness,float airDensity){
+Collider::Collider(SDL_Color color,float x,float y,float w,float h,float thickness,float airDensity){
 
 this->left=(SDL_FRect){x-thickness,y,thickness,h};
 this->top=(SDL_FRect){x,y-thickness,w,thickness};
@@ -54,6 +60,82 @@ SDL_FRect Collider::getInter(SDL_FRect body,int where){
 
 }
 
+int Collider::bodyIsInside(SDL_FRect body){
+
+    return SDL_HasIntersectionF(&body,&this->containedObject);
+
+
+
+
+}
+
+Collider* Collider::defaultCollider(){
+
+
+    return new Collider(DEFAULTCOLRGB,DEFAULTCOLX,DEFAULTCOLY,DEFAULTCOLW,DEFAULTCOLH,DEFAULTTHICKNESS,DEFAULTAIRDENSITY);
+
+
+
+}
+
+
+
+void Collider::printColliderInfo(std::string filePath){
+std::ifstream colliderRead(filePath);
+float x,y,width,height,thickness,airDensity;
+int r,g,b,a;
+if(!colliderRead.is_open()){
+
+std::cout<<"ERRO DE FICHEIRO A CARREGAR COLLIDER!!!!\n"<<filePath<<"\n";
+}
+std::string dummy;
+    while(dummy.rfind(COMMENTPREFIX, 0) == 0){
+
+    std::getline(colliderRead,dummy);
+
+    }
+colliderRead>>r>>g>>b>>a>>x>>y>>width>>height>>thickness>>airDensity;
+colliderRead.close();
+std::cout<<"Cor: "<<r<<" "<<g<<" "<<b<<" "<<a<<"\n";
+std::cout<<"Posiçao: "<<x<<" "<<x<<"\n";
+std::cout<<"Dimensões: "<<width<<" "<<height<<"\n";
+std::cout<<"Espessura: "<<thickness<<"\n";
+std::cout<<"densidadedear: "<<airDensity<<"\n";
+
+
+
+
+
+}
+Collider* Collider::parseCollider(std::string filePath){
+
+
+
+std::ifstream colliderRead(filePath);
+float x,y,width,height,thickness,airDensity;
+int r,g,b,a;
+if(!colliderRead.is_open()){
+
+std::cout<<"ERRO DE FICHEIRO A CARREGAR COLLIDER!!!!\n"<<filePath<<"\n";
+return Collider::defaultCollider();
+
+}
+std::string dummy;
+    while(dummy.rfind(COMMENTPREFIX, 0) == 0){
+
+    std::getline(colliderRead,dummy);
+
+    }
+colliderRead>>r>>g>>b>>a>>x>>y>>width>>height>>thickness>>airDensity;
+colliderRead.close();
+SDL_Color color=(SDL_Color){r,g,b,a};
+return new Collider(color,x,y,width,height,thickness,airDensity);
+
+
+
+
+
+}
 void Collider::fullRender(SDL_Renderer* ren){
 
     SDL_SetRenderDrawColor(ren,this->bodyColor.r,this->bodyColor.g,this->bodyColor.b,this->bodyColor.a);
@@ -81,6 +163,8 @@ float Collider::getAirDensity(){
     return this->airDensity;
 }
 int Collider::whereIsColliding(SDL_FRect rect){
+//
+// -------   std::cout<<rect.x<<" , "<<rect.y<<"\n";
 
     if(SDL_HasIntersectionF(&rect,&this->left)){
 

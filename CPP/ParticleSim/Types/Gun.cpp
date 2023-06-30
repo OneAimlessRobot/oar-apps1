@@ -6,14 +6,16 @@
 #include <iterator>
 #include <fstream>
 #include <iostream>
+#include "Bullet.h"
 #include "GVector.h"
 #include "Entity.h"
+#include "../constantHeaders/gunSettings.h"
+#include "../constantHeaders/IOSettings.h"
 #include "Gun.h"
 #include "Collider.h"
 #include "physicsAux.h"
 
-Gun::Gun(SDL_Color clr,float x, float y, float w, float h,float e,float m,float Car,float force,float recoilFactor,float barrelLen,float spreadIndex,int capacity,int reloadTime,int shootperiod):
-Entity(clr,x,  y,  w,  h, e,  m, Car){
+Gun::Gun(SDL_Color clr,float x, float y, float w, float h,float e,float m,float Car,float force,float recoilFactor,float barrelLen,float spreadIndex,int capacity,int reloadTime,int shootperiod):Entity(clr,x,  y,  w,  h, e,  m, Car){
 this->force=force;
 this->barrelLen=barrelLen;
 this->capacity=capacity;
@@ -31,7 +33,15 @@ this->shootVec=new GVector(1,1);
 
 }
 
+void Gun::setCaliber(caliber bType){
 
+    this->bulletType=bType;
+}
+
+caliber Gun::getCaliber(){
+
+    return this->bulletType;
+}
 void Gun::printGunInfo(std::string filePath){
 std::ifstream gunRead(filePath);
 float force, barrelLen,
@@ -40,6 +50,12 @@ float force, barrelLen,
             reloadTime;
 int capacity,
     shootperiod;
+std::string dummy;
+    while(dummy.rfind(COMMENTPREFIX, 0) == 0){
+
+    std::getline(gunRead,dummy);
+
+    }
 gunRead>>force>>barrelLen>>spread>>recoil>>reloadTime>>capacity>>shootperiod;
 gunRead.close();
 std::cout<<"Características:\n";
@@ -52,12 +68,12 @@ std::cout<<"Reloadtime: "<<reloadTime<<"\n";
 std::cout<<"ShootCooldown: "<<shootperiod<<"\n";
 
 }
-void Gun::setCaliber(caliber bType){
-
-
-    this->bulletType=bType;
-
-}
+//void Gun::setCaliber(caliber bType){
+//
+//
+//    this->bulletType=bType;
+//
+//}
 Gun* Gun::parseGun(std::string filePath){
 std::ifstream gunRead(filePath);
 float force, barrelLen,
@@ -66,16 +82,36 @@ float force, barrelLen,
             reloadTime;
 int capacity,
     shootperiod;
+    std::string dummy;
+    while(dummy.rfind(COMMENTPREFIX, 0) == 0){
+
+    std::getline(gunRead,dummy);
+
+    }
+
 gunRead>>force>>barrelLen>>spread>>recoil>>reloadTime>>capacity>>shootperiod;
 if(!gunRead.is_open()){
 
-std::cerr<<"ERRO DE FICHEIRO A CARREGAR ARMA!!!!\n"<< strerror(errno) <<"\n"<<filePath<<"\n";
+std::cout<<"ERRO DE FICHEIRO A CARREGAR ARMA!!!!\n"<<filePath<<"\n";
 return Gun::defaultGun();
 
 }
 gunRead>>force>>barrelLen>>spread>>recoil>>reloadTime>>capacity>>shootperiod;
 gunRead.close();
-return new Gun(Aux::randColor(),0,0,100,100,0.5,0.9,0.9,force,recoil,barrelLen,spread,capacity,reloadTime,shootperiod);
+return new Gun(Aux::randColor(),0,0,
+            DEFAULTGUNW,
+            DEFAULTGUNH,
+            DEFAULTGUNE,
+            DEFAULTGUNM,
+            DEFAULTGUNCAR,
+            force,
+            recoil,
+            barrelLen,
+            spread,
+            capacity,
+            reloadTime,
+            shootperiod
+            );
 
 
 
@@ -85,7 +121,19 @@ return new Gun(Aux::randColor(),0,0,100,100,0.5,0.9,0.9,force,recoil,barrelLen,s
 }
 Gun* Gun::defaultGun(){
 
-return new Gun(Aux::randColor(),0,0,100,100,0,1,0,1,1,1,0,20,1,1);
+return new Gun(DEFAULTGUNRGBA,0,0,
+    DEFAULTGUNW,
+    DEFAULTGUNH,
+    DEFAULTGUNE,
+    DEFAULTGUNM,
+    DEFAULTGUNCAR,
+    DEFAULTGUNFORCE,
+    DEFAULTGUNRECOIL,
+    DEFAULTGUNBARRELLENGTH,
+    DEFAULTGUNSPREAD,
+    DEFAULTGUNCAP,
+    DEFAULTGUNRELTIME,
+    DEFAULTGUNSHOTTIME);
 
 }
 void Gun::render(SDL_Renderer* ren){
@@ -156,14 +204,31 @@ float Gun::getShootingForce(){
 return this->force;
 
 }
-void Gun::shoot(){
+Entity* Gun::shoot(){
 
-this->currAmmo--;
-shootCounter=shootperiod;
-if(isEmpty()){
+    caliber bType=getCaliber();
+    SDL_FPoint launchPos=getCenter();
+    Entity* bullet= new Entity(Aux::randColor(),launchPos.x,launchPos.y,bType.size,bType.size,bType.e,bType.mass,bType.Car);
+    //dou-lhe o pointer para o vetor da gun. Mais tarde, quando apago as guns, apago o vetor. quando
+    //tento apagar as entities, dá merda.
+    SDL_FPoint tiltedVec=GVector::tiltVector(getShootVec(),getTilt());
+    bullet->setVec(tiltedVec);
+    PhysicsAux::railAcceleration(bullet,getShootVec(),getBarrelLength());
+    setShootVec(tiltedVec);
+    Aux::scaleVec(&tiltedVec,-getRecoilFactor());
+    this->currAmmo--;
+    shootCounter=shootperiod;
+    if(isEmpty()){
 
-this->reloadCounter=reloadTime;
-}
+    this->reloadCounter=reloadTime;
+    }
+    else{
+
+    setVec(GVector::add(tiltedVec,getVec()));
+
+    }
+
+    return bullet;
 
 
 

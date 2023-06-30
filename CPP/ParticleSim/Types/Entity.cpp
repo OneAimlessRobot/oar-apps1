@@ -20,9 +20,14 @@ Entity::Entity(SDL_Color clr,float x, float y, float w, float h,float inve, floa
     }
     this->body=(SDL_FRect){x,y,w,h};
     this->pos=(SDL_FPoint){x,y};
-    this->moveVec= new GVector(0,0);
+    this->moveVec= new GVector(1,1);
     this->lastPositions={};
+    if(inve==1){
+    this->inve=0.99;
+    }
+    else{
     this->inve=inve;
+    }
     this->mass=m;
     this->Car=Car;
 
@@ -61,13 +66,6 @@ SDL_FPoint Entity::getLastPos(){
     if(this->lastPositions.empty()){
         return pos;
     }
-//    std::vector<SDL_FPoint>::iterator it;
-//
-//        std::cout<<"Pontos na stack:\n";
-//    for (it = this->lastPositions.begin(); it != this->lastPositions.end(); ++it) {
-//
-//        std::cout<<"( "<<(*it).x<<" , "<<(*it).y<<" )\n";
-//    }
     return this->lastPositions.at(this->lastPositions.size()-std::min(COLLDISTANCE,(int)this->lastPositions.size()));
 
 }
@@ -92,8 +90,17 @@ float Entity::getMass(){
 }
 void Entity::bounce(){
     float newSpeed=PhysicsAux::getReboundSpeed(GVector::getNorm(this->getVec()),this->inve);
+    //O vetor e (nan, nan)
+// ----------           if(newSpeed!=newSpeed){
+//    std::cout<<"ERRO!!!!!\n";
+//    }
+
     SDL_FPoint newVector=Aux::makeUnitVector((SDL_FPoint){0,0},(SDL_FPoint){this->moveVec->getX(),this->moveVec->getY()});
     Aux::scaleVec(&newVector,newSpeed);
+//---------                if(newVector.x!=newVector.x||newVector.y!=newVector.y){
+//    std::cout<<"ERRO!!!!!\n";
+//    }
+
     this->setVec(newVector);
 
 }
@@ -105,8 +112,8 @@ int Entity::areTouching(Entity*a,Entity*b){
 }
 Entity* Entity::randEnt(float width, float height,float maxMass,float maxSize,float maxSpeed){
 float size= Aux::getRandomFloat(10,maxSize);
-float x= Aux::getRandomFloat(0,width-size);
-float y=Aux::getRandomFloat(0,height-size);
+float x= Aux::getRandomFloat(1,width-size-1);
+float y=Aux::getRandomFloat(1,height-size-1);
 float maxAngle=Aux::getRandomFloat(0,2*3.14159);
 float inve=Aux::getRandomFloat(0,1);
 //float e=0;
@@ -117,10 +124,17 @@ float dx= std::cos(maxAngle);
 float dy=std::sin(maxAngle);
 float speed=Aux::getRandomFloat(maxSpeed,maxSpeed);
 SDL_Color color= Aux::randColor();
-SDL_FPoint resmoveVec= Aux::makeUnitVector((SDL_FPoint){x,y},(SDL_FPoint){x+dx,y+dy});
+SDL_FPoint resmoveVec= Aux::makeUnitVector((SDL_FPoint){0,0},(SDL_FPoint){dx,dy});
+// --------       if(resmoveVec.x!=resmoveVec.x||resmoveVec.y!=resmoveVec.y){
+//    std::cout<<"ERRO!!!!!\n";
+//    }
+
 Aux::scaleVec(&resmoveVec,speed);
 Entity* result=new Entity(color,x,y,size,size,inve,newMass,coeffOfAirR);
 result->setVec(resmoveVec);
+//----------if(result->getVec().x!=result->getVec().x||result->getVec().y!=result->getVec().y){
+//    std::cout<<"ERRO!!!!!\n";
+//    }
 return result;
 
 

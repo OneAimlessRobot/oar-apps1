@@ -1,8 +1,8 @@
 # depslib dependency file v1.0
-1687975341 source:/home/k/oar-apps1/CPP/ParticleSim/main.cpp
+1688139845 source:/home/k/oar-apps1/CPP/ParticleSim/main.cpp
 	"includes.h"
 
-1687974212 /home/k/oar-apps1/CPP/ParticleSim/includes.h
+1688059837 /home/k/oar-apps1/CPP/ParticleSim/includes.h
 	<vector>
 	<string>
 	"resourcePaths.h"
@@ -15,12 +15,14 @@
 	"aux.h"
 	"Types/GVector.h"
 	<SDL2/SDL.h>
+	"Types/Bullet.h"
 	"Types/Entity.h"
 	"Types/Gun.h"
 	"Types/Collider.h"
 	"Types/physicsAux.h"
 	<list>
-	"Systems/Interactive.h"
+	"Factorized/physicsCommands.h"
+	"Systems/InteractiveSim.h"
 
 1687952181 /home/k/oar-apps1/CPP/ParticleSim/aux.h
 	<SDL2/SDL.h>
@@ -30,21 +32,25 @@
 
 1687982214 /home/k/oar-apps1/CPP/ParticleSim/Types/Entity.h
 
-1688052671 /home/k/oar-apps1/CPP/ParticleSim/Types/Gun.h
+1688144338 /home/k/oar-apps1/CPP/ParticleSim/Types/Gun.h
 
-1687951869 /home/k/oar-apps1/CPP/ParticleSim/Types/Collider.h
+1688137093 /home/k/oar-apps1/CPP/ParticleSim/Types/Collider.h
 
 1688051360 /home/k/oar-apps1/CPP/ParticleSim/Types/physicsAux.h
 
-1688050287 /home/k/oar-apps1/CPP/ParticleSim/Systems/Interactive.h
-	"Interactive.tpp"
+1688146807 /home/k/oar-apps1/CPP/ParticleSim/Systems/InteractiveSim.h
 
-1687980171 source:/home/k/oar-apps1/CPP/ParticleSim/Types/Collider.cpp
+1688140590 source:/home/k/oar-apps1/CPP/ParticleSim/Types/Collider.cpp
 	"../aux.h"
+	<fstream>
+	<string>
+	<iostream>
 	<SDL2/SDL.h>
+	"../constantHeaders/colliderSettings.h"
+	"../constantHeaders/IOSettings.h"
 	"Collider.h"
 
-1687986946 source:/home/k/oar-apps1/CPP/ParticleSim/Types/Entity.cpp
+1688131196 source:/home/k/oar-apps1/CPP/ParticleSim/Types/Entity.cpp
 	<SDL2/SDL.h>
 	"../aux.h"
 	<vector>
@@ -55,14 +61,14 @@
 	"Collider.h"
 	"physicsAux.h"
 
-1688038481 source:/home/k/oar-apps1/CPP/ParticleSim/Types/GVector.cpp
+1688126261 source:/home/k/oar-apps1/CPP/ParticleSim/Types/GVector.cpp
 	<cmath>
 	<SDL2/SDL.h>
 	"GVector.h"
 	"../aux.h"
 	<iostream>
 
-1688052779 source:/home/k/oar-apps1/CPP/ParticleSim/Types/physicsAux.cpp
+1688146498 source:/home/k/oar-apps1/CPP/ParticleSim/Types/physicsAux.cpp
 	<random>
 	<cmath>
 	"../aux.h"
@@ -72,32 +78,39 @@
 	"Collider.h"
 	"physicsAux.h"
 
-1688052678 source:/home/k/oar-apps1/CPP/ParticleSim/Systems/Interactive.cpp
+1688146804 source:/home/k/oar-apps1/CPP/ParticleSim/Systems/InteractiveSim.cpp
 	<thread>
 	<list>
+	<fstream>
 	<vector>
 	"../resourcePaths.h"
+	"../constantHeaders/allSettings.h"
 	<SDL2/SDL.h>
 	<random>
 	<cmath>
+	<iostream>
 	"../aux.h"
 	"../Types/Collider.h"
 	"../Types/GVector.h"
+	"../Types/Bullet.h"
 	"../Types/Entity.h"
 	"../Types/Gun.h"
 	"../Types/physicsAux.h"
-	<iostream>
-	"Interactive.h"
+	"../Factorized/physicsCommands.h"
+	"InteractiveSim.h"
 
-1688053984 source:/home/k/oar-apps1/CPP/ParticleSim/Types/Gun.cpp
+1688144687 source:/home/k/oar-apps1/CPP/ParticleSim/Types/Gun.cpp
 	<SDL2/SDL.h>
 	"../aux.h"
 	<vector>
 	<iterator>
 	<fstream>
 	<iostream>
+	"Bullet.h"
 	"GVector.h"
 	"Entity.h"
+	"../constantHeaders/gunSettings.h"
+	"../constantHeaders/IOSettings.h"
 	"Gun.h"
 	"Collider.h"
 	"physicsAux.h"
@@ -108,14 +121,74 @@
 	<ctime>
 	"aux.h"
 
-1687980784 /home/k/oar-apps1/CPP/ParticleSim/resourcePaths.h
+1688139471 /home/k/oar-apps1/CPP/ParticleSim/resourcePaths.h
 
-1687981203 source:/home/k/oar-apps1/CPP/ParticleSim/resourcePaths.cpp
+1688070149 source:/home/k/oar-apps1/CPP/ParticleSim/resourcePaths.cpp
 	<vector>
 	<string>
 	<fstream>
 	<iostream>
 	"resourcePaths.h"
 
-1688044490 /home/k/oar-apps1/CPP/ParticleSim/Systems/Interactive.tpp
+1688044490 /home/k/oar-apps1/CPP/ParticleSim/Systems/InteractiveSim.tpp
+
+1688139916 /home/k/oar-apps1/CPP/ParticleSim/Types/Bullet.h
+
+1688143229 /home/k/oar-apps1/CPP/ParticleSim/Factorized/physicsCommands.h
+	"../Systems/physicsCommands.tpp"
+
+1688146556 /home/k/oar-apps1/CPP/ParticleSim/Systems/physicsCommands.tpp
+
+1688143102 source:/home/k/oar-apps1/CPP/ParticleSim/Factorized/physicsCommands.cpp
+	<list>
+	<vector>
+	<iostream>
+	<iterator>
+	<SDL2/SDL.h>
+	"../Types/GVector.h"
+	"../Types/Bullet.h"
+	"../Types/Entity.h"
+	"../Types/Gun.h"
+	"../Types/Collider.h"
+	"../Types/physicsAux.h"
+	"../aux.h"
+	"physicsCommands.h"
+
+1688140389 source:/home/k/oar-apps1/CPP/ParticleSim/Types/Bullet.cpp
+	<string>
+	<fstream>
+	<iostream>
+	"../constantHeaders/IOSettings.h"
+	"Bullet.h"
+
+1688067113 source:/home/k/oar-apps1/CPP/ParticleSim/Factorized/gunCommands.cpp
+
+1688067082 source:/home/k/oar-apps1/CPP/ParticleSim/Factorized/menuCommands.cpp
+
+1688138595 source:/home/k/oar-apps1/CPP/ParticleSim/Factorized/EntityMgmnt.cpp
+	"EntityMgmnt.h"
+
+1688138580 /home/k/oar-apps1/CPP/ParticleSim/Factorized/EntityMgmnt.h
+
+1688137412 source:/home/k/oar-apps1/CPP/ParticleSim/Factorized/EntitySpawners.cpp
+	"EntitySpawners.h"
+
+1688139888 /home/k/oar-apps1/CPP/ParticleSim/Factorized/EntitySpawners.h
+
+1688137055 /home/k/oar-apps1/CPP/ParticleSim/constantHeaders/IOSettings.h
+
+1688140188 /home/k/oar-apps1/CPP/ParticleSim/constantHeaders/colliderSettings.h
+
+1688135247 /home/k/oar-apps1/CPP/ParticleSim/constantHeaders/gunSettings.h
+
+1688137065 /home/k/oar-apps1/CPP/ParticleSim/constantHeaders/allSettings.h
+	"IOSettings.h"
+	"gunSettings.h"
+	"graphicalDefaults.h"
+	"colliderSettings.h"
+	"entitySettings.h"
+
+1688135614 /home/k/oar-apps1/CPP/ParticleSim/constantHeaders/graphicalDefaults.h
+
+1688135837 /home/k/oar-apps1/CPP/ParticleSim/constantHeaders/entitySettings.h
 

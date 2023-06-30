@@ -1,12 +1,11 @@
 #ifndef BULLET_H
 #define BULLET_H
-typedef struct caliber{
-
+class caliber{
+public:
 float size,mass,e,Car;
-caliber(float size,float mass,float e,float Car);
-
-static stcaliber parseCaliber(std::string filePath);
-caliber defaultCaliber();
-}caliber;
+static caliber parseCaliber(std::string filePath);
+static void printCaliberInfo(std::string filePath);
+static caliber defaultCaliber();
+};
 
 #endif

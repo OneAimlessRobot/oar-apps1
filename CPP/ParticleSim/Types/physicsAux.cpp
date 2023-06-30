@@ -8,7 +8,17 @@
 #include "physicsAux.h"
 
 float PhysicsAux::getReboundSpeed(float initSpeed,float coeff){
-return initSpeed-(initSpeed*coeff);
+float result= initSpeed-(initSpeed*coeff);
+
+//  -----          if(initSpeed!=initSpeed){
+//    std::cout<<"ERRO!!!!!\n";
+//    }
+
+//  -------          if(result!=result){
+//    std::cout<<"ERRO!!!!!\n";
+//    }
+    return result;
+
 }
 
 float PhysicsAux::blastForce(SDL_FPoint p1,SDL_FPoint p2,float forceConst){
@@ -64,20 +74,17 @@ SDL_FPoint PhysicsAux::getAccelVec(SDL_FPoint forcevec,float mass){
 
 
         SDL_FPoint accel= forcevec;
-//        Aux::scaleVec(&accel,1/mass);
+        Aux::scaleVec(&accel,1/mass);
 
         return accel;
 }
 SDL_FPoint PhysicsAux::gravVector(SDL_FPoint p1,SDL_FPoint p2,float m1,float m2){
 
 
-        SDL_FPoint newVec=Aux::makeUnitVector(p1,p2);
+        SDL_FPoint newVec=Aux::makeUnitVector(p2,p1);
         float accel= PhysicsAux::gravForce(p1,p2,m1,m2);
-        if(Aux::calculateDistance(p1 ,p2)<=50){
-            Aux::scaleVec(&newVec,-1);
-        }
-        else{
-        Aux::scaleVec(&newVec,-accel);
+        if(Aux::calculateDistance(p1 ,p2)>50){
+            Aux::scaleVec(&newVec,accel);
         }
         return newVec;
 
@@ -115,22 +122,25 @@ void PhysicsAux::separateEntityFromCollider(Entity* a,Collider *col,int where){
         return;
     }
     SDL_FPoint og= (SDL_FPoint){a->getVec().x,a->getVec().y};
-   SDL_FPoint inv= Aux::makeUnitVector((SDL_FPoint){0,0},(SDL_FPoint){-og.x,-og.y});
-//    a->translate();
-//    if(col->whereIsColliding(a->getBody())==0){
-//
-//        return;
-
+//  -------          if(og.x!=og.x||og.y!=og.y){
+//    std::cout<<"ERRO!!!!!\n";
 //    }
-//    float secArea=Aux::getRectArea(col->getInter(a->getBody(),col->whereIsColliding(a->getBody())));
+
+
+// -----   std::cout<<a->getPos().x<<" , "<<a->getPos().y<<"\n";
+   SDL_FPoint inv= Aux::makeUnitVector((SDL_FPoint){0,0},(SDL_FPoint){-og.x,-og.y});
 //    if(firstArea<secArea){
     a->setVec(inv);
 //    }
 
-
-
+    int isInside;
     do{
     where=col->whereIsColliding(a->getBody());
+
+//------------        if(a->getPos().x!=a->getPos().x||a->getPos().y!=a->getPos().y){
+//    std::cout<<"ERRO!!!!!\n";
+//    }
+
     a->translate();
 
     }while(where!=0);
@@ -142,26 +152,39 @@ void PhysicsAux::rebound(Entity *a ,Entity* b){
 float ma=a->getMass(),mb=b->getMass();
 
 SDL_FPoint directionA=Aux::makeUnitVector(a->getCenter(),b->getCenter()),
-            directionB=Aux::makeUnitVector(a->getCenter(),b->getCenter());
+            directionB=Aux::makeUnitVector(b->getCenter(),a->getCenter());
 
 float normalAngleA=GVector::angleBetween(a->getVec(),directionA);
-float normalAngleB=GVector::angleBetween(b->getVec(),directionA);
+float normalAngleB=GVector::angleBetween(b->getVec(),directionB);
+//--------if(normalAngleB!=normalAngleB){
+//    std::cout<<"ERRO!!!!!\n";
+//    }
+//    if(normalAngleA!=normalAngleA){
+//    std::cout<<"ERRO!!!!!\n";
+//    }
 //tudo bem.
 SDL_FPoint pva=a->getVec();
 Aux::scaleVec(&pva,std::cos(normalAngleA));
+//------if(pva.x!=pva.x||pva.y!=pva.y){
+//    std::cout<<"ERRO!!!!!\n";
+//    }
 SDL_FPoint pvb=b->getVec();
 Aux::scaleVec(&pvb,std::cos(normalAngleB));
-//tudo bem.
+//-------if(pvb.x!=pvb.x||pvb.y!=pvb.y){
+//    std::cout<<"ERRO!!!!!\n";
+//    }
 Aux::scaleVec(&pva,-1);
 SDL_FPoint firstresult=GVector::add(pva,pvb);
-//tudo bem
 float coeff=1+ ((1-a->getInvElasticity())*(1-b->getInvElasticity()));
 float bigCoeff=(((ma*mb)/(ma+mb))*coeff);
 
+//---------            if(pva.x!=pva.x||pva.y!=pva.y){
+//    std::cout<<"ERRO!!!!!\n";
+//    }
 Aux::scaleVec(&firstresult,bigCoeff);
 float Jn=GVector::dotProduct(firstresult,directionA);
 Aux::scaleVec(&directionA,Jn/ma);
-Aux::scaleVec(&directionB,-Jn/mb);
+Aux::scaleVec(&directionB,Jn/mb);
 a->setVec(GVector::add(directionA,a->getVec()));
 b->setVec(GVector::add(directionB,b->getVec()));
 

@@ -48,7 +48,7 @@
             return 3.14159;
 
         }
-        return result;
+        return std::acos(result);
 
 
     }
