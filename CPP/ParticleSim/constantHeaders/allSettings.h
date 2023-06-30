@@ -5,6 +5,7 @@
 #include "IOSettings.h"
 #include "gunSettings.h"
 #include "graphicalDefaults.h"
+#include "bulletSettings.h"
 #include "colliderSettings.h"
 #include "entitySettings.h"
 

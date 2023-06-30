@@ -3,5 +3,5 @@
 
 
 #define COMMENTPREFIX (std::string("//"))
-
+#define GUNSUFFIX (std::string(".gun"))
 #endif

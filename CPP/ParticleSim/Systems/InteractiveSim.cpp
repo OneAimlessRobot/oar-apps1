@@ -480,7 +480,8 @@ void InteractiveSim::handleToggles(const Uint8*KEYS){
 
 void InteractiveSim::processBulletChoice(caliber* bType){
 
-int choice,whatToDo;
+std::string choice;
+int whatToDo;
 do{
 std::cout<<"0- Para escolher um calibre\n";
 std::cout<<"1- Para ver informaçoes de um calibre\n";
@@ -490,65 +491,72 @@ std::cout<<"Que calibre queres?\n";
 
     Resources::printMenu(Resources::generateBulletMenu());
     std::cin>>choice;
-    switch(choice){
-        case(FFSIX):{
-        if(!whatToDo){
-            *bType=caliber::parseCaliber(FIVEFIVESIX_PATH);
+        std::string path=CALIBERS_PATH+choice;
+if(!whatToDo){
+            *bType=caliber::parseCaliber(path);
+    std::cout<<bType->size<<" , "<<bType->mass<<",  "<<bType->e<<" , "<<bType->Car<<" \n";
         }
         else{
-            caliber::printCaliberInfo(FIVEFIVESIX_PATH);
+            caliber::printCaliberInfo(path);
         }
-            break;
-        }
-        case(FFORTYF):{
-        if(!whatToDo){
-            *bType=caliber::parseCaliber(FFORTYF_PATH);
-        }
-        else{
-
-            caliber::printCaliberInfo(FFORTYF_PATH);
-        }
-            break;
-        }
-        case(SEVENSIXNINE):{
-        if(!whatToDo){
-            *bType=caliber::parseCaliber(SEVENSIXNINE_PATH);
-        }
-        else{
-            caliber::printCaliberInfo(SEVENSIXNINE_PATH);
-
-        }
-            break;
-        }
-        case(THREEOEIGHT):{
-        if(!whatToDo){
-            *bType=caliber::parseCaliber(THREEOEIGHT_PATH);
-        }
-        else{
-            caliber::printCaliberInfo(THREEOEIGHT_PATH);
-
-        }
-            break;
-        }
-        case(FFTYBMG):{
-        if(!whatToDo){
-            *bType=caliber::parseCaliber(FFTYBMG_PATH);
-        }
-        else{
-            caliber::printCaliberInfo(FFTYBMG_PATH);
-
-        }
-            break;
-        }
-        default:{
-
-            break;
-        }
-
-
-    }
     }while(whatToDo);
-
+//switch(choice){
+//        case(FFSIX):{
+//        if(!whatToDo){
+//            *bType=caliber::parseCaliber(FIVEFIVESIX_PATH);
+//        }
+//        else{
+//            caliber::printCaliberInfo(FIVEFIVESIX_PATH);
+//        }
+//            break;
+//        }
+//        case(FFORTYF):{
+//        if(!whatToDo){
+//            *bType=caliber::parseCaliber(FFORTYF_PATH);
+//        }
+//        else{
+//
+//            caliber::printCaliberInfo(FFORTYF_PATH);
+//        }
+//            break;
+//        }
+//        case(SEVENSIXNINE):{
+//        if(!whatToDo){
+//            *bType=caliber::parseCaliber(SEVENSIXNINE_PATH);
+//        }
+//        else{
+//            caliber::printCaliberInfo(SEVENSIXNINE_PATH);
+//
+//        }
+//            break;
+//        }
+//        case(THREEOEIGHT):{
+//        if(!whatToDo){
+//            *bType=caliber::parseCaliber(THREEOEIGHT_PATH);
+//        }
+//        else{
+//            caliber::printCaliberInfo(THREEOEIGHT_PATH);
+//
+//        }
+//            break;
+//        }
+//        case(FFTYBMG):{
+//        if(!whatToDo){
+//            *bType=caliber::parseCaliber(FFTYBMG_PATH);
+//        }
+//        else{
+//            caliber::printCaliberInfo(FFTYBMG_PATH);
+//
+//        }
+//            break;
+//        }
+//        default:{
+//
+//            break;
+//        }
+//
+//
+//    }
 }
 void InteractiveSim::processDeletion(){
 int choice;
@@ -589,83 +597,97 @@ switch (choice){
 }
 void InteractiveSim::processGunChoice(Gun * gun,float x,float y){
 
+    std::string choice;
+    int whatToDo;
+    do{
 std::cout<<"0- Spawnar uma arma\n";
 std::cout<<"1- Ve informacoes de uma arma\n";
 
-    int choice,whatToDo;
     std::cin>>whatToDo;
     Resources::printMenu(Resources::generateGunMenu());
     std::cin>>choice;
-    switch(choice){
-        case(SRIFLE):{
-                if(!whatToDo){
+    std::string path= GUNSPATH+choice+GUNSUFFIX;
 
+        if(!whatToDo){
                 caliber chosenCaliber;
                 processBulletChoice(&chosenCaliber);
-                spawnGun(gun,SRIFLE_PATH,x,y,chosenCaliber);
+                spawnGun(gun,path,x,y,chosenCaliber);
                 }
                 else{
-                Gun::printGunInfo(SRIFLE_PATH);
-
+                Gun::printGunInfo(path);
                 }
 
-
-            break;
-        }
-        case(ARIFLE):{
-
-                if(!whatToDo){
-                caliber chosenCaliber;
-                processBulletChoice(&chosenCaliber);
-                spawnGun(gun,ARIFLE_PATH,x,y,chosenCaliber);
-                }
-                else{
-                Gun::printGunInfo(ARIFLE_PATH);
-
-                }
-
-
-            break;
-
-        }
-        case(SMG):{
-
-
-                if(!whatToDo){
-                caliber chosenCaliber;
-                processBulletChoice(&chosenCaliber);
-                spawnGun(gun,SMG_PATH,x,y,chosenCaliber);
-                }
-                else{
-                Gun::printGunInfo(SMG_PATH);
-
-                }
-
-
-            break;
-        }
-        case(PISTOL):{
-
-                if(!whatToDo){
-                caliber chosenCaliber;
-                processBulletChoice(&chosenCaliber);
-                spawnGun(gun,PISTOL_PATH,x,y,chosenCaliber);
-                }
-                else{
-                Gun::printGunInfo(PISTOL_PATH);
-
-                }
-
-
-            break;
-        }
-        default:{
-
-            break;
-        }
-
-
-    }
+   }while(whatToDo);
+//    switch(choice){
+//        case(SRIFLE):{
+//                if(!whatToDo){
+//
+//                caliber chosenCaliber;
+//                processBulletChoice(&chosenCaliber);
+//                spawnGun(gun,SRIFLE_PATH,x,y,chosenCaliber);
+//                }
+//                else{
+//                Gun::printGunInfo(SRIFLE_PATH);
+//
+//                }
+//
+//
+//            break;
+//        }
+//        case(ARIFLE):{
+//
+//                if(!whatToDo){
+//                caliber chosenCaliber;
+//                processBulletChoice(&chosenCaliber);
+//                spawnGun(gun,ARIFLE_PATH,x,y,chosenCaliber);
+//                }
+//                else{
+//                Gun::printGunInfo(ARIFLE_PATH);
+//
+//                }
+//
+//
+//            break;
+//
+//        }
+//        case(SMG):{
+//
+//
+//                if(!whatToDo){
+//                caliber chosenCaliber;
+//                processBulletChoice(&chosenCaliber);
+//                spawnGun(gun,SMG_PATH,x,y,chosenCaliber);
+//                }
+//                else{
+//                Gun::printGunInfo(SMG_PATH);
+//
+//                }
+//
+//
+//            break;
+//        }
+//        case(PISTOL):{
+//
+//                if(!whatToDo){
+//                caliber chosenCaliber;
+//                processBulletChoice(&chosenCaliber);
+//                spawnGun(gun,PISTOL_PATH,x,y,chosenCaliber);
+//                }
+//                else{
+//                Gun::printGunInfo(PISTOL_PATH);
+//
+//                }
+//
+//
+//            break;
+//        }
+//        default:{
+//
+//            break;
+//        }
+//
+//
+//    }
 
 
 

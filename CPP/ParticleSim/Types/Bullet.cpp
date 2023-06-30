@@ -2,6 +2,7 @@
 #include <fstream>
 #include <iostream>
 #include "../constantHeaders/IOSettings.h"
+#include "../constantHeaders/bulletSettings.h"
 #include "Bullet.h"
 
 
@@ -37,7 +38,7 @@ float size,mass,e,Car;
 if(!bulletReader.is_open()){
 
 std::cout<<"ERRO DE FICHEIRO A CARREGAR ARMA!!!!\n"<<filePath<<"\n";
-return caliber::defaultCaliber();
+return defaultCaliber();
 
 
 }
@@ -50,7 +51,7 @@ return (caliber){size,mass,e,Car};
 }
 caliber caliber::defaultCaliber(){
 
-    return (caliber){10,0.1,0.5,0};
+    return (caliber){DEFAULTBULLETSIZE,DEFAULTBULLETM,DEFAULTBULLETE,DEFAULTBULLETCAR};
 
 
 }

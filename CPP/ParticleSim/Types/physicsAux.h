@@ -16,7 +16,7 @@ SDL_FPoint dragNeutralWindVector(SDL_FPoint vVec,float k, float airD);
 SDL_FPoint getAccelVec(SDL_FPoint vec,float mass);
 
 
-void railAcceleration(Entity* ent,SDL_FPoint forceVec,float length);
+void railAcceleration(Entity* ent,SDL_FPoint forceVec,float angle,float length);
 void accelerateEntity(Entity* ent,SDL_FPoint forceVec);
 float dragNeutralWind(float k, float airD,float speed);
 void separateEntities(Entity* a,Entity *b);

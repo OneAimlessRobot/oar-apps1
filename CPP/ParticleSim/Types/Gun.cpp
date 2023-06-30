@@ -207,14 +207,14 @@ return this->force;
 Entity* Gun::shoot(){
 
     caliber bType=getCaliber();
+    std::cout<<bType.size<<" , "<<bType.mass<<",  "<<bType.e<<" , "<<bType.Car<<" \n";
     SDL_FPoint launchPos=getCenter();
     Entity* bullet= new Entity(Aux::randColor(),launchPos.x,launchPos.y,bType.size,bType.size,bType.e,bType.mass,bType.Car);
     //dou-lhe o pointer para o vetor da gun. Mais tarde, quando apago as guns, apago o vetor. quando
     //tento apagar as entities, dá merda.
     SDL_FPoint tiltedVec=GVector::tiltVector(getShootVec(),getTilt());
-    bullet->setVec(tiltedVec);
-    PhysicsAux::railAcceleration(bullet,getShootVec(),getBarrelLength());
     setShootVec(tiltedVec);
+    PhysicsAux::railAcceleration(bullet,getShootVec(),direction,getTilt(),getBarrelLength());
     Aux::scaleVec(&tiltedVec,-getRecoilFactor());
     this->currAmmo--;
     shootCounter=shootperiod;

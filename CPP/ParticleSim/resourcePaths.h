@@ -3,6 +3,8 @@
 
 #define PROGRAMPATH std::string("/home/k/oar-apps1/CPP/ParticleSim/")
 
+#define GUNSPATH (PROGRAMPATH+std::string("resources/guns/"))
+
 #define SRIFLE_PATH (PROGRAMPATH+std::string("resources/guns/sniperRifle.gun"))
 #define ARIFLE_PATH (PROGRAMPATH+std::string("resources/guns/assaultRifle.gun"))
 #define SMG_PATH (PROGRAMPATH+std::string("resources/guns/subMG.gun"))

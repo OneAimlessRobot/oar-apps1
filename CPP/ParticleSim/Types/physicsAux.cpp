@@ -29,17 +29,13 @@ float dist=Aux::calculateDistance(p1,p2);
 return (forceConst*PhysicsAux::GCONST)/(dist*dist);
 }
 
-void PhysicsAux::railAcceleration(Entity* ent,SDL_FPoint forceVec,float length){
+void PhysicsAux::railAcceleration(Entity* ent,SDL_FPoint forceVec,float angle,float length){
 
-for(float curr=0;curr<=length;curr+=GVector::getNorm(forceVec)){
-
-    float efficiency=std::cos(GVector::angleBetween(ent->getVec(),forceVec));
+    float efficiency=std::cos(angle);
     float efficientComponentMagnitude= GVector::getNorm(forceVec)*efficiency;
     SDL_FPoint paralelToMovement=Aux::makeUnitVector((SDL_FPoint){0,0},ent->getVec());
-    Aux::scaleVec(&paralelToMovement,efficientComponentMagnitude);
-    accelerateEntity(ent,paralelToMovement);
-
-}
+    Aux::scaleVec(&paralelToMovement,length*efficientComponentMagnitude);
+    ent->setVec(paralelToMovement);
 
 
 

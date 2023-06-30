@@ -44,7 +44,6 @@
 		<Unit filename="Factorized/menuCommands.h" />
 		<Unit filename="Factorized/physicsCommands.cpp" />
 		<Unit filename="Factorized/physicsCommands.h" />
-		<Unit filename="ParticleSim.depend" />
 		<Unit filename="Systems/InteractiveSim.cpp" />
 		<Unit filename="Systems/InteractiveSim.h" />
 		<Unit filename="Systems/physicsCommands.tpp" />
@@ -61,11 +60,11 @@
 		<Unit filename="Types/Gun.h" />
 		<Unit filename="Types/physicsAux.cpp" />
 		<Unit filename="Types/physicsAux.h" />
-		<Unit filename="Untitled2" />
 		<Unit filename="aux.cpp" />
 		<Unit filename="aux.h" />
 		<Unit filename="constantHeaders/IOSettings.h" />
 		<Unit filename="constantHeaders/allSettings.h" />
+		<Unit filename="constantHeaders/bulletSettings.h" />
 		<Unit filename="constantHeaders/colliderSettings.h" />
 		<Unit filename="constantHeaders/entitySettings.h" />
 		<Unit filename="constantHeaders/graphicalDefaults.h" />
