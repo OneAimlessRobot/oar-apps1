@@ -354,7 +354,7 @@ void InteractiveSim::printKeyboardHelp(){
     std::cout<<"============================Comandos de efeitos:============================================\n";
     std::cout<<"Toggle Gravity: E\n";
     std::cout<<"Make explosion around mouse: M\n";
-    std::cout<<"Toggle collisions: M\n";
+    std::cout<<"Toggle collisions: C\n";
     std::cout<<"Toggle gravity around mouse: LEFTARROW\n";
     std::cout<<"Puxar particulas: RIGHTARROW\n";
     std::cout<<"Toggle pause: P\n";
@@ -500,63 +500,6 @@ if(!whatToDo){
             caliber::printCaliberInfo(path);
         }
     }while(whatToDo);
-//switch(choice){
-//        case(FFSIX):{
-//        if(!whatToDo){
-//            *bType=caliber::parseCaliber(FIVEFIVESIX_PATH);
-//        }
-//        else{
-//            caliber::printCaliberInfo(FIVEFIVESIX_PATH);
-//        }
-//            break;
-//        }
-//        case(FFORTYF):{
-//        if(!whatToDo){
-//            *bType=caliber::parseCaliber(FFORTYF_PATH);
-//        }
-//        else{
-//
-//            caliber::printCaliberInfo(FFORTYF_PATH);
-//        }
-//            break;
-//        }
-//        case(SEVENSIXNINE):{
-//        if(!whatToDo){
-//            *bType=caliber::parseCaliber(SEVENSIXNINE_PATH);
-//        }
-//        else{
-//            caliber::printCaliberInfo(SEVENSIXNINE_PATH);
-//
-//        }
-//            break;
-//        }
-//        case(THREEOEIGHT):{
-//        if(!whatToDo){
-//            *bType=caliber::parseCaliber(THREEOEIGHT_PATH);
-//        }
-//        else{
-//            caliber::printCaliberInfo(THREEOEIGHT_PATH);
-//
-//        }
-//            break;
-//        }
-//        case(FFTYBMG):{
-//        if(!whatToDo){
-//            *bType=caliber::parseCaliber(FFTYBMG_PATH);
-//        }
-//        else{
-//            caliber::printCaliberInfo(FFTYBMG_PATH);
-//
-//        }
-//            break;
-//        }
-//        default:{
-//
-//            break;
-//        }
-//
-//
-//    }
 }
 void InteractiveSim::processDeletion(){
 int choice;
@@ -618,76 +561,6 @@ std::cout<<"1- Ve informacoes de uma arma\n";
                 }
 
    }while(whatToDo);
-//    switch(choice){
-//        case(SRIFLE):{
-//                if(!whatToDo){
-//
-//                caliber chosenCaliber;
-//                processBulletChoice(&chosenCaliber);
-//                spawnGun(gun,SRIFLE_PATH,x,y,chosenCaliber);
-//                }
-//                else{
-//                Gun::printGunInfo(SRIFLE_PATH);
-//
-//                }
-//
-//
-//            break;
-//        }
-//        case(ARIFLE):{
-//
-//                if(!whatToDo){
-//                caliber chosenCaliber;
-//                processBulletChoice(&chosenCaliber);
-//                spawnGun(gun,ARIFLE_PATH,x,y,chosenCaliber);
-//                }
-//                else{
-//                Gun::printGunInfo(ARIFLE_PATH);
-//
-//                }
-//
-//
-//            break;
-//
-//        }
-//        case(SMG):{
-//
-//
-//                if(!whatToDo){
-//                caliber chosenCaliber;
-//                processBulletChoice(&chosenCaliber);
-//                spawnGun(gun,SMG_PATH,x,y,chosenCaliber);
-//                }
-//                else{
-//                Gun::printGunInfo(SMG_PATH);
-//
-//                }
-//
-//
-//            break;
-//        }
-//        case(PISTOL):{
-//
-//                if(!whatToDo){
-//                caliber chosenCaliber;
-//                processBulletChoice(&chosenCaliber);
-//                spawnGun(gun,PISTOL_PATH,x,y,chosenCaliber);
-//                }
-//                else{
-//                Gun::printGunInfo(PISTOL_PATH);
-//
-//                }
-//
-//
-//            break;
-//        }
-//        default:{
-//
-//            break;
-//        }
-//
-//
-//    }
 
 
 

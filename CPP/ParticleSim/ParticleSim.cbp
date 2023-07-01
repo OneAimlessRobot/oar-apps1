@@ -73,6 +73,8 @@
 		<Unit filename="defaultSettings" />
 		<Unit filename="includes.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="manual/ConfigSyntax" />
+		<Unit filename="manual/instructions" />
 		<Unit filename="resourcePaths.cpp" />
 		<Unit filename="resourcePaths.h" />
 		<Unit filename="resources/entities/collider/defaultcollider" />

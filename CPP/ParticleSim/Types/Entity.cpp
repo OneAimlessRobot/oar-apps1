@@ -20,7 +20,7 @@ Entity::Entity(SDL_Color clr,float x, float y, float w, float h,float inve, floa
     }
     this->body=(SDL_FRect){x,y,w,h};
     this->pos=(SDL_FPoint){x,y};
-    this->moveVec= new GVector(1,1);
+    this->moveVec= new GVector(0.000001,0.00001);
     this->lastPositions={};
     if(inve==1){
     this->inve=0.99;
