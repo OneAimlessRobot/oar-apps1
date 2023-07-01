@@ -44,3 +44,9 @@ Eu inicializo a gun com ponto 0,0 antes de lhe dar parsing com ficheiro. A posi√
 
 
 Nao tenho leaks com as funcionalidades das armas!!!! Nem dos menus!!!!!
+
+
+
+
+Dar multithreading a cenas que apaguem objetos em real time nao e boa ideia. Tems de deixar apagar tudo antes de continuar. Sei que adicionar em multithreading nao faz mal.
+Vou experimentar multithreading a adicionar cenas.

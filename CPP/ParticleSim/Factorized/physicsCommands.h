@@ -30,5 +30,5 @@ float getTotalEnergy(std::list<Entity*>& entList);
 
 
 }
-#include "../Systems/physicsCommands.tpp"
+#include "physicsCommands.tpp"
 #endif

@@ -16,6 +16,7 @@
 #include "../Types/Gun.h"
 #include "../Types/physicsAux.h"
 #include "../Factorized/physicsCommands.h"
+#include "../Factorized/EntityMgmnt.h"
 #include "InteractiveSim.h"
 
 InteractiveSim::InteractiveSim(float maxSpeed,float maxSize,int ammount,float maxMass){
@@ -28,34 +29,63 @@ init(DEFAULTENTMAXMASS,DEFAULTENTMAXSIZE,1000,DEFAULTENTMAXSPEED);
 
 }
 
-void InteractiveSim::init(float maxSpeed,float maxSize,int ammount,float maxMass){
+int InteractiveSim::init(float maxSpeed,float maxSize,int ammount,float maxMass){
 
 
 std::cout<<"Initializing video\n";
-SDL_Init(SDL_INIT_EVERYTHING);
 
 
+if(!SDL_Init(SDL_INIT_EVERYTHING)){
 std::cout<<"Done!\n";
-
+}
+else{
+std::cerr<<"Error loading video. Exiting...(Code 1)\n";
+return 1;
+}
 std::cout<<"Initializing window\n";
-this->win= SDL_CreateWindow("ScrSaver",SDL_WINDOWPOS_CENTERED,SDL_WINDOWPOS_CENTERED,WIDTH,HEIGHT,SDL_WINDOW_RESIZABLE);
 
+this->win= SDL_CreateWindow("ScrSaver",SDL_WINDOWPOS_CENTERED,SDL_WINDOWPOS_CENTERED,WIDTH,HEIGHT,SDL_WINDOW_RESIZABLE);
+if(this->win){
 std::cout<<"Done!\n";
+}
+else{
+std::cerr<<"Error loading window. Exiting...(Code 2)\n";
+return 2;
+}
 
 std::cout<<"Initializing renderer\n";
-this->ren=SDL_CreateRenderer(this->win,-1,SDL_RENDERER_ACCELERATED);
 
+
+this->ren=SDL_CreateRenderer(this->win,-1,SDL_RENDERER_ACCELERATED);
+if(this->ren){
 std::cout<<"Done!\n";
+}
+else{
+std::cerr<<"Error loading window. Exiting...(Code 3)\n";
+return 3;
+}
+
+
 std::cout<<"Initializing background\n";
 this->bgr= SDL_CreateTexture(ren,SDL_PIXELFORMAT_RGBA8888,SDL_TEXTUREACCESS_TARGET,WIDTH,HEIGHT);
 
+if(this->bgr){
 std::cout<<"Done!\n";
+}
+else{
+std::cerr<<"Error loading background. Exiting...(Code 4)\n";
+return 4;
+}
 std::cout<<"Initializing entities\n";
 this->ents= SDL_CreateTexture(ren,SDL_PIXELFORMAT_RGBA8888,SDL_TEXTUREACCESS_TARGET,WIDTH,HEIGHT);
 
-
+if(this->ents){
 std::cout<<"Done!\n";
-this->arena= Collider::parseCollider(DEFAULT_COLLIDER_PATH);
+}
+else{
+std::cerr<<"Error loading background. Exiting...(Code 5)\n";
+return 5;
+}
 
 this->maxSpeed=maxSpeed;
 if(std::fabs(this->maxSpeed)==0){
@@ -63,10 +93,6 @@ if(std::fabs(this->maxSpeed)==0){
 }
 
 this->entList= {};
-for(int i =0;i<ammount;i++){
-
-    this->entList.emplace(this->entList.begin(),Entity::randEnt(WIDTH,HEIGHT,maxMass,maxSize,maxSpeed));
-}
 this->pause=0;
 this->rendering=1;
 this->selection=0;
@@ -79,6 +105,21 @@ this->maxSize=maxSize;
 this->ammount=ammount;
 this->maxMass=maxMass;
 this->airDensity=airDensity;
+
+std::cout<<"Initializing arena\n";
+
+this->arena= EntityManagement::parseCollider(DEFAULT_COLLIDER_PATH);
+if(this->arena){
+std::cout<<"Done!\n";
+}
+else{
+std::cerr<<"Error loading arena. Exiting...(Code 6)\n";
+return 6;
+}
+std::cout<<"Starting to populate the simulation....\n";
+std::thread populatingWorker(&InteractiveSim::populateEntityList,this,ammount);
+populatingWorker.detach();
+
 }
 
 InteractiveSim* InteractiveSim::parseGame(){
@@ -156,7 +197,18 @@ SDL_Delay(((1/FRAMERATE)*1000)-(endTime-startTime));
 }
 }
 
+void InteractiveSim::populateEntityList(int ammount){
 
+
+for(int i =0;i<ammount;i++){
+
+    this->entList.emplace(this->entList.begin(),Entity::randEnt(WIDTH,HEIGHT,this->maxMass,this->maxSize,this->maxSpeed));
+}
+
+
+
+
+}
 
 void InteractiveSim::handleEntities(){
 
@@ -170,23 +222,7 @@ void InteractiveSim::handleEntities(){
 
 
 }
-void InteractiveSim::addMore(){
-if(this->thetime%addMoreInt==0){
-for(int i =0;i<howManyToAdd;i++){
-
-    Entity* ent=Entity::randEnt(WIDTH,HEIGHT,maxMass,maxSize,maxSpeed);
-//    if(ent->getPos().x!=ent->getPos().x||ent->getPos().y!=ent->getPos().y){
-//    std::cout<<"ERRO!!!!!\n";
-//    }
-    this->entList.emplace(this->entList.begin(),ent);
-
-}
-}
-
-}
 void InteractiveSim::makeSelection(){
-
-    if(this->thetime%selectFrameInt==0){
         float selectQuality=PhysicsCommands::getAverageSpeed(this->entList);
         std::list<Entity*>::iterator it;
             for (it = this->entList.begin(); it != this->entList.end(); ) {
@@ -200,11 +236,7 @@ void InteractiveSim::makeSelection(){
                     it++;
                 }
 
-        }
 
-
-    std::cout<<"Geraçao numero: "<<this->genCount<<"\n";
-this->genCount++;
 }
 }
 void InteractiveSim::doRendering(){
@@ -231,8 +263,16 @@ void InteractiveSim::doRendering(){
 void InteractiveSim::generationHandling(){
 
     this->thetime++;
-    addMore();
+if(this->thetime%addMoreInt==0){
+    std::thread addWorker(&InteractiveSim::populateEntityList,this,howManyToAdd);
+    addWorker.detach();
+    }
+
+    if(this->thetime%selectFrameInt==0){
     makeSelection();
+    std::cout<<"Geraçao numero: "<<this->genCount<<"\n";
+    this->genCount++;
+    }
 
 
 }
@@ -256,17 +296,21 @@ void InteractiveSim::printSpeedsAndPos(){
 }
 void InteractiveSim::handleContPresses(const Uint8*KEYS){
     if(KEYS[SDL_SCANCODE_LEFT]) {
-        PhysicsCommands::orbit(this->entList,this->mouseX*1.0,this->mouseY*1.0);
+        std::thread orbitWorker(&PhysicsCommands::orbit,std::ref(this->entList),mouseX*1.0,mouseY*1.0);
+        orbitWorker.detach();
     }
     if(KEYS[SDL_SCANCODE_RIGHT]) {
 
-        PhysicsCommands::homming(this->entList,this->mouseX*1.0,this->mouseY*1.0);
+        std::thread hommingWorker(&PhysicsCommands::homming,std::ref(this->entList),this->mouseX*1.0,this->mouseY*1.0);
+        hommingWorker.detach();
     }
     if(KEYS[SDL_SCANCODE_M]) {
-        PhysicsCommands::doBlast(this->entList,this->mouseX*1.0,this->mouseY*1.0);
+        std::thread blastingWorker(&PhysicsCommands::doBlast,std::ref(this->entList),this->mouseX*1.0,this->mouseY*1.0);
+        blastingWorker.detach();
     }
     if(KEYS[SDL_SCANCODE_DOWN]) {
-        shootGuns();
+        std::thread shootingWorker(&InteractiveSim::shootGuns,this);
+        shootingWorker.detach();
     }
 
     if(KEYS[SDL_SCANCODE_ESCAPE]) {
@@ -274,23 +318,13 @@ void InteractiveSim::handleContPresses(const Uint8*KEYS){
 }
 void InteractiveSim::destroyGuns(){
 
-     std::list<Gun*>::iterator it;
-    for (it = this->gunList.begin(); it != this->gunList.end(); ) {
-            delete (*it);
-            it=this->gunList.erase(it);
-    }
-
-
+    EntityManagement::clearList<Gun>(this->gunList);
 
 }
 void InteractiveSim::destroyEntities(){
 
 
-    std::list<Entity*>::iterator it;
-    for (it = this->entList.begin(); it != this->entList.end();) {
-        delete (*it);
-        it=this->entList.erase(it);
-    }
+    EntityManagement::clearList<Entity>(this->entList);
 
 
 }
@@ -299,12 +333,7 @@ void InteractiveSim::monitorGuns(){
 
      std::list<Gun*>::iterator it;
     for (it = this->gunList.begin(); it != this->gunList.end(); ++it) {
-
-    SDL_FPoint master=(SDL_FPoint){this->mouseX*1.0,this->mouseY*1.0},
-                slave=(*it)->getCenter();
-    SDL_FPoint vec= Aux::makeUnitVector(slave,master);
-    Aux::scaleVec(&vec,(*it)->getShootingForce());
-    (*it)->setShootVec(vec);
+    (*it)->setTarget(this->mouseX*1.0,this->mouseY*1.0);
     (*it)->updateGun();
     }
 
@@ -339,6 +368,7 @@ void InteractiveSim::printSimVarsAndStats(){
     std::cout<<"Massa maxima de particula: "<<this->maxMass<<"\n";
     std::cout<<"Velocidade maxima de particula: "<<this->maxSpeed<<"\n";
     std::cout<<"Tamanho maximo de particula: "<<this->maxSize<<"\n";
+    std::cout<<"Atrito do ar: "<<arena->getAirDensity()<<"\n";
 
 
 }
@@ -373,7 +403,7 @@ void InteractiveSim::printKeyboardHelp(){
 void InteractiveSim::spawnGun(Gun* gun,std::string filePath,float x, float y,caliber bType){
 
     delete gun;
-    gun=Gun::parseGun(filePath);
+    gun=EntityManagement::parseGun(filePath);
     gun->setPos((SDL_FPoint){x,y});
     gun->setCaliber(bType);
     this->gunList.emplace(this->gunList.begin(),gun);
@@ -465,14 +495,13 @@ void InteractiveSim::handleToggles(const Uint8*KEYS){
 
     if(KEYS[SDL_SCANCODE_D]) {
 
-        std::thread deletion(&InteractiveSim::processDeletion,this);
-        deletion.detach();
+        processDeletion();
 
     }
 
     if(KEYS[SDL_SCANCODE_F]) {
 
-        std::thread arenaInfo(&Collider::printColliderInfo,DEFAULT_COLLIDER_PATH);
+        std::thread arenaInfo(&EntityManagement::printColliderInfo,DEFAULT_COLLIDER_PATH);
         arenaInfo.detach();
 
     }
@@ -493,11 +522,11 @@ std::cout<<"Que calibre queres?\n";
     std::cin>>choice;
         std::string path=CALIBERS_PATH+choice;
 if(!whatToDo){
-            *bType=caliber::parseCaliber(path);
+            *bType=EntityManagement::parseCaliber(path);
     std::cout<<bType->size<<" , "<<bType->mass<<",  "<<bType->e<<" , "<<bType->Car<<" \n";
         }
         else{
-            caliber::printCaliberInfo(path);
+            EntityManagement::printCaliberInfo(path);
         }
     }while(whatToDo);
 }
@@ -557,7 +586,7 @@ std::cout<<"1- Ve informacoes de uma arma\n";
                 spawnGun(gun,path,x,y,chosenCaliber);
                 }
                 else{
-                Gun::printGunInfo(path);
+                EntityManagement::printGunInfo(path);
                 }
 
    }while(whatToDo);

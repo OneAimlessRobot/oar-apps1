@@ -36,6 +36,7 @@
 		</Linker>
 		<Unit filename="Factorized/EntityMgmnt.cpp" />
 		<Unit filename="Factorized/EntityMgmnt.h" />
+		<Unit filename="Factorized/EntityMgmnt.tpp" />
 		<Unit filename="Factorized/EntitySpawners.cpp" />
 		<Unit filename="Factorized/EntitySpawners.h" />
 		<Unit filename="Factorized/gunCommands.cpp" />
@@ -44,9 +45,9 @@
 		<Unit filename="Factorized/menuCommands.h" />
 		<Unit filename="Factorized/physicsCommands.cpp" />
 		<Unit filename="Factorized/physicsCommands.h" />
+		<Unit filename="Factorized/physicsCommands.tpp" />
 		<Unit filename="Systems/InteractiveSim.cpp" />
 		<Unit filename="Systems/InteractiveSim.h" />
-		<Unit filename="Systems/physicsCommands.tpp" />
 		<Unit filename="Types/Bullet.cpp" />
 		<Unit filename="Types/Bullet.h" />
 		<Unit filename="Types/Collider.cpp" />
@@ -69,7 +70,7 @@
 		<Unit filename="constantHeaders/entitySettings.h" />
 		<Unit filename="constantHeaders/graphicalDefaults.h" />
 		<Unit filename="constantHeaders/gunSettings.h" />
-		<Unit filename="credits.txt" />
+		<Unit filename="creditsAndNotes.txt" />
 		<Unit filename="defaultSettings" />
 		<Unit filename="includes.h" />
 		<Unit filename="main.cpp" />

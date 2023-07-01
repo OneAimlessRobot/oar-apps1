@@ -17,4 +17,5 @@
 #include "Types/physicsAux.h"
 #include <list>
 #include "Factorized/physicsCommands.h"
+#include "Factorized/EntityMgmnt.h"
 #include "Systems/InteractiveSim.h"

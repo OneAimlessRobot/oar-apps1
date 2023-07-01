@@ -42,83 +42,12 @@ caliber Gun::getCaliber(){
 
     return this->bulletType;
 }
-void Gun::printGunInfo(std::string filePath){
-std::ifstream gunRead(filePath);
-float force, barrelLen,
-            recoil,
-            spread,
-            reloadTime;
-int capacity,
-    shootperiod;
-std::string dummy;
-    while(dummy.rfind(COMMENTPREFIX, 0) == 0){
-
-    std::getline(gunRead,dummy);
-
-    }
-gunRead>>force>>barrelLen>>spread>>recoil>>reloadTime>>capacity>>shootperiod;
-gunRead.close();
-std::cout<<"Características:\n";
-std::cout<<"Força: "<<force<<"\n";
-std::cout<<"Capacidade: "<<capacity<<"\n";
-std::cout<<"spread: "<<spread<<"\n";
-std::cout<<"recoil: "<<capacity<<"\n";
-std::cout<<"Comprimento cano: "<<barrelLen<<"\n";
-std::cout<<"Reloadtime: "<<reloadTime<<"\n";
-std::cout<<"ShootCooldown: "<<shootperiod<<"\n";
-
-}
 //void Gun::setCaliber(caliber bType){
 //
 //
 //    this->bulletType=bType;
 //
 //}
-Gun* Gun::parseGun(std::string filePath){
-std::ifstream gunRead(filePath);
-float force, barrelLen,
-            recoil,
-            spread,
-            reloadTime;
-int capacity,
-    shootperiod;
-    std::string dummy;
-    while(dummy.rfind(COMMENTPREFIX, 0) == 0){
-
-    std::getline(gunRead,dummy);
-
-    }
-
-gunRead>>force>>barrelLen>>spread>>recoil>>reloadTime>>capacity>>shootperiod;
-if(!gunRead.is_open()){
-
-std::cout<<"ERRO DE FICHEIRO A CARREGAR ARMA!!!!\n"<<filePath<<"\n";
-return Gun::defaultGun();
-
-}
-gunRead>>force>>barrelLen>>spread>>recoil>>reloadTime>>capacity>>shootperiod;
-gunRead.close();
-return new Gun(Aux::randColor(),0,0,
-            DEFAULTGUNW,
-            DEFAULTGUNH,
-            DEFAULTGUNE,
-            DEFAULTGUNM,
-            DEFAULTGUNCAR,
-            force,
-            recoil,
-            barrelLen,
-            spread,
-            capacity,
-            reloadTime,
-            shootperiod
-            );
-
-
-
-
-
-
-}
 Gun* Gun::defaultGun(){
 
 return new Gun(DEFAULTGUNRGBA,0,0,
@@ -202,6 +131,16 @@ return reloadTime;
 float Gun::getShootingForce(){
 
 return this->force;
+
+}
+void Gun::setTarget(float x, float y){
+
+
+    SDL_FPoint master=(SDL_FPoint){x,y},
+                slave=getCenter();
+    SDL_FPoint vec= Aux::makeUnitVector(slave,master);
+    Aux::scaleVec(&vec,getShootingForce());
+    setShootVec(vec);
 
 }
 Entity* Gun::shoot(){

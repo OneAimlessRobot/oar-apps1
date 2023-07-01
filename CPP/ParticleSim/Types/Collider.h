@@ -14,8 +14,6 @@ void render(SDL_Renderer* ren);
 int whereIsColliding(SDL_FRect rect);
 float getAirDensity();
 
-static void printColliderInfo(std::string filePath);
-static Collider* parseCollider(std::string filePath);
 static Collider* defaultCollider();
 int bodyIsInside(SDL_FRect body);
 SDL_FRect getInter(SDL_FRect body,int where);

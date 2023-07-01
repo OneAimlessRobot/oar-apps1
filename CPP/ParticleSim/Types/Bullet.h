@@ -3,8 +3,6 @@
 class caliber{
 public:
 float size,mass,e,Car;
-static caliber parseCaliber(std::string filePath);
-static void printCaliberInfo(std::string filePath);
 static caliber defaultCaliber();
 };
 

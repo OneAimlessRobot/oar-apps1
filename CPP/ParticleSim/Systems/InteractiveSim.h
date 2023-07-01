@@ -13,9 +13,8 @@ float maxSpeed, maxSize, ammount,maxMass, airDensity;
 int thetime,mouseX,mouseY,genCount;
 int pause,rendering,collisions,selection,gravity,drag;
 void keyboard(SDL_Event event);
-
+void populateEntityList(int ammount);
 void makeSelection();
-void addMore();
 void generationHandling();
 
 
@@ -40,7 +39,7 @@ public:
 InteractiveSim(float maxSpeed,float maxSize,int ammount,float maxMass);
 InteractiveSim();
 ~InteractiveSim();
-void init(float maxSpeed,float maxSize,int ammount,float maxMass);
+int init(float maxSpeed,float maxSize,int ammount,float maxMass);
 void mainLoop();
 void handleToggles(const Uint8* KEYS);
 void handleContPresses(const Uint8* KEYS);

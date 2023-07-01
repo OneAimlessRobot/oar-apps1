@@ -39,11 +39,11 @@ void PhysicsCommands::handleForces(int gravityEnabled,int dragEnabled,std::list<
 
     }
     if(dragEnabled){
+    deleteFreaks<Entity>(entList);
 
     handleDrag(entList, arena);
 
     }
-    deleteFreaks<Entity>(entList);
 
 }
 void PhysicsCommands::handleDrag(std::list<Entity*>& entList,Collider* arena){
