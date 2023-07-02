@@ -1,13 +1,17 @@
-LIBS=-lSDL2 -lpthread -lm
-INCLUDE=./Systems ./Types ./Factorized ./constantHeaders .
+
+LDLIBS=-lSDL2 -lpthread -lm
+LDFLAGS= -L/home/hubbo/lib,-rpath,/home/hubbo/lib
+
+INCLUDE=./Systems ./Types ./Factorized ./constantHeaders.
 BINARY=ParticleSim
 SOURCES=./Factorized ./resourcePaths  .  ./Systems  ./Types
 
+CURRDIR=echo `pwd`
 
-CPP=g++
-DEPFLAGS=-MP -MD
+CXX= g++
+DEPFLAGS= -MP -MD
 
-FLAGS=-Wall -Wextra -g $(foreach D, $(INCLUDE), -I$(D)) $(DEPFLAGS)
+CXXFLAGS= -Wall -DPROGRAMPATHAUX="$(CURRDIR)" -std=gnu++11 -Wextra -g $(foreach D, $(INCLUDE), -I$(D)) $(DEPFLAGS) `sdl2-config --libs`
 
 SOURCEFILES=$(foreach D,$(SOURCES), $(wildcard $(D)/*.cpp))
 
@@ -17,14 +21,16 @@ DEPFILES= $(patsubst %.cpp,%.d,$(SOURCEFILES))
 
 
 all: $(BINARY)
+	echo $(LDLIBS)
+	echo $(CURRDIR)
 
 
 $(BINARY): $(OBJECTS)
-	$(CPP)   -o $@ $^ $(LIBS)
+	$(CXX)  $(CXXFLAGS) -o $@ $^ $(LDLIBS) $(LDFLAGS)
 
 
 %.o:%.c
-	$(CPP) $(LIBS) $(FLAGS) -c -o $@ $<
-	
+	$(CXX)  $(CXXFLAGS) -c -o $@ $<  $(LDLIBS)  $(LDFLAGS)
+	echo $(CXXFLAGS)
 clean: 
 	rm -rf $(BINARY) $(OBJECTS) $(DEPFILES)
