@@ -15,6 +15,7 @@ multithreading
 
 https://www.geeksforgeeks.org/multithreading-in-cpp/
 https://stackoverflow.com/questions/50175002/invalid-use-of-non-static-member-function-c-thread-linux
+https://stackoverflow.com/questions/61985888/why-the-compiler-complains-that-stdthread-arguments-must-be-invocable-after-co
 
 physics
 
@@ -30,6 +31,15 @@ https://cplusplus.com/reference/list/list/erase/
 https://cplusplus.com/reference/list/list/
 
 class Hierarchy
+
+makeFile knowledge:
+
+https://www.youtube.com/watch?v=DtGrdB8wQ_8
+
+build Of SDL used:
+
+
+https://github.com/libsdl-org/SDL/releases/tag/release-2.28.0
 
 
 https://chat.openai.com/share/19a67ae7-0baf-400e-815a-c28771dd93c5
