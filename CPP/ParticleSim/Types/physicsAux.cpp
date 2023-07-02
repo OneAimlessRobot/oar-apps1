@@ -1,6 +1,6 @@
 #include <random>
 #include <cmath>
-#include "../aux.h"
+#include "../auxFuncs.h"
 #include <iostream>
 #include "GVector.h"
 #include "Entity.h"

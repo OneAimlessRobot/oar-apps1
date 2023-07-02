@@ -9,7 +9,7 @@
 #include "../Types/Gun.h"
 #include "../Types/Collider.h"
 #include "../Types/physicsAux.h"
-#include "../aux.h"
+#include "../auxFuncs.h"
 #include "physicsCommands.h"
 
 

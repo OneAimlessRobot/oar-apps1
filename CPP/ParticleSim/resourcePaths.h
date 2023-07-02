@@ -1,8 +1,9 @@
 #ifndef RES_H
 #define RES_H
 
-#define PROGRAMPATH std::string("/home/k/oar-apps1/CPP/ParticleSim/")
-
+//#define PROGRAMPATH std::string("/home/hubbo/oar-apps1-master/CPP/ParticleSim/")
+#define PROGRAMPATHAUX 
+#define PROGRAMPATH std::string(PROGRAMPATHAUX)
 #define GUNSPATH (PROGRAMPATH+std::string("resources/guns/"))
 
 #define SRIFLE_PATH (PROGRAMPATH+std::string("resources/guns/sniperRifle.gun"))

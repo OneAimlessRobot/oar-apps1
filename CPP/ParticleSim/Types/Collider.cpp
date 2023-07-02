@@ -1,4 +1,4 @@
-#include "../aux.h"
+#include "../auxFuncs.h"
 #include <fstream>
 #include <string>
 #include <iostream>

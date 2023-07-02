@@ -2,7 +2,7 @@
 #include <random>
 #include <cmath>
 #include <ctime>
-#include "aux.h"
+#include "auxFuncs.h"
 typedef struct gameState{
 
 
@@ -78,4 +78,3 @@ void Aux::scaleVec(SDL_FPoint* vec,float scalar){
     vec->y=dy;
 
 }
-

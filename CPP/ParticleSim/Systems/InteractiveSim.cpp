@@ -8,7 +8,7 @@
 #include <random>
 #include <cmath>
 #include <iostream>
-#include "../aux.h"
+#include "../auxFuncs.h"
 #include "../Types/Collider.h"
 #include "../Types/GVector.h"
 #include "../Types/Bullet.h"

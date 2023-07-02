@@ -8,7 +8,7 @@
 #include "SDL2/SDL.h"
 #include "../Types/Collider.h"
 #include "../Types/GVector.h"
-#include "../aux.h"
+#include "../auxFuncs.h"
 #include "../Types/Bullet.h"
 #include "../Types/Entity.h"
 #include "../Types/Gun.h"

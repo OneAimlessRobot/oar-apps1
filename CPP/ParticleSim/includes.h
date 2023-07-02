@@ -7,7 +7,7 @@
 #include <cmath>
 #include <random>
 #include <iterator>
-#include "aux.h"
+#include "auxFuncs.h"
 #include "Types/GVector.h"
 #include <SDL2/SDL.h>
 #include "Types/Bullet.h"

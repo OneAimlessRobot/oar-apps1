@@ -1,6 +1,7 @@
 
 #include <SDL2/SDL.h>
-#include "../aux.h"
+#include "../auxFuncs.h"
+#include <cmath>
 #include <vector>
 #include <iterator>
 #include <iostream>

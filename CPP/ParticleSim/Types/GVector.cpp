@@ -2,7 +2,7 @@
 #include <cmath>
 #include <SDL2/SDL.h>
 #include "GVector.h"
-#include "../aux.h"
+#include "../auxFuncs.h"
 #include <iostream>
     GVector::GVector(float x,float y){
 
