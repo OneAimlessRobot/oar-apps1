@@ -33,13 +33,30 @@
 		</Compiler>
 		<Unit filename="ADT/hashTable.cpp" />
 		<Unit filename="ADT/hashTable.h" />
+		<Unit filename="ADT/hashTableIterator.cpp" />
+		<Unit filename="ADT/hashTableIterator.h" />
 		<Unit filename="Managers/CollectionManager.cpp" />
 		<Unit filename="Managers/CollectionManager.h" />
+		<Unit filename="Tools/CrushOperations.cpp" />
 		<Unit filename="Tools/CrushOperations.h" />
 		<Unit filename="Types/Crush.cpp" />
 		<Unit filename="Types/Crush.h" />
+		<Unit filename="Types/Menu.cpp" />
+		<Unit filename="Types/Menu.h" />
+		<Unit filename="Types/Menu.tpp" />
+		<Unit filename="auxFuncs.cpp" />
+		<Unit filename="auxFuncs.h" />
+		<Unit filename="constants.h" />
+		<Unit filename="creditsAndNotes.txt" />
+		<Unit filename="includes.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="resourceHeader.cpp" />
+		<Unit filename="resourceHeader.h" />
 		<Unit filename="resources/interests/programming" />
+		<Unit filename="resources/menus/Untitled13" />
+		<Unit filename="resources/menus/mainOptions" />
+		<Unit filename="resources/menus/personalities" />
+		<Unit filename="resources/stdPersonalities/shitnerd" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>

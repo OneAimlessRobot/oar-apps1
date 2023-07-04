@@ -1,5 +1,13 @@
-#ifndef CRUSH_OPS_H
-#define CRUSH_OPS_H
+#include <string>
+#include <iostream>
+#include <vector>
+#include "Types/Crush.h"
 
+int main(int argc, char**argv){
 
-#endif
+Crush *crush=new Crush();
+std::cout<<crush->toString()<<"\n";
+
+return 0;
+
+}

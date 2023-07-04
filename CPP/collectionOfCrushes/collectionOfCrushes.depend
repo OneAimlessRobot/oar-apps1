@@ -1,0 +1,34 @@
+# depslib dependency file v1.0
+1688425695 source:/home/k/oar-apps1/CPP/collectionOfCrushes/ADT/hashTableIterator.cpp
+
+1688466973 source:/home/k/oar-apps1/CPP/collectionOfCrushes/auxFuncs.cpp
+
+1688470254 source:/home/k/oar-apps1/CPP/collectionOfCrushes/main.cpp
+	<string>
+	<iostream>
+	<vector>
+	"Types/Crush.h"
+
+1688470204 /home/k/oar-apps1/CPP/collectionOfCrushes/Types/Crush.h
+
+1688420762 source:/home/k/oar-apps1/CPP/collectionOfCrushes/Managers/CollectionManager.cpp
+
+1688466640 source:/home/k/oar-apps1/CPP/collectionOfCrushes/resourceHeader.cpp
+
+1688466356 source:/home/k/oar-apps1/CPP/collectionOfCrushes/Tools/CrushOperations.cpp
+
+1688470319 source:/home/k/oar-apps1/CPP/collectionOfCrushes/Types/Crush.cpp
+	<string>
+	"Crush.h"
+
+1688470308 source:/home/k/oar-apps1/CPP/collectionOfCrushes/ADT/hashTable.cpp
+	<list>
+	<iterator>
+	<vector>
+	"hashTable.h"
+	"hashTableIterator.h"
+
+1688470508 /home/k/oar-apps1/CPP/collectionOfCrushes/ADT/hashTable.h
+
+1688470696 /home/k/oar-apps1/CPP/collectionOfCrushes/ADT/hashTableIterator.h
+
