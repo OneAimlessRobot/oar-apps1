@@ -1,2 +1,6 @@
 
 //Vamos começar primeiro com vetores, depois implemento a hashTable
+
+--File io
+
+https://stackoverflow.com/questions/31538554/fstream-how-to-seekg-to-position-x-from-end

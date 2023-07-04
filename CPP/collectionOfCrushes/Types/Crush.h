@@ -2,7 +2,7 @@
 #define CRUSH_H
 class Inclination{
 public:
-float calm,reason,reactiveness,ego,strength,openness,neuroticism,cynnicism;
+float heart,reason,reactiveness,ego,strength,openness,neuroticism,cynnicism;
 std::string toString();
 static Inclination add(Inclination inc1,Inclination inc2);
 static Inclination multiply(Inclination inc, float factor);

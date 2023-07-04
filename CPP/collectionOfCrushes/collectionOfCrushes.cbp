@@ -7,6 +7,7 @@
 		<Option execution_dir="../collectionOfCrushes" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
+		<Option virtualFolders="Types/" />
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/Debug/collectionOfCrushes" prefix_auto="1" extension_auto="1" />
@@ -49,15 +50,27 @@
 		<Unit filename="Types/Menu.tpp" />
 		<Unit filename="auxFuncs.cpp" />
 		<Unit filename="auxFuncs.h" />
+		<Unit filename="bdsm" />
 		<Unit filename="constants.h" />
 		<Unit filename="creditsAndNotes.txt" />
 		<Unit filename="includes.h" />
 		<Unit filename="main.cpp" />
-		<Unit filename="resourceHeader.cpp" />
+		<Unit filename="resourceHeader.cpp">
+			<Option virtualFolder="Types/" />
+		</Unit>
 		<Unit filename="resourceHeader.h" />
+		<Unit filename="resources/CrushDefaults/Filipa" />
 		<Unit filename="resources/CrushDefaults/Florenz" />
+		<Unit filename="resources/interests/anime" />
+		<Unit filename="resources/interests/bdsm" />
+		<Unit filename="resources/interests/fashion" />
+		<Unit filename="resources/interests/filosophy" />
+		<Unit filename="resources/interests/fitness" />
+		<Unit filename="resources/interests/football" />
 		<Unit filename="resources/interests/programming" />
+		<Unit filename="resources/interests/psychology" />
 		<Unit filename="resources/interests/reading" />
+		<Unit filename="resources/interests/writing" />
 		<Unit filename="resources/menus/mainOptions" />
 		<Unit filename="resources/menus/models" />
 		<Unit filename="resources/menus/personalities" />

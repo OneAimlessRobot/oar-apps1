@@ -5,7 +5,7 @@
 #include "Crush.h"
 
 std::string Inclination::toString(){
-std::string str=std::string("Calma: ")+ std::to_string(this->calm) +
+std::string str=std::string("Coracao: ")+ std::to_string(this->heart) +
                     std::string("\n")+
                 std::string("Razao: ")+ std::to_string(this->reason) +
                     std::string("\n")+
@@ -29,7 +29,7 @@ std::string str=std::string("Calma: ")+ std::to_string(this->calm) +
 
 
 Inclination Inclination::add(Inclination inc1,Inclination inc2){
-    return (Inclination){inc1.calm+inc2.calm,
+    return (Inclination){inc1.heart+inc2.heart,
                         inc1.reason+inc2.reason,
                         inc1.reactiveness+inc2.reactiveness,
                         inc1.ego+inc2.ego,
@@ -45,7 +45,7 @@ Inclination Inclination::add(Inclination inc1,Inclination inc2){
 Inclination Inclination::multiply(Inclination inc, float factor){
 
 
-    return (Inclination){inc.calm*factor,
+    return (Inclination){inc.heart*factor,
                         inc.reason*factor,
                         inc.reactiveness*factor,
                         inc.ego*factor,
@@ -64,7 +64,7 @@ Inclination Inclination::normalize(Inclination inc){
 }
 float Inclination::norm(Inclination inc){
 
-return std::sqrt(inc.calm*inc.calm+
+return std::sqrt(inc.heart*inc.heart+
                     inc.reason*inc.reason+
                     inc.reactiveness*inc.reactiveness+
                     inc.ego*inc.ego+

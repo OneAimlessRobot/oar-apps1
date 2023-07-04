@@ -44,20 +44,17 @@ return new Crush(1,1,1,(Inclination){1,1,1,1,1,1,1,1});
 }
 crushReader>>incName>>mass>>age>>height;
 std::string incPath=STD_PERSONALITY_PATH+incName;
-std::cout<<incPath<<"\n";
-Crush* result= new Crush(mass,age,height,parseInclination(incPath));
-std::cout<<"corri!!!\n";
+Crush* result= new Crush(mass,age,height,Inclination::normalize(parseInclination(incPath)));
 std::iostream::pos_type pos=crushReader.tellg();
 do{
-std::cout<<crushReader.tellg()<<"\n";
 Interest inter=ResourceParsing::parseInterest(filePath,pos);
 std::string vecPath=STD_INTERESTS_PATH+inter.name;
 Inclination incVec= ResourceParsing::parseInterestDelta(vecPath);
 result->setInclination(Inclination::add(result->getInclination(),incVec));
 result->addInterest(inter);
 crushReader.seekg(pos,std::ios_base::beg);
-usleep(1000000);
 }while(crushReader.tellg()>=0);
+result->setInclination(Inclination::normalize(result->getInclination()));
 crushReader.close();
 return result;
 
@@ -68,7 +65,6 @@ std::string intName;
 float intensity;
 std::ifstream interReader(filePath);
 interReader.seekg(pos,std::ios_base::beg);
-std::cout<<interReader.tellg()<<"\n";
 if(!interReader.is_open()){
 std::cout<<filePath<<"\n";
 
