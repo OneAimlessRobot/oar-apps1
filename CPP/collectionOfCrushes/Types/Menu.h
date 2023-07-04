@@ -6,6 +6,6 @@ void safeInput(std::string& var,optionList ol,std::string errorMsg);
 
 int optionInList(std::string& opt,optionList& l);
 
-
+std::string toString(optionList& l);
 }
 #endif

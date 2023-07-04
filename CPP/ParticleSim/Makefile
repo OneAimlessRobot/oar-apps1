@@ -1,6 +1,6 @@
 
 LDLIBS=-lSDL2 -lpthread -lm
-LDFLAGS= -L/home/hubbo/lib,-rpath,/home/hubbo/lib
+LDFLAGS= -L/home/k/lib,-rpath,/home/k/lib
 
 INCLUDE=./Systems ./Types ./Factorized ./constantHeaders.
 BINARY=ParticleSim
@@ -32,5 +32,5 @@ $(BINARY): $(OBJECTS)
 %.o:%.c
 	$(CXX)  $(CXXFLAGS) -c -o $@ $<  $(LDLIBS)  $(LDFLAGS)
 	echo $(CXXFLAGS)
-clean: 
+clean:
 	rm -rf $(BINARY) $(OBJECTS) $(DEPFILES)

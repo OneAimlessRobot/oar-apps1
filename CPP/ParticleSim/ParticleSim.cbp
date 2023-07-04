@@ -51,6 +51,7 @@
 		<Unit filename="Factorized/physicsCommands.d" />
 		<Unit filename="Factorized/physicsCommands.h" />
 		<Unit filename="Factorized/physicsCommands.tpp" />
+		<Unit filename="Makefile" />
 		<Unit filename="Systems/InteractiveSim.cpp" />
 		<Unit filename="Systems/InteractiveSim.d" />
 		<Unit filename="Systems/InteractiveSim.h" />

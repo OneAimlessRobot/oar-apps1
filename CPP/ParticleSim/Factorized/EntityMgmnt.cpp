@@ -33,7 +33,7 @@ int capacity,
 gunRead>>force>>barrelLen>>spread>>recoil>>reloadTime>>capacity>>shootperiod;
 if(!gunRead.is_open()){
 
-std::cout<<"ERRO DE FICHEIRO A CARREGAR ARMA!!!!\n"<<filePath<<"\n";
+std::cout<<"ERRO DE FICHEIRO A CARREGAR FICHEIRO!!!!\n"<<filePath<<"\n";
 return Gun::defaultGun();
 
 }

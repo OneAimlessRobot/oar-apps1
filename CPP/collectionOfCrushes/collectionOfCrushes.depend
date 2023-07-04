@@ -1,19 +1,36 @@
 # depslib dependency file v1.0
 1688425695 source:/home/k/oar-apps1/CPP/collectionOfCrushes/ADT/hashTableIterator.cpp
 
-1688466973 source:/home/k/oar-apps1/CPP/collectionOfCrushes/auxFuncs.cpp
+1688472752 source:/home/k/oar-apps1/CPP/collectionOfCrushes/auxFuncs.cpp
+	<random>
+	<cmath>
+	<ctime>
+	"auxFuncs.h"
 
-1688470254 source:/home/k/oar-apps1/CPP/collectionOfCrushes/main.cpp
+1688478935 source:/home/k/oar-apps1/CPP/collectionOfCrushes/main.cpp
 	<string>
 	<iostream>
 	<vector>
+	<list>
+	<vector>
+	"Types/Menu.h"
 	"Types/Crush.h"
+	"resourceHeader.h"
 
-1688470204 /home/k/oar-apps1/CPP/collectionOfCrushes/Types/Crush.h
+1688478802 /home/k/oar-apps1/CPP/collectionOfCrushes/Types/Crush.h
 
 1688420762 source:/home/k/oar-apps1/CPP/collectionOfCrushes/Managers/CollectionManager.cpp
 
-1688466640 source:/home/k/oar-apps1/CPP/collectionOfCrushes/resourceHeader.cpp
+1688478964 source:/home/k/oar-apps1/CPP/collectionOfCrushes/resourceHeader.cpp
+	<string>
+	<iostream>
+	<vector>
+	<list>
+	<fstream>
+	<iterator>
+	"Types/Crush.h"
+	"Types/Menu.h"
+	"resourceHeader.h"
 
 1688466356 source:/home/k/oar-apps1/CPP/collectionOfCrushes/Tools/CrushOperations.cpp
 
@@ -31,4 +48,10 @@
 1688470508 /home/k/oar-apps1/CPP/collectionOfCrushes/ADT/hashTable.h
 
 1688470696 /home/k/oar-apps1/CPP/collectionOfCrushes/ADT/hashTableIterator.h
+
+1688478658 /home/k/oar-apps1/CPP/collectionOfCrushes/auxFuncs.h
+
+1688479132 /home/k/oar-apps1/CPP/collectionOfCrushes/Types/Menu.h
+
+1688478493 /home/k/oar-apps1/CPP/collectionOfCrushes/resourceHeader.h
 

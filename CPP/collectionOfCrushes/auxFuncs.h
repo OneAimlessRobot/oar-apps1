@@ -6,7 +6,7 @@ namespace AuxFuncs{
 
 
 
-float Aux::getRandomFloat(float min, float max);
+float getRandomFloat(float min, float max);
 
 }
 

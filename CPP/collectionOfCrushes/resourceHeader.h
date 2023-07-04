@@ -3,24 +3,31 @@
 
 #define RESOURCES_PATH_AUX
 
-#define RESOURCES_PATH (std::string("RESOURCES_PATH_AUX"))
+//#define RESOURCES_PATH (std::string(RESOURCES_PATH_AUX)+std::string("/"))
+#define RESOURCES_PATH (std::string("/home/k/oar-apps1/CPP/collectionOfCrushes/resources/"))
 
 #define MENU_PATH (RESOURCES_PATH +std::string("menus/"))
 #define STD_PERSONALITY_PATH (RESOURCES_PATH+std::string("stdPersonalities/"))
 #define STD_PERSONALITY_MENU_PATH (MENU_PATH+std::string("personalities"))
 
+#define STD_MODELS_PATH (RESOURCES_PATH+std::string("CrushDefaults/"))
+#define STD_MODELS_MENU_PATH (MENU_PATH+std::string("models"))
+
+#define STD_INTERESTS_PATH (RESOURCES_PATH+std::string("interests/"))
+
 
 namespace ResourceParsing{
 
 
-Inclination parseInclination(std::string filePath);
+Inclination parseInclination(std::string& filePath);
 
-Crush* parseCrush(std::string filePath);
+Crush* parseCrush(std::string &filePath);
 
-Interest* parseInterest(std::string filePath);
+Interest parseInterest(std::string &filePath,std::iostream::pos_type& pos);
 
-optionList parseMenu(std::string filePath);
+optionList parseMenu(std::string &filePath);
 
+Inclination parseInterestDelta(std::string &filePath);
 }
 
 #endif

@@ -1,0 +1,35 @@
+
+LDLIBS=-lSDL2 -lpthread -lm
+
+INCLUDE=./Types ./ADT ./Managers. .
+BINARY=Crushes
+SOURCES=./Types ./ADT  .  ./Managers
+
+CURRDIR=echo `pwd`
+
+CXX= g++
+DEPFLAGS= -MP -MD
+
+CXXFLAGS= -Wall  -std=gnu++11 -Wextra -g $(foreach D, $(INCLUDE), -I$(D)) $(DEPFLAGS) `sdl2-config --libs`
+
+SOURCEFILES=$(foreach D,$(SOURCES), $(wildcard $(D)/*.cpp))
+
+OBJECTS=$(patsubst %.cpp,%.o,$(SOURCEFILES))
+
+DEPFILES= $(patsubst %.cpp,%.d,$(SOURCEFILES))
+
+
+all: $(BINARY)
+	echo $(LDLIBS)
+	echo $(CURRDIR)
+
+
+$(BINARY): $(OBJECTS)
+	$(CXX)  $(CXXFLAGS) -o $@ $^ $(LDLIBS)
+
+
+%.o:%.c
+	$(CXX)  $(CXXFLAGS) -c -o $@ $<  $(LDLIBS)
+	echo $(CXXFLAGS)
+clean:
+	rm -rf $(BINARY) $(OBJECTS) $(DEPFILES)

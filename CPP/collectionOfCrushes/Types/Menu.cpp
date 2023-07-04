@@ -1,6 +1,7 @@
 #include <string>
 #include <iostream>
 #include <list>
+#include <fstream>
 #include <limits>
 #include <tuple>
 
@@ -29,6 +30,22 @@ void Menu::safeInput(std::string& var,optionList ol,std::string errorMsg){
         std::cin.clear();
         std::cin.ignore((std::numeric_limits<std::streamsize>::max)(), '\n');
     }
+
+
+}
+
+std::string Menu::toString(optionList& l){
+
+std::string result=std::string("");
+int counter=0;
+optionList::iterator it;
+for(it=l.begin();it!=l.end();it++){
+
+    result+=std::to_string(counter++)+" - "+(*it)+"\n";
+
+}
+return result;
+
 
 
 }
