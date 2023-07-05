@@ -2,6 +2,7 @@
 #include <random>
 #include <cmath>
 #include <ctime>
+#include <set>
 #include "auxFuncs.h"
 
 float AuxFuncs::getRandomFloat(float min, float max) {

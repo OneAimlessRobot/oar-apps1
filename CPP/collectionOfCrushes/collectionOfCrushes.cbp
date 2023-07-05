@@ -68,10 +68,28 @@
 		<Unit filename="resources/interests/psychology" />
 		<Unit filename="resources/interests/reading" />
 		<Unit filename="resources/interests/writing" />
+		<Unit filename="resources/menus/interests" />
 		<Unit filename="resources/menus/mainOptions" />
 		<Unit filename="resources/menus/models" />
 		<Unit filename="resources/menus/personalities" />
+		<Unit filename="resources/menus/traits" />
+		<Unit filename="resources/stdPersonalities/HSPEmpath" />
+		<Unit filename="resources/stdPersonalities/assertVanilla" />
+		<Unit filename="resources/stdPersonalities/cientista" />
+		<Unit filename="resources/stdPersonalities/cinica" />
+		<Unit filename="resources/stdPersonalities/coach" />
+		<Unit filename="resources/stdPersonalities/cocky" />
+		<Unit filename="resources/stdPersonalities/cristalBeliever" />
+		<Unit filename="resources/stdPersonalities/forte" />
+		<Unit filename="resources/stdPersonalities/freeSpirit" />
+		<Unit filename="resources/stdPersonalities/indigo" />
+		<Unit filename="resources/stdPersonalities/manchild" />
+		<Unit filename="resources/stdPersonalities/partyAnimal" />
 		<Unit filename="resources/stdPersonalities/shitnerd" />
+		<Unit filename="resources/stdPersonalities/sociopata" />
+		<Unit filename="resources/stdPersonalities/turbulent" />
+		<Unit filename="resources/stdPersonalities/vanilla" />
+		<Unit filename="resources/stdPersonalities/violent" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>

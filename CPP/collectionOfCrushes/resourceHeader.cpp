@@ -2,11 +2,15 @@
 #include <iostream>
 #include <vector>
 #include <list>
+#include <set>
 #include <unistd.h>
 #include <fstream>
 #include <iterator>
+#include <vector>
+#include "../auxFuncs.h"
 #include "Types/Crush.h"
 #include "Types/Menu.h"
+#include "Tools/CrushGenerator.h"
 #include "resourceHeader.h"
 
 void parseCrushInterests(Crush* result,std::ifstream& crushReader,std::string filePath){
@@ -15,15 +19,11 @@ std::iostream::pos_type pos=crushReader.tellg();
 do{
 Interest inter=ResourceParsing::parseInterest(filePath,pos);
 std::string interPath=STD_INTERESTS_PATH+inter.name;
-std::string traitPath=STD_TRAITS_PATH+inter.name;
-Inclination incVec= ResourceParsing::parseInterestDelta(vecPath);
+Inclination incVec= ResourceParsing::parseInterestDelta(interPath);
 result->setInclination(Inclination::add(result->getInclination(),incVec));
 result->addInterest(inter);
 crushReader.seekg(pos,std::ios_base::beg);
 }while(crushReader.get()!=';');
-result->setInclination(Inclination::normalize(result->getInclination()));
-
-
 }
 
 void parseCrushTraits(Crush* result,std::ifstream& crushReader,std::string filePath){
@@ -71,21 +71,23 @@ Crush* ResourceParsing::parseCrush(std::string &filePath){
 
 
 std::ifstream crushReader(filePath);
-std::string line;
+std::string name;
 float mass,age,height;
 std::string incName,filePathAux=filePath;
 if(!crushReader.is_open()){
 std::cout<<filePath<<"\n";
 
-std::cerr<<"Nao abriu com sucesso. A carregar inclinaçao default:\n";
-return new Crush(1,1,1,(Inclination){1,1,1,1,1,1,1,1});
+std::cerr<<"Nao abriu com sucesso. A carregar crush default:\n";
+return new Crush();
 
 }
+std::getline(crushReader,name);
+std::cout<<name<<"\n";
 crushReader>>incName>>mass>>age>>height;
 std::string incPath=STD_PERSONALITY_PATH+incName;
-Crush* result= new Crush(mass,age,height,parseInclination(incPath));
+Crush* result= new Crush(name,mass,age,height,parseInclination(incPath));
+std::cout<<result->toString()<<"\n";
 parseCrushInterests(result,crushReader,filePath);
-parseCrushTraits(result,crushReader,filePath);
 crushReader.close();
 return result;
 
@@ -99,7 +101,7 @@ interReader.seekg(pos,std::ios_base::beg);
 if(!interReader.is_open()){
 std::cout<<filePath<<"\n";
 
-std::cerr<<"Nao abriu com sucesso. A carregar inclinaçao default:\n";
+std::cerr<<"Nao abriu com sucesso. A carregar interesse default:\n";
 return (Interest){std::string("Basica"),1};
 
 }
@@ -120,32 +122,25 @@ return Inclination::normalize(ResourceParsing::parseInclination(filePath));
 
 
 }
-optionList ResourceParsing::parseMenu(std::string& filePath){
+optionSet ResourceParsing::parseMenu(std::string& filePath){
 
 
-optionList menu={};
+optionSet menu={};
 std::ifstream menuReader(filePath);
 std::string line;
 if(!menuReader.is_open()){
 std::cout<<filePath<<"\n";
 
-std::cerr<<"Menu não abriu com sucesso.\n";
-return (optionList){};
+std::cerr<<"Menu não abriu com sucesso. A carregar menu vazio\n";
+return (optionSet){};
 }
 while(std::getline(menuReader,line)){
 
-menu.push_back(line);
+menu.emplace(line);
 
 }
 
 return menu;
-
-
-
-}
-
-Crush* ResourceParsing::randCrush(){
-
 
 
 

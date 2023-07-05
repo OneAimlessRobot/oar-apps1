@@ -1,11 +1,11 @@
 #ifndef MENU_H
 #define MENU_H
-typedef std::list<std::string> optionList;
+typedef std::set<std::string> optionSet;
 namespace Menu{
-void safeInput(std::string& var,optionList ol,std::string errorMsg);
+void safeInput(std::string& var,optionSet ol,std::string errorMsg);
 
-int optionInList(std::string& opt,optionList& l);
+int optionInList(std::string& opt,optionSet& l);
 
-std::string toString(optionList& l);
+std::string toString(optionSet& l);
 }
 #endif

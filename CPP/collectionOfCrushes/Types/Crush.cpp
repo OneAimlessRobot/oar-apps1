@@ -87,8 +87,8 @@ std::string str=std::string("Nome: ")+ this->name +
 }
 
 
-Crush::Crush(float mass,float age,float height,Inclination inc){
-
+Crush::Crush(std::string name,float mass,float age,float height,Inclination inc){
+this->name=name;
 this->mass=mass;
 this->age=age;
 this->height=height;
@@ -97,6 +97,7 @@ this->interests={};
 
 }
 Crush::Crush(){
+this->name=std::string("Bue Basica");
 this->mass=70;
 this->age= 30;
 this->height=1.75;
@@ -109,7 +110,8 @@ this->interests={};
 
 std::string Crush::toString(){
 
-std::string result=std::string("Massa: ")+ std::to_string(this->mass) +
+std::string result=std::string("Nome: ")+ this->name+std::string("\n")+
+                std::string("Massa: ")+ std::to_string(this->mass) +
                     std::string("\n")+
                 std::string("Idade: ")+ std::to_string(this->age) +
                     std::string("\n")+

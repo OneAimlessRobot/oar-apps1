@@ -20,13 +20,13 @@ std::string toString();
 
 typedef Interest Trait;
 class Crush{
-
+std::string name;
 float mass,age,height;
 std::list<Interest> interests;
 std::list<Trait> traits;
 Inclination inc;
 public:
-Crush(float mass,float age,float height,Inclination inc);
+Crush(std::string name,float mass,float age,float height,Inclination inc);
 Crush();
 float getMass();
 float getAge();

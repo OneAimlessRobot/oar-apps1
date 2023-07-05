@@ -4,3 +4,9 @@
 --File io
 
 https://stackoverflow.com/questions/31538554/fstream-how-to-seekg-to-position-x-from-end
+
+--Hash Table
+
+https://chat.openai.com/share/ae7984dc-529a-4900-b396-e5ab82db6ccd
+
+

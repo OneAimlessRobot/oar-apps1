@@ -1,9 +1,9 @@
 
 LDLIBS=-lSDL2 -lpthread -lm
 
-INCLUDE=./Types ./ADT ./Managers. .
+INCLUDE=./Types ./ADT ./Managers. . ./Tools
 BINARY=Crushes
-SOURCES=./Types ./ADT  .  ./Managers
+SOURCES=./Types ./ADT  .  ./Managers ./Tools
 
 CURRDIR=echo `pwd`
 
