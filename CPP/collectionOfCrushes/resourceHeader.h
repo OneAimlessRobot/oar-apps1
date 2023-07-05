@@ -16,6 +16,9 @@
 #define STD_INTERESTS_PATH (RESOURCES_PATH+std::string("interests/"))
 
 
+#define STD_TRAITS_PATH (RESOURCES_PATH+std::string("traits/"))
+
+
 namespace ResourceParsing{
 
 
@@ -28,6 +31,10 @@ Interest parseInterest(std::string &filePath,std::iostream::pos_type& pos);
 optionList parseMenu(std::string &filePath);
 
 Inclination parseInterestDelta(std::string &filePath);
+
+Inclination parsePersonality(std::string &filePath);
+
+Crush* randCrush();
 }
 
 #endif

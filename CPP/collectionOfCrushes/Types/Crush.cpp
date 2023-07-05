@@ -115,9 +115,17 @@ std::string result=std::string("Massa: ")+ std::to_string(this->mass) +
                     std::string("\n")+
                 std::string("Altura: ")+ std::to_string(this->height) +
                     std::string("\n")+
-                std::string("Esta e a inclinaçao: \n")+this->inc.toString();
+                std::string("Esta e a inclinaçao: \n")+this->inc.toString()+
+                std::string("Estes sao os interesses: \n");
 std::list<Interest>::iterator it;
 for(it=this->interests.begin();it!=this->interests.end();it++){
+
+    result+=(*it).toString();
+
+
+}
+result+=std::string("Estes são os traços: \n");
+for(it=this->traits.begin();it!=this->traits.end();it++){
 
     result+=(*it).toString();
 
@@ -150,6 +158,12 @@ return this->inc;
 void Crush::setInclination(Inclination inc){
 
     this->inc=inc;
+
+}
+void Crush::addTrait(Trait added){
+
+
+    this->traits.emplace(this->traits.begin(),added);
 
 }
 void Crush::addInterest(Interest added){

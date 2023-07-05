@@ -7,7 +7,6 @@
 		<Option execution_dir="../collectionOfCrushes" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
-		<Option virtualFolders="Types/" />
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/Debug/collectionOfCrushes" prefix_auto="1" extension_auto="1" />
@@ -55,9 +54,7 @@
 		<Unit filename="creditsAndNotes.txt" />
 		<Unit filename="includes.h" />
 		<Unit filename="main.cpp" />
-		<Unit filename="resourceHeader.cpp">
-			<Option virtualFolder="Types/" />
-		</Unit>
+		<Unit filename="resourceHeader.cpp" />
 		<Unit filename="resourceHeader.h" />
 		<Unit filename="resources/CrushDefaults/Filipa" />
 		<Unit filename="resources/CrushDefaults/Florenz" />

@@ -9,6 +9,45 @@
 #include "Types/Menu.h"
 #include "resourceHeader.h"
 
+void parseCrushInterests(Crush* result,std::ifstream& crushReader,std::string filePath){
+
+std::iostream::pos_type pos=crushReader.tellg();
+do{
+Interest inter=ResourceParsing::parseInterest(filePath,pos);
+std::string interPath=STD_INTERESTS_PATH+inter.name;
+std::string traitPath=STD_TRAITS_PATH+inter.name;
+Inclination incVec= ResourceParsing::parseInterestDelta(vecPath);
+result->setInclination(Inclination::add(result->getInclination(),incVec));
+result->addInterest(inter);
+crushReader.seekg(pos,std::ios_base::beg);
+}while(crushReader.get()!=';');
+result->setInclination(Inclination::normalize(result->getInclination()));
+
+
+}
+
+void parseCrushTraits(Crush* result,std::ifstream& crushReader,std::string filePath){
+
+std::iostream::pos_type pos=crushReader.tellg();
+do{
+Trait inter=ResourceParsing::parseInterest(filePath,pos);
+std::string traitPath=STD_TRAITS_PATH+inter.name;
+Inclination incVec= ResourceParsing::parseInterestDelta(traitPath);
+result->setInclination(Inclination::add(result->getInclination(),incVec));
+result->addInterest(inter);
+crushReader.seekg(pos,std::ios_base::beg);
+}while(crushReader.get()!=';');
+result->setInclination(Inclination::normalize(result->getInclination()));
+
+
+}
+Inclination ResourceParsing::parsePersonality(std::string &filePath){
+
+
+
+
+
+}
 
 Inclination ResourceParsing::parseInclination(std::string& filePath){
 
@@ -44,17 +83,9 @@ return new Crush(1,1,1,(Inclination){1,1,1,1,1,1,1,1});
 }
 crushReader>>incName>>mass>>age>>height;
 std::string incPath=STD_PERSONALITY_PATH+incName;
-Crush* result= new Crush(mass,age,height,Inclination::normalize(parseInclination(incPath)));
-std::iostream::pos_type pos=crushReader.tellg();
-do{
-Interest inter=ResourceParsing::parseInterest(filePath,pos);
-std::string vecPath=STD_INTERESTS_PATH+inter.name;
-Inclination incVec= ResourceParsing::parseInterestDelta(vecPath);
-result->setInclination(Inclination::add(result->getInclination(),incVec));
-result->addInterest(inter);
-crushReader.seekg(pos,std::ios_base::beg);
-}while(crushReader.tellg()>=0);
-result->setInclination(Inclination::normalize(result->getInclination()));
+Crush* result= new Crush(mass,age,height,parseInclination(incPath));
+parseCrushInterests(result,crushReader,filePath);
+parseCrushTraits(result,crushReader,filePath);
 crushReader.close();
 return result;
 
@@ -108,6 +139,13 @@ menu.push_back(line);
 }
 
 return menu;
+
+
+
+}
+
+Crush* ResourceParsing::randCrush(){
+
 
 
 

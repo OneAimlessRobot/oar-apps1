@@ -9,7 +9,6 @@ static Inclination multiply(Inclination inc, float factor);
 static Inclination normalize(Inclination inc);
 static float norm(Inclination inc);
 };
-
 class Interest{
 public:
 std::string name;
@@ -18,10 +17,13 @@ std::string toString();
 
 
 };
+
+typedef Interest Trait;
 class Crush{
 
 float mass,age,height;
 std::list<Interest> interests;
+std::list<Trait> traits;
 Inclination inc;
 public:
 Crush(float mass,float age,float height,Inclination inc);
@@ -33,6 +35,8 @@ Inclination getInclination();
 void setInclination(Inclination inc);
 std::string toString();
 void addInterest(Interest added);
+
+void addTrait(Trait added);
 void removeLastInterest();
 };
 
