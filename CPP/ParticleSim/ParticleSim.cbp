@@ -85,6 +85,7 @@
 		<Unit filename="constantHeaders/entitySettings.h" />
 		<Unit filename="constantHeaders/graphicalDefaults.h" />
 		<Unit filename="constantHeaders/gunSettings.h" />
+		<Unit filename="constantHeaders/physicsConstants.h" />
 		<Unit filename="creditsAndNotes.txt" />
 		<Unit filename="defaultSettings" />
 		<Unit filename="includes.h" />
