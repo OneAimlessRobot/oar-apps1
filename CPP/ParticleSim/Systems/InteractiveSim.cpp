@@ -120,6 +120,8 @@ std::cout<<"Starting to populate the simulation....\n";
 std::thread populatingWorker(&InteractiveSim::populateEntityList,this,ammount);
 populatingWorker.detach();
 
+this->worldMassParticle=new Entity(Aux::randColor(),WORLDX,WORLDY,WORLDRADIUS*2,WORLDRADIUS*2,1,WORLDMASS,1);
+
 }
 
 InteractiveSim* InteractiveSim::parseGame(){
@@ -137,7 +139,7 @@ float maxspeed,maxsize,maxmass,ammount;
 
 if(!entSettingsRead.is_open()){
 
-std::cout<<"ERRO DE FICHEIRO A CARREGAR ARMA!!!!\n"<<ENTSETTINGS_PATH<<"\n";
+std::cout<<"ERRO DE FICHEIRO A CARREGAR JOGO!!!!\n"<<ENTSETTINGS_PATH<<"\n";
 return new InteractiveSim();
 
 }
@@ -213,7 +215,7 @@ for(int i =0;i<ammount;i++){
 void InteractiveSim::handleEntities(){
 
     if(!this->pause){
-    PhysicsCommands::handleMovements(this->collisions,this->gravity,this->drag,this->entList,this->arena,this->gunList);
+    PhysicsCommands::handleMovements(this->collisions,this->gravity,this->drag,this->entList,this->arena,this->gunList,this->worldMassParticle);
     monitorGuns();
     if(this->selection){
     generationHandling();
@@ -598,6 +600,7 @@ InteractiveSim::~InteractiveSim(){
 
     this->destroyEntities();
     this->destroyGuns();
+    delete this->worldMassParticle;
     delete this->arena;
 SDL_DestroyTexture(this->bgr);
 SDL_DestroyTexture(this->ents);

@@ -40,6 +40,8 @@
 		<Unit filename="Makefile" />
 		<Unit filename="Managers/CollectionManager.cpp" />
 		<Unit filename="Managers/CollectionManager.h" />
+		<Unit filename="Managers/Master.cpp" />
+		<Unit filename="Managers/Master.h" />
 		<Unit filename="Tools/CrushOperations.cpp" />
 		<Unit filename="Tools/CrushOperations.h" />
 		<Unit filename="Types/Crush.cpp" />

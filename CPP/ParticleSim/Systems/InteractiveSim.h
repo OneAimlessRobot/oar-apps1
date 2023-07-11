@@ -8,6 +8,7 @@ SDL_Renderer* ren;
 SDL_Texture * bgr,*ents;
 std::list<Entity*> entList;
 std::list<Gun*> gunList;
+Entity* worldMassParticle;
 SDL_Color bgrclr;
 float maxSpeed, maxSize, ammount,maxMass, airDensity;
 int thetime,mouseX,mouseY,genCount;

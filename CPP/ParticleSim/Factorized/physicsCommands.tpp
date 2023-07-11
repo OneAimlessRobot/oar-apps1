@@ -108,3 +108,19 @@ void PhysicsCommands::handleInterparticleGravity(std::list<T*>& ents){
 
 }
 }
+template <typename T>
+void PhysicsCommands::handleGroundGravity(std::list<T*>& ents,Entity*worldParticle){
+
+
+    typename std::list<T*>::iterator it;
+    for (it = ents.begin(); it != ents.end(); ++it) {
+        T *current= (*it);
+        PhysicsAux::accelerateEntity((worldParticle),PhysicsAux::gravVector(current->getCenter(),worldParticle->getCenter(),current->getMass(),worldParticle->getMass()));
+        PhysicsAux::accelerateEntity((current),PhysicsAux::gravVector(worldParticle->getCenter(),current->getCenter(),current->getMass(),worldParticle->getMass()));
+
+
+
+}
+
+
+}

@@ -8,5 +8,6 @@
 #include "bulletSettings.h"
 #include "colliderSettings.h"
 #include "entitySettings.h"
+#include "physicsConstants.h"
 
 #endif

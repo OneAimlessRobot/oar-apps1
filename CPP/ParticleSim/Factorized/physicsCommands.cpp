@@ -10,6 +10,7 @@
 #include "../Types/Collider.h"
 #include "../Types/physicsAux.h"
 #include "../auxFuncs.h"
+#include "../constantHeaders/physicsConstants.h"
 #include "physicsCommands.h"
 
 
@@ -30,7 +31,7 @@ void PhysicsCommands::handleCollisions(int collisionsEnabled,std::list<Entity*>&
     handleCollisionsWithArena<Gun>(gunList,arena);
 
 }
-void PhysicsCommands::handleForces(int gravityEnabled,int dragEnabled,std::list<Entity*>& entList,Collider* arena){
+void PhysicsCommands::handleForces(int gravityEnabled,int dragEnabled,std::list<Entity*>& entList,Collider* arena,Entity* worldParticle){
 
     if(gravityEnabled){
     deleteFreaks<Entity>(entList);
@@ -42,6 +43,13 @@ void PhysicsCommands::handleForces(int gravityEnabled,int dragEnabled,std::list<
     deleteFreaks<Entity>(entList);
 
     handleDrag(entList, arena);
+
+    }
+    if(GROUNDGRAVON){
+    deleteFreaks<Entity>(entList);
+
+    handleGroundGravity<Entity>(entList,worldParticle);
+
 
     }
 
@@ -61,9 +69,9 @@ void PhysicsCommands::handleDrag(std::list<Entity*>& entList,Collider* arena){
 
 
 }
-void PhysicsCommands::handleMovements(int collisionsEnabled,int gravityEnabled,int dragEnabled,std::list<Entity*>& entList,Collider* arena,std::list<Gun*>& gunList){
+void PhysicsCommands::handleMovements(int collisionsEnabled,int gravityEnabled,int dragEnabled,std::list<Entity*>& entList,Collider* arena,std::list<Gun*>& gunList,Entity* worldMassParticle){
 
-    handleForces(gravityEnabled,dragEnabled,entList,arena);
+    handleForces(gravityEnabled,dragEnabled,entList,arena,worldMassParticle);
 
     handleCollisions(collisionsEnabled,entList,gunList,arena);
 
@@ -77,7 +85,7 @@ void PhysicsCommands::doBlast(std::list<Entity*>& entList,float x, float y){
     for (it = entList.begin(); it != entList.end(); ++it) {
     SDL_FPoint master=(SDL_FPoint){x,y},
                 slave=(*it)->getPos();
-        SDL_FPoint forceVec=PhysicsAux::blastVector(master,slave,5000000);
+        SDL_FPoint forceVec=PhysicsAux::blastVector(master,slave,5000000*4);
 
         PhysicsAux::accelerateEntity((*it),forceVec);
 }

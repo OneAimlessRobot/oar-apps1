@@ -7,7 +7,7 @@
 
 caliber caliber::defaultCaliber(){
 
-    return (caliber){DEFAULTBULLETSIZE,DEFAULTBULLETM,DEFAULTBULLETE,DEFAULTBULLETCAR};
+    return (caliber){DEFAULTBULLETSIZE,DEFAULTBULLETM,DEFAULTBULLETE,0};
 
 
 }

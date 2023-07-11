@@ -1,0 +1,12 @@
+#ifndef PHYS_C_H
+#define PHYS_C_H
+
+
+#define WORLDRADIUS 1000
+#define WORLDMASS 10000000
+#define WORLDX ((WIDTH/2)-WORLDRADIUS)
+#define WORLDY (HEIGHT)
+#define GROUNDGRAVON 1
+
+
+#endif
