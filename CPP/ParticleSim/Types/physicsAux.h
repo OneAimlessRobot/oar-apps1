@@ -21,6 +21,6 @@ void accelerateEntity(Entity* ent,SDL_FPoint forceVec);
 float dragNeutralWind(float k, float airD,float speed);
 void separateEntities(Entity* a,Entity *b);
 void separateEntityFromCollider(Entity* a,Collider *col,int where);
-
+void blastEnergy(SDL_FPoint p1,SDL_FPoint p2,float energyOut);
 }
 #endif

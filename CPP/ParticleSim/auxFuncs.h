@@ -2,7 +2,7 @@
 #define AUX_H
 
 #define COLLDISTANCE 2
-#define TRAILLENGTH (COLLDISTANCE + 0)
+#define TRAILLENGTH (COLLDISTANCE + 40)
 
 #include <SDL2/SDL.h>
 #include "Types/GVector.h"

@@ -60,3 +60,18 @@ Nao tenho leaks com as funcionalidades das armas!!!! Nem dos menus!!!!!
 
 Dar multithreading a cenas que apaguem objetos em real time nao e boa ideia. Tems de deixar apagar tudo antes de continuar. Sei que adicionar em multithreading nao faz mal.
 Vou experimentar multithreading a adicionar cenas.
+
+
+
+Devia adicionar lança misseis e lança granadas.
+
+Os lança granadas terão uma classe parecida com as Guns, só que nao teem calibre. (Teem granadas com propriedades fixas)
+
+Os lança granadas estão num std::vector sepadado das guns e as granadas que lançam tambem.
+
+As granadas atualizam e enquanto nao atingem um certo timer, nao explodem, e assim que explodem, exercem força para todas as direçoes no plano 2D a todas as entidades à volta.(durante um certo tempo)
+
+Os lança misseis sao a mesma coisa mas explodem em contacto com alguma coisa e sao teleguiados.
+
+Mas é muito trabalho nao vou adicionar.(O programa ficaria muito confuso e seria apenas um deposito de ideias. E quero que tenha
+estrutura. Nao adiciono mais cenas.)

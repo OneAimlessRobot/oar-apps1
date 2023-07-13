@@ -1,4 +1,5 @@
 #include <glad/glad.h>
+#include <GL/glut.h>
 #include <GLFW/glfw3.h>
 
 #include <iostream>
@@ -27,12 +28,28 @@ int main(void)
 
     std::cout<<"cheguei!!!\n";
     gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+
+    float positions[6]={
+
+        -0.5,0.5,
+        0.0,0.5,
+        0.5,-0.5
+
+
+    };
+
+    unsigned int buffer;
+    glGenBuffers(1,&buffer);
+
+    glBindBuffer(GL_ARRAY_BUFFER,buffer);
+
+    glBufferData(GL_ARRAY_BUFFER,6*sizeof(float),positions,GL_STATIC_DRAW);
     /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(window))
     {
         /* Render here */
         glClear(GL_COLOR_BUFFER_BIT);
-
+        glDrawArrays(GL_TRIANGLES,0,3);
         /* Swap front and back buffers */
         glfwSwapBuffers(window);
 

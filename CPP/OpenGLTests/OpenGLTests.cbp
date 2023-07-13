@@ -32,7 +32,7 @@
 			<Add option="-Wall" />
 		</Compiler>
 		<Linker>
-			<Add option="-lm -lpthread -lglut -ldl -lglfw" />
+			<Add option="-lm -lpthread -lglut -ldl -lglfw -lGL -lGLU -lglut" />
 			<Add library="../../../glfw-3.3.8/src/libglfw3.a" />
 		</Linker>
 		<Unit filename="glad.c">

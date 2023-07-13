@@ -1,6 +1,5 @@
 
 LDLIBS=-lSDL2 -lpthread -lm
-LDFLAGS= -L/home/k/lib,-rpath,/home/k/lib
 
 INCLUDE=./Systems ./Types ./Factorized ./constantHeaders.
 BINARY=ParticleSim
@@ -26,11 +25,11 @@ all: $(BINARY)
 
 
 $(BINARY): $(OBJECTS)
-	$(CXX)  $(CXXFLAGS) -o $@ $^ $(LDLIBS) $(LDFLAGS)
+	$(CXX)  $(CXXFLAGS) -o $@ $^ $(LDLIBS)
 
 
 %.o:%.c
-	$(CXX)  $(CXXFLAGS) -c -o $@ $<  $(LDLIBS)  $(LDFLAGS)
+	$(CXX)  $(CXXFLAGS) -c -o $@ $<  $(LDLIBS)
 	echo $(CXXFLAGS)
 clean:
 	rm -rf $(BINARY) $(OBJECTS) $(DEPFILES)

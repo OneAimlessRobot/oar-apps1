@@ -41,6 +41,7 @@ void Entity::render(SDL_Renderer*ren){
     for(SDL_FPoint point: this->lastPositions){
         SDL_RenderDrawPointF(ren,point.x,point.y);
     }
+
         SDL_FRect rect=(SDL_FRect){this->getLastPos().x,this->getLastPos().y,this->body.x*0.01,this->body.y*0.01};
         SDL_RenderFillRectF(ren,&rect);
 }

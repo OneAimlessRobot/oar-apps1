@@ -2,32 +2,51 @@
 #define RES_H
 
 //#define PROGRAMPATH std::string("/home/hubbo/oar-apps1-master/CPP/ParticleSim/")
-#define PROGRAMPATHAUX 
+#define PROGRAMPATHAUX
 #define PROGRAMPATH std::string(PROGRAMPATHAUX)
-#define GUNSPATH (PROGRAMPATH+std::string("resources/guns/"))
+#define MENU_PATH std::string("/home/k/oar-apps1/CPP/ParticleSim/resources/menus/")
 
+
+#define DELETEMENU_PATH (MENU_PATH+std::string("whatToDelete"))
+
+
+#define ENTITIES_PATH (PROGRAMPATH+std::string("resources/entities/"))
+#define COLLIDERS_PATH (ENTITIES_PATH+std::string("collider/"))
+
+
+#define GUNMENU_PATH (MENU_PATH+std::string("gunMenu"))
+#define GUNSPATH (PROGRAMPATH+std::string("resources/guns/"))
 #define SRIFLE_PATH (PROGRAMPATH+std::string("resources/guns/sniperRifle.gun"))
 #define ARIFLE_PATH (PROGRAMPATH+std::string("resources/guns/assaultRifle.gun"))
 #define SMG_PATH (PROGRAMPATH+std::string("resources/guns/subMG.gun"))
 #define PISTOL_PATH (PROGRAMPATH+std::string("resources/guns/pistol.gun"))
 
-#define CALIBERS_PATH (PROGRAMPATH+std::string("resources/guns/calibers/"))
 
+
+#define CALIBERMENU_PATH (MENU_PATH+std::string("bulletMenu"))
+#define CALIBERS_PATH (PROGRAMPATH+std::string("resources/guns/calibers/"))
 #define FIVEFIVESIX_PATH (CALIBERS_PATH +std::string("fivefivesix"))
 #define FFORTYF_PATH (CALIBERS_PATH +std::string("fivefortyfive"))
 #define SEVENSIXNINE_PATH (CALIBERS_PATH +std::string("sevensixnine"))
 #define THREEOEIGHT_PATH (CALIBERS_PATH +std::string("threeoeight"))
 #define FFTYBMG_PATH (CALIBERS_PATH +std::string("fiftybmg"))
 
-#define MENU_PATH std::string("/home/k/oar-apps1/CPP/ParticleSim/resources/menus/")
 
-#define GUNMENU_PATH (MENU_PATH+std::string("gunMenu"))
+#define CAR_MENU_PATH (MENU_PATH+std::string("carMenu"))
+#define CARS_PATH (PROGRAMPATH+std::string("resources/cars/"))
+#define TRANSMISSIONS_PATH (CARS_PATH+std::string("transmissions/"))
+#define TYREMODELS_PATH (CARS_PATH+std::string("tyreModels/"))
+#define ENGINES_PATH (CARS_PATH+std::string("engines/"))
+#define BODY_MODELS_PATH (CARS_PATH+std::string("bodyModels/"))
 
-#define DELETEMENU_PATH (MENU_PATH+std::string("whatToDelete"))
-#define CALIBERMENU_PATH (MENU_PATH+std::string("bulletMenu"))
 
-#define ENTITIES_PATH (PROGRAMPATH+std::string("resources/entities/"))
-#define COLLIDERS_PATH (ENTITIES_PATH+std::string("collider/"))
+
+
+
+
+
+
+
 
 
 #define ENTSETTINGS_PATH (ENTITIES_PATH+std::string("ents/defaultentsettings"))
