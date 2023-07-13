@@ -14,6 +14,8 @@
 #include "Types/Entity.h"
 #include "Types/Gun.h"
 #include "Types/Collider.h"
+#include "Types/Grenade.h"
+#include "Types/GLauncher.h"
 #include "Types/physicsAux.h"
 #include <list>
 #include "Factorized/physicsCommands.h"

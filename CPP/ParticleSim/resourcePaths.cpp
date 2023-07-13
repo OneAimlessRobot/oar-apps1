@@ -20,7 +20,7 @@ return gunMenu;
 
 }
 
-std::vector<std::string> generateMenu(std::string filePath){
+std::vector<std::string> Resources::generateMenu(std::string filePath){
 
 
 std::vector<std::string> menu={};

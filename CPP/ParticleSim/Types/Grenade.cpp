@@ -8,6 +8,7 @@
 #include "Entity.h"
 #include "Grenade.h"
 #include "../constantHeaders/grenadeSettings.h"
+#include "../constantHeaders/gunSettings.h"
 Grenade::Grenade(float x,float y,float chargeForce,int explosionDuration,int timer):Entity(DEFAULTGRENADERGBA,x,y,DEFAULTGRENADESIZE,DEFAULTGRENADESIZE,DEFAULTGRENADEE,DEFAULTGRENADEM,DEFAULTGRENADECAR){
 this->chargeForce=chargeForce;
 this->explosionDuration=explosionDuration;
@@ -18,12 +19,9 @@ this->explosionHappening=0;
 
 
 }
-
-float getChargeForce();
-
 Grenade* Grenade::defaultGrenade(){
 
-return new Grenade(0,0,DEFAULTGRENADEBFORCE,1000,DEFAULTGRENADETIMER);
+return new Grenade(0,0,DEFAULTGRENADEBFORCE,30,DEFAULTGRENADETIMER);
 
 
 }
@@ -38,7 +36,6 @@ return;
 if(explosionHappening){
 currTime++;
 if(currTime==explosionDuration){
-
 deactivate();
 return;
 
@@ -51,10 +48,32 @@ currTime++;
 
 
 }
+void Grenade::render(SDL_Renderer* ren){
+if(explosionHappening){
+
+   SDL_SetRenderDrawColor(ren,255,0,255,255);
+   SDL_FRect rect=(SDL_FRect){this->getPos().x-100,this->getPos().y-100,body.w+200,body.h+200};
+    SDL_RenderFillRectF(ren,&rect);
+
+}
+
+SDL_SetRenderDrawColor(ren,this->bodyColor.r,this->bodyColor.g,this->bodyColor.b,this->bodyColor.a);
+
+    SDL_RenderFillRectF(ren,&this->body);
+
+    for(SDL_FPoint point: this->lastPositions){
+        SDL_RenderDrawPointF(ren,point.x,point.y);
+    }
+    SDL_SetRenderDrawColor(ren,this->bodyColor.r,this->bodyColor.g,this->bodyColor.b,this->bodyColor.a);
+
+        SDL_FRect rect=(SDL_FRect){this->getLastPos().x,this->getLastPos().y,this->body.x*0.01,this->body.y*0.01};
+        SDL_RenderFillRectF(ren,&rect);
+
+}
 void Grenade::deactivate(){
 if(this->active){
 this->active=0;
-
+explosionHappening=0;
 }
 
 }
@@ -68,6 +87,11 @@ return active;
 int Grenade::blowingUp(){
 return explosionHappening;
 
+}
+float Grenade::getForce(){
+
+
+return chargeForce;
 }
 Grenade::~Grenade(){
 

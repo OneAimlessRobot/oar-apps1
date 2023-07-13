@@ -10,13 +10,13 @@ public:
 
 Grenade(float x,float y,float chargeForce,int explosionDuration,int timer);
 
-float getChargeForce();
-
 static Grenade* defaultGrenade();
 
 void update();
 int blowingUp();
 int isActive();
+void render(SDL_Renderer* ren);
+float getForce();
 ~Grenade();
 
 

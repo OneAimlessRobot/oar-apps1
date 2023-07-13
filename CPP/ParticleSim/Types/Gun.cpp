@@ -152,7 +152,7 @@ Entity* Gun::shoot(){
     //dou-lhe o pointer para o vetor da gun. Mais tarde, quando apago as guns, apago o vetor. quando
     //tento apagar as entities, dá merda.
     float shootSpread=getTilt();
-    PhysicsAux::railAcceleration(bullet,getShootVec(),shootSpread,getBarrelLength());
+    PhysicsAux::railAcceleration<Entity>(bullet,getShootVec(),shootSpread,getBarrelLength());
     bullet->setVec(GVector::tiltVector(bullet->getVec(),shootSpread));
     SDL_FPoint tiltedVec=GVector::tiltVector(getShootVec(),getTilt());
     Aux::scaleVec(&tiltedVec,-getRecoilFactor());

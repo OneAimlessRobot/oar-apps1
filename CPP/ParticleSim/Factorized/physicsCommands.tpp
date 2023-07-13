@@ -124,3 +124,106 @@ void PhysicsCommands::handleGroundGravity(std::list<T*>& ents,Entity*worldPartic
 
 
 }
+template <typename T>
+void PhysicsCommands::doBlast(std::list<T*>& entList,float x, float y){
+
+
+    typename std::list<T*>::iterator it;
+    for (it = entList.begin(); it != entList.end(); ++it) {
+    SDL_FPoint master=(SDL_FPoint){x,y},
+                slave=(*it)->getPos();
+        SDL_FPoint forceVec=PhysicsAux::blastVector(master,slave,5000000*4);
+
+        PhysicsAux::accelerateEntity((*it),forceVec);
+}
+
+}
+template <typename T>
+void PhysicsCommands::orbit(std::list<T*>& entList,float x, float y){
+
+
+    typename std::list<Entity*>::iterator it;
+    for (it = entList.begin(); it != entList.end(); ++it) {
+    SDL_FPoint master=(SDL_FPoint){x,y},
+                slave=(*it)->getPos();
+        SDL_FPoint forceVec=PhysicsAux::gravVector(master,slave,1000000,(*it)->getMass());
+        PhysicsAux::accelerateEntity((*it),forceVec);
+
+}
+
+}
+template <typename T>
+void PhysicsCommands::homming(std::list<T*>& entList,float x, float y){
+
+    typename std::list<T*>::iterator it;
+    for (it = entList.begin(); it != entList.end(); ++it) {
+    SDL_FPoint master=(SDL_FPoint){x,y},
+                slave=(*it)->getPos();
+        SDL_FPoint newVec=Aux::makeUnitVector(slave,master);
+        Aux::scaleVec(&newVec,homingSpeed);
+
+        (*it)->setVec(newVec);
+
+
+}
+}
+
+template <typename T>
+
+float PhysicsCommands::getAverageSpeed(std::list<T*>& entList){
+    float speedSum=0;
+    int totalBodies=0;
+        typename std::list<T*>::iterator it;
+            for (it = entList.begin(); it != entList.end(); ++it) {
+
+                speedSum+=GVector::getNorm((*it)->getVec());
+                totalBodies++;
+
+        }
+        return speedSum/totalBodies;
+
+}
+
+
+template <typename T>
+float PhysicsCommands::getAverageQuality(std::list<T*>& entList){
+    float qualitySum=0;
+    int totalBodies=0;
+        typename std::list<T*>::iterator it;
+            for (it =entList.begin(); it != entList.end(); ++it) {
+
+                qualitySum+=(*it)->getQuality();
+                totalBodies++;
+
+        }
+        return qualitySum/totalBodies;
+}
+template <typename T>
+float PhysicsCommands::getTotalEnergy(std::list<T*>& entList){
+    float energySum=0;
+        typename std::list<T*>::iterator it;
+            for (it = entList.begin(); it != entList.end(); ++it) {
+
+                energySum+=(*it)->getTotalEnergy();
+
+        }
+        std::cout<<"Energia total: "<<energySum<<"\n";
+        return energySum;
+}
+
+template <typename T>
+void PhysicsCommands::handleDrag(std::list<T*>& entList,Collider* arena){
+
+
+    typename std::list<T*>::iterator it;
+    for (it = entList.begin(); it != entList.end(); ++it) {
+
+        SDL_FPoint dragVec=PhysicsAux::dragNeutralWindVector((*it)->getVec(),(*it)->getDragConstant(),arena->getAirDensity());
+        PhysicsAux::accelerateEntity((*it),dragVec);
+
+
+}
+
+
+
+}

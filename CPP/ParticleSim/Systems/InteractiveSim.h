@@ -8,6 +8,8 @@ SDL_Renderer* ren;
 SDL_Texture * bgr,*ents;
 std::list<Entity*> entList;
 std::list<Gun*> gunList;
+std::list<GLauncher*> gLauncherList;
+std::list<Grenade*> grenadeList;
 Entity* worldMassParticle;
 SDL_Color bgrclr;
 float maxSpeed, maxSize, ammount,maxMass, airDensity;
@@ -23,10 +25,14 @@ void processBulletChoice(caliber* caliber);
 
 void shootGuns();
 void monitorGuns();
+void monitorGrenades();
+void explodeGrenades();
 void processGunChoice(Gun * gun,float x,float y);
 void printGunMenu();
 void printSpeedsAndPos();
 void spawnGun(Gun* gun,std::string filePath,float x,float y,caliber bType);
+
+void spawnGLauncher(GLauncher* glauncher,float x,float y);
 
 void printSimVarsAndStats();
 void printKeyboardHelp();

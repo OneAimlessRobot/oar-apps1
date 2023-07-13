@@ -14,6 +14,8 @@
 #include "../Types/Bullet.h"
 #include "../Types/Entity.h"
 #include "../Types/Gun.h"
+#include "../Types/Grenade.h"
+#include "../Types/GLauncher.h"
 #include "../Types/physicsAux.h"
 #include "../Factorized/physicsCommands.h"
 #include "../Factorized/EntityMgmnt.h"
@@ -215,8 +217,9 @@ for(int i =0;i<ammount;i++){
 void InteractiveSim::handleEntities(){
 
     if(!this->pause){
-    PhysicsCommands::handleMovements(this->collisions,this->gravity,this->drag,this->entList,this->arena,this->gunList,this->worldMassParticle);
+    PhysicsCommands::handleMovements(this->collisions,this->gravity,this->drag,this->entList,this->arena,this->gunList,this->grenadeList,this->worldMassParticle);
     monitorGuns();
+    monitorGrenades();
     if(this->selection){
     generationHandling();
     }
@@ -256,6 +259,14 @@ void InteractiveSim::doRendering(){
     std::list<Gun*>::iterator it2;
     for (it2 = this->gunList.begin(); it2 != this->gunList.end(); ++it2) {
         (*it2)->render(this->ren);
+    }
+    std::list<Grenade*>::iterator it3;
+    for (it3 = this->grenadeList.begin(); it3 != this->grenadeList.end(); ++it3) {
+        (*it3)->render(this->ren);
+    }
+    std::list<GLauncher*>::iterator it4;
+    for (it4 = this->gLauncherList.begin(); it4 != this->gLauncherList.end(); ++it4) {
+        (*it4)->render(this->ren);
     }
     SDL_SetRenderTarget(ren,NULL);
     SDL_RenderCopy(ren,ents,NULL,NULL);
@@ -298,16 +309,16 @@ void InteractiveSim::printSpeedsAndPos(){
 }
 void InteractiveSim::handleContPresses(const Uint8*KEYS){
     if(KEYS[SDL_SCANCODE_LEFT]) {
-        std::thread orbitWorker(&PhysicsCommands::orbit,std::ref(this->entList),mouseX*1.0,mouseY*1.0);
+        std::thread orbitWorker(&PhysicsCommands::orbit<Entity>,std::ref(this->entList),mouseX*1.0,mouseY*1.0);
         orbitWorker.detach();
     }
     if(KEYS[SDL_SCANCODE_RIGHT]) {
 
-        std::thread hommingWorker(&PhysicsCommands::homming,std::ref(this->entList),this->mouseX*1.0,this->mouseY*1.0);
+        std::thread hommingWorker(&PhysicsCommands::homming<Entity>,std::ref(this->entList),this->mouseX*1.0,this->mouseY*1.0);
         hommingWorker.detach();
     }
     if(KEYS[SDL_SCANCODE_M]) {
-        std::thread blastingWorker(&PhysicsCommands::doBlast,std::ref(this->entList),this->mouseX*1.0,this->mouseY*1.0);
+        std::thread blastingWorker(&PhysicsCommands::doBlast<Entity>,std::ref(this->entList),this->mouseX*1.0,this->mouseY*1.0);
         blastingWorker.detach();
     }
     if(KEYS[SDL_SCANCODE_DOWN]) {
@@ -321,13 +332,14 @@ void InteractiveSim::handleContPresses(const Uint8*KEYS){
 void InteractiveSim::destroyGuns(){
 
     EntityManagement::clearList<Gun>(this->gunList);
+    EntityManagement::clearList<GLauncher>(this->gLauncherList);
 
 }
 void InteractiveSim::destroyEntities(){
 
 
     EntityManagement::clearList<Entity>(this->entList);
-
+    EntityManagement::clearList<Grenade>(this->grenadeList);
 
 }
 void InteractiveSim::monitorGuns(){
@@ -337,6 +349,25 @@ void InteractiveSim::monitorGuns(){
     for (it = this->gunList.begin(); it != this->gunList.end(); ++it) {
     (*it)->setTarget(this->mouseX*1.0,this->mouseY*1.0);
     (*it)->updateGun();
+    }
+
+     std::list<GLauncher*>::iterator it2;
+    for (it2 = this->gLauncherList.begin(); it2 != this->gLauncherList.end(); ++it2) {
+    (*it2)->setTarget(this->mouseX*1.0,this->mouseY*1.0);
+    (*it2)->updateGLauncher();
+    }
+
+
+}
+void InteractiveSim::monitorGrenades(){
+
+     std::list<Grenade*>::iterator it2;
+    for (it2 = this->grenadeList.begin(); it2 != this->grenadeList.end(); ++it2) {
+    if((*it2)->blowingUp()){
+
+        PhysicsCommands::doBlast<Entity>(this->entList,(*it2)->getCenter().x,(*it2)->getCenter().y);
+    }
+    (*it2)->update();
     }
 
 
@@ -349,6 +380,13 @@ void InteractiveSim::shootGuns(){
     if(((*it)->canShoot())){
 
         this->entList.emplace(this->entList.begin(),(*it)->shoot());
+    }
+    }
+    std::list<GLauncher*>::iterator it2;
+    for (it2= this->gLauncherList.begin(); it2 != this->gLauncherList.end(); ++it2) {
+    if(((*it2)->canShoot())){
+
+        this->grenadeList.emplace(this->grenadeList.begin(),(*it2)->shoot());
     }
     }
 
@@ -409,6 +447,13 @@ void InteractiveSim::spawnGun(Gun* gun,std::string filePath,float x, float y,cal
     gun->setPos((SDL_FPoint){x,y});
     gun->setCaliber(bType);
     this->gunList.emplace(this->gunList.begin(),gun);
+}
+
+
+void InteractiveSim::spawnGLauncher(GLauncher* glauncher,float x, float y){
+
+    glauncher->setPos((SDL_FPoint){x,y});
+    this->gLauncherList.emplace(this->gLauncherList.begin(),glauncher);
 }
 void InteractiveSim::handleToggles(const Uint8*KEYS){
 
@@ -495,6 +540,11 @@ void InteractiveSim::handleToggles(const Uint8*KEYS){
 
     }
 
+    if(KEYS[SDL_SCANCODE_V]) {
+
+        spawnGLauncher(GLauncher::defaultGLauncher(),this->mouseX*1.0,this->mouseY*1.0);
+
+    }
     if(KEYS[SDL_SCANCODE_D]) {
 
         processDeletion();
@@ -576,11 +626,10 @@ void InteractiveSim::processGunChoice(Gun * gun,float x,float y){
     do{
 std::cout<<"0- Spawnar uma arma\n";
 std::cout<<"1- Ve informacoes de uma arma\n";
-
     std::cin>>whatToDo;
-    Resources::printMenu(Resources::generateGunMenu());
+    Resources::printMenu(Resources::generateMenu(GUNMENU_PATH));
     std::cin>>choice;
-    std::string path= GUNSPATH+choice+GUNSUFFIX;
+    std::string path= GUNSPATH+choice;
 
         if(!whatToDo){
                 caliber chosenCaliber;

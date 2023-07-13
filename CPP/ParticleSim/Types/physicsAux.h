@@ -15,12 +15,13 @@ SDL_FPoint gravVector(SDL_FPoint p1,SDL_FPoint p2,float m1,float m2);
 SDL_FPoint dragNeutralWindVector(SDL_FPoint vVec,float k, float airD);
 SDL_FPoint getAccelVec(SDL_FPoint vec,float mass);
 
-
-void railAcceleration(Entity* ent,SDL_FPoint forceVec,float angle,float length);
+template <typename T>
+void railAcceleration(T* ent,SDL_FPoint forceVec,float angle,float length);
 void accelerateEntity(Entity* ent,SDL_FPoint forceVec);
 float dragNeutralWind(float k, float airD,float speed);
 void separateEntities(Entity* a,Entity *b);
 void separateEntityFromCollider(Entity* a,Collider *col,int where);
 void blastEnergy(SDL_FPoint p1,SDL_FPoint p2,float energyOut);
 }
+#include "physicsAux.tpp"
 #endif
