@@ -10,6 +10,8 @@ std::list<Entity*> entList;
 std::list<Gun*> gunList;
 std::list<GLauncher*> gLauncherList;
 std::list<Grenade*> grenadeList;
+std::list<GLauncher*> mLauncherList;
+std::list<Grenade*> missileList;
 Entity* worldMassParticle;
 SDL_Color bgrclr;
 float maxSpeed, maxSize, ammount,maxMass, airDensity;
@@ -26,6 +28,8 @@ void processBulletChoice(caliber* caliber);
 void shootGuns();
 void monitorGuns();
 void monitorGrenades();
+void monitorMissiles();
+void cleanGrenades();
 void explodeGrenades();
 void processGunChoice(Gun * gun,float x,float y);
 void printGunMenu();
@@ -33,6 +37,8 @@ void printSpeedsAndPos();
 void spawnGun(Gun* gun,std::string filePath,float x,float y,caliber bType);
 
 void spawnGLauncher(GLauncher* glauncher,float x,float y);
+
+void spawnMLauncher(GLauncher* mlauncher,float x,float y);
 
 void printSimVarsAndStats();
 void printKeyboardHelp();

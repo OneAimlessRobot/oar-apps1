@@ -125,14 +125,14 @@ void PhysicsCommands::handleGroundGravity(std::list<T*>& ents,Entity*worldPartic
 
 }
 template <typename T>
-void PhysicsCommands::doBlast(std::list<T*>& entList,float x, float y){
+void PhysicsCommands::doBlast(std::list<T*>& entList,float x, float y,float intensity){
 
 
     typename std::list<T*>::iterator it;
     for (it = entList.begin(); it != entList.end(); ++it) {
     SDL_FPoint master=(SDL_FPoint){x,y},
                 slave=(*it)->getPos();
-        SDL_FPoint forceVec=PhysicsAux::blastVector(master,slave,5000000*4);
+        SDL_FPoint forceVec=PhysicsAux::blastVector(master,slave,intensity);
 
         PhysicsAux::accelerateEntity((*it),forceVec);
 }

@@ -91,7 +91,7 @@ return 5;
 
 this->maxSpeed=maxSpeed;
 if(std::fabs(this->maxSpeed)==0){
-    this->maxSpeed=0.00001;
+    this->maxSpeed=0.00001f;
 }
 
 this->entList= {};
@@ -214,12 +214,30 @@ for(int i =0;i<ammount;i++){
 
 }
 
+void InteractiveSim::cleanGrenades(){
+
+    std::list<Grenade*>::iterator it;
+    for (it = grenadeList.begin(); it != grenadeList.end();) {
+        if(!(*it)->isActive()){
+    delete (*it);
+    it=grenadeList.erase(it);
+    }
+    else{
+    ++it;
+
+    }
+
+
+
+}
+}
 void InteractiveSim::handleEntities(){
 
     if(!this->pause){
     PhysicsCommands::handleMovements(this->collisions,this->gravity,this->drag,this->entList,this->arena,this->gunList,this->grenadeList,this->worldMassParticle);
     monitorGuns();
     monitorGrenades();
+    cleanGrenades();
     if(this->selection){
     generationHandling();
     }
@@ -307,6 +325,7 @@ void InteractiveSim::printSpeedsAndPos(){
 
 
 }
+
 void InteractiveSim::handleContPresses(const Uint8*KEYS){
     if(KEYS[SDL_SCANCODE_LEFT]) {
         std::thread orbitWorker(&PhysicsCommands::orbit<Entity>,std::ref(this->entList),mouseX*1.0,mouseY*1.0);
@@ -318,7 +337,7 @@ void InteractiveSim::handleContPresses(const Uint8*KEYS){
         hommingWorker.detach();
     }
     if(KEYS[SDL_SCANCODE_M]) {
-        std::thread blastingWorker(&PhysicsCommands::doBlast<Entity>,std::ref(this->entList),this->mouseX*1.0,this->mouseY*1.0);
+        std::thread blastingWorker(&PhysicsCommands::doBlast<Entity>,std::ref(this->entList),this->mouseX*1.0,this->mouseY*1.0,MAINBLASTFORCE);
         blastingWorker.detach();
     }
     if(KEYS[SDL_SCANCODE_DOWN]) {
@@ -347,13 +366,13 @@ void InteractiveSim::monitorGuns(){
 
      std::list<Gun*>::iterator it;
     for (it = this->gunList.begin(); it != this->gunList.end(); ++it) {
-    (*it)->setTarget(this->mouseX*1.0,this->mouseY*1.0);
+    (*it)->setTarget(this->mouseX*1.0f,this->mouseY*1.0f);
     (*it)->updateGun();
     }
 
      std::list<GLauncher*>::iterator it2;
     for (it2 = this->gLauncherList.begin(); it2 != this->gLauncherList.end(); ++it2) {
-    (*it2)->setTarget(this->mouseX*1.0,this->mouseY*1.0);
+    (*it2)->setTarget(this->mouseX*1.0f,this->mouseY*1.0f);
     (*it2)->updateGLauncher();
     }
 
@@ -365,7 +384,7 @@ void InteractiveSim::monitorGrenades(){
     for (it2 = this->grenadeList.begin(); it2 != this->grenadeList.end(); ++it2) {
     if((*it2)->blowingUp()){
 
-        PhysicsCommands::doBlast<Entity>(this->entList,(*it2)->getCenter().x,(*it2)->getCenter().y);
+        PhysicsCommands::doBlast<Entity>(this->entList,(*it2)->getCenter().x,(*it2)->getCenter().y,(*it2)->getForce());
     }
     (*it2)->update();
     }
@@ -476,7 +495,7 @@ void InteractiveSim::handleToggles(const Uint8*KEYS){
     }
     if(KEYS[SDL_SCANCODE_S]) {
     Entity* ent=Entity::randEnt(WIDTH,HEIGHT,maxMass,maxSize,maxSpeed);
-    ent->setPos((SDL_FPoint){this->mouseX*1.0,this->mouseY*1.0});
+    ent->setPos((SDL_FPoint){this->mouseX*1.0f,this->mouseY*1.0f});
     this->entList.emplace(this->entList.begin(),ent);
     }
     if(KEYS[SDL_SCANCODE_R]) {
@@ -523,7 +542,7 @@ void InteractiveSim::handleToggles(const Uint8*KEYS){
     }
     if(KEYS[SDL_SCANCODE_G]) {
         Gun* gun=Gun::defaultGun();
-        std::thread newGun(&InteractiveSim::processGunChoice,this,gun,this->mouseX*1.0,this->mouseY*1.0);
+        std::thread newGun(&InteractiveSim::processGunChoice,this,gun,this->mouseX*1.0f,this->mouseY*1.0f);
         newGun.detach();
 
     }
@@ -542,7 +561,7 @@ void InteractiveSim::handleToggles(const Uint8*KEYS){
 
     if(KEYS[SDL_SCANCODE_V]) {
 
-        spawnGLauncher(GLauncher::defaultGLauncher(),this->mouseX*1.0,this->mouseY*1.0);
+        spawnGLauncher(GLauncher::defaultGLauncher(),this->mouseX*1.0f,this->mouseY*1.0f);
 
     }
     if(KEYS[SDL_SCANCODE_D]) {

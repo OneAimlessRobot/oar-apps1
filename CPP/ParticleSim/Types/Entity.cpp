@@ -42,7 +42,7 @@ void Entity::render(SDL_Renderer*ren){
         SDL_RenderDrawPointF(ren,point.x,point.y);
     }
 
-        SDL_FRect rect=(SDL_FRect){this->getLastPos().x,this->getLastPos().y,this->body.x*0.01,this->body.y*0.01};
+        SDL_FRect rect=(SDL_FRect){this->getLastPos().x,this->getLastPos().y,this->body.x*0.01f,this->body.y*0.01f};
         SDL_RenderFillRectF(ren,&rect);
 }
 void Entity::setPos(SDL_FPoint point){
@@ -61,7 +61,7 @@ SDL_FPoint Entity::getPos(){
 }
 float Entity::getDragConstant(){
 
-    return this->body.w*this->Car*0.001;
+    return this->body.w*this->Car*0.001f;
 }
 SDL_FPoint Entity::getLastPos(){
 
@@ -170,8 +170,8 @@ float Entity::getQuality(){
 }
 SDL_FPoint Entity::getCenter(){
 
-    float x=this->pos.x+this->body.w*0.5;
-    float y=this->pos.y+this->body.h*0.5;
+    float x=this->pos.x+this->body.w*0.5f;
+    float y=this->pos.y+this->body.h*0.5f;
     return (SDL_FPoint){x,y};
 
 

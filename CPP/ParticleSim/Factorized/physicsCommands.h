@@ -24,7 +24,7 @@ void handleMovements(int collisionsEnabled,int gravityEnabled,int dragEnabled,st
 template <typename T>
 void homming(std::list<T*>& entList,float x, float y);
 template <typename T>
-void doBlast(std::list<T*>& entList,float x, float y);
+void doBlast(std::list<T*>& entList,float x, float y,float intensity);
 template <typename T>
 void orbit(std::list<T*>& entList,float x, float y);
 template <typename T>

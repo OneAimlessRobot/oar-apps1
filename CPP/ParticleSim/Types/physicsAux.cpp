@@ -117,7 +117,6 @@ void PhysicsAux::separateEntityFromCollider(Entity* a,Collider *col,int where){
     a->setVec(inv);
 //    }
 
-    int isInside;
     do{
     where=col->whereIsColliding(a->getBody());
 
