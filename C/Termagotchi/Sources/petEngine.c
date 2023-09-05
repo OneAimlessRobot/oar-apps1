@@ -138,7 +138,7 @@ void handleDigestion(Animal * an){
 }
 
 
-void spawnAnimal(Animal * an,int health,int thirst,int boredom,int hunger, int energy,const char* name){
+void spawnAnimal(Animal * an,int health,int thirst,int boredom,int hunger, int energy,char* name){
 
 an->health=an->maxHealth=health;
 an->hunger=an->maxHunger=hunger;

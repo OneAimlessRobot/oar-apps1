@@ -40,7 +40,7 @@ void incAndTruncateNum(int* var,int sign,int value,int inc){
     }
 
 }
-void printASCII(const char *end, const char *start, int dt)
+void printASCII(const char *end, const char *start)
 {
     char buff[end-start+1];
     int i=0;
@@ -53,7 +53,7 @@ void printASCII(const char *end, const char *start, int dt)
     mvprintw(0,0,buff);
 }
 
-char* getASCII(const char *end, const char *start, int dt)
+char* getASCII(const char *end, const char *start)
 {
     char* buff=malloc(end-start+1);
     int i=0;

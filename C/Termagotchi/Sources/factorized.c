@@ -7,14 +7,18 @@
 void initWindows(){
 needs=malloc(sizeof(WINDOW*)*6);
 int hudx=0,hudy=0;
-int titleh=9,titlew=56,menuw=18,menuh=10,statsw=28,statsh=20;
+int titleh=9,titlew=56;
+int statsw=28,statsh=20,statsx=hudx+titleh,statsy=hudy;
+int menuw=18,menuh=10,menux=statsx-1,menuy=hudy+titlew-10;
+int warningsx=statsx,warningsy=menuy+menuw;
+
+
 title=newwin(titleh,titlew,hudx,hudy);
-pet= newwin(8,12,hudx+titleh+1,hudy+statsw+3);
-stats=newwin(statsh,statsw,hudx+9,hudy);
-menu=newwin(menuh,menuw,hudx+titleh-1,hudy+titlew-10);
-int menux=hudx+titleh,menuy=hudy+titlew-10;
-sleepMeter=newwin(1,strlen("SLEEPING!")+4,menux,menuy+menuw);
-int warningsx=menux,warningsy=menuy+menuw;
+stats=newwin(statsh,statsw,statsx,statsy);
+menu=newwin(menuh,menuw,menux,menuy);
+pet= newwin(8,12,statsx,hudy+statsw+3);
+
+sleepMeter=newwin(1,strlen("SLEEPING!")+4,warningsx,warningsy);
 boredWarning=newwin(1,strlen("BORED!\n"),warningsx+1,warningsy);
 hungryWarning=newwin(1,strlen("HUNGRY!\n"),warningsx+2,warningsy);
 thirstWarning=newwin(1,strlen("THIRSTY!\n"),warningsx+3,warningsy);

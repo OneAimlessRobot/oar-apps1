@@ -1,6 +1,6 @@
 #include "Include/preprocessorStuff.h"
 
-void graphics(Animal* an,WINDOW** needs);
+void graphics(Animal* an);
 void displayHud(Animal * an);
 void func(Animal* an,int option);
 void print_in_middle(WINDOW *win, int starty, int startx, int width, char *string, chtype color);
@@ -26,7 +26,6 @@ ITEM **my_items;
 	int c;
 	MENU *my_menu;
 	int n_choices, i;
-	ITEM *cur_item;
 
 
 
@@ -50,12 +49,12 @@ menu_opts_off(my_menu, O_SHOWDESC);
 keypad(menu, TRUE);
 
 set_menu_win(my_menu, menu);
-set_menu_sub(my_menu, derwin(menu, 0, 0, 3, 1));
+set_menu_sub(my_menu, derwin(menu, 0, 0, 3, 0));
 
 
 
 
-set_menu_mark(my_menu, " * ");
+set_menu_mark(my_menu, "");
 
 
 
@@ -96,7 +95,7 @@ system("clear");
             default:
                 break;
 		}
-		graphics(&an,needs);
+		graphics(&an);
 	print_in_middle(menu, 1, 0, 10, "Commands (Q=quit)", COLOR_PAIR(31));
 	refresh();
 
@@ -117,7 +116,7 @@ nocbreak();
 
 if(online){
 bkgd(COLOR_PAIR(32));
-makeWinWithText(stdscr,getASCII(_binary_dead_res_end,_binary_dead_res_start,1000),0,0);
+makeWinWithText(stdscr,getASCII(_binary_dead_res_end,_binary_dead_res_start),0,0);
 refresh();
 getch();
 }
@@ -125,7 +124,6 @@ getch();
 
 killAllWindows();
 endwin();
-delscreen(stdscr);
 
 return 0;
 }
@@ -133,8 +131,7 @@ return 0;
 
 
 void print_in_middle(WINDOW *win, int starty, int startx, int width, char *string, chtype color)
-{	int length, x, y;
-	float temp;
+{	int x, y;
 
 	if(win == NULL)
 		win = stdscr;
@@ -170,10 +167,10 @@ void func(Animal* an,int option){
 
 }
 
-void graphics(Animal* an,WINDOW** needs){
+void graphics(Animal* an){
 
  wbkgd(title,COLOR_PAIR(30));
- makeWinWithText(title,getASCII(_binary_title_res_end,_binary_title_res_start,1000),0,0);
+ makeWinWithText(title,getASCII(_binary_title_res_end,_binary_title_res_start),0,0);
  wrefresh(title);
  wbkgd(title,COLOR_PAIR(31));
  if(an->dying){
@@ -190,7 +187,7 @@ void graphics(Animal* an,WINDOW** needs){
 
 
  }
- makeWinWithText(pet,getASCII(_binary_pet_res_end,_binary_pet_res_start,1000),0,0);
+ makeWinWithText(pet,getASCII(_binary_pet_res_end,_binary_pet_res_start),0,0);
  wrefresh(pet);
  makeWinWithText(stats,animalStatHud(*an),0,0);
  wrefresh(stats);
