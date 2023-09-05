@@ -5,6 +5,7 @@
 #include <ncurses.h>
 #include <string.h>
 #include <time.h>
+#include "../Include/graphicalDefines.h"
 #include "../Include/engine.h"
 int getRandomInteger(int min, int max) {
     // Seed the random number generator with the current time.
@@ -100,14 +101,14 @@ char* generateStatBar(int stat,int maxStat,int step,const char* title){
 }
 char* animalStatHud(Animal animal){
 
-    char* health= generateStatBar(animal.health,animal.maxHealth,5,"saude"),
-    * boredom= generateStatBar(animal.boredom,animal.maxBoredom,5,"animo"),
-    * thirst= generateStatBar(animal.thirst,animal.maxThirst,5,"agua"),
-    * hunger= generateStatBar(animal.hunger,animal.maxHunger,5,"comida"),
-    * energy= generateStatBar(animal.energy,animal.maxEnergy,20,"stamina"),
+    char* health= generateStatBar(animal.health,animal.maxHealth,STATBARZOOMOUT,"VIDA"),
+    * boredom= generateStatBar(animal.boredom,animal.maxBoredom,STATBARZOOMOUT,"ANIMO"),
+    * thirst= generateStatBar(animal.thirst,animal.maxThirst,STATBARZOOMOUT,"AGUA"),
+    * hunger= generateStatBar(animal.hunger,animal.maxHunger,STATBARZOOMOUT,"COMIDA"),
+    * energy= generateStatBar(animal.energy,animal.maxEnergy,4*STATBARZOOMOUT,"STAMINA"),
     * age= malloc(1000);
  memset(age,0,1000);
- sprintf(age,"ANOS DE VIDA:%d HORAS\n",animal.age);
+ sprintf(age,"TEMPO DE VIDA:%d HORAS\n",animal.age);
     int totallen= strlen(health)+strlen(boredom)+strlen(thirst)+strlen(hunger)+strlen(age)+1024;
     char* buff=malloc(totallen);
     memset(buff,0,totallen);

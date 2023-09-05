@@ -1,12 +1,15 @@
 #include "Include/preprocessorStuff.h"
 
 void graphics(Animal* an,WINDOW** needs);
-void displayHud(Animal * an,WINDOW** needs,WINDOW* pet);
+void displayHud(Animal * an);
 void func(Animal* an,int option);
 void print_in_middle(WINDOW *win, int starty, int startx, int width, char *string, chtype color);
 
 int main(void){
 
+
+int online=1;
+paused=0;
 initscr();
 start_color();
 initAllColors();
@@ -15,10 +18,9 @@ keypad(stdscr,TRUE);
 halfdelay(1);
 refresh();
 noecho();
+curs_set(0);
 
 pthread_t biologyWorker;
-
-WINDOW* needs[]={sleepMeter,boredWarning,hungryWarning,thirstWarning,tiredWarning,pooWarning,peeWarning};
 
 ITEM **my_items;
 	int c;
@@ -48,7 +50,7 @@ menu_opts_off(my_menu, O_SHOWDESC);
 keypad(menu, TRUE);
 
 set_menu_win(my_menu, menu);
-set_menu_sub(my_menu, derwin(menu, 6, 38, 3, 1));
+set_menu_sub(my_menu, derwin(menu, 0, 0, 3, 1));
 
 
 
@@ -67,8 +69,10 @@ system("clear");
  pthread_detach(biologyWorker);
 
 
-	while((c = getch()) != KEY_F(1) && !an.dead)
-	{   switch(c)
+	while(online && !an.dead)
+	{
+        c=getch();
+        switch(c)
 	    {	case KEY_DOWN:
 		        menu_driver(my_menu, REQ_DOWN_ITEM);
 				break;
@@ -84,11 +88,16 @@ system("clear");
 				pos_menu_cursor(my_menu);
 				break;
 			}
+			case 'q':
+			{
+                online=0;
+                break;
+			}
             default:
                 break;
 		}
 		graphics(&an,needs);
-	print_in_middle(menu, 1, 0, 10, "Commands", COLOR_PAIR(31));
+	print_in_middle(menu, 1, 0, 10, "Commands (Q=quit)", COLOR_PAIR(31));
 	refresh();
 
 post_menu(my_menu);
@@ -106,12 +115,17 @@ wrefresh(menu);
 
 nocbreak();
 
+if(online){
 bkgd(COLOR_PAIR(32));
 makeWinWithText(stdscr,getASCII(_binary_dead_res_end,_binary_dead_res_start,1000),0,0);
 refresh();
-
 getch();
+}
+
+
+killAllWindows();
 endwin();
+delscreen(stdscr);
 
 return 0;
 }
@@ -125,16 +139,10 @@ void print_in_middle(WINDOW *win, int starty, int startx, int width, char *strin
 	if(win == NULL)
 		win = stdscr;
 	getyx(win, y, x);
-	if(startx != 0)
 		x = startx;
-	if(starty != 0)
 		y = starty;
 	if(width == 0)
 		width = 80;
-
-	length = strlen(string);
-	temp = (width - length)/ 2;
-	x = startx + (int)temp;
 	wattron(win, color);
 	mvwprintw(win, y, x, "%s", string);
 	wattroff(win, color);
@@ -142,8 +150,23 @@ void print_in_middle(WINDOW *win, int starty, int startx, int width, char *strin
 }
 
 void func(Animal* an,int option){
-
+    if(option < 6){
+    if(!paused){
     petCare(an,option);
+    }
+    else{
+    return;
+    }
+    }
+    else{
+
+        if(paused){
+            paused=0;
+        }
+        else{
+            paused=1;
+        }
+    }
 
 }
 
@@ -157,19 +180,24 @@ void graphics(Animal* an,WINDOW** needs){
     wbkgd(pet,COLOR_PAIR(32));
 
  }
- else{
+ else if(paused){
 
+    wbkgd(pet,COLOR_PAIR(31));
+
+ }
+ else{
     wbkgd(pet,COLOR_PAIR(9));
+
 
  }
  makeWinWithText(pet,getASCII(_binary_pet_res_end,_binary_pet_res_start,1000),0,0);
  wrefresh(pet);
  makeWinWithText(stats,animalStatHud(*an),0,0);
  wrefresh(stats);
- displayHud(an,needs,pet);
+ displayHud(an);
 
 }
-void displayHud(Animal * an,WINDOW** needs,WINDOW* pet){
+void displayHud(Animal * an){
     if(!an->boredom){
     wbkgd(needs[1],COLOR_PAIR(8));
     wbkgd(pet,COLOR_PAIR(8));

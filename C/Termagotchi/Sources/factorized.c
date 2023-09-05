@@ -5,19 +5,32 @@
 #include "../Include/factorized.h"
 
 void initWindows(){
-hudx=35;
-hudy=15;
-title=newwin(10,55,0,30);
-pet= newwin(20,26,10,40);
-stats=newwin(100,256,30,15);
-menu=newwin(100,100,0,100);
-sleepMeter=newwin(1,strlen("SLEEPING!")+4,hudx+8,hudy);
-boredWarning=newwin(1,strlen("BORED!\n"),hudx+10,hudy);
-hungryWarning=newwin(1,strlen("HUNGRY!\n"),hudx+11,hudy);
-thirstWarning=newwin(1,strlen("THIRSTY!\n"),hudx+12,hudy);
-tiredWarning=newwin(1,strlen("TIRED!\n"),hudx+13,hudy);
-pooWarning=newwin(1,strlen("POO!\n"),hudx+14,hudy);
-peeWarning=newwin(1,strlen("PEE!\n"),hudx+15,hudy);
+needs=malloc(sizeof(WINDOW*)*6);
+int hudx=0,hudy=0;
+int titleh=9,titlew=56,menuw=18,menuh=10,statsw=28,statsh=20;
+title=newwin(titleh,titlew,hudx,hudy);
+pet= newwin(8,12,hudx+titleh+1,hudy+statsw+3);
+stats=newwin(statsh,statsw,hudx+9,hudy);
+menu=newwin(menuh,menuw,hudx+titleh-1,hudy+titlew-10);
+int menux=hudx+titleh,menuy=hudy+titlew-10;
+sleepMeter=newwin(1,strlen("SLEEPING!")+4,menux,menuy+menuw);
+int warningsx=menux,warningsy=menuy+menuw;
+boredWarning=newwin(1,strlen("BORED!\n"),warningsx+1,warningsy);
+hungryWarning=newwin(1,strlen("HUNGRY!\n"),warningsx+2,warningsy);
+thirstWarning=newwin(1,strlen("THIRSTY!\n"),warningsx+3,warningsy);
+tiredWarning=newwin(1,strlen("TIRED!\n"),warningsx+4,warningsy);
+pooWarning=newwin(1,strlen("POO!\n"),warningsx+5,warningsy);
+peeWarning=newwin(1,strlen("PEE!\n"),warningsx+6,warningsy);
+
+
+needs[0]=sleepMeter;
+needs[1]=boredWarning;
+needs[2]=hungryWarning;
+needs[3]=thirstWarning;
+needs[4]=tiredWarning;
+needs[5]=pooWarning;
+needs[6]=peeWarning;
+
 }
 
 
@@ -37,5 +50,21 @@ init_pair(6,COLOR_BLACK,COLOR_YELLOW);//pee //
 init_pair(7,COLOR_BLACK,COLOR_BLACK);//neutral //
 init_pair(8,COLOR_MAGENTA,COLOR_MAGENTA);//bored //
 init_pair(9,COLOR_RED,COLOR_CYAN);//Pet color
+
+}
+
+void killAllWindows(){
+
+
+for(int i=0;i<6;i++){
+
+    delwin(needs[i]);
+
+}
+delwin(title);
+delwin(stats);
+delwin(menu);
+delwin(pet);
+free(needs);
 
 }

@@ -31,16 +31,19 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="Include/colorpairs.h" />
 		<Unit filename="Include/embeded.h" />
 		<Unit filename="Include/engine.h" />
+		<Unit filename="Include/factorized.h" />
+		<Unit filename="Include/graphicalDefines.h" />
+		<Unit filename="Include/myMenus.h" />
 		<Unit filename="Include/petEngine.h" />
+		<Unit filename="Include/preprocessorStuff.h" />
 		<Unit filename="Makefile" />
-		<Unit filename="Sources/colorpairs.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="Sources/colorpairs.h" />
 		<Unit filename="Sources/engine.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Sources/factorized.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Sources/petEngine.c">

@@ -32,6 +32,9 @@
 
 
 
+int paused;
+
+
 void petCare(Animal* an,int option);
 
 void petCareLoop(Animal* an);

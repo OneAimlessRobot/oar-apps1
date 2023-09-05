@@ -207,6 +207,7 @@ void petCare(Animal* an,int option){
 void petDecayLoop(Animal* an){
 
 while(true){
+    if(!paused){
     handleBodyFunctions(an);
     usleep(1000000);
     incAndTruncateNum(&an->boredom,0,0,BOREDOMDECAY);
@@ -215,6 +216,7 @@ while(true){
     incAndTruncateNum(&an->thirst,0,0,THIRSTDECAY);
     incAndTruncateNum(&an->energy,0,0,ENERGYDECAY);
     an->age++;
+    }
     }
 
 

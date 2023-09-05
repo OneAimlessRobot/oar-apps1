@@ -1,10 +1,7 @@
 
 
-
-int hudx,
-    hudy;
 WINDOW* pet,*title,*menu,*stats,*sleepMeter,*boredWarning,*hungryWarning,*thirstWarning,*tiredWarning,*pooWarning,*peeWarning;
-
+WINDOW** needs;
 char* makeNamedFormattedString(int size);
 void initNcursesAndGame(); //A
 void killAnimalAndGame(); //B
@@ -14,6 +11,7 @@ void killAnimalAndGame(); //B
 void initWindows();
 void initAllColors();
 
+void killAllWindows();
 
 
 

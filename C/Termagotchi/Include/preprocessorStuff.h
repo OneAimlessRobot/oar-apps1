@@ -1,4 +1,4 @@
-
+#include "graphicalDefines.h"
 #include <ncurses.h>
 #include <stdlib.h>
 #include <stdio.h>
