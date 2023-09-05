@@ -7,7 +7,7 @@ open Operationalize
 let main ()=
 	let l= generate_random_list 10000 1000 in
 	let m=time (quickSort) l in
-	if (isSorted m false) then
+	if (isSorted m true) then
 		print_string "is sorted.\n"
 	else
 		print_string "does not work\n";

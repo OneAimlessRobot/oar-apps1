@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Termagotchi" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/Termagotchi" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/Termagotchi" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="Include/colorpairs.h" />
+		<Unit filename="Include/embeded.h" />
+		<Unit filename="Include/engine.h" />
+		<Unit filename="Include/petEngine.h" />
+		<Unit filename="Makefile" />
+		<Unit filename="Sources/colorpairs.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Sources/colorpairs.h" />
+		<Unit filename="Sources/engine.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Sources/petEngine.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="notes/helpEmbedding" />
+		<Unit filename="resource/dead.res" />
+		<Unit filename="resource/help.res" />
+		<Unit filename="resource/pet.res" />
+		<Unit filename="resource/title.res" />
+		<Extensions />
+	</Project>
+</CodeBlocks_project_file>

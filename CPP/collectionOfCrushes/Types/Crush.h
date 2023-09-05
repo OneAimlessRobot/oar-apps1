@@ -3,7 +3,19 @@
 class Inclination{
 public:
 float heart,reason,reactiveness,ego,strength,openness,neuroticism,cynnicism;
+
+//Esta funcao devolve uma representaçao desta Inclination em texto.
 std::string toString();
+
+//This creates a football game.
+//Rule 1
+//rule 2
+//...
+FootballGame create(Pitch pitch,team A, team B, Ball ball);
+
+
+
+
 static Inclination add(Inclination inc1,Inclination inc2);
 static Inclination multiply(Inclination inc, float factor);
 static Inclination normalize(Inclination inc);

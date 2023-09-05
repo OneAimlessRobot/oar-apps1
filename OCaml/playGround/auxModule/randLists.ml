@@ -1,5 +1,6 @@
 
 open Random
+open Unix
 
 let init_seed () =
   let seed = int_of_float (Unix.time ()) in

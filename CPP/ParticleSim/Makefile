@@ -1,4 +1,5 @@
 
+
 LDLIBS=-lSDL2 -lpthread -lm
 
 INCLUDE=./Systems ./Types ./Factorized ./constantHeaders.
@@ -25,7 +26,7 @@ all: $(BINARY)
 
 
 $(BINARY): $(OBJECTS)
-	$(CXX)  $(CXXFLAGS) -o $@ $^ $(LDLIBS)
+	$(CXX) -g  $(CXXFLAGS) -o $@ $^ $(LDLIBS)
 
 
 %.o:%.c

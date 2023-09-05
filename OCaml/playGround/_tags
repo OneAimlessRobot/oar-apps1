@@ -1,6 +1,7 @@
 "setModule": include
 "taskModule": include
 "treeModule": include
-"graphModule":include
-"auxModule":include
+"graphModule": include
+"auxModule": include
+"auxModule/randLists.ml": use_unix
 "scopetests.ml": use_unix
