@@ -1,5 +1,7 @@
 
 
+char* petBuff,*deadLettering,*titleBuff,*statBuff;
+char** buffs;
 WINDOW* pet,*title,*menu,*stats,*sleepMeter,*boredWarning,*hungryWarning,*thirstWarning,*tiredWarning,*pooWarning,*peeWarning;
 WINDOW** needs;
 char* makeNamedFormattedString(int size);
@@ -7,10 +9,11 @@ void initNcursesAndGame(); //A
 void killAnimalAndGame(); //B
 // A is to B what malloc is to free. ALLWAYS MATCH THEM!!!!!
 
-
+void initBuffers(Animal * an);
 void initWindows();
 void initAllColors();
 
+void killAllBuffs();
 void killAllWindows();
 
 

@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include "../Include/embeded.h"
+#include "../Include/engine.h"
+#include "../Include/petEngine.h"
 #include "../Include/factorized.h"
 
 void initWindows(){
@@ -38,6 +40,27 @@ needs[6]=peeWarning;
 }
 
 
+void initBuffers(Animal * an){
+
+    buffs= malloc(sizeof(char*)*4);
+    deadLettering=getASCII(_binary_dead_res_end,_binary_dead_res_start);
+    petBuff=getASCII(_binary_pet_res_end,_binary_pet_res_start);
+    titleBuff=getASCII(_binary_title_res_end,_binary_title_res_start);
+    statBuff=animalStatHud(*an);
+
+
+}
+
+void killAllBuffs(){
+
+    for(int i=0;i<4;i++){
+
+        free(buffs[i]);
+
+    }
+    free(buffs);
+
+}
 void initAllColors(){
 
  init_pair(30,COLOR_GREEN,COLOR_BLACK); //Title color

@@ -13,6 +13,14 @@ paused=0;
 initscr();
 start_color();
 initAllColors();
+
+Animal an;
+spawnAnimal(&an,500,500,500,500,2000,"Francisco");
+system("clear");
+
+
+
+initBuffers(&an);
 initWindows();
 keypad(stdscr,TRUE);
 halfdelay(1);
@@ -56,11 +64,6 @@ set_menu_sub(my_menu, derwin(menu, 0, 0, 3, 0));
 
 set_menu_mark(my_menu, "");
 
-
-
-Animal an;
-spawnAnimal(&an,500,500,500,500,2000,"Francisco");
-system("clear");
 
 
 
@@ -116,13 +119,17 @@ nocbreak();
 
 if(online){
 bkgd(COLOR_PAIR(32));
-makeWinWithText(stdscr,getASCII(_binary_dead_res_end,_binary_dead_res_start),0,0);
+makeWinWithText(stdscr,deadLettering,0,0);
 refresh();
 getch();
 }
 
-
+free(petBuff);
+free(titleBuff);
+free(deadLettering);
+free(statBuff);
 killAllWindows();
+killAllBuffs();
 endwin();
 
 return 0;
@@ -170,7 +177,7 @@ void func(Animal* an,int option){
 void graphics(Animal* an){
 
  wbkgd(title,COLOR_PAIR(30));
- makeWinWithText(title,getASCII(_binary_title_res_end,_binary_title_res_start),0,0);
+ makeWinWithText(title,titleBuff,0,0);
  wrefresh(title);
  wbkgd(title,COLOR_PAIR(31));
  if(an->dying){
@@ -187,9 +194,11 @@ void graphics(Animal* an){
 
 
  }
- makeWinWithText(pet,getASCII(_binary_pet_res_end,_binary_pet_res_start),0,0);
+ makeWinWithText(pet,petBuff,0,0);
  wrefresh(pet);
- makeWinWithText(stats,animalStatHud(*an),0,0);
+ free(statBuff);
+ statBuff=animalStatHud(*an);
+ makeWinWithText(stats,statBuff,0,0);
  wrefresh(stats);
  displayHud(an);
 

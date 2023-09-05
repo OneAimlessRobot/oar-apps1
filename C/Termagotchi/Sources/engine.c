@@ -114,6 +114,11 @@ char* animalStatHud(Animal animal){
     memset(buff,0,totallen);
     sprintf(buff,"%s%s%s%s%s%s%s\n",health,boredom,thirst,hunger,energy,age,animal.name);
     free(age);
+    free(health);
+    free(boredom);
+    free(thirst);
+    free(energy);
+    free(hunger);
     return buff;
 }
 
