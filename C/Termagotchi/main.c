@@ -138,7 +138,6 @@ if(online){
 bkgd(COLOR_PAIR(32));
 makeWinWithText(stdscr,deadLettering,0,0);
 refresh();
-an.dying=0;
 getch();
 }
 
