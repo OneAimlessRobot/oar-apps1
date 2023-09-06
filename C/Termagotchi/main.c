@@ -7,8 +7,20 @@ void print_in_middle(WINDOW *win, int starty, int startx, int width, char *strin
 void flashingDyingAlert(Animal* an);
 void checkValue(int *isZero);
 
-int main(void){
+int main(int argc, char** argv){
 
+char* name;
+
+if(argc<2){
+
+    name="Francisco";
+
+}
+else{
+
+    name=argv[1];
+
+}
 
 int online=1;
 
@@ -18,7 +30,7 @@ start_color();
 initAllColors();
 
 Animal an;
-spawnAnimal(&an,500,500,500,500,2000,"Francisco");
+spawnAnimal(&an,500,500,500,500,2000,name);
 erase();
 
 
@@ -29,6 +41,7 @@ halfdelay(1);
 refresh();
 noecho();
 curs_set(0);
+
 
 pthread_t biologyWorker,alertWorker;
 
@@ -315,7 +328,7 @@ void displayHud(Animal * an){
 }
 
 void flashingDyingAlert(Animal* an){
-    while(true){
+    while(!an->dead){
         if(an->dying){
 
             flash();

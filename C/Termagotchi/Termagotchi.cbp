@@ -31,6 +31,7 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="Include/aux.h" />
 		<Unit filename="Include/embeded.h" />
 		<Unit filename="Include/engine.h" />
 		<Unit filename="Include/factorized.h" />
@@ -39,6 +40,9 @@
 		<Unit filename="Include/petEngine.h" />
 		<Unit filename="Include/preprocessorStuff.h" />
 		<Unit filename="Makefile" />
+		<Unit filename="Sources/aux.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="Sources/engine.c">
 			<Option compilerVar="CC" />
 		</Unit>
