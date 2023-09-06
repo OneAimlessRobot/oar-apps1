@@ -9,7 +9,7 @@
 void initWindows(){
 needs=malloc(sizeof(WINDOW*)*6);
 int hudx=0,hudy=0;
-int titleh=9,titlew=56;
+int titleh=9,titlew=62;
 int statsw=28,statsh=20,statsx=hudx+titleh,statsy=hudy;
 int menuw=18,menuh=10,menux=statsx-1,menuy=hudy+titlew-10;
 int warningsx=statsx,warningsy=menuy+menuw;
