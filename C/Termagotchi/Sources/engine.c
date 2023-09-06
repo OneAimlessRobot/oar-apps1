@@ -5,41 +5,11 @@
 #include <ncurses.h>
 #include <string.h>
 #include <time.h>
+#include "../Include/aux.h"
 #include "../Include/graphicalDefines.h"
+#include "../Include/petEngine.h"
 #include "../Include/engine.h"
-int getRandomInteger(int min, int max) {
-    // Seed the random number generator with the current time.
-    srand(time(NULL));
 
-    // Generate a random number between 0 and RAND_MAX.
-    int random = rand();
-
-    // Scale the random number to fit within the specified range.
-    int result = (random % (max - min + 1)) + min;
-
-    return result;
-}
-void incAndTruncateNum(int* var,int sign,int value,int inc){
-
-    if(sign){
-        if(*var>value){
-            *var=value;
-        return;
-
-        }
-        *var+=inc;
-    }
-    if(!sign){
-
-        if(*var<value){
-            *var=value;
-        return;
-        }
-        *var-=inc;
-
-    }
-
-}
 void printASCII(const char *end, const char *start)
 {
     char buff[end-start+1];

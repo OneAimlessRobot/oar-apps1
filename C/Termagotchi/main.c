@@ -4,11 +4,14 @@ void graphics(Animal* an);
 void displayHud(Animal * an);
 void func(Animal* an,int option);
 void print_in_middle(WINDOW *win, int starty, int startx, int width, char *string, chtype color);
+void flashingDyingAlert(Animal* an);
+void checkValue(int *isZero);
 
 int main(void){
 
 
 int online=1;
+
 paused=0;
 initscr();
 start_color();
@@ -16,8 +19,7 @@ initAllColors();
 
 Animal an;
 spawnAnimal(&an,500,500,500,500,2000,"Francisco");
-system("clear");
-
+erase();
 
 
 initBuffers(&an);
@@ -28,7 +30,7 @@ refresh();
 noecho();
 curs_set(0);
 
-pthread_t biologyWorker;
+pthread_t biologyWorker,alertWorker;
 
 ITEM **my_items;
 	int c;
@@ -69,6 +71,8 @@ set_menu_mark(my_menu, "");
 
  pthread_create(&biologyWorker,NULL,petDecayLoop,&an);
  pthread_detach(biologyWorker);
+ pthread_create(&alertWorker,NULL,flashingDyingAlert,&an);
+ pthread_detach(alertWorker);
 
 
 	while(online && !an.dead)
@@ -121,6 +125,7 @@ if(online){
 bkgd(COLOR_PAIR(32));
 makeWinWithText(stdscr,deadLettering,0,0);
 refresh();
+an.dying=0;
 getch();
 }
 
@@ -154,6 +159,7 @@ void print_in_middle(WINDOW *win, int starty, int startx, int width, char *strin
 }
 
 void func(Animal* an,int option){
+    beep();
     if(option < 6){
     if(!paused){
     petCare(an,option);
@@ -305,5 +311,31 @@ void displayHud(Animal * an){
     }
     wrefresh(needs[0]);
 
+
+}
+
+void flashingDyingAlert(Animal* an){
+    while(true){
+        if(an->dying){
+
+            flash();
+            usleep(1000000);
+        }
+
+    }
+
+
+
+}
+
+void checkValue(int * isZero){
+
+    while(true){
+        if(*isZero==0){
+
+            printf("SIMMM!!!!!\n");
+        }
+
+    }
 
 }

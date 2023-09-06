@@ -39,7 +39,6 @@
 		<Unit filename="Include/petEngine.h" />
 		<Unit filename="Include/preprocessorStuff.h" />
 		<Unit filename="Makefile" />
-		<Unit filename="Sources/colorpairs.h" />
 		<Unit filename="Sources/engine.c">
 			<Option compilerVar="CC" />
 		</Unit>

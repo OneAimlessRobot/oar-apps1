@@ -1,9 +1,10 @@
 #include <ncurses.h>
 #include <stdlib.h>
 #include <string.h>
+#include "../Include/aux.h"
 #include "../Include/embeded.h"
-#include "../Include/engine.h"
 #include "../Include/petEngine.h"
+#include "../Include/engine.h"
 #include "../Include/factorized.h"
 
 void initWindows(){
@@ -36,6 +37,7 @@ needs[3]=thirstWarning;
 needs[4]=tiredWarning;
 needs[5]=pooWarning;
 needs[6]=peeWarning;
+
 
 }
 

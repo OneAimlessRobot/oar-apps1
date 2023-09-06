@@ -1,5 +1,5 @@
-
-
+#ifndef FACTORIZED_H
+#define FACTORIZED_H
 char* petBuff,*deadLettering,*titleBuff,*statBuff;
 char** buffs;
 WINDOW* pet,*title,*menu,*stats,*sleepMeter,*boredWarning,*hungryWarning,*thirstWarning,*tiredWarning,*pooWarning,*peeWarning;
@@ -15,6 +15,8 @@ void initAllColors();
 
 void killAllBuffs();
 void killAllWindows();
+
+#endif
 
 
 

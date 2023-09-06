@@ -1,3 +1,5 @@
+#ifndef EMBEDED_H
+#define EMBEDED_H
 extern char _binary_pet_res_start[],
             _binary_pet_res_end[],
 
@@ -6,3 +8,5 @@ extern char _binary_pet_res_start[],
 
             _binary_title_res_start[],
             _binary_title_res_end[];
+
+#endif

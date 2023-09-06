@@ -1,42 +1,57 @@
 #include <unistd.h>
-#include <ncurses.h>
-#include <menu.h>
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include "../Include/engine.h"
+#include <limits.h>
+#include "../Include/aux.h"
 #include "../Include/petEngine.h"
 
 void handleBodyFunctions(Animal * an){
 if(!an->dying){
-    if(!an->gotPee&&!an->gotPoo&&an->sleeping){
-    handleSleeping(an);
+    if(!an->gotPee&&!an->gotPoo){
+        if(an->sleeping){
+
+
+        handleSleeping(an);
+
+        }
+        else{
+
+            if(an->hydrating){
+                handleHydration(an);
+            }
+
+            if(an->digesting){
+                handleDigestion(an);
+
+            }
+
+
+
+        }
+
     }
-    if(!an->gotPoo&&an->digesting){
-    handleDigestion(an);
-
+    else{
+        handleExcretion(an);
 
     }
-    if(!an->gotPoo&&!an->gotPee&&an->hydrating){
-
-    handleHydration(an);
-    }
-    if(!an->health||!an->hunger||!an->thirst||!an->energy){
-
-        handleDying(an);
-    }
-
     }
 else{
-
     incAndTruncateNum(&an->dyingCounter,0,0,1);
     if(!an->dyingCounter){
 
         an->dead=1;
     }
-
 }
 
+    if(!an->health||!an->energy||!an->thirst||!an->hunger||!an->peeToleranceCounter||!an->pooToleranceCounter){
+    if(!an->dying){
+
+        an->dyingCounter=INT_MAX;
+        an->dying=1;
+    }
+    handleDying(an);
+    }
 
 }
 
@@ -48,18 +63,30 @@ void handleDying(Animal * an){
         an->dead=1;
         return;
     }
-        an->dying=1;
     if(!an->energy){
 
-        an->dyingCounter=DYINGCOUNTERSLEEP;
+        an->dyingCounter=min(an->dyingCounter,DYINGCOUNTERSLEEP);
 
     }
     if(!an->hunger){
-        an->dyingCounter=DYINGCOUNTERHUNGER;
+        an->dyingCounter=min(an->dyingCounter,DYINGCOUNTERHUNGER);
+
+
+    }
+    if(an->holdingPoo){
+        an->dyingCounter=min(an->dyingCounter,HOLDINGPOODYINGCOUNTER);
+
+    }
+
+    if(an->holdingPee){
+
+        an->dyingCounter=min(an->dyingCounter,HOLDINGPEEDYINGCOUNTER);
 
     }
     if(!an->thirst){
-        an->dyingCounter=DYINGCOUNTERTHIRST;
+
+        an->dyingCounter=min(an->dyingCounter,DYINGCOUNTERTHIRST);
+
 
     }
 
@@ -68,9 +95,50 @@ void handleDying(Animal * an){
 
 
 }
+void handleExcretion(Animal *an){
 
+if(an->gotPee&&!an->holdingPee){
+
+    an->holdingPee=1;
+    an->peeToleranceCounter=PEE_TOLERANCE_COUNTER;
+    return;
+}
+
+
+if(an->gotPoo&&!an->holdingPoo){
+
+    an->holdingPoo=1;
+    an->pooToleranceCounter=POO_TOLERANCE_COUNTER;
+    return;
+}
+if(an->holdingPoo){
+
+    incAndTruncateNum(&an->pooToleranceCounter,0,0,1);
+
+
+
+}
+if(an->holdingPee){
+
+
+    incAndTruncateNum(&an->peeToleranceCounter,0,0,1);
+
+
+
+}
+if(!an->gotPee){
+
+    an->peeToleranceCounter=PEE_TOLERANCE_COUNTER;
+}
+if(!an->gotPoo){
+
+    an->pooToleranceCounter=POO_TOLERANCE_COUNTER;
+}
+}
 void handleSleeping(Animal * an){
 
+    an->digesting=0;
+    an->hydrating=0;
     an->health+=HEALTHDECAY;
     an->energy+=SLEEPING_ENERGY_SCORE;
     an->sleepCounter--;
@@ -93,7 +161,7 @@ void handleSleeping(Animal * an){
 
 void handleHydration(Animal * an){
 
-    an->thirst+=30;
+    an->thirst+=HYDRATION_THIRST_SCORE;
     an->hydrationCounter--;
     if(an->thirst>=an->maxThirst){
 
@@ -115,7 +183,8 @@ void handleHydration(Animal * an){
 
 void handleDigestion(Animal * an){
 
-    an->hunger+=40;
+    an->hunger+=DIGESTION_HUNGER_SCORE;
+    incAndTruncateNum(&an->thirst,1,an->maxThirst,DIGESTION_THIRST_SCORE);
     an->digestionCounter--;
     if(an->hunger>=an->maxHunger){
 
@@ -150,7 +219,10 @@ an->sleepCounter=SLEEPCOUNTER;
 an->digestionCounter=DIGESTIONCOUNTER;
 an->hydrationCounter=HYDRATIONCOUNTER;
 
-an->digesting=an->hydrating=an->dyingCounter=an->dying=an->dead=an->gotPee=an->gotPoo=an->sleeping=an->age=0;
+an->peeToleranceCounter=PEE_TOLERANCE_COUNTER;
+an->pooToleranceCounter=POO_TOLERANCE_COUNTER;
+
+an->digesting=an->hydrating=an->dyingCounter=an->dying=an->dead=an->gotPee=an->gotPoo=an->sleeping=an->holdingPee=an->holdingPoo=an->age=0;
 
 an->name=name;
 
@@ -167,8 +239,8 @@ void petCare(Animal* an,int option){
     case(1):
     an->boredom+=PLAY_BOREDOM_SCORE;
     an->energy-=2*PLAY_BOREDOM_SCORE;
-    an->thirst-=4*PLAY_BOREDOM_SCORE;
-    an->hunger-=PLAY_BOREDOM_SCORE;
+    an->thirst-=PLAY_THIRST_SCORE;
+    an->hunger-=PLAY_HUNGER_SCORE;
 
     if(an->boredom>=an->maxBoredom){
 
@@ -192,6 +264,9 @@ void petCare(Animal* an,int option){
     case(4):
         an->gotPee=0;
         an->gotPoo=0;
+        an->holdingPee=0;
+        an->holdingPoo=0;
+        an->dying=0;
     break;
     case(5):
     an->sleeping=1;
@@ -206,7 +281,7 @@ void petCare(Animal* an,int option){
 }
 void petDecayLoop(Animal* an){
 
-while(true){
+while(1){
     if(!paused){
     handleBodyFunctions(an);
     usleep(1000000);
