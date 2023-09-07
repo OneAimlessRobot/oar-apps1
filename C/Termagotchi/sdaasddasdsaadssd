@@ -1,0 +1,14 @@
+
+needs[0] title window
+needs[1] stats window
+needs[2] menu window
+needs[3] pet window
+
+needs[4]=newwin(1,strlen("SLEEPING!")+4,warningsx,warningsy);
+needs[5]=newwin(1,strlen("BORED!\n"),warningsx+1,warningsy);
+needs[6]=newwin(1,strlen("HUNGRY!\n"),warningsx+2,warningsy);
+needs[7]=newwin(1,strlen("THIRSTY!\n"),warningsx+3,warningsy);
+needs[8]=newwin(1,strlen("TIRED!\n"),warningsx+4,warningsy);
+needs[9]=newwin(1,strlen("POO!\n"),warningsx+5,warningsy);
+needs[10]=newwin(1,strlen("PEE!\n"),warningsx+6,warningsy);
+

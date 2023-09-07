@@ -282,7 +282,7 @@ void petCare(Animal* an,int option){
 void petDecayLoop(Animal* an){
 
 while(1){
-    if(!paused){
+    if(!(paused)){
     handleBodyFunctions(an);
     usleep(1000000);
     incAndTruncateNum(&an->boredom,0,0,BOREDOMDECAY);

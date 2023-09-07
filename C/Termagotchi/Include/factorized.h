@@ -1,20 +1,16 @@
 #ifndef FACTORIZED_H
 #define FACTORIZED_H
-char* petBuff,*deadLettering,*titleBuff,*statBuff;
-char** buffs;
-WINDOW* pet,*title,*menu,*stats,*sleepMeter,*boredWarning,*hungryWarning,*thirstWarning,*tiredWarning,*pooWarning,*peeWarning;
-WINDOW** needs;
 char* makeNamedFormattedString(int size);
 void initNcursesAndGame(); //A
 void killAnimalAndGame(); //B
 // A is to B what malloc is to free. ALLWAYS MATCH THEM!!!!!
 
-void initBuffers(Animal * an);
-void initWindows();
+void initBuffers(Animal * an,char** buffs); //takes a char** buffer with 4 * char* size
+void initWindows(WINDOW** needs); //takes a WINDOW** buffer with 11 * WINDOW* size
 void initAllColors();
 
-void killAllBuffs();
-void killAllWindows();
+void killAllBuffs(char** buffs );
+void killAllWindows(WINDOW** needs);
 
 #endif
 

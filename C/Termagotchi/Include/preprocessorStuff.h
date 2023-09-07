@@ -7,6 +7,7 @@
 #include <stdio.h>
 #include <pthread.h>
 #include <string.h>
+#include <unistd.h>
 #include <menu.h>
 #include "myMenus.h"
 #include "embeded.h"

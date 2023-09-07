@@ -7,53 +7,46 @@
 #include "../Include/engine.h"
 #include "../Include/factorized.h"
 
-void initWindows(){
-needs=malloc(sizeof(WINDOW*)*6);
+void initWindows(WINDOW** needs){
+
+
 int hudx=0,hudy=0;
 int titleh=9,titlew=62;
 int statsw=28,statsh=20,statsx=hudx+titleh,statsy=hudy;
-int menuw=18,menuh=10,menux=statsx-1,menuy=hudy+titlew-10;
+int menuw=18,menuh=10,menux=statsx-1,menuy=hudy+titlew-15;
 int warningsx=statsx,warningsy=menuy+menuw;
 
 
-title=newwin(titleh,titlew,hudx,hudy);
-stats=newwin(statsh,statsw,statsx,statsy);
-menu=newwin(menuh,menuw,menux,menuy);
-pet= newwin(8,12,statsx,hudy+statsw+3);
+needs[0]=newwin(titleh,titlew,hudx,hudy);
+needs[1]=newwin(statsh,statsw,statsx,statsy);
+needs[2]=newwin(menuh,menuw,menux,menuy);
+needs[3]= newwin(8,12,statsx+1,hudy+statsw+3);
 
-sleepMeter=newwin(1,strlen("SLEEPING!")+4,warningsx,warningsy);
-boredWarning=newwin(1,strlen("BORED!\n"),warningsx+1,warningsy);
-hungryWarning=newwin(1,strlen("HUNGRY!\n"),warningsx+2,warningsy);
-thirstWarning=newwin(1,strlen("THIRSTY!\n"),warningsx+3,warningsy);
-tiredWarning=newwin(1,strlen("TIRED!\n"),warningsx+4,warningsy);
-pooWarning=newwin(1,strlen("POO!\n"),warningsx+5,warningsy);
-peeWarning=newwin(1,strlen("PEE!\n"),warningsx+6,warningsy);
+needs[4]=newwin(1,strlen("SLEEPING!")+4,warningsx,warningsy);
+needs[5]=newwin(1,strlen("BORED!\n"),warningsx+1,warningsy);
+needs[6]=newwin(1,strlen("HUNGRY!\n"),warningsx+2,warningsy);
+needs[7]=newwin(1,strlen("THIRSTY!\n"),warningsx+3,warningsy);
+needs[8]=newwin(1,strlen("TIRED!\n"),warningsx+4,warningsy);
+needs[9]=newwin(1,strlen("POO!\n"),warningsx+5,warningsy);
+needs[10]=newwin(1,strlen("PEE!\n"),warningsx+6,warningsy);
 
 
-needs[0]=sleepMeter;
-needs[1]=boredWarning;
-needs[2]=hungryWarning;
-needs[3]=thirstWarning;
-needs[4]=tiredWarning;
-needs[5]=pooWarning;
-needs[6]=peeWarning;
+
 
 
 }
 
 
-void initBuffers(Animal * an){
-
-    buffs= malloc(sizeof(char*)*4);
-    deadLettering=getASCII(_binary_dead_res_end,_binary_dead_res_start);
-    petBuff=getASCII(_binary_pet_res_end,_binary_pet_res_start);
-    titleBuff=getASCII(_binary_title_res_end,_binary_title_res_start);
-    statBuff=animalStatHud(*an);
+void initBuffers(Animal * an,char** buffs){
+    buffs[0]=getASCII(_binary_dead_res_end,_binary_dead_res_start);
+    buffs[1]=getASCII(_binary_pet_res_end,_binary_pet_res_start);
+    buffs[2]=getASCII(_binary_title_res_end,_binary_title_res_start);
+    buffs[3]=animalStatHud(*an);
 
 
 }
 
-void killAllBuffs(){
+void killAllBuffs(char** buffs){
 
     for(int i=0;i<4;i++){
 
@@ -82,18 +75,14 @@ init_pair(9,COLOR_RED,COLOR_CYAN);//Pet color
 
 }
 
-void killAllWindows(){
+void killAllWindows(WINDOW** needs){
 
 
-for(int i=0;i<6;i++){
+for(int i=0;i<6+4;i++){
 
     delwin(needs[i]);
 
 }
-delwin(title);
-delwin(stats);
-delwin(menu);
-delwin(pet);
 free(needs);
 
 }
