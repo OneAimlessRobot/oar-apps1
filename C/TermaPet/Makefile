@@ -1,7 +1,7 @@
 LDLIBS= -lmenu -lncurses -lpthread -lm
 
 INCLUDE= ./Include
-BINARY=Termagotchi
+BINARY=TermaPet
 SOURCES= . ./Sources
 RESDIR= ./resource
 

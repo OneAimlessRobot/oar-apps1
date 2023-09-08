@@ -1,1 +1,0 @@
-#define STATBARZOOMOUT 20

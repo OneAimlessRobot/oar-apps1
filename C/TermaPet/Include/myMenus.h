@@ -10,7 +10,7 @@ char *cmdMenu[] = {
                         "Heal",
                         "Poo/Pee",
                         "Rest",
-                        "Toggle Pause"
+                        "(un)Pause"
                   };
 
 #endif

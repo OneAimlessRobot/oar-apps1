@@ -18,7 +18,7 @@ int getRandomInteger(int min, int max) {
 
     return result;
 }
-void incAndTruncateNum(int* var,int sign,int value,int inc){
+void incAndTruncateNum(float* var,int sign,float value,float inc){
 
     if(sign){
         *var+=inc;
@@ -39,6 +39,31 @@ void incAndTruncateNum(int* var,int sign,int value,int inc){
     }
 
 }
+
+
+
+void incAndTruncateInt(int* var,int sign,int value,int inc){
+
+    if(sign){
+        *var+=inc;
+        if(*var>value){
+            *var=value;
+        return;
+
+        }
+    }
+    if(!sign){
+
+        *var-=inc;
+        if(*var<value){
+            *var=value;
+        return;
+        }
+
+    }
+
+}
+
 int min(int num1, int num2)
 {
     // using the conditional operator to calcualte the min

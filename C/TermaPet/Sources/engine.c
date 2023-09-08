@@ -45,10 +45,17 @@ void makeWinWithText(WINDOW* win,char* text,int x, int y){
 }
 
 
-char* generateStatBar(int stat,int maxStat,int step,const char* title){
+char* generateStatBar(float stat,float maxStat,float step,const char* title){
 
-    char *bar=malloc(1128);
-    int i=0,cursor=0;
+    int i=0;
+    float cursor=0;
+    char *bar=malloc(1128),value[100];
+    sprintf(value," %.2f",stat);
+    memcpy(bar+i,title,strlen(title));
+    i+=strlen(title);
+    memcpy(bar+i,value,strlen(value));
+    i+=strlen(value);
+    bar[i++]='\n';
     bar[i++]='[';
     for(;cursor<stat;cursor+=step,i++){
     bar[i]='|';
@@ -62,27 +69,24 @@ char* generateStatBar(int stat,int maxStat,int step,const char* title){
     }
     bar[i++]=']';
     bar[i++]='\n';
-    memcpy(bar+i,title,strlen(title));
-    i+=strlen(title);
-    bar[i++]='\n';
     bar[i++]='\0';
     return bar;
 
 }
 char* animalStatHud(Animal animal){
 
-    char* health= generateStatBar(animal.health,animal.maxHealth,STATBARZOOMOUT,"VIDA"),
-    * boredom= generateStatBar(animal.boredom,animal.maxBoredom,STATBARZOOMOUT,"ANIMO"),
-    * thirst= generateStatBar(animal.thirst,animal.maxThirst,STATBARZOOMOUT,"AGUA"),
-    * hunger= generateStatBar(animal.hunger,animal.maxHunger,STATBARZOOMOUT,"COMIDA"),
-    * energy= generateStatBar(animal.energy,animal.maxEnergy,4*STATBARZOOMOUT,"STAMINA"),
+    char* health= generateStatBar(animal.health,animal.maxHealth,STATBARZOOMOUT,"hp:"),
+    * boredom= generateStatBar(animal.boredom,animal.maxBoredom,STATBARZOOMOUT,"mood:"),
+    * thirst= generateStatBar(animal.thirst,animal.maxThirst,STATBARZOOMOUT,"h20:"),
+    * hunger= generateStatBar(animal.hunger,animal.maxHunger,STATBARZOOMOUT,"food:"),
+    * energy= generateStatBar(animal.energy,animal.maxEnergy,4*STATBARZOOMOUT,"stm:"),
     * age= malloc(1000);
  memset(age,0,1000);
- sprintf(age,"TEMPO DE VIDA:%d HORAS\n",animal.age);
+ sprintf(age,"TEMPO:%d\n",animal.age);
     int totallen= strlen(health)+strlen(boredom)+strlen(thirst)+strlen(hunger)+strlen(age)+1024;
     char* buff=malloc(totallen);
     memset(buff,0,totallen);
-    sprintf(buff,"%s%s%s%s%s%s%s\n",health,boredom,thirst,hunger,energy,age,animal.name);
+    sprintf(buff,"%s%s%s%s%s%s%s",health,boredom,thirst,hunger,energy,age,animal.name);
     free(age);
     free(health);
     free(boredom);

@@ -2,12 +2,12 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="Termagotchi" />
+		<Option title="TermaPet" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin/Debug/Termagotchi" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Debug/TermaPet" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -16,7 +16,7 @@
 				</Compiler>
 			</Target>
 			<Target title="Release">
-				<Option output="bin/Release/Termagotchi" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Release/TermaPet" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -39,26 +39,33 @@
 		<Unit filename="Include/myMenus.h" />
 		<Unit filename="Include/petEngine.h" />
 		<Unit filename="Include/preprocessorStuff.h" />
-		<Unit filename="Makefile" />
 		<Unit filename="Sources/aux.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="Sources/aux.d" />
 		<Unit filename="Sources/engine.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="Sources/engine.d" />
 		<Unit filename="Sources/factorized.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="Sources/factorized.d" />
 		<Unit filename="Sources/petEngine.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="Sources/petEngine.d" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="notes/helpEmbedding" />
+		<Unit filename="main.d" />
 		<Unit filename="resource/dead.res" />
 		<Unit filename="resource/help.res" />
 		<Unit filename="resource/pet.res" />
+		<Unit filename="resource/pethappy.res" />
+		<Unit filename="resource/petholding.res" />
+		<Unit filename="resource/pethurt.res" />
+		<Unit filename="resource/petinpain.res" />
 		<Unit filename="resource/title.res" />
 		<Extensions />
 	</Project>

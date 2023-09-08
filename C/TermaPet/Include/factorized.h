@@ -8,6 +8,8 @@ void killAnimalAndGame(); //B
 void initBuffers(Animal * an,char** buffs); //takes a char** buffer with 4 * char* size
 void initWindows(WINDOW** needs); //takes a WINDOW** buffer with 11 * WINDOW* size
 void initAllColors();
+void showTitleScreen(WINDOW* logo,char* buff,int x,int y);
+
 
 void killAllBuffs(char** buffs );
 void killAllWindows(WINDOW** needs);

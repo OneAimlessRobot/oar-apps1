@@ -35,7 +35,7 @@ ITEM **my_items;
 	MENU *my_menu;
 
 
-char** buffs= malloc(sizeof(char*)*4);
+char** buffs= malloc(sizeof(char*)*8);
 WINDOW** needs=malloc(sizeof(WINDOW*)*(11));
 
 
@@ -50,13 +50,14 @@ noecho();
 curs_set(0);
 erase();
 
-
-spawnAnimal(&an,500,500,500,500,2000,name);
+int baseStat=840;
+spawnAnimal(&an,baseStat,baseStat,baseStat,baseStat,baseStat*4,name);
 
 initWindows(needs);
 initBuffers(&an,buffs);
 
 
+showTitleScreen(needs[0],buffs[2],0,0);
 
 
 n_choices = ARRAY_SIZE(cmdMenu);
@@ -78,9 +79,9 @@ menu_opts_off(my_menu, O_SHOWDESC);
 keypad(needs[2], TRUE);
 
 set_menu_win(my_menu, needs[2]);
-set_menu_sub(my_menu, derwin(needs[2], 0, 0, 3, 0));
+set_menu_sub(my_menu, derwin(needs[2], 0, 0, 2, 0));
 
-
+set_menu_mark(my_menu,"");
 
 
  pthread_create(&biologyWorker,NULL,petDecayLoop,(&an));
@@ -116,8 +117,9 @@ set_menu_sub(my_menu, derwin(needs[2], 0, 0, 3, 0));
             default:
                 break;
 		}
+	print_in_middle(needs[2], 1, 0, 10, "Commands:", COLOR_PAIR(33));
+
 		graphics(&an,buffs,needs);
-	print_in_middle(needs[2], 1, 0, 10, "Commands (Q=quit)", COLOR_PAIR(31));
 	refresh();
 
 post_menu(my_menu);
@@ -189,26 +191,42 @@ void func(Animal* an,int option){
 }
 
 void graphics(Animal* an,char** buffs,WINDOW** needs){
- wbkgd(needs[0],COLOR_PAIR(30));
- makeWinWithText(needs[0],buffs[2],0,0);
- wrefresh(needs[0]);
- if(an->dying){
-    wbkgd(needs[3],COLOR_PAIR(32));
-
- }
- else if(paused){
+if(paused){
 
     wbkgd(needs[3],COLOR_PAIR(31));
+    makeWinWithText(needs[3],buffs[1],0,0);
 
  }
+ else if(an->dying){
+    wbkgd(needs[3],COLOR_PAIR(32));
+    if(!(an->energy>0)){
+    makeWinWithText(needs[3],buffs[1],0,0);
+    }
+    if(an->holdingPee||an->holdingPoo){
+    makeWinWithText(needs[3],buffs[5],0,0);
+    }
+    else{
+
+    makeWinWithText(needs[3],buffs[6],0,0);
+
+    }
+}
  else{
     wbkgd(needs[3],COLOR_PAIR(9));
+    if(an->holdingPee||an->holdingPoo){
+    makeWinWithText(needs[3],buffs[5],0,0);
+    }
+    else if(an->sleeping){
+    makeWinWithText(needs[3],buffs[1],0,0);
+    }
+    else{
+    makeWinWithText(needs[3],buffs[7],0,0);
+    }
 
 
  }
- makeWinWithText(needs[3],buffs[1],0,0);
  wrefresh(needs[3]);
- delwin(buffs[3]);
+ free(buffs[3]);
  buffs[3]=animalStatHud(*an);
  makeWinWithText(needs[1],buffs[3],0,0);
  wrefresh(needs[1]);
@@ -216,7 +234,7 @@ void graphics(Animal* an,char** buffs,WINDOW** needs){
 
 }
 void displayHud(Animal * an,WINDOW** needs){
-    if(!an->boredom){
+    if(!(an->boredom>0)){
     wbkgd(needs[5],COLOR_PAIR(8));
      makeWinWithText(needs[5],"BORED!\n",0,0);
 
@@ -231,7 +249,7 @@ void displayHud(Animal * an,WINDOW** needs){
 
     wrefresh(needs[5]);
 
-    if(!an->hunger){
+    if(!(an->hunger>0)){
     wbkgd(needs[6],COLOR_PAIR(2));
      makeWinWithText(needs[6],"HUNGRY!\n",0,0);
 
@@ -245,7 +263,7 @@ void displayHud(Animal * an,WINDOW** needs){
     }
 
     wrefresh(needs[6]);
-    if(!an->thirst){
+    if(!(an->thirst>0)){
     wbkgd(needs[7],COLOR_PAIR(3));
      makeWinWithText(needs[7],"THIRSTY!\n",0,0);
 
@@ -259,7 +277,7 @@ void displayHud(Animal * an,WINDOW** needs){
     }
 
     wrefresh(needs[7]);
-    if(!an->energy){
+    if(!(an->energy>0)){
     wbkgd(needs[8],COLOR_PAIR(4));
      makeWinWithText(needs[8],"TIRED!\n",0,0);
 
@@ -323,7 +341,7 @@ void flashingDyingAlert(Animal* an){
         if(an->dying){
 
             flash();
-            usleep(1000000);
+            usleep((int)(TICK_DURATION_MICROSECS*GAME_SMOOTHNESS_FACTOR));
         }
 
     }
