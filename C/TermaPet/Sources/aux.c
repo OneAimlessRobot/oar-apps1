@@ -70,3 +70,40 @@ int min(int num1, int num2)
     return (num1 > num2) ? num2 : num1;
 }
 
+
+
+void multNumByFactor(float* var,int sign,float fact){
+
+
+    if(sign){
+
+        *var*=fact;
+
+
+    }
+    else{
+
+        *var*=1/fact;
+
+    }
+
+}
+
+void multIntByFactor(int* var,int sign,int fact){
+
+
+
+    if(sign){
+
+        *var*=fact;
+
+
+    }
+    else{
+        float newFact=(float)fact;
+        float newValue=(float)(*var);
+        newValue*=1/newFact;
+        *var=(int)newValue;
+
+    }
+}

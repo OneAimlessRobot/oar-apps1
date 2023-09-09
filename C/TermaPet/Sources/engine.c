@@ -2,6 +2,7 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 #include <ncurses.h>
 #include <string.h>
 #include <time.h>
@@ -45,9 +46,10 @@ void makeWinWithText(WINDOW* win,char* text,int x, int y){
 }
 
 
-char* generateStatBar(float stat,float maxStat,float step,const char* title){
+char* generateStatBar(float stat,float maxStat,const char* title){
 
     int i=0;
+    int step= round(maxStat/STATBARSIZES);
     float cursor=0;
     char *bar=malloc(1128),value[100];
     sprintf(value," %.2f",stat);
@@ -75,24 +77,30 @@ char* generateStatBar(float stat,float maxStat,float step,const char* title){
 }
 char* animalStatHud(Animal animal){
 
-    char* health= generateStatBar(animal.health,animal.maxHealth,STATBARZOOMOUT,"hp:"),
-    * boredom= generateStatBar(animal.boredom,animal.maxBoredom,STATBARZOOMOUT,"mood:"),
-    * thirst= generateStatBar(animal.thirst,animal.maxThirst,STATBARZOOMOUT,"h20:"),
-    * hunger= generateStatBar(animal.hunger,animal.maxHunger,STATBARZOOMOUT,"food:"),
-    * energy= generateStatBar(animal.energy,animal.maxEnergy,4*STATBARZOOMOUT,"stm:"),
-    * age= malloc(1000);
+    char* health= generateStatBar(animal.health,animal.maxHealth,"hp:"),
+    * boredom= generateStatBar(animal.boredom,animal.maxBoredom,"mood:"),
+    * thirst= generateStatBar(animal.thirst,animal.maxThirst,"h20:"),
+    * hunger= generateStatBar(animal.hunger,animal.maxHunger,"food:"),
+    * energy= generateStatBar(animal.energy,animal.maxEnergy,"stm:"),
+    * xp= generateStatBar(animal.xp,animal.maxXp,"XP:"),
+    * age= malloc(1000),
+    * level= malloc(1000);
  memset(age,0,1000);
+ memset(level,0,1000);
  sprintf(age,"TEMPO:%d\n",animal.age);
-    int totallen= strlen(health)+strlen(boredom)+strlen(thirst)+strlen(hunger)+strlen(age)+1024;
+ sprintf(level,"LEVEL:%d\n",animal.level);
+    int totallen= strlen(health)+strlen(boredom)+strlen(xp)+strlen(thirst)+strlen(hunger)+strlen(age)+strlen(level)+1024;
     char* buff=malloc(totallen);
     memset(buff,0,totallen);
-    sprintf(buff,"%s%s%s%s%s%s%s",health,boredom,thirst,hunger,energy,age,animal.name);
+    sprintf(buff,"%s%s%s%s%s%s%s%s%s",health,boredom,thirst,hunger,energy,age,xp,level,animal.name);
     free(age);
+    free(level);
     free(health);
     free(boredom);
     free(thirst);
     free(energy);
     free(hunger);
+    free(xp);
     return buff;
 }
 

@@ -13,7 +13,7 @@ void initWindows(WINDOW** needs){
 
 int hudx=0,hudy=0;
 int titleh=3,titlew=44;
-int statsw=(int)(BASESTAT/STATBARZOOMOUT)+7,statsh=13,statsx=hudx+1,statsy=hudy;
+int statsw=(int)(STATBARSIZES)+3,statsh=15,statsx=hudx+1,statsy=hudy;
 int peth=5,petw=11,petx=hudx+statsx+3,pety=hudy+statsw+1;
 int menuw=9,menuh=10,menux=statsx,menuy=pety+petw+3;
 int warningsx=statsx+2,warningsy=menuy+menuw+1;

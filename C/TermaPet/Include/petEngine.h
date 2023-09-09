@@ -1,12 +1,15 @@
 #ifndef PET_H
 #define PET_H
 
-#define GAME_SMOOTHNESS_FACTOR 4.0f
+#define GAME_SMOOTHNESS_FACTOR 10.0f
 
-#define AGE_TICK_DURATION (120.0f*GAME_SMOOTHNESS_FACTOR)
+#define AGE_UNIT_DURATION_SECONDS 30
+#define AGE_TICK_DURATION (AGE_UNIT_DURATION_SECONDS*1.0f*GAME_SMOOTHNESS_FACTOR)
 #define TICK_DURATION_MICROSECS (1000000/GAME_SMOOTHNESS_FACTOR)
 
 #define BASESTAT 840
+
+#define LEVEL_UP_STAT_MULTIPLIER 1.5f
 
 #define DYINGCOUNTERTHIRST ((int)(5*AGE_TICK_DURATION))
 #define DYINGCOUNTERHUNGER ((int)(20*AGE_TICK_DURATION))
@@ -49,6 +52,7 @@
 #define PLAY_BOREDOM_SCORE 80
 #define PLAY_THIRST_SCORE 40
 #define PLAY_HUNGER_SCORE 30
+#define PLAY_XP_SCORE 100
 
 #define TREATMENT_SCORE 30
 
@@ -75,15 +79,18 @@ typedef struct Animal{
         boredom,
         thirst,
         energy,
-        
+        xp,
+
         maxHealth,
         maxHunger,
         maxBoredom,
         maxThirst,
+        maxXp,
         maxEnergy;
 
     int
         age,
+        level,
 
         digestionCounter,
         digesting,
@@ -122,6 +129,10 @@ void petDecayLoop(Animal* an);
 void spawnAnimal(Animal* an,float health,float thirst,float boredom, float hunger, float energy,char* name);
 
 void handleDigestion(Animal * an);
+
+void handleLearning(Animal * an);
+
+void play(Animal * an);
 
 void handleSleeping(Animal * an);
 

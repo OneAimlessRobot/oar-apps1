@@ -97,6 +97,33 @@ void handleDying(Animal * an){
 
 
 }
+void handleLearning(Animal * an){
+
+
+    incAndTruncateNum(&an->xp,1,an->maxXp,PLAY_XP_SCORE);
+
+    if(an->xp==an->maxXp){
+        an->level++;
+
+        multNumByFactor(&an->maxXp,1,LEVEL_UP_STAT_MULTIPLIER);
+
+        multNumByFactor(&an->maxBoredom,1,LEVEL_UP_STAT_MULTIPLIER);
+
+        multNumByFactor(&an->maxEnergy,1,LEVEL_UP_STAT_MULTIPLIER);
+
+        multNumByFactor(&an->maxHealth,1,LEVEL_UP_STAT_MULTIPLIER);
+
+        multNumByFactor(&an->maxHunger,1,LEVEL_UP_STAT_MULTIPLIER);
+
+        multNumByFactor(&an->maxThirst,1,LEVEL_UP_STAT_MULTIPLIER);
+
+
+    }
+
+
+
+
+}
 void handleExcretion(Animal *an){
 
 if(an->gotPee&&!an->holdingPee){
@@ -160,6 +187,17 @@ void handleSleeping(Animal * an){
 
 }
 
+void play(Animal * an){
+
+
+    incAndTruncateNum(&an->boredom,1,an->maxBoredom,PLAY_BOREDOM_SCORE);
+    incAndTruncateNum(&an->energy,0,0,2*PLAY_BOREDOM_SCORE);
+    incAndTruncateNum(&an->thirst,0,0,PLAY_THIRST_SCORE);
+    incAndTruncateNum(&an->hunger,0,0,PLAY_HUNGER_SCORE);
+
+    handleLearning(an);
+
+}
 
 void handleHydration(Animal * an){
 
@@ -216,7 +254,7 @@ an->hunger=an->maxHunger=hunger;
 an->thirst=an->maxThirst=thirst;
 an->boredom=an->maxBoredom=boredom;
 an->energy=an->maxEnergy=energy;
-
+an->maxXp=BASESTAT;
 an->sleepCounter=SLEEPCOUNTER;
 an->digestionCounter=DIGESTIONCOUNTER;
 an->hydrationCounter=HYDRATIONCOUNTER;
@@ -226,7 +264,7 @@ an->pooToleranceCounter=POO_TOLERANCE_COUNTER;
 
 an->dyingCounter=INT_MAX-1;
 
-an->digesting=an->hydrating=an->dying=an->dead=an->gotPee=an->gotPoo=an->sleeping=an->holdingPee=an->holdingPoo=an->age=0;
+an->digesting=an->hydrating=an->dying=an->dead=an->gotPee=an->gotPoo=an->sleeping=an->holdingPee=an->holdingPoo=an->xp=an->level=an->age=0;
 
 an->name=name;
 
@@ -241,13 +279,9 @@ void petCare(Animal* an,int option){
         an->dying=0;
     break;
     case(1):
-    if(!an->dying){
-    
-    incAndTruncateNum(&an->boredom,1,BASESTAT,PLAY_BOREDOM_SCORE);
-    incAndTruncateNum(&an->energy,0,0,2*PLAY_BOREDOM_SCORE);
-    incAndTruncateNum(&an->thirst,0,0,PLAY_THIRST_SCORE);
-    incAndTruncateNum(&an->hunger,0,0,PLAY_HUNGER_SCORE);
+    if(!an->dying&&!an->sleeping){
 
+            play(an);
     }
     break;
     case(2):
@@ -256,7 +290,7 @@ void petCare(Animal* an,int option){
         an->dying=0;
     break;
     case(3):
-        incAndTruncateNum(&an->health,1,BASESTAT,TREATMENT_SCORE);
+        incAndTruncateNum(&an->health,1,an->maxHealth,TREATMENT_SCORE);
 
     break;
     case(4):
@@ -299,10 +333,10 @@ while(1){
     incAndTruncateNum(&an->energy,0,0,ENERGYDECAY);
     ageTicks++;
     if(ageTicks==(int)AGE_TICK_DURATION){
-        
+
         an->age++;
         ageTicks=0;
-    
+
     }
     }
     }
