@@ -1,0 +1,116 @@
+No projects with keyword oracle.
+User peralta was registered as manager with clearance level 3.
+User santiago was registered as manager with clearance level 4.
+User holt was registered as manager with clearance level 5.
+User diaz was registered as manager with clearance level 4.
+User boyle was registered as developer with clearance level 3.
+User bob was registered as developer with clearance level 2.
+User linetti was registered as developer with clearance level 4.
+User pimento was registered as developer with clearance level 2.
+User wells was registered as developer with clearance level 2.
+User john was registered as developer with clearance level 4.
+User mary was registered as developer with clearance level 3.
+User jeffords was registered as developer with clearance level 5.
+All registered users:
+developer bob is managed by holt [0]
+developer boyle is managed by peralta [0]
+manager diaz [2, 0, 0]
+manager holt [4, 0, 0]
+developer jeffords is managed by holt [0]
+developer john is managed by diaz [0]
+developer linetti is managed by holt [0]
+developer mary is managed by holt [0]
+manager peralta [2, 0, 0]
+developer pimento is managed by peralta [0]
+manager santiago [0, 0, 0]
+developer wells is managed by diaz [0]
+Online occurrence reporting project was created.
+Online occurrence reporting UI project was created.
+Wordle project was created.
+Top secret project was created.
+Yet another online app project was created.
+My fabulous app project was created.
+Sell stuff online app project was created.
+Accounting service project was created.
+All new restaurant review app project was created.
+Latest team members:
+linetti: added to the team.
+jeffords: added to the team.
+Latest team members:
+john: added to the team.
+santiago: added to the team.
+Latest team members:
+holt: added to the team.
+santiago: added to the team.
+Latest team members:
+boyle: added to the team.
+Latest team members:
+wells: added to the team.
+pimento: added to the team.
+santiago: added to the team.
+Latest team members:
+mary: added to the team.
+Latest project artefacts:
+file.cpp: added to the project.
+Latest project artefacts:
+main.java: added to the project.
+diagram.jpg: added to the project.
+Latest project artefacts:
+todo.txt: added to the project.
+Latest project artefacts:
+file2.py: added to the project.
+class_diagram.jpg: added to the project.
+file1.py: added to the project.
+Latest project artefacts:
+file2.erl: added to the project.
+class_diagram.jpg: added to the project.
+file1.erl: added to the project.
+Latest project artefacts:
+file4.erl: added to the project.
+file3.erl: added to the project.
+Latest project artefacts:
+file1.erl: added to the project.
+Latest project artefacts:
+wordle.cpp: added to the project.
+Latest project artefacts:
+readme: added to the project.
+All projects with keyword javascript:
+in-house Online occurrence reporting is managed by santiago [2, 0, 3, 0, 25-01-2022]
+in-house Wordle is managed by holt [2, 3, 2, 0, 14-03-2021]
+outsourced All new restaurant review app is managed by diaz and developed by OutSystems
+outsourced Online occurrence reporting UI is managed by diaz and developed by UI4All
+All projects with keyword oracle:
+in-house Top secret is managed by holt [5, 0, 5, 0, 04-02-2022]
+in-house Wordle is managed by holt [2, 3, 2, 0, 14-03-2021]
+outsourced Accounting service is managed by peralta and developed by Mendix
+outsourced All new restaurant review app is managed by diaz and developed by OutSystems
+All projects with keyword html:
+in-house My fabulous app is managed by diaz [3, 2, 1, 0, 06-02-2021]
+in-house Sell stuff online app is managed by peralta [3, 2, 1, 0, 01-02-2021]
+Revision 2 of artefact wordle.cpp was submitted.
+Revision 2 of artefact readme was submitted.
+Revision 3 of artefact wordle.cpp was submitted.
+Latest team members:
+mary: added to the team.
+Revision 2 of artefact class_diagram.jpg was submitted.
+Revision 3 of artefact readme was submitted.
+Revision 2 of artefact main.java was submitted.
+Revision 2 of artefact diagram.jpg was submitted.
+User alice does not exist.
+User peralta does not belong to the team of Yet another online app.
+Latest project artefacts:
+file.html: added to the project.
+All projects with keyword javascript:
+in-house Wordle is managed by holt [2, 3, 2, 4, 30-01-2022]
+in-house Online occurrence reporting is managed by santiago [2, 1, 3, 1, 27-01-2022]
+outsourced All new restaurant review app is managed by diaz and developed by OutSystems
+outsourced Online occurrence reporting UI is managed by diaz and developed by UI4All
+All projects with keyword oracle:
+in-house Top secret is managed by holt [5, 0, 5, 0, 04-02-2022]
+in-house Wordle is managed by holt [2, 3, 2, 4, 30-01-2022]
+outsourced Accounting service is managed by peralta and developed by Mendix
+outsourced All new restaurant review app is managed by diaz and developed by OutSystems
+All projects with keyword html:
+in-house Sell stuff online app is managed by peralta [3, 2, 2, 0, 07-02-2021]
+in-house My fabulous app is managed by diaz [3, 2, 1, 0, 06-02-2021]
+Bye!

@@ -1,0 +1,38 @@
+
+{%extends "myhtml/base.html"%}
+{% load static %}
+
+{%block layout%}
+
+
+<head>
+    <title style="color:red;">Bem vindo de volta</title>
+    <link rel="stylesheet" href="{% static '/hideout/horny/style/horny.css' %}">
+</head>
+
+<body>
+    <h1>Como estás?</h1>
+    <embed src="{%static '/hideout/horny/ascii/file.txt'%}">
+    <br>
+    <embed src="{%static '/hideout/horny/ascii/file2.txt'%}">
+    <br>
+    <embed src="{%static '/hideout/horny/ascii/file3.txt'%}">
+    <br>
+
+    {%for i in photos%}
+    <img src="{%static '/hideout/horny/photo/'%}{{i}}"/>
+    <br>
+    {%endfor%}
+    <audio controls>
+        <source src="{%static '/hideout/horny/sound/Musica.mp3' %}" type="audio/mp3">
+    </audio>
+    <br>
+    <h2>Aposto que tiveste um longo dia... Toma... vê isto</h2>
+    <br>
+    <video controls>
+        <source src="{%static '/hideout/horny/video/video.mp4'%}" type="video/mp4">
+    </video>
+    <br>
+
+</body>
+{%endblock%}

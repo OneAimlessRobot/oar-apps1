@@ -1,0 +1,43 @@
+confidentiality 1 3
+register manager peralta 3
+register manager santiago 4
+register manager holt 5
+register manager diaz 4
+create santiago inhouse Online occurrence reporting
+4 web javascript css mysql
+2
+create diaz outsourced Online occurrence reporting UI
+4 css javascript ruby-on-rails redis
+UI4All
+create holt inhouse Wordle
+6 web javascript css outsystems c# oracle
+2
+create holt inhouse Top secret
+3 c# oracle rust
+5 
+create diaz inhouse Yet another online app
+3 erlang distribution redis
+4
+create diaz inhouse My fabulous app
+4 c# redis json html
+3
+create peralta inhouse Sell stuff online app
+5 distribution erlang html json microservices
+3
+create peralta outsourced Accounting service
+3 go microservices oracle
+Mendix
+create diaz outsourced All new restaurant review app
+3 javascript rust oracle
+OutSystems
+confidentiality 5 0
+confidentiality 3 4
+create peralta inhouse One more app
+3 javascript rust oracle
+3
+create diaz inhouse Another app
+4 c# redis json html
+4
+confidentiality 3 4
+confidentiality 3 3
+exit

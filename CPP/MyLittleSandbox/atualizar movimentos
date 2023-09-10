@@ -1,0 +1,40 @@
+
+            SDL_Point endPos=(SDL_Point){jumper->getX(),jumper->getY()};
+            float mDist=aux::distBetPointsInts(x1,y1,x3,y3);
+
+            float jDist=aux::distBetPoints(startPos,endPos);
+            mSpeed=(int)(((float)mDist*0.5)/(float)(desiredDelta*0.05));
+
+            jSpeed=(int)(((float)jDist*0.5)/(float)(desiredDelta*0.05));
+
+                    if(OnesAreContained(gameState,ARMY_MASK)){
+                        if(army[counter->getCurrent()].value){
+                            army[counter->getCurrent()].obj->setPos(x1,y1);
+                            army[counter->getCurrent()].obj->setDirection(x1,y1,x3,y3);
+                            army[counter->getCurrent()].obj->setSpeed(mSpeed);
+                        }
+                        else{
+                            army[counter->getCurrent()].obj->shoot();
+                        }
+                        army[counter->getCurrent()].obj->ricochete();
+                        counter->increment();
+                    }
+                    else{
+                        counter->setCurrent(0);
+                        counter->setModulus(army.size());
+
+                    }
+                if(jumper->getY()<floorLevel){
+                    jumper->jumpingIteration(floorLevel,gravity,tick);
+                }
+                }
+                else{
+
+                currentJumpTick=SDL_GetTicks();
+                jumper->setY(floorLevel-1);
+                jumper->bounce();
+                    if(jumper->getJumpingSpeed()<=0){
+                        jumper->land();
+                    }
+
+                }

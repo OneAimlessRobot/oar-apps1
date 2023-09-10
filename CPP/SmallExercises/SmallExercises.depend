@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1665053793 source:/media/oneaimlessrobot/Seagate Basic/Adriano/scripts/CPP/Programs within CPP syntax/SmallExercises/SmallExercises.c
+	<stdio.h>
+	"SmallExercises.h"
+
+1665053899 /media/oneaimlessrobot/Seagate Basic/Adriano/scripts/CPP/Programs within CPP syntax/SmallExercises/SmallExercises.h
+
+1665053918 source:/media/oneaimlessrobot/Seagate Basic/Adriano/scripts/CPP/Programs within CPP syntax/SmallExercises/main.c
+	<stdio.h>
+	"SmallExercises.h"
+

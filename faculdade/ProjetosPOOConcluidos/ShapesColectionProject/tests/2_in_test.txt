@@ -1,0 +1,13 @@
+CIRCLE circle1 0 0 12
+RECTANGLE rectangle1 0 7 2 8
+RECTANGLE rectangle2 -1 4 2 78
+CIRCLE circle2 4 2 2
+RECTANGLE rectangle3 6 7 4 9
+CIRCLE circle3 -1 0 5
+RECTANGLE rectangle3 -1 0 23 9
+LIST
+MOVE circle3 4 4
+MOVE rectangle2 -3 -9
+MINAREA
+LIST
+EXIT

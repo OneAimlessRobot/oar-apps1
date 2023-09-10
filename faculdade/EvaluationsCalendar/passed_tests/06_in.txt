@@ -1,0 +1,119 @@
+course IP
+course POO
+course AM I
+course AM II
+course Fancy course name
+course Karaoke 101
+course Extreme Mooshaking
+professor Injun Joe
+student 23234 Sid Sawyer
+student 10730 Amy Lawrence
+student 3254 Mary
+student 9983 Muff Potter
+student 12435 Alfred Temple
+student 32424 Injun Joe
+professor Aunt Polly
+professor Mr. Walters
+professor Judge Thatcher
+professor Jim
+professor Mr. Sprague
+professor Mr. Jones
+assign Mr. Walters
+POO
+professor Mr. Dobbins
+professor Alfred Temple
+professor Mary
+assign Aunt Polly
+POO
+student 12334 Tom Sawyer
+student 13242 Becky Thatcher
+student 3243 Huckleberry Finn
+student 23143 Joe Harper
+assign Mr. Walters
+POO
+assign Spiderman
+IP
+assign Catwoman
+POO
+assign
+POO
+assign Karaoke 101
+Mr. Walters
+assign Aunt Polly
+Extreme Mooshaking
+assign Santa Klaus
+IP
+assign Mr. Walters
+Parachuting
+assign Injun Joe
+IP
+assign Mr. Dobbins
+IP
+assign Mr.Jones
+Extreme Mooshaking
+assign Mr. Sprague
+POO
+assign Mr. Walters
+Karaoke 101
+assign Judge Thatcher
+Karaoke 101
+assign Judge Thatcher
+AM I
+assign Mr. Jones
+IP
+roster POO
+roster Karaoke 101
+roster Extreme Mooshaking
+roster IP
+roster AM I
+enrol -1 POO
+enrol 0 POO
+enrol 2 POO
+Tom Sawyer
+Joe Harper
+enrol 2 POO
+Tom Sawyer
+Huckleberry Finn
+enrol 3 POO
+Tom Sawyer
+Huckleberry Finn
+Amy Lawrence
+enrol 3 IP
+Tom Sawyer
+Huckleberry Finn
+Amy Lawrence
+enrol 3 ADA
+Tom Sawyer
+Huckleberry Finn
+Amy Lawrence
+enrol 1 IP
+Superman
+enrol 3 POO
+Joe Harper
+Sid Sawyer
+Mary
+enrol 6 IP
+Muff Potter
+Alfred Temple
+Ben Rogers
+Joe Harper
+Sid Sawyer
+Mary
+student 22222 Charles Chaplin
+student 11111 Audrey Hepburn
+student 33333 Marlon Brando
+student 44444 Marilyn Monroe
+enrol 5 Karaoke 101
+Charles Chaplin
+Marilyn Monroe
+Huckleberry Finn
+Amy Lawrence
+Tom Sawyer
+enrol 4 AM I
+Audrey Hepburn
+Marlon Brando
+Muff Potter
+Alfred Temple
+people
+courses
+exit

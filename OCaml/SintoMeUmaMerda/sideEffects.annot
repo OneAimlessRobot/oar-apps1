@@ -1,0 +1,404 @@
+"SintoMeUmaMerda/sideEffects.ml" 4 25 25 "SintoMeUmaMerda/sideEffects.ml" 4 25 32
+type(
+  string -> int
+)
+ident(
+  int_ref Stdlib.Sys.command "sys.mli" 68 3133 3133 "sys.mli" 68 3133 3193
+)
+"SintoMeUmaMerda/sideEffects.ml" 4 25 33 "SintoMeUmaMerda/sideEffects.ml" 4 25 40
+type(
+  string
+)
+"SintoMeUmaMerda/sideEffects.ml" 4 25 25 "SintoMeUmaMerda/sideEffects.ml" 4 25 40
+type(
+  int
+)
+"SintoMeUmaMerda/sideEffects.ml" 7 43 51 "SintoMeUmaMerda/sideEffects.ml" 7 43 62
+type(
+  in_channel -> out_channel -> unit
+)
+ident(
+  def copyChannel "SintoMeUmaMerda/sideEffects.ml" 7 43 43 "SintoMeUmaMerda/sideEffects.ml" 0 0 -1
+)
+"SintoMeUmaMerda/sideEffects.ml" 7 43 63 "SintoMeUmaMerda/sideEffects.ml" 7 43 65
+type(
+  in_channel
+)
+ident(
+  def ci "SintoMeUmaMerda/sideEffects.ml" 7 43 66 "SintoMeUmaMerda/sideEffects.ml" 13 211 237
+)
+"SintoMeUmaMerda/sideEffects.ml" 7 43 66 "SintoMeUmaMerda/sideEffects.ml" 7 43 68
+type(
+  out_channel
+)
+ident(
+  def co "SintoMeUmaMerda/sideEffects.ml" 8 71 75 "SintoMeUmaMerda/sideEffects.ml" 13 211 237
+)
+"SintoMeUmaMerda/sideEffects.ml" 9 79 91 "SintoMeUmaMerda/sideEffects.ml" 9 79 92
+type(
+  string
+)
+ident(
+  def s "SintoMeUmaMerda/sideEffects.ml" 10 112 124 "SintoMeUmaMerda/sideEffects.ml" 12 181 210
+)
+"SintoMeUmaMerda/sideEffects.ml" 9 79 95 "SintoMeUmaMerda/sideEffects.ml" 9 79 105
+type(
+  in_channel -> string
+)
+ident(
+  int_ref Stdlib.input_line "stdlib.mli" 1042 39212 39212 "stdlib.mli" 1042 39212 39249
+)
+"SintoMeUmaMerda/sideEffects.ml" 9 79 106 "SintoMeUmaMerda/sideEffects.ml" 9 79 108
+type(
+  in_channel
+)
+ident(
+  int_ref ci "SintoMeUmaMerda/sideEffects.ml" 7 43 63 "SintoMeUmaMerda/sideEffects.ml" 7 43 65
+)
+"SintoMeUmaMerda/sideEffects.ml" 9 79 95 "SintoMeUmaMerda/sideEffects.ml" 9 79 108
+type(
+  string
+)
+"SintoMeUmaMerda/sideEffects.ml" 10 112 124 "SintoMeUmaMerda/sideEffects.ml" 10 112 137
+type(
+  out_channel -> string -> unit
+)
+ident(
+  int_ref Stdlib.output_string "stdlib.mli" 942 34753 34753 "stdlib.mli" 942 34753 34802
+)
+"SintoMeUmaMerda/sideEffects.ml" 10 112 138 "SintoMeUmaMerda/sideEffects.ml" 10 112 140
+type(
+  out_channel
+)
+ident(
+  int_ref co "SintoMeUmaMerda/sideEffects.ml" 7 43 66 "SintoMeUmaMerda/sideEffects.ml" 7 43 68
+)
+"SintoMeUmaMerda/sideEffects.ml" 10 112 141 "SintoMeUmaMerda/sideEffects.ml" 10 112 142
+type(
+  string
+)
+ident(
+  int_ref s "SintoMeUmaMerda/sideEffects.ml" 9 79 91 "SintoMeUmaMerda/sideEffects.ml" 9 79 92
+)
+"SintoMeUmaMerda/sideEffects.ml" 10 112 124 "SintoMeUmaMerda/sideEffects.ml" 10 112 142
+type(
+  unit
+)
+"SintoMeUmaMerda/sideEffects.ml" 11 145 157 "SintoMeUmaMerda/sideEffects.ml" 11 145 170
+type(
+  out_channel -> string -> unit
+)
+ident(
+  int_ref Stdlib.output_string "stdlib.mli" 942 34753 34753 "stdlib.mli" 942 34753 34802
+)
+"SintoMeUmaMerda/sideEffects.ml" 11 145 171 "SintoMeUmaMerda/sideEffects.ml" 11 145 173
+type(
+  out_channel
+)
+ident(
+  int_ref co "SintoMeUmaMerda/sideEffects.ml" 7 43 66 "SintoMeUmaMerda/sideEffects.ml" 7 43 68
+)
+"SintoMeUmaMerda/sideEffects.ml" 11 145 174 "SintoMeUmaMerda/sideEffects.ml" 11 145 178
+type(
+  string
+)
+"SintoMeUmaMerda/sideEffects.ml" 11 145 157 "SintoMeUmaMerda/sideEffects.ml" 11 145 178
+type(
+  unit
+)
+"SintoMeUmaMerda/sideEffects.ml" 12 181 193 "SintoMeUmaMerda/sideEffects.ml" 12 181 204
+type(
+  in_channel -> out_channel -> unit
+)
+ident(
+  int_ref copyChannel "SintoMeUmaMerda/sideEffects.ml" 7 43 51 "SintoMeUmaMerda/sideEffects.ml" 7 43 62
+)
+"SintoMeUmaMerda/sideEffects.ml" 12 181 205 "SintoMeUmaMerda/sideEffects.ml" 12 181 207
+type(
+  in_channel
+)
+ident(
+  int_ref ci "SintoMeUmaMerda/sideEffects.ml" 7 43 63 "SintoMeUmaMerda/sideEffects.ml" 7 43 65
+)
+"SintoMeUmaMerda/sideEffects.ml" 12 181 208 "SintoMeUmaMerda/sideEffects.ml" 12 181 210
+type(
+  out_channel
+)
+ident(
+  int_ref co "SintoMeUmaMerda/sideEffects.ml" 7 43 66 "SintoMeUmaMerda/sideEffects.ml" 7 43 68
+)
+"SintoMeUmaMerda/sideEffects.ml" 12 181 193 "SintoMeUmaMerda/sideEffects.ml" 12 181 210
+type(
+  unit
+)
+"SintoMeUmaMerda/sideEffects.ml" 11 145 157 "SintoMeUmaMerda/sideEffects.ml" 12 181 210
+type(
+  unit
+)
+"SintoMeUmaMerda/sideEffects.ml" 10 112 124 "SintoMeUmaMerda/sideEffects.ml" 12 181 210
+type(
+  unit
+)
+"SintoMeUmaMerda/sideEffects.ml" 9 79 87 "SintoMeUmaMerda/sideEffects.ml" 12 181 210
+type(
+  unit
+)
+"SintoMeUmaMerda/sideEffects.ml" 13 211 220 "SintoMeUmaMerda/sideEffects.ml" 13 211 231
+type(
+  exn
+)
+"SintoMeUmaMerda/sideEffects.ml" 13 211 235 "SintoMeUmaMerda/sideEffects.ml" 13 211 237
+type(
+  unit
+)
+"SintoMeUmaMerda/sideEffects.ml" 8 71 75 "SintoMeUmaMerda/sideEffects.ml" 13 211 237
+type(
+  unit
+)
+"SintoMeUmaMerda/sideEffects.ml" 18 314 318 "SintoMeUmaMerda/sideEffects.ml" 18 314 326
+type(
+  string -> string -> unit
+)
+ident(
+  def copyFile "SintoMeUmaMerda/sideEffects.ml" 25 480 480 "SintoMeUmaMerda/sideEffects.ml" 0 0 -1
+)
+"SintoMeUmaMerda/sideEffects.ml" 18 314 327 "SintoMeUmaMerda/sideEffects.ml" 18 314 329
+type(
+  string
+)
+ident(
+  def ni "SintoMeUmaMerda/sideEffects.ml" 18 314 330 "SintoMeUmaMerda/sideEffects.ml" 23 452 476
+)
+"SintoMeUmaMerda/sideEffects.ml" 18 314 330 "SintoMeUmaMerda/sideEffects.ml" 18 314 332
+type(
+  string
+)
+ident(
+  def no "SintoMeUmaMerda/sideEffects.ml" 19 335 339 "SintoMeUmaMerda/sideEffects.ml" 23 452 476
+)
+"SintoMeUmaMerda/sideEffects.ml" 19 335 343 "SintoMeUmaMerda/sideEffects.ml" 19 335 345
+type(
+  in_channel
+)
+ident(
+  def ci "SintoMeUmaMerda/sideEffects.ml" 20 362 370 "SintoMeUmaMerda/sideEffects.ml" 23 452 476
+)
+"SintoMeUmaMerda/sideEffects.ml" 19 335 348 "SintoMeUmaMerda/sideEffects.ml" 19 335 355
+type(
+  string -> in_channel
+)
+ident(
+  int_ref Stdlib.open_in "stdlib.mli" 1021 38257 38257 "stdlib.mli" 1021 38257 38291
+)
+"SintoMeUmaMerda/sideEffects.ml" 19 335 356 "SintoMeUmaMerda/sideEffects.ml" 19 335 358
+type(
+  string
+)
+ident(
+  int_ref ni "SintoMeUmaMerda/sideEffects.ml" 18 314 327 "SintoMeUmaMerda/sideEffects.ml" 18 314 329
+)
+"SintoMeUmaMerda/sideEffects.ml" 19 335 348 "SintoMeUmaMerda/sideEffects.ml" 19 335 358
+type(
+  in_channel
+)
+"SintoMeUmaMerda/sideEffects.ml" 20 362 374 "SintoMeUmaMerda/sideEffects.ml" 20 362 376
+type(
+  out_channel
+)
+ident(
+  def co "SintoMeUmaMerda/sideEffects.ml" 21 394 406 "SintoMeUmaMerda/sideEffects.ml" 23 452 476
+)
+"SintoMeUmaMerda/sideEffects.ml" 20 362 379 "SintoMeUmaMerda/sideEffects.ml" 20 362 387
+type(
+  string -> out_channel
+)
+ident(
+  int_ref Stdlib.open_out "stdlib.mli" 910 33320 33320 "stdlib.mli" 910 33320 33356
+)
+"SintoMeUmaMerda/sideEffects.ml" 20 362 388 "SintoMeUmaMerda/sideEffects.ml" 20 362 390
+type(
+  string
+)
+ident(
+  int_ref no "SintoMeUmaMerda/sideEffects.ml" 18 314 330 "SintoMeUmaMerda/sideEffects.ml" 18 314 332
+)
+"SintoMeUmaMerda/sideEffects.ml" 20 362 379 "SintoMeUmaMerda/sideEffects.ml" 20 362 390
+type(
+  out_channel
+)
+"SintoMeUmaMerda/sideEffects.ml" 21 394 406 "SintoMeUmaMerda/sideEffects.ml" 21 394 417
+type(
+  in_channel -> out_channel -> unit
+)
+ident(
+  int_ref copyChannel "SintoMeUmaMerda/sideEffects.ml" 7 43 51 "SintoMeUmaMerda/sideEffects.ml" 7 43 62
+)
+"SintoMeUmaMerda/sideEffects.ml" 21 394 418 "SintoMeUmaMerda/sideEffects.ml" 21 394 420
+type(
+  in_channel
+)
+ident(
+  int_ref ci "SintoMeUmaMerda/sideEffects.ml" 19 335 343 "SintoMeUmaMerda/sideEffects.ml" 19 335 345
+)
+"SintoMeUmaMerda/sideEffects.ml" 21 394 421 "SintoMeUmaMerda/sideEffects.ml" 21 394 423
+type(
+  out_channel
+)
+ident(
+  int_ref co "SintoMeUmaMerda/sideEffects.ml" 20 362 374 "SintoMeUmaMerda/sideEffects.ml" 20 362 376
+)
+"SintoMeUmaMerda/sideEffects.ml" 21 394 406 "SintoMeUmaMerda/sideEffects.ml" 21 394 423
+type(
+  unit
+)
+"SintoMeUmaMerda/sideEffects.ml" 22 426 438 "SintoMeUmaMerda/sideEffects.ml" 22 426 446
+type(
+  in_channel -> unit
+)
+ident(
+  int_ref Stdlib.close_in "stdlib.mli" 1115 42633 42633 "stdlib.mli" 1115 42633 42666
+)
+"SintoMeUmaMerda/sideEffects.ml" 22 426 447 "SintoMeUmaMerda/sideEffects.ml" 22 426 449
+type(
+  in_channel
+)
+ident(
+  int_ref ci "SintoMeUmaMerda/sideEffects.ml" 19 335 343 "SintoMeUmaMerda/sideEffects.ml" 19 335 345
+)
+"SintoMeUmaMerda/sideEffects.ml" 22 426 438 "SintoMeUmaMerda/sideEffects.ml" 22 426 449
+type(
+  unit
+)
+"SintoMeUmaMerda/sideEffects.ml" 23 452 464 "SintoMeUmaMerda/sideEffects.ml" 23 452 473
+type(
+  out_channel -> unit
+)
+ident(
+  int_ref Stdlib.close_out "stdlib.mli" 997 37165 37165 "stdlib.mli" 997 37165 37200
+)
+"SintoMeUmaMerda/sideEffects.ml" 23 452 474 "SintoMeUmaMerda/sideEffects.ml" 23 452 476
+type(
+  out_channel
+)
+ident(
+  int_ref co "SintoMeUmaMerda/sideEffects.ml" 20 362 374 "SintoMeUmaMerda/sideEffects.ml" 20 362 376
+)
+"SintoMeUmaMerda/sideEffects.ml" 23 452 464 "SintoMeUmaMerda/sideEffects.ml" 23 452 476
+type(
+  unit
+)
+"SintoMeUmaMerda/sideEffects.ml" 22 426 438 "SintoMeUmaMerda/sideEffects.ml" 23 452 476
+type(
+  unit
+)
+"SintoMeUmaMerda/sideEffects.ml" 21 394 406 "SintoMeUmaMerda/sideEffects.ml" 23 452 476
+type(
+  unit
+)
+"SintoMeUmaMerda/sideEffects.ml" 20 362 370 "SintoMeUmaMerda/sideEffects.ml" 23 452 476
+type(
+  unit
+)
+"SintoMeUmaMerda/sideEffects.ml" 19 335 339 "SintoMeUmaMerda/sideEffects.ml" 23 452 476
+type(
+  unit
+)
+"SintoMeUmaMerda/sideEffects.ml" 25 480 480 "SintoMeUmaMerda/sideEffects.ml" 25 480 485
+type(
+  string -> unit
+)
+ident(
+  int_ref Unix.chdir "unix.mli" 712 29950 29950 "unix.mli" 712 29950 29976
+)
+"SintoMeUmaMerda/sideEffects.ml" 25 480 487 "SintoMeUmaMerda/sideEffects.ml" 25 480 512
+type(
+  string
+)
+"SintoMeUmaMerda/sideEffects.ml" 25 480 512 "SintoMeUmaMerda/sideEffects.ml" 25 480 513
+type(
+  string -> string -> string
+)
+ident(
+  int_ref Stdlib.( ^ ) "stdlib.mli" 661 25349 25349 "stdlib.mli" 661 25349 25387
+)
+"SintoMeUmaMerda/sideEffects.ml" 25 480 513 "SintoMeUmaMerda/sideEffects.ml" 25 480 528
+type(
+  string
+)
+"SintoMeUmaMerda/sideEffects.ml" 25 480 528 "SintoMeUmaMerda/sideEffects.ml" 25 480 529
+type(
+  string -> string -> string
+)
+ident(
+  int_ref Stdlib.( ^ ) "stdlib.mli" 661 25349 25349 "stdlib.mli" 661 25349 25387
+)
+"SintoMeUmaMerda/sideEffects.ml" 25 480 529 "SintoMeUmaMerda/sideEffects.ml" 25 480 569
+type(
+  string
+)
+"SintoMeUmaMerda/sideEffects.ml" 25 480 513 "SintoMeUmaMerda/sideEffects.ml" 25 480 569
+type(
+  string
+)
+"SintoMeUmaMerda/sideEffects.ml" 25 480 486 "SintoMeUmaMerda/sideEffects.ml" 25 480 570
+type(
+  string
+)
+"SintoMeUmaMerda/sideEffects.ml" 25 480 480 "SintoMeUmaMerda/sideEffects.ml" 25 480 570
+type(
+  unit
+)
+"SintoMeUmaMerda/sideEffects.ml" 26 573 577 "SintoMeUmaMerda/sideEffects.ml" 26 573 582
+type(
+  string
+)
+ident(
+  def file1 "SintoMeUmaMerda/sideEffects.ml" 27 594 594 "SintoMeUmaMerda/sideEffects.ml" 0 0 -1
+)
+"SintoMeUmaMerda/sideEffects.ml" 26 573 584 "SintoMeUmaMerda/sideEffects.ml" 26 573 591
+type(
+  string
+)
+"SintoMeUmaMerda/sideEffects.ml" 27 594 598 "SintoMeUmaMerda/sideEffects.ml" 27 594 603
+type(
+  string
+)
+ident(
+  def file2 "SintoMeUmaMerda/sideEffects.ml" 28 615 615 "SintoMeUmaMerda/sideEffects.ml" 0 0 -1
+)
+"SintoMeUmaMerda/sideEffects.ml" 27 594 605 "SintoMeUmaMerda/sideEffects.ml" 27 594 612
+type(
+  string
+)
+"SintoMeUmaMerda/sideEffects.ml" 28 615 619 "SintoMeUmaMerda/sideEffects.ml" 28 615 620
+type(
+  unit
+)
+ident(
+  def x "SintoMeUmaMerda/sideEffects.ml" 28 615 641 "SintoMeUmaMerda/sideEffects.ml" 0 0 -1
+)
+"SintoMeUmaMerda/sideEffects.ml" 28 615 621 "SintoMeUmaMerda/sideEffects.ml" 28 615 629
+type(
+  string -> string -> unit
+)
+ident(
+  int_ref copyFile "SintoMeUmaMerda/sideEffects.ml" 18 314 318 "SintoMeUmaMerda/sideEffects.ml" 18 314 326
+)
+"SintoMeUmaMerda/sideEffects.ml" 28 615 630 "SintoMeUmaMerda/sideEffects.ml" 28 615 635
+type(
+  string
+)
+ident(
+  int_ref file1 "SintoMeUmaMerda/sideEffects.ml" 26 573 577 "SintoMeUmaMerda/sideEffects.ml" 26 573 582
+)
+"SintoMeUmaMerda/sideEffects.ml" 28 615 636 "SintoMeUmaMerda/sideEffects.ml" 28 615 641
+type(
+  string
+)
+ident(
+  int_ref file2 "SintoMeUmaMerda/sideEffects.ml" 27 594 598 "SintoMeUmaMerda/sideEffects.ml" 27 594 603
+)
+"SintoMeUmaMerda/sideEffects.ml" 28 615 621 "SintoMeUmaMerda/sideEffects.ml" 28 615 641
+type(
+  unit
+)

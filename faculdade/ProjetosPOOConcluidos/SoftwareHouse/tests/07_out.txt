@@ -1,0 +1,167 @@
+User peralta was registered as manager with clearance level 3.
+User santiago was registered as manager with clearance level 4.
+User holt was registered as manager with clearance level 5.
+User diaz was registered as manager with clearance level 4.
+User boyle was registered as developer with clearance level 3.
+User scully was registered as developer with clearance level 4.
+User linetti was registered as developer with clearance level 5.
+User pimento was registered as developer with clearance level 2.
+User wells was registered as developer with clearance level 2.
+User hitchcock was registered as developer with clearance level 4.
+User vulture was registered as developer with clearance level 3.
+User jeffords was registered as developer with clearance level 5.
+All registered users:
+developer boyle is managed by peralta [0]
+manager diaz [2, 0, 0]
+developer hitchcock is managed by diaz [0]
+manager holt [4, 0, 0]
+developer jeffords is managed by holt [0]
+developer linetti is managed by holt [0]
+manager peralta [2, 0, 0]
+developer pimento is managed by peralta [0]
+manager santiago [0, 0, 0]
+developer scully is managed by holt [0]
+developer vulture is managed by holt [0]
+developer wells is managed by diaz [0]
+Manager diaz:
+hitchcock
+wells
+Manager peralta:
+boyle
+pimento
+Manager holt:
+jeffords
+linetti
+scully
+vulture
+Manager santiago:
+Project manager alice does not exist.
+Project manager scully does not exist.
+This is holt app level_0 project was created.
+This is santiago app level_4 project was created.
+This is diaz app level_4 project was created.
+This is holt app level_3 project was created.
+This is peralta app level_2 project was created.
+This is diaz app level_1 project was created.
+This is peralta app level_3 project was created.
+This is holt app level_5 project was created.
+Latest team members:
+jeffords: added to the team.
+scully: added to the team.
+linetti: added to the team.
+Latest team members:
+scully: added to the team.
+linetti: added to the team.
+Latest team members:
+jeffords: added to the team.
+boyle: added to the team.
+Latest team members:
+pimento: added to the team.
+Latest team members:
+pimento: added to the team.
+scully: added to the team.
+Latest team members:
+boyle: added to the team.
+linetti: added to the team.
+Latest team members:
+jeffords: added to the team.
+linetti: added to the team.
+Latest project artefacts:
+file1: added to the project.
+Latest project artefacts:
+file2: added to the project.
+Latest project artefacts:
+file3: added to the project.
+Latest project artefacts:
+file1: added to the project.
+Latest project artefacts:
+file2: added to the project.
+Latest project artefacts:
+file1: added to the project.
+Latest project artefacts:
+file2: added to the project.
+Latest project artefacts:
+file1: added to the project.
+Latest project artefacts:
+file1: added to the project.
+Latest project artefacts:
+file2: added to the project.
+Latest project artefacts:
+file1: added to the project.
+Latest project artefacts:
+file2: added to the project.
+Latest project artefacts:
+file1: added to the project.
+Latest project artefacts:
+file2: added to the project.
+Manager diaz:
+hitchcock
+wells
+Manager peralta:
+boyle
+This is peralta app level_3, file1, revision 1, 02-03-2022, uploaded file
+This is holt app level_3, file2, revision 1, 29-01-2022, uploaded file
+pimento
+This is peralta app level_2, file1, revision 1, 06-03-2022, uploaded file
+This is holt app level_0, file2, revision 1, 05-03-2022, uploaded file
+Manager holt:
+jeffords
+This is holt app level_5, file1, revision 1, 05-03-2022, uploaded file
+This is santiago app level_4, file3, revision 1, 03-03-2022, uploaded file
+This is peralta app level_3, file2, revision 1, 02-03-2022, uploaded file
+linetti
+This is holt app level_5, file2, revision 1, 06-03-2022, uploaded file
+This is diaz app level_4, file1, revision 1, 02-03-2022, uploaded file
+This is holt app level_3, file1, revision 1, 01-03-2022, uploaded file
+This is santiago app level_4, file1, revision 1, 01-03-2022, uploaded file
+scully
+This is holt app level_0, file1, revision 1, 05-03-2022, uploaded file
+This is diaz app level_4, file2, revision 1, 03-03-2022, uploaded file
+This is santiago app level_4, file2, revision 1, 02-03-2022, uploaded file
+vulture
+Manager santiago:
+Revision 2 of artefact file3 was submitted.
+Revision 2 of artefact file2 was submitted.
+Revision 2 of artefact file1 was submitted.
+Revision 2 of artefact file1 was submitted.
+Revision 2 of artefact file2 was submitted.
+Revision 3 of artefact file2 was submitted.
+Revision 2 of artefact file1 was submitted.
+Revision 2 of artefact file2 was submitted.
+Revision 3 of artefact file2 was submitted.
+Manager diaz:
+hitchcock
+wells
+Manager peralta:
+boyle
+This is peralta app level_3, file2, revision 2, 03-03-2022, first revision
+This is peralta app level_3, file1, revision 1, 02-03-2022, uploaded file
+This is holt app level_3, file2, revision 1, 29-01-2022, uploaded file
+pimento
+This is peralta app level_2, file1, revision 2, 07-03-2022, first revision
+This is peralta app level_2, file1, revision 1, 06-03-2022, uploaded file
+This is holt app level_0, file2, revision 1, 05-03-2022, uploaded file
+Manager holt:
+jeffords
+This is holt app level_5, file1, revision 1, 05-03-2022, uploaded file
+This is peralta app level_3, file2, revision 3, 04-03-2022, first revision
+This is santiago app level_4, file2, revision 2, 04-03-2022, first revision
+This is santiago app level_4, file3, revision 1, 03-03-2022, uploaded file
+This is peralta app level_3, file2, revision 1, 02-03-2022, uploaded file
+linetti
+This is holt app level_5, file2, revision 1, 06-03-2022, uploaded file
+This is santiago app level_4, file3, revision 2, 05-03-2022, first revision
+This is diaz app level_4, file2, revision 3, 04-03-2022, second revision
+This is diaz app level_4, file2, revision 2, 03-03-2022, first revision
+This is diaz app level_4, file1, revision 1, 02-03-2022, uploaded file
+This is holt app level_3, file1, revision 1, 01-03-2022, uploaded file
+This is santiago app level_4, file1, revision 1, 01-03-2022, uploaded file
+scully
+This is santiago app level_4, file1, revision 2, 06-03-2022, first revision
+This is holt app level_0, file1, revision 1, 05-03-2022, uploaded file
+This is diaz app level_4, file1, revision 2, 04-03-2022, first revision
+This is diaz app level_4, file2, revision 1, 03-03-2022, uploaded file
+This is santiago app level_4, file2, revision 1, 02-03-2022, uploaded file
+vulture
+Manager santiago:
+Bye!

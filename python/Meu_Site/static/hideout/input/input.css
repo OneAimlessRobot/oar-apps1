@@ -1,0 +1,12 @@
+button{
+    background-color:yellow;
+    color:red;
+}
+button:hover{
+    background-color:green;
+}
+input[type="submit"]:hover{
+
+    background-color:red;
+
+}

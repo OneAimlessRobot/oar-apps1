@@ -1,0 +1,21 @@
+users
+register manager peralta 3
+register manager santiago 4
+register developer boyle peralta 3
+register manager holt 5
+register developer bob holt 2
+register manager diaz 4
+register developer linetti holt 4
+users
+register manager boyle 4
+register intern boyle 4
+register developer alice boyle 3
+register developer alice john 4
+register developer pimento peralta 1
+register developer pimento diaz 4
+register developer wells diaz 2
+register developer john diaz 4
+register clerk boyle 4
+register developer mary holt 3
+users
+exit

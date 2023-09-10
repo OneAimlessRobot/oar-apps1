@@ -1,0 +1,40 @@
+A new circle was added.
+
+A new rectangle was added.
+
+A new rectangle was added.
+
+A new circle was added.
+
+A new rectangle was added.
+
+A new circle was added.
+
+circle2 (4, 2) CIRCLE
+
+A new circle was added.
+
+A new circle was added.
+
+circle5 (0, 0) CIRCLE
+
+A new rectangle was added.
+
+A new rectangle was added.
+
+rectangle6 (-2, -3) RECTANGLE
+
+All shapes in the collection:
+circle1 (0, 0) CIRCLE
+rectangle1 (0, 7) RECTANGLE
+rectangle2 (-1, 4) RECTANGLE
+circle2 (4, 2) CIRCLE
+rectangle3 (6, 7) RECTANGLE
+circle3 (-1, 0) CIRCLE
+circle4 (3, 4) CIRCLE
+circle5 (0, 0) CIRCLE
+rectangle5 (2, 2) RECTANGLE
+rectangle6 (-2, -3) RECTANGLE
+
+Exiting...
+

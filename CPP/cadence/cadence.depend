@@ -1,0 +1,28 @@
+# depslib dependency file v1.0
+1648922449 source:/home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/newLust/newLust/sources/audio.c
+	<stdint.h>
+	<stdio.h>
+	<stdlib.h>
+	<SDL2/SDL.h>
+	"../headers/audio.h"
+
+1649010685 /home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/newLust/newLust/headers/audio.h
+	<SDL2/SDL.h>
+
+1693083797 source:/home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/cadence/main.cpp
+	"../newLust/newLust/headers/audio.h"
+	<SDL2/SDL.h>
+	<iostream>
+	<thread>
+	<unistd.h>
+
+1648922449 source:/media/k/Seagate Basic/Adriano/scripts/CPP/Programs within CPP syntax/newLust/newLust/sources/audio.c
+	<stdint.h>
+	<stdio.h>
+	<stdlib.h>
+	<SDL2/SDL.h>
+	"../headers/audio.h"
+
+1649010685 /media/k/Seagate Basic/Adriano/scripts/CPP/Programs within CPP syntax/newLust/newLust/headers/audio.h
+	<SDL2/SDL.h>
+

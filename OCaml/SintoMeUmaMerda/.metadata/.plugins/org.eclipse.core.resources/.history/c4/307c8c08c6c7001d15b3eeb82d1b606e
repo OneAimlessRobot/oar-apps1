@@ -1,0 +1,28 @@
+let rec firstNat x=
+		match x with
+		|0 -> []
+		|x -> x-1::(firstNat (x-1))
+	
+;;
+
+firstNat 7
+
+let rec pack x=
+		match x with
+		| [] -> []
+		| head::sHead::trail -> if head=sHead then
+																(head,0+
+																			
+																		
+;;
+
+let incPair (x,y)=
+				(x,y+1)
+;;
+			
+
+let rec len x=
+		match x with
+		| [] ->0
+		| head::trail-> 1+ len trail
+;;

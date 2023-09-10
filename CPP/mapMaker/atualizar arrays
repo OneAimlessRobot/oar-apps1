@@ -1,0 +1,84 @@
+
+
+
+
+            if(OnesAreContained(gameState,REMOVE_ENTITIES_MASK)){
+                for(SDL_Rect rect: trail){
+                    trail.pop_back();
+                }
+                for(objectValuePair test: army){
+                    army.pop_back();
+                }
+                for(SDL_Rect rect: trail){
+                    trail.pop_back();
+                }
+                for(RectNumberPair test: obstacles){
+                    obstacles.pop_back();
+                }
+                gameState&=N_REMOVE_ENTITIES_MASK;
+                }
+
+
+
+            if(OnesAreContained(gameState,ARMY_MASK)){
+                if(OnesAreContained(gameState,THROWABLE_ADD_MASK){
+                        objectValuePair test=(objectValuePair){
+                                new Throwable(x1,y1,50,0,randNumBetZeroAnd(255),randNumBetZeroAnd(255),randNumBetZeroAnd(255),255),
+                                0};
+                        test.obj->addBox(0,&air);
+                        army.push_back(test);
+                        gameState&=N_THROWABLE_ADD_MASK;
+                }
+            if(OnesAreContained(gameState,COLLISIONS_MASK)){
+                    for(objectValuePair object:army){
+                        for(RectNumberPair thing:obstacles){
+                            object.obj->addBox(thing.number,thing.rect);
+                        }
+                    }
+                    gameState&=N_COLLISIONS_MASK;
+
+                }
+            }
+
+
+
+
+
+            if(OnesAreContained(gameState,NEW_OBSTACLE_MASK)){
+                int x,y,w,h;
+                std::cout<<"Insere x de novo obstaculo: \n";
+                std::cin>>x;
+                std::cout<<"Insere y de novo obstaculo: \n";
+                std::cin>>y;
+                std::cout<<"Insere width de novo obstaculo: \n";
+                std::cin>>w;
+                std::cout<<"Insere height de novo obstaculo: \n";
+                std::cin>>h;
+                SDL_Rect* rect=(SDL_Rect*)malloc(sizeof(SDL_Rect));
+                (*rect)=(SDL_Rect){x,y,w,h};
+                obstacles.push_back((RectNumberPair){rect,1});
+                gameState&=N_NEW_OBSTACLE_MASK;
+
+            }
+
+
+
+                if(OnesAreContained(gameState,DRAW_MASK)){
+                        trail_particle=(SDL_Rect){x1,y1,10,10};
+                        trail.push_back(trail_particle);
+                }
+
+
+
+
+                if(OnesAreContained(gameState,TRAILS_MASK)){
+                        SDL_Point point=(SDL_Point){jumper->getX(),jumper->getY()};
+                        tail.push_back(point);
+                }
+                else{
+                    for(SDL_Point point: tail){
+                        tail.pop_back();
+                    }
+
+                }
+

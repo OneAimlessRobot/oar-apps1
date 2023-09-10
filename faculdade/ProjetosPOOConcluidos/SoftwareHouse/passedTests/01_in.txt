@@ -1,0 +1,8 @@
+help
+Help
+silly command
+hElp
+not a command
+not a command either
+HELP
+exit

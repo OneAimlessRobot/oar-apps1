@@ -1,0 +1,133 @@
+<HTML>
+
+<HEAD>
+<TITLE>ISPrime</TITLE>
+
+<SCRIPT TYPE="text/javascript">
+function isPrime(n1) {
+	if(n1<=1){
+	
+		return false;
+	}
+    for(let i=2;i<n1;i++){
+    
+    	
+	let x= n1%i;
+	if(x==0){
+		
+		return false;
+	
+	}    
+    
+    }
+    return true;
+}
+function runForm1(form) {
+    form.text2.value = isPrime(parseInt(form.text1.value));
+}
+</SCRIPT>
+</HEAD>
+
+<BODY>
+<H1>Is it Prime</H1>
+<FORM ID="form1">
+     <INPUT TYPE="text" ID="text1" VALUE="1" SIZE=10 style="text-align: right"> <INPUT TYPE="text" ID="text2" VALUE="false" SIZE=25 READONLY
+                                           style="text-align: right; font-weight: bold">
+ <p> <INPUT TYPE="button" ID="button1" VALUE="IsPrime?" ONCLICK="runForm1(form)">
+</FORM>
+</BODY>
+
+</HTML>
+
+
+
+<HTML>
+
+<HEAD>
+<TITLE>MEGASEARCH</TITLE>
+
+<SCRIPT>
+function runForm3(form,base_url) {
+    let query = form.query.value;
+    if (query === "") {              // igualdade estrita
+        alert("Error: Empty URL");
+    }
+    else {
+        document.location = base_url + query;   // change URL
+    }
+}
+</SCRIPT>
+</HEAD>
+
+<BODY>
+<H1>MEGASEARCH</H1>
+<FORM ID="form3">
+    Enter URL: <INPUT TYPE="text" ID="query" SIZE=40>
+    <P><INPUT TYPE="button" ID="button1" VALUE="Goto" ONCLICK="runForm3(form)">
+    <INPUT TYPE="button" ID="button2" VALUE="Pesquisa Google" ONCLICK="runForm3(form,'https://www.google.com/search?q=')">
+    
+    <INPUT TYPE="button" ID="button3" VALUE="Pesquisa Google Imagens" ONCLICK="runForm3(form,'https://www.google.com/search?tbm=isch&q=')">
+    
+    <INPUT type="reset">
+</FORM>
+</BODY>
+
+</HTML>
+
+
+
+
+
+
+<HTML>
+
+<HEAD>
+<TITLE>ALLL THE PRIMEZ</TITLE>
+
+<SCRIPT>
+function runForm(form) {
+	
+	let candidates =[]
+	let primes= []
+	candidates[0]=false
+	let endpoint= parseInt(form.input.value)
+	for(let x= 1;x<endpoint;x++){
+	
+		candidates[x]=true
+	
+	}
+	
+	for(let x= 1; x<endpoint;x++){
+	
+		if(candidates[x]){
+		
+			primes.push(x+1);
+		
+		}
+		for(let y= x+1;y<=endpoint;y+=(x+1)){
+			
+			
+			candidates[y-1]=false
+		
+		}
+		
+	
+	}
+	form.result.value=primes
+
+}
+</SCRIPT>
+</HEAD>
+
+<BODY>
+<H1>PR!M3Z RUL3</H1>
+<FORM ID="form3">
+    Mete Aqui input <INPUT TYPE="text" ID="input" SIZE=40>
+    <P><INPUT TYPE="button" ID="button1" VALUE="GENERATE ALLLLLLL" ONCLICK="runForm(form)">
+    <TEXTAREA ID="result" ROWS=10 COLS=70></TEXTAREA>
+    
+    <INPUT type="reset">
+</FORM>
+</BODY>
+
+</HTML>

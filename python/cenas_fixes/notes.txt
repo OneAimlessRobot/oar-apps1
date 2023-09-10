@@ -1,0 +1,5 @@
+-Estes são os meus primeiros módulos de python que alguma vez criei. Posso colocar aqui funções e importá-las noutros ficheiros.
+-criei aqui uma classe "Humano" que se comporta de forma analoga a C++ e java. As "Variaveis de instância"(Propriedades) são criadas sem ter de se dizer mais nada. Dizes "self.nomedapropriedade"
+-E a propriedade aparece e vai adquirir o valor de um dos argumentos do construtor, por exemplo. E um construtor tem sempre um valor
+-Que é o "self", em que se declara que o objeto vai ter metodos aplicados a ele.
+-listas em python funcionam como arrays em C++ ou java, só que admitem objetos de tipos diferentes. Não é preciso saber o tamanho de nada a priori.

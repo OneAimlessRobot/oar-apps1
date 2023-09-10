@@ -1,0 +1,96 @@
+course IP
+course POO
+course AM I
+course AM II
+course Fancy course name
+course Karaoke 101
+course Extreme Mooshaking
+coursedeadlines Advanced Procastination
+coursedeadlines IP
+coursedeadlines AM II
+coursedeadlines Extreme Mooshaking
+professor Injun Joe
+student 23234 Sid Sawyer
+student 10730 Amy Lawrence
+student 3254 Mary
+student 9983 Muff Potter
+student 12435 Alfred Temple
+student 32424 Injun Joe
+student 12334 Tom Sawyer
+student 13242 Becky Thatcher
+student 3243 Huckleberry Finn
+student 23143 Joe Harper
+professor Aunt Polly
+professor Mr. Walters
+professor Judge Thatcher
+professor Jim
+professor Mr. Sprague
+professor Mr. Jones
+assign Mr. Jones
+IP
+assign Mr. Walters
+POO
+assign Mr. Walters
+AM II
+assign Mr. Walters
+AM I
+assign Aunt Polly
+AM I
+assign Mr. Jones
+POO
+assign Mr. Jones
+AM I
+deadline POO
+2022 5 28 New Project
+deadline POO
+2022 4 28 Calendar Project
+enrol 5 POO
+Tom Sawyer
+Huckleberry Finn
+Becky Thatcher
+Muff Potter
+Amy Lawrence
+deadline POO
+2022 6 6 Final Project
+enrol 2 AM I
+Becky Thatcher
+Tom Sawyer
+Deadline IP
+2022 4 28 Easy Calendar Project
+deadline Karaoke 101
+2022 4 29 Bad Singing Project
+deadline AM I
+2022 4 29 Strange Project
+deadline Parachuting
+2022 4 30 Scary Jumping Project
+deadline Karaoke 101
+2022 4 30 Bad Singing Project
+deadline POO
+2022 4 30 Bad Singing Project
+enrol 4 IP
+Tom Sawyer
+Sid Sawyer
+Muff Potter
+Amy Lawrence
+Deadline IP
+2022 5 7 Hard Calendar Project
+coursedeadlines POO
+coursedeadlines IP
+coursedeadlines Karaoke 101
+coursedeadlines AM I
+coursedeadlines Extreme Mooshaking
+coursedeadlines Parachuting
+roster POO
+personaldeadlines Tom Sawyer
+personaldeadlines Tom Waits
+personaldeadlines Sid Sawyer
+personaldeadlines Santa Claus
+personaldeadlines Huckleberry Finn
+personaldeadlines Mark Twain
+personaldeadlines Amy Lawrence
+personaldeadlines Amy Winehouse
+personaldeadlines Mr. Walters
+personaldeadlines Marlon Brando
+personaldeadlines Mr. Jones
+personaldeadlines Unicorn
+exit

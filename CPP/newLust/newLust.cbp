@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="newLust" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/newLust" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option parameters="debug" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/newLust" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Linker>
+			<Add option="-lSDL2 -lSDL2_image -lpthread -lm" />
+		</Linker>
+		<Unit filename="headers/Crush.hpp" />
+		<Unit filename="headers/CrushManager.h" />
+		<Unit filename="headers/Structs.h" />
+		<Unit filename="headers/audio.h" />
+		<Unit filename="headers/auxFuncs.h" />
+		<Unit filename="headers/fileBinaries.h" />
+		<Unit filename="headers/globals.h" />
+		<Unit filename="headers/handleMedia.h" />
+		<Unit filename="headers/handleSounds.h" />
+		<Unit filename="headers/includesAndDefs.h" />
+		<Unit filename="headers/menuFunction.h" />
+		<Unit filename="headers/roleplay.h" />
+		<Unit filename="headers/templated.hpp" />
+		<Unit filename="headers/templated.tpp" />
+		<Unit filename="resources/embeded/file.txt" />
+		<Unit filename="resources/embeded/file2.txt" />
+		<Unit filename="resources/embeded/file3.txt" />
+		<Unit filename="resources/embeded/img1" />
+		<Unit filename="resources/embeded/img10" />
+		<Unit filename="resources/embeded/img11" />
+		<Unit filename="resources/embeded/img2" />
+		<Unit filename="resources/embeded/img3" />
+		<Unit filename="resources/embeded/img4" />
+		<Unit filename="resources/embeded/img5" />
+		<Unit filename="resources/embeded/img6" />
+		<Unit filename="resources/embeded/img7" />
+		<Unit filename="resources/embeded/img8" />
+		<Unit filename="resources/embeded/img9" />
+		<Unit filename="resources/embeded/kissing" />
+		<Unit filename="resources/embeded/kissing2" />
+		<Unit filename="resources/embeded/musica" />
+		<Unit filename="resources/embeded/musica2" />
+		<Unit filename="resources/embeded/musica3" />
+		<Unit filename="resources/embeded/password" />
+		<Unit filename="resources/embeded/splash" />
+		<Unit filename="resources/objects/file.o" />
+		<Unit filename="resources/objects/file2.o" />
+		<Unit filename="resources/objects/file3.o" />
+		<Unit filename="resources/objects/img1.o" />
+		<Unit filename="resources/objects/img10.o" />
+		<Unit filename="resources/objects/img11.o" />
+		<Unit filename="resources/objects/img2.o" />
+		<Unit filename="resources/objects/img3.o" />
+		<Unit filename="resources/objects/img4.o" />
+		<Unit filename="resources/objects/img5.o" />
+		<Unit filename="resources/objects/img6.o" />
+		<Unit filename="resources/objects/img7.o" />
+		<Unit filename="resources/objects/img8.o" />
+		<Unit filename="resources/objects/img9.o" />
+		<Unit filename="resources/objects/kissing.o" />
+		<Unit filename="resources/objects/kissing2.o" />
+		<Unit filename="resources/objects/musica.o" />
+		<Unit filename="resources/objects/musica2.o" />
+		<Unit filename="resources/objects/musica3.o" />
+		<Unit filename="resources/objects/password.o" />
+		<Unit filename="resources/objects/splash.o" />
+		<Unit filename="resources/phrases/roleplay.txt" />
+		<Unit filename="sources/Crush.cpp" />
+		<Unit filename="sources/CrushManager.cpp" />
+		<Unit filename="sources/audio.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="sources/auxFuncs.cpp" />
+		<Unit filename="sources/globals.cpp" />
+		<Unit filename="sources/handleMedia.cpp" />
+		<Unit filename="sources/handleSounds.cpp" />
+		<Unit filename="sources/lust.cpp" />
+		<Unit filename="sources/menuFunction.cpp" />
+		<Unit filename="sources/roleplay.cpp" />
+		<Extensions />
+	</Project>
+</CodeBlocks_project_file>

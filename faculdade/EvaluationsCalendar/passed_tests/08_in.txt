@@ -1,0 +1,36 @@
+course IP
+course POO
+course AM I
+course AM II
+course Fancy course name
+course Karaoke 101
+course Extreme Mooshaking
+coursedeadlines Advanced Procastination
+coursedeadlines IP
+coursedeadlines AM II
+coursedeadlines Extreme Mooshaking
+deadline POO
+2022 5 28 New Project
+deadline POO
+2022 4 28 Calendar Project
+deadline POO
+2022 6 6 Final Project
+Deadline IP
+2022 4 28 Easy Calendar Project
+deadline Karaoke 101
+2022 4 29 Bad Singing Project
+deadline AM I
+2022 4 29 Strange Project
+deadline Parachuting
+2022 4 30 Scary Jumping Project
+deadline Karaoke 101
+2022 4 30 Bad Singing Project
+deadline POO
+2022 4 30 Bad Singing Project
+coursedeadlines POO
+coursedeadlines IP
+coursedeadlines Karaoke 101
+coursedeadlines AM I
+coursedeadlines Extreme Mooshaking
+coursedeadlines Parachuting
+exit

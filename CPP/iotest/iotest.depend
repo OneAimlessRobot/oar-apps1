@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1662396976 source:/media/oneaimlessrobot/Seagate Basic/Adriano/scripts/CPP/Programs within CPP syntax/iotest/main.cpp
+	<iostream>
+	<limits>
+	<string>
+

@@ -1,0 +1,92 @@
+There are no professors!
+Course IP added.
+Course POO added.
+Course AM I added.
+Course AM II added.
+Course Fancy course name added.
+Course Karaoke 101 added.
+Course Extreme Mooshaking added.
+Course Advanced Procastination does not exist!
+No deadlines defined for IP!
+No deadlines defined for AM II!
+No deadlines defined for Extreme Mooshaking!
+Injun Joe added.
+Injun Joe (0).
+Sid Sawyer added.
+Amy Lawrence added.
+Mary added.
+Muff Potter added.
+Alfred Temple added.
+Injun Joe already exists!
+Tom Sawyer added.
+Becky Thatcher added.
+Huckleberry Finn added.
+Joe Harper added.
+Aunt Polly added.
+Mr. Walters added.
+Judge Thatcher added.
+Jim added.
+Mr. Sprague added.
+Mr. Jones added.
+Injun Joe (0).
+Professor Mr. Jones assigned to IP.
+Injun Joe (0).
+Professor Mr. Walters assigned to POO.
+Injun Joe (0).
+Professor Mr. Walters assigned to AM II.
+Professor Mr. Walters assigned to AM I.
+Injun Joe (0).
+Professor Aunt Polly assigned to AM I.
+Professor Mr. Jones assigned to POO.
+Professor Mr. Jones assigned to AM I.
+Injun Joe (0).
+5 students added to course POO.
+Mr. Walters (5).
+2 students added to course AM I.
+Mr. Walters (7).
+4 students added to course IP.
+Mr. Jones (11).
+Roster for course IP:
+Professors:
+Mr. Jones
+Students:
+12334 Tom Sawyer
+23234 Sid Sawyer
+9983 Muff Potter
+10730 Amy Lawrence
+Roster for course POO:
+Professors:
+Mr. Walters
+Mr. Jones
+Students:
+12334 Tom Sawyer
+3243 Huckleberry Finn
+13242 Becky Thatcher
+9983 Muff Potter
+10730 Amy Lawrence
+Roster for course AM I:
+Professors:
+Mr. Walters
+Aunt Polly
+Mr. Jones
+Students:
+13242 Becky Thatcher
+12334 Tom Sawyer
+All people:
+Injun Joe (0)
+[23234] Sid Sawyer (1)
+[10730] Amy Lawrence (2)
+[3254] Mary (0)
+[9983] Muff Potter (2)
+[12435] Alfred Temple (0)
+[12334] Tom Sawyer (3)
+[13242] Becky Thatcher (2)
+[3243] Huckleberry Finn (1)
+[23143] Joe Harper (0)
+Aunt Polly (1)
+Mr. Walters (3)
+Judge Thatcher (0)
+Jim (0)
+Mr. Sprague (0)
+Mr. Jones (3)
+Bye!

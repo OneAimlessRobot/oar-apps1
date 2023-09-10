@@ -1,0 +1,122 @@
+# depslib dependency file v1.0
+1646572756 source:/home/oneaimlessrobot/scripts/CPP/lust2.0/lust.cpp
+	<iostream>
+	<fstream>
+	<time.h>
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	<stdio.h>
+	<stdlib.h>
+	<thread>
+	<vector>
+	<limits>
+	<future>
+	<chrono>
+	<math.h>
+	<stdbool.h>
+	<unistd.h>
+	<string.h>
+	"headers/audio.h"
+	"headers/fileBinaries.h"
+	"headers/classesAndAuxiliaryStuff.h"
+	"headers/globals.h"
+	"headers/auxiliaryMenuStuff.h"
+	"headers/handleList.h"
+	"headers/handleSounds.h"
+	"headers/handleMedia.h"
+	"headers/roleplay.h"
+	"headers/menuFunction.h"
+
+1646247911 /home/oneaimlessrobot/scripts/CPP/lust2.0/headers/audio.c
+	<stdint.h>
+	<stdio.h>
+	<stdlib.h>
+	<SDL2/SDL.h>
+	"audio.h"
+
+1646060506 /home/oneaimlessrobot/scripts/CPP/lust2.0/headers/audio.h
+	<SDL2/SDL.h>
+
+1646578203 /home/oneaimlessrobot/scripts/CPP/lust2.0/headers/fileBinaries.h
+
+1646574758 /home/oneaimlessrobot/scripts/CPP/lust2.0/headers/classesAndAuxiliaryStuff.h
+
+1646578444 /home/oneaimlessrobot/scripts/CPP/lust2.0/headers/globals.h
+
+1646318871 /home/oneaimlessrobot/scripts/CPP/lust2.0/headers/auxiliaryMenuStuff.h
+
+1646565619 /home/oneaimlessrobot/scripts/CPP/lust2.0/headers/handleList.h
+
+1646347745 /home/oneaimlessrobot/scripts/CPP/lust2.0/headers/handleSounds.h
+
+1646572818 /home/oneaimlessrobot/scripts/CPP/lust2.0/headers/handleMedia.h
+
+1646572681 /home/oneaimlessrobot/scripts/CPP/lust2.0/headers/roleplay.h
+
+1646574626 /home/oneaimlessrobot/scripts/CPP/lust2.0/headers/menuFunction.h
+
+1646247911 source:/home/oneaimlessrobot/scripts/CPP/lust2.0/headers/audio.c
+	<stdint.h>
+	<stdio.h>
+	<stdlib.h>
+	<SDL2/SDL.h>
+	"audio.h"
+
+1646247911 source:/home/oneaimlessrobot/scripts/CPP/Programs within CPP syntax/lust2.0/headers/audio.c
+	<stdint.h>
+	<stdio.h>
+	<stdlib.h>
+	<SDL2/SDL.h>
+	"audio.h"
+
+1646060506 /home/oneaimlessrobot/scripts/CPP/Programs within CPP syntax/lust2.0/headers/audio.h
+	<SDL2/SDL.h>
+
+1646055422 source:/home/oneaimlessrobot/scripts/CPP/Programs within CPP syntax/lust2.0/tests/test.c
+
+1647703385 source:/home/oneaimlessrobot/scripts/CPP/Programs within CPP syntax/lust2.0/lust.cpp
+	<iostream>
+	<fstream>
+	<time.h>
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	<stdio.h>
+	<stdlib.h>
+	<thread>
+	<vector>
+	<limits>
+	<future>
+	<chrono>
+	<math.h>
+	<stdbool.h>
+	<unistd.h>
+	<string.h>
+	"headers/audio.h"
+	"headers/fileBinaries.h"
+	"headers/classesAndAuxiliaryStuff.h"
+	"headers/globals.h"
+	"headers/auxiliaryMenuStuff.h"
+	"headers/handleList.h"
+	"headers/handleSounds.h"
+	"headers/handleMedia.h"
+	"headers/roleplay.h"
+	"headers/menuFunction.h"
+
+1647706486 /home/oneaimlessrobot/scripts/CPP/Programs within CPP syntax/lust2.0/headers/fileBinaries.h
+
+1646574758 /home/oneaimlessrobot/scripts/CPP/Programs within CPP syntax/lust2.0/headers/classesAndAuxiliaryStuff.h
+
+1647706473 /home/oneaimlessrobot/scripts/CPP/Programs within CPP syntax/lust2.0/headers/globals.h
+
+1646318871 /home/oneaimlessrobot/scripts/CPP/Programs within CPP syntax/lust2.0/headers/auxiliaryMenuStuff.h
+
+1646565619 /home/oneaimlessrobot/scripts/CPP/Programs within CPP syntax/lust2.0/headers/handleList.h
+
+1646347745 /home/oneaimlessrobot/scripts/CPP/Programs within CPP syntax/lust2.0/headers/handleSounds.h
+
+1646572818 /home/oneaimlessrobot/scripts/CPP/Programs within CPP syntax/lust2.0/headers/handleMedia.h
+
+1646572681 /home/oneaimlessrobot/scripts/CPP/Programs within CPP syntax/lust2.0/headers/roleplay.h
+
+1646574626 /home/oneaimlessrobot/scripts/CPP/Programs within CPP syntax/lust2.0/headers/menuFunction.h
+

@@ -1,0 +1,20 @@
+body{
+    background-color: lightgreen;
+}
+#Dois{
+
+    background-color:pink;
+    float:left;
+    width:200px;
+    height:900px;
+}
+#Um{
+
+    background-color: orange;
+    float:right;
+    height:900px;
+    width:200px;
+}
+
+    
+/* É com a propriedade "float" que se colocam elementos lado a lado. */

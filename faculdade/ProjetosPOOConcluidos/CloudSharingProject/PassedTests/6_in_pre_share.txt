@@ -1,0 +1,17 @@
+SHARE p1 p2 file1
+ADD p1 premium
+ADD b1 basic
+UPLOAD p1 file1 3000
+UPLOAD p1 file2 2000
+UPLOAD p1 file3 120
+LISTFILES p1
+UPLOAD b1 file1 1000
+UPLOAD b1 file2 500
+LISTFILES b1
+SHARE p2 p1 file1
+SHARE p1 p3 file1
+SHARE b1 p1 file1
+SHARE p1 b1 file1
+LISTFILES b1
+EXIT
+

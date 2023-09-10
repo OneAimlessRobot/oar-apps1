@@ -1,0 +1,39 @@
+No users registered.
+User peralta was registered as manager with clearance level 3.
+User santiago was registered as manager with clearance level 4.
+User boyle was registered as developer with clearance level 3.
+User holt was registered as manager with clearance level 5.
+User bob was registered as developer with clearance level 2.
+User diaz was registered as manager with clearance level 4.
+User linetti was registered as developer with clearance level 4.
+All registered users:
+developer bob is managed by holt [0]
+developer boyle is managed by peralta [0]
+manager diaz [0, 0, 0]
+manager holt [2, 0, 0]
+developer linetti is managed by holt [0]
+manager peralta [1, 0, 0]
+manager santiago [0, 0, 0]
+User boyle already exists.
+Unknown job position.
+Project manager boyle does not exist.
+Project manager john does not exist.
+User pimento was registered as developer with clearance level 1.
+User pimento already exists.
+User wells was registered as developer with clearance level 2.
+User john was registered as developer with clearance level 4.
+Unknown job position.
+User mary was registered as developer with clearance level 3.
+All registered users:
+developer bob is managed by holt [0]
+developer boyle is managed by peralta [0]
+manager diaz [2, 0, 0]
+manager holt [3, 0, 0]
+developer john is managed by diaz [0]
+developer linetti is managed by holt [0]
+developer mary is managed by holt [0]
+manager peralta [2, 0, 0]
+developer pimento is managed by peralta [0]
+manager santiago [0, 0, 0]
+developer wells is managed by diaz [0]
+Bye!

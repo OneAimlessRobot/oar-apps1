@@ -1,0 +1,111 @@
+register manager peralta 3
+register manager santiago 4
+register manager holt 5
+register manager diaz 4
+register developer boyle peralta 3
+register developer bob holt 2
+register developer linetti holt 4
+register developer pimento peralta 2
+register developer wells diaz 2
+register developer john diaz 4
+register developer mary holt 3
+register developer jeffords holt 5
+users
+create santiago inhouse Online occurrence reporting
+4 web javascript css mysql
+2
+create diaz outsourced Online occurrence reporting UI
+4 css javascript ruby-on-rails redis
+UI4All
+create holt inhouse Wordle
+6 web javascript css outsystems c# oracle
+2
+create holt inhouse Top secret
+3 c# oracle rust
+5 
+create diaz inhouse Yet another online app
+3 erlang distribution redis
+4
+create diaz inhouse My fabulous app
+4 c# redis json html
+3
+create peralta inhouse Sell stuff online app
+5 distribution erlang html json microservicea
+3
+create peralta outsourced Accounting service
+2 go microservices
+Mendix
+projects
+team diaz Yet another online app
+5 boyle peralta linetti jeffords alice
+team diaz Yet another online app
+4 diaz linetti john santiago
+team alice My fabulous app
+5 boyle peralta linetti jeffords alice
+team diaz My fabulous app
+3 holt diaz santiago
+team peralta Sell stuff online app 
+4 peralta bob wells boyle
+team holt Wordle 
+4 bob wells pimento santiago
+team peralta Sell stuff online app 
+4 mary boyle pimento alice
+projects
+artefacts diaz Yet another online app 
+23-03-2022
+3
+main.java 3 java
+diagram.jpg 4 jpg image
+passwords.xlsx 5 passwords in an excel file!?
+artefacts linetti Yet another online app 
+25-03-2022
+3
+main.java 3 java
+diagram.jpg 4 jpg image
+todo.txt 3 text file
+artefacts santiago Online occurrence reporting
+25-01-2022
+3
+file1.py 2 python
+class_diagram.jpg 1 jpg image
+file2.py 2 python
+artefacts alice Online occurrence reporting
+25-01-2022
+2
+file1.py 2 python
+file2.py 2 python
+artefacts peralta Online occurrence reporting
+25-01-2022
+3
+file1.py 2 python
+class_diagram.jpg 1 jpg image
+file2.py 2 python
+artefacts holt Top secret
+04-02-2022
+3
+file1.erl 4 erlang file
+class_diagram.jpg 5 entities
+file2.erl 5 erlang file 
+artefacts diaz Accounting service
+25-01-2022
+2
+file1.py 2 python
+class_diagram.jpg 1 jpg image
+artefacts holt Top secret
+04-02-2022
+3
+file3.erl 5 erlang file
+class_diagram.jpg 5 entities
+file4.erl 5 erlang file
+artefacts jeffords My fabulous app
+06-02-2021
+2
+file1.erl 3 erlang file
+file.erl 5 erlang file
+artefacts holt My fabulous app
+06-02-2021
+2
+file1.erl 3 erlang file
+file.erl 5 erlang file
+projects
+exit

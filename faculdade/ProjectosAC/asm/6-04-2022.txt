@@ -1,0 +1,5 @@
+- O assembler que usamos nas aulas de AC chama-se G.A.S ((G).N.U (A)(S)sembler). 
+- Isto é importante de ter em conta, pois, basicamente, existem vários tipos de assembler, como o NASM (que, nesta altura, também tenho instalado), o MASM, etc.. E todos eles possuem sintaxe diferente, mesmo para uma mesma arquitetura de processador (A minha é x86_64, obtive esta informação com o comando "uname -m"). 
+- Vi um tutorial de linguagem Assembly x86 e pensei que me ia ajudar, já que a arquitetura deste computador, o único que eu tenho, tem um processador de arquitetura x86. Mas o assembler que o autor do tutorial usa é diferente do meu e o GAS não gosta dos exemplos
+de código que o autor dos videos deixa numa página de github dele.
+

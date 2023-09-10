@@ -1,0 +1,277 @@
+# depslib dependency file v1.0
+1662823494 source:/media/oneaimlessrobot/Seagate Basic/Adriano/scripts/CPP/Programs within CPP syntax/speed/main.cpp
+	"ImportsAndDefines.hpp"
+
+1662043498 source:/media/oneaimlessrobot/Seagate Basic/Adriano/scripts/CPP/Programs within CPP syntax/speed/object.cpp
+	"object.hpp"
+	<iostream>
+
+1662043429 /media/oneaimlessrobot/Seagate Basic/Adriano/scripts/CPP/Programs within CPP syntax/speed/object.hpp
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+
+1662468886 source:/media/oneaimlessrobot/Seagate Basic/Adriano/scripts/CPP/Programs within CPP syntax/speed/Menu.cpp
+	"Menu.hpp"
+
+1662468900 /media/oneaimlessrobot/Seagate Basic/Adriano/scripts/CPP/Programs within CPP syntax/speed/Menu.hpp
+	<SDL2/SDL.h>
+	<SDL2/SDL_ttf.h>
+	<iostream>
+
+1661716051 source:/media/oneaimlessrobot/Seagate Basic/Adriano/scripts/CPP/Programs within CPP syntax/speed/test.cpp
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	<SDL2/SDL_ttf.h>
+	"object.hpp"
+	"Menu.hpp"
+	<math.h>
+	<iostream>
+
+1661895956 source:/media/oneaimlessrobot/Seagate Basic/Adriano/scripts/CPP/Programs within CPP syntax/speed/gridObject.cpp
+	<SDL2/SDL.h>
+	<string>
+	<iostream>
+	"Menu.hpp"
+	"gridObject.hpp"
+	"graphicalLib1.hpp"
+
+1661894297 /media/oneaimlessrobot/Seagate Basic/Adriano/scripts/CPP/Programs within CPP syntax/speed/gridObject.hpp
+
+1662658870 source:/media/oneaimlessrobot/Seagate Basic/Adriano/scripts/CPP/Programs within CPP syntax/speed/graphicalLib1.cpp
+	<SDL2/SDL.h>
+	<iostream>
+	<string>
+	<vector>
+	<math.h>
+	"graphicalLib1.hpp"
+
+1662560715 /media/oneaimlessrobot/Seagate Basic/Adriano/scripts/CPP/Programs within CPP syntax/speed/graphicalLib1.hpp
+	<vector>
+
+1662570798 source:/media/oneaimlessrobot/Seagate Basic/Adriano/scripts/CPP/Programs within CPP syntax/speed/jumper.cpp
+	<SDL2/SDL.h>
+	<math.h>
+	"jumper.hpp"
+
+1662569832 /media/oneaimlessrobot/Seagate Basic/Adriano/scripts/CPP/Programs within CPP syntax/speed/jumper.hpp
+	"graphicalLib1.hpp"
+	"Trail.hpp"
+
+1662752499 /media/oneaimlessrobot/Seagate Basic/Adriano/scripts/CPP/Programs within CPP syntax/speed/throwable.hpp
+	<SDL2/SDL.h>
+	"Obstacle.hpp"
+	"Trail.hpp"
+
+1662752620 source:/media/oneaimlessrobot/Seagate Basic/Adriano/scripts/CPP/Programs within CPP syntax/speed/throwable.cpp
+	<SDL2/SDL_image.h>
+	"Obstacle.hpp"
+	"LTexture.hpp"
+	"throwable.hpp"
+	"graphicalLib1.hpp"
+	<iostream>
+	"Trail.hpp"
+
+1662212058 source:/media/oneaimlessrobot/Seagate Basic/Adriano/scripts/CPP/Programs within CPP syntax/speed/auxFunctions.cpp
+	"Menu.hpp"
+	<math.h>
+	<string>
+	<cstring>
+	"auxFunctions.h"
+
+1662823252 /media/oneaimlessrobot/Seagate Basic/Adriano/scripts/CPP/Programs within CPP syntax/speed/auxFunctions.h
+
+1662317223 /media/oneaimlessrobot/Seagate Basic/Adriano/scripts/CPP/Programs within CPP syntax/speed/HitBox.hpp
+	"SDL2/SDL.h"
+
+1662669441 source:/media/oneaimlessrobot/Seagate Basic/Adriano/scripts/CPP/Programs within CPP syntax/speed/Obstacle.cpp
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	<vector>
+	"HitBox.hpp"
+	"Obstacle.hpp"
+
+1662474868 /media/oneaimlessrobot/Seagate Basic/Adriano/scripts/CPP/Programs within CPP syntax/speed/Obstacle.hpp
+	"HitBox.hpp"
+
+1662491859 source:/media/oneaimlessrobot/Seagate Basic/Adriano/scripts/CPP/Programs within CPP syntax/speed/HitBox.cpp
+	<SDL2/SDL.h>
+	<vector>
+	<iostream>
+	"HitBox.hpp"
+
+1662671281 source:/media/oneaimlessrobot/Seagate Basic/Adriano/scripts/CPP/Programs within CPP syntax/speed/TemporaryTexture.cpp
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	<SDL2/SDL_ttf.h>
+	"graphicalLib1.hpp"
+	"TemporaryTexture.hpp"
+	<iostream>
+
+1662671128 /media/oneaimlessrobot/Seagate Basic/Adriano/scripts/CPP/Programs within CPP syntax/speed/TemporaryTexture.hpp
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	<SDL2/SDL_ttf.h>
+	"graphicalLib1.hpp"
+
+1662565638 /media/oneaimlessrobot/Seagate Basic/Adriano/scripts/CPP/Programs within CPP syntax/speed/Imports.hpp
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	<SDL2/SDL_ttf.h>
+	"throwable.hpp"
+	"Menu.hpp"
+	"gridObject.hpp"
+	"jumper.hpp"
+	<math.h>
+	<iostream>
+	<vector>
+	<string>
+	"graphicalLib1.hpp"
+	<cstring>
+	"auxFunctions.h"
+	"HitBox.hpp"
+	<fstream>
+	<limits>
+	"TemporaryTexture.hpp"
+	"LTexture.hpp"
+	"FadingTexture.hpp"
+
+1662555784 /media/oneaimlessrobot/Seagate Basic/Adriano/scripts/CPP/Programs within CPP syntax/speed/Texture.hpp
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	<SDL2/SDL_ttf.h>
+	"graphicalLib1.hpp"
+
+1662556360 source:/media/oneaimlessrobot/Seagate Basic/Adriano/scripts/CPP/Programs within CPP syntax/speed/Texture.cpp
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	<SDL2/SDL_ttf.h>
+	"graphicalLib1.hpp"
+	<iostream>
+	"Texture.hpp"
+
+1662750301 source:/media/oneaimlessrobot/Seagate Basic/Adriano/scripts/CPP/Programs within CPP syntax/speed/FadingTexture.cpp
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	<SDL2/SDL_ttf.h>
+	"graphicalLib1.hpp"
+	"FadingTexture.hpp"
+	<iostream>
+
+1662750319 /media/oneaimlessrobot/Seagate Basic/Adriano/scripts/CPP/Programs within CPP syntax/speed/FadingTexture.hpp
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	<SDL2/SDL_ttf.h>
+	"graphicalLib1.hpp"
+
+1662568662 /media/oneaimlessrobot/Seagate Basic/Adriano/scripts/CPP/Programs within CPP syntax/speed/Trail.hpp
+	<SDL2/SDL.h>
+	<vector>
+
+1662555784 /media/oneaimlessrobot/Seagate Basic/Adriano/scripts/CPP/Programs within CPP syntax/speed/LTexture.hpp
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	<SDL2/SDL_ttf.h>
+	"graphicalLib1.hpp"
+
+1662565659 source:/media/oneaimlessrobot/Seagate Basic/Adriano/scripts/CPP/Programs within CPP syntax/speed/LTexture.cpp
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	<SDL2/SDL_ttf.h>
+	"graphicalLib1.hpp"
+	<iostream>
+	"LTexture.hpp"
+
+1662568787 source:/media/oneaimlessrobot/Seagate Basic/Adriano/scripts/CPP/Programs within CPP syntax/speed/Trail.cpp
+	"Trail.hpp"
+	"graphicalLib1.hpp"
+	<iostream>
+
+1662467441 source:/media/oneaimlessrobot/Seagate Basic/Adriano/scripts/CPP/Programs within CPP syntax/speed/TemporaryTexture.CPP
+
+1662823318 /media/oneaimlessrobot/Seagate Basic/Adriano/scripts/CPP/Programs within CPP syntax/speed/ImportsAndDefines.hpp
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	<SDL2/SDL_ttf.h>
+	"throwable.hpp"
+	"Menu.hpp"
+	"gridObject.hpp"
+	"jumper.hpp"
+	<math.h>
+	<iostream>
+	<vector>
+	<string>
+	"graphicalLib1.hpp"
+	<cstring>
+	"auxFunctions.h"
+	"HitBox.hpp"
+	<fstream>
+	<limits>
+	"TemporaryTexture.hpp"
+	"LTexture.hpp"
+	"FadingTexture.hpp"
+	"Pen.hpp"
+	"Sprite.hpp"
+	<algorithm>
+	"ObstacleIterator.hpp"
+	"Level.hpp"
+
+1662578622 source:/media/oneaimlessrobot/Seagate Basic/Adriano/scripts/CPP/Programs within CPP syntax/speed/Pen.cpp
+	<SDL2/SDL.h>
+	<vector>
+	"Pen.hpp"
+
+1662577886 /media/oneaimlessrobot/Seagate Basic/Adriano/scripts/CPP/Programs within CPP syntax/speed/Pen.hpp
+	<SDL2/SDL.h>
+	<vector>
+
+1662652666 /media/oneaimlessrobot/Seagate Basic/Adriano/scripts/CPP/Programs within CPP syntax/speed/Sprite.hpp
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	"graphicalLib1.hpp"
+	<vector>
+	"TemporaryTexture.hpp"
+
+1662816006 source:/media/oneaimlessrobot/Seagate Basic/Adriano/scripts/CPP/Programs within CPP syntax/speed/Sprite.cpp
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	"graphicalLib1.hpp"
+	<vector>
+	<fstream>
+	<iostream>
+	"Sprite.hpp"
+	<string>
+	<limits>
+
+1662755108 source:/media/oneaimlessrobot/Seagate Basic/Adriano/scripts/CPP/Programs within CPP syntax/speed/Level.cpp
+	<vector>
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	"Obstacle.hpp"
+	<string>
+	<cstring>
+	<iostream>
+	<fstream>
+	"ObstacleIterator.hpp"
+	"Level.hpp"
+
+1662744636 /media/oneaimlessrobot/Seagate Basic/Adriano/scripts/CPP/Programs within CPP syntax/speed/ObstacleIterator.hpp
+	<vector>
+	<iterator>
+	<iostream>
+	<string>
+	"Obstacle.hpp"
+
+1662746740 /media/oneaimlessrobot/Seagate Basic/Adriano/scripts/CPP/Programs within CPP syntax/speed/Level.hpp
+	<vector>
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	"Obstacle.hpp"
+	"ObstacleIterator.hpp"
+
+1662751628 source:/media/oneaimlessrobot/Seagate Basic/Adriano/scripts/CPP/Programs within CPP syntax/speed/ObstacleIterator.cpp
+	<vector>
+	<iterator>
+	<iostream>
+	<string>
+	"ObstacleIterator.hpp"
+

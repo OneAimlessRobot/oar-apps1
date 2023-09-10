@@ -1,0 +1,41 @@
+# depslib dependency file v1.0
+1664989700 source:/media/oneaimlessrobot/Seagate Basic/Adriano/scripts/CPP/Programs within CPP syntax/matrixAI/AIADTs.c
+
+1665144868 source:/media/oneaimlessrobot/Seagate Basic/Adriano/scripts/CPP/Programs within CPP syntax/matrixAI/main.c
+	<stdlib.h>
+	<stdio.h>
+	<complex.h>
+	<unistd.h>
+	<string.h>
+	"matrixStructs.h"
+	"matrixGetters.h"
+	"matrixOps.h"
+
+1665143219 /media/oneaimlessrobot/Seagate Basic/Adriano/scripts/CPP/Programs within CPP syntax/matrixAI/matrixOps.h
+
+1665145809 /media/oneaimlessrobot/Seagate Basic/Adriano/scripts/CPP/Programs within CPP syntax/matrixAI/matrixGetters.h
+
+1665145888 source:/media/oneaimlessrobot/Seagate Basic/Adriano/scripts/CPP/Programs within CPP syntax/matrixAI/matrixGetters.c
+	<stdlib.h>
+	<stdio.h>
+	<math.h>
+	"vectorClass.h"
+	"matrixStructs.h"
+	"matrixOps.h"
+	"matrixGetters.h"
+
+1665000502 /media/oneaimlessrobot/Seagate Basic/Adriano/scripts/CPP/Programs within CPP syntax/matrixAI/vectorClass.h
+
+1665000501 source:/media/oneaimlessrobot/Seagate Basic/Adriano/scripts/CPP/Programs within CPP syntax/matrixAI/vectorClass.c
+	<stdlib.h>
+	"vectorClass.h"
+
+1665147019 source:/media/oneaimlessrobot/Seagate Basic/Adriano/scripts/CPP/Programs within CPP syntax/matrixAI/matrixOps.c
+	<stdlib.h>
+	<stdio.h>
+	"matrixStructs.h"
+	"matrixGetters.h"
+	"matrixOps.h"
+
+1665060537 /media/oneaimlessrobot/Seagate Basic/Adriano/scripts/CPP/Programs within CPP syntax/matrixAI/matrixStructs.h
+

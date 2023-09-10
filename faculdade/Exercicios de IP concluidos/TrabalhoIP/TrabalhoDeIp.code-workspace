@@ -1,0 +1,47 @@
+{
+	"folders": [
+		{
+			"path": "../java/love"
+		},
+		{
+			"path": "../Exercicios de IP concluidos/exerciciorobots"
+		},
+		{
+			"path": "../Exercicios de IP concluidos/desafiorobots"
+		},
+		{
+			"path": "../java/classemathematics"
+		},
+		{
+			"path": "../java/Particoes"
+		},
+		{
+			"path": "../java/Robots II"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"math.h": "c",
+			"stdio.h": "c",
+			"conio.h": "c",
+			"ncurses.h": "c",
+			"curses.h": "c",
+			"crush.h": "c",
+			"unistd.h": "c",
+			"stat.h": "c",
+			"stdlib.h": "c",
+			"random": "c",
+			"sdl.h": "c",
+			"atomic": "cpp",
+			"cstdint": "cpp",
+			"*.tcc": "cpp",
+			"audio.h": "c",
+			"sdl_mixer.h": "c",
+			"libvlc.h": "c",
+			"cs50.h": "c"
+		}
+	}
+}

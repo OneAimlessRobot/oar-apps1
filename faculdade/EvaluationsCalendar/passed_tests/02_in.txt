@@ -1,0 +1,35 @@
+people
+student 12334 Tom Sawyer
+student 13242 Becky Thatcher
+student 3243 Huckleberry Finn
+people
+student 23143 Joe Harper
+student 23234 Sid Sawyer
+professor Injun Joe
+professor Aunt Polly
+professor Mr. Walters
+student 10730 Amy Lawrence
+professor Judge Thatcher
+professor Jim
+student 3254 Mary
+student 9983 Muff Potter
+professor Mr. Sprague
+professor Mr. Jones
+student 12435 Alfred Temple
+professor Mr. Dobbins
+people
+student 3243 Ben Rogers
+student 12334 Tom Sawyer
+student 13345 Tom Sawyer
+student 23143 Joe Harper
+student 12435 Alfred Temple
+student 32424 Injun Joe
+professor Tom Sawyer
+professor Injun Joe
+professor Mr. Walters
+professor Mr. Dobbins
+professor Mr. Jones
+professor Alfred Temple
+professor Mary
+people
+exit

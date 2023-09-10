@@ -1,0 +1,7 @@
+1
+5 5 5
+oxooo
+xoxox
+oxxxx
+xxooo
+xoxxo

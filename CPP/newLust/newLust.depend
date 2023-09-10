@@ -1,0 +1,371 @@
+# depslib dependency file v1.0
+1675198135 source:/home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/newLust/newLust/sources/auxFuncs.cpp
+	<SDL2/SDL.h>
+	<iostream>
+	<fstream>
+	<thread>
+	<string>
+	<unistd.h>
+	<future>
+	<vector>
+	<iterator>
+	"../headers/Crush.hpp"
+	"../headers/Structs.h"
+	"../headers/globals.h"
+	"../headers/auxFuncs.h"
+
+1675252131 /home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/newLust/newLust/headers/Crush.hpp
+
+1675249973 /home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/newLust/newLust/headers/Structs.h
+
+1675196583 /home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/newLust/newLust/headers/globals.h
+
+1675182889 /home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/newLust/newLust/headers/auxFuncs.h
+
+1675256256 source:/home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/newLust/newLust/sources/Crush.cpp
+	<string>
+	<iostream>
+	<fstream>
+	<math.h>
+	<unistd.h>
+	"../headers/Crush.hpp"
+
+1675255778 source:/home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/newLust/newLust/sources/CrushManager.cpp
+	<iostream>
+	<vector>
+	<SDL2/SDL.h>
+	<vector>
+	<future>
+	<thread>
+	<string>
+	<fstream>
+	"../headers/Crush.hpp"
+	"../headers/Structs.h"
+	"../headers/globals.h"
+	"../headers/CrushManager.h"
+
+1676051642 /home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/newLust/newLust/headers/CrushManager.h
+
+1675196592 source:/home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/newLust/newLust/sources/globals.cpp
+	<SDL2/SDL.h>
+	<vector>
+	<future>
+	<thread>
+	<string>
+	<fstream>
+	"../headers/Crush.hpp"
+	"../headers/Structs.h"
+	"../headers/auxFuncs.h"
+	"../headers/fileBinaries.h"
+	"../headers/globals.h"
+
+1675016211 /home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/newLust/newLust/headers/fileBinaries.h
+
+1675185887 source:/home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/newLust/newLust/sources/handleMedia.cpp
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	<iostream>
+	<fstream>
+	<chrono>
+	<future>
+	<vector>
+	<thread>
+	<string>
+	<unistd.h>
+	"../headers/Crush.hpp"
+	"../headers/Structs.h"
+	"../headers/globals.h"
+	"../headers/handleSounds.h"
+	"../headers/auxFuncs.h"
+	"../headers/handleMedia.h"
+
+1675186054 /home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/newLust/newLust/headers/handleSounds.h
+
+1675182997 /home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/newLust/newLust/headers/handleMedia.h
+
+1675186082 source:/home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/newLust/newLust/sources/handleSounds.cpp
+	<iostream>
+	<string>
+	<unistd.h>
+	<thread>
+	<future>
+	<vector>
+	"../headers/audio.h"
+	"../headers/Crush.hpp"
+	"../headers/Structs.h"
+	"../headers/globals.h"
+	"../headers/auxFuncs.h"
+	"../headers/handleSounds.h"
+
+1649010685 /home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/newLust/newLust/headers/audio.h
+	<SDL2/SDL.h>
+
+1675253556 source:/home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/newLust/newLust/sources/menuFunction.cpp
+	<iostream>
+	<SDL2/SDL.h>
+	<unistd.h>
+	<limits>
+	<thread>
+	<future>
+	<string>
+	<math.h>
+	<vector>
+	"../headers/Crush.hpp"
+	"../headers/fileBinaries.h"
+	"../headers/Structs.h"
+	"../headers/globals.h"
+	"../headers/auxFuncs.h"
+	"../headers/roleplay.h"
+	"../headers/handleMedia.h"
+	"../headers/menuFunction.h"
+
+1675114860 /home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/newLust/newLust/headers/roleplay.h
+
+1675183178 /home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/newLust/newLust/headers/menuFunction.h
+
+1675186688 source:/home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/newLust/newLust/sources/roleplay.cpp
+	<SDL2/SDL.h>
+	<iostream>
+	<iterator>
+	<future>
+	<vector>
+	<thread>
+	<string>
+	<unistd.h>
+	"../headers/Crush.hpp"
+	"../headers/Structs.h"
+	"../headers/auxFuncs.h"
+	"../headers/globals.h"
+	"../headers/fileBinaries.h"
+	"../headers/roleplay.h"
+	"../headers/handleMedia.h"
+	"../headers/handleSounds.h"
+
+1675256368 source:/home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/newLust/newLust/sources/lust.cpp
+	"../headers/includesAndDefs.h"
+
+1675181992 /home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/newLust/newLust/headers/templated.tpp
+	"templated.hpp"
+
+1675183088 /home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/newLust/newLust/headers/templated.hpp
+
+1648922449 source:/home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/newLust/newLust/sources/audio.c
+	<stdint.h>
+	<stdio.h>
+	<stdlib.h>
+	<SDL2/SDL.h>
+	"../headers/audio.h"
+
+1676052012 /home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/newLust/newLust/headers/includesAndDefs.h
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	"../headers/audio.h"
+	<iostream>
+	<unistd.h>
+	<limits>
+	<fstream>
+	<math.h>
+	<time.h>
+	<thread>
+	<future>
+	<string>
+	<math.h>
+	<unistd.h>
+	<list>
+	<vector>
+	"../headers/Crush.hpp"
+	"../headers/fileBinaries.h"
+	"../headers/Structs.h"
+	"../headers/CrushManager.h"
+	"../headers/globals.h"
+	"../headers/auxFuncs.h"
+	"../headers/roleplay.h"
+	"../headers/handleMedia.h"
+	"../headers/menuFunction.h"
+	"../headers/templated.tpp"
+
+1648922449 source:/media/oneaimlessrobot/Adriano/scripts/CPP/Programs within CPP syntax/newLust/newLust/sources/audio.c
+	<stdint.h>
+	<stdio.h>
+	<stdlib.h>
+	<SDL2/SDL.h>
+	"../headers/audio.h"
+
+1649010685 /media/oneaimlessrobot/Adriano/scripts/CPP/Programs within CPP syntax/newLust/newLust/headers/audio.h
+	<SDL2/SDL.h>
+
+1675198135 source:/media/oneaimlessrobot/Adriano/scripts/CPP/Programs within CPP syntax/newLust/newLust/sources/auxFuncs.cpp
+	<SDL2/SDL.h>
+	<iostream>
+	<fstream>
+	<thread>
+	<string>
+	<unistd.h>
+	<future>
+	<vector>
+	<iterator>
+	"../headers/Crush.hpp"
+	"../headers/Structs.h"
+	"../headers/globals.h"
+	"../headers/auxFuncs.h"
+
+1675252131 /media/oneaimlessrobot/Adriano/scripts/CPP/Programs within CPP syntax/newLust/newLust/headers/Crush.hpp
+
+1675249973 /media/oneaimlessrobot/Adriano/scripts/CPP/Programs within CPP syntax/newLust/newLust/headers/Structs.h
+
+1675196583 /media/oneaimlessrobot/Adriano/scripts/CPP/Programs within CPP syntax/newLust/newLust/headers/globals.h
+
+1675182889 /media/oneaimlessrobot/Adriano/scripts/CPP/Programs within CPP syntax/newLust/newLust/headers/auxFuncs.h
+
+1675256256 source:/media/oneaimlessrobot/Adriano/scripts/CPP/Programs within CPP syntax/newLust/newLust/sources/Crush.cpp
+	<string>
+	<iostream>
+	<fstream>
+	<math.h>
+	<unistd.h>
+	"../headers/Crush.hpp"
+
+1676052506 source:/media/oneaimlessrobot/Adriano/scripts/CPP/Programs within CPP syntax/newLust/newLust/sources/CrushManager.cpp
+	<iostream>
+	<vector>
+	<SDL2/SDL.h>
+	<list>
+	<future>
+	<thread>
+	<string>
+	<fstream>
+	"../headers/Crush.hpp"
+	"../headers/Structs.h"
+	"../headers/globals.h"
+	"../headers/CrushManager.h"
+
+1676051642 /media/oneaimlessrobot/Adriano/scripts/CPP/Programs within CPP syntax/newLust/newLust/headers/CrushManager.h
+
+1675196592 source:/media/oneaimlessrobot/Adriano/scripts/CPP/Programs within CPP syntax/newLust/newLust/sources/globals.cpp
+	<SDL2/SDL.h>
+	<vector>
+	<future>
+	<thread>
+	<string>
+	<fstream>
+	"../headers/Crush.hpp"
+	"../headers/Structs.h"
+	"../headers/auxFuncs.h"
+	"../headers/fileBinaries.h"
+	"../headers/globals.h"
+
+1675016211 /media/oneaimlessrobot/Adriano/scripts/CPP/Programs within CPP syntax/newLust/newLust/headers/fileBinaries.h
+
+1675185887 source:/media/oneaimlessrobot/Adriano/scripts/CPP/Programs within CPP syntax/newLust/newLust/sources/handleMedia.cpp
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	<iostream>
+	<fstream>
+	<chrono>
+	<future>
+	<vector>
+	<thread>
+	<string>
+	<unistd.h>
+	"../headers/Crush.hpp"
+	"../headers/Structs.h"
+	"../headers/globals.h"
+	"../headers/handleSounds.h"
+	"../headers/auxFuncs.h"
+	"../headers/handleMedia.h"
+
+1675186054 /media/oneaimlessrobot/Adriano/scripts/CPP/Programs within CPP syntax/newLust/newLust/headers/handleSounds.h
+
+1675182997 /media/oneaimlessrobot/Adriano/scripts/CPP/Programs within CPP syntax/newLust/newLust/headers/handleMedia.h
+
+1675186082 source:/media/oneaimlessrobot/Adriano/scripts/CPP/Programs within CPP syntax/newLust/newLust/sources/handleSounds.cpp
+	<iostream>
+	<string>
+	<unistd.h>
+	<thread>
+	<future>
+	<vector>
+	"../headers/audio.h"
+	"../headers/Crush.hpp"
+	"../headers/Structs.h"
+	"../headers/globals.h"
+	"../headers/auxFuncs.h"
+	"../headers/handleSounds.h"
+
+1675256368 source:/media/oneaimlessrobot/Adriano/scripts/CPP/Programs within CPP syntax/newLust/newLust/sources/lust.cpp
+	"../headers/includesAndDefs.h"
+
+1676052012 /media/oneaimlessrobot/Adriano/scripts/CPP/Programs within CPP syntax/newLust/newLust/headers/includesAndDefs.h
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	"../headers/audio.h"
+	<iostream>
+	<unistd.h>
+	<limits>
+	<fstream>
+	<math.h>
+	<time.h>
+	<thread>
+	<future>
+	<string>
+	<math.h>
+	<unistd.h>
+	<list>
+	<vector>
+	"../headers/Crush.hpp"
+	"../headers/fileBinaries.h"
+	"../headers/Structs.h"
+	"../headers/CrushManager.h"
+	"../headers/globals.h"
+	"../headers/auxFuncs.h"
+	"../headers/roleplay.h"
+	"../headers/handleMedia.h"
+	"../headers/menuFunction.h"
+	"../headers/templated.tpp"
+
+1675114860 /media/oneaimlessrobot/Adriano/scripts/CPP/Programs within CPP syntax/newLust/newLust/headers/roleplay.h
+
+1675183178 /media/oneaimlessrobot/Adriano/scripts/CPP/Programs within CPP syntax/newLust/newLust/headers/menuFunction.h
+
+1675181992 /media/oneaimlessrobot/Adriano/scripts/CPP/Programs within CPP syntax/newLust/newLust/headers/templated.tpp
+	"templated.hpp"
+
+1675183088 /media/oneaimlessrobot/Adriano/scripts/CPP/Programs within CPP syntax/newLust/newLust/headers/templated.hpp
+
+1675253556 source:/media/oneaimlessrobot/Adriano/scripts/CPP/Programs within CPP syntax/newLust/newLust/sources/menuFunction.cpp
+	<iostream>
+	<SDL2/SDL.h>
+	<unistd.h>
+	<limits>
+	<thread>
+	<future>
+	<string>
+	<math.h>
+	<vector>
+	"../headers/Crush.hpp"
+	"../headers/fileBinaries.h"
+	"../headers/Structs.h"
+	"../headers/globals.h"
+	"../headers/auxFuncs.h"
+	"../headers/roleplay.h"
+	"../headers/handleMedia.h"
+	"../headers/menuFunction.h"
+
+1675186688 source:/media/oneaimlessrobot/Adriano/scripts/CPP/Programs within CPP syntax/newLust/newLust/sources/roleplay.cpp
+	<SDL2/SDL.h>
+	<iostream>
+	<iterator>
+	<future>
+	<vector>
+	<thread>
+	<string>
+	<unistd.h>
+	"../headers/Crush.hpp"
+	"../headers/Structs.h"
+	"../headers/auxFuncs.h"
+	"../headers/globals.h"
+	"../headers/fileBinaries.h"
+	"../headers/roleplay.h"
+	"../headers/handleMedia.h"
+	"../headers/handleSounds.h"
+

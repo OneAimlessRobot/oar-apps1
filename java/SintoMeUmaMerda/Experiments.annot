@@ -1,0 +1,906 @@
+"SintoMeUmaMerda/Experiments.ml" 1 0 8 "SintoMeUmaMerda/Experiments.ml" 1 0 16
+type(
+  int -> int list
+)
+ident(
+  def firstNat "SintoMeUmaMerda/Experiments.ml" 1 0 0 "SintoMeUmaMerda/Experiments.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Experiments.ml" 1 0 17 "SintoMeUmaMerda/Experiments.ml" 1 0 18
+type(
+  int
+)
+ident(
+  def x "SintoMeUmaMerda/Experiments.ml" 2 20 22 "SintoMeUmaMerda/Experiments.ml" 4 46 75
+)
+"SintoMeUmaMerda/Experiments.ml" 2 20 28 "SintoMeUmaMerda/Experiments.ml" 2 20 29
+type(
+  int
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Experiments.ml" 1 0 17 "SintoMeUmaMerda/Experiments.ml" 1 0 18
+)
+"SintoMeUmaMerda/Experiments.ml" 3 35 38 "SintoMeUmaMerda/Experiments.ml" 3 35 39
+type(
+  int
+)
+"SintoMeUmaMerda/Experiments.ml" 3 35 43 "SintoMeUmaMerda/Experiments.ml" 3 35 45
+type(
+  int list
+)
+"SintoMeUmaMerda/Experiments.ml" 4 46 49 "SintoMeUmaMerda/Experiments.ml" 4 46 50
+type(
+  int
+)
+ident(
+  def x "SintoMeUmaMerda/Experiments.ml" 4 46 54 "SintoMeUmaMerda/Experiments.ml" 4 46 75
+)
+"SintoMeUmaMerda/Experiments.ml" 4 46 54 "SintoMeUmaMerda/Experiments.ml" 4 46 55
+type(
+  int
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Experiments.ml" 4 46 49 "SintoMeUmaMerda/Experiments.ml" 4 46 50
+)
+"SintoMeUmaMerda/Experiments.ml" 4 46 55 "SintoMeUmaMerda/Experiments.ml" 4 46 56
+type(
+  int -> int -> int
+)
+ident(
+  int_ref Stdlib.( - ) "stdlib.mli" 343 13509 13509 "stdlib.mli" 343 13509 13555
+)
+"SintoMeUmaMerda/Experiments.ml" 4 46 56 "SintoMeUmaMerda/Experiments.ml" 4 46 57
+type(
+  int
+)
+"SintoMeUmaMerda/Experiments.ml" 4 46 54 "SintoMeUmaMerda/Experiments.ml" 4 46 57
+type(
+  int
+)
+"SintoMeUmaMerda/Experiments.ml" 4 46 60 "SintoMeUmaMerda/Experiments.ml" 4 46 68
+type(
+  int -> int list
+)
+ident(
+  int_ref firstNat "SintoMeUmaMerda/Experiments.ml" 1 0 8 "SintoMeUmaMerda/Experiments.ml" 1 0 16
+)
+"SintoMeUmaMerda/Experiments.ml" 4 46 70 "SintoMeUmaMerda/Experiments.ml" 4 46 71
+type(
+  int
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Experiments.ml" 4 46 49 "SintoMeUmaMerda/Experiments.ml" 4 46 50
+)
+"SintoMeUmaMerda/Experiments.ml" 4 46 71 "SintoMeUmaMerda/Experiments.ml" 4 46 72
+type(
+  int -> int -> int
+)
+ident(
+  int_ref Stdlib.( - ) "stdlib.mli" 343 13509 13509 "stdlib.mli" 343 13509 13555
+)
+"SintoMeUmaMerda/Experiments.ml" 4 46 72 "SintoMeUmaMerda/Experiments.ml" 4 46 73
+type(
+  int
+)
+"SintoMeUmaMerda/Experiments.ml" 4 46 69 "SintoMeUmaMerda/Experiments.ml" 4 46 74
+type(
+  int
+)
+"SintoMeUmaMerda/Experiments.ml" 4 46 59 "SintoMeUmaMerda/Experiments.ml" 4 46 75
+type(
+  int list
+)
+"SintoMeUmaMerda/Experiments.ml" 4 46 54 "SintoMeUmaMerda/Experiments.ml" 4 46 75
+type(
+  int list
+)
+"SintoMeUmaMerda/Experiments.ml" 2 20 22 "SintoMeUmaMerda/Experiments.ml" 4 46 75
+type(
+  int list
+)
+"SintoMeUmaMerda/Experiments.ml" 8 82 82 "SintoMeUmaMerda/Experiments.ml" 8 82 90
+type(
+  int -> int list
+)
+ident(
+  int_ref firstNat "SintoMeUmaMerda/Experiments.ml" 1 0 8 "SintoMeUmaMerda/Experiments.ml" 1 0 16
+)
+"SintoMeUmaMerda/Experiments.ml" 8 82 91 "SintoMeUmaMerda/Experiments.ml" 8 82 92
+type(
+  int
+)
+"SintoMeUmaMerda/Experiments.ml" 8 82 82 "SintoMeUmaMerda/Experiments.ml" 8 82 92
+type(
+  int list
+)
+"SintoMeUmaMerda/Experiments.ml" 10 94 102 "SintoMeUmaMerda/Experiments.ml" 10 94 108
+type(
+  int * int -> int
+)
+ident(
+  def modAux "SintoMeUmaMerda/Experiments.ml" 10 94 94 "SintoMeUmaMerda/Experiments.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Experiments.ml" 10 94 109 "SintoMeUmaMerda/Experiments.ml" 10 94 110
+type(
+  int
+)
+ident(
+  def m "SintoMeUmaMerda/Experiments.ml" 10 94 115 "SintoMeUmaMerda/Experiments.ml" 10 94 155
+)
+"SintoMeUmaMerda/Experiments.ml" 10 94 111 "SintoMeUmaMerda/Experiments.ml" 10 94 112
+type(
+  int
+)
+ident(
+  def n "SintoMeUmaMerda/Experiments.ml" 10 94 115 "SintoMeUmaMerda/Experiments.ml" 10 94 155
+)
+"SintoMeUmaMerda/Experiments.ml" 10 94 108 "SintoMeUmaMerda/Experiments.ml" 10 94 113
+type(
+  int * int
+)
+"SintoMeUmaMerda/Experiments.ml" 10 94 119 "SintoMeUmaMerda/Experiments.ml" 10 94 120
+type(
+  int
+)
+ident(
+  int_ref m "SintoMeUmaMerda/Experiments.ml" 10 94 109 "SintoMeUmaMerda/Experiments.ml" 10 94 110
+)
+"SintoMeUmaMerda/Experiments.ml" 10 94 120 "SintoMeUmaMerda/Experiments.ml" 10 94 121
+type(
+  int -> int -> int
+)
+ident(
+  int_ref Stdlib.( - ) "stdlib.mli" 343 13509 13509 "stdlib.mli" 343 13509 13555
+)
+"SintoMeUmaMerda/Experiments.ml" 10 94 121 "SintoMeUmaMerda/Experiments.ml" 10 94 122
+type(
+  int
+)
+ident(
+  int_ref n "SintoMeUmaMerda/Experiments.ml" 10 94 111 "SintoMeUmaMerda/Experiments.ml" 10 94 112
+)
+"SintoMeUmaMerda/Experiments.ml" 10 94 118 "SintoMeUmaMerda/Experiments.ml" 10 94 123
+type(
+  int
+)
+"SintoMeUmaMerda/Experiments.ml" 10 94 123 "SintoMeUmaMerda/Experiments.ml" 10 94 125
+type(
+  int -> int -> bool
+)
+ident(
+  int_ref Stdlib.( <= ) "stdlib.mli" 142 5958 5958 "stdlib.mli" 142 5958 6007
+)
+"SintoMeUmaMerda/Experiments.ml" 10 94 125 "SintoMeUmaMerda/Experiments.ml" 10 94 126
+type(
+  int
+)
+"SintoMeUmaMerda/Experiments.ml" 10 94 118 "SintoMeUmaMerda/Experiments.ml" 10 94 126
+type(
+  bool
+)
+"SintoMeUmaMerda/Experiments.ml" 10 94 132 "SintoMeUmaMerda/Experiments.ml" 10 94 133
+type(
+  int
+)
+ident(
+  int_ref n "SintoMeUmaMerda/Experiments.ml" 10 94 111 "SintoMeUmaMerda/Experiments.ml" 10 94 112
+)
+"SintoMeUmaMerda/Experiments.ml" 10 94 133 "SintoMeUmaMerda/Experiments.ml" 10 94 134
+type(
+  int -> int -> int
+)
+ident(
+  int_ref Stdlib.( - ) "stdlib.mli" 343 13509 13509 "stdlib.mli" 343 13509 13555
+)
+"SintoMeUmaMerda/Experiments.ml" 10 94 134 "SintoMeUmaMerda/Experiments.ml" 10 94 135
+type(
+  int
+)
+ident(
+  int_ref m "SintoMeUmaMerda/Experiments.ml" 10 94 109 "SintoMeUmaMerda/Experiments.ml" 10 94 110
+)
+"SintoMeUmaMerda/Experiments.ml" 10 94 132 "SintoMeUmaMerda/Experiments.ml" 10 94 135
+type(
+  int
+)
+"SintoMeUmaMerda/Experiments.ml" 10 94 141 "SintoMeUmaMerda/Experiments.ml" 10 94 147
+type(
+  int * int -> int
+)
+ident(
+  int_ref modAux "SintoMeUmaMerda/Experiments.ml" 10 94 102 "SintoMeUmaMerda/Experiments.ml" 10 94 108
+)
+"SintoMeUmaMerda/Experiments.ml" 10 94 148 "SintoMeUmaMerda/Experiments.ml" 10 94 149
+type(
+  int
+)
+ident(
+  int_ref m "SintoMeUmaMerda/Experiments.ml" 10 94 109 "SintoMeUmaMerda/Experiments.ml" 10 94 110
+)
+"SintoMeUmaMerda/Experiments.ml" 10 94 149 "SintoMeUmaMerda/Experiments.ml" 10 94 150
+type(
+  int -> int -> int
+)
+ident(
+  int_ref Stdlib.( - ) "stdlib.mli" 343 13509 13509 "stdlib.mli" 343 13509 13555
+)
+"SintoMeUmaMerda/Experiments.ml" 10 94 150 "SintoMeUmaMerda/Experiments.ml" 10 94 151
+type(
+  int
+)
+ident(
+  int_ref n "SintoMeUmaMerda/Experiments.ml" 10 94 111 "SintoMeUmaMerda/Experiments.ml" 10 94 112
+)
+"SintoMeUmaMerda/Experiments.ml" 10 94 148 "SintoMeUmaMerda/Experiments.ml" 10 94 151
+type(
+  int
+)
+"SintoMeUmaMerda/Experiments.ml" 10 94 153 "SintoMeUmaMerda/Experiments.ml" 10 94 154
+type(
+  int
+)
+ident(
+  int_ref n "SintoMeUmaMerda/Experiments.ml" 10 94 111 "SintoMeUmaMerda/Experiments.ml" 10 94 112
+)
+"SintoMeUmaMerda/Experiments.ml" 10 94 147 "SintoMeUmaMerda/Experiments.ml" 10 94 155
+type(
+  int * int
+)
+"SintoMeUmaMerda/Experiments.ml" 10 94 141 "SintoMeUmaMerda/Experiments.ml" 10 94 155
+type(
+  int
+)
+"SintoMeUmaMerda/Experiments.ml" 10 94 115 "SintoMeUmaMerda/Experiments.ml" 10 94 155
+type(
+  int
+)
+"SintoMeUmaMerda/Experiments.ml" 12 159 167 "SintoMeUmaMerda/Experiments.ml" 12 159 168
+type(
+  int * int -> int
+)
+ident(
+  def f "SintoMeUmaMerda/Experiments.ml" 12 159 159 "SintoMeUmaMerda/Experiments.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Experiments.ml" 12 159 171 "SintoMeUmaMerda/Experiments.ml" 12 159 172
+type(
+  int
+)
+ident(
+  def m "SintoMeUmaMerda/Experiments.ml" 12 159 178 "SintoMeUmaMerda/Experiments.ml" 12 159 213
+)
+"SintoMeUmaMerda/Experiments.ml" 12 159 173 "SintoMeUmaMerda/Experiments.ml" 12 159 174
+type(
+  int
+)
+ident(
+  def n "SintoMeUmaMerda/Experiments.ml" 12 159 178 "SintoMeUmaMerda/Experiments.ml" 12 159 213
+)
+"SintoMeUmaMerda/Experiments.ml" 12 159 170 "SintoMeUmaMerda/Experiments.ml" 12 159 175
+type(
+  int * int
+)
+"SintoMeUmaMerda/Experiments.ml" 12 159 181 "SintoMeUmaMerda/Experiments.ml" 12 159 182
+type(
+  int
+)
+ident(
+  int_ref n "SintoMeUmaMerda/Experiments.ml" 12 159 173 "SintoMeUmaMerda/Experiments.ml" 12 159 174
+)
+"SintoMeUmaMerda/Experiments.ml" 12 159 182 "SintoMeUmaMerda/Experiments.ml" 12 159 183
+type(
+  int -> int -> bool
+)
+ident(
+  int_ref Stdlib.( = ) "stdlib.mli" 118 4976 4976 "stdlib.mli" 118 4976 5020
+)
+"SintoMeUmaMerda/Experiments.ml" 12 159 183 "SintoMeUmaMerda/Experiments.ml" 12 159 184
+type(
+  int
+)
+"SintoMeUmaMerda/Experiments.ml" 12 159 181 "SintoMeUmaMerda/Experiments.ml" 12 159 184
+type(
+  bool
+)
+"SintoMeUmaMerda/Experiments.ml" 12 159 190 "SintoMeUmaMerda/Experiments.ml" 12 159 191
+type(
+  int
+)
+ident(
+  int_ref m "SintoMeUmaMerda/Experiments.ml" 12 159 171 "SintoMeUmaMerda/Experiments.ml" 12 159 172
+)
+"SintoMeUmaMerda/Experiments.ml" 12 159 197 "SintoMeUmaMerda/Experiments.ml" 12 159 198
+type(
+  int * int -> int
+)
+ident(
+  int_ref f "SintoMeUmaMerda/Experiments.ml" 12 159 167 "SintoMeUmaMerda/Experiments.ml" 12 159 168
+)
+"SintoMeUmaMerda/Experiments.ml" 12 159 199 "SintoMeUmaMerda/Experiments.ml" 12 159 200
+type(
+  int
+)
+ident(
+  int_ref n "SintoMeUmaMerda/Experiments.ml" 12 159 173 "SintoMeUmaMerda/Experiments.ml" 12 159 174
+)
+"SintoMeUmaMerda/Experiments.ml" 12 159 201 "SintoMeUmaMerda/Experiments.ml" 12 159 207
+type(
+  int * int -> int
+)
+ident(
+  int_ref modAux "SintoMeUmaMerda/Experiments.ml" 10 94 102 "SintoMeUmaMerda/Experiments.ml" 10 94 108
+)
+"SintoMeUmaMerda/Experiments.ml" 12 159 208 "SintoMeUmaMerda/Experiments.ml" 12 159 209
+type(
+  int
+)
+ident(
+  int_ref m "SintoMeUmaMerda/Experiments.ml" 12 159 171 "SintoMeUmaMerda/Experiments.ml" 12 159 172
+)
+"SintoMeUmaMerda/Experiments.ml" 12 159 210 "SintoMeUmaMerda/Experiments.ml" 12 159 211
+type(
+  int
+)
+ident(
+  int_ref n "SintoMeUmaMerda/Experiments.ml" 12 159 173 "SintoMeUmaMerda/Experiments.ml" 12 159 174
+)
+"SintoMeUmaMerda/Experiments.ml" 12 159 207 "SintoMeUmaMerda/Experiments.ml" 12 159 212
+type(
+  int * int
+)
+"SintoMeUmaMerda/Experiments.ml" 12 159 201 "SintoMeUmaMerda/Experiments.ml" 12 159 212
+type(
+  int
+)
+"SintoMeUmaMerda/Experiments.ml" 12 159 198 "SintoMeUmaMerda/Experiments.ml" 12 159 213
+type(
+  int * int
+)
+"SintoMeUmaMerda/Experiments.ml" 12 159 197 "SintoMeUmaMerda/Experiments.ml" 12 159 213
+type(
+  int
+)
+"SintoMeUmaMerda/Experiments.ml" 12 159 178 "SintoMeUmaMerda/Experiments.ml" 12 159 213
+type(
+  int
+)
+"SintoMeUmaMerda/Experiments.ml" 13 216 220 "SintoMeUmaMerda/Experiments.ml" 13 216 223
+type(
+  int -> int
+)
+ident(
+  def inc "SintoMeUmaMerda/Experiments.ml" 15 236 236 "SintoMeUmaMerda/Experiments.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Experiments.ml" 13 216 224 "SintoMeUmaMerda/Experiments.ml" 13 216 225
+type(
+  int
+)
+ident(
+  def n "SintoMeUmaMerda/Experiments.ml" 13 216 227 "SintoMeUmaMerda/Experiments.ml" 13 216 232
+)
+"SintoMeUmaMerda/Experiments.ml" 13 216 228 "SintoMeUmaMerda/Experiments.ml" 13 216 229
+type(
+  int
+)
+ident(
+  int_ref n "SintoMeUmaMerda/Experiments.ml" 13 216 224 "SintoMeUmaMerda/Experiments.ml" 13 216 225
+)
+"SintoMeUmaMerda/Experiments.ml" 13 216 229 "SintoMeUmaMerda/Experiments.ml" 13 216 230
+type(
+  int -> int -> int
+)
+ident(
+  int_ref Stdlib.( + ) "stdlib.mli" 338 13360 13360 "stdlib.mli" 338 13360 13406
+)
+"SintoMeUmaMerda/Experiments.ml" 13 216 230 "SintoMeUmaMerda/Experiments.ml" 13 216 231
+type(
+  int
+)
+"SintoMeUmaMerda/Experiments.ml" 13 216 227 "SintoMeUmaMerda/Experiments.ml" 13 216 232
+type(
+  int
+)
+"SintoMeUmaMerda/Experiments.ml" 15 236 244 "SintoMeUmaMerda/Experiments.ml" 15 236 255
+type(
+  int * int * int -> int
+)
+ident(
+  def quotientAux "SintoMeUmaMerda/Experiments.ml" 15 236 236 "SintoMeUmaMerda/Experiments.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Experiments.ml" 15 236 257 "SintoMeUmaMerda/Experiments.ml" 15 236 258
+type(
+  int
+)
+ident(
+  def m "SintoMeUmaMerda/Experiments.ml" 15 236 266 "SintoMeUmaMerda/Experiments.ml" 15 236 315
+)
+"SintoMeUmaMerda/Experiments.ml" 15 236 259 "SintoMeUmaMerda/Experiments.ml" 15 236 260
+type(
+  int
+)
+ident(
+  def n "SintoMeUmaMerda/Experiments.ml" 15 236 266 "SintoMeUmaMerda/Experiments.ml" 15 236 315
+)
+"SintoMeUmaMerda/Experiments.ml" 15 236 261 "SintoMeUmaMerda/Experiments.ml" 15 236 262
+type(
+  int
+)
+ident(
+  def x "SintoMeUmaMerda/Experiments.ml" 15 236 266 "SintoMeUmaMerda/Experiments.ml" 15 236 315
+)
+"SintoMeUmaMerda/Experiments.ml" 15 236 256 "SintoMeUmaMerda/Experiments.ml" 15 236 263
+type(
+  int * int * int
+)
+"SintoMeUmaMerda/Experiments.ml" 15 236 270 "SintoMeUmaMerda/Experiments.ml" 15 236 271
+type(
+  int
+)
+ident(
+  int_ref m "SintoMeUmaMerda/Experiments.ml" 15 236 257 "SintoMeUmaMerda/Experiments.ml" 15 236 258
+)
+"SintoMeUmaMerda/Experiments.ml" 15 236 271 "SintoMeUmaMerda/Experiments.ml" 15 236 272
+type(
+  int -> int -> int
+)
+ident(
+  int_ref Stdlib.( - ) "stdlib.mli" 343 13509 13509 "stdlib.mli" 343 13509 13555
+)
+"SintoMeUmaMerda/Experiments.ml" 15 236 272 "SintoMeUmaMerda/Experiments.ml" 15 236 273
+type(
+  int
+)
+ident(
+  int_ref n "SintoMeUmaMerda/Experiments.ml" 15 236 259 "SintoMeUmaMerda/Experiments.ml" 15 236 260
+)
+"SintoMeUmaMerda/Experiments.ml" 15 236 269 "SintoMeUmaMerda/Experiments.ml" 15 236 274
+type(
+  int
+)
+"SintoMeUmaMerda/Experiments.ml" 15 236 274 "SintoMeUmaMerda/Experiments.ml" 15 236 276
+type(
+  int -> int -> bool
+)
+ident(
+  int_ref Stdlib.( <= ) "stdlib.mli" 142 5958 5958 "stdlib.mli" 142 5958 6007
+)
+"SintoMeUmaMerda/Experiments.ml" 15 236 276 "SintoMeUmaMerda/Experiments.ml" 15 236 277
+type(
+  int
+)
+"SintoMeUmaMerda/Experiments.ml" 15 236 269 "SintoMeUmaMerda/Experiments.ml" 15 236 277
+type(
+  bool
+)
+"SintoMeUmaMerda/Experiments.ml" 15 236 283 "SintoMeUmaMerda/Experiments.ml" 15 236 284
+type(
+  int
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Experiments.ml" 15 236 261 "SintoMeUmaMerda/Experiments.ml" 15 236 262
+)
+"SintoMeUmaMerda/Experiments.ml" 15 236 290 "SintoMeUmaMerda/Experiments.ml" 15 236 301
+type(
+  int * int * int -> int
+)
+ident(
+  int_ref quotientAux "SintoMeUmaMerda/Experiments.ml" 15 236 244 "SintoMeUmaMerda/Experiments.ml" 15 236 255
+)
+"SintoMeUmaMerda/Experiments.ml" 15 236 302 "SintoMeUmaMerda/Experiments.ml" 15 236 303
+type(
+  int
+)
+ident(
+  int_ref m "SintoMeUmaMerda/Experiments.ml" 15 236 257 "SintoMeUmaMerda/Experiments.ml" 15 236 258
+)
+"SintoMeUmaMerda/Experiments.ml" 15 236 303 "SintoMeUmaMerda/Experiments.ml" 15 236 304
+type(
+  int -> int -> int
+)
+ident(
+  int_ref Stdlib.( - ) "stdlib.mli" 343 13509 13509 "stdlib.mli" 343 13509 13555
+)
+"SintoMeUmaMerda/Experiments.ml" 15 236 304 "SintoMeUmaMerda/Experiments.ml" 15 236 305
+type(
+  int
+)
+ident(
+  int_ref n "SintoMeUmaMerda/Experiments.ml" 15 236 259 "SintoMeUmaMerda/Experiments.ml" 15 236 260
+)
+"SintoMeUmaMerda/Experiments.ml" 15 236 302 "SintoMeUmaMerda/Experiments.ml" 15 236 305
+type(
+  int
+)
+"SintoMeUmaMerda/Experiments.ml" 15 236 307 "SintoMeUmaMerda/Experiments.ml" 15 236 308
+type(
+  int
+)
+ident(
+  int_ref n "SintoMeUmaMerda/Experiments.ml" 15 236 259 "SintoMeUmaMerda/Experiments.ml" 15 236 260
+)
+"SintoMeUmaMerda/Experiments.ml" 15 236 309 "SintoMeUmaMerda/Experiments.ml" 15 236 312
+type(
+  int -> int
+)
+ident(
+  int_ref inc "SintoMeUmaMerda/Experiments.ml" 13 216 220 "SintoMeUmaMerda/Experiments.ml" 13 216 223
+)
+"SintoMeUmaMerda/Experiments.ml" 15 236 313 "SintoMeUmaMerda/Experiments.ml" 15 236 314
+type(
+  int
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Experiments.ml" 15 236 261 "SintoMeUmaMerda/Experiments.ml" 15 236 262
+)
+"SintoMeUmaMerda/Experiments.ml" 15 236 309 "SintoMeUmaMerda/Experiments.ml" 15 236 314
+type(
+  int
+)
+"SintoMeUmaMerda/Experiments.ml" 15 236 301 "SintoMeUmaMerda/Experiments.ml" 15 236 315
+type(
+  int * int * int
+)
+"SintoMeUmaMerda/Experiments.ml" 15 236 290 "SintoMeUmaMerda/Experiments.ml" 15 236 315
+type(
+  int
+)
+"SintoMeUmaMerda/Experiments.ml" 15 236 266 "SintoMeUmaMerda/Experiments.ml" 15 236 315
+type(
+  int
+)
+"SintoMeUmaMerda/Experiments.ml" 17 319 323 "SintoMeUmaMerda/Experiments.ml" 17 319 331
+type(
+  int * int -> int
+)
+ident(
+  def quotient "SintoMeUmaMerda/Experiments.ml" 21 363 363 "SintoMeUmaMerda/Experiments.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Experiments.ml" 17 319 332 "SintoMeUmaMerda/Experiments.ml" 17 319 333
+type(
+  int
+)
+ident(
+  def m "SintoMeUmaMerda/Experiments.ml" 17 319 339 "SintoMeUmaMerda/Experiments.ml" 17 319 357
+)
+"SintoMeUmaMerda/Experiments.ml" 17 319 334 "SintoMeUmaMerda/Experiments.ml" 17 319 335
+type(
+  int
+)
+ident(
+  def n "SintoMeUmaMerda/Experiments.ml" 17 319 339 "SintoMeUmaMerda/Experiments.ml" 17 319 357
+)
+"SintoMeUmaMerda/Experiments.ml" 17 319 331 "SintoMeUmaMerda/Experiments.ml" 17 319 336
+type(
+  int * int
+)
+"SintoMeUmaMerda/Experiments.ml" 17 319 339 "SintoMeUmaMerda/Experiments.ml" 17 319 350
+type(
+  int * int * int -> int
+)
+ident(
+  int_ref quotientAux "SintoMeUmaMerda/Experiments.ml" 15 236 244 "SintoMeUmaMerda/Experiments.ml" 15 236 255
+)
+"SintoMeUmaMerda/Experiments.ml" 17 319 351 "SintoMeUmaMerda/Experiments.ml" 17 319 352
+type(
+  int
+)
+ident(
+  int_ref m "SintoMeUmaMerda/Experiments.ml" 17 319 332 "SintoMeUmaMerda/Experiments.ml" 17 319 333
+)
+"SintoMeUmaMerda/Experiments.ml" 17 319 353 "SintoMeUmaMerda/Experiments.ml" 17 319 354
+type(
+  int
+)
+ident(
+  int_ref n "SintoMeUmaMerda/Experiments.ml" 17 319 334 "SintoMeUmaMerda/Experiments.ml" 17 319 335
+)
+"SintoMeUmaMerda/Experiments.ml" 17 319 355 "SintoMeUmaMerda/Experiments.ml" 17 319 356
+type(
+  int
+)
+"SintoMeUmaMerda/Experiments.ml" 17 319 350 "SintoMeUmaMerda/Experiments.ml" 17 319 357
+type(
+  int * int * int
+)
+"SintoMeUmaMerda/Experiments.ml" 17 319 339 "SintoMeUmaMerda/Experiments.ml" 17 319 357
+type(
+  int
+)
+"SintoMeUmaMerda/Experiments.ml" 21 363 367 "SintoMeUmaMerda/Experiments.ml" 21 363 378
+type(
+  float -> float
+)
+ident(
+  def bitMoreThan "SintoMeUmaMerda/Experiments.ml" 26 400 400 "SintoMeUmaMerda/Experiments.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Experiments.ml" 21 363 379 "SintoMeUmaMerda/Experiments.ml" 21 363 380
+type(
+  float
+)
+ident(
+  def x "SintoMeUmaMerda/Experiments.ml" 22 383 384 "SintoMeUmaMerda/Experiments.ml" 22 383 394
+)
+"SintoMeUmaMerda/Experiments.ml" 22 383 384 "SintoMeUmaMerda/Experiments.ml" 22 383 385
+type(
+  float
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Experiments.ml" 21 363 379 "SintoMeUmaMerda/Experiments.ml" 21 363 380
+)
+"SintoMeUmaMerda/Experiments.ml" 22 383 386 "SintoMeUmaMerda/Experiments.ml" 22 383 388
+type(
+  float -> float -> float
+)
+ident(
+  int_ref Stdlib.( +. ) "stdlib.mli" 451 17476 17476 "stdlib.mli" 451 17476 17531
+)
+"SintoMeUmaMerda/Experiments.ml" 22 383 389 "SintoMeUmaMerda/Experiments.ml" 22 383 394
+type(
+  float
+)
+"SintoMeUmaMerda/Experiments.ml" 22 383 384 "SintoMeUmaMerda/Experiments.ml" 22 383 394
+type(
+  float
+)
+"SintoMeUmaMerda/Experiments.ml" 26 400 404 "SintoMeUmaMerda/Experiments.ml" 26 400 408
+type(
+  int -> int
+)
+ident(
+  def prev "SintoMeUmaMerda/Experiments.ml" 29 421 421 "SintoMeUmaMerda/Experiments.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Experiments.ml" 26 400 409 "SintoMeUmaMerda/Experiments.ml" 26 400 410
+type(
+  int
+)
+ident(
+  def n "SintoMeUmaMerda/Experiments.ml" 27 413 414 "SintoMeUmaMerda/Experiments.ml" 27 413 417
+)
+"SintoMeUmaMerda/Experiments.ml" 27 413 414 "SintoMeUmaMerda/Experiments.ml" 27 413 415
+type(
+  int
+)
+ident(
+  int_ref n "SintoMeUmaMerda/Experiments.ml" 26 400 409 "SintoMeUmaMerda/Experiments.ml" 26 400 410
+)
+"SintoMeUmaMerda/Experiments.ml" 27 413 415 "SintoMeUmaMerda/Experiments.ml" 27 413 416
+type(
+  int -> int -> int
+)
+ident(
+  int_ref Stdlib.( - ) "stdlib.mli" 343 13509 13509 "stdlib.mli" 343 13509 13555
+)
+"SintoMeUmaMerda/Experiments.ml" 27 413 416 "SintoMeUmaMerda/Experiments.ml" 27 413 417
+type(
+  int
+)
+"SintoMeUmaMerda/Experiments.ml" 27 413 414 "SintoMeUmaMerda/Experiments.ml" 27 413 417
+type(
+  int
+)
+"SintoMeUmaMerda/Experiments.ml" 29 421 429 "SintoMeUmaMerda/Experiments.ml" 29 421 435
+type(
+  (float -> float) -> int -> float -> float
+)
+ident(
+  def nDeriv "SintoMeUmaMerda/Experiments.ml" 29 421 421 "SintoMeUmaMerda/Experiments.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Experiments.ml" 29 421 436 "SintoMeUmaMerda/Experiments.ml" 29 421 437
+type(
+  float -> float
+)
+ident(
+  def f "SintoMeUmaMerda/Experiments.ml" 29 421 438 "SintoMeUmaMerda/Experiments.ml" 33 471 563
+)
+"SintoMeUmaMerda/Experiments.ml" 29 421 438 "SintoMeUmaMerda/Experiments.ml" 29 421 439
+type(
+  int
+)
+ident(
+  def n "SintoMeUmaMerda/Experiments.ml" 29 421 440 "SintoMeUmaMerda/Experiments.ml" 33 471 563
+)
+"SintoMeUmaMerda/Experiments.ml" 29 421 440 "SintoMeUmaMerda/Experiments.ml" 29 421 441
+type(
+  float
+)
+ident(
+  def x "SintoMeUmaMerda/Experiments.ml" 30 444 445 "SintoMeUmaMerda/Experiments.ml" 33 471 563
+)
+"SintoMeUmaMerda/Experiments.ml" 30 444 448 "SintoMeUmaMerda/Experiments.ml" 30 444 449
+type(
+  int
+)
+ident(
+  int_ref n "SintoMeUmaMerda/Experiments.ml" 29 421 438 "SintoMeUmaMerda/Experiments.ml" 29 421 439
+)
+"SintoMeUmaMerda/Experiments.ml" 30 444 450 "SintoMeUmaMerda/Experiments.ml" 30 444 451
+type(
+  int -> int -> bool
+)
+ident(
+  int_ref Stdlib.( = ) "stdlib.mli" 118 4976 4976 "stdlib.mli" 118 4976 5020
+)
+"SintoMeUmaMerda/Experiments.ml" 30 444 451 "SintoMeUmaMerda/Experiments.ml" 30 444 452
+type(
+  int
+)
+"SintoMeUmaMerda/Experiments.ml" 30 444 448 "SintoMeUmaMerda/Experiments.ml" 30 444 452
+type(
+  bool
+)
+"SintoMeUmaMerda/Experiments.ml" 31 458 460 "SintoMeUmaMerda/Experiments.ml" 31 458 461
+type(
+  float -> float
+)
+ident(
+  int_ref f "SintoMeUmaMerda/Experiments.ml" 29 421 436 "SintoMeUmaMerda/Experiments.ml" 29 421 437
+)
+"SintoMeUmaMerda/Experiments.ml" 31 458 462 "SintoMeUmaMerda/Experiments.ml" 31 458 463
+type(
+  float
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Experiments.ml" 29 421 440 "SintoMeUmaMerda/Experiments.ml" 29 421 441
+)
+"SintoMeUmaMerda/Experiments.ml" 31 458 460 "SintoMeUmaMerda/Experiments.ml" 31 458 463
+type(
+  float
+)
+"SintoMeUmaMerda/Experiments.ml" 33 471 475 "SintoMeUmaMerda/Experiments.ml" 33 471 481
+type(
+  (float -> float) -> int -> float -> float
+)
+ident(
+  int_ref nDeriv "SintoMeUmaMerda/Experiments.ml" 29 421 429 "SintoMeUmaMerda/Experiments.ml" 29 421 435
+)
+"SintoMeUmaMerda/Experiments.ml" 33 471 482 "SintoMeUmaMerda/Experiments.ml" 33 471 483
+type(
+  float -> float
+)
+ident(
+  int_ref f "SintoMeUmaMerda/Experiments.ml" 29 421 436 "SintoMeUmaMerda/Experiments.ml" 29 421 437
+)
+"SintoMeUmaMerda/Experiments.ml" 33 471 485 "SintoMeUmaMerda/Experiments.ml" 33 471 489
+type(
+  int -> int
+)
+ident(
+  int_ref prev "SintoMeUmaMerda/Experiments.ml" 26 400 404 "SintoMeUmaMerda/Experiments.ml" 26 400 408
+)
+"SintoMeUmaMerda/Experiments.ml" 33 471 490 "SintoMeUmaMerda/Experiments.ml" 33 471 491
+type(
+  int
+)
+ident(
+  int_ref n "SintoMeUmaMerda/Experiments.ml" 29 421 438 "SintoMeUmaMerda/Experiments.ml" 29 421 439
+)
+"SintoMeUmaMerda/Experiments.ml" 33 471 484 "SintoMeUmaMerda/Experiments.ml" 33 471 492
+type(
+  int
+)
+"SintoMeUmaMerda/Experiments.ml" 33 471 494 "SintoMeUmaMerda/Experiments.ml" 33 471 505
+type(
+  float -> float
+)
+ident(
+  int_ref bitMoreThan "SintoMeUmaMerda/Experiments.ml" 21 363 367 "SintoMeUmaMerda/Experiments.ml" 21 363 378
+)
+"SintoMeUmaMerda/Experiments.ml" 33 471 506 "SintoMeUmaMerda/Experiments.ml" 33 471 507
+type(
+  float
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Experiments.ml" 29 421 440 "SintoMeUmaMerda/Experiments.ml" 29 421 441
+)
+"SintoMeUmaMerda/Experiments.ml" 33 471 493 "SintoMeUmaMerda/Experiments.ml" 33 471 508
+type(
+  float
+)
+"SintoMeUmaMerda/Experiments.ml" 33 471 474 "SintoMeUmaMerda/Experiments.ml" 33 471 509
+type(
+  float
+)
+"SintoMeUmaMerda/Experiments.ml" 33 471 510 "SintoMeUmaMerda/Experiments.ml" 33 471 512
+type(
+  float -> float -> float
+)
+ident(
+  int_ref Stdlib.( -. ) "stdlib.mli" 456 17641 17641 "stdlib.mli" 456 17641 17696
+)
+"SintoMeUmaMerda/Experiments.ml" 33 471 514 "SintoMeUmaMerda/Experiments.ml" 33 471 520
+type(
+  (float -> float) -> int -> float -> float
+)
+ident(
+  int_ref nDeriv "SintoMeUmaMerda/Experiments.ml" 29 421 429 "SintoMeUmaMerda/Experiments.ml" 29 421 435
+)
+"SintoMeUmaMerda/Experiments.ml" 33 471 521 "SintoMeUmaMerda/Experiments.ml" 33 471 522
+type(
+  float -> float
+)
+ident(
+  int_ref f "SintoMeUmaMerda/Experiments.ml" 29 421 436 "SintoMeUmaMerda/Experiments.ml" 29 421 437
+)
+"SintoMeUmaMerda/Experiments.ml" 33 471 524 "SintoMeUmaMerda/Experiments.ml" 33 471 528
+type(
+  int -> int
+)
+ident(
+  int_ref prev "SintoMeUmaMerda/Experiments.ml" 26 400 404 "SintoMeUmaMerda/Experiments.ml" 26 400 408
+)
+"SintoMeUmaMerda/Experiments.ml" 33 471 529 "SintoMeUmaMerda/Experiments.ml" 33 471 530
+type(
+  int
+)
+ident(
+  int_ref n "SintoMeUmaMerda/Experiments.ml" 29 421 438 "SintoMeUmaMerda/Experiments.ml" 29 421 439
+)
+"SintoMeUmaMerda/Experiments.ml" 33 471 523 "SintoMeUmaMerda/Experiments.ml" 33 471 532
+type(
+  int
+)
+"SintoMeUmaMerda/Experiments.ml" 33 471 534 "SintoMeUmaMerda/Experiments.ml" 33 471 535
+ident(
+  int_ref x "SintoMeUmaMerda/Experiments.ml" 29 421 440 "SintoMeUmaMerda/Experiments.ml" 29 421 441
+)
+"SintoMeUmaMerda/Experiments.ml" 33 471 533 "SintoMeUmaMerda/Experiments.ml" 33 471 536
+type(
+  float
+)
+"SintoMeUmaMerda/Experiments.ml" 33 471 513 "SintoMeUmaMerda/Experiments.ml" 33 471 537
+type(
+  float
+)
+"SintoMeUmaMerda/Experiments.ml" 33 471 473 "SintoMeUmaMerda/Experiments.ml" 33 471 538
+type(
+  float
+)
+"SintoMeUmaMerda/Experiments.ml" 33 471 538 "SintoMeUmaMerda/Experiments.ml" 33 471 540
+type(
+  float -> float -> float
+)
+ident(
+  int_ref Stdlib.( /. ) "stdlib.mli" 466 17980 17980 "stdlib.mli" 466 17980 18035
+)
+"SintoMeUmaMerda/Experiments.ml" 33 471 542 "SintoMeUmaMerda/Experiments.ml" 33 471 553
+type(
+  float -> float
+)
+ident(
+  int_ref bitMoreThan "SintoMeUmaMerda/Experiments.ml" 21 363 367 "SintoMeUmaMerda/Experiments.ml" 21 363 378
+)
+"SintoMeUmaMerda/Experiments.ml" 33 471 554 "SintoMeUmaMerda/Experiments.ml" 33 471 555
+type(
+  float
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Experiments.ml" 29 421 440 "SintoMeUmaMerda/Experiments.ml" 29 421 441
+)
+"SintoMeUmaMerda/Experiments.ml" 33 471 541 "SintoMeUmaMerda/Experiments.ml" 33 471 556
+type(
+  float
+)
+"SintoMeUmaMerda/Experiments.ml" 33 471 557 "SintoMeUmaMerda/Experiments.ml" 33 471 559
+type(
+  float -> float -> float
+)
+ident(
+  int_ref Stdlib.( -. ) "stdlib.mli" 456 17641 17641 "stdlib.mli" 456 17641 17696
+)
+"SintoMeUmaMerda/Experiments.ml" 33 471 560 "SintoMeUmaMerda/Experiments.ml" 33 471 561
+type(
+  float
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Experiments.ml" 29 421 440 "SintoMeUmaMerda/Experiments.ml" 29 421 441
+)
+"SintoMeUmaMerda/Experiments.ml" 33 471 540 "SintoMeUmaMerda/Experiments.ml" 33 471 563
+type(
+  float
+)
+"SintoMeUmaMerda/Experiments.ml" 33 471 473 "SintoMeUmaMerda/Experiments.ml" 33 471 563
+type(
+  float
+)
+"SintoMeUmaMerda/Experiments.ml" 30 444 445 "SintoMeUmaMerda/Experiments.ml" 33 471 563
+type(
+  float
+)

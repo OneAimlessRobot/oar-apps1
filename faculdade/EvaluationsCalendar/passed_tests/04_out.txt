@@ -1,0 +1,98 @@
+Course IP does not exist!
+Injun Joe added.
+Aunt Polly added.
+Mr. Walters added.
+Judge Thatcher added.
+Jim added.
+Mr. Sprague added.
+Mr. Jones added.
+Mr. Dobbins added.
+Alfred Temple added.
+Mary added.
+All people:
+Injun Joe (0)
+Aunt Polly (0)
+Mr. Walters (0)
+Judge Thatcher (0)
+Jim (0)
+Mr. Sprague (0)
+Mr. Jones (0)
+Mr. Dobbins (0)
+Alfred Temple (0)
+Mary (0)
+Course IP added.
+Course POO added.
+Course AM I added.
+Course AM II added.
+Course Fancy course name added.
+Course Karaoke 101 added.
+Course Extreme Mooshaking added.
+All courses:
+IP: 0 professors, 0 students, 0 tests and 0 deadlines.
+POO: 0 professors, 0 students, 0 tests and 0 deadlines.
+AM I: 0 professors, 0 students, 0 tests and 0 deadlines.
+AM II: 0 professors, 0 students, 0 tests and 0 deadlines.
+Fancy course name: 0 professors, 0 students, 0 tests and 0 deadlines.
+Karaoke 101: 0 professors, 0 students, 0 tests and 0 deadlines.
+Extreme Mooshaking: 0 professors, 0 students, 0 tests and 0 deadlines.
+Course IP has no assigned professors and no enrolled students.
+Course POO has no assigned professors and no enrolled students.
+Course Fancy course name has no assigned professors and no enrolled students.
+Course Extreme Mooshaking has no assigned professors and no enrolled students.
+Course of a course that I just made up does not exist!
+Professor Santa Claus does not exist!
+Course a course that does not exist does not exist!
+Professor Injun Joe assigned to IP.
+Roster for course IP:
+Professors:
+Injun Joe
+Students:
+Course POO has no assigned professors and no enrolled students.
+Professor Injun Joe assigned to AM II.
+Professor Injun Joe assigned to Extreme Mooshaking.
+Professor Mary assigned to POO.
+Professor Mary is already assigned to course POO!
+Professor Mary assigned to IP.
+Professor Judge Thatcher assigned to Karaoke 101.
+Roster for course IP:
+Professors:
+Injun Joe
+Mary
+Students:
+Roster for course POO:
+Professors:
+Mary
+Students:
+Course AM I has no assigned professors and no enrolled students.
+Roster for course AM II:
+Professors:
+Injun Joe
+Students:
+Roster for course Extreme Mooshaking:
+Professors:
+Injun Joe
+Students:
+Roster for course Karaoke 101:
+Professors:
+Judge Thatcher
+Students:
+All people:
+Injun Joe (3)
+Aunt Polly (0)
+Mr. Walters (0)
+Judge Thatcher (1)
+Jim (0)
+Mr. Sprague (0)
+Mr. Jones (0)
+Mr. Dobbins (0)
+Alfred Temple (0)
+Mary (2)
+All courses:
+IP: 2 professors, 0 students, 0 tests and 0 deadlines.
+POO: 1 professors, 0 students, 0 tests and 0 deadlines.
+AM I: 0 professors, 0 students, 0 tests and 0 deadlines.
+AM II: 1 professors, 0 students, 0 tests and 0 deadlines.
+Fancy course name: 0 professors, 0 students, 0 tests and 0 deadlines.
+Karaoke 101: 1 professors, 0 students, 0 tests and 0 deadlines.
+Extreme Mooshaking: 1 professors, 0 students, 0 tests and 0 deadlines.
+Bye!

@@ -1,0 +1,59 @@
+User peralta was registered as manager with clearance level 3.
+User santiago was registered as manager with clearance level 4.
+User holt was registered as manager with clearance level 5.
+User diaz was registered as manager with clearance level 4.
+User boyle was registered as developer with clearance level 3.
+User bob was registered as developer with clearance level 2.
+User linetti was registered as developer with clearance level 4.
+User pimento was registered as developer with clearance level 1.
+User wells was registered as developer with clearance level 2.
+User john was registered as developer with clearance level 4.
+User mary was registered as developer with clearance level 3.
+All registered users:
+developer bob is managed by holt [0]
+developer boyle is managed by peralta [0]
+manager diaz [2, 0, 0]
+manager holt [3, 0, 0]
+developer john is managed by diaz [0]
+developer linetti is managed by holt [0]
+developer mary is managed by holt [0]
+manager peralta [2, 0, 0]
+developer pimento is managed by peralta [0]
+manager santiago [0, 0, 0]
+developer wells is managed by diaz [0]
+No projects added.
+Online occurrence reporting project was created.
+Online occurrence reporting UI project was created.
+Wordle project was created.
+Top secret project was created.
+Yet another online app project was created.
+Unknown project type.
+Project manager alice does not exist.
+Project manager boyle does not exist.
+My fabulous app project was created.
+My fabulous app project already exists.
+Project manager diaz has clearance level 4.
+Sell stuff online app project was created.
+Accounting service project was created.
+All projects:
+in-house Online occurrence reporting is managed by santiago [2, 0, 0, 0]
+outsourced Online occurrence reporting UI is managed by diaz and developed by UI4All
+in-house Wordle is managed by holt [2, 0, 0, 0]
+in-house Top secret is managed by holt [5, 0, 0, 0]
+in-house Yet another online app is managed by diaz [4, 0, 0, 0]
+in-house My fabulous app is managed by diaz [3, 0, 0, 0]
+in-house Sell stuff online app is managed by peralta [3, 0, 0, 0]
+outsourced Accounting service is managed by peralta and developed by Mendix
+All registered users:
+developer bob is managed by holt [0]
+developer boyle is managed by peralta [0]
+manager diaz [2, 3, 3]
+manager holt [3, 2, 2]
+developer john is managed by diaz [0]
+developer linetti is managed by holt [0]
+developer mary is managed by holt [0]
+manager peralta [2, 2, 2]
+developer pimento is managed by peralta [0]
+manager santiago [0, 1, 1]
+developer wells is managed by diaz [0]
+Bye!

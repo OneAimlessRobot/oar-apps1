@@ -1,0 +1,9 @@
+body{
+    background-color:blue;
+    text-align:center;
+}
+#lista_de_desabafos{
+    text-align:left;
+    background-color:rgb(86, 86, 191);
+    color:red;
+}

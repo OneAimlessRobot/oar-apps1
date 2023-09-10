@@ -1,0 +1,313 @@
+==11837== Memcheck, a memory error detector
+==11837== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==11837== Using Valgrind-3.15.0-608cb11914-20190413 and LibVEX; rerun with -h for copyright info
+==11837== Command: ./lust
+==11837== Parent PID: 11836
+==11837== 
+--11837-- 
+--11837-- Valgrind options:
+--11837--    --leak-check=full
+--11837--    --show-leak-kinds=all
+--11837--    --track-origins=yes
+--11837--    --verbose
+--11837--    --log-file=valgrind-out.txt
+--11837-- Contents of /proc/version:
+--11837--   Linux version 5.13.0-30-generic (buildd@lcy02-amd64-003) (gcc (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0, GNU ld (GNU Binutils for Ubuntu) 2.34) #33~20.04.1-Ubuntu SMP Mon Feb 7 14:25:10 UTC 2022
+--11837-- 
+--11837-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-lzcnt-rdtscp-sse3-ssse3-avx-bmi
+--11837-- Page sizes: currently 4096, max supported 4096
+--11837-- Valgrind library directory: /usr/lib/x86_64-linux-gnu/valgrind
+--11837-- Reading syms from /home/oneaimlessrobot/scripts/CPP/lust/lust
+--11837-- Reading syms from /usr/lib/x86_64-linux-gnu/ld-2.31.so
+--11837--   Considering /usr/lib/x86_64-linux-gnu/ld-2.31.so ..
+--11837--   .. CRC mismatch (computed 975d0390 wanted 30bd717f)
+--11837--   Considering /lib/x86_64-linux-gnu/ld-2.31.so ..
+--11837--   .. CRC mismatch (computed 975d0390 wanted 30bd717f)
+--11837--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/ld-2.31.so ..
+--11837--   .. CRC is valid
+--11837-- Reading syms from /usr/lib/x86_64-linux-gnu/valgrind/memcheck-amd64-linux
+--11837--    object doesn't have a symbol table
+--11837--    object doesn't have a dynamic symbol table
+--11837-- Scheduler: using generic scheduler lock implementation.
+--11837-- Reading suppressions file: /usr/lib/x86_64-linux-gnu/valgrind/default.supp
+==11837== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-11837-by-oneaimlessrobot-on-???
+==11837== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-11837-by-oneaimlessrobot-on-???
+==11837== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-11837-by-oneaimlessrobot-on-???
+==11837== 
+==11837== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==11837== don't want to do, unless you know exactly what you're doing,
+==11837== or are doing some strange experiment):
+==11837==   /usr/lib/x86_64-linux-gnu/valgrind/../../bin/vgdb --pid=11837 ...command...
+==11837== 
+==11837== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==11837==   /path/to/gdb ./lust
+==11837== and then give GDB the following command
+==11837==   target remote | /usr/lib/x86_64-linux-gnu/valgrind/../../bin/vgdb --pid=11837
+==11837== --pid is optional if only one valgrind process is running
+==11837== 
+--11837-- REDIR: 0x4022e10 (ld-linux-x86-64.so.2:strlen) redirected to 0x580c9ce2 (???)
+--11837-- REDIR: 0x4022be0 (ld-linux-x86-64.so.2:index) redirected to 0x580c9cfc (???)
+--11837-- Reading syms from /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_core-amd64-linux.so
+--11837--    object doesn't have a symbol table
+--11837-- Reading syms from /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so
+--11837--    object doesn't have a symbol table
+==11837== WARNING: new redirection conflicts with existing -- ignoring it
+--11837--     old: 0x04022e10 (strlen              ) R-> (0000.0) 0x580c9ce2 ???
+--11837--     new: 0x04022e10 (strlen              ) R-> (2007.0) 0x0483f060 strlen
+--11837-- REDIR: 0x401f5f0 (ld-linux-x86-64.so.2:strcmp) redirected to 0x483ffd0 (strcmp)
+--11837-- REDIR: 0x4023370 (ld-linux-x86-64.so.2:mempcpy) redirected to 0x4843a20 (mempcpy)
+--11837-- Reading syms from /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.10.0
+--11837--    object doesn't have a symbol table
+--11837-- Reading syms from /usr/lib/x86_64-linux-gnu/libSDL2_image-2.0.so.0.2.3
+--11837--    object doesn't have a symbol table
+--11837-- Reading syms from /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28
+--11837--    object doesn't have a symbol table
+--11837-- Reading syms from /usr/lib/x86_64-linux-gnu/libm-2.31.so
+--11837--   Considering /usr/lib/x86_64-linux-gnu/libm-2.31.so ..
+--11837--   .. CRC mismatch (computed fcb42c76 wanted f6c95789)
+--11837--   Considering /lib/x86_64-linux-gnu/libm-2.31.so ..
+--11837--   .. CRC mismatch (computed fcb42c76 wanted f6c95789)
+--11837--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libm-2.31.so ..
+--11837--   .. CRC is valid
+--11837-- Reading syms from /usr/lib/x86_64-linux-gnu/libgcc_s.so.1
+--11837--    object doesn't have a symbol table
+--11837-- Reading syms from /usr/lib/x86_64-linux-gnu/libc-2.31.so
+--11837--   Considering /usr/lib/x86_64-linux-gnu/libc-2.31.so ..
+--11837--   .. CRC mismatch (computed 86b78530 wanted e380f01c)
+--11837--   Considering /lib/x86_64-linux-gnu/libc-2.31.so ..
+--11837--   .. CRC mismatch (computed 86b78530 wanted e380f01c)
+--11837--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libc-2.31.so ..
+--11837--   .. CRC is valid
+--11837-- Reading syms from /usr/lib/x86_64-linux-gnu/libasound.so.2.0.0
+--11837--    object doesn't have a symbol table
+--11837-- Reading syms from /usr/lib/x86_64-linux-gnu/libdl-2.31.so
+--11837--   Considering /usr/lib/x86_64-linux-gnu/libdl-2.31.so ..
+--11837--   .. CRC mismatch (computed b5d487d3 wanted 6ef97e7c)
+--11837--   Considering /lib/x86_64-linux-gnu/libdl-2.31.so ..
+--11837--   .. CRC mismatch (computed b5d487d3 wanted 6ef97e7c)
+--11837--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libdl-2.31.so ..
+--11837--   .. CRC is valid
+--11837-- Reading syms from /usr/lib/x86_64-linux-gnu/libpulse.so.0.21.2
+--11837--    object doesn't have a symbol table
+--11837-- Reading syms from /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+--11837--    object doesn't have a symbol table
+--11837-- Reading syms from /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0
+--11837--   Considering /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0 ..
+--11837--   .. CRC mismatch (computed 7e27e1ef wanted 4ab025b2)
+--11837--   Considering /lib/x86_64-linux-gnu/libXext.so.6.4.0 ..
+--11837--   .. CRC mismatch (computed 7e27e1ef wanted 4ab025b2)
+--11837--    object doesn't have a symbol table
+--11837-- Reading syms from /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2
+--11837--    object doesn't have a symbol table
+--11837-- Reading syms from /usr/lib/x86_64-linux-gnu/libXinerama.so.1.0.0
+--11837--    object doesn't have a symbol table
+--11837-- Reading syms from /usr/lib/x86_64-linux-gnu/libXi.so.6.1.0
+--11837--    object doesn't have a symbol table
+--11837-- Reading syms from /usr/lib/x86_64-linux-gnu/libXrandr.so.2.2.0
+--11837--    object doesn't have a symbol table
+--11837-- Reading syms from /usr/lib/x86_64-linux-gnu/libXss.so.1.0.0
+--11837--    object doesn't have a symbol table
+--11837-- Reading syms from /usr/lib/x86_64-linux-gnu/libXxf86vm.so.1.0.0
+--11837--    object doesn't have a symbol table
+--11837-- Reading syms from /usr/lib/x86_64-linux-gnu/libwayland-egl.so.1.0.0
+--11837--    object doesn't have a symbol table
+--11837-- Reading syms from /usr/lib/x86_64-linux-gnu/libwayland-client.so.0.3.0
+--11837--    object doesn't have a symbol table
+--11837-- Reading syms from /usr/lib/x86_64-linux-gnu/libwayland-cursor.so.0.0.0
+--11837--    object doesn't have a symbol table
+--11837-- Reading syms from /usr/lib/x86_64-linux-gnu/libxkbcommon.so.0.0.0
+--11837--    object doesn't have a symbol table
+--11837-- Reading syms from /usr/lib/x86_64-linux-gnu/libpthread-2.31.so
+--11837--   Considering /usr/lib/debug/.build-id/e5/4761f7b554d0fcc1562959665d93dffbebdaf0.debug ..
+--11837--   .. build-id is valid
+--11837-- Reading syms from /usr/lib/x86_64-linux-gnu/libpng16.so.16.37.0
+--11837--    object doesn't have a symbol table
+--11837-- Reading syms from /usr/lib/x86_64-linux-gnu/libjpeg.so.8.2.2
+--11837--    object doesn't have a symbol table
+--11837-- Reading syms from /usr/lib/x86_64-linux-gnu/libtiff.so.5.5.0
+--11837--    object doesn't have a symbol table
+--11837-- Reading syms from /usr/lib/x86_64-linux-gnu/libwebp.so.6.0.2
+--11837--    object doesn't have a symbol table
+--11837-- Reading syms from /usr/lib/x86_64-linux-gnu/pulseaudio/libpulsecommon-13.99.so
+--11837--    object doesn't have a symbol table
+--11837-- Reading syms from /usr/lib/x86_64-linux-gnu/libdbus-1.so.3.19.11
+--11837--    object doesn't have a symbol table
+--11837-- Reading syms from /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0
+--11837--    object doesn't have a symbol table
+--11837-- Reading syms from /usr/lib/x86_64-linux-gnu/libXrender.so.1.3.0
+--11837--    object doesn't have a symbol table
+--11837-- Reading syms from /usr/lib/x86_64-linux-gnu/libXfixes.so.3.1.0
+--11837--    object doesn't have a symbol table
+--11837-- Reading syms from /usr/lib/x86_64-linux-gnu/libffi.so.7.1.0
+--11837--    object doesn't have a symbol table
+--11837-- Reading syms from /usr/lib/x86_64-linux-gnu/libz.so.1.2.11
+--11837--    object doesn't have a symbol table
+--11837-- Reading syms from /usr/lib/x86_64-linux-gnu/libzstd.so.1.4.4
+--11837--    object doesn't have a symbol table
+--11837-- Reading syms from /usr/lib/x86_64-linux-gnu/liblzma.so.5.2.4
+--11837--    object doesn't have a symbol table
+--11837-- Reading syms from /usr/lib/x86_64-linux-gnu/libjbig.so.0
+--11837--    object doesn't have a symbol table
+--11837-- Reading syms from /usr/lib/x86_64-linux-gnu/libsystemd.so.0.28.0
+--11837--    object doesn't have a symbol table
+--11837-- Reading syms from /usr/lib/x86_64-linux-gnu/libwrap.so.0.7.6
+--11837--    object doesn't have a symbol table
+--11837-- Reading syms from /usr/lib/x86_64-linux-gnu/libsndfile.so.1.0.28
+--11837--    object doesn't have a symbol table
+--11837-- Reading syms from /usr/lib/x86_64-linux-gnu/libasyncns.so.0.3.1
+--11837--    object doesn't have a symbol table
+--11837-- Reading syms from /usr/lib/x86_64-linux-gnu/libapparmor.so.1.6.1
+--11837--    object doesn't have a symbol table
+--11837-- Reading syms from /usr/lib/x86_64-linux-gnu/librt-2.31.so
+--11837--   Considering /usr/lib/x86_64-linux-gnu/librt-2.31.so ..
+--11837--   .. CRC mismatch (computed 7d64f7e7 wanted 7c74e986)
+--11837--   Considering /lib/x86_64-linux-gnu/librt-2.31.so ..
+--11837--   .. CRC mismatch (computed 7d64f7e7 wanted 7c74e986)
+--11837--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/librt-2.31.so ..
+--11837--   .. CRC is valid
+--11837-- Reading syms from /usr/lib/x86_64-linux-gnu/libXau.so.6.0.0
+--11837--   Considering /usr/lib/x86_64-linux-gnu/libXau.so.6.0.0 ..
+--11837--   .. CRC mismatch (computed 7de9b6ad wanted e8a17129)
+--11837--   Considering /lib/x86_64-linux-gnu/libXau.so.6.0.0 ..
+--11837--   .. CRC mismatch (computed 7de9b6ad wanted e8a17129)
+--11837--    object doesn't have a symbol table
+--11837-- Reading syms from /usr/lib/x86_64-linux-gnu/libXdmcp.so.6.0.0
+--11837--    object doesn't have a symbol table
+--11837-- Reading syms from /usr/lib/x86_64-linux-gnu/liblz4.so.1.9.2
+--11837--    object doesn't have a symbol table
+--11837-- Reading syms from /usr/lib/x86_64-linux-gnu/libgcrypt.so.20.2.5
+--11837--    object doesn't have a symbol table
+--11837-- Reading syms from /usr/lib/x86_64-linux-gnu/libnsl-2.31.so
+--11837--   Considering /usr/lib/x86_64-linux-gnu/libnsl-2.31.so ..
+--11837--   .. CRC mismatch (computed e3617264 wanted 60792de7)
+--11837--   Considering /lib/x86_64-linux-gnu/libnsl-2.31.so ..
+--11837--   .. CRC mismatch (computed e3617264 wanted 60792de7)
+--11837--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libnsl-2.31.so ..
+--11837--   .. CRC is valid
+--11837-- Reading syms from /usr/lib/x86_64-linux-gnu/libFLAC.so.8.3.0
+--11837--    object doesn't have a symbol table
+--11837-- Reading syms from /usr/lib/x86_64-linux-gnu/libogg.so.0.8.4
+--11837--   Considering /usr/lib/x86_64-linux-gnu/libogg.so.0.8.4 ..
+--11837--   .. CRC mismatch (computed 9cb68f90 wanted f1b31916)
+--11837--   Considering /lib/x86_64-linux-gnu/libogg.so.0.8.4 ..
+--11837--   .. CRC mismatch (computed 9cb68f90 wanted f1b31916)
+--11837--    object doesn't have a symbol table
+--11837-- Reading syms from /usr/lib/x86_64-linux-gnu/libvorbis.so.0.4.8
+--11837--    object doesn't have a symbol table
+--11837-- Reading syms from /usr/lib/x86_64-linux-gnu/libvorbisenc.so.2.0.11
+--11837--    object doesn't have a symbol table
+--11837-- Reading syms from /usr/lib/x86_64-linux-gnu/libresolv-2.31.so
+--11837--   Considering /usr/lib/x86_64-linux-gnu/libresolv-2.31.so ..
+--11837--   .. CRC mismatch (computed 240175c5 wanted 37ae7771)
+--11837--   Considering /lib/x86_64-linux-gnu/libresolv-2.31.so ..
+--11837--   .. CRC mismatch (computed 240175c5 wanted 37ae7771)
+--11837--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libresolv-2.31.so ..
+--11837--   .. CRC is valid
+--11837-- Reading syms from /usr/lib/x86_64-linux-gnu/libbsd.so.0.10.0
+--11837--    object doesn't have a symbol table
+--11837-- Reading syms from /usr/lib/x86_64-linux-gnu/libgpg-error.so.0.28.0
+--11837--    object doesn't have a symbol table
+--11837-- REDIR: 0x4dd0600 (libc.so.6:memmove) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--11837-- REDIR: 0x4dcf900 (libc.so.6:strncpy) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--11837-- REDIR: 0x4dd0930 (libc.so.6:strcasecmp) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--11837-- REDIR: 0x4dcf220 (libc.so.6:strcat) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--11837-- REDIR: 0x4dcf960 (libc.so.6:rindex) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--11837-- REDIR: 0x4dd1dd0 (libc.so.6:rawmemchr) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--11837-- REDIR: 0x4dece60 (libc.so.6:wmemchr) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--11837-- REDIR: 0x4dec9a0 (libc.so.6:wcscmp) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--11837-- REDIR: 0x4dd0760 (libc.so.6:mempcpy) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--11837-- REDIR: 0x4dd0590 (libc.so.6:bcmp) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--11837-- REDIR: 0x4dcf890 (libc.so.6:strncmp) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--11837-- REDIR: 0x4dcf2d0 (libc.so.6:strcmp) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--11837-- REDIR: 0x4dd06c0 (libc.so.6:memset) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--11837-- REDIR: 0x4dec960 (libc.so.6:wcschr) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--11837-- REDIR: 0x4dcf7f0 (libc.so.6:strnlen) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--11837-- REDIR: 0x4dcf3b0 (libc.so.6:strcspn) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--11837-- REDIR: 0x4dd0980 (libc.so.6:strncasecmp) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--11837-- REDIR: 0x4dcf350 (libc.so.6:strcpy) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--11837-- REDIR: 0x4dd0ad0 (libc.so.6:memcpy@@GLIBC_2.14) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--11837-- REDIR: 0x4dee0d0 (libc.so.6:wcsnlen) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--11837-- REDIR: 0x4dec9e0 (libc.so.6:wcscpy) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--11837-- REDIR: 0x4dcf9a0 (libc.so.6:strpbrk) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--11837-- REDIR: 0x4dcf280 (libc.so.6:index) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--11837-- REDIR: 0x4dcf7b0 (libc.so.6:strlen) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--11837-- REDIR: 0x4dd8d20 (libc.so.6:memrchr) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--11837-- REDIR: 0x4dd09d0 (libc.so.6:strcasecmp_l) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--11837-- REDIR: 0x4dd0550 (libc.so.6:memchr) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--11837-- REDIR: 0x4decab0 (libc.so.6:wcslen) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--11837-- REDIR: 0x4dcfc60 (libc.so.6:strspn) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--11837-- REDIR: 0x4dd08d0 (libc.so.6:stpncpy) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--11837-- REDIR: 0x4dd0870 (libc.so.6:stpcpy) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--11837-- REDIR: 0x4dd1e10 (libc.so.6:strchrnul) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--11837-- REDIR: 0x4dd0a20 (libc.so.6:strncasecmp_l) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--11837-- REDIR: 0x4e5d8e0 (libc.so.6:__memcpy_chk) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--11837-- REDIR: 0x4dd0470 (libc.so.6:strstr) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--11837-- REDIR: 0x4dcf830 (libc.so.6:strncat) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--11837-- REDIR: 0x4de1a30 (libc.so.6:__strrchr_sse2) redirected to 0x483ea70 (__strrchr_sse2)
+--11837-- REDIR: 0x4de1d30 (libc.so.6:__strlen_sse2) redirected to 0x483efa0 (__strlen_sse2)
+--11837-- REDIR: 0x4dca260 (libc.so.6:malloc) redirected to 0x483b780 (malloc)
+--11837-- REDIR: 0x4debc40 (libc.so.6:memcpy@GLIBC_2.2.5) redirected to 0x4840100 (memcpy@GLIBC_2.2.5)
+--11837-- REDIR: 0x4dda520 (libc.so.6:__strcmp_sse2_unaligned) redirected to 0x483fed0 (strcmp)
+--11837-- REDIR: 0x4ebd4e0 (libc.so.6:__memcmp_sse4_1) redirected to 0x4842150 (__memcmp_sse4_1)
+--11837-- REDIR: 0x4a89b20 (libstdc++.so.6:operator new(unsigned long)) redirected to 0x483bdf0 (operator new(unsigned long))
+--11837-- REDIR: 0x4a87d70 (libstdc++.so.6:operator delete(void*)) redirected to 0x483cf50 (operator delete(void*))
+--11837-- REDIR: 0x4debc20 (libc.so.6:__mempcpy_sse2_unaligned) redirected to 0x4843660 (mempcpy)
+--11837-- REDIR: 0x4dd0120 (libc.so.6:__GI_strstr) redirected to 0x4843ca0 (__strstr_sse2)
+--11837-- REDIR: 0x4a89b80 (libstdc++.so.6:operator new[](unsigned long)) redirected to 0x483c510 (operator new[](unsigned long))
+--11837-- REDIR: 0x4de1820 (libc.so.6:__strchrnul_sse2) redirected to 0x4843540 (strchrnul)
+--11837-- REDIR: 0x4ddc030 (libc.so.6:__memchr_sse2) redirected to 0x4840050 (memchr)
+--11837-- REDIR: 0x4a87da0 (libstdc++.so.6:operator delete[](void*)) redirected to 0x483d6e0 (operator delete[](void*))
+--11837-- REDIR: 0x4dca850 (libc.so.6:free) redirected to 0x483c9d0 (free)
+==11837== Invalid read of size 8
+==11837==    at 0x10CC23: destroyList(lonely*) (lust.cpp:106)
+==11837==    by 0x10C8C1: main (lust.cpp:50)
+==11837==  Address 0xcb8a970 is 32 bytes inside a block of size 40 free'd
+==11837==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11837==    by 0x10CC1E: destroyList(lonely*) (lust.cpp:107)
+==11837==    by 0x10C8C1: main (lust.cpp:50)
+==11837==  Block was alloc'd at
+==11837==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11837==    by 0x10CB68: criarlista(lonely*, long long) (lust.cpp:90)
+==11837==    by 0x10C79E: main (lust.cpp:36)
+==11837== 
+--11837-- REDIR: 0x4de6c70 (libc.so.6:__strcpy_sse2_unaligned) redirected to 0x483f090 (strcpy)
+==11837== 
+==11837== HEAP SUMMARY:
+==11837==     in use at exit: 132 bytes in 2 blocks
+==11837==   total heap usage: 1,000,037 allocs, 1,000,035 frees, 40,085,343 bytes allocated
+==11837== 
+==11837== Searching for pointers to 2 not-freed blocks
+==11837== Checked 26,412,424 bytes
+==11837== 
+==11837== 4 bytes in 1 blocks are definitely lost in loss record 1 of 2
+==11837==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11837==    by 0x10C733: main (lust.cpp:27)
+==11837== 
+==11837== 128 bytes in 1 blocks are definitely lost in loss record 2 of 2
+==11837==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11837==    by 0x10B82C: convertAndRename(lonely, int) (crush.h:150)
+==11837==    by 0x10C8F7: main (lust.cpp:52)
+==11837== 
+==11837== LEAK SUMMARY:
+==11837==    definitely lost: 132 bytes in 2 blocks
+==11837==    indirectly lost: 0 bytes in 0 blocks
+==11837==      possibly lost: 0 bytes in 0 blocks
+==11837==    still reachable: 0 bytes in 0 blocks
+==11837==         suppressed: 0 bytes in 0 blocks
+==11837== 
+==11837== ERROR SUMMARY: 1000001 errors from 3 contexts (suppressed: 0 from 0)
+==11837== 
+==11837== 999999 errors in context 1 of 3:
+==11837== Invalid read of size 8
+==11837==    at 0x10CC23: destroyList(lonely*) (lust.cpp:106)
+==11837==    by 0x10C8C1: main (lust.cpp:50)
+==11837==  Address 0xcb8a970 is 32 bytes inside a block of size 40 free'd
+==11837==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11837==    by 0x10CC1E: destroyList(lonely*) (lust.cpp:107)
+==11837==    by 0x10C8C1: main (lust.cpp:50)
+==11837==  Block was alloc'd at
+==11837==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==11837==    by 0x10CB68: criarlista(lonely*, long long) (lust.cpp:90)
+==11837==    by 0x10C79E: main (lust.cpp:36)
+==11837== 
+==11837== ERROR SUMMARY: 1000001 errors from 3 contexts (suppressed: 0 from 0)

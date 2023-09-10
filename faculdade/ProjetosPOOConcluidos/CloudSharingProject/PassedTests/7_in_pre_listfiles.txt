@@ -1,0 +1,5 @@
+ADD p1 premium
+UPLOAD p1 file1 1000
+LISTFILES p2
+EXIT
+

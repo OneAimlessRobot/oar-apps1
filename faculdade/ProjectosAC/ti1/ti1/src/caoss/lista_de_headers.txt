@@ -1,0 +1,117 @@
+
+- cpu.c (completo e testado por mim e com scripts caoss feitos por mim)
+
+	depende de:
+		-do respetivo header (prototipos de funções)
+		-memory.c
+		-alu.c
+		-os.c
+		-utils.c
+		
+- alu.c (completo e testado por mim e com scripts caoss feitos por mim)
+	depende de:
+		-do respetivo header (prototipos de funções)
+		
+	
+- os.c (completo)
+	depende de:
+		-do respetivo header (prototipos de funções)
+		-memory.c
+		-cpu.c
+		
+- utils.c (completo)
+	depende de:
+		-do respetivo header (prototipos de funções)
+		-cpu.c
+		-types.h (tipos de dados)
+		
+- caoss.c (completo e possui a funcao main)
+	depende de:
+		-do respetivo header (prototipos de funções)
+		-utils.c
+		
+- memory.c (completo e passou no mooshak)
+	depende de:
+		-do respetivo header (prototipos de funções)
+		-utils.c
+		
+		
+		
+Ok.... acho que tenho de acrescentar aqui uns apontamentos:
+
+
+
+Ok, o programa simula a operação de uma cpu. 
+
+-A cpu tem registos, cada um deles guarda 1 palavra, que é basicamente uma sequência de bits com um tamanho fixo. Aqui, as palavras têm 16 bits (A cpu dos computadores modernos tem 32 ou 64 bits de palavra). 
+
+-Cada cpu tem um tamanho de palavra caracterísitca. Um dos registos da CPU é um especial que guarda palavras que representam instruções. Cada um dos bits da instrução
+faz coisas diferentes. Os restantes registos guardam dados.
+
+- A cpu recebe dados e instruções da ram e envia dados para a mesma. Não envia instruções.... isso era estúpido porque é a cpu que as executa. Cada cpu tem uma linguagem assembly que lhe é característica.
+
+-A memória que a nossa cpu usa é alocada na ram do computador e está dividida em 3 partes: Dados, codigo e "dirty". O código representa instruções para a cpu, que são lidas em sequência. Os dados (que são, ou não, inicializados) representam.... os dados com que a cpu faz as operações. De cada vez que o array de dados é escrito numa determinada posição, os bytes das mesmas posições vão ser escritos com "1" para se fazer comparações e verificar se byte onde estamos a escrever já foi escrito ou não.
+
+Ex para explicar o proposito de dirty[]:
+No início...
+ dirty=  [0]    [0]   [0]   [0]   [0]  [0]   [0]   [0]   [0]   [0]   [0]
+ data= [lixo][lixo][lixo][lixo][lixo][lixo][lixo][lixo][lixo][lixo][lixo]
+ 
+ Quando data é inicializado, com, por exemplo:
+ 
+.data
+	.w 512
+	.b 30
+	.w 40
+	.b 5
+,
+
+os arrays ficam assim:
+
+
+ dirty=  [1]          [1]        [1]       [1]       [1]         [1]    [0]    [0]  [0]   [0]   [0]
+ data= [00000000] [01000000]   [00011110][00101000][00000000][00000101][lixo][lixo][lixo][lixo][lixo]
+ 
+ 
+ Se depois as instruções fossem estas:
+ 
+ 
+ .code
+ 	mov 9,r1
+ 	mov r1,(8)
+ 
+ 
+ Depois de executar isto, os arrays ficam assim:
+ 
+ 
+ dirty=  [1]          [1]        [1]       [1]       [1]         [1]    [0]    [0]     [1]      [0]     [0]
+ data= [00000000] [01000000]   [00011110][00101000][00000000][00000101][lixo][lixo][00001001][00000000][lixo]
+ 
+Se dirty[1]=1, Significa que o 2º byte de data[] foi inicializado.
+
+Criativo imo.
+ 
+ 
+	
+	
+-A aplicação tem 2 partes fundamentais: o caas, que agarra em scripts escritos na linguagem assembly especial desta cpu e converte-os em código máquina, que vai ser lido pelo caoss, que é o programa que simula a cpu propriamente dita.
+
+-o caoss possui várias partes distintas: 
+	-O alu, que lida com a aritmética efetuada com dados contidos nos registos.
+	-A memória, que lida com operações de escrever e ler dados/código. (São os cordelos que a cpu puxa para obter coisas da/ escrever coisas para a memória.)
+	-O sistema operativo, que lê o programa do ficheiro para a memória e inicializa os dados e as instruções.
+	-O programa caoss principal, que combina tudo e que invoca o loop de operações da cpu.
+	-A cpu, que corre as operações, possui um loop que é :
+		-fetch: procura a instrução atual de código no array code[] na posição atual pc e carrega-a para o registo de instruções da cpu.
+		-decode and execute: descodifica a instrução com mascaras e fornece argumentos para as diferentes operações da cpu.
+		- pc+=2: avança para a proxima instrução. A razão pela qual pc é incrementado por 2 é porque cada instrução ocupa 2 bytes, ou seja, 1 palavra.
+	
+	
+
+2/04/2022:
+
+Ponto de situação: Os stores vão disponibilizar testes para as diferentes partes da aplicação em diferentes dias da semana. O memory.c passou ao primeiro teste da semana (:)).
+
+Senti-me bué overwhelmed à primeira vez que vi o enunciado deste trabalho... n percebi nada... Mas agora percebo um pouco melhor...
+
+	

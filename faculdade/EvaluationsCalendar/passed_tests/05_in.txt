@@ -1,0 +1,41 @@
+student 12334 Tom Sawyer
+student 13242 Becky Thatcher
+student 3243 Huckleberry Finn
+student 23143 Joe Harper
+course IP
+course POO
+course AM I
+student 23234 Sid Sawyer
+student 10730 Amy Lawrence
+student 3254 Mary
+student 9983 Muff Potter
+student 12435 Alfred Temple
+student 32424 Injun Joe
+course AM II
+course Fancy course name
+course Karaoke 101
+course Extreme Mooshaking
+people
+enrol 3 IP
+Mary
+Muff Potter
+Sid Sawyer
+enrol -2 IP
+enrol 0 POO
+enrol 2 Non existing course
+Tom Sawyer
+Becky Thatcher
+enrol 4 AM I
+Joe Harper
+Muff Potter
+Sid Sawyer
+Tom Sawyer
+enrol 1 IP
+Tom Sawyer
+enrol 3 AM I
+Darth Vader
+Huckleberry Finn
+Sid Sawyer
+people
+courses
+exit

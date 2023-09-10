@@ -1,0 +1,8 @@
+1
+6 3 3
+xoo
+oxo
+oox
+ooo
+ooo
+ooo

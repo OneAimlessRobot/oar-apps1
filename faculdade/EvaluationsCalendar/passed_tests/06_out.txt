@@ -1,0 +1,123 @@
+Course IP added.
+Course POO added.
+Course AM I added.
+Course AM II added.
+Course Fancy course name added.
+Course Karaoke 101 added.
+Course Extreme Mooshaking added.
+Injun Joe added.
+Sid Sawyer added.
+Amy Lawrence added.
+Mary added.
+Muff Potter added.
+Alfred Temple added.
+Injun Joe already exists!
+Aunt Polly added.
+Mr. Walters added.
+Judge Thatcher added.
+Jim added.
+Mr. Sprague added.
+Mr. Jones added.
+Professor Mr. Walters assigned to POO.
+Mr. Dobbins added.
+Alfred Temple already exists!
+Mary already exists!
+Professor Aunt Polly assigned to POO.
+Tom Sawyer added.
+Becky Thatcher added.
+Huckleberry Finn added.
+Joe Harper added.
+Professor Mr. Walters is already assigned to course POO!
+Professor Spiderman does not exist!
+Professor Catwoman does not exist!
+Professor  does not exist!
+Professor Karaoke 101 does not exist!
+Professor Aunt Polly assigned to Extreme Mooshaking.
+Professor Santa Klaus does not exist!
+Course Parachuting does not exist!
+Professor Injun Joe assigned to IP.
+Professor Mr. Dobbins assigned to IP.
+Professor Mr.Jones does not exist!
+Professor Mr. Sprague assigned to POO.
+Professor Mr. Walters assigned to Karaoke 101.
+Professor Judge Thatcher assigned to Karaoke 101.
+Professor Judge Thatcher assigned to AM I.
+Professor Mr. Jones assigned to IP.
+Roster for course POO:
+Professors:
+Mr. Walters
+Aunt Polly
+Mr. Sprague
+Students:
+Roster for course Karaoke 101:
+Professors:
+Mr. Walters
+Judge Thatcher
+Students:
+Roster for course Extreme Mooshaking:
+Professors:
+Aunt Polly
+Students:
+Roster for course IP:
+Professors:
+Injun Joe
+Mr. Dobbins
+Mr. Jones
+Students:
+Roster for course AM I:
+Professors:
+Judge Thatcher
+Students:
+Inadequate number of students!
+Inadequate number of students!
+2 students added to course POO.
+Student Tom Sawyer is already enrolled in course POO!
+1 students added to course POO.
+Student Tom Sawyer is already enrolled in course POO!
+Student Huckleberry Finn is already enrolled in course POO!
+1 students added to course POO.
+3 students added to course IP.
+Course ADA does not exist!
+Student Superman does not exist!
+0 students added to course IP.
+Student Joe Harper is already enrolled in course POO!
+2 students added to course POO.
+Student Ben Rogers does not exist!
+5 students added to course IP.
+Charles Chaplin added.
+Audrey Hepburn added.
+Marlon Brando added.
+Marilyn Monroe added.
+5 students added to course Karaoke 101.
+4 students added to course AM I.
+All people:
+Injun Joe (1)
+[23234] Sid Sawyer (2)
+[10730] Amy Lawrence (3)
+[3254] Mary (2)
+[9983] Muff Potter (2)
+[12435] Alfred Temple (2)
+Aunt Polly (2)
+Mr. Walters (2)
+Judge Thatcher (2)
+Jim (0)
+Mr. Sprague (1)
+Mr. Jones (1)
+Mr. Dobbins (1)
+[12334] Tom Sawyer (3)
+[13242] Becky Thatcher (0)
+[3243] Huckleberry Finn (3)
+[23143] Joe Harper (2)
+[22222] Charles Chaplin (1)
+[11111] Audrey Hepburn (1)
+[33333] Marlon Brando (1)
+[44444] Marilyn Monroe (1)
+All courses:
+IP: 3 professors, 8 students, 0 tests and 0 deadlines.
+POO: 3 professors, 6 students, 0 tests and 0 deadlines.
+AM I: 1 professors, 4 students, 0 tests and 0 deadlines.
+AM II: 0 professors, 0 students, 0 tests and 0 deadlines.
+Fancy course name: 0 professors, 0 students, 0 tests and 0 deadlines.
+Karaoke 101: 2 professors, 5 students, 0 tests and 0 deadlines.
+Extreme Mooshaking: 1 professors, 0 students, 0 tests and 0 deadlines.
+Bye!

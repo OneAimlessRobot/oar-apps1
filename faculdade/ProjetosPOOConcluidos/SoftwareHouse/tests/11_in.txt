@@ -1,0 +1,65 @@
+common
+register manager peralta 3
+register manager santiago 4
+register manager holt 5
+register manager diaz 4
+register developer boyle peralta 3
+register developer scully holt 4
+register developer linetti holt 5
+register developer pimento peralta 3
+register developer wells diaz 2
+register developer hitchcock diaz 4
+register developer vulture holt 3
+register developer jeffords holt 5
+create holt inhouse This is holt app level_0
+1 app
+0
+create santiago inhouse This is santiago app level_4
+1 app
+4
+create diaz inhouse This is diaz app level_4
+1 app
+4
+create holt inhouse This is holt app level_3
+1 app
+3
+create peralta inhouse This is peralta app level_2
+1 app
+2
+create diaz inhouse This is diaz app level_1
+1 app
+1
+create peralta inhouse This is peralta app level_3
+1 app
+3
+create holt inhouse This is holt app level_5
+1 app
+5
+common
+team santiago This is santiago app level_4
+3 jeffords scully linetti
+team diaz This is diaz app level_4
+2 scully linetti
+team peralta This is peralta app level_3
+2 jeffords boyle
+team peralta This is peralta app level_2
+1 pimento
+team holt This is holt app level_0
+2 pimento scully
+team holt This is holt app level_3
+2 boyle linetti
+team holt This is holt app level_5
+2 jeffords linetti
+common
+team peralta This is peralta app level_2
+2 scully pimento
+team diaz This is diaz app level_1
+2 pimento scully
+common
+team diaz This is diaz app level_1
+2 linetti jeffords
+common
+team peralta This is peralta app level_3
+2 scully pimento
+common
+exit

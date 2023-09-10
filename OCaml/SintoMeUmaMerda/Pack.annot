@@ -1,0 +1,639 @@
+"SintoMeUmaMerda/Pack.ml" 2 1 9 "SintoMeUmaMerda/Pack.ml" 2 1 13
+type(
+  'a list -> ('a * int) list
+)
+ident(
+  def pack "SintoMeUmaMerda/Pack.ml" 2 1 1 "SintoMeUmaMerda/Pack.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Pack.ml" 2 1 14 "SintoMeUmaMerda/Pack.ml" 2 1 15
+type(
+  'a list
+)
+ident(
+  def x "SintoMeUmaMerda/Pack.ml" 3 17 19 "SintoMeUmaMerda/Pack.ml" 5 45 103
+)
+"SintoMeUmaMerda/Pack.ml" 3 17 25 "SintoMeUmaMerda/Pack.ml" 3 17 26
+type(
+  'a list
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Pack.ml" 2 1 14 "SintoMeUmaMerda/Pack.ml" 2 1 15
+)
+"SintoMeUmaMerda/Pack.ml" 4 32 36 "SintoMeUmaMerda/Pack.ml" 4 32 38
+type(
+  'a list
+)
+"SintoMeUmaMerda/Pack.ml" 4 32 42 "SintoMeUmaMerda/Pack.ml" 4 32 44
+type(
+  ('a * int) list
+)
+"SintoMeUmaMerda/Pack.ml" 5 45 49 "SintoMeUmaMerda/Pack.ml" 5 45 53
+type(
+  'a
+)
+ident(
+  def head "SintoMeUmaMerda/Pack.ml" 5 45 64 "SintoMeUmaMerda/Pack.ml" 5 45 103
+)
+"SintoMeUmaMerda/Pack.ml" 5 45 55 "SintoMeUmaMerda/Pack.ml" 5 45 60
+type(
+  'a list
+)
+ident(
+  def trail "SintoMeUmaMerda/Pack.ml" 5 45 64 "SintoMeUmaMerda/Pack.ml" 5 45 103
+)
+"SintoMeUmaMerda/Pack.ml" 5 45 49 "SintoMeUmaMerda/Pack.ml" 5 45 60
+type(
+  'a list
+)
+"SintoMeUmaMerda/Pack.ml" 5 45 65 "SintoMeUmaMerda/Pack.ml" 5 45 69
+type(
+  'a
+)
+ident(
+  int_ref head "SintoMeUmaMerda/Pack.ml" 5 45 49 "SintoMeUmaMerda/Pack.ml" 5 45 53
+)
+"SintoMeUmaMerda/Pack.ml" 5 45 70 "SintoMeUmaMerda/Pack.ml" 5 45 77
+type(
+  'a -> 'a list -> int
+)
+ident(
+  int_ref countEq "SintoMeUmaMerda/Pack.ml" 8 122 126 "SintoMeUmaMerda/Pack.ml" 8 122 133
+)
+"SintoMeUmaMerda/Pack.ml" 5 45 78 "SintoMeUmaMerda/Pack.ml" 5 45 82
+type(
+  'a
+)
+ident(
+  int_ref head "SintoMeUmaMerda/Pack.ml" 5 45 49 "SintoMeUmaMerda/Pack.ml" 5 45 53
+)
+"SintoMeUmaMerda/Pack.ml" 5 45 83 "SintoMeUmaMerda/Pack.ml" 5 45 84
+type(
+  'a list
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Pack.ml" 2 1 14 "SintoMeUmaMerda/Pack.ml" 2 1 15
+)
+"SintoMeUmaMerda/Pack.ml" 5 45 70 "SintoMeUmaMerda/Pack.ml" 5 45 84
+type(
+  int
+)
+"SintoMeUmaMerda/Pack.ml" 5 45 64 "SintoMeUmaMerda/Pack.ml" 5 45 85
+type(
+  'a * int
+)
+"SintoMeUmaMerda/Pack.ml" 5 45 88 "SintoMeUmaMerda/Pack.ml" 5 45 96
+type(
+  'a -> 'a list -> ('a * int) list
+)
+ident(
+  int_ref skipSame "SintoMeUmaMerda/Pack.ml" 17 324 328 "SintoMeUmaMerda/Pack.ml" 17 324 336
+)
+"SintoMeUmaMerda/Pack.ml" 5 45 97 "SintoMeUmaMerda/Pack.ml" 5 45 101
+type(
+  'a
+)
+ident(
+  int_ref head "SintoMeUmaMerda/Pack.ml" 5 45 49 "SintoMeUmaMerda/Pack.ml" 5 45 53
+)
+"SintoMeUmaMerda/Pack.ml" 5 45 102 "SintoMeUmaMerda/Pack.ml" 5 45 103
+type(
+  'a list
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Pack.ml" 2 1 14 "SintoMeUmaMerda/Pack.ml" 2 1 15
+)
+"SintoMeUmaMerda/Pack.ml" 5 45 88 "SintoMeUmaMerda/Pack.ml" 5 45 103
+type(
+  ('a * int) list
+)
+"SintoMeUmaMerda/Pack.ml" 5 45 64 "SintoMeUmaMerda/Pack.ml" 5 45 103
+type(
+  ('a * int) list
+)
+"SintoMeUmaMerda/Pack.ml" 3 17 19 "SintoMeUmaMerda/Pack.ml" 5 45 103
+type(
+  ('a * int) list
+)
+"SintoMeUmaMerda/Pack.ml" 8 122 126 "SintoMeUmaMerda/Pack.ml" 8 122 133
+type(
+  'a -> 'a list -> int
+)
+ident(
+  def countEq "SintoMeUmaMerda/Pack.ml" 2 1 1 "SintoMeUmaMerda/Pack.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Pack.ml" 8 122 134 "SintoMeUmaMerda/Pack.ml" 8 122 137
+type(
+  'a
+)
+ident(
+  def num "SintoMeUmaMerda/Pack.ml" 8 122 138 "SintoMeUmaMerda/Pack.ml" 14 262 292
+)
+"SintoMeUmaMerda/Pack.ml" 8 122 138 "SintoMeUmaMerda/Pack.ml" 8 122 139
+type(
+  'a list
+)
+ident(
+  def x "SintoMeUmaMerda/Pack.ml" 9 141 143 "SintoMeUmaMerda/Pack.ml" 14 262 292
+)
+"SintoMeUmaMerda/Pack.ml" 9 141 149 "SintoMeUmaMerda/Pack.ml" 9 141 150
+type(
+  'a list
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Pack.ml" 8 122 138 "SintoMeUmaMerda/Pack.ml" 8 122 139
+)
+"SintoMeUmaMerda/Pack.ml" 10 156 160 "SintoMeUmaMerda/Pack.ml" 10 156 162
+type(
+  'a list
+)
+"SintoMeUmaMerda/Pack.ml" 10 156 166 "SintoMeUmaMerda/Pack.ml" 10 156 167
+type(
+  int
+)
+"SintoMeUmaMerda/Pack.ml" 11 168 172 "SintoMeUmaMerda/Pack.ml" 11 168 176
+type(
+  'a
+)
+ident(
+  def head "SintoMeUmaMerda/Pack.ml" 11 168 187 "SintoMeUmaMerda/Pack.ml" 14 262 292
+)
+"SintoMeUmaMerda/Pack.ml" 11 168 178 "SintoMeUmaMerda/Pack.ml" 11 168 183
+type(
+  'a list
+)
+ident(
+  def trail "SintoMeUmaMerda/Pack.ml" 11 168 187 "SintoMeUmaMerda/Pack.ml" 14 262 292
+)
+"SintoMeUmaMerda/Pack.ml" 11 168 172 "SintoMeUmaMerda/Pack.ml" 11 168 183
+type(
+  'a list
+)
+"SintoMeUmaMerda/Pack.ml" 11 168 190 "SintoMeUmaMerda/Pack.ml" 11 168 194
+type(
+  'a
+)
+ident(
+  int_ref head "SintoMeUmaMerda/Pack.ml" 11 168 172 "SintoMeUmaMerda/Pack.ml" 11 168 176
+)
+"SintoMeUmaMerda/Pack.ml" 11 168 194 "SintoMeUmaMerda/Pack.ml" 11 168 195
+type(
+  'a -> 'a -> bool
+)
+ident(
+  int_ref Stdlib.( = ) "stdlib.mli" 118 4976 4976 "stdlib.mli" 118 4976 5020
+)
+"SintoMeUmaMerda/Pack.ml" 11 168 195 "SintoMeUmaMerda/Pack.ml" 11 168 198
+type(
+  'a
+)
+ident(
+  int_ref num "SintoMeUmaMerda/Pack.ml" 8 122 134 "SintoMeUmaMerda/Pack.ml" 8 122 137
+)
+"SintoMeUmaMerda/Pack.ml" 11 168 190 "SintoMeUmaMerda/Pack.ml" 11 168 198
+type(
+  bool
+)
+"SintoMeUmaMerda/Pack.ml" 12 204 219 "SintoMeUmaMerda/Pack.ml" 12 204 220
+type(
+  int
+)
+"SintoMeUmaMerda/Pack.ml" 12 204 221 "SintoMeUmaMerda/Pack.ml" 12 204 222
+type(
+  int -> int -> int
+)
+ident(
+  int_ref Stdlib.( + ) "stdlib.mli" 338 13360 13360 "stdlib.mli" 338 13360 13406
+)
+"SintoMeUmaMerda/Pack.ml" 12 204 224 "SintoMeUmaMerda/Pack.ml" 12 204 231
+type(
+  'a -> 'a list -> int
+)
+ident(
+  int_ref countEq "SintoMeUmaMerda/Pack.ml" 8 122 126 "SintoMeUmaMerda/Pack.ml" 8 122 133
+)
+"SintoMeUmaMerda/Pack.ml" 12 204 232 "SintoMeUmaMerda/Pack.ml" 12 204 235
+type(
+  'a
+)
+ident(
+  int_ref num "SintoMeUmaMerda/Pack.ml" 8 122 134 "SintoMeUmaMerda/Pack.ml" 8 122 137
+)
+"SintoMeUmaMerda/Pack.ml" 12 204 236 "SintoMeUmaMerda/Pack.ml" 12 204 241
+type(
+  'a list
+)
+ident(
+  int_ref trail "SintoMeUmaMerda/Pack.ml" 11 168 178 "SintoMeUmaMerda/Pack.ml" 11 168 183
+)
+"SintoMeUmaMerda/Pack.ml" 12 204 223 "SintoMeUmaMerda/Pack.ml" 12 204 242
+type(
+  int
+)
+"SintoMeUmaMerda/Pack.ml" 12 204 219 "SintoMeUmaMerda/Pack.ml" 12 204 242
+type(
+  int
+)
+"SintoMeUmaMerda/Pack.ml" 14 262 277 "SintoMeUmaMerda/Pack.ml" 14 262 284
+type(
+  'a -> 'a list -> int
+)
+ident(
+  int_ref countEq "SintoMeUmaMerda/Pack.ml" 8 122 126 "SintoMeUmaMerda/Pack.ml" 8 122 133
+)
+"SintoMeUmaMerda/Pack.ml" 14 262 285 "SintoMeUmaMerda/Pack.ml" 14 262 289
+type(
+  'a
+)
+ident(
+  int_ref head "SintoMeUmaMerda/Pack.ml" 11 168 172 "SintoMeUmaMerda/Pack.ml" 11 168 176
+)
+"SintoMeUmaMerda/Pack.ml" 14 262 290 "SintoMeUmaMerda/Pack.ml" 14 262 292
+type(
+  'a list
+)
+"SintoMeUmaMerda/Pack.ml" 14 262 277 "SintoMeUmaMerda/Pack.ml" 14 262 292
+type(
+  int
+)
+"SintoMeUmaMerda/Pack.ml" 11 168 187 "SintoMeUmaMerda/Pack.ml" 14 262 292
+type(
+  int
+)
+"SintoMeUmaMerda/Pack.ml" 9 141 143 "SintoMeUmaMerda/Pack.ml" 14 262 292
+type(
+  int
+)
+"SintoMeUmaMerda/Pack.ml" 17 324 328 "SintoMeUmaMerda/Pack.ml" 17 324 336
+type(
+  'a -> 'a list -> ('a * int) list
+)
+ident(
+  def skipSame "SintoMeUmaMerda/Pack.ml" 2 1 1 "SintoMeUmaMerda/Pack.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Pack.ml" 17 324 337 "SintoMeUmaMerda/Pack.ml" 17 324 338
+type(
+  'a
+)
+ident(
+  def x "SintoMeUmaMerda/Pack.ml" 17 324 339 "SintoMeUmaMerda/Pack.ml" 23 451 471
+)
+"SintoMeUmaMerda/Pack.ml" 17 324 339 "SintoMeUmaMerda/Pack.ml" 17 324 342
+type(
+  'a list
+)
+ident(
+  def set "SintoMeUmaMerda/Pack.ml" 18 344 346 "SintoMeUmaMerda/Pack.ml" 23 451 471
+)
+"SintoMeUmaMerda/Pack.ml" 18 344 352 "SintoMeUmaMerda/Pack.ml" 18 344 355
+type(
+  'a list
+)
+ident(
+  int_ref set "SintoMeUmaMerda/Pack.ml" 17 324 339 "SintoMeUmaMerda/Pack.ml" 17 324 342
+)
+"SintoMeUmaMerda/Pack.ml" 19 361 365 "SintoMeUmaMerda/Pack.ml" 19 361 367
+type(
+  'a list
+)
+"SintoMeUmaMerda/Pack.ml" 19 361 369 "SintoMeUmaMerda/Pack.ml" 19 361 371
+type(
+  ('a * int) list
+)
+"SintoMeUmaMerda/Pack.ml" 20 372 376 "SintoMeUmaMerda/Pack.ml" 20 372 380
+type(
+  'a
+)
+ident(
+  def head "SintoMeUmaMerda/Pack.ml" 20 372 390 "SintoMeUmaMerda/Pack.ml" 23 451 471
+)
+"SintoMeUmaMerda/Pack.ml" 20 372 382 "SintoMeUmaMerda/Pack.ml" 20 372 387
+type(
+  'a list
+)
+ident(
+  def trail "SintoMeUmaMerda/Pack.ml" 20 372 390 "SintoMeUmaMerda/Pack.ml" 23 451 471
+)
+"SintoMeUmaMerda/Pack.ml" 20 372 376 "SintoMeUmaMerda/Pack.ml" 20 372 387
+type(
+  'a list
+)
+"SintoMeUmaMerda/Pack.ml" 20 372 393 "SintoMeUmaMerda/Pack.ml" 20 372 397
+type(
+  'a
+)
+ident(
+  int_ref head "SintoMeUmaMerda/Pack.ml" 20 372 376 "SintoMeUmaMerda/Pack.ml" 20 372 380
+)
+"SintoMeUmaMerda/Pack.ml" 20 372 397 "SintoMeUmaMerda/Pack.ml" 20 372 398
+type(
+  'a -> 'a -> bool
+)
+ident(
+  int_ref Stdlib.( = ) "stdlib.mli" 118 4976 4976 "stdlib.mli" 118 4976 5020
+)
+"SintoMeUmaMerda/Pack.ml" 20 372 398 "SintoMeUmaMerda/Pack.ml" 20 372 399
+type(
+  'a
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Pack.ml" 17 324 337 "SintoMeUmaMerda/Pack.ml" 17 324 338
+)
+"SintoMeUmaMerda/Pack.ml" 20 372 393 "SintoMeUmaMerda/Pack.ml" 20 372 399
+type(
+  bool
+)
+"SintoMeUmaMerda/Pack.ml" 21 405 419 "SintoMeUmaMerda/Pack.ml" 21 405 427
+type(
+  'a -> 'a list -> ('a * int) list
+)
+ident(
+  int_ref skipSame "SintoMeUmaMerda/Pack.ml" 17 324 328 "SintoMeUmaMerda/Pack.ml" 17 324 336
+)
+"SintoMeUmaMerda/Pack.ml" 21 405 428 "SintoMeUmaMerda/Pack.ml" 21 405 429
+type(
+  'a
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Pack.ml" 17 324 337 "SintoMeUmaMerda/Pack.ml" 17 324 338
+)
+"SintoMeUmaMerda/Pack.ml" 21 405 430 "SintoMeUmaMerda/Pack.ml" 21 405 435
+type(
+  'a list
+)
+ident(
+  int_ref trail "SintoMeUmaMerda/Pack.ml" 20 372 382 "SintoMeUmaMerda/Pack.ml" 20 372 387
+)
+"SintoMeUmaMerda/Pack.ml" 21 405 419 "SintoMeUmaMerda/Pack.ml" 21 405 435
+type(
+  ('a * int) list
+)
+"SintoMeUmaMerda/Pack.ml" 23 451 463 "SintoMeUmaMerda/Pack.ml" 23 451 467
+type(
+  'a list -> ('a * int) list
+)
+ident(
+  int_ref pack "SintoMeUmaMerda/Pack.ml" 2 1 9 "SintoMeUmaMerda/Pack.ml" 2 1 13
+)
+"SintoMeUmaMerda/Pack.ml" 23 451 468 "SintoMeUmaMerda/Pack.ml" 23 451 471
+type(
+  'a list
+)
+ident(
+  int_ref set "SintoMeUmaMerda/Pack.ml" 17 324 339 "SintoMeUmaMerda/Pack.ml" 17 324 342
+)
+"SintoMeUmaMerda/Pack.ml" 23 451 463 "SintoMeUmaMerda/Pack.ml" 23 451 471
+type(
+  ('a * int) list
+)
+"SintoMeUmaMerda/Pack.ml" 20 372 390 "SintoMeUmaMerda/Pack.ml" 23 451 471
+type(
+  ('a * int) list
+)
+"SintoMeUmaMerda/Pack.ml" 18 344 346 "SintoMeUmaMerda/Pack.ml" 23 451 471
+type(
+  ('a * int) list
+)
+"SintoMeUmaMerda/Pack.ml" 25 494 502 "SintoMeUmaMerda/Pack.ml" 25 494 508
+type(
+  ('a * int) list -> 'a list
+)
+ident(
+  def unpack "SintoMeUmaMerda/Pack.ml" 25 494 494 "SintoMeUmaMerda/Pack.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Pack.ml" 25 494 509 "SintoMeUmaMerda/Pack.ml" 25 494 510
+type(
+  ('a * int) list
+)
+ident(
+  def x "SintoMeUmaMerda/Pack.ml" 26 512 514 "SintoMeUmaMerda/Pack.ml" 28 538 590
+)
+"SintoMeUmaMerda/Pack.ml" 26 512 520 "SintoMeUmaMerda/Pack.ml" 26 512 521
+type(
+  ('a * int) list
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Pack.ml" 25 494 509 "SintoMeUmaMerda/Pack.ml" 25 494 510
+)
+"SintoMeUmaMerda/Pack.ml" 27 527 531 "SintoMeUmaMerda/Pack.ml" 27 527 533
+type(
+  ('a * int) list
+)
+"SintoMeUmaMerda/Pack.ml" 27 527 535 "SintoMeUmaMerda/Pack.ml" 27 527 537
+type(
+  'a list
+)
+"SintoMeUmaMerda/Pack.ml" 28 538 542 "SintoMeUmaMerda/Pack.ml" 28 538 546
+type(
+  'a * int
+)
+ident(
+  def head "SintoMeUmaMerda/Pack.ml" 28 538 556 "SintoMeUmaMerda/Pack.ml" 28 538 590
+)
+"SintoMeUmaMerda/Pack.ml" 28 538 548 "SintoMeUmaMerda/Pack.ml" 28 538 553
+type(
+  ('a * int) list
+)
+ident(
+  def trail "SintoMeUmaMerda/Pack.ml" 28 538 556 "SintoMeUmaMerda/Pack.ml" 28 538 590
+)
+"SintoMeUmaMerda/Pack.ml" 28 538 542 "SintoMeUmaMerda/Pack.ml" 28 538 553
+type(
+  ('a * int) list
+)
+"SintoMeUmaMerda/Pack.ml" 28 538 557 "SintoMeUmaMerda/Pack.ml" 28 538 567
+type(
+  'a * int -> 'a list
+)
+ident(
+  int_ref miniUnpack "SintoMeUmaMerda/Pack.ml" 30 592 596 "SintoMeUmaMerda/Pack.ml" 30 592 606
+)
+"SintoMeUmaMerda/Pack.ml" 28 538 568 "SintoMeUmaMerda/Pack.ml" 28 538 572
+type(
+  'a * int
+)
+ident(
+  int_ref head "SintoMeUmaMerda/Pack.ml" 28 538 542 "SintoMeUmaMerda/Pack.ml" 28 538 546
+)
+"SintoMeUmaMerda/Pack.ml" 28 538 556 "SintoMeUmaMerda/Pack.ml" 28 538 573
+type(
+  'a list
+)
+"SintoMeUmaMerda/Pack.ml" 28 538 574 "SintoMeUmaMerda/Pack.ml" 28 538 575
+type(
+  'a list -> 'a list -> 'a list
+)
+ident(
+  int_ref Stdlib.( @ ) "stdlib.mli" 782 29359 29359 "stdlib.mli" 782 29359 29400
+)
+"SintoMeUmaMerda/Pack.ml" 28 538 577 "SintoMeUmaMerda/Pack.ml" 28 538 583
+type(
+  ('a * int) list -> 'a list
+)
+ident(
+  int_ref unpack "SintoMeUmaMerda/Pack.ml" 25 494 502 "SintoMeUmaMerda/Pack.ml" 25 494 508
+)
+"SintoMeUmaMerda/Pack.ml" 28 538 584 "SintoMeUmaMerda/Pack.ml" 28 538 589
+type(
+  ('a * int) list
+)
+ident(
+  int_ref trail "SintoMeUmaMerda/Pack.ml" 28 538 548 "SintoMeUmaMerda/Pack.ml" 28 538 553
+)
+"SintoMeUmaMerda/Pack.ml" 28 538 576 "SintoMeUmaMerda/Pack.ml" 28 538 590
+type(
+  'a list
+)
+"SintoMeUmaMerda/Pack.ml" 28 538 556 "SintoMeUmaMerda/Pack.ml" 28 538 590
+type(
+  'a list
+)
+"SintoMeUmaMerda/Pack.ml" 26 512 514 "SintoMeUmaMerda/Pack.ml" 28 538 590
+type(
+  'a list
+)
+"SintoMeUmaMerda/Pack.ml" 30 592 596 "SintoMeUmaMerda/Pack.ml" 30 592 606
+type(
+  'a * int -> 'a list
+)
+ident(
+  def miniUnpack "SintoMeUmaMerda/Pack.ml" 25 494 494 "SintoMeUmaMerda/Pack.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Pack.ml" 30 592 608 "SintoMeUmaMerda/Pack.ml" 30 592 609
+type(
+  'a
+)
+ident(
+  def x "SintoMeUmaMerda/Pack.ml" 31 614 617 "SintoMeUmaMerda/Pack.ml" 33 651 686
+)
+"SintoMeUmaMerda/Pack.ml" 30 592 610 "SintoMeUmaMerda/Pack.ml" 30 592 611
+type(
+  int
+)
+ident(
+  def y "SintoMeUmaMerda/Pack.ml" 31 614 617 "SintoMeUmaMerda/Pack.ml" 33 651 686
+)
+"SintoMeUmaMerda/Pack.ml" 30 592 607 "SintoMeUmaMerda/Pack.ml" 30 592 612
+type(
+  'a * int
+)
+"SintoMeUmaMerda/Pack.ml" 31 614 624 "SintoMeUmaMerda/Pack.ml" 31 614 625
+type(
+  'a
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Pack.ml" 30 592 608 "SintoMeUmaMerda/Pack.ml" 30 592 609
+)
+"SintoMeUmaMerda/Pack.ml" 31 614 626 "SintoMeUmaMerda/Pack.ml" 31 614 627
+type(
+  int
+)
+ident(
+  int_ref y "SintoMeUmaMerda/Pack.ml" 30 592 610 "SintoMeUmaMerda/Pack.ml" 30 592 611
+)
+"SintoMeUmaMerda/Pack.ml" 31 614 623 "SintoMeUmaMerda/Pack.ml" 31 614 628
+type(
+  'a * int
+)
+"SintoMeUmaMerda/Pack.ml" 32 634 640 "SintoMeUmaMerda/Pack.ml" 32 634 641
+type(
+  'a
+)
+ident(
+  def x "SintoMeUmaMerda/Pack.ml" 32 634 647 "SintoMeUmaMerda/Pack.ml" 32 634 650
+)
+"SintoMeUmaMerda/Pack.ml" 32 634 642 "SintoMeUmaMerda/Pack.ml" 32 634 643
+type(
+  int
+)
+"SintoMeUmaMerda/Pack.ml" 32 634 639 "SintoMeUmaMerda/Pack.ml" 32 634 644
+type(
+  'a * int
+)
+"SintoMeUmaMerda/Pack.ml" 32 634 648 "SintoMeUmaMerda/Pack.ml" 32 634 649
+type(
+  'a
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Pack.ml" 32 634 640 "SintoMeUmaMerda/Pack.ml" 32 634 641
+)
+"SintoMeUmaMerda/Pack.ml" 32 634 647 "SintoMeUmaMerda/Pack.ml" 32 634 650
+type(
+  'a list
+)
+"SintoMeUmaMerda/Pack.ml" 33 651 657 "SintoMeUmaMerda/Pack.ml" 33 651 658
+type(
+  'a
+)
+ident(
+  def x "SintoMeUmaMerda/Pack.ml" 33 651 664 "SintoMeUmaMerda/Pack.ml" 33 651 686
+)
+"SintoMeUmaMerda/Pack.ml" 33 651 659 "SintoMeUmaMerda/Pack.ml" 33 651 660
+type(
+  int
+)
+ident(
+  def y "SintoMeUmaMerda/Pack.ml" 33 651 664 "SintoMeUmaMerda/Pack.ml" 33 651 686
+)
+"SintoMeUmaMerda/Pack.ml" 33 651 656 "SintoMeUmaMerda/Pack.ml" 33 651 661
+type(
+  'a * int
+)
+"SintoMeUmaMerda/Pack.ml" 33 651 664 "SintoMeUmaMerda/Pack.ml" 33 651 665
+type(
+  'a
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Pack.ml" 33 651 657 "SintoMeUmaMerda/Pack.ml" 33 651 658
+)
+"SintoMeUmaMerda/Pack.ml" 33 651 668 "SintoMeUmaMerda/Pack.ml" 33 651 678
+type(
+  'a * int -> 'a list
+)
+ident(
+  int_ref miniUnpack "SintoMeUmaMerda/Pack.ml" 30 592 596 "SintoMeUmaMerda/Pack.ml" 30 592 606
+)
+"SintoMeUmaMerda/Pack.ml" 33 651 679 "SintoMeUmaMerda/Pack.ml" 33 651 680
+type(
+  'a
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Pack.ml" 33 651 657 "SintoMeUmaMerda/Pack.ml" 33 651 658
+)
+"SintoMeUmaMerda/Pack.ml" 33 651 682 "SintoMeUmaMerda/Pack.ml" 33 651 683
+type(
+  int
+)
+ident(
+  int_ref y "SintoMeUmaMerda/Pack.ml" 33 651 659 "SintoMeUmaMerda/Pack.ml" 33 651 660
+)
+"SintoMeUmaMerda/Pack.ml" 33 651 683 "SintoMeUmaMerda/Pack.ml" 33 651 684
+type(
+  int -> int -> int
+)
+ident(
+  int_ref Stdlib.( - ) "stdlib.mli" 343 13509 13509 "stdlib.mli" 343 13509 13555
+)
+"SintoMeUmaMerda/Pack.ml" 33 651 684 "SintoMeUmaMerda/Pack.ml" 33 651 685
+type(
+  int
+)
+"SintoMeUmaMerda/Pack.ml" 33 651 682 "SintoMeUmaMerda/Pack.ml" 33 651 685
+type(
+  int
+)
+"SintoMeUmaMerda/Pack.ml" 33 651 678 "SintoMeUmaMerda/Pack.ml" 33 651 686
+type(
+  'a * int
+)
+"SintoMeUmaMerda/Pack.ml" 33 651 668 "SintoMeUmaMerda/Pack.ml" 33 651 686
+type(
+  'a list
+)
+"SintoMeUmaMerda/Pack.ml" 33 651 664 "SintoMeUmaMerda/Pack.ml" 33 651 686
+type(
+  'a list
+)
+"SintoMeUmaMerda/Pack.ml" 31 614 617 "SintoMeUmaMerda/Pack.ml" 33 651 686
+type(
+  'a list
+)

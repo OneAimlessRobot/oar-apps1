@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1675441766 source:/home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/multiThreading/auxFuncs.cpp
+	<string>
+	<math.h>
+	"auxFuncs.h"
+
+1675442188 /home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/multiThreading/auxFuncs.h
+
+1675446625 source:/home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/multiThreading/main.cpp
+	<iostream>
+	<unistd.h>
+	<thread>
+	<vector>
+	"auxFuncs.h"
+	<chrono>
+	"myTimer.h"
+
+1675446544 source:/home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/multiThreading/myTimer.cpp
+	<iostream>
+	<chrono>
+	"myTimer.h"
+
+1675446497 /home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/multiThreading/myTimer.h
+

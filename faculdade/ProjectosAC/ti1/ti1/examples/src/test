@@ -1,0 +1,14 @@
+.data
+	.w 32998
+	.w 3
+	.w 3
+	.w 45
+.code
+	
+	mov (0), r1
+	mov (2), r2
+	mov (4), r3
+	sar .w r1, r2, r3
+	mov 0, r1
+	int 0
+

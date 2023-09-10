@@ -1,0 +1,682 @@
+"SintoMeUmaMerda/Algebra.ml" 12 329 337 "SintoMeUmaMerda/Algebra.ml" 12 329 342
+type(
+  float -> int -> float
+)
+ident(
+  def power "SintoMeUmaMerda/Algebra.ml" 12 329 329 "SintoMeUmaMerda/Algebra.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Algebra.ml" 12 329 343 "SintoMeUmaMerda/Algebra.ml" 12 329 344
+type(
+  float
+)
+ident(
+  def g "SintoMeUmaMerda/Algebra.ml" 12 329 345 "SintoMeUmaMerda/Algebra.ml" 18 472 497
+)
+"SintoMeUmaMerda/Algebra.ml" 12 329 345 "SintoMeUmaMerda/Algebra.ml" 12 329 346
+type(
+  int
+)
+ident(
+  def e "SintoMeUmaMerda/Algebra.ml" 13 348 350 "SintoMeUmaMerda/Algebra.ml" 18 472 497
+)
+"SintoMeUmaMerda/Algebra.ml" 13 348 353 "SintoMeUmaMerda/Algebra.ml" 13 348 354
+type(
+  float
+)
+ident(
+  int_ref g "SintoMeUmaMerda/Algebra.ml" 12 329 343 "SintoMeUmaMerda/Algebra.ml" 12 329 344
+)
+"SintoMeUmaMerda/Algebra.ml" 13 348 355 "SintoMeUmaMerda/Algebra.ml" 13 348 356
+type(
+  float -> float -> bool
+)
+ident(
+  int_ref Stdlib.( < ) "stdlib.mli" 132 5646 5646 "stdlib.mli" 132 5646 5693
+)
+"SintoMeUmaMerda/Algebra.ml" 13 348 357 "SintoMeUmaMerda/Algebra.ml" 13 348 360
+type(
+  float
+)
+"SintoMeUmaMerda/Algebra.ml" 13 348 353 "SintoMeUmaMerda/Algebra.ml" 13 348 360
+type(
+  bool
+)
+"SintoMeUmaMerda/Algebra.ml" 14 366 369 "SintoMeUmaMerda/Algebra.ml" 14 366 377
+type(
+  string -> float
+)
+ident(
+  int_ref Stdlib.failwith "stdlib.mli" 41 1919 1919 "stdlib.mli" 41 1919 1946
+)
+"SintoMeUmaMerda/Algebra.ml" 14 366 378 "SintoMeUmaMerda/Algebra.ml" 14 366 392
+type(
+  string
+)
+"SintoMeUmaMerda/Algebra.ml" 14 366 369 "SintoMeUmaMerda/Algebra.ml" 14 366 392
+type(
+  float
+)
+"SintoMeUmaMerda/Algebra.ml" 15 393 403 "SintoMeUmaMerda/Algebra.ml" 15 393 404
+type(
+  int
+)
+ident(
+  int_ref e "SintoMeUmaMerda/Algebra.ml" 12 329 345 "SintoMeUmaMerda/Algebra.ml" 12 329 346
+)
+"SintoMeUmaMerda/Algebra.ml" 15 393 405 "SintoMeUmaMerda/Algebra.ml" 15 393 406
+type(
+  int -> int -> bool
+)
+ident(
+  int_ref Stdlib.( < ) "stdlib.mli" 132 5646 5646 "stdlib.mli" 132 5646 5693
+)
+"SintoMeUmaMerda/Algebra.ml" 15 393 407 "SintoMeUmaMerda/Algebra.ml" 15 393 408
+type(
+  int
+)
+"SintoMeUmaMerda/Algebra.ml" 15 393 403 "SintoMeUmaMerda/Algebra.ml" 15 393 408
+type(
+  bool
+)
+"SintoMeUmaMerda/Algebra.ml" 16 414 417 "SintoMeUmaMerda/Algebra.ml" 16 414 425
+type(
+  string -> float
+)
+ident(
+  int_ref Stdlib.failwith "stdlib.mli" 41 1919 1919 "stdlib.mli" 41 1919 1946
+)
+"SintoMeUmaMerda/Algebra.ml" 16 414 426 "SintoMeUmaMerda/Algebra.ml" 16 414 446
+type(
+  string
+)
+"SintoMeUmaMerda/Algebra.ml" 16 414 417 "SintoMeUmaMerda/Algebra.ml" 16 414 446
+type(
+  float
+)
+"SintoMeUmaMerda/Algebra.ml" 17 447 457 "SintoMeUmaMerda/Algebra.ml" 17 447 458
+type(
+  int
+)
+ident(
+  int_ref e "SintoMeUmaMerda/Algebra.ml" 12 329 345 "SintoMeUmaMerda/Algebra.ml" 12 329 346
+)
+"SintoMeUmaMerda/Algebra.ml" 17 447 459 "SintoMeUmaMerda/Algebra.ml" 17 447 460
+type(
+  int -> int -> bool
+)
+ident(
+  int_ref Stdlib.( = ) "stdlib.mli" 118 4976 4976 "stdlib.mli" 118 4976 5020
+)
+"SintoMeUmaMerda/Algebra.ml" 17 447 461 "SintoMeUmaMerda/Algebra.ml" 17 447 462
+type(
+  int
+)
+"SintoMeUmaMerda/Algebra.ml" 17 447 457 "SintoMeUmaMerda/Algebra.ml" 17 447 462
+type(
+  bool
+)
+"SintoMeUmaMerda/Algebra.ml" 17 447 468 "SintoMeUmaMerda/Algebra.ml" 17 447 471
+type(
+  float
+)
+"SintoMeUmaMerda/Algebra.ml" 18 472 479 "SintoMeUmaMerda/Algebra.ml" 18 472 480
+type(
+  float
+)
+ident(
+  int_ref g "SintoMeUmaMerda/Algebra.ml" 12 329 343 "SintoMeUmaMerda/Algebra.ml" 12 329 344
+)
+"SintoMeUmaMerda/Algebra.ml" 18 472 481 "SintoMeUmaMerda/Algebra.ml" 18 472 483
+type(
+  float -> float -> float
+)
+ident(
+  int_ref Stdlib.( *. ) "stdlib.mli" 461 17809 17809 "stdlib.mli" 461 17809 17864
+)
+"SintoMeUmaMerda/Algebra.ml" 18 472 484 "SintoMeUmaMerda/Algebra.ml" 18 472 489
+type(
+  float -> int -> float
+)
+ident(
+  int_ref power "SintoMeUmaMerda/Algebra.ml" 12 329 337 "SintoMeUmaMerda/Algebra.ml" 12 329 342
+)
+"SintoMeUmaMerda/Algebra.ml" 18 472 490 "SintoMeUmaMerda/Algebra.ml" 18 472 491
+type(
+  float
+)
+ident(
+  int_ref g "SintoMeUmaMerda/Algebra.ml" 12 329 343 "SintoMeUmaMerda/Algebra.ml" 12 329 344
+)
+"SintoMeUmaMerda/Algebra.ml" 18 472 493 "SintoMeUmaMerda/Algebra.ml" 18 472 494
+type(
+  int
+)
+ident(
+  int_ref e "SintoMeUmaMerda/Algebra.ml" 12 329 345 "SintoMeUmaMerda/Algebra.ml" 12 329 346
+)
+"SintoMeUmaMerda/Algebra.ml" 18 472 494 "SintoMeUmaMerda/Algebra.ml" 18 472 495
+type(
+  int -> int -> int
+)
+ident(
+  int_ref Stdlib.( - ) "stdlib.mli" 343 13509 13509 "stdlib.mli" 343 13509 13555
+)
+"SintoMeUmaMerda/Algebra.ml" 18 472 495 "SintoMeUmaMerda/Algebra.ml" 18 472 496
+type(
+  int
+)
+"SintoMeUmaMerda/Algebra.ml" 18 472 492 "SintoMeUmaMerda/Algebra.ml" 18 472 497
+type(
+  int
+)
+"SintoMeUmaMerda/Algebra.ml" 18 472 484 "SintoMeUmaMerda/Algebra.ml" 18 472 497
+type(
+  float
+)
+"SintoMeUmaMerda/Algebra.ml" 18 472 479 "SintoMeUmaMerda/Algebra.ml" 18 472 497
+type(
+  float
+)
+"SintoMeUmaMerda/Algebra.ml" 17 447 454 "SintoMeUmaMerda/Algebra.ml" 18 472 497
+type(
+  float
+)
+"SintoMeUmaMerda/Algebra.ml" 15 393 400 "SintoMeUmaMerda/Algebra.ml" 18 472 497
+type(
+  float
+)
+"SintoMeUmaMerda/Algebra.ml" 13 348 350 "SintoMeUmaMerda/Algebra.ml" 18 472 497
+type(
+  float
+)
+"SintoMeUmaMerda/Algebra.ml" 21 504 512 "SintoMeUmaMerda/Algebra.ml" 21 504 516
+type(
+  float -> exp -> float
+)
+ident(
+  def eval "SintoMeUmaMerda/Algebra.ml" 21 504 504 "SintoMeUmaMerda/Algebra.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Algebra.ml" 21 504 517 "SintoMeUmaMerda/Algebra.ml" 21 504 518
+type(
+  float
+)
+ident(
+  def f "SintoMeUmaMerda/Algebra.ml" 21 504 519 "SintoMeUmaMerda/Algebra.ml" 30 745 774
+)
+"SintoMeUmaMerda/Algebra.ml" 21 504 519 "SintoMeUmaMerda/Algebra.ml" 21 504 520
+type(
+  exp
+)
+ident(
+  def e "SintoMeUmaMerda/Algebra.ml" 22 522 523 "SintoMeUmaMerda/Algebra.ml" 30 745 774
+)
+"SintoMeUmaMerda/Algebra.ml" 22 522 529 "SintoMeUmaMerda/Algebra.ml" 22 522 530
+type(
+  exp
+)
+ident(
+  int_ref e "SintoMeUmaMerda/Algebra.ml" 21 504 519 "SintoMeUmaMerda/Algebra.ml" 21 504 520
+)
+"SintoMeUmaMerda/Algebra.ml" 23 536 545 "SintoMeUmaMerda/Algebra.ml" 23 536 546
+ident(
+  def x "SintoMeUmaMerda/Algebra.ml" 23 536 550 "SintoMeUmaMerda/Algebra.ml" 23 536 551
+)
+"SintoMeUmaMerda/Algebra.ml" 23 536 544 "SintoMeUmaMerda/Algebra.ml" 23 536 547
+type(
+  float
+)
+"SintoMeUmaMerda/Algebra.ml" 23 536 539 "SintoMeUmaMerda/Algebra.ml" 23 536 547
+type(
+  exp
+)
+"SintoMeUmaMerda/Algebra.ml" 23 536 550 "SintoMeUmaMerda/Algebra.ml" 23 536 551
+type(
+  float
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Algebra.ml" 23 536 544 "SintoMeUmaMerda/Algebra.ml" 23 536 547
+)
+"SintoMeUmaMerda/Algebra.ml" 24 552 555 "SintoMeUmaMerda/Algebra.ml" 24 552 558
+type(
+  exp
+)
+"SintoMeUmaMerda/Algebra.ml" 24 552 562 "SintoMeUmaMerda/Algebra.ml" 24 552 563
+type(
+  float
+)
+ident(
+  int_ref f "SintoMeUmaMerda/Algebra.ml" 21 504 517 "SintoMeUmaMerda/Algebra.ml" 21 504 518
+)
+"SintoMeUmaMerda/Algebra.ml" 25 564 571 "SintoMeUmaMerda/Algebra.ml" 25 564 572
+type(
+  exp
+)
+ident(
+  def x "SintoMeUmaMerda/Algebra.ml" 25 564 579 "SintoMeUmaMerda/Algebra.ml" 25 564 599
+)
+"SintoMeUmaMerda/Algebra.ml" 25 564 573 "SintoMeUmaMerda/Algebra.ml" 25 564 574
+type(
+  exp
+)
+ident(
+  def y "SintoMeUmaMerda/Algebra.ml" 25 564 579 "SintoMeUmaMerda/Algebra.ml" 25 564 599
+)
+"SintoMeUmaMerda/Algebra.ml" 25 564 567 "SintoMeUmaMerda/Algebra.ml" 25 564 575
+type(
+  exp
+)
+"SintoMeUmaMerda/Algebra.ml" 25 564 579 "SintoMeUmaMerda/Algebra.ml" 25 564 583
+type(
+  float -> exp -> float
+)
+ident(
+  int_ref eval "SintoMeUmaMerda/Algebra.ml" 21 504 512 "SintoMeUmaMerda/Algebra.ml" 21 504 516
+)
+"SintoMeUmaMerda/Algebra.ml" 25 564 584 "SintoMeUmaMerda/Algebra.ml" 25 564 585
+type(
+  float
+)
+ident(
+  int_ref f "SintoMeUmaMerda/Algebra.ml" 21 504 517 "SintoMeUmaMerda/Algebra.ml" 21 504 518
+)
+"SintoMeUmaMerda/Algebra.ml" 25 564 586 "SintoMeUmaMerda/Algebra.ml" 25 564 587
+type(
+  exp
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Algebra.ml" 25 564 571 "SintoMeUmaMerda/Algebra.ml" 25 564 572
+)
+"SintoMeUmaMerda/Algebra.ml" 25 564 579 "SintoMeUmaMerda/Algebra.ml" 25 564 587
+type(
+  float
+)
+"SintoMeUmaMerda/Algebra.ml" 25 564 588 "SintoMeUmaMerda/Algebra.ml" 25 564 590
+type(
+  float -> float -> float
+)
+ident(
+  int_ref Stdlib.( +. ) "stdlib.mli" 451 17476 17476 "stdlib.mli" 451 17476 17531
+)
+"SintoMeUmaMerda/Algebra.ml" 25 564 591 "SintoMeUmaMerda/Algebra.ml" 25 564 595
+type(
+  float -> exp -> float
+)
+ident(
+  int_ref eval "SintoMeUmaMerda/Algebra.ml" 21 504 512 "SintoMeUmaMerda/Algebra.ml" 21 504 516
+)
+"SintoMeUmaMerda/Algebra.ml" 25 564 596 "SintoMeUmaMerda/Algebra.ml" 25 564 597
+type(
+  float
+)
+ident(
+  int_ref f "SintoMeUmaMerda/Algebra.ml" 21 504 517 "SintoMeUmaMerda/Algebra.ml" 21 504 518
+)
+"SintoMeUmaMerda/Algebra.ml" 25 564 598 "SintoMeUmaMerda/Algebra.ml" 25 564 599
+type(
+  exp
+)
+ident(
+  int_ref y "SintoMeUmaMerda/Algebra.ml" 25 564 573 "SintoMeUmaMerda/Algebra.ml" 25 564 574
+)
+"SintoMeUmaMerda/Algebra.ml" 25 564 591 "SintoMeUmaMerda/Algebra.ml" 25 564 599
+type(
+  float
+)
+"SintoMeUmaMerda/Algebra.ml" 25 564 579 "SintoMeUmaMerda/Algebra.ml" 25 564 599
+type(
+  float
+)
+"SintoMeUmaMerda/Algebra.ml" 26 600 607 "SintoMeUmaMerda/Algebra.ml" 26 600 608
+type(
+  exp
+)
+ident(
+  def x "SintoMeUmaMerda/Algebra.ml" 26 600 615 "SintoMeUmaMerda/Algebra.ml" 26 600 635
+)
+"SintoMeUmaMerda/Algebra.ml" 26 600 609 "SintoMeUmaMerda/Algebra.ml" 26 600 610
+type(
+  exp
+)
+ident(
+  def y "SintoMeUmaMerda/Algebra.ml" 26 600 615 "SintoMeUmaMerda/Algebra.ml" 26 600 635
+)
+"SintoMeUmaMerda/Algebra.ml" 26 600 603 "SintoMeUmaMerda/Algebra.ml" 26 600 611
+type(
+  exp
+)
+"SintoMeUmaMerda/Algebra.ml" 26 600 615 "SintoMeUmaMerda/Algebra.ml" 26 600 619
+type(
+  float -> exp -> float
+)
+ident(
+  int_ref eval "SintoMeUmaMerda/Algebra.ml" 21 504 512 "SintoMeUmaMerda/Algebra.ml" 21 504 516
+)
+"SintoMeUmaMerda/Algebra.ml" 26 600 620 "SintoMeUmaMerda/Algebra.ml" 26 600 621
+type(
+  float
+)
+ident(
+  int_ref f "SintoMeUmaMerda/Algebra.ml" 21 504 517 "SintoMeUmaMerda/Algebra.ml" 21 504 518
+)
+"SintoMeUmaMerda/Algebra.ml" 26 600 622 "SintoMeUmaMerda/Algebra.ml" 26 600 623
+type(
+  exp
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Algebra.ml" 26 600 607 "SintoMeUmaMerda/Algebra.ml" 26 600 608
+)
+"SintoMeUmaMerda/Algebra.ml" 26 600 615 "SintoMeUmaMerda/Algebra.ml" 26 600 623
+type(
+  float
+)
+"SintoMeUmaMerda/Algebra.ml" 26 600 624 "SintoMeUmaMerda/Algebra.ml" 26 600 626
+type(
+  float -> float -> float
+)
+ident(
+  int_ref Stdlib.( -. ) "stdlib.mli" 456 17641 17641 "stdlib.mli" 456 17641 17696
+)
+"SintoMeUmaMerda/Algebra.ml" 26 600 627 "SintoMeUmaMerda/Algebra.ml" 26 600 631
+type(
+  float -> exp -> float
+)
+ident(
+  int_ref eval "SintoMeUmaMerda/Algebra.ml" 21 504 512 "SintoMeUmaMerda/Algebra.ml" 21 504 516
+)
+"SintoMeUmaMerda/Algebra.ml" 26 600 632 "SintoMeUmaMerda/Algebra.ml" 26 600 633
+type(
+  float
+)
+ident(
+  int_ref f "SintoMeUmaMerda/Algebra.ml" 21 504 517 "SintoMeUmaMerda/Algebra.ml" 21 504 518
+)
+"SintoMeUmaMerda/Algebra.ml" 26 600 634 "SintoMeUmaMerda/Algebra.ml" 26 600 635
+type(
+  exp
+)
+ident(
+  int_ref y "SintoMeUmaMerda/Algebra.ml" 26 600 609 "SintoMeUmaMerda/Algebra.ml" 26 600 610
+)
+"SintoMeUmaMerda/Algebra.ml" 26 600 627 "SintoMeUmaMerda/Algebra.ml" 26 600 635
+type(
+  float
+)
+"SintoMeUmaMerda/Algebra.ml" 26 600 615 "SintoMeUmaMerda/Algebra.ml" 26 600 635
+type(
+  float
+)
+"SintoMeUmaMerda/Algebra.ml" 27 636 643 "SintoMeUmaMerda/Algebra.ml" 27 636 644
+type(
+  exp
+)
+ident(
+  def x "SintoMeUmaMerda/Algebra.ml" 27 636 651 "SintoMeUmaMerda/Algebra.ml" 27 636 671
+)
+"SintoMeUmaMerda/Algebra.ml" 27 636 645 "SintoMeUmaMerda/Algebra.ml" 27 636 646
+type(
+  exp
+)
+ident(
+  def y "SintoMeUmaMerda/Algebra.ml" 27 636 651 "SintoMeUmaMerda/Algebra.ml" 27 636 671
+)
+"SintoMeUmaMerda/Algebra.ml" 27 636 639 "SintoMeUmaMerda/Algebra.ml" 27 636 647
+type(
+  exp
+)
+"SintoMeUmaMerda/Algebra.ml" 27 636 651 "SintoMeUmaMerda/Algebra.ml" 27 636 655
+type(
+  float -> exp -> float
+)
+ident(
+  int_ref eval "SintoMeUmaMerda/Algebra.ml" 21 504 512 "SintoMeUmaMerda/Algebra.ml" 21 504 516
+)
+"SintoMeUmaMerda/Algebra.ml" 27 636 656 "SintoMeUmaMerda/Algebra.ml" 27 636 657
+type(
+  float
+)
+ident(
+  int_ref f "SintoMeUmaMerda/Algebra.ml" 21 504 517 "SintoMeUmaMerda/Algebra.ml" 21 504 518
+)
+"SintoMeUmaMerda/Algebra.ml" 27 636 658 "SintoMeUmaMerda/Algebra.ml" 27 636 659
+type(
+  exp
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Algebra.ml" 27 636 643 "SintoMeUmaMerda/Algebra.ml" 27 636 644
+)
+"SintoMeUmaMerda/Algebra.ml" 27 636 651 "SintoMeUmaMerda/Algebra.ml" 27 636 659
+type(
+  float
+)
+"SintoMeUmaMerda/Algebra.ml" 27 636 660 "SintoMeUmaMerda/Algebra.ml" 27 636 662
+type(
+  float -> float -> float
+)
+ident(
+  int_ref Stdlib.( /. ) "stdlib.mli" 466 17980 17980 "stdlib.mli" 466 17980 18035
+)
+"SintoMeUmaMerda/Algebra.ml" 27 636 663 "SintoMeUmaMerda/Algebra.ml" 27 636 667
+type(
+  float -> exp -> float
+)
+ident(
+  int_ref eval "SintoMeUmaMerda/Algebra.ml" 21 504 512 "SintoMeUmaMerda/Algebra.ml" 21 504 516
+)
+"SintoMeUmaMerda/Algebra.ml" 27 636 668 "SintoMeUmaMerda/Algebra.ml" 27 636 669
+type(
+  float
+)
+ident(
+  int_ref f "SintoMeUmaMerda/Algebra.ml" 21 504 517 "SintoMeUmaMerda/Algebra.ml" 21 504 518
+)
+"SintoMeUmaMerda/Algebra.ml" 27 636 670 "SintoMeUmaMerda/Algebra.ml" 27 636 671
+type(
+  exp
+)
+ident(
+  int_ref y "SintoMeUmaMerda/Algebra.ml" 27 636 645 "SintoMeUmaMerda/Algebra.ml" 27 636 646
+)
+"SintoMeUmaMerda/Algebra.ml" 27 636 663 "SintoMeUmaMerda/Algebra.ml" 27 636 671
+type(
+  float
+)
+"SintoMeUmaMerda/Algebra.ml" 27 636 651 "SintoMeUmaMerda/Algebra.ml" 27 636 671
+type(
+  float
+)
+"SintoMeUmaMerda/Algebra.ml" 28 672 680 "SintoMeUmaMerda/Algebra.ml" 28 672 681
+type(
+  exp
+)
+ident(
+  def x "SintoMeUmaMerda/Algebra.ml" 28 672 688 "SintoMeUmaMerda/Algebra.ml" 28 672 708
+)
+"SintoMeUmaMerda/Algebra.ml" 28 672 682 "SintoMeUmaMerda/Algebra.ml" 28 672 683
+type(
+  exp
+)
+ident(
+  def y "SintoMeUmaMerda/Algebra.ml" 28 672 688 "SintoMeUmaMerda/Algebra.ml" 28 672 708
+)
+"SintoMeUmaMerda/Algebra.ml" 28 672 675 "SintoMeUmaMerda/Algebra.ml" 28 672 684
+type(
+  exp
+)
+"SintoMeUmaMerda/Algebra.ml" 28 672 688 "SintoMeUmaMerda/Algebra.ml" 28 672 692
+type(
+  float -> exp -> float
+)
+ident(
+  int_ref eval "SintoMeUmaMerda/Algebra.ml" 21 504 512 "SintoMeUmaMerda/Algebra.ml" 21 504 516
+)
+"SintoMeUmaMerda/Algebra.ml" 28 672 693 "SintoMeUmaMerda/Algebra.ml" 28 672 694
+type(
+  float
+)
+ident(
+  int_ref f "SintoMeUmaMerda/Algebra.ml" 21 504 517 "SintoMeUmaMerda/Algebra.ml" 21 504 518
+)
+"SintoMeUmaMerda/Algebra.ml" 28 672 695 "SintoMeUmaMerda/Algebra.ml" 28 672 696
+type(
+  exp
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Algebra.ml" 28 672 680 "SintoMeUmaMerda/Algebra.ml" 28 672 681
+)
+"SintoMeUmaMerda/Algebra.ml" 28 672 688 "SintoMeUmaMerda/Algebra.ml" 28 672 696
+type(
+  float
+)
+"SintoMeUmaMerda/Algebra.ml" 28 672 697 "SintoMeUmaMerda/Algebra.ml" 28 672 699
+type(
+  float -> float -> float
+)
+ident(
+  int_ref Stdlib.( *. ) "stdlib.mli" 461 17809 17809 "stdlib.mli" 461 17809 17864
+)
+"SintoMeUmaMerda/Algebra.ml" 28 672 700 "SintoMeUmaMerda/Algebra.ml" 28 672 704
+type(
+  float -> exp -> float
+)
+ident(
+  int_ref eval "SintoMeUmaMerda/Algebra.ml" 21 504 512 "SintoMeUmaMerda/Algebra.ml" 21 504 516
+)
+"SintoMeUmaMerda/Algebra.ml" 28 672 705 "SintoMeUmaMerda/Algebra.ml" 28 672 706
+type(
+  float
+)
+ident(
+  int_ref f "SintoMeUmaMerda/Algebra.ml" 21 504 517 "SintoMeUmaMerda/Algebra.ml" 21 504 518
+)
+"SintoMeUmaMerda/Algebra.ml" 28 672 707 "SintoMeUmaMerda/Algebra.ml" 28 672 708
+type(
+  exp
+)
+ident(
+  int_ref y "SintoMeUmaMerda/Algebra.ml" 28 672 682 "SintoMeUmaMerda/Algebra.ml" 28 672 683
+)
+"SintoMeUmaMerda/Algebra.ml" 28 672 700 "SintoMeUmaMerda/Algebra.ml" 28 672 708
+type(
+  float
+)
+"SintoMeUmaMerda/Algebra.ml" 28 672 688 "SintoMeUmaMerda/Algebra.ml" 28 672 708
+type(
+  float
+)
+"SintoMeUmaMerda/Algebra.ml" 29 709 718 "SintoMeUmaMerda/Algebra.ml" 29 709 719
+type(
+  exp
+)
+ident(
+  def x "SintoMeUmaMerda/Algebra.ml" 29 709 726 "SintoMeUmaMerda/Algebra.ml" 29 709 744
+)
+"SintoMeUmaMerda/Algebra.ml" 29 709 720 "SintoMeUmaMerda/Algebra.ml" 29 709 721
+type(
+  int
+)
+ident(
+  def y "SintoMeUmaMerda/Algebra.ml" 29 709 726 "SintoMeUmaMerda/Algebra.ml" 29 709 744
+)
+"SintoMeUmaMerda/Algebra.ml" 29 709 712 "SintoMeUmaMerda/Algebra.ml" 29 709 722
+type(
+  exp
+)
+"SintoMeUmaMerda/Algebra.ml" 29 709 726 "SintoMeUmaMerda/Algebra.ml" 29 709 731
+type(
+  float -> int -> float
+)
+ident(
+  int_ref power "SintoMeUmaMerda/Algebra.ml" 12 329 337 "SintoMeUmaMerda/Algebra.ml" 12 329 342
+)
+"SintoMeUmaMerda/Algebra.ml" 29 709 733 "SintoMeUmaMerda/Algebra.ml" 29 709 737
+type(
+  float -> exp -> float
+)
+ident(
+  int_ref eval "SintoMeUmaMerda/Algebra.ml" 21 504 512 "SintoMeUmaMerda/Algebra.ml" 21 504 516
+)
+"SintoMeUmaMerda/Algebra.ml" 29 709 738 "SintoMeUmaMerda/Algebra.ml" 29 709 739
+type(
+  float
+)
+ident(
+  int_ref f "SintoMeUmaMerda/Algebra.ml" 21 504 517 "SintoMeUmaMerda/Algebra.ml" 21 504 518
+)
+"SintoMeUmaMerda/Algebra.ml" 29 709 740 "SintoMeUmaMerda/Algebra.ml" 29 709 741
+type(
+  exp
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Algebra.ml" 29 709 718 "SintoMeUmaMerda/Algebra.ml" 29 709 719
+)
+"SintoMeUmaMerda/Algebra.ml" 29 709 732 "SintoMeUmaMerda/Algebra.ml" 29 709 742
+type(
+  float
+)
+"SintoMeUmaMerda/Algebra.ml" 29 709 743 "SintoMeUmaMerda/Algebra.ml" 29 709 744
+type(
+  int
+)
+ident(
+  int_ref y "SintoMeUmaMerda/Algebra.ml" 29 709 720 "SintoMeUmaMerda/Algebra.ml" 29 709 721
+)
+"SintoMeUmaMerda/Algebra.ml" 29 709 726 "SintoMeUmaMerda/Algebra.ml" 29 709 744
+type(
+  float
+)
+"SintoMeUmaMerda/Algebra.ml" 30 745 752 "SintoMeUmaMerda/Algebra.ml" 30 745 753
+ident(
+  def x "SintoMeUmaMerda/Algebra.ml" 30 745 758 "SintoMeUmaMerda/Algebra.ml" 30 745 774
+)
+"SintoMeUmaMerda/Algebra.ml" 30 745 751 "SintoMeUmaMerda/Algebra.ml" 30 745 754
+type(
+  exp
+)
+"SintoMeUmaMerda/Algebra.ml" 30 745 748 "SintoMeUmaMerda/Algebra.ml" 30 745 754
+type(
+  exp
+)
+"SintoMeUmaMerda/Algebra.ml" 30 745 758 "SintoMeUmaMerda/Algebra.ml" 30 745 762
+type(
+  float
+)
+"SintoMeUmaMerda/Algebra.ml" 30 745 763 "SintoMeUmaMerda/Algebra.ml" 30 745 765
+type(
+  float -> float -> float
+)
+ident(
+  int_ref Stdlib.( *. ) "stdlib.mli" 461 17809 17809 "stdlib.mli" 461 17809 17864
+)
+"SintoMeUmaMerda/Algebra.ml" 30 745 766 "SintoMeUmaMerda/Algebra.ml" 30 745 770
+type(
+  float -> exp -> float
+)
+ident(
+  int_ref eval "SintoMeUmaMerda/Algebra.ml" 21 504 512 "SintoMeUmaMerda/Algebra.ml" 21 504 516
+)
+"SintoMeUmaMerda/Algebra.ml" 30 745 771 "SintoMeUmaMerda/Algebra.ml" 30 745 772
+type(
+  float
+)
+ident(
+  int_ref f "SintoMeUmaMerda/Algebra.ml" 21 504 517 "SintoMeUmaMerda/Algebra.ml" 21 504 518
+)
+"SintoMeUmaMerda/Algebra.ml" 30 745 773 "SintoMeUmaMerda/Algebra.ml" 30 745 774
+type(
+  exp
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Algebra.ml" 30 745 751 "SintoMeUmaMerda/Algebra.ml" 30 745 754
+)
+"SintoMeUmaMerda/Algebra.ml" 30 745 766 "SintoMeUmaMerda/Algebra.ml" 30 745 774
+type(
+  float
+)
+"SintoMeUmaMerda/Algebra.ml" 30 745 758 "SintoMeUmaMerda/Algebra.ml" 30 745 774
+type(
+  float
+)
+"SintoMeUmaMerda/Algebra.ml" 22 522 523 "SintoMeUmaMerda/Algebra.ml" 30 745 774
+type(
+  float
+)

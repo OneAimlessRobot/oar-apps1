@@ -1,0 +1,6349 @@
+"SintoMeUmaMerda/Maze.ml" 38 755 763 "SintoMeUmaMerda/Maze.ml" 38 755 773
+type(
+  'a list -> 'a list
+)
+ident(
+  def removeDups "SintoMeUmaMerda/Maze.ml" 38 755 755 "SintoMeUmaMerda/Maze.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Maze.ml" 38 755 774 "SintoMeUmaMerda/Maze.ml" 38 755 775
+type(
+  'a list
+)
+ident(
+  def z "SintoMeUmaMerda/Maze.ml" 39 798 799 "SintoMeUmaMerda/Maze.ml" 42 838 900
+)
+"SintoMeUmaMerda/Maze.ml" 39 798 805 "SintoMeUmaMerda/Maze.ml" 39 798 806
+type(
+  'a list
+)
+ident(
+  int_ref z "SintoMeUmaMerda/Maze.ml" 38 755 774 "SintoMeUmaMerda/Maze.ml" 38 755 775
+)
+"SintoMeUmaMerda/Maze.ml" 40 812 815 "SintoMeUmaMerda/Maze.ml" 40 812 817
+type(
+  'a list
+)
+"SintoMeUmaMerda/Maze.ml" 40 812 821 "SintoMeUmaMerda/Maze.ml" 40 812 823
+type(
+  'a list
+)
+"SintoMeUmaMerda/Maze.ml" 41 824 828 "SintoMeUmaMerda/Maze.ml" 41 824 829
+type(
+  'a
+)
+ident(
+  def x "SintoMeUmaMerda/Maze.ml" 41 824 834 "SintoMeUmaMerda/Maze.ml" 41 824 837
+)
+"SintoMeUmaMerda/Maze.ml" 41 824 827 "SintoMeUmaMerda/Maze.ml" 41 824 830
+type(
+  'a list
+)
+"SintoMeUmaMerda/Maze.ml" 41 824 835 "SintoMeUmaMerda/Maze.ml" 41 824 836
+type(
+  'a
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Maze.ml" 41 824 828 "SintoMeUmaMerda/Maze.ml" 41 824 829
+)
+"SintoMeUmaMerda/Maze.ml" 41 824 834 "SintoMeUmaMerda/Maze.ml" 41 824 837
+type(
+  'a list
+)
+"SintoMeUmaMerda/Maze.ml" 42 838 841 "SintoMeUmaMerda/Maze.ml" 42 838 842
+type(
+  'a
+)
+ident(
+  def x "SintoMeUmaMerda/Maze.ml" 42 838 853 "SintoMeUmaMerda/Maze.ml" 42 838 900
+)
+"SintoMeUmaMerda/Maze.ml" 42 838 844 "SintoMeUmaMerda/Maze.ml" 42 838 845
+type(
+  'a
+)
+ident(
+  def y "SintoMeUmaMerda/Maze.ml" 42 838 853 "SintoMeUmaMerda/Maze.ml" 42 838 900
+)
+"SintoMeUmaMerda/Maze.ml" 42 838 847 "SintoMeUmaMerda/Maze.ml" 42 838 849
+type(
+  'a list
+)
+ident(
+  def xs "SintoMeUmaMerda/Maze.ml" 42 838 853 "SintoMeUmaMerda/Maze.ml" 42 838 900
+)
+"SintoMeUmaMerda/Maze.ml" 42 838 844 "SintoMeUmaMerda/Maze.ml" 42 838 849
+type(
+  'a list
+)
+"SintoMeUmaMerda/Maze.ml" 42 838 841 "SintoMeUmaMerda/Maze.ml" 42 838 849
+type(
+  'a list
+)
+"SintoMeUmaMerda/Maze.ml" 42 838 857 "SintoMeUmaMerda/Maze.ml" 42 838 858
+type(
+  'a
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Maze.ml" 42 838 841 "SintoMeUmaMerda/Maze.ml" 42 838 842
+)
+"SintoMeUmaMerda/Maze.ml" 42 838 859 "SintoMeUmaMerda/Maze.ml" 42 838 860
+type(
+  'a -> 'a -> bool
+)
+ident(
+  int_ref Stdlib.( = ) "stdlib.mli" 118 4976 4976 "stdlib.mli" 118 4976 5020
+)
+"SintoMeUmaMerda/Maze.ml" 42 838 861 "SintoMeUmaMerda/Maze.ml" 42 838 862
+type(
+  'a
+)
+ident(
+  int_ref y "SintoMeUmaMerda/Maze.ml" 42 838 844 "SintoMeUmaMerda/Maze.ml" 42 838 845
+)
+"SintoMeUmaMerda/Maze.ml" 42 838 857 "SintoMeUmaMerda/Maze.ml" 42 838 862
+type(
+  bool
+)
+"SintoMeUmaMerda/Maze.ml" 42 838 868 "SintoMeUmaMerda/Maze.ml" 42 838 870
+type(
+  'a list
+)
+"SintoMeUmaMerda/Maze.ml" 42 838 877 "SintoMeUmaMerda/Maze.ml" 42 838 878
+type(
+  'a
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Maze.ml" 42 838 841 "SintoMeUmaMerda/Maze.ml" 42 838 842
+)
+"SintoMeUmaMerda/Maze.ml" 42 838 876 "SintoMeUmaMerda/Maze.ml" 42 838 879
+type(
+  'a list
+)
+"SintoMeUmaMerda/Maze.ml" 42 838 853 "SintoMeUmaMerda/Maze.ml" 42 838 880
+type(
+  'a list
+)
+"SintoMeUmaMerda/Maze.ml" 42 838 880 "SintoMeUmaMerda/Maze.ml" 42 838 881
+type(
+  'a list -> 'a list -> 'a list
+)
+ident(
+  int_ref Stdlib.( @ ) "stdlib.mli" 782 29359 29359 "stdlib.mli" 782 29359 29400
+)
+"SintoMeUmaMerda/Maze.ml" 42 838 882 "SintoMeUmaMerda/Maze.ml" 42 838 892
+type(
+  'a list -> 'a list
+)
+ident(
+  int_ref removeDups "SintoMeUmaMerda/Maze.ml" 38 755 763 "SintoMeUmaMerda/Maze.ml" 38 755 773
+)
+"SintoMeUmaMerda/Maze.ml" 42 838 894 "SintoMeUmaMerda/Maze.ml" 42 838 895
+type(
+  'a
+)
+ident(
+  int_ref y "SintoMeUmaMerda/Maze.ml" 42 838 844 "SintoMeUmaMerda/Maze.ml" 42 838 845
+)
+"SintoMeUmaMerda/Maze.ml" 42 838 897 "SintoMeUmaMerda/Maze.ml" 42 838 899
+type(
+  'a list
+)
+ident(
+  int_ref xs "SintoMeUmaMerda/Maze.ml" 42 838 847 "SintoMeUmaMerda/Maze.ml" 42 838 849
+)
+"SintoMeUmaMerda/Maze.ml" 42 838 893 "SintoMeUmaMerda/Maze.ml" 42 838 900
+type(
+  'a list
+)
+"SintoMeUmaMerda/Maze.ml" 42 838 882 "SintoMeUmaMerda/Maze.ml" 42 838 900
+type(
+  'a list
+)
+"SintoMeUmaMerda/Maze.ml" 42 838 853 "SintoMeUmaMerda/Maze.ml" 42 838 900
+type(
+  'a list
+)
+"SintoMeUmaMerda/Maze.ml" 39 798 799 "SintoMeUmaMerda/Maze.ml" 42 838 900
+type(
+  'a list
+)
+"SintoMeUmaMerda/Maze.ml" 45 905 909 "SintoMeUmaMerda/Maze.ml" 45 905 917
+type(
+  'a list -> 'a list
+)
+ident(
+  def canonize "SintoMeUmaMerda/Maze.ml" 49 993 993 "SintoMeUmaMerda/Maze.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Maze.ml" 45 905 918 "SintoMeUmaMerda/Maze.ml" 45 905 919
+type(
+  'a list
+)
+ident(
+  def z "SintoMeUmaMerda/Maze.ml" 46 955 956 "SintoMeUmaMerda/Maze.ml" 46 955 988
+)
+"SintoMeUmaMerda/Maze.ml" 46 955 956 "SintoMeUmaMerda/Maze.ml" 46 955 966
+type(
+  'a list -> 'a list
+)
+ident(
+  int_ref removeDups "SintoMeUmaMerda/Maze.ml" 38 755 763 "SintoMeUmaMerda/Maze.ml" 38 755 773
+)
+"SintoMeUmaMerda/Maze.ml" 46 955 968 "SintoMeUmaMerda/Maze.ml" 46 955 977
+type(
+  ('a -> 'a -> int) -> 'a list -> 'a list
+)
+ident(
+  int_ref Stdlib.List.sort "list.mli" 316 11683 11683 "list.mli" 316 11683 11733
+)
+"SintoMeUmaMerda/Maze.ml" 46 955 978 "SintoMeUmaMerda/Maze.ml" 46 955 985
+type(
+  'a -> 'a -> int
+)
+ident(
+  int_ref Stdlib.compare "stdlib.mli" 159 6717 6717 "stdlib.mli" 159 6717 6764
+)
+"SintoMeUmaMerda/Maze.ml" 46 955 986 "SintoMeUmaMerda/Maze.ml" 46 955 987
+type(
+  'a list
+)
+ident(
+  int_ref z "SintoMeUmaMerda/Maze.ml" 45 905 918 "SintoMeUmaMerda/Maze.ml" 45 905 919
+)
+"SintoMeUmaMerda/Maze.ml" 46 955 967 "SintoMeUmaMerda/Maze.ml" 46 955 988
+type(
+  'a list
+)
+"SintoMeUmaMerda/Maze.ml" 46 955 956 "SintoMeUmaMerda/Maze.ml" 46 955 988
+type(
+  'a list
+)
+"SintoMeUmaMerda/Maze.ml" 49 993 997 "SintoMeUmaMerda/Maze.ml" 49 993 1008
+type(
+  'a list -> bool
+)
+ident(
+  def isCanonical "SintoMeUmaMerda/Maze.ml" 53 1080 1080 "SintoMeUmaMerda/Maze.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Maze.ml" 49 993 1009 "SintoMeUmaMerda/Maze.ml" 49 993 1010
+type(
+  'a list
+)
+ident(
+  def z "SintoMeUmaMerda/Maze.ml" 50 1058 1059 "SintoMeUmaMerda/Maze.ml" 50 1058 1075
+)
+"SintoMeUmaMerda/Maze.ml" 50 1058 1059 "SintoMeUmaMerda/Maze.ml" 50 1058 1060
+type(
+  'a list
+)
+ident(
+  int_ref z "SintoMeUmaMerda/Maze.ml" 49 993 1009 "SintoMeUmaMerda/Maze.ml" 49 993 1010
+)
+"SintoMeUmaMerda/Maze.ml" 50 1058 1061 "SintoMeUmaMerda/Maze.ml" 50 1058 1062
+type(
+  'a list -> 'a list -> bool
+)
+ident(
+  int_ref Stdlib.( = ) "stdlib.mli" 118 4976 4976 "stdlib.mli" 118 4976 5020
+)
+"SintoMeUmaMerda/Maze.ml" 50 1058 1064 "SintoMeUmaMerda/Maze.ml" 50 1058 1072
+type(
+  'a list -> 'a list
+)
+ident(
+  int_ref canonize "SintoMeUmaMerda/Maze.ml" 45 905 909 "SintoMeUmaMerda/Maze.ml" 45 905 917
+)
+"SintoMeUmaMerda/Maze.ml" 50 1058 1073 "SintoMeUmaMerda/Maze.ml" 50 1058 1074
+type(
+  'a list
+)
+ident(
+  int_ref z "SintoMeUmaMerda/Maze.ml" 49 993 1009 "SintoMeUmaMerda/Maze.ml" 49 993 1010
+)
+"SintoMeUmaMerda/Maze.ml" 50 1058 1063 "SintoMeUmaMerda/Maze.ml" 50 1058 1075
+type(
+  'a list
+)
+"SintoMeUmaMerda/Maze.ml" 50 1058 1059 "SintoMeUmaMerda/Maze.ml" 50 1058 1075
+type(
+  bool
+)
+"SintoMeUmaMerda/Maze.ml" 53 1080 1084 "SintoMeUmaMerda/Maze.ml" 53 1080 1091
+type(
+  'a -> 'a list -> bool
+)
+ident(
+  def belongs "SintoMeUmaMerda/Maze.ml" 57 1116 1116 "SintoMeUmaMerda/Maze.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Maze.ml" 53 1080 1092 "SintoMeUmaMerda/Maze.ml" 53 1080 1093
+type(
+  'a
+)
+ident(
+  def v "SintoMeUmaMerda/Maze.ml" 53 1080 1094 "SintoMeUmaMerda/Maze.ml" 54 1098 1111
+)
+"SintoMeUmaMerda/Maze.ml" 53 1080 1094 "SintoMeUmaMerda/Maze.ml" 53 1080 1095
+type(
+  'a list
+)
+ident(
+  def l "SintoMeUmaMerda/Maze.ml" 54 1098 1099 "SintoMeUmaMerda/Maze.ml" 54 1098 1111
+)
+"SintoMeUmaMerda/Maze.ml" 54 1098 1099 "SintoMeUmaMerda/Maze.ml" 54 1098 1107
+type(
+  'a -> 'a list -> bool
+)
+ident(
+  int_ref Stdlib.List.mem "list.mli" 209 8022 8022 "list.mli" 209 8022 8053
+)
+"SintoMeUmaMerda/Maze.ml" 54 1098 1108 "SintoMeUmaMerda/Maze.ml" 54 1098 1109
+type(
+  'a
+)
+ident(
+  int_ref v "SintoMeUmaMerda/Maze.ml" 53 1080 1092 "SintoMeUmaMerda/Maze.ml" 53 1080 1093
+)
+"SintoMeUmaMerda/Maze.ml" 54 1098 1110 "SintoMeUmaMerda/Maze.ml" 54 1098 1111
+type(
+  'a list
+)
+ident(
+  int_ref l "SintoMeUmaMerda/Maze.ml" 53 1080 1094 "SintoMeUmaMerda/Maze.ml" 53 1080 1095
+)
+"SintoMeUmaMerda/Maze.ml" 54 1098 1099 "SintoMeUmaMerda/Maze.ml" 54 1098 1111
+type(
+  bool
+)
+"SintoMeUmaMerda/Maze.ml" 57 1116 1120 "SintoMeUmaMerda/Maze.ml" 57 1116 1126
+type(
+  'a list -> int
+)
+ident(
+  def length "SintoMeUmaMerda/Maze.ml" 61 1146 1146 "SintoMeUmaMerda/Maze.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Maze.ml" 58 1129 1130 "SintoMeUmaMerda/Maze.ml" 58 1129 1141
+type(
+  'a list -> int
+)
+ident(
+  int_ref Stdlib.List.length "list.mli" 32 1730 1730 "list.mli" 32 1730 1757
+)
+"SintoMeUmaMerda/Maze.ml" 61 1146 1150 "SintoMeUmaMerda/Maze.ml" 61 1146 1156
+type(
+  ('a -> bool) -> 'a list -> 'a list
+)
+ident(
+  def filter "SintoMeUmaMerda/Maze.ml" 65 1176 1176 "SintoMeUmaMerda/Maze.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Maze.ml" 62 1159 1160 "SintoMeUmaMerda/Maze.ml" 62 1159 1171
+type(
+  ('a -> bool) -> 'a list -> 'a list
+)
+ident(
+  int_ref Stdlib.List.filter "list.mli" 233 8772 8772 "list.mli" 233 8772 8819
+)
+"SintoMeUmaMerda/Maze.ml" 65 1176 1180 "SintoMeUmaMerda/Maze.ml" 65 1176 1186
+type(
+  ('a -> bool) -> 'a list -> bool
+)
+ident(
+  def exists "SintoMeUmaMerda/Maze.ml" 69 1206 1206 "SintoMeUmaMerda/Maze.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Maze.ml" 66 1189 1190 "SintoMeUmaMerda/Maze.ml" 66 1189 1201
+type(
+  ('a -> bool) -> 'a list -> bool
+)
+ident(
+  int_ref Stdlib.List.exists "list.mli" 194 7369 7369 "list.mli" 194 7369 7413
+)
+"SintoMeUmaMerda/Maze.ml" 69 1206 1210 "SintoMeUmaMerda/Maze.ml" 69 1206 1217
+type(
+  ('a -> bool) -> 'a list -> bool
+)
+ident(
+  def for_all "SintoMeUmaMerda/Maze.ml" 73 1238 1238 "SintoMeUmaMerda/Maze.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Maze.ml" 70 1220 1221 "SintoMeUmaMerda/Maze.ml" 70 1220 1233
+type(
+  ('a -> bool) -> 'a list -> bool
+)
+ident(
+  int_ref Stdlib.List.for_all "list.mli" 189 7164 7164 "list.mli" 189 7164 7209
+)
+"SintoMeUmaMerda/Maze.ml" 73 1238 1242 "SintoMeUmaMerda/Maze.ml" 73 1238 1251
+type(
+  ('a -> bool) -> 'a list -> 'a list * 'a list
+)
+ident(
+  def partition "SintoMeUmaMerda/Maze.ml" 77 1274 1274 "SintoMeUmaMerda/Maze.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Maze.ml" 74 1254 1255 "SintoMeUmaMerda/Maze.ml" 74 1254 1269
+type(
+  ('a -> bool) -> 'a list -> 'a list * 'a list
+)
+ident(
+  int_ref Stdlib.List.partition "list.mli" 241 9085 9085 "list.mli" 241 9085 9145
+)
+"SintoMeUmaMerda/Maze.ml" 77 1274 1278 "SintoMeUmaMerda/Maze.ml" 77 1274 1287
+type(
+  'a list -> 'a list -> bool
+)
+ident(
+  def contained "SintoMeUmaMerda/Maze.ml" 81 1336 1336 "SintoMeUmaMerda/Maze.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Maze.ml" 77 1274 1288 "SintoMeUmaMerda/Maze.ml" 77 1274 1290
+type(
+  'a list
+)
+ident(
+  def l1 "SintoMeUmaMerda/Maze.ml" 77 1274 1291 "SintoMeUmaMerda/Maze.ml" 78 1296 1331
+)
+"SintoMeUmaMerda/Maze.ml" 77 1274 1291 "SintoMeUmaMerda/Maze.ml" 77 1274 1293
+type(
+  'a list
+)
+ident(
+  def l2 "SintoMeUmaMerda/Maze.ml" 78 1296 1297 "SintoMeUmaMerda/Maze.ml" 78 1296 1331
+)
+"SintoMeUmaMerda/Maze.ml" 78 1296 1297 "SintoMeUmaMerda/Maze.ml" 78 1296 1304
+type(
+  ('a -> bool) -> 'a list -> bool
+)
+ident(
+  int_ref for_all "SintoMeUmaMerda/Maze.ml" 69 1206 1210 "SintoMeUmaMerda/Maze.ml" 69 1206 1217
+)
+"SintoMeUmaMerda/Maze.ml" 78 1296 1310 "SintoMeUmaMerda/Maze.ml" 78 1296 1311
+type(
+  'a
+)
+ident(
+  def x "SintoMeUmaMerda/Maze.ml" 78 1296 1315 "SintoMeUmaMerda/Maze.ml" 78 1296 1327
+)
+"SintoMeUmaMerda/Maze.ml" 78 1296 1315 "SintoMeUmaMerda/Maze.ml" 78 1296 1322
+type(
+  'a -> 'a list -> bool
+)
+ident(
+  int_ref belongs "SintoMeUmaMerda/Maze.ml" 53 1080 1084 "SintoMeUmaMerda/Maze.ml" 53 1080 1091
+)
+"SintoMeUmaMerda/Maze.ml" 78 1296 1323 "SintoMeUmaMerda/Maze.ml" 78 1296 1324
+type(
+  'a
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Maze.ml" 78 1296 1310 "SintoMeUmaMerda/Maze.ml" 78 1296 1311
+)
+"SintoMeUmaMerda/Maze.ml" 78 1296 1325 "SintoMeUmaMerda/Maze.ml" 78 1296 1327
+type(
+  'a list
+)
+ident(
+  int_ref l2 "SintoMeUmaMerda/Maze.ml" 77 1274 1291 "SintoMeUmaMerda/Maze.ml" 77 1274 1293
+)
+"SintoMeUmaMerda/Maze.ml" 78 1296 1315 "SintoMeUmaMerda/Maze.ml" 78 1296 1327
+type(
+  bool
+)
+"SintoMeUmaMerda/Maze.ml" 78 1296 1305 "SintoMeUmaMerda/Maze.ml" 78 1296 1328
+type(
+  'a -> bool
+)
+"SintoMeUmaMerda/Maze.ml" 78 1296 1329 "SintoMeUmaMerda/Maze.ml" 78 1296 1331
+type(
+  'a list
+)
+ident(
+  int_ref l1 "SintoMeUmaMerda/Maze.ml" 77 1274 1288 "SintoMeUmaMerda/Maze.ml" 77 1274 1290
+)
+"SintoMeUmaMerda/Maze.ml" 78 1296 1297 "SintoMeUmaMerda/Maze.ml" 78 1296 1331
+type(
+  bool
+)
+"SintoMeUmaMerda/Maze.ml" 81 1336 1340 "SintoMeUmaMerda/Maze.ml" 81 1336 1345
+type(
+  'a list -> 'a list -> 'a list
+)
+ident(
+  def union "SintoMeUmaMerda/Maze.ml" 84 1373 1373 "SintoMeUmaMerda/Maze.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Maze.ml" 81 1336 1346 "SintoMeUmaMerda/Maze.ml" 81 1336 1348
+type(
+  'a list
+)
+ident(
+  def l1 "SintoMeUmaMerda/Maze.ml" 81 1336 1349 "SintoMeUmaMerda/Maze.ml" 82 1354 1371
+)
+"SintoMeUmaMerda/Maze.ml" 81 1336 1349 "SintoMeUmaMerda/Maze.ml" 81 1336 1351
+type(
+  'a list
+)
+ident(
+  def l2 "SintoMeUmaMerda/Maze.ml" 82 1354 1355 "SintoMeUmaMerda/Maze.ml" 82 1354 1371
+)
+"SintoMeUmaMerda/Maze.ml" 82 1354 1355 "SintoMeUmaMerda/Maze.ml" 82 1354 1363
+type(
+  'a list -> 'a list
+)
+ident(
+  int_ref canonize "SintoMeUmaMerda/Maze.ml" 45 905 909 "SintoMeUmaMerda/Maze.ml" 45 905 917
+)
+"SintoMeUmaMerda/Maze.ml" 82 1354 1365 "SintoMeUmaMerda/Maze.ml" 82 1354 1367
+type(
+  'a list
+)
+ident(
+  int_ref l1 "SintoMeUmaMerda/Maze.ml" 81 1336 1346 "SintoMeUmaMerda/Maze.ml" 81 1336 1348
+)
+"SintoMeUmaMerda/Maze.ml" 82 1354 1367 "SintoMeUmaMerda/Maze.ml" 82 1354 1368
+type(
+  'a list -> 'a list -> 'a list
+)
+ident(
+  int_ref Stdlib.( @ ) "stdlib.mli" 782 29359 29359 "stdlib.mli" 782 29359 29400
+)
+"SintoMeUmaMerda/Maze.ml" 82 1354 1368 "SintoMeUmaMerda/Maze.ml" 82 1354 1370
+type(
+  'a list
+)
+ident(
+  int_ref l2 "SintoMeUmaMerda/Maze.ml" 81 1336 1349 "SintoMeUmaMerda/Maze.ml" 81 1336 1351
+)
+"SintoMeUmaMerda/Maze.ml" 82 1354 1364 "SintoMeUmaMerda/Maze.ml" 82 1354 1371
+type(
+  'a list
+)
+"SintoMeUmaMerda/Maze.ml" 82 1354 1355 "SintoMeUmaMerda/Maze.ml" 82 1354 1371
+type(
+  'a list
+)
+"SintoMeUmaMerda/Maze.ml" 84 1373 1377 "SintoMeUmaMerda/Maze.ml" 84 1373 1382
+type(
+  'a list -> 'a list -> 'a list
+)
+ident(
+  def inter "SintoMeUmaMerda/Maze.ml" 88 1430 1430 "SintoMeUmaMerda/Maze.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Maze.ml" 84 1373 1383 "SintoMeUmaMerda/Maze.ml" 84 1373 1385
+type(
+  'a list
+)
+ident(
+  def l1 "SintoMeUmaMerda/Maze.ml" 84 1373 1386 "SintoMeUmaMerda/Maze.ml" 85 1391 1425
+)
+"SintoMeUmaMerda/Maze.ml" 84 1373 1386 "SintoMeUmaMerda/Maze.ml" 84 1373 1388
+type(
+  'a list
+)
+ident(
+  def l2 "SintoMeUmaMerda/Maze.ml" 85 1391 1392 "SintoMeUmaMerda/Maze.ml" 85 1391 1425
+)
+"SintoMeUmaMerda/Maze.ml" 85 1391 1392 "SintoMeUmaMerda/Maze.ml" 85 1391 1398
+type(
+  ('a -> bool) -> 'a list -> 'a list
+)
+ident(
+  int_ref filter "SintoMeUmaMerda/Maze.ml" 61 1146 1150 "SintoMeUmaMerda/Maze.ml" 61 1146 1156
+)
+"SintoMeUmaMerda/Maze.ml" 85 1391 1404 "SintoMeUmaMerda/Maze.ml" 85 1391 1405
+type(
+  'a
+)
+ident(
+  def x "SintoMeUmaMerda/Maze.ml" 85 1391 1409 "SintoMeUmaMerda/Maze.ml" 85 1391 1421
+)
+"SintoMeUmaMerda/Maze.ml" 85 1391 1409 "SintoMeUmaMerda/Maze.ml" 85 1391 1416
+type(
+  'a -> 'a list -> bool
+)
+ident(
+  int_ref belongs "SintoMeUmaMerda/Maze.ml" 53 1080 1084 "SintoMeUmaMerda/Maze.ml" 53 1080 1091
+)
+"SintoMeUmaMerda/Maze.ml" 85 1391 1417 "SintoMeUmaMerda/Maze.ml" 85 1391 1418
+type(
+  'a
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Maze.ml" 85 1391 1404 "SintoMeUmaMerda/Maze.ml" 85 1391 1405
+)
+"SintoMeUmaMerda/Maze.ml" 85 1391 1419 "SintoMeUmaMerda/Maze.ml" 85 1391 1421
+type(
+  'a list
+)
+ident(
+  int_ref l2 "SintoMeUmaMerda/Maze.ml" 84 1373 1386 "SintoMeUmaMerda/Maze.ml" 84 1373 1388
+)
+"SintoMeUmaMerda/Maze.ml" 85 1391 1409 "SintoMeUmaMerda/Maze.ml" 85 1391 1421
+type(
+  bool
+)
+"SintoMeUmaMerda/Maze.ml" 85 1391 1399 "SintoMeUmaMerda/Maze.ml" 85 1391 1422
+type(
+  'a -> bool
+)
+"SintoMeUmaMerda/Maze.ml" 85 1391 1423 "SintoMeUmaMerda/Maze.ml" 85 1391 1425
+type(
+  'a list
+)
+ident(
+  int_ref l1 "SintoMeUmaMerda/Maze.ml" 84 1373 1383 "SintoMeUmaMerda/Maze.ml" 84 1373 1385
+)
+"SintoMeUmaMerda/Maze.ml" 85 1391 1392 "SintoMeUmaMerda/Maze.ml" 85 1391 1425
+type(
+  'a list
+)
+"SintoMeUmaMerda/Maze.ml" 88 1430 1434 "SintoMeUmaMerda/Maze.ml" 88 1430 1438
+type(
+  'a list -> 'a list -> 'a list
+)
+ident(
+  def diff "SintoMeUmaMerda/Maze.ml" 92 1492 1492 "SintoMeUmaMerda/Maze.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Maze.ml" 88 1430 1439 "SintoMeUmaMerda/Maze.ml" 88 1430 1441
+type(
+  'a list
+)
+ident(
+  def l1 "SintoMeUmaMerda/Maze.ml" 88 1430 1442 "SintoMeUmaMerda/Maze.ml" 89 1447 1487
+)
+"SintoMeUmaMerda/Maze.ml" 88 1430 1442 "SintoMeUmaMerda/Maze.ml" 88 1430 1444
+type(
+  'a list
+)
+ident(
+  def l2 "SintoMeUmaMerda/Maze.ml" 89 1447 1448 "SintoMeUmaMerda/Maze.ml" 89 1447 1487
+)
+"SintoMeUmaMerda/Maze.ml" 89 1447 1448 "SintoMeUmaMerda/Maze.ml" 89 1447 1454
+type(
+  ('a -> bool) -> 'a list -> 'a list
+)
+ident(
+  int_ref filter "SintoMeUmaMerda/Maze.ml" 61 1146 1150 "SintoMeUmaMerda/Maze.ml" 61 1146 1156
+)
+"SintoMeUmaMerda/Maze.ml" 89 1447 1460 "SintoMeUmaMerda/Maze.ml" 89 1447 1461
+type(
+  'a
+)
+ident(
+  def a "SintoMeUmaMerda/Maze.ml" 89 1447 1465 "SintoMeUmaMerda/Maze.ml" 89 1447 1483
+)
+"SintoMeUmaMerda/Maze.ml" 89 1447 1465 "SintoMeUmaMerda/Maze.ml" 89 1447 1468
+type(
+  bool -> bool
+)
+ident(
+  int_ref Stdlib.not "stdlib.mli" 208 8814 8814 "stdlib.mli" 208 8814 8854
+)
+"SintoMeUmaMerda/Maze.ml" 89 1447 1470 "SintoMeUmaMerda/Maze.ml" 89 1447 1477
+type(
+  'a -> 'a list -> bool
+)
+ident(
+  int_ref belongs "SintoMeUmaMerda/Maze.ml" 53 1080 1084 "SintoMeUmaMerda/Maze.ml" 53 1080 1091
+)
+"SintoMeUmaMerda/Maze.ml" 89 1447 1478 "SintoMeUmaMerda/Maze.ml" 89 1447 1479
+type(
+  'a
+)
+ident(
+  int_ref a "SintoMeUmaMerda/Maze.ml" 89 1447 1460 "SintoMeUmaMerda/Maze.ml" 89 1447 1461
+)
+"SintoMeUmaMerda/Maze.ml" 89 1447 1480 "SintoMeUmaMerda/Maze.ml" 89 1447 1482
+type(
+  'a list
+)
+ident(
+  int_ref l2 "SintoMeUmaMerda/Maze.ml" 88 1430 1442 "SintoMeUmaMerda/Maze.ml" 88 1430 1444
+)
+"SintoMeUmaMerda/Maze.ml" 89 1447 1469 "SintoMeUmaMerda/Maze.ml" 89 1447 1483
+type(
+  bool
+)
+"SintoMeUmaMerda/Maze.ml" 89 1447 1465 "SintoMeUmaMerda/Maze.ml" 89 1447 1483
+type(
+  bool
+)
+"SintoMeUmaMerda/Maze.ml" 89 1447 1455 "SintoMeUmaMerda/Maze.ml" 89 1447 1484
+type(
+  'a -> bool
+)
+"SintoMeUmaMerda/Maze.ml" 89 1447 1485 "SintoMeUmaMerda/Maze.ml" 89 1447 1487
+type(
+  'a list
+)
+ident(
+  int_ref l1 "SintoMeUmaMerda/Maze.ml" 88 1430 1439 "SintoMeUmaMerda/Maze.ml" 88 1430 1441
+)
+"SintoMeUmaMerda/Maze.ml" 89 1447 1448 "SintoMeUmaMerda/Maze.ml" 89 1447 1487
+type(
+  'a list
+)
+"SintoMeUmaMerda/Maze.ml" 92 1492 1496 "SintoMeUmaMerda/Maze.ml" 92 1492 1499
+type(
+  ('a -> 'b) -> 'a list -> 'b list
+)
+ident(
+  def map "SintoMeUmaMerda/Maze.ml" 96 1535 1535 "SintoMeUmaMerda/Maze.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Maze.ml" 92 1492 1500 "SintoMeUmaMerda/Maze.ml" 92 1492 1501
+type(
+  'a -> 'b
+)
+ident(
+  def f "SintoMeUmaMerda/Maze.ml" 92 1492 1502 "SintoMeUmaMerda/Maze.ml" 93 1506 1530
+)
+"SintoMeUmaMerda/Maze.ml" 92 1492 1502 "SintoMeUmaMerda/Maze.ml" 92 1492 1503
+type(
+  'a list
+)
+ident(
+  def l "SintoMeUmaMerda/Maze.ml" 93 1506 1507 "SintoMeUmaMerda/Maze.ml" 93 1506 1530
+)
+"SintoMeUmaMerda/Maze.ml" 93 1506 1507 "SintoMeUmaMerda/Maze.ml" 93 1506 1515
+type(
+  'b list -> 'b list
+)
+ident(
+  int_ref canonize "SintoMeUmaMerda/Maze.ml" 45 905 909 "SintoMeUmaMerda/Maze.ml" 45 905 917
+)
+"SintoMeUmaMerda/Maze.ml" 93 1506 1517 "SintoMeUmaMerda/Maze.ml" 93 1506 1525
+type(
+  ('a -> 'b) -> 'a list -> 'b list
+)
+ident(
+  int_ref Stdlib.List.map "list.mli" 120 4625 4625 "list.mli" 120 4625 4667
+)
+"SintoMeUmaMerda/Maze.ml" 93 1506 1526 "SintoMeUmaMerda/Maze.ml" 93 1506 1527
+type(
+  'a -> 'b
+)
+ident(
+  int_ref f "SintoMeUmaMerda/Maze.ml" 92 1492 1500 "SintoMeUmaMerda/Maze.ml" 92 1492 1501
+)
+"SintoMeUmaMerda/Maze.ml" 93 1506 1528 "SintoMeUmaMerda/Maze.ml" 93 1506 1529
+type(
+  'a list
+)
+ident(
+  int_ref l "SintoMeUmaMerda/Maze.ml" 92 1492 1502 "SintoMeUmaMerda/Maze.ml" 92 1492 1503
+)
+"SintoMeUmaMerda/Maze.ml" 93 1506 1516 "SintoMeUmaMerda/Maze.ml" 93 1506 1530
+type(
+  'b list
+)
+"SintoMeUmaMerda/Maze.ml" 93 1506 1507 "SintoMeUmaMerda/Maze.ml" 93 1506 1530
+type(
+  'b list
+)
+"SintoMeUmaMerda/Maze.ml" 96 1535 1539 "SintoMeUmaMerda/Maze.ml" 96 1535 1544
+type(
+  'a list list -> 'a list
+)
+ident(
+  def merge "SintoMeUmaMerda/Maze.ml" 100 1580 1580 "SintoMeUmaMerda/Maze.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Maze.ml" 96 1535 1545 "SintoMeUmaMerda/Maze.ml" 96 1535 1546
+type(
+  'a list list
+)
+ident(
+  def l "SintoMeUmaMerda/Maze.ml" 97 1549 1550 "SintoMeUmaMerda/Maze.ml" 97 1549 1575
+)
+"SintoMeUmaMerda/Maze.ml" 97 1549 1550 "SintoMeUmaMerda/Maze.ml" 97 1549 1558
+type(
+  'a list -> 'a list
+)
+ident(
+  int_ref canonize "SintoMeUmaMerda/Maze.ml" 45 905 909 "SintoMeUmaMerda/Maze.ml" 45 905 917
+)
+"SintoMeUmaMerda/Maze.ml" 97 1549 1560 "SintoMeUmaMerda/Maze.ml" 97 1549 1572
+type(
+  'a list list -> 'a list
+)
+ident(
+  int_ref Stdlib.List.flatten "list.mli" 101 4101 4101 "list.mli" 101 4101 4138
+)
+"SintoMeUmaMerda/Maze.ml" 97 1549 1573 "SintoMeUmaMerda/Maze.ml" 97 1549 1574
+type(
+  'a list list
+)
+ident(
+  int_ref l "SintoMeUmaMerda/Maze.ml" 96 1535 1545 "SintoMeUmaMerda/Maze.ml" 96 1535 1546
+)
+"SintoMeUmaMerda/Maze.ml" 97 1549 1559 "SintoMeUmaMerda/Maze.ml" 97 1549 1575
+type(
+  'a list
+)
+"SintoMeUmaMerda/Maze.ml" 97 1549 1550 "SintoMeUmaMerda/Maze.ml" 97 1549 1575
+type(
+  'a list
+)
+"SintoMeUmaMerda/Maze.ml" 100 1580 1584 "SintoMeUmaMerda/Maze.ml" 100 1580 1591
+type(
+  ('a -> 'b list) -> 'a list -> 'b list
+)
+ident(
+  def flatMap "SintoMeUmaMerda/Maze.ml" 104 1624 1624 "SintoMeUmaMerda/Maze.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Maze.ml" 100 1580 1592 "SintoMeUmaMerda/Maze.ml" 100 1580 1593
+type(
+  'a -> 'b list
+)
+ident(
+  def f "SintoMeUmaMerda/Maze.ml" 100 1580 1594 "SintoMeUmaMerda/Maze.ml" 101 1598 1619
+)
+"SintoMeUmaMerda/Maze.ml" 100 1580 1594 "SintoMeUmaMerda/Maze.ml" 100 1580 1595
+type(
+  'a list
+)
+ident(
+  def l "SintoMeUmaMerda/Maze.ml" 101 1598 1599 "SintoMeUmaMerda/Maze.ml" 101 1598 1619
+)
+"SintoMeUmaMerda/Maze.ml" 101 1598 1599 "SintoMeUmaMerda/Maze.ml" 101 1598 1604
+type(
+  'b list list -> 'b list
+)
+ident(
+  int_ref merge "SintoMeUmaMerda/Maze.ml" 96 1535 1539 "SintoMeUmaMerda/Maze.ml" 96 1535 1544
+)
+"SintoMeUmaMerda/Maze.ml" 101 1598 1606 "SintoMeUmaMerda/Maze.ml" 101 1598 1614
+type(
+  ('a -> 'b list) -> 'a list -> 'b list list
+)
+ident(
+  int_ref Stdlib.List.map "list.mli" 120 4625 4625 "list.mli" 120 4625 4667
+)
+"SintoMeUmaMerda/Maze.ml" 101 1598 1615 "SintoMeUmaMerda/Maze.ml" 101 1598 1616
+type(
+  'a -> 'b list
+)
+ident(
+  int_ref f "SintoMeUmaMerda/Maze.ml" 100 1580 1592 "SintoMeUmaMerda/Maze.ml" 100 1580 1593
+)
+"SintoMeUmaMerda/Maze.ml" 101 1598 1617 "SintoMeUmaMerda/Maze.ml" 101 1598 1618
+type(
+  'a list
+)
+ident(
+  int_ref l "SintoMeUmaMerda/Maze.ml" 100 1580 1594 "SintoMeUmaMerda/Maze.ml" 100 1580 1595
+)
+"SintoMeUmaMerda/Maze.ml" 101 1598 1605 "SintoMeUmaMerda/Maze.ml" 101 1598 1619
+type(
+  'b list list
+)
+"SintoMeUmaMerda/Maze.ml" 101 1598 1599 "SintoMeUmaMerda/Maze.ml" 101 1598 1619
+type(
+  'b list
+)
+"SintoMeUmaMerda/Maze.ml" 104 1624 1628 "SintoMeUmaMerda/Maze.ml" 104 1624 1633
+type(
+  int list -> unit
+)
+ident(
+  def showi "SintoMeUmaMerda/Maze.ml" 110 1746 1746 "SintoMeUmaMerda/Maze.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Maze.ml" 104 1624 1634 "SintoMeUmaMerda/Maze.ml" 104 1624 1635
+type(
+  int list
+)
+ident(
+  def l "SintoMeUmaMerda/Maze.ml" 105 1638 1639 "SintoMeUmaMerda/Maze.ml" 107 1712 1741
+)
+"SintoMeUmaMerda/Maze.ml" 105 1638 1643 "SintoMeUmaMerda/Maze.ml" 105 1638 1645
+type(
+  string list
+)
+ident(
+  def li "SintoMeUmaMerda/Maze.ml" 106 1676 1677 "SintoMeUmaMerda/Maze.ml" 107 1712 1741
+)
+"SintoMeUmaMerda/Maze.ml" 105 1638 1648 "SintoMeUmaMerda/Maze.ml" 105 1638 1656
+type(
+  (int -> string) -> int list -> string list
+)
+ident(
+  int_ref Stdlib.List.map "list.mli" 120 4625 4625 "list.mli" 120 4625 4667
+)
+"SintoMeUmaMerda/Maze.ml" 105 1638 1657 "SintoMeUmaMerda/Maze.ml" 105 1638 1670
+type(
+  int -> string
+)
+ident(
+  int_ref Stdlib.string_of_int "stdlib.mli" 709 26773 26773 "stdlib.mli" 709 26773 26806
+)
+"SintoMeUmaMerda/Maze.ml" 105 1638 1671 "SintoMeUmaMerda/Maze.ml" 105 1638 1672
+type(
+  int list
+)
+ident(
+  int_ref l "SintoMeUmaMerda/Maze.ml" 104 1624 1634 "SintoMeUmaMerda/Maze.ml" 104 1624 1635
+)
+"SintoMeUmaMerda/Maze.ml" 105 1638 1648 "SintoMeUmaMerda/Maze.ml" 105 1638 1672
+type(
+  string list
+)
+"SintoMeUmaMerda/Maze.ml" 106 1676 1681 "SintoMeUmaMerda/Maze.ml" 106 1676 1685
+type(
+  string
+)
+ident(
+  def body "SintoMeUmaMerda/Maze.ml" 107 1712 1714 "SintoMeUmaMerda/Maze.ml" 107 1712 1741
+)
+"SintoMeUmaMerda/Maze.ml" 106 1676 1688 "SintoMeUmaMerda/Maze.ml" 106 1676 1701
+type(
+  string -> string list -> string
+)
+ident(
+  int_ref Stdlib.String.concat "string.mli" 121 5323 5323 "string.mli" 121 5323 5367
+)
+"SintoMeUmaMerda/Maze.ml" 106 1676 1702 "SintoMeUmaMerda/Maze.ml" 106 1676 1705
+type(
+  string
+)
+"SintoMeUmaMerda/Maze.ml" 106 1676 1706 "SintoMeUmaMerda/Maze.ml" 106 1676 1708
+type(
+  string list
+)
+ident(
+  int_ref li "SintoMeUmaMerda/Maze.ml" 105 1638 1643 "SintoMeUmaMerda/Maze.ml" 105 1638 1645
+)
+"SintoMeUmaMerda/Maze.ml" 106 1676 1688 "SintoMeUmaMerda/Maze.ml" 106 1676 1708
+type(
+  string
+)
+"SintoMeUmaMerda/Maze.ml" 107 1712 1714 "SintoMeUmaMerda/Maze.ml" 107 1712 1727
+type(
+  (string -> unit, out_channel, unit) format -> string -> unit
+)
+ident(
+  int_ref Stdlib.Printf.printf "printf.mli" 123 6510 6510 "printf.mli" 123 6510 6559
+)
+"SintoMeUmaMerda/Maze.ml" 107 1712 1728 "SintoMeUmaMerda/Maze.ml" 107 1712 1736
+type(
+  (string -> unit, out_channel, unit) format
+)
+"SintoMeUmaMerda/Maze.ml" 107 1712 1737 "SintoMeUmaMerda/Maze.ml" 107 1712 1741
+type(
+  string
+)
+ident(
+  int_ref body "SintoMeUmaMerda/Maze.ml" 106 1676 1681 "SintoMeUmaMerda/Maze.ml" 106 1676 1685
+)
+"SintoMeUmaMerda/Maze.ml" 107 1712 1714 "SintoMeUmaMerda/Maze.ml" 107 1712 1741
+type(
+  unit
+)
+"SintoMeUmaMerda/Maze.ml" 106 1676 1677 "SintoMeUmaMerda/Maze.ml" 107 1712 1741
+type(
+  unit
+)
+"SintoMeUmaMerda/Maze.ml" 105 1638 1639 "SintoMeUmaMerda/Maze.ml" 107 1712 1741
+type(
+  unit
+)
+"SintoMeUmaMerda/Maze.ml" 110 1746 1750 "SintoMeUmaMerda/Maze.ml" 110 1746 1755
+type(
+  (int * int) list -> unit
+)
+ident(
+  def showp "SintoMeUmaMerda/Maze.ml" 118 1923 1923 "SintoMeUmaMerda/Maze.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Maze.ml" 110 1746 1756 "SintoMeUmaMerda/Maze.ml" 110 1746 1757
+type(
+  (int * int) list
+)
+ident(
+  def l "SintoMeUmaMerda/Maze.ml" 111 1760 1761 "SintoMeUmaMerda/Maze.ml" 113 1864 1893
+)
+"SintoMeUmaMerda/Maze.ml" 111 1760 1765 "SintoMeUmaMerda/Maze.ml" 111 1760 1767
+type(
+  string list
+)
+ident(
+  def li "SintoMeUmaMerda/Maze.ml" 112 1828 1829 "SintoMeUmaMerda/Maze.ml" 113 1864 1893
+)
+"SintoMeUmaMerda/Maze.ml" 111 1760 1770 "SintoMeUmaMerda/Maze.ml" 111 1760 1778
+type(
+  (int * int -> string) -> (int * int) list -> string list
+)
+ident(
+  int_ref Stdlib.List.map "list.mli" 120 4625 4625 "list.mli" 120 4625 4667
+)
+"SintoMeUmaMerda/Maze.ml" 111 1760 1785 "SintoMeUmaMerda/Maze.ml" 111 1760 1786
+type(
+  int
+)
+ident(
+  def a "SintoMeUmaMerda/Maze.ml" 111 1760 1793 "SintoMeUmaMerda/Maze.ml" 111 1760 1821
+)
+"SintoMeUmaMerda/Maze.ml" 111 1760 1787 "SintoMeUmaMerda/Maze.ml" 111 1760 1788
+type(
+  int
+)
+ident(
+  def b "SintoMeUmaMerda/Maze.ml" 111 1760 1793 "SintoMeUmaMerda/Maze.ml" 111 1760 1821
+)
+"SintoMeUmaMerda/Maze.ml" 111 1760 1784 "SintoMeUmaMerda/Maze.ml" 111 1760 1789
+type(
+  int * int
+)
+"SintoMeUmaMerda/Maze.ml" 111 1760 1793 "SintoMeUmaMerda/Maze.ml" 111 1760 1807
+type(
+  (int -> int -> string, unit, string) format -> int -> int -> string
+)
+ident(
+  int_ref Stdlib.Printf.sprintf "printf.mli" 129 6729 6729 "printf.mli" 129 6729 6774
+)
+"SintoMeUmaMerda/Maze.ml" 111 1760 1808 "SintoMeUmaMerda/Maze.ml" 111 1760 1817
+type(
+  (int -> int -> string, unit, string) format
+)
+"SintoMeUmaMerda/Maze.ml" 111 1760 1818 "SintoMeUmaMerda/Maze.ml" 111 1760 1819
+type(
+  int
+)
+ident(
+  int_ref a "SintoMeUmaMerda/Maze.ml" 111 1760 1785 "SintoMeUmaMerda/Maze.ml" 111 1760 1786
+)
+"SintoMeUmaMerda/Maze.ml" 111 1760 1820 "SintoMeUmaMerda/Maze.ml" 111 1760 1821
+type(
+  int
+)
+ident(
+  int_ref b "SintoMeUmaMerda/Maze.ml" 111 1760 1787 "SintoMeUmaMerda/Maze.ml" 111 1760 1788
+)
+"SintoMeUmaMerda/Maze.ml" 111 1760 1793 "SintoMeUmaMerda/Maze.ml" 111 1760 1821
+type(
+  string
+)
+"SintoMeUmaMerda/Maze.ml" 111 1760 1779 "SintoMeUmaMerda/Maze.ml" 111 1760 1822
+type(
+  int * int -> string
+)
+"SintoMeUmaMerda/Maze.ml" 111 1760 1823 "SintoMeUmaMerda/Maze.ml" 111 1760 1824
+type(
+  (int * int) list
+)
+ident(
+  int_ref l "SintoMeUmaMerda/Maze.ml" 110 1746 1756 "SintoMeUmaMerda/Maze.ml" 110 1746 1757
+)
+"SintoMeUmaMerda/Maze.ml" 111 1760 1770 "SintoMeUmaMerda/Maze.ml" 111 1760 1824
+type(
+  string list
+)
+"SintoMeUmaMerda/Maze.ml" 112 1828 1833 "SintoMeUmaMerda/Maze.ml" 112 1828 1837
+type(
+  string
+)
+ident(
+  def body "SintoMeUmaMerda/Maze.ml" 113 1864 1866 "SintoMeUmaMerda/Maze.ml" 113 1864 1893
+)
+"SintoMeUmaMerda/Maze.ml" 112 1828 1840 "SintoMeUmaMerda/Maze.ml" 112 1828 1853
+type(
+  string -> string list -> string
+)
+ident(
+  int_ref Stdlib.String.concat "string.mli" 121 5323 5323 "string.mli" 121 5323 5367
+)
+"SintoMeUmaMerda/Maze.ml" 112 1828 1854 "SintoMeUmaMerda/Maze.ml" 112 1828 1857
+type(
+  string
+)
+"SintoMeUmaMerda/Maze.ml" 112 1828 1858 "SintoMeUmaMerda/Maze.ml" 112 1828 1860
+type(
+  string list
+)
+ident(
+  int_ref li "SintoMeUmaMerda/Maze.ml" 111 1760 1765 "SintoMeUmaMerda/Maze.ml" 111 1760 1767
+)
+"SintoMeUmaMerda/Maze.ml" 112 1828 1840 "SintoMeUmaMerda/Maze.ml" 112 1828 1860
+type(
+  string
+)
+"SintoMeUmaMerda/Maze.ml" 113 1864 1866 "SintoMeUmaMerda/Maze.ml" 113 1864 1879
+type(
+  (string -> unit, out_channel, unit) format -> string -> unit
+)
+ident(
+  int_ref Stdlib.Printf.printf "printf.mli" 123 6510 6510 "printf.mli" 123 6510 6559
+)
+"SintoMeUmaMerda/Maze.ml" 113 1864 1880 "SintoMeUmaMerda/Maze.ml" 113 1864 1888
+type(
+  (string -> unit, out_channel, unit) format
+)
+"SintoMeUmaMerda/Maze.ml" 113 1864 1889 "SintoMeUmaMerda/Maze.ml" 113 1864 1893
+type(
+  string
+)
+ident(
+  int_ref body "SintoMeUmaMerda/Maze.ml" 112 1828 1833 "SintoMeUmaMerda/Maze.ml" 112 1828 1837
+)
+"SintoMeUmaMerda/Maze.ml" 113 1864 1866 "SintoMeUmaMerda/Maze.ml" 113 1864 1893
+type(
+  unit
+)
+"SintoMeUmaMerda/Maze.ml" 112 1828 1829 "SintoMeUmaMerda/Maze.ml" 113 1864 1893
+type(
+  unit
+)
+"SintoMeUmaMerda/Maze.ml" 111 1760 1761 "SintoMeUmaMerda/Maze.ml" 113 1864 1893
+type(
+  unit
+)
+"SintoMeUmaMerda/Maze.ml" 134 2162 2166 "SintoMeUmaMerda/Maze.ml" 134 2162 2174
+type(
+  'a list
+)
+ident(
+  def _NO_PATH "SintoMeUmaMerda/Maze.ml" 139 2222 2222 "SintoMeUmaMerda/Maze.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Maze.ml" 134 2162 2177 "SintoMeUmaMerda/Maze.ml" 134 2162 2179
+type(
+  'a list
+)
+"SintoMeUmaMerda/Maze.ml" 139 2222 2226 "SintoMeUmaMerda/Maze.ml" 139 2222 2232
+type(
+  maze
+)
+ident(
+  def myMaze "SintoMeUmaMerda/Maze.ml" 147 2452 2452 "SintoMeUmaMerda/Maze.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Maze.ml" 140 2237 2250 "SintoMeUmaMerda/Maze.ml" 140 2237 2251
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 140 2237 2253 "SintoMeUmaMerda/Maze.ml" 140 2237 2254
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 140 2237 2256 "SintoMeUmaMerda/Maze.ml" 140 2237 2257
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 140 2237 2259 "SintoMeUmaMerda/Maze.ml" 140 2237 2260
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 140 2237 2262 "SintoMeUmaMerda/Maze.ml" 140 2237 2263
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 140 2237 2265 "SintoMeUmaMerda/Maze.ml" 140 2237 2266
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 140 2237 2268 "SintoMeUmaMerda/Maze.ml" 140 2237 2269
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 140 2237 2271 "SintoMeUmaMerda/Maze.ml" 140 2237 2272
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 140 2237 2274 "SintoMeUmaMerda/Maze.ml" 140 2237 2275
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 140 2237 2277 "SintoMeUmaMerda/Maze.ml" 140 2237 2279
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 140 2237 2281 "SintoMeUmaMerda/Maze.ml" 140 2237 2283
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 140 2237 2285 "SintoMeUmaMerda/Maze.ml" 140 2237 2287
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 140 2237 2289 "SintoMeUmaMerda/Maze.ml" 140 2237 2291
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 140 2237 2249 "SintoMeUmaMerda/Maze.ml" 140 2237 2292
+type(
+  rooms
+)
+"SintoMeUmaMerda/Maze.ml" 141 2294 2308 "SintoMeUmaMerda/Maze.ml" 141 2294 2309
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 141 2294 2310 "SintoMeUmaMerda/Maze.ml" 141 2294 2311
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 141 2294 2312 "SintoMeUmaMerda/Maze.ml" 141 2294 2314
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 141 2294 2307 "SintoMeUmaMerda/Maze.ml" 141 2294 2315
+type(
+  rooms
+)
+"SintoMeUmaMerda/Maze.ml" 142 2317 2330 "SintoMeUmaMerda/Maze.ml" 142 2317 2331
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 142 2317 2332 "SintoMeUmaMerda/Maze.ml" 142 2317 2334
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 142 2317 2329 "SintoMeUmaMerda/Maze.ml" 142 2317 2335
+type(
+  rooms
+)
+"SintoMeUmaMerda/Maze.ml" 143 2337 2354 "SintoMeUmaMerda/Maze.ml" 143 2337 2355
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 143 2337 2356 "SintoMeUmaMerda/Maze.ml" 143 2337 2357
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 143 2337 2353 "SintoMeUmaMerda/Maze.ml" 143 2337 2358
+type(
+  passage
+)
+"SintoMeUmaMerda/Maze.ml" 143 2337 2360 "SintoMeUmaMerda/Maze.ml" 143 2337 2361
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 143 2337 2362 "SintoMeUmaMerda/Maze.ml" 143 2337 2363
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 143 2337 2359 "SintoMeUmaMerda/Maze.ml" 143 2337 2364
+type(
+  passage
+)
+"SintoMeUmaMerda/Maze.ml" 143 2337 2366 "SintoMeUmaMerda/Maze.ml" 143 2337 2367
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 143 2337 2368 "SintoMeUmaMerda/Maze.ml" 143 2337 2369
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 143 2337 2365 "SintoMeUmaMerda/Maze.ml" 143 2337 2370
+type(
+  passage
+)
+"SintoMeUmaMerda/Maze.ml" 143 2337 2372 "SintoMeUmaMerda/Maze.ml" 143 2337 2373
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 143 2337 2374 "SintoMeUmaMerda/Maze.ml" 143 2337 2375
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 143 2337 2371 "SintoMeUmaMerda/Maze.ml" 143 2337 2376
+type(
+  passage
+)
+"SintoMeUmaMerda/Maze.ml" 143 2337 2378 "SintoMeUmaMerda/Maze.ml" 143 2337 2379
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 143 2337 2380 "SintoMeUmaMerda/Maze.ml" 143 2337 2381
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 143 2337 2377 "SintoMeUmaMerda/Maze.ml" 143 2337 2382
+type(
+  passage
+)
+"SintoMeUmaMerda/Maze.ml" 143 2337 2384 "SintoMeUmaMerda/Maze.ml" 143 2337 2385
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 143 2337 2386 "SintoMeUmaMerda/Maze.ml" 143 2337 2387
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 143 2337 2383 "SintoMeUmaMerda/Maze.ml" 143 2337 2388
+type(
+  passage
+)
+"SintoMeUmaMerda/Maze.ml" 143 2337 2390 "SintoMeUmaMerda/Maze.ml" 143 2337 2391
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 143 2337 2392 "SintoMeUmaMerda/Maze.ml" 143 2337 2393
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 143 2337 2389 "SintoMeUmaMerda/Maze.ml" 143 2337 2394
+type(
+  passage
+)
+"SintoMeUmaMerda/Maze.ml" 144 2396 2401 "SintoMeUmaMerda/Maze.ml" 144 2396 2402
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 144 2396 2403 "SintoMeUmaMerda/Maze.ml" 144 2396 2404
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 144 2396 2400 "SintoMeUmaMerda/Maze.ml" 144 2396 2405
+type(
+  passage
+)
+"SintoMeUmaMerda/Maze.ml" 144 2396 2407 "SintoMeUmaMerda/Maze.ml" 144 2396 2408
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 144 2396 2409 "SintoMeUmaMerda/Maze.ml" 144 2396 2410
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 144 2396 2406 "SintoMeUmaMerda/Maze.ml" 144 2396 2411
+type(
+  passage
+)
+"SintoMeUmaMerda/Maze.ml" 144 2396 2413 "SintoMeUmaMerda/Maze.ml" 144 2396 2414
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 144 2396 2415 "SintoMeUmaMerda/Maze.ml" 144 2396 2416
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 144 2396 2412 "SintoMeUmaMerda/Maze.ml" 144 2396 2417
+type(
+  passage
+)
+"SintoMeUmaMerda/Maze.ml" 144 2396 2419 "SintoMeUmaMerda/Maze.ml" 144 2396 2420
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 144 2396 2421 "SintoMeUmaMerda/Maze.ml" 144 2396 2422
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 144 2396 2418 "SintoMeUmaMerda/Maze.ml" 144 2396 2423
+type(
+  passage
+)
+"SintoMeUmaMerda/Maze.ml" 144 2396 2425 "SintoMeUmaMerda/Maze.ml" 144 2396 2426
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 144 2396 2427 "SintoMeUmaMerda/Maze.ml" 144 2396 2428
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 144 2396 2424 "SintoMeUmaMerda/Maze.ml" 144 2396 2429
+type(
+  passage
+)
+"SintoMeUmaMerda/Maze.ml" 144 2396 2431 "SintoMeUmaMerda/Maze.ml" 144 2396 2433
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 144 2396 2434 "SintoMeUmaMerda/Maze.ml" 144 2396 2436
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 144 2396 2430 "SintoMeUmaMerda/Maze.ml" 144 2396 2437
+type(
+  passage
+)
+"SintoMeUmaMerda/Maze.ml" 144 2396 2439 "SintoMeUmaMerda/Maze.ml" 144 2396 2441
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 144 2396 2442 "SintoMeUmaMerda/Maze.ml" 144 2396 2444
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 144 2396 2438 "SintoMeUmaMerda/Maze.ml" 144 2396 2445
+type(
+  passage
+)
+"SintoMeUmaMerda/Maze.ml" 143 2337 2352 "SintoMeUmaMerda/Maze.ml" 144 2396 2446
+type(
+  passages
+)
+"SintoMeUmaMerda/Maze.ml" 139 2222 2235 "SintoMeUmaMerda/Maze.ml" 145 2447 2448
+type(
+  maze
+)
+"SintoMeUmaMerda/Maze.ml" 147 2452 2456 "SintoMeUmaMerda/Maze.ml" 147 2452 2465
+type(
+  maze
+)
+ident(
+  def otherMaze "SintoMeUmaMerda/Maze.ml" 155 2651 2651 "SintoMeUmaMerda/Maze.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Maze.ml" 148 2470 2483 "SintoMeUmaMerda/Maze.ml" 148 2470 2484
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 148 2470 2486 "SintoMeUmaMerda/Maze.ml" 148 2470 2487
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 148 2470 2489 "SintoMeUmaMerda/Maze.ml" 148 2470 2490
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 148 2470 2492 "SintoMeUmaMerda/Maze.ml" 148 2470 2493
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 148 2470 2495 "SintoMeUmaMerda/Maze.ml" 148 2470 2496
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 148 2470 2498 "SintoMeUmaMerda/Maze.ml" 148 2470 2499
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 148 2470 2501 "SintoMeUmaMerda/Maze.ml" 148 2470 2502
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 148 2470 2503 "SintoMeUmaMerda/Maze.ml" 148 2470 2504
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 148 2470 2505 "SintoMeUmaMerda/Maze.ml" 148 2470 2506
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 148 2470 2507 "SintoMeUmaMerda/Maze.ml" 148 2470 2509
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 148 2470 2510 "SintoMeUmaMerda/Maze.ml" 148 2470 2512
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 148 2470 2513 "SintoMeUmaMerda/Maze.ml" 148 2470 2515
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 148 2470 2482 "SintoMeUmaMerda/Maze.ml" 148 2470 2516
+type(
+  rooms
+)
+"SintoMeUmaMerda/Maze.ml" 149 2518 2532 "SintoMeUmaMerda/Maze.ml" 149 2518 2533
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 149 2518 2534 "SintoMeUmaMerda/Maze.ml" 149 2518 2535
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 149 2518 2536 "SintoMeUmaMerda/Maze.ml" 149 2518 2537
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 149 2518 2531 "SintoMeUmaMerda/Maze.ml" 149 2518 2538
+type(
+  rooms
+)
+"SintoMeUmaMerda/Maze.ml" 150 2540 2553 "SintoMeUmaMerda/Maze.ml" 150 2540 2554
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 150 2540 2552 "SintoMeUmaMerda/Maze.ml" 150 2540 2555
+type(
+  rooms
+)
+"SintoMeUmaMerda/Maze.ml" 151 2557 2574 "SintoMeUmaMerda/Maze.ml" 151 2557 2575
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 151 2557 2576 "SintoMeUmaMerda/Maze.ml" 151 2557 2577
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 151 2557 2573 "SintoMeUmaMerda/Maze.ml" 151 2557 2578
+type(
+  passage
+)
+"SintoMeUmaMerda/Maze.ml" 151 2557 2580 "SintoMeUmaMerda/Maze.ml" 151 2557 2581
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 151 2557 2582 "SintoMeUmaMerda/Maze.ml" 151 2557 2583
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 151 2557 2579 "SintoMeUmaMerda/Maze.ml" 151 2557 2584
+type(
+  passage
+)
+"SintoMeUmaMerda/Maze.ml" 151 2557 2586 "SintoMeUmaMerda/Maze.ml" 151 2557 2587
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 151 2557 2588 "SintoMeUmaMerda/Maze.ml" 151 2557 2589
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 151 2557 2585 "SintoMeUmaMerda/Maze.ml" 151 2557 2590
+type(
+  passage
+)
+"SintoMeUmaMerda/Maze.ml" 151 2557 2592 "SintoMeUmaMerda/Maze.ml" 151 2557 2593
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 151 2557 2594 "SintoMeUmaMerda/Maze.ml" 151 2557 2595
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 151 2557 2591 "SintoMeUmaMerda/Maze.ml" 151 2557 2596
+type(
+  passage
+)
+"SintoMeUmaMerda/Maze.ml" 151 2557 2598 "SintoMeUmaMerda/Maze.ml" 151 2557 2599
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 151 2557 2600 "SintoMeUmaMerda/Maze.ml" 151 2557 2601
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 151 2557 2597 "SintoMeUmaMerda/Maze.ml" 151 2557 2602
+type(
+  passage
+)
+"SintoMeUmaMerda/Maze.ml" 151 2557 2604 "SintoMeUmaMerda/Maze.ml" 151 2557 2605
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 151 2557 2606 "SintoMeUmaMerda/Maze.ml" 151 2557 2607
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 151 2557 2603 "SintoMeUmaMerda/Maze.ml" 151 2557 2608
+type(
+  passage
+)
+"SintoMeUmaMerda/Maze.ml" 151 2557 2610 "SintoMeUmaMerda/Maze.ml" 151 2557 2611
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 151 2557 2612 "SintoMeUmaMerda/Maze.ml" 151 2557 2613
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 151 2557 2609 "SintoMeUmaMerda/Maze.ml" 151 2557 2614
+type(
+  passage
+)
+"SintoMeUmaMerda/Maze.ml" 152 2616 2619 "SintoMeUmaMerda/Maze.ml" 152 2616 2620
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 152 2616 2621 "SintoMeUmaMerda/Maze.ml" 152 2616 2622
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 152 2616 2618 "SintoMeUmaMerda/Maze.ml" 152 2616 2623
+type(
+  passage
+)
+"SintoMeUmaMerda/Maze.ml" 152 2616 2625 "SintoMeUmaMerda/Maze.ml" 152 2616 2626
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 152 2616 2627 "SintoMeUmaMerda/Maze.ml" 152 2616 2628
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 152 2616 2624 "SintoMeUmaMerda/Maze.ml" 152 2616 2629
+type(
+  passage
+)
+"SintoMeUmaMerda/Maze.ml" 152 2616 2631 "SintoMeUmaMerda/Maze.ml" 152 2616 2632
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 152 2616 2633 "SintoMeUmaMerda/Maze.ml" 152 2616 2635
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 152 2616 2630 "SintoMeUmaMerda/Maze.ml" 152 2616 2636
+type(
+  passage
+)
+"SintoMeUmaMerda/Maze.ml" 152 2616 2638 "SintoMeUmaMerda/Maze.ml" 152 2616 2640
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 152 2616 2641 "SintoMeUmaMerda/Maze.ml" 152 2616 2643
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 152 2616 2637 "SintoMeUmaMerda/Maze.ml" 152 2616 2644
+type(
+  passage
+)
+"SintoMeUmaMerda/Maze.ml" 151 2557 2572 "SintoMeUmaMerda/Maze.ml" 152 2616 2645
+type(
+  passages
+)
+"SintoMeUmaMerda/Maze.ml" 147 2452 2468 "SintoMeUmaMerda/Maze.ml" 153 2646 2647
+type(
+  maze
+)
+"SintoMeUmaMerda/Maze.ml" 155 2651 2655 "SintoMeUmaMerda/Maze.ml" 155 2651 2663
+type(
+  maze
+)
+ident(
+  def loopMaze "SintoMeUmaMerda/Maze.ml" 163 2795 2795 "SintoMeUmaMerda/Maze.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Maze.ml" 156 2668 2681 "SintoMeUmaMerda/Maze.ml" 156 2668 2682
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 156 2668 2683 "SintoMeUmaMerda/Maze.ml" 156 2668 2684
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 156 2668 2685 "SintoMeUmaMerda/Maze.ml" 156 2668 2686
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 156 2668 2687 "SintoMeUmaMerda/Maze.ml" 156 2668 2688
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 156 2668 2680 "SintoMeUmaMerda/Maze.ml" 156 2668 2689
+type(
+  rooms
+)
+"SintoMeUmaMerda/Maze.ml" 157 2691 2705 "SintoMeUmaMerda/Maze.ml" 157 2691 2706
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 157 2691 2704 "SintoMeUmaMerda/Maze.ml" 157 2691 2707
+type(
+  rooms
+)
+"SintoMeUmaMerda/Maze.ml" 158 2709 2722 "SintoMeUmaMerda/Maze.ml" 158 2709 2723
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 158 2709 2721 "SintoMeUmaMerda/Maze.ml" 158 2709 2724
+type(
+  rooms
+)
+"SintoMeUmaMerda/Maze.ml" 159 2726 2743 "SintoMeUmaMerda/Maze.ml" 159 2726 2744
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 159 2726 2745 "SintoMeUmaMerda/Maze.ml" 159 2726 2746
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 159 2726 2742 "SintoMeUmaMerda/Maze.ml" 159 2726 2747
+type(
+  passage
+)
+"SintoMeUmaMerda/Maze.ml" 159 2726 2749 "SintoMeUmaMerda/Maze.ml" 159 2726 2750
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 159 2726 2751 "SintoMeUmaMerda/Maze.ml" 159 2726 2752
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 159 2726 2748 "SintoMeUmaMerda/Maze.ml" 159 2726 2753
+type(
+  passage
+)
+"SintoMeUmaMerda/Maze.ml" 159 2726 2755 "SintoMeUmaMerda/Maze.ml" 159 2726 2756
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 159 2726 2757 "SintoMeUmaMerda/Maze.ml" 159 2726 2758
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 159 2726 2754 "SintoMeUmaMerda/Maze.ml" 159 2726 2759
+type(
+  passage
+)
+"SintoMeUmaMerda/Maze.ml" 159 2726 2761 "SintoMeUmaMerda/Maze.ml" 159 2726 2762
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 159 2726 2763 "SintoMeUmaMerda/Maze.ml" 159 2726 2764
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 159 2726 2760 "SintoMeUmaMerda/Maze.ml" 159 2726 2765
+type(
+  passage
+)
+"SintoMeUmaMerda/Maze.ml" 159 2726 2741 "SintoMeUmaMerda/Maze.ml" 159 2726 2766
+type(
+  passages
+)
+"SintoMeUmaMerda/Maze.ml" 155 2651 2666 "SintoMeUmaMerda/Maze.ml" 160 2767 2768
+type(
+  maze
+)
+"SintoMeUmaMerda/Maze.ml" 163 2795 2803 "SintoMeUmaMerda/Maze.ml" 163 2795 2816
+type(
+  maze -> (room * room) list -> bool
+)
+ident(
+  def pathsAreValid "SintoMeUmaMerda/Maze.ml" 163 2795 2795 "SintoMeUmaMerda/Maze.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Maze.ml" 163 2795 2817 "SintoMeUmaMerda/Maze.ml" 163 2795 2818
+type(
+  maze
+)
+ident(
+  def m "SintoMeUmaMerda/Maze.ml" 163 2795 2819 "SintoMeUmaMerda/Maze.ml" 167 2893 2972
+)
+"SintoMeUmaMerda/Maze.ml" 163 2795 2819 "SintoMeUmaMerda/Maze.ml" 163 2795 2822
+type(
+  (room * room) list
+)
+ident(
+  def set "SintoMeUmaMerda/Maze.ml" 164 2824 2826 "SintoMeUmaMerda/Maze.ml" 167 2893 2972
+)
+"SintoMeUmaMerda/Maze.ml" 164 2824 2832 "SintoMeUmaMerda/Maze.ml" 164 2824 2835
+type(
+  (room * room) list
+)
+ident(
+  int_ref set "SintoMeUmaMerda/Maze.ml" 163 2795 2819 "SintoMeUmaMerda/Maze.ml" 163 2795 2822
+)
+"SintoMeUmaMerda/Maze.ml" 165 2841 2845 "SintoMeUmaMerda/Maze.ml" 165 2841 2847
+type(
+  (room * room) list
+)
+"SintoMeUmaMerda/Maze.ml" 165 2841 2850 "SintoMeUmaMerda/Maze.ml" 165 2841 2854
+type(
+  bool
+)
+"SintoMeUmaMerda/Maze.ml" 166 2855 2859 "SintoMeUmaMerda/Maze.ml" 166 2855 2863
+type(
+  room * room
+)
+ident(
+  def head "SintoMeUmaMerda/Maze.ml" 166 2855 2873 "SintoMeUmaMerda/Maze.ml" 167 2893 2972
+)
+"SintoMeUmaMerda/Maze.ml" 166 2855 2865 "SintoMeUmaMerda/Maze.ml" 166 2855 2870
+type(
+  (room * room) list
+)
+ident(
+  def trail "SintoMeUmaMerda/Maze.ml" 166 2855 2873 "SintoMeUmaMerda/Maze.ml" 167 2893 2972
+)
+"SintoMeUmaMerda/Maze.ml" 166 2855 2859 "SintoMeUmaMerda/Maze.ml" 166 2855 2870
+type(
+  (room * room) list
+)
+"SintoMeUmaMerda/Maze.ml" 166 2855 2878 "SintoMeUmaMerda/Maze.ml" 166 2855 2879
+type(
+  room
+)
+ident(
+  def a "SintoMeUmaMerda/Maze.ml" 167 2893 2903 "SintoMeUmaMerda/Maze.ml" 167 2893 2972
+)
+"SintoMeUmaMerda/Maze.ml" 166 2855 2880 "SintoMeUmaMerda/Maze.ml" 166 2855 2881
+type(
+  room
+)
+ident(
+  def b "SintoMeUmaMerda/Maze.ml" 167 2893 2903 "SintoMeUmaMerda/Maze.ml" 167 2893 2972
+)
+"SintoMeUmaMerda/Maze.ml" 166 2855 2877 "SintoMeUmaMerda/Maze.ml" 166 2855 2882
+type(
+  room * room
+)
+"SintoMeUmaMerda/Maze.ml" 166 2855 2885 "SintoMeUmaMerda/Maze.ml" 166 2855 2889
+type(
+  room * room
+)
+ident(
+  int_ref head "SintoMeUmaMerda/Maze.ml" 166 2855 2859 "SintoMeUmaMerda/Maze.ml" 166 2855 2863
+)
+"SintoMeUmaMerda/Maze.ml" 167 2893 2904 "SintoMeUmaMerda/Maze.ml" 167 2893 2911
+type(
+  room -> rooms -> bool
+)
+ident(
+  int_ref belongs "SintoMeUmaMerda/Maze.ml" 53 1080 1084 "SintoMeUmaMerda/Maze.ml" 53 1080 1091
+)
+"SintoMeUmaMerda/Maze.ml" 167 2893 2912 "SintoMeUmaMerda/Maze.ml" 167 2893 2913
+type(
+  room
+)
+ident(
+  int_ref a "SintoMeUmaMerda/Maze.ml" 166 2855 2878 "SintoMeUmaMerda/Maze.ml" 166 2855 2879
+)
+"SintoMeUmaMerda/Maze.ml" 167 2893 2914 "SintoMeUmaMerda/Maze.ml" 167 2893 2915
+type(
+  maze
+)
+ident(
+  int_ref m "SintoMeUmaMerda/Maze.ml" 163 2795 2817 "SintoMeUmaMerda/Maze.ml" 163 2795 2818
+)
+"SintoMeUmaMerda/Maze.ml" 167 2893 2914 "SintoMeUmaMerda/Maze.ml" 167 2893 2921
+type(
+  rooms
+)
+"SintoMeUmaMerda/Maze.ml" 167 2893 2903 "SintoMeUmaMerda/Maze.ml" 167 2893 2922
+type(
+  bool
+)
+"SintoMeUmaMerda/Maze.ml" 167 2893 2923 "SintoMeUmaMerda/Maze.ml" 167 2893 2925
+type(
+  bool -> bool -> bool
+)
+ident(
+  int_ref Stdlib.( && ) "stdlib.mli" 211 8885 8885 "stdlib.mli" 211 8885 8936
+)
+"SintoMeUmaMerda/Maze.ml" 167 2893 2927 "SintoMeUmaMerda/Maze.ml" 167 2893 2934
+type(
+  room -> rooms -> bool
+)
+ident(
+  int_ref belongs "SintoMeUmaMerda/Maze.ml" 53 1080 1084 "SintoMeUmaMerda/Maze.ml" 53 1080 1091
+)
+"SintoMeUmaMerda/Maze.ml" 167 2893 2935 "SintoMeUmaMerda/Maze.ml" 167 2893 2936
+type(
+  room
+)
+ident(
+  int_ref b "SintoMeUmaMerda/Maze.ml" 166 2855 2880 "SintoMeUmaMerda/Maze.ml" 166 2855 2881
+)
+"SintoMeUmaMerda/Maze.ml" 167 2893 2937 "SintoMeUmaMerda/Maze.ml" 167 2893 2938
+type(
+  maze
+)
+ident(
+  int_ref m "SintoMeUmaMerda/Maze.ml" 163 2795 2817 "SintoMeUmaMerda/Maze.ml" 163 2795 2818
+)
+"SintoMeUmaMerda/Maze.ml" 167 2893 2937 "SintoMeUmaMerda/Maze.ml" 167 2893 2944
+type(
+  rooms
+)
+"SintoMeUmaMerda/Maze.ml" 167 2893 2926 "SintoMeUmaMerda/Maze.ml" 167 2893 2945
+type(
+  bool
+)
+"SintoMeUmaMerda/Maze.ml" 167 2893 2946 "SintoMeUmaMerda/Maze.ml" 167 2893 2948
+type(
+  bool -> bool -> bool
+)
+ident(
+  int_ref Stdlib.( && ) "stdlib.mli" 211 8885 8885 "stdlib.mli" 211 8885 8936
+)
+"SintoMeUmaMerda/Maze.ml" 167 2893 2950 "SintoMeUmaMerda/Maze.ml" 167 2893 2963
+type(
+  maze -> (room * room) list -> bool
+)
+ident(
+  int_ref pathsAreValid "SintoMeUmaMerda/Maze.ml" 163 2795 2803 "SintoMeUmaMerda/Maze.ml" 163 2795 2816
+)
+"SintoMeUmaMerda/Maze.ml" 167 2893 2964 "SintoMeUmaMerda/Maze.ml" 167 2893 2965
+type(
+  maze
+)
+ident(
+  int_ref m "SintoMeUmaMerda/Maze.ml" 163 2795 2817 "SintoMeUmaMerda/Maze.ml" 163 2795 2818
+)
+"SintoMeUmaMerda/Maze.ml" 167 2893 2966 "SintoMeUmaMerda/Maze.ml" 167 2893 2971
+type(
+  (room * room) list
+)
+ident(
+  int_ref trail "SintoMeUmaMerda/Maze.ml" 166 2855 2865 "SintoMeUmaMerda/Maze.ml" 166 2855 2870
+)
+"SintoMeUmaMerda/Maze.ml" 167 2893 2949 "SintoMeUmaMerda/Maze.ml" 167 2893 2972
+type(
+  bool
+)
+"SintoMeUmaMerda/Maze.ml" 167 2893 2926 "SintoMeUmaMerda/Maze.ml" 167 2893 2972
+type(
+  bool
+)
+"SintoMeUmaMerda/Maze.ml" 167 2893 2903 "SintoMeUmaMerda/Maze.ml" 167 2893 2972
+type(
+  bool
+)
+"SintoMeUmaMerda/Maze.ml" 166 2855 2873 "SintoMeUmaMerda/Maze.ml" 167 2893 2972
+type(
+  bool
+)
+"SintoMeUmaMerda/Maze.ml" 164 2824 2826 "SintoMeUmaMerda/Maze.ml" 167 2893 2972
+type(
+  bool
+)
+"SintoMeUmaMerda/Maze.ml" 169 2976 2980 "SintoMeUmaMerda/Maze.ml" 169 2976 2987
+type(
+  maze -> bool
+)
+ident(
+  def isValid "SintoMeUmaMerda/Maze.ml" 174 3168 3168 "SintoMeUmaMerda/Maze.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Maze.ml" 169 2976 2988 "SintoMeUmaMerda/Maze.ml" 169 2976 2989
+type(
+  maze
+)
+ident(
+  def m "SintoMeUmaMerda/Maze.ml" 170 2992 2993 "SintoMeUmaMerda/Maze.ml" 170 2992 3135
+)
+"SintoMeUmaMerda/Maze.ml" 170 2992 2993 "SintoMeUmaMerda/Maze.ml" 170 2992 2999
+type(
+  rooms -> int
+)
+ident(
+  int_ref length "SintoMeUmaMerda/Maze.ml" 57 1116 1120 "SintoMeUmaMerda/Maze.ml" 57 1116 1126
+)
+"SintoMeUmaMerda/Maze.ml" 170 2992 3001 "SintoMeUmaMerda/Maze.ml" 170 2992 3002
+type(
+  maze
+)
+ident(
+  int_ref m "SintoMeUmaMerda/Maze.ml" 169 2976 2988 "SintoMeUmaMerda/Maze.ml" 169 2976 2989
+)
+"SintoMeUmaMerda/Maze.ml" 170 2992 3000 "SintoMeUmaMerda/Maze.ml" 170 2992 3009
+type(
+  rooms
+)
+"SintoMeUmaMerda/Maze.ml" 170 2992 2993 "SintoMeUmaMerda/Maze.ml" 170 2992 3009
+type(
+  int
+)
+"SintoMeUmaMerda/Maze.ml" 170 2992 3010 "SintoMeUmaMerda/Maze.ml" 170 2992 3011
+type(
+  int -> int -> bool
+)
+ident(
+  int_ref Stdlib.( > ) "stdlib.mli" 137 5800 5800 "stdlib.mli" 137 5800 5850
+)
+"SintoMeUmaMerda/Maze.ml" 170 2992 3012 "SintoMeUmaMerda/Maze.ml" 170 2992 3013
+type(
+  int
+)
+"SintoMeUmaMerda/Maze.ml" 170 2992 2993 "SintoMeUmaMerda/Maze.ml" 170 2992 3013
+type(
+  bool
+)
+"SintoMeUmaMerda/Maze.ml" 170 2992 3014 "SintoMeUmaMerda/Maze.ml" 170 2992 3016
+type(
+  bool -> bool -> bool
+)
+ident(
+  int_ref Stdlib.( && ) "stdlib.mli" 211 8885 8885 "stdlib.mli" 211 8885 8936
+)
+"SintoMeUmaMerda/Maze.ml" 170 2992 3017 "SintoMeUmaMerda/Maze.ml" 170 2992 3023
+type(
+  rooms -> int
+)
+ident(
+  int_ref length "SintoMeUmaMerda/Maze.ml" 57 1116 1120 "SintoMeUmaMerda/Maze.ml" 57 1116 1126
+)
+"SintoMeUmaMerda/Maze.ml" 170 2992 3025 "SintoMeUmaMerda/Maze.ml" 170 2992 3026
+type(
+  maze
+)
+ident(
+  int_ref m "SintoMeUmaMerda/Maze.ml" 169 2976 2988 "SintoMeUmaMerda/Maze.ml" 169 2976 2989
+)
+"SintoMeUmaMerda/Maze.ml" 170 2992 3024 "SintoMeUmaMerda/Maze.ml" 170 2992 3037
+type(
+  rooms
+)
+"SintoMeUmaMerda/Maze.ml" 170 2992 3017 "SintoMeUmaMerda/Maze.ml" 170 2992 3037
+type(
+  int
+)
+"SintoMeUmaMerda/Maze.ml" 170 2992 3038 "SintoMeUmaMerda/Maze.ml" 170 2992 3039
+type(
+  int -> int -> bool
+)
+ident(
+  int_ref Stdlib.( > ) "stdlib.mli" 137 5800 5800 "stdlib.mli" 137 5800 5850
+)
+"SintoMeUmaMerda/Maze.ml" 170 2992 3039 "SintoMeUmaMerda/Maze.ml" 170 2992 3040
+type(
+  int
+)
+"SintoMeUmaMerda/Maze.ml" 170 2992 3017 "SintoMeUmaMerda/Maze.ml" 170 2992 3040
+type(
+  bool
+)
+"SintoMeUmaMerda/Maze.ml" 170 2992 3041 "SintoMeUmaMerda/Maze.ml" 170 2992 3043
+type(
+  bool -> bool -> bool
+)
+ident(
+  int_ref Stdlib.( && ) "stdlib.mli" 211 8885 8885 "stdlib.mli" 211 8885 8936
+)
+"SintoMeUmaMerda/Maze.ml" 170 2992 3045 "SintoMeUmaMerda/Maze.ml" 170 2992 3054
+type(
+  rooms -> rooms -> bool
+)
+ident(
+  int_ref contained "SintoMeUmaMerda/Maze.ml" 77 1274 1278 "SintoMeUmaMerda/Maze.ml" 77 1274 1287
+)
+"SintoMeUmaMerda/Maze.ml" 170 2992 3055 "SintoMeUmaMerda/Maze.ml" 170 2992 3056
+type(
+  maze
+)
+ident(
+  int_ref m "SintoMeUmaMerda/Maze.ml" 169 2976 2988 "SintoMeUmaMerda/Maze.ml" 169 2976 2989
+)
+"SintoMeUmaMerda/Maze.ml" 170 2992 3055 "SintoMeUmaMerda/Maze.ml" 170 2992 3062
+type(
+  rooms
+)
+"SintoMeUmaMerda/Maze.ml" 170 2992 3063 "SintoMeUmaMerda/Maze.ml" 170 2992 3064
+type(
+  maze
+)
+ident(
+  int_ref m "SintoMeUmaMerda/Maze.ml" 169 2976 2988 "SintoMeUmaMerda/Maze.ml" 169 2976 2989
+)
+"SintoMeUmaMerda/Maze.ml" 170 2992 3063 "SintoMeUmaMerda/Maze.ml" 170 2992 3070
+type(
+  rooms
+)
+"SintoMeUmaMerda/Maze.ml" 170 2992 3044 "SintoMeUmaMerda/Maze.ml" 170 2992 3071
+type(
+  bool
+)
+"SintoMeUmaMerda/Maze.ml" 170 2992 3072 "SintoMeUmaMerda/Maze.ml" 170 2992 3074
+type(
+  bool -> bool -> bool
+)
+ident(
+  int_ref Stdlib.( && ) "stdlib.mli" 211 8885 8885 "stdlib.mli" 211 8885 8936
+)
+"SintoMeUmaMerda/Maze.ml" 170 2992 3075 "SintoMeUmaMerda/Maze.ml" 170 2992 3084
+type(
+  rooms -> rooms -> bool
+)
+ident(
+  int_ref contained "SintoMeUmaMerda/Maze.ml" 77 1274 1278 "SintoMeUmaMerda/Maze.ml" 77 1274 1287
+)
+"SintoMeUmaMerda/Maze.ml" 170 2992 3085 "SintoMeUmaMerda/Maze.ml" 170 2992 3086
+type(
+  maze
+)
+ident(
+  int_ref m "SintoMeUmaMerda/Maze.ml" 169 2976 2988 "SintoMeUmaMerda/Maze.ml" 169 2976 2989
+)
+"SintoMeUmaMerda/Maze.ml" 170 2992 3085 "SintoMeUmaMerda/Maze.ml" 170 2992 3096
+type(
+  rooms
+)
+"SintoMeUmaMerda/Maze.ml" 170 2992 3097 "SintoMeUmaMerda/Maze.ml" 170 2992 3098
+type(
+  maze
+)
+ident(
+  int_ref m "SintoMeUmaMerda/Maze.ml" 169 2976 2988 "SintoMeUmaMerda/Maze.ml" 169 2976 2989
+)
+"SintoMeUmaMerda/Maze.ml" 170 2992 3097 "SintoMeUmaMerda/Maze.ml" 170 2992 3104
+type(
+  rooms
+)
+"SintoMeUmaMerda/Maze.ml" 170 2992 3074 "SintoMeUmaMerda/Maze.ml" 170 2992 3105
+type(
+  bool
+)
+"SintoMeUmaMerda/Maze.ml" 170 2992 3105 "SintoMeUmaMerda/Maze.ml" 170 2992 3107
+type(
+  bool -> bool -> bool
+)
+ident(
+  int_ref Stdlib.( && ) "stdlib.mli" 211 8885 8885 "stdlib.mli" 211 8885 8936
+)
+"SintoMeUmaMerda/Maze.ml" 170 2992 3108 "SintoMeUmaMerda/Maze.ml" 170 2992 3121
+type(
+  maze -> passages -> bool
+)
+ident(
+  int_ref pathsAreValid "SintoMeUmaMerda/Maze.ml" 163 2795 2803 "SintoMeUmaMerda/Maze.ml" 163 2795 2816
+)
+"SintoMeUmaMerda/Maze.ml" 170 2992 3122 "SintoMeUmaMerda/Maze.ml" 170 2992 3123
+type(
+  maze
+)
+ident(
+  int_ref m "SintoMeUmaMerda/Maze.ml" 169 2976 2988 "SintoMeUmaMerda/Maze.ml" 169 2976 2989
+)
+"SintoMeUmaMerda/Maze.ml" 170 2992 3124 "SintoMeUmaMerda/Maze.ml" 170 2992 3125
+type(
+  maze
+)
+ident(
+  int_ref m "SintoMeUmaMerda/Maze.ml" 169 2976 2988 "SintoMeUmaMerda/Maze.ml" 169 2976 2989
+)
+"SintoMeUmaMerda/Maze.ml" 170 2992 3124 "SintoMeUmaMerda/Maze.ml" 170 2992 3134
+type(
+  passages
+)
+"SintoMeUmaMerda/Maze.ml" 170 2992 3107 "SintoMeUmaMerda/Maze.ml" 170 2992 3135
+type(
+  bool
+)
+"SintoMeUmaMerda/Maze.ml" 170 2992 3074 "SintoMeUmaMerda/Maze.ml" 170 2992 3135
+type(
+  bool
+)
+"SintoMeUmaMerda/Maze.ml" 170 2992 3044 "SintoMeUmaMerda/Maze.ml" 170 2992 3135
+type(
+  bool
+)
+"SintoMeUmaMerda/Maze.ml" 170 2992 3017 "SintoMeUmaMerda/Maze.ml" 170 2992 3135
+type(
+  bool
+)
+"SintoMeUmaMerda/Maze.ml" 170 2992 2993 "SintoMeUmaMerda/Maze.ml" 170 2992 3135
+type(
+  bool
+)
+"SintoMeUmaMerda/Maze.ml" 174 3168 3176 "SintoMeUmaMerda/Maze.ml" 174 3168 3184
+type(
+  int -> int -> int list
+)
+ident(
+  def makeList "SintoMeUmaMerda/Maze.ml" 174 3168 3168 "SintoMeUmaMerda/Maze.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Maze.ml" 174 3168 3185 "SintoMeUmaMerda/Maze.ml" 174 3168 3186
+type(
+  int
+)
+ident(
+  def x "SintoMeUmaMerda/Maze.ml" 174 3168 3187 "SintoMeUmaMerda/Maze.ml" 180 3305 3333
+)
+"SintoMeUmaMerda/Maze.ml" 174 3168 3187 "SintoMeUmaMerda/Maze.ml" 174 3168 3188
+type(
+  int
+)
+ident(
+  def y "SintoMeUmaMerda/Maze.ml" 175 3190 3198 "SintoMeUmaMerda/Maze.ml" 180 3305 3333
+)
+"SintoMeUmaMerda/Maze.ml" 175 3190 3201 "SintoMeUmaMerda/Maze.ml" 175 3190 3202
+type(
+  int
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Maze.ml" 174 3168 3185 "SintoMeUmaMerda/Maze.ml" 174 3168 3186
+)
+"SintoMeUmaMerda/Maze.ml" 175 3190 3202 "SintoMeUmaMerda/Maze.ml" 175 3190 3203
+type(
+  int -> int -> bool
+)
+ident(
+  int_ref Stdlib.( > ) "stdlib.mli" 137 5800 5800 "stdlib.mli" 137 5800 5850
+)
+"SintoMeUmaMerda/Maze.ml" 175 3190 3203 "SintoMeUmaMerda/Maze.ml" 175 3190 3204
+type(
+  int
+)
+ident(
+  int_ref y "SintoMeUmaMerda/Maze.ml" 174 3168 3187 "SintoMeUmaMerda/Maze.ml" 174 3168 3188
+)
+"SintoMeUmaMerda/Maze.ml" 175 3190 3201 "SintoMeUmaMerda/Maze.ml" 175 3190 3204
+type(
+  bool
+)
+"SintoMeUmaMerda/Maze.ml" 176 3210 3218 "SintoMeUmaMerda/Maze.ml" 176 3210 3226
+type(
+  string -> int list
+)
+ident(
+  int_ref Stdlib.failwith "stdlib.mli" 41 1919 1919 "stdlib.mli" 41 1919 1946
+)
+"SintoMeUmaMerda/Maze.ml" 176 3210 3227 "SintoMeUmaMerda/Maze.ml" 176 3210 3254
+type(
+  string
+)
+"SintoMeUmaMerda/Maze.ml" 176 3210 3218 "SintoMeUmaMerda/Maze.ml" 176 3210 3254
+type(
+  int list
+)
+"SintoMeUmaMerda/Maze.ml" 177 3255 3271 "SintoMeUmaMerda/Maze.ml" 177 3255 3272
+type(
+  int
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Maze.ml" 174 3168 3185 "SintoMeUmaMerda/Maze.ml" 174 3168 3186
+)
+"SintoMeUmaMerda/Maze.ml" 177 3255 3272 "SintoMeUmaMerda/Maze.ml" 177 3255 3273
+type(
+  int -> int -> bool
+)
+ident(
+  int_ref Stdlib.( = ) "stdlib.mli" 118 4976 4976 "stdlib.mli" 118 4976 5020
+)
+"SintoMeUmaMerda/Maze.ml" 177 3255 3273 "SintoMeUmaMerda/Maze.ml" 177 3255 3274
+type(
+  int
+)
+ident(
+  int_ref y "SintoMeUmaMerda/Maze.ml" 174 3168 3187 "SintoMeUmaMerda/Maze.ml" 174 3168 3188
+)
+"SintoMeUmaMerda/Maze.ml" 177 3255 3271 "SintoMeUmaMerda/Maze.ml" 177 3255 3274
+type(
+  bool
+)
+"SintoMeUmaMerda/Maze.ml" 178 3280 3289 "SintoMeUmaMerda/Maze.ml" 178 3280 3290
+type(
+  int
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Maze.ml" 174 3168 3185 "SintoMeUmaMerda/Maze.ml" 174 3168 3186
+)
+"SintoMeUmaMerda/Maze.ml" 178 3280 3288 "SintoMeUmaMerda/Maze.ml" 178 3280 3291
+type(
+  int list
+)
+"SintoMeUmaMerda/Maze.ml" 180 3305 3313 "SintoMeUmaMerda/Maze.ml" 180 3305 3314
+type(
+  int
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Maze.ml" 174 3168 3185 "SintoMeUmaMerda/Maze.ml" 174 3168 3186
+)
+"SintoMeUmaMerda/Maze.ml" 180 3305 3317 "SintoMeUmaMerda/Maze.ml" 180 3305 3325
+type(
+  int -> int -> int list
+)
+ident(
+  int_ref makeList "SintoMeUmaMerda/Maze.ml" 174 3168 3176 "SintoMeUmaMerda/Maze.ml" 174 3168 3184
+)
+"SintoMeUmaMerda/Maze.ml" 180 3305 3327 "SintoMeUmaMerda/Maze.ml" 180 3305 3328
+type(
+  int
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Maze.ml" 174 3168 3185 "SintoMeUmaMerda/Maze.ml" 174 3168 3186
+)
+"SintoMeUmaMerda/Maze.ml" 180 3305 3328 "SintoMeUmaMerda/Maze.ml" 180 3305 3329
+type(
+  int -> int -> int
+)
+ident(
+  int_ref Stdlib.( + ) "stdlib.mli" 338 13360 13360 "stdlib.mli" 338 13360 13406
+)
+"SintoMeUmaMerda/Maze.ml" 180 3305 3329 "SintoMeUmaMerda/Maze.ml" 180 3305 3330
+type(
+  int
+)
+"SintoMeUmaMerda/Maze.ml" 180 3305 3326 "SintoMeUmaMerda/Maze.ml" 180 3305 3331
+type(
+  int
+)
+"SintoMeUmaMerda/Maze.ml" 180 3305 3332 "SintoMeUmaMerda/Maze.ml" 180 3305 3333
+type(
+  int
+)
+ident(
+  int_ref y "SintoMeUmaMerda/Maze.ml" 174 3168 3187 "SintoMeUmaMerda/Maze.ml" 174 3168 3188
+)
+"SintoMeUmaMerda/Maze.ml" 180 3305 3317 "SintoMeUmaMerda/Maze.ml" 180 3305 3333
+type(
+  int list
+)
+"SintoMeUmaMerda/Maze.ml" 180 3305 3313 "SintoMeUmaMerda/Maze.ml" 180 3305 3333
+type(
+  int list
+)
+"SintoMeUmaMerda/Maze.ml" 177 3255 3268 "SintoMeUmaMerda/Maze.ml" 180 3305 3333
+type(
+  int list
+)
+"SintoMeUmaMerda/Maze.ml" 175 3190 3198 "SintoMeUmaMerda/Maze.ml" 180 3305 3333
+type(
+  int list
+)
+"SintoMeUmaMerda/Maze.ml" 182 3337 3345 "SintoMeUmaMerda/Maze.ml" 182 3337 3354
+type(
+  'a list -> ('a * 'a) list
+)
+ident(
+  def makeChain "SintoMeUmaMerda/Maze.ml" 182 3337 3337 "SintoMeUmaMerda/Maze.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Maze.ml" 182 3337 3355 "SintoMeUmaMerda/Maze.ml" 182 3337 3356
+type(
+  'a list
+)
+ident(
+  def x "SintoMeUmaMerda/Maze.ml" 182 3337 3358 "SintoMeUmaMerda/Maze.ml" 185 3451 3527
+)
+"SintoMeUmaMerda/Maze.ml" 182 3337 3364 "SintoMeUmaMerda/Maze.ml" 182 3337 3365
+type(
+  'a list
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Maze.ml" 182 3337 3355 "SintoMeUmaMerda/Maze.ml" 182 3337 3356
+)
+"SintoMeUmaMerda/Maze.ml" 183 3372 3388 "SintoMeUmaMerda/Maze.ml" 183 3372 3390
+type(
+  'a list
+)
+"SintoMeUmaMerda/Maze.ml" 183 3372 3393 "SintoMeUmaMerda/Maze.ml" 183 3372 3401
+type(
+  string -> ('a * 'a) list
+)
+ident(
+  int_ref Stdlib.failwith "stdlib.mli" 41 1919 1919 "stdlib.mli" 41 1919 1946
+)
+"SintoMeUmaMerda/Maze.ml" 183 3372 3402 "SintoMeUmaMerda/Maze.ml" 183 3372 3426
+type(
+  string
+)
+"SintoMeUmaMerda/Maze.ml" 183 3372 3393 "SintoMeUmaMerda/Maze.ml" 183 3372 3426
+type(
+  ('a * 'a) list
+)
+"SintoMeUmaMerda/Maze.ml" 184 3427 3443 "SintoMeUmaMerda/Maze.ml" 184 3427 3444
+type(
+  'a
+)
+ident(
+  def a "SintoMeUmaMerda/Maze.ml" 184 3427 3448 "SintoMeUmaMerda/Maze.ml" 184 3427 3450
+)
+"SintoMeUmaMerda/Maze.ml" 184 3427 3442 "SintoMeUmaMerda/Maze.ml" 184 3427 3445
+type(
+  'a list
+)
+"SintoMeUmaMerda/Maze.ml" 184 3427 3448 "SintoMeUmaMerda/Maze.ml" 184 3427 3450
+type(
+  ('a * 'a) list
+)
+"SintoMeUmaMerda/Maze.ml" 185 3451 3466 "SintoMeUmaMerda/Maze.ml" 185 3451 3470
+type(
+  'a
+)
+ident(
+  def head "SintoMeUmaMerda/Maze.ml" 185 3451 3487 "SintoMeUmaMerda/Maze.ml" 185 3451 3527
+)
+"SintoMeUmaMerda/Maze.ml" 185 3451 3472 "SintoMeUmaMerda/Maze.ml" 185 3451 3477
+type(
+  'a
+)
+ident(
+  def sHead "SintoMeUmaMerda/Maze.ml" 185 3451 3487 "SintoMeUmaMerda/Maze.ml" 185 3451 3527
+)
+"SintoMeUmaMerda/Maze.ml" 185 3451 3479 "SintoMeUmaMerda/Maze.ml" 185 3451 3484
+type(
+  'a list
+)
+ident(
+  def trail "SintoMeUmaMerda/Maze.ml" 185 3451 3487 "SintoMeUmaMerda/Maze.ml" 185 3451 3527
+)
+"SintoMeUmaMerda/Maze.ml" 185 3451 3472 "SintoMeUmaMerda/Maze.ml" 185 3451 3484
+type(
+  'a list
+)
+"SintoMeUmaMerda/Maze.ml" 185 3451 3466 "SintoMeUmaMerda/Maze.ml" 185 3451 3484
+type(
+  'a list
+)
+"SintoMeUmaMerda/Maze.ml" 185 3451 3488 "SintoMeUmaMerda/Maze.ml" 185 3451 3492
+type(
+  'a
+)
+ident(
+  int_ref head "SintoMeUmaMerda/Maze.ml" 185 3451 3466 "SintoMeUmaMerda/Maze.ml" 185 3451 3470
+)
+"SintoMeUmaMerda/Maze.ml" 185 3451 3493 "SintoMeUmaMerda/Maze.ml" 185 3451 3498
+type(
+  'a
+)
+ident(
+  int_ref sHead "SintoMeUmaMerda/Maze.ml" 185 3451 3472 "SintoMeUmaMerda/Maze.ml" 185 3451 3477
+)
+"SintoMeUmaMerda/Maze.ml" 185 3451 3487 "SintoMeUmaMerda/Maze.ml" 185 3451 3499
+type(
+  'a * 'a
+)
+"SintoMeUmaMerda/Maze.ml" 185 3451 3502 "SintoMeUmaMerda/Maze.ml" 185 3451 3511
+type(
+  'a list -> ('a * 'a) list
+)
+ident(
+  int_ref makeChain "SintoMeUmaMerda/Maze.ml" 182 3337 3345 "SintoMeUmaMerda/Maze.ml" 182 3337 3354
+)
+"SintoMeUmaMerda/Maze.ml" 185 3451 3513 "SintoMeUmaMerda/Maze.ml" 185 3451 3518
+type(
+  'a
+)
+ident(
+  int_ref sHead "SintoMeUmaMerda/Maze.ml" 185 3451 3472 "SintoMeUmaMerda/Maze.ml" 185 3451 3477
+)
+"SintoMeUmaMerda/Maze.ml" 185 3451 3520 "SintoMeUmaMerda/Maze.ml" 185 3451 3525
+type(
+  'a list
+)
+ident(
+  int_ref trail "SintoMeUmaMerda/Maze.ml" 185 3451 3479 "SintoMeUmaMerda/Maze.ml" 185 3451 3484
+)
+"SintoMeUmaMerda/Maze.ml" 185 3451 3512 "SintoMeUmaMerda/Maze.ml" 185 3451 3526
+type(
+  'a list
+)
+"SintoMeUmaMerda/Maze.ml" 185 3451 3501 "SintoMeUmaMerda/Maze.ml" 185 3451 3527
+type(
+  ('a * 'a) list
+)
+"SintoMeUmaMerda/Maze.ml" 185 3451 3487 "SintoMeUmaMerda/Maze.ml" 185 3451 3527
+type(
+  ('a * 'a) list
+)
+"SintoMeUmaMerda/Maze.ml" 182 3337 3358 "SintoMeUmaMerda/Maze.ml" 185 3451 3527
+type(
+  ('a * 'a) list
+)
+"SintoMeUmaMerda/Maze.ml" 187 3531 3535 "SintoMeUmaMerda/Maze.ml" 187 3531 3547
+type(
+  room -> room -> maze
+)
+ident(
+  def makeLineMaze "SintoMeUmaMerda/Maze.ml" 196 3695 3695 "SintoMeUmaMerda/Maze.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Maze.ml" 187 3531 3548 "SintoMeUmaMerda/Maze.ml" 187 3531 3549
+type(
+  room
+)
+ident(
+  def a "SintoMeUmaMerda/Maze.ml" 187 3531 3550 "SintoMeUmaMerda/Maze.ml" 191 3623 3666
+)
+"SintoMeUmaMerda/Maze.ml" 187 3531 3550 "SintoMeUmaMerda/Maze.ml" 187 3531 3551
+type(
+  room
+)
+ident(
+  def b "SintoMeUmaMerda/Maze.ml" 188 3555 3556 "SintoMeUmaMerda/Maze.ml" 191 3623 3666
+)
+"SintoMeUmaMerda/Maze.ml" 188 3555 3564 "SintoMeUmaMerda/Maze.ml" 188 3555 3572
+type(
+  room -> room -> rooms
+)
+ident(
+  int_ref makeList "SintoMeUmaMerda/Maze.ml" 174 3168 3176 "SintoMeUmaMerda/Maze.ml" 174 3168 3184
+)
+"SintoMeUmaMerda/Maze.ml" 188 3555 3573 "SintoMeUmaMerda/Maze.ml" 188 3555 3574
+type(
+  room
+)
+ident(
+  int_ref a "SintoMeUmaMerda/Maze.ml" 187 3531 3548 "SintoMeUmaMerda/Maze.ml" 187 3531 3549
+)
+"SintoMeUmaMerda/Maze.ml" 188 3555 3575 "SintoMeUmaMerda/Maze.ml" 188 3555 3576
+type(
+  room
+)
+ident(
+  int_ref b "SintoMeUmaMerda/Maze.ml" 187 3531 3550 "SintoMeUmaMerda/Maze.ml" 187 3531 3551
+)
+"SintoMeUmaMerda/Maze.ml" 188 3555 3564 "SintoMeUmaMerda/Maze.ml" 188 3555 3576
+type(
+  rooms
+)
+"SintoMeUmaMerda/Maze.ml" 189 3578 3598 "SintoMeUmaMerda/Maze.ml" 189 3578 3599
+type(
+  room
+)
+ident(
+  int_ref a "SintoMeUmaMerda/Maze.ml" 187 3531 3548 "SintoMeUmaMerda/Maze.ml" 187 3531 3549
+)
+"SintoMeUmaMerda/Maze.ml" 189 3578 3597 "SintoMeUmaMerda/Maze.ml" 189 3578 3600
+type(
+  rooms
+)
+"SintoMeUmaMerda/Maze.ml" 190 3603 3619 "SintoMeUmaMerda/Maze.ml" 190 3603 3620
+type(
+  room
+)
+ident(
+  int_ref b "SintoMeUmaMerda/Maze.ml" 187 3531 3550 "SintoMeUmaMerda/Maze.ml" 187 3531 3551
+)
+"SintoMeUmaMerda/Maze.ml" 190 3603 3618 "SintoMeUmaMerda/Maze.ml" 190 3603 3621
+type(
+  rooms
+)
+"SintoMeUmaMerda/Maze.ml" 191 3623 3641 "SintoMeUmaMerda/Maze.ml" 191 3623 3650
+type(
+  room list -> passages
+)
+ident(
+  int_ref makeChain "SintoMeUmaMerda/Maze.ml" 182 3337 3345 "SintoMeUmaMerda/Maze.ml" 182 3337 3354
+)
+"SintoMeUmaMerda/Maze.ml" 191 3623 3652 "SintoMeUmaMerda/Maze.ml" 191 3623 3660
+type(
+  room -> room -> room list
+)
+ident(
+  int_ref makeList "SintoMeUmaMerda/Maze.ml" 174 3168 3176 "SintoMeUmaMerda/Maze.ml" 174 3168 3184
+)
+"SintoMeUmaMerda/Maze.ml" 191 3623 3661 "SintoMeUmaMerda/Maze.ml" 191 3623 3662
+type(
+  room
+)
+ident(
+  int_ref a "SintoMeUmaMerda/Maze.ml" 187 3531 3548 "SintoMeUmaMerda/Maze.ml" 187 3531 3549
+)
+"SintoMeUmaMerda/Maze.ml" 191 3623 3663 "SintoMeUmaMerda/Maze.ml" 191 3623 3664
+type(
+  room
+)
+ident(
+  int_ref b "SintoMeUmaMerda/Maze.ml" 187 3531 3550 "SintoMeUmaMerda/Maze.ml" 187 3531 3551
+)
+"SintoMeUmaMerda/Maze.ml" 191 3623 3651 "SintoMeUmaMerda/Maze.ml" 191 3623 3665
+type(
+  room list
+)
+"SintoMeUmaMerda/Maze.ml" 191 3623 3641 "SintoMeUmaMerda/Maze.ml" 191 3623 3665
+type(
+  passages
+)
+"SintoMeUmaMerda/Maze.ml" 188 3555 3556 "SintoMeUmaMerda/Maze.ml" 191 3623 3666
+type(
+  maze
+)
+"SintoMeUmaMerda/Maze.ml" 196 3695 3699 "SintoMeUmaMerda/Maze.ml" 196 3695 3706
+type(
+  maze -> maze -> maze
+)
+ident(
+  def combine "SintoMeUmaMerda/Maze.ml" 204 3902 3902 "SintoMeUmaMerda/Maze.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Maze.ml" 196 3695 3707 "SintoMeUmaMerda/Maze.ml" 196 3695 3709
+type(
+  maze
+)
+ident(
+  def m1 "SintoMeUmaMerda/Maze.ml" 196 3695 3710 "SintoMeUmaMerda/Maze.ml" 200 3835 3877
+)
+"SintoMeUmaMerda/Maze.ml" 196 3695 3710 "SintoMeUmaMerda/Maze.ml" 196 3695 3712
+type(
+  maze
+)
+ident(
+  def m2 "SintoMeUmaMerda/Maze.ml" 197 3716 3717 "SintoMeUmaMerda/Maze.ml" 200 3835 3877
+)
+"SintoMeUmaMerda/Maze.ml" 197 3716 3726 "SintoMeUmaMerda/Maze.ml" 197 3716 3731
+type(
+  rooms -> rooms -> rooms
+)
+ident(
+  int_ref union "SintoMeUmaMerda/Maze.ml" 81 1336 1340 "SintoMeUmaMerda/Maze.ml" 81 1336 1345
+)
+"SintoMeUmaMerda/Maze.ml" 197 3716 3732 "SintoMeUmaMerda/Maze.ml" 197 3716 3734
+type(
+  maze
+)
+ident(
+  int_ref m1 "SintoMeUmaMerda/Maze.ml" 196 3695 3707 "SintoMeUmaMerda/Maze.ml" 196 3695 3709
+)
+"SintoMeUmaMerda/Maze.ml" 197 3716 3732 "SintoMeUmaMerda/Maze.ml" 197 3716 3740
+type(
+  rooms
+)
+"SintoMeUmaMerda/Maze.ml" 197 3716 3741 "SintoMeUmaMerda/Maze.ml" 197 3716 3743
+type(
+  maze
+)
+ident(
+  int_ref m2 "SintoMeUmaMerda/Maze.ml" 196 3695 3710 "SintoMeUmaMerda/Maze.ml" 196 3695 3712
+)
+"SintoMeUmaMerda/Maze.ml" 197 3716 3741 "SintoMeUmaMerda/Maze.ml" 197 3716 3749
+type(
+  rooms
+)
+"SintoMeUmaMerda/Maze.ml" 197 3716 3726 "SintoMeUmaMerda/Maze.ml" 197 3716 3749
+type(
+  rooms
+)
+"SintoMeUmaMerda/Maze.ml" 198 3752 3766 "SintoMeUmaMerda/Maze.ml" 198 3752 3771
+type(
+  rooms -> rooms -> rooms
+)
+ident(
+  int_ref union "SintoMeUmaMerda/Maze.ml" 81 1336 1340 "SintoMeUmaMerda/Maze.ml" 81 1336 1345
+)
+"SintoMeUmaMerda/Maze.ml" 198 3752 3772 "SintoMeUmaMerda/Maze.ml" 198 3752 3774
+type(
+  maze
+)
+ident(
+  int_ref m1 "SintoMeUmaMerda/Maze.ml" 196 3695 3707 "SintoMeUmaMerda/Maze.ml" 196 3695 3709
+)
+"SintoMeUmaMerda/Maze.ml" 198 3752 3772 "SintoMeUmaMerda/Maze.ml" 198 3752 3784
+type(
+  rooms
+)
+"SintoMeUmaMerda/Maze.ml" 198 3752 3785 "SintoMeUmaMerda/Maze.ml" 198 3752 3787
+type(
+  maze
+)
+ident(
+  int_ref m2 "SintoMeUmaMerda/Maze.ml" 196 3695 3710 "SintoMeUmaMerda/Maze.ml" 196 3695 3712
+)
+"SintoMeUmaMerda/Maze.ml" 198 3752 3785 "SintoMeUmaMerda/Maze.ml" 198 3752 3797
+type(
+  rooms
+)
+"SintoMeUmaMerda/Maze.ml" 198 3752 3766 "SintoMeUmaMerda/Maze.ml" 198 3752 3797
+type(
+  rooms
+)
+"SintoMeUmaMerda/Maze.ml" 199 3799 3809 "SintoMeUmaMerda/Maze.ml" 199 3799 3814
+type(
+  rooms -> rooms -> rooms
+)
+ident(
+  int_ref union "SintoMeUmaMerda/Maze.ml" 81 1336 1340 "SintoMeUmaMerda/Maze.ml" 81 1336 1345
+)
+"SintoMeUmaMerda/Maze.ml" 199 3799 3815 "SintoMeUmaMerda/Maze.ml" 199 3799 3817
+type(
+  maze
+)
+ident(
+  int_ref m1 "SintoMeUmaMerda/Maze.ml" 196 3695 3707 "SintoMeUmaMerda/Maze.ml" 196 3695 3709
+)
+"SintoMeUmaMerda/Maze.ml" 199 3799 3815 "SintoMeUmaMerda/Maze.ml" 199 3799 3823
+type(
+  rooms
+)
+"SintoMeUmaMerda/Maze.ml" 199 3799 3824 "SintoMeUmaMerda/Maze.ml" 199 3799 3826
+type(
+  maze
+)
+ident(
+  int_ref m2 "SintoMeUmaMerda/Maze.ml" 196 3695 3710 "SintoMeUmaMerda/Maze.ml" 196 3695 3712
+)
+"SintoMeUmaMerda/Maze.ml" 199 3799 3824 "SintoMeUmaMerda/Maze.ml" 199 3799 3832
+type(
+  rooms
+)
+"SintoMeUmaMerda/Maze.ml" 199 3799 3809 "SintoMeUmaMerda/Maze.ml" 199 3799 3832
+type(
+  rooms
+)
+"SintoMeUmaMerda/Maze.ml" 200 3835 3847 "SintoMeUmaMerda/Maze.ml" 200 3835 3852
+type(
+  passages -> passages -> passages
+)
+ident(
+  int_ref union "SintoMeUmaMerda/Maze.ml" 81 1336 1340 "SintoMeUmaMerda/Maze.ml" 81 1336 1345
+)
+"SintoMeUmaMerda/Maze.ml" 200 3835 3853 "SintoMeUmaMerda/Maze.ml" 200 3835 3855
+type(
+  maze
+)
+ident(
+  int_ref m1 "SintoMeUmaMerda/Maze.ml" 196 3695 3707 "SintoMeUmaMerda/Maze.ml" 196 3695 3709
+)
+"SintoMeUmaMerda/Maze.ml" 200 3835 3853 "SintoMeUmaMerda/Maze.ml" 200 3835 3864
+type(
+  passages
+)
+"SintoMeUmaMerda/Maze.ml" 200 3835 3865 "SintoMeUmaMerda/Maze.ml" 200 3835 3867
+type(
+  maze
+)
+ident(
+  int_ref m2 "SintoMeUmaMerda/Maze.ml" 196 3695 3710 "SintoMeUmaMerda/Maze.ml" 196 3695 3712
+)
+"SintoMeUmaMerda/Maze.ml" 200 3835 3865 "SintoMeUmaMerda/Maze.ml" 200 3835 3876
+type(
+  passages
+)
+"SintoMeUmaMerda/Maze.ml" 200 3835 3847 "SintoMeUmaMerda/Maze.ml" 200 3835 3876
+type(
+  passages
+)
+"SintoMeUmaMerda/Maze.ml" 197 3716 3717 "SintoMeUmaMerda/Maze.ml" 200 3835 3877
+type(
+  maze
+)
+"SintoMeUmaMerda/Maze.ml" 204 3902 3910 "SintoMeUmaMerda/Maze.ml" 204 3902 3917
+type(
+  ('a * 'b) list -> 'a -> 'b list
+)
+ident(
+  def nextAux "SintoMeUmaMerda/Maze.ml" 204 3902 3902 "SintoMeUmaMerda/Maze.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Maze.ml" 204 3902 3918 "SintoMeUmaMerda/Maze.ml" 204 3902 3921
+type(
+  ('a * 'b) list
+)
+ident(
+  def set "SintoMeUmaMerda/Maze.ml" 204 3902 3922 "SintoMeUmaMerda/Maze.ml" 210 4029 4055
+)
+"SintoMeUmaMerda/Maze.ml" 204 3902 3922 "SintoMeUmaMerda/Maze.ml" 204 3902 3923
+type(
+  'a
+)
+ident(
+  def r "SintoMeUmaMerda/Maze.ml" 205 3925 3926 "SintoMeUmaMerda/Maze.ml" 210 4029 4055
+)
+"SintoMeUmaMerda/Maze.ml" 205 3925 3932 "SintoMeUmaMerda/Maze.ml" 205 3925 3935
+type(
+  ('a * 'b) list
+)
+ident(
+  int_ref set "SintoMeUmaMerda/Maze.ml" 204 3902 3918 "SintoMeUmaMerda/Maze.ml" 204 3902 3921
+)
+"SintoMeUmaMerda/Maze.ml" 206 3941 3944 "SintoMeUmaMerda/Maze.ml" 206 3941 3946
+type(
+  ('a * 'b) list
+)
+"SintoMeUmaMerda/Maze.ml" 206 3941 3948 "SintoMeUmaMerda/Maze.ml" 206 3941 3950
+type(
+  'b list
+)
+"SintoMeUmaMerda/Maze.ml" 207 3951 3955 "SintoMeUmaMerda/Maze.ml" 207 3951 3956
+type(
+  'a
+)
+ident(
+  def a "SintoMeUmaMerda/Maze.ml" 207 3951 3969 "SintoMeUmaMerda/Maze.ml" 210 4029 4055
+)
+"SintoMeUmaMerda/Maze.ml" 207 3951 3957 "SintoMeUmaMerda/Maze.ml" 207 3951 3958
+type(
+  'b
+)
+ident(
+  def b "SintoMeUmaMerda/Maze.ml" 207 3951 3969 "SintoMeUmaMerda/Maze.ml" 210 4029 4055
+)
+"SintoMeUmaMerda/Maze.ml" 207 3951 3954 "SintoMeUmaMerda/Maze.ml" 207 3951 3959
+type(
+  'a * 'b
+)
+"SintoMeUmaMerda/Maze.ml" 207 3951 3961 "SintoMeUmaMerda/Maze.ml" 207 3951 3966
+type(
+  ('a * 'b) list
+)
+ident(
+  def trail "SintoMeUmaMerda/Maze.ml" 207 3951 3969 "SintoMeUmaMerda/Maze.ml" 210 4029 4055
+)
+"SintoMeUmaMerda/Maze.ml" 207 3951 3954 "SintoMeUmaMerda/Maze.ml" 207 3951 3966
+type(
+  ('a * 'b) list
+)
+"SintoMeUmaMerda/Maze.ml" 207 3951 3972 "SintoMeUmaMerda/Maze.ml" 207 3951 3973
+type(
+  'a
+)
+ident(
+  int_ref a "SintoMeUmaMerda/Maze.ml" 207 3951 3955 "SintoMeUmaMerda/Maze.ml" 207 3951 3956
+)
+"SintoMeUmaMerda/Maze.ml" 207 3951 3973 "SintoMeUmaMerda/Maze.ml" 207 3951 3974
+type(
+  'a -> 'a -> bool
+)
+ident(
+  int_ref Stdlib.( = ) "stdlib.mli" 118 4976 4976 "stdlib.mli" 118 4976 5020
+)
+"SintoMeUmaMerda/Maze.ml" 207 3951 3975 "SintoMeUmaMerda/Maze.ml" 207 3951 3976
+type(
+  'a
+)
+ident(
+  int_ref r "SintoMeUmaMerda/Maze.ml" 204 3902 3922 "SintoMeUmaMerda/Maze.ml" 204 3902 3923
+)
+"SintoMeUmaMerda/Maze.ml" 207 3951 3972 "SintoMeUmaMerda/Maze.ml" 207 3951 3976
+type(
+  bool
+)
+"SintoMeUmaMerda/Maze.ml" 208 3982 3992 "SintoMeUmaMerda/Maze.ml" 208 3982 3993
+type(
+  'b
+)
+ident(
+  int_ref b "SintoMeUmaMerda/Maze.ml" 207 3951 3957 "SintoMeUmaMerda/Maze.ml" 207 3951 3958
+)
+"SintoMeUmaMerda/Maze.ml" 208 3982 3996 "SintoMeUmaMerda/Maze.ml" 208 3982 4003
+type(
+  ('a * 'b) list -> 'a -> 'b list
+)
+ident(
+  int_ref nextAux "SintoMeUmaMerda/Maze.ml" 204 3902 3910 "SintoMeUmaMerda/Maze.ml" 204 3902 3917
+)
+"SintoMeUmaMerda/Maze.ml" 208 3982 4004 "SintoMeUmaMerda/Maze.ml" 208 3982 4009
+type(
+  ('a * 'b) list
+)
+ident(
+  int_ref trail "SintoMeUmaMerda/Maze.ml" 207 3951 3961 "SintoMeUmaMerda/Maze.ml" 207 3951 3966
+)
+"SintoMeUmaMerda/Maze.ml" 208 3982 4010 "SintoMeUmaMerda/Maze.ml" 208 3982 4011
+type(
+  'a
+)
+ident(
+  int_ref r "SintoMeUmaMerda/Maze.ml" 204 3902 3922 "SintoMeUmaMerda/Maze.ml" 204 3902 3923
+)
+"SintoMeUmaMerda/Maze.ml" 208 3982 3995 "SintoMeUmaMerda/Maze.ml" 208 3982 4012
+type(
+  'b list
+)
+"SintoMeUmaMerda/Maze.ml" 208 3982 3992 "SintoMeUmaMerda/Maze.ml" 208 3982 4012
+type(
+  'b list
+)
+"SintoMeUmaMerda/Maze.ml" 210 4029 4040 "SintoMeUmaMerda/Maze.ml" 210 4029 4047
+type(
+  ('a * 'b) list -> 'a -> 'b list
+)
+ident(
+  int_ref nextAux "SintoMeUmaMerda/Maze.ml" 204 3902 3910 "SintoMeUmaMerda/Maze.ml" 204 3902 3917
+)
+"SintoMeUmaMerda/Maze.ml" 210 4029 4048 "SintoMeUmaMerda/Maze.ml" 210 4029 4053
+type(
+  ('a * 'b) list
+)
+ident(
+  int_ref trail "SintoMeUmaMerda/Maze.ml" 207 3951 3961 "SintoMeUmaMerda/Maze.ml" 207 3951 3966
+)
+"SintoMeUmaMerda/Maze.ml" 210 4029 4054 "SintoMeUmaMerda/Maze.ml" 210 4029 4055
+type(
+  'a
+)
+ident(
+  int_ref r "SintoMeUmaMerda/Maze.ml" 204 3902 3922 "SintoMeUmaMerda/Maze.ml" 204 3902 3923
+)
+"SintoMeUmaMerda/Maze.ml" 210 4029 4040 "SintoMeUmaMerda/Maze.ml" 210 4029 4055
+type(
+  'b list
+)
+"SintoMeUmaMerda/Maze.ml" 207 3951 3969 "SintoMeUmaMerda/Maze.ml" 210 4029 4055
+type(
+  'b list
+)
+"SintoMeUmaMerda/Maze.ml" 205 3925 3926 "SintoMeUmaMerda/Maze.ml" 210 4029 4055
+type(
+  'b list
+)
+"SintoMeUmaMerda/Maze.ml" 213 4060 4064 "SintoMeUmaMerda/Maze.ml" 213 4060 4068
+type(
+  maze -> room -> room list
+)
+ident(
+  def next "SintoMeUmaMerda/Maze.ml" 220 4125 4125 "SintoMeUmaMerda/Maze.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Maze.ml" 213 4060 4069 "SintoMeUmaMerda/Maze.ml" 213 4060 4070
+type(
+  maze
+)
+ident(
+  def m "SintoMeUmaMerda/Maze.ml" 213 4060 4071 "SintoMeUmaMerda/Maze.ml" 214 4076 4097
+)
+"SintoMeUmaMerda/Maze.ml" 213 4060 4071 "SintoMeUmaMerda/Maze.ml" 213 4060 4072
+type(
+  room
+)
+ident(
+  def r "SintoMeUmaMerda/Maze.ml" 214 4076 4077 "SintoMeUmaMerda/Maze.ml" 214 4076 4097
+)
+"SintoMeUmaMerda/Maze.ml" 214 4076 4077 "SintoMeUmaMerda/Maze.ml" 214 4076 4084
+type(
+  passages -> room -> room list
+)
+ident(
+  int_ref nextAux "SintoMeUmaMerda/Maze.ml" 204 3902 3910 "SintoMeUmaMerda/Maze.ml" 204 3902 3917
+)
+"SintoMeUmaMerda/Maze.ml" 214 4076 4085 "SintoMeUmaMerda/Maze.ml" 214 4076 4086
+type(
+  maze
+)
+ident(
+  int_ref m "SintoMeUmaMerda/Maze.ml" 213 4060 4069 "SintoMeUmaMerda/Maze.ml" 213 4060 4070
+)
+"SintoMeUmaMerda/Maze.ml" 214 4076 4085 "SintoMeUmaMerda/Maze.ml" 214 4076 4095
+type(
+  passages
+)
+"SintoMeUmaMerda/Maze.ml" 214 4076 4096 "SintoMeUmaMerda/Maze.ml" 214 4076 4097
+type(
+  room
+)
+ident(
+  int_ref r "SintoMeUmaMerda/Maze.ml" 213 4060 4071 "SintoMeUmaMerda/Maze.ml" 213 4060 4072
+)
+"SintoMeUmaMerda/Maze.ml" 214 4076 4077 "SintoMeUmaMerda/Maze.ml" 214 4076 4097
+type(
+  room list
+)
+"SintoMeUmaMerda/Maze.ml" 220 4125 4133 "SintoMeUmaMerda/Maze.ml" 220 4125 4141
+type(
+  ('a * 'b) list -> 'a list -> 'b list
+)
+ident(
+  def next2Aux "SintoMeUmaMerda/Maze.ml" 220 4125 4125 "SintoMeUmaMerda/Maze.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Maze.ml" 220 4125 4142 "SintoMeUmaMerda/Maze.ml" 220 4125 4152
+type(
+  ('a * 'b) list
+)
+ident(
+  def passageSet "SintoMeUmaMerda/Maze.ml" 220 4125 4153 "SintoMeUmaMerda/Maze.ml" 223 4194 4269
+)
+"SintoMeUmaMerda/Maze.ml" 220 4125 4153 "SintoMeUmaMerda/Maze.ml" 220 4125 4160
+type(
+  'a list
+)
+ident(
+  def roomSet "SintoMeUmaMerda/Maze.ml" 221 4162 4163 "SintoMeUmaMerda/Maze.ml" 223 4194 4269
+)
+"SintoMeUmaMerda/Maze.ml" 221 4162 4169 "SintoMeUmaMerda/Maze.ml" 221 4162 4176
+type(
+  'a list
+)
+ident(
+  int_ref roomSet "SintoMeUmaMerda/Maze.ml" 220 4125 4153 "SintoMeUmaMerda/Maze.ml" 220 4125 4160
+)
+"SintoMeUmaMerda/Maze.ml" 222 4182 4185 "SintoMeUmaMerda/Maze.ml" 222 4182 4187
+type(
+  'a list
+)
+"SintoMeUmaMerda/Maze.ml" 222 4182 4191 "SintoMeUmaMerda/Maze.ml" 222 4182 4193
+type(
+  'b list
+)
+"SintoMeUmaMerda/Maze.ml" 223 4194 4197 "SintoMeUmaMerda/Maze.ml" 223 4194 4201
+type(
+  'a
+)
+ident(
+  def head "SintoMeUmaMerda/Maze.ml" 223 4194 4210 "SintoMeUmaMerda/Maze.ml" 223 4194 4269
+)
+"SintoMeUmaMerda/Maze.ml" 223 4194 4203 "SintoMeUmaMerda/Maze.ml" 223 4194 4208
+type(
+  'a list
+)
+ident(
+  def trail "SintoMeUmaMerda/Maze.ml" 223 4194 4210 "SintoMeUmaMerda/Maze.ml" 223 4194 4269
+)
+"SintoMeUmaMerda/Maze.ml" 223 4194 4197 "SintoMeUmaMerda/Maze.ml" 223 4194 4208
+type(
+  'a list
+)
+"SintoMeUmaMerda/Maze.ml" 223 4194 4210 "SintoMeUmaMerda/Maze.ml" 223 4194 4215
+type(
+  'b list -> 'b list -> 'b list
+)
+ident(
+  int_ref union "SintoMeUmaMerda/Maze.ml" 81 1336 1340 "SintoMeUmaMerda/Maze.ml" 81 1336 1345
+)
+"SintoMeUmaMerda/Maze.ml" 223 4194 4217 "SintoMeUmaMerda/Maze.ml" 223 4194 4224
+type(
+  ('a * 'b) list -> 'a -> 'b list
+)
+ident(
+  int_ref nextAux "SintoMeUmaMerda/Maze.ml" 204 3902 3910 "SintoMeUmaMerda/Maze.ml" 204 3902 3917
+)
+"SintoMeUmaMerda/Maze.ml" 223 4194 4225 "SintoMeUmaMerda/Maze.ml" 223 4194 4235
+type(
+  ('a * 'b) list
+)
+ident(
+  int_ref passageSet "SintoMeUmaMerda/Maze.ml" 220 4125 4142 "SintoMeUmaMerda/Maze.ml" 220 4125 4152
+)
+"SintoMeUmaMerda/Maze.ml" 223 4194 4236 "SintoMeUmaMerda/Maze.ml" 223 4194 4240
+type(
+  'a
+)
+ident(
+  int_ref head "SintoMeUmaMerda/Maze.ml" 223 4194 4197 "SintoMeUmaMerda/Maze.ml" 223 4194 4201
+)
+"SintoMeUmaMerda/Maze.ml" 223 4194 4216 "SintoMeUmaMerda/Maze.ml" 223 4194 4241
+type(
+  'b list
+)
+"SintoMeUmaMerda/Maze.ml" 223 4194 4243 "SintoMeUmaMerda/Maze.ml" 223 4194 4251
+type(
+  ('a * 'b) list -> 'a list -> 'b list
+)
+ident(
+  int_ref next2Aux "SintoMeUmaMerda/Maze.ml" 220 4125 4133 "SintoMeUmaMerda/Maze.ml" 220 4125 4141
+)
+"SintoMeUmaMerda/Maze.ml" 223 4194 4252 "SintoMeUmaMerda/Maze.ml" 223 4194 4262
+type(
+  ('a * 'b) list
+)
+ident(
+  int_ref passageSet "SintoMeUmaMerda/Maze.ml" 220 4125 4142 "SintoMeUmaMerda/Maze.ml" 220 4125 4152
+)
+"SintoMeUmaMerda/Maze.ml" 223 4194 4263 "SintoMeUmaMerda/Maze.ml" 223 4194 4268
+type(
+  'a list
+)
+ident(
+  int_ref trail "SintoMeUmaMerda/Maze.ml" 223 4194 4203 "SintoMeUmaMerda/Maze.ml" 223 4194 4208
+)
+"SintoMeUmaMerda/Maze.ml" 223 4194 4242 "SintoMeUmaMerda/Maze.ml" 223 4194 4269
+type(
+  'b list
+)
+"SintoMeUmaMerda/Maze.ml" 223 4194 4210 "SintoMeUmaMerda/Maze.ml" 223 4194 4269
+type(
+  'b list
+)
+"SintoMeUmaMerda/Maze.ml" 221 4162 4163 "SintoMeUmaMerda/Maze.ml" 223 4194 4269
+type(
+  'b list
+)
+"SintoMeUmaMerda/Maze.ml" 226 4274 4278 "SintoMeUmaMerda/Maze.ml" 226 4274 4283
+type(
+  maze -> room list -> room list
+)
+ident(
+  def next2 "SintoMeUmaMerda/Maze.ml" 234 4344 4344 "SintoMeUmaMerda/Maze.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Maze.ml" 226 4274 4284 "SintoMeUmaMerda/Maze.ml" 226 4274 4285
+type(
+  maze
+)
+ident(
+  def m "SintoMeUmaMerda/Maze.ml" 226 4274 4286 "SintoMeUmaMerda/Maze.ml" 228 4293 4316
+)
+"SintoMeUmaMerda/Maze.ml" 226 4274 4286 "SintoMeUmaMerda/Maze.ml" 226 4274 4287
+type(
+  room list
+)
+ident(
+  def r "SintoMeUmaMerda/Maze.ml" 228 4293 4295 "SintoMeUmaMerda/Maze.ml" 228 4293 4316
+)
+"SintoMeUmaMerda/Maze.ml" 228 4293 4295 "SintoMeUmaMerda/Maze.ml" 228 4293 4303
+type(
+  passages -> room list -> room list
+)
+ident(
+  int_ref next2Aux "SintoMeUmaMerda/Maze.ml" 220 4125 4133 "SintoMeUmaMerda/Maze.ml" 220 4125 4141
+)
+"SintoMeUmaMerda/Maze.ml" 228 4293 4304 "SintoMeUmaMerda/Maze.ml" 228 4293 4305
+type(
+  maze
+)
+ident(
+  int_ref m "SintoMeUmaMerda/Maze.ml" 226 4274 4284 "SintoMeUmaMerda/Maze.ml" 226 4274 4285
+)
+"SintoMeUmaMerda/Maze.ml" 228 4293 4304 "SintoMeUmaMerda/Maze.ml" 228 4293 4314
+type(
+  passages
+)
+"SintoMeUmaMerda/Maze.ml" 228 4293 4315 "SintoMeUmaMerda/Maze.ml" 228 4293 4316
+type(
+  room list
+)
+ident(
+  int_ref r "SintoMeUmaMerda/Maze.ml" 226 4274 4286 "SintoMeUmaMerda/Maze.ml" 226 4274 4287
+)
+"SintoMeUmaMerda/Maze.ml" 228 4293 4295 "SintoMeUmaMerda/Maze.ml" 228 4293 4316
+type(
+  room list
+)
+"SintoMeUmaMerda/Maze.ml" 234 4344 4352 "SintoMeUmaMerda/Maze.ml" 234 4344 4359
+type(
+  ('a * 'b) list -> 'b -> 'a list
+)
+ident(
+  def prevAux "SintoMeUmaMerda/Maze.ml" 234 4344 4344 "SintoMeUmaMerda/Maze.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Maze.ml" 234 4344 4360 "SintoMeUmaMerda/Maze.ml" 234 4344 4363
+type(
+  ('a * 'b) list
+)
+ident(
+  def set "SintoMeUmaMerda/Maze.ml" 234 4344 4364 "SintoMeUmaMerda/Maze.ml" 240 4472 4498
+)
+"SintoMeUmaMerda/Maze.ml" 234 4344 4364 "SintoMeUmaMerda/Maze.ml" 234 4344 4365
+type(
+  'b
+)
+ident(
+  def r "SintoMeUmaMerda/Maze.ml" 235 4367 4368 "SintoMeUmaMerda/Maze.ml" 240 4472 4498
+)
+"SintoMeUmaMerda/Maze.ml" 235 4367 4374 "SintoMeUmaMerda/Maze.ml" 235 4367 4377
+type(
+  ('a * 'b) list
+)
+ident(
+  int_ref set "SintoMeUmaMerda/Maze.ml" 234 4344 4360 "SintoMeUmaMerda/Maze.ml" 234 4344 4363
+)
+"SintoMeUmaMerda/Maze.ml" 236 4383 4386 "SintoMeUmaMerda/Maze.ml" 236 4383 4388
+type(
+  ('a * 'b) list
+)
+"SintoMeUmaMerda/Maze.ml" 236 4383 4390 "SintoMeUmaMerda/Maze.ml" 236 4383 4392
+type(
+  'a list
+)
+"SintoMeUmaMerda/Maze.ml" 237 4393 4397 "SintoMeUmaMerda/Maze.ml" 237 4393 4398
+type(
+  'a
+)
+ident(
+  def a "SintoMeUmaMerda/Maze.ml" 237 4393 4411 "SintoMeUmaMerda/Maze.ml" 240 4472 4498
+)
+"SintoMeUmaMerda/Maze.ml" 237 4393 4399 "SintoMeUmaMerda/Maze.ml" 237 4393 4400
+type(
+  'b
+)
+ident(
+  def b "SintoMeUmaMerda/Maze.ml" 237 4393 4411 "SintoMeUmaMerda/Maze.ml" 240 4472 4498
+)
+"SintoMeUmaMerda/Maze.ml" 237 4393 4396 "SintoMeUmaMerda/Maze.ml" 237 4393 4401
+type(
+  'a * 'b
+)
+"SintoMeUmaMerda/Maze.ml" 237 4393 4403 "SintoMeUmaMerda/Maze.ml" 237 4393 4408
+type(
+  ('a * 'b) list
+)
+ident(
+  def trail "SintoMeUmaMerda/Maze.ml" 237 4393 4411 "SintoMeUmaMerda/Maze.ml" 240 4472 4498
+)
+"SintoMeUmaMerda/Maze.ml" 237 4393 4396 "SintoMeUmaMerda/Maze.ml" 237 4393 4408
+type(
+  ('a * 'b) list
+)
+"SintoMeUmaMerda/Maze.ml" 237 4393 4414 "SintoMeUmaMerda/Maze.ml" 237 4393 4415
+type(
+  'b
+)
+ident(
+  int_ref b "SintoMeUmaMerda/Maze.ml" 237 4393 4399 "SintoMeUmaMerda/Maze.ml" 237 4393 4400
+)
+"SintoMeUmaMerda/Maze.ml" 237 4393 4416 "SintoMeUmaMerda/Maze.ml" 237 4393 4417
+type(
+  'b -> 'b -> bool
+)
+ident(
+  int_ref Stdlib.( = ) "stdlib.mli" 118 4976 4976 "stdlib.mli" 118 4976 5020
+)
+"SintoMeUmaMerda/Maze.ml" 237 4393 4418 "SintoMeUmaMerda/Maze.ml" 237 4393 4419
+type(
+  'b
+)
+ident(
+  int_ref r "SintoMeUmaMerda/Maze.ml" 234 4344 4364 "SintoMeUmaMerda/Maze.ml" 234 4344 4365
+)
+"SintoMeUmaMerda/Maze.ml" 237 4393 4414 "SintoMeUmaMerda/Maze.ml" 237 4393 4419
+type(
+  bool
+)
+"SintoMeUmaMerda/Maze.ml" 238 4425 4435 "SintoMeUmaMerda/Maze.ml" 238 4425 4436
+type(
+  'a
+)
+ident(
+  int_ref a "SintoMeUmaMerda/Maze.ml" 237 4393 4397 "SintoMeUmaMerda/Maze.ml" 237 4393 4398
+)
+"SintoMeUmaMerda/Maze.ml" 238 4425 4439 "SintoMeUmaMerda/Maze.ml" 238 4425 4446
+type(
+  ('a * 'b) list -> 'b -> 'a list
+)
+ident(
+  int_ref prevAux "SintoMeUmaMerda/Maze.ml" 234 4344 4352 "SintoMeUmaMerda/Maze.ml" 234 4344 4359
+)
+"SintoMeUmaMerda/Maze.ml" 238 4425 4447 "SintoMeUmaMerda/Maze.ml" 238 4425 4452
+type(
+  ('a * 'b) list
+)
+ident(
+  int_ref trail "SintoMeUmaMerda/Maze.ml" 237 4393 4403 "SintoMeUmaMerda/Maze.ml" 237 4393 4408
+)
+"SintoMeUmaMerda/Maze.ml" 238 4425 4453 "SintoMeUmaMerda/Maze.ml" 238 4425 4454
+type(
+  'b
+)
+ident(
+  int_ref r "SintoMeUmaMerda/Maze.ml" 234 4344 4364 "SintoMeUmaMerda/Maze.ml" 234 4344 4365
+)
+"SintoMeUmaMerda/Maze.ml" 238 4425 4438 "SintoMeUmaMerda/Maze.ml" 238 4425 4455
+type(
+  'a list
+)
+"SintoMeUmaMerda/Maze.ml" 238 4425 4435 "SintoMeUmaMerda/Maze.ml" 238 4425 4455
+type(
+  'a list
+)
+"SintoMeUmaMerda/Maze.ml" 240 4472 4483 "SintoMeUmaMerda/Maze.ml" 240 4472 4490
+type(
+  ('a * 'b) list -> 'b -> 'a list
+)
+ident(
+  int_ref prevAux "SintoMeUmaMerda/Maze.ml" 234 4344 4352 "SintoMeUmaMerda/Maze.ml" 234 4344 4359
+)
+"SintoMeUmaMerda/Maze.ml" 240 4472 4491 "SintoMeUmaMerda/Maze.ml" 240 4472 4496
+type(
+  ('a * 'b) list
+)
+ident(
+  int_ref trail "SintoMeUmaMerda/Maze.ml" 237 4393 4403 "SintoMeUmaMerda/Maze.ml" 237 4393 4408
+)
+"SintoMeUmaMerda/Maze.ml" 240 4472 4497 "SintoMeUmaMerda/Maze.ml" 240 4472 4498
+type(
+  'b
+)
+ident(
+  int_ref r "SintoMeUmaMerda/Maze.ml" 234 4344 4364 "SintoMeUmaMerda/Maze.ml" 234 4344 4365
+)
+"SintoMeUmaMerda/Maze.ml" 240 4472 4483 "SintoMeUmaMerda/Maze.ml" 240 4472 4498
+type(
+  'a list
+)
+"SintoMeUmaMerda/Maze.ml" 237 4393 4411 "SintoMeUmaMerda/Maze.ml" 240 4472 4498
+type(
+  'a list
+)
+"SintoMeUmaMerda/Maze.ml" 235 4367 4368 "SintoMeUmaMerda/Maze.ml" 240 4472 4498
+type(
+  'a list
+)
+"SintoMeUmaMerda/Maze.ml" 243 4503 4507 "SintoMeUmaMerda/Maze.ml" 243 4503 4511
+type(
+  maze -> room -> room list
+)
+ident(
+  def prev "SintoMeUmaMerda/Maze.ml" 249 4570 4570 "SintoMeUmaMerda/Maze.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Maze.ml" 243 4503 4512 "SintoMeUmaMerda/Maze.ml" 243 4503 4513
+type(
+  maze
+)
+ident(
+  def m "SintoMeUmaMerda/Maze.ml" 243 4503 4514 "SintoMeUmaMerda/Maze.ml" 244 4519 4540
+)
+"SintoMeUmaMerda/Maze.ml" 243 4503 4514 "SintoMeUmaMerda/Maze.ml" 243 4503 4515
+type(
+  room
+)
+ident(
+  def r "SintoMeUmaMerda/Maze.ml" 244 4519 4520 "SintoMeUmaMerda/Maze.ml" 244 4519 4540
+)
+"SintoMeUmaMerda/Maze.ml" 244 4519 4520 "SintoMeUmaMerda/Maze.ml" 244 4519 4527
+type(
+  passages -> room -> room list
+)
+ident(
+  int_ref prevAux "SintoMeUmaMerda/Maze.ml" 234 4344 4352 "SintoMeUmaMerda/Maze.ml" 234 4344 4359
+)
+"SintoMeUmaMerda/Maze.ml" 244 4519 4528 "SintoMeUmaMerda/Maze.ml" 244 4519 4529
+type(
+  maze
+)
+ident(
+  int_ref m "SintoMeUmaMerda/Maze.ml" 243 4503 4512 "SintoMeUmaMerda/Maze.ml" 243 4503 4513
+)
+"SintoMeUmaMerda/Maze.ml" 244 4519 4528 "SintoMeUmaMerda/Maze.ml" 244 4519 4538
+type(
+  passages
+)
+"SintoMeUmaMerda/Maze.ml" 244 4519 4539 "SintoMeUmaMerda/Maze.ml" 244 4519 4540
+type(
+  room
+)
+ident(
+  int_ref r "SintoMeUmaMerda/Maze.ml" 243 4503 4514 "SintoMeUmaMerda/Maze.ml" 243 4503 4515
+)
+"SintoMeUmaMerda/Maze.ml" 244 4519 4520 "SintoMeUmaMerda/Maze.ml" 244 4519 4540
+type(
+  room list
+)
+"SintoMeUmaMerda/Maze.ml" 249 4570 4574 "SintoMeUmaMerda/Maze.ml" 249 4570 4582
+type(
+  maze -> room -> room list
+)
+ident(
+  def adjacent "SintoMeUmaMerda/Maze.ml" 254 4648 4648 "SintoMeUmaMerda/Maze.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Maze.ml" 249 4570 4583 "SintoMeUmaMerda/Maze.ml" 249 4570 4584
+type(
+  maze
+)
+ident(
+  def m "SintoMeUmaMerda/Maze.ml" 249 4570 4585 "SintoMeUmaMerda/Maze.ml" 250 4590 4618
+)
+"SintoMeUmaMerda/Maze.ml" 249 4570 4585 "SintoMeUmaMerda/Maze.ml" 249 4570 4586
+type(
+  room
+)
+ident(
+  def r "SintoMeUmaMerda/Maze.ml" 250 4590 4591 "SintoMeUmaMerda/Maze.ml" 250 4590 4618
+)
+"SintoMeUmaMerda/Maze.ml" 250 4590 4591 "SintoMeUmaMerda/Maze.ml" 250 4590 4596
+type(
+  room list -> room list -> room list
+)
+ident(
+  int_ref union "SintoMeUmaMerda/Maze.ml" 81 1336 1340 "SintoMeUmaMerda/Maze.ml" 81 1336 1345
+)
+"SintoMeUmaMerda/Maze.ml" 250 4590 4598 "SintoMeUmaMerda/Maze.ml" 250 4590 4602
+type(
+  maze -> room -> room list
+)
+ident(
+  int_ref next "SintoMeUmaMerda/Maze.ml" 213 4060 4064 "SintoMeUmaMerda/Maze.ml" 213 4060 4068
+)
+"SintoMeUmaMerda/Maze.ml" 250 4590 4603 "SintoMeUmaMerda/Maze.ml" 250 4590 4604
+type(
+  maze
+)
+ident(
+  int_ref m "SintoMeUmaMerda/Maze.ml" 249 4570 4583 "SintoMeUmaMerda/Maze.ml" 249 4570 4584
+)
+"SintoMeUmaMerda/Maze.ml" 250 4590 4605 "SintoMeUmaMerda/Maze.ml" 250 4590 4606
+type(
+  room
+)
+ident(
+  int_ref r "SintoMeUmaMerda/Maze.ml" 249 4570 4585 "SintoMeUmaMerda/Maze.ml" 249 4570 4586
+)
+"SintoMeUmaMerda/Maze.ml" 250 4590 4597 "SintoMeUmaMerda/Maze.ml" 250 4590 4607
+type(
+  room list
+)
+"SintoMeUmaMerda/Maze.ml" 250 4590 4609 "SintoMeUmaMerda/Maze.ml" 250 4590 4613
+type(
+  maze -> room -> room list
+)
+ident(
+  int_ref prev "SintoMeUmaMerda/Maze.ml" 243 4503 4507 "SintoMeUmaMerda/Maze.ml" 243 4503 4511
+)
+"SintoMeUmaMerda/Maze.ml" 250 4590 4614 "SintoMeUmaMerda/Maze.ml" 250 4590 4615
+type(
+  maze
+)
+ident(
+  int_ref m "SintoMeUmaMerda/Maze.ml" 249 4570 4583 "SintoMeUmaMerda/Maze.ml" 249 4570 4584
+)
+"SintoMeUmaMerda/Maze.ml" 250 4590 4616 "SintoMeUmaMerda/Maze.ml" 250 4590 4617
+type(
+  room
+)
+ident(
+  int_ref r "SintoMeUmaMerda/Maze.ml" 249 4570 4585 "SintoMeUmaMerda/Maze.ml" 249 4570 4586
+)
+"SintoMeUmaMerda/Maze.ml" 250 4590 4608 "SintoMeUmaMerda/Maze.ml" 250 4590 4618
+type(
+  room list
+)
+"SintoMeUmaMerda/Maze.ml" 250 4590 4591 "SintoMeUmaMerda/Maze.ml" 250 4590 4618
+type(
+  room list
+)
+"SintoMeUmaMerda/Maze.ml" 254 4648 4656 "SintoMeUmaMerda/Maze.ml" 254 4648 4668
+type(
+  maze -> room list -> room list
+)
+ident(
+  def reachableAux "SintoMeUmaMerda/Maze.ml" 254 4648 4648 "SintoMeUmaMerda/Maze.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Maze.ml" 254 4648 4669 "SintoMeUmaMerda/Maze.ml" 254 4648 4670
+type(
+  maze
+)
+ident(
+  def m "SintoMeUmaMerda/Maze.ml" 254 4648 4671 "SintoMeUmaMerda/Maze.ml" 258 4746 4811
+)
+"SintoMeUmaMerda/Maze.ml" 254 4648 4671 "SintoMeUmaMerda/Maze.ml" 254 4648 4674
+type(
+  room list
+)
+ident(
+  def set "SintoMeUmaMerda/Maze.ml" 255 4676 4678 "SintoMeUmaMerda/Maze.ml" 258 4746 4811
+)
+"SintoMeUmaMerda/Maze.ml" 255 4676 4684 "SintoMeUmaMerda/Maze.ml" 255 4676 4687
+type(
+  room list
+)
+ident(
+  int_ref set "SintoMeUmaMerda/Maze.ml" 254 4648 4671 "SintoMeUmaMerda/Maze.ml" 254 4648 4674
+)
+"SintoMeUmaMerda/Maze.ml" 256 4693 4697 "SintoMeUmaMerda/Maze.ml" 256 4693 4699
+type(
+  room list
+)
+"SintoMeUmaMerda/Maze.ml" 256 4693 4702 "SintoMeUmaMerda/Maze.ml" 256 4693 4704
+type(
+  room list
+)
+"SintoMeUmaMerda/Maze.ml" 257 4705 4709 "SintoMeUmaMerda/Maze.ml" 257 4705 4713
+type(
+  room
+)
+ident(
+  def head "SintoMeUmaMerda/Maze.ml" 257 4705 4724 "SintoMeUmaMerda/Maze.ml" 258 4746 4811
+)
+"SintoMeUmaMerda/Maze.ml" 257 4705 4715 "SintoMeUmaMerda/Maze.ml" 257 4705 4720
+type(
+  room list
+)
+ident(
+  def trail "SintoMeUmaMerda/Maze.ml" 257 4705 4724 "SintoMeUmaMerda/Maze.ml" 258 4746 4811
+)
+"SintoMeUmaMerda/Maze.ml" 257 4705 4709 "SintoMeUmaMerda/Maze.ml" 257 4705 4720
+type(
+  room list
+)
+"SintoMeUmaMerda/Maze.ml" 257 4705 4728 "SintoMeUmaMerda/Maze.ml" 257 4705 4729
+type(
+  room list
+)
+ident(
+  def l "SintoMeUmaMerda/Maze.ml" 258 4746 4756 "SintoMeUmaMerda/Maze.ml" 258 4746 4811
+)
+"SintoMeUmaMerda/Maze.ml" 257 4705 4731 "SintoMeUmaMerda/Maze.ml" 257 4705 4735
+type(
+  maze -> room -> room list
+)
+ident(
+  int_ref next "SintoMeUmaMerda/Maze.ml" 213 4060 4064 "SintoMeUmaMerda/Maze.ml" 213 4060 4068
+)
+"SintoMeUmaMerda/Maze.ml" 257 4705 4736 "SintoMeUmaMerda/Maze.ml" 257 4705 4737
+type(
+  maze
+)
+ident(
+  int_ref m "SintoMeUmaMerda/Maze.ml" 254 4648 4669 "SintoMeUmaMerda/Maze.ml" 254 4648 4670
+)
+"SintoMeUmaMerda/Maze.ml" 257 4705 4738 "SintoMeUmaMerda/Maze.ml" 257 4705 4742
+type(
+  room
+)
+ident(
+  int_ref head "SintoMeUmaMerda/Maze.ml" 257 4705 4709 "SintoMeUmaMerda/Maze.ml" 257 4705 4713
+)
+"SintoMeUmaMerda/Maze.ml" 257 4705 4731 "SintoMeUmaMerda/Maze.ml" 257 4705 4742
+type(
+  room list
+)
+"SintoMeUmaMerda/Maze.ml" 258 4746 4756 "SintoMeUmaMerda/Maze.ml" 258 4746 4760
+type(
+  room
+)
+ident(
+  int_ref head "SintoMeUmaMerda/Maze.ml" 257 4705 4709 "SintoMeUmaMerda/Maze.ml" 257 4705 4713
+)
+"SintoMeUmaMerda/Maze.ml" 258 4746 4763 "SintoMeUmaMerda/Maze.ml" 258 4746 4768
+type(
+  room list -> room list -> room list
+)
+ident(
+  int_ref union "SintoMeUmaMerda/Maze.ml" 81 1336 1340 "SintoMeUmaMerda/Maze.ml" 81 1336 1345
+)
+"SintoMeUmaMerda/Maze.ml" 258 4746 4770 "SintoMeUmaMerda/Maze.ml" 258 4746 4782
+type(
+  maze -> room list -> room list
+)
+ident(
+  int_ref reachableAux "SintoMeUmaMerda/Maze.ml" 254 4648 4656 "SintoMeUmaMerda/Maze.ml" 254 4648 4668
+)
+"SintoMeUmaMerda/Maze.ml" 258 4746 4783 "SintoMeUmaMerda/Maze.ml" 258 4746 4784
+type(
+  maze
+)
+ident(
+  int_ref m "SintoMeUmaMerda/Maze.ml" 254 4648 4669 "SintoMeUmaMerda/Maze.ml" 254 4648 4670
+)
+"SintoMeUmaMerda/Maze.ml" 258 4746 4785 "SintoMeUmaMerda/Maze.ml" 258 4746 4790
+type(
+  room list
+)
+ident(
+  int_ref trail "SintoMeUmaMerda/Maze.ml" 257 4705 4715 "SintoMeUmaMerda/Maze.ml" 257 4705 4720
+)
+"SintoMeUmaMerda/Maze.ml" 258 4746 4769 "SintoMeUmaMerda/Maze.ml" 258 4746 4791
+type(
+  room list
+)
+"SintoMeUmaMerda/Maze.ml" 258 4746 4793 "SintoMeUmaMerda/Maze.ml" 258 4746 4805
+type(
+  maze -> room list -> room list
+)
+ident(
+  int_ref reachableAux "SintoMeUmaMerda/Maze.ml" 254 4648 4656 "SintoMeUmaMerda/Maze.ml" 254 4648 4668
+)
+"SintoMeUmaMerda/Maze.ml" 258 4746 4806 "SintoMeUmaMerda/Maze.ml" 258 4746 4807
+type(
+  maze
+)
+ident(
+  int_ref m "SintoMeUmaMerda/Maze.ml" 254 4648 4669 "SintoMeUmaMerda/Maze.ml" 254 4648 4670
+)
+"SintoMeUmaMerda/Maze.ml" 258 4746 4808 "SintoMeUmaMerda/Maze.ml" 258 4746 4809
+type(
+  room list
+)
+ident(
+  int_ref l "SintoMeUmaMerda/Maze.ml" 257 4705 4728 "SintoMeUmaMerda/Maze.ml" 257 4705 4729
+)
+"SintoMeUmaMerda/Maze.ml" 258 4746 4792 "SintoMeUmaMerda/Maze.ml" 258 4746 4810
+type(
+  room list
+)
+"SintoMeUmaMerda/Maze.ml" 258 4746 4762 "SintoMeUmaMerda/Maze.ml" 258 4746 4811
+type(
+  room list
+)
+"SintoMeUmaMerda/Maze.ml" 258 4746 4756 "SintoMeUmaMerda/Maze.ml" 258 4746 4811
+type(
+  room list
+)
+"SintoMeUmaMerda/Maze.ml" 257 4705 4724 "SintoMeUmaMerda/Maze.ml" 258 4746 4811
+type(
+  room list
+)
+"SintoMeUmaMerda/Maze.ml" 255 4676 4678 "SintoMeUmaMerda/Maze.ml" 258 4746 4811
+type(
+  room list
+)
+"SintoMeUmaMerda/Maze.ml" 261 4890 4894 "SintoMeUmaMerda/Maze.ml" 261 4890 4903
+type(
+  maze -> room list
+)
+ident(
+  def reachable "SintoMeUmaMerda/Maze.ml" 266 4963 4963 "SintoMeUmaMerda/Maze.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Maze.ml" 261 4890 4904 "SintoMeUmaMerda/Maze.ml" 261 4890 4905
+type(
+  maze
+)
+ident(
+  def m "SintoMeUmaMerda/Maze.ml" 262 4907 4908 "SintoMeUmaMerda/Maze.ml" 262 4907 4934
+)
+"SintoMeUmaMerda/Maze.ml" 262 4907 4908 "SintoMeUmaMerda/Maze.ml" 262 4907 4920
+type(
+  maze -> rooms -> room list
+)
+ident(
+  int_ref reachableAux "SintoMeUmaMerda/Maze.ml" 254 4648 4656 "SintoMeUmaMerda/Maze.ml" 254 4648 4668
+)
+"SintoMeUmaMerda/Maze.ml" 262 4907 4921 "SintoMeUmaMerda/Maze.ml" 262 4907 4922
+type(
+  maze
+)
+ident(
+  int_ref m "SintoMeUmaMerda/Maze.ml" 261 4890 4904 "SintoMeUmaMerda/Maze.ml" 261 4890 4905
+)
+"SintoMeUmaMerda/Maze.ml" 262 4907 4923 "SintoMeUmaMerda/Maze.ml" 262 4907 4924
+type(
+  maze
+)
+ident(
+  int_ref m "SintoMeUmaMerda/Maze.ml" 261 4890 4904 "SintoMeUmaMerda/Maze.ml" 261 4890 4905
+)
+"SintoMeUmaMerda/Maze.ml" 262 4907 4923 "SintoMeUmaMerda/Maze.ml" 262 4907 4934
+type(
+  rooms
+)
+"SintoMeUmaMerda/Maze.ml" 262 4907 4908 "SintoMeUmaMerda/Maze.ml" 262 4907 4934
+type(
+  room list
+)
+"SintoMeUmaMerda/Maze.ml" 266 4963 4971 "SintoMeUmaMerda/Maze.ml" 266 4963 4982
+type(
+  maze -> room list -> room list
+)
+ident(
+  def solitaryAux "SintoMeUmaMerda/Maze.ml" 266 4963 4963 "SintoMeUmaMerda/Maze.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Maze.ml" 266 4963 4983 "SintoMeUmaMerda/Maze.ml" 266 4963 4984
+type(
+  maze
+)
+ident(
+  def m "SintoMeUmaMerda/Maze.ml" 266 4963 4985 "SintoMeUmaMerda/Maze.ml" 272 5119 5148
+)
+"SintoMeUmaMerda/Maze.ml" 266 4963 4985 "SintoMeUmaMerda/Maze.ml" 266 4963 4988
+type(
+  room list
+)
+ident(
+  def set "SintoMeUmaMerda/Maze.ml" 267 4990 4991 "SintoMeUmaMerda/Maze.ml" 272 5119 5148
+)
+"SintoMeUmaMerda/Maze.ml" 267 4990 4997 "SintoMeUmaMerda/Maze.ml" 267 4990 5000
+type(
+  room list
+)
+ident(
+  int_ref set "SintoMeUmaMerda/Maze.ml" 266 4963 4985 "SintoMeUmaMerda/Maze.ml" 266 4963 4988
+)
+"SintoMeUmaMerda/Maze.ml" 268 5006 5009 "SintoMeUmaMerda/Maze.ml" 268 5006 5011
+type(
+  room list
+)
+"SintoMeUmaMerda/Maze.ml" 268 5006 5014 "SintoMeUmaMerda/Maze.ml" 268 5006 5016
+type(
+  room list
+)
+"SintoMeUmaMerda/Maze.ml" 269 5017 5020 "SintoMeUmaMerda/Maze.ml" 269 5017 5024
+type(
+  room
+)
+ident(
+  def head "SintoMeUmaMerda/Maze.ml" 269 5017 5035 "SintoMeUmaMerda/Maze.ml" 272 5119 5148
+)
+"SintoMeUmaMerda/Maze.ml" 269 5017 5026 "SintoMeUmaMerda/Maze.ml" 269 5017 5031
+type(
+  room list
+)
+ident(
+  def trail "SintoMeUmaMerda/Maze.ml" 269 5017 5035 "SintoMeUmaMerda/Maze.ml" 272 5119 5148
+)
+"SintoMeUmaMerda/Maze.ml" 269 5017 5020 "SintoMeUmaMerda/Maze.ml" 269 5017 5031
+type(
+  room list
+)
+"SintoMeUmaMerda/Maze.ml" 269 5017 5039 "SintoMeUmaMerda/Maze.ml" 269 5017 5047
+type(
+  maze -> room -> room list
+)
+ident(
+  int_ref adjacent "SintoMeUmaMerda/Maze.ml" 249 4570 4574 "SintoMeUmaMerda/Maze.ml" 249 4570 4582
+)
+"SintoMeUmaMerda/Maze.ml" 269 5017 5048 "SintoMeUmaMerda/Maze.ml" 269 5017 5049
+type(
+  maze
+)
+ident(
+  int_ref m "SintoMeUmaMerda/Maze.ml" 266 4963 4983 "SintoMeUmaMerda/Maze.ml" 266 4963 4984
+)
+"SintoMeUmaMerda/Maze.ml" 269 5017 5050 "SintoMeUmaMerda/Maze.ml" 269 5017 5054
+type(
+  room
+)
+ident(
+  int_ref head "SintoMeUmaMerda/Maze.ml" 269 5017 5020 "SintoMeUmaMerda/Maze.ml" 269 5017 5024
+)
+"SintoMeUmaMerda/Maze.ml" 269 5017 5038 "SintoMeUmaMerda/Maze.ml" 269 5017 5055
+type(
+  room list
+)
+"SintoMeUmaMerda/Maze.ml" 269 5017 5056 "SintoMeUmaMerda/Maze.ml" 269 5017 5057
+type(
+  room list -> room list -> bool
+)
+ident(
+  int_ref Stdlib.( = ) "stdlib.mli" 118 4976 4976 "stdlib.mli" 118 4976 5020
+)
+"SintoMeUmaMerda/Maze.ml" 269 5017 5058 "SintoMeUmaMerda/Maze.ml" 269 5017 5060
+type(
+  room list
+)
+"SintoMeUmaMerda/Maze.ml" 269 5017 5038 "SintoMeUmaMerda/Maze.ml" 269 5017 5060
+type(
+  bool
+)
+"SintoMeUmaMerda/Maze.ml" 270 5066 5076 "SintoMeUmaMerda/Maze.ml" 270 5066 5080
+type(
+  room
+)
+ident(
+  int_ref head "SintoMeUmaMerda/Maze.ml" 269 5017 5020 "SintoMeUmaMerda/Maze.ml" 269 5017 5024
+)
+"SintoMeUmaMerda/Maze.ml" 270 5066 5083 "SintoMeUmaMerda/Maze.ml" 270 5066 5094
+type(
+  maze -> room list -> room list
+)
+ident(
+  int_ref solitaryAux "SintoMeUmaMerda/Maze.ml" 266 4963 4971 "SintoMeUmaMerda/Maze.ml" 266 4963 4982
+)
+"SintoMeUmaMerda/Maze.ml" 270 5066 5095 "SintoMeUmaMerda/Maze.ml" 270 5066 5096
+type(
+  maze
+)
+ident(
+  int_ref m "SintoMeUmaMerda/Maze.ml" 266 4963 4983 "SintoMeUmaMerda/Maze.ml" 266 4963 4984
+)
+"SintoMeUmaMerda/Maze.ml" 270 5066 5097 "SintoMeUmaMerda/Maze.ml" 270 5066 5102
+type(
+  room list
+)
+ident(
+  int_ref trail "SintoMeUmaMerda/Maze.ml" 269 5017 5026 "SintoMeUmaMerda/Maze.ml" 269 5017 5031
+)
+"SintoMeUmaMerda/Maze.ml" 270 5066 5082 "SintoMeUmaMerda/Maze.ml" 270 5066 5103
+type(
+  room list
+)
+"SintoMeUmaMerda/Maze.ml" 270 5066 5076 "SintoMeUmaMerda/Maze.ml" 270 5066 5103
+type(
+  room list
+)
+"SintoMeUmaMerda/Maze.ml" 272 5119 5129 "SintoMeUmaMerda/Maze.ml" 272 5119 5140
+type(
+  maze -> room list -> room list
+)
+ident(
+  int_ref solitaryAux "SintoMeUmaMerda/Maze.ml" 266 4963 4971 "SintoMeUmaMerda/Maze.ml" 266 4963 4982
+)
+"SintoMeUmaMerda/Maze.ml" 272 5119 5141 "SintoMeUmaMerda/Maze.ml" 272 5119 5142
+type(
+  maze
+)
+ident(
+  int_ref m "SintoMeUmaMerda/Maze.ml" 266 4963 4983 "SintoMeUmaMerda/Maze.ml" 266 4963 4984
+)
+"SintoMeUmaMerda/Maze.ml" 272 5119 5143 "SintoMeUmaMerda/Maze.ml" 272 5119 5148
+type(
+  room list
+)
+ident(
+  int_ref trail "SintoMeUmaMerda/Maze.ml" 269 5017 5026 "SintoMeUmaMerda/Maze.ml" 269 5017 5031
+)
+"SintoMeUmaMerda/Maze.ml" 272 5119 5129 "SintoMeUmaMerda/Maze.ml" 272 5119 5148
+type(
+  room list
+)
+"SintoMeUmaMerda/Maze.ml" 269 5017 5035 "SintoMeUmaMerda/Maze.ml" 272 5119 5148
+type(
+  room list
+)
+"SintoMeUmaMerda/Maze.ml" 267 4990 4991 "SintoMeUmaMerda/Maze.ml" 272 5119 5148
+type(
+  room list
+)
+"SintoMeUmaMerda/Maze.ml" 274 5152 5156 "SintoMeUmaMerda/Maze.ml" 274 5152 5164
+type(
+  maze -> room list
+)
+ident(
+  def solitary "SintoMeUmaMerda/Maze.ml" 280 5222 5222 "SintoMeUmaMerda/Maze.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Maze.ml" 274 5152 5165 "SintoMeUmaMerda/Maze.ml" 274 5152 5166
+type(
+  maze
+)
+ident(
+  def m "SintoMeUmaMerda/Maze.ml" 275 5170 5171 "SintoMeUmaMerda/Maze.ml" 275 5170 5192
+)
+"SintoMeUmaMerda/Maze.ml" 275 5170 5171 "SintoMeUmaMerda/Maze.ml" 275 5170 5182
+type(
+  maze -> rooms -> room list
+)
+ident(
+  int_ref solitaryAux "SintoMeUmaMerda/Maze.ml" 266 4963 4971 "SintoMeUmaMerda/Maze.ml" 266 4963 4982
+)
+"SintoMeUmaMerda/Maze.ml" 275 5170 5183 "SintoMeUmaMerda/Maze.ml" 275 5170 5184
+type(
+  maze
+)
+ident(
+  int_ref m "SintoMeUmaMerda/Maze.ml" 274 5152 5165 "SintoMeUmaMerda/Maze.ml" 274 5152 5166
+)
+"SintoMeUmaMerda/Maze.ml" 275 5170 5185 "SintoMeUmaMerda/Maze.ml" 275 5170 5186
+type(
+  maze
+)
+ident(
+  int_ref m "SintoMeUmaMerda/Maze.ml" 274 5152 5165 "SintoMeUmaMerda/Maze.ml" 274 5152 5166
+)
+"SintoMeUmaMerda/Maze.ml" 275 5170 5185 "SintoMeUmaMerda/Maze.ml" 275 5170 5192
+type(
+  rooms
+)
+"SintoMeUmaMerda/Maze.ml" 275 5170 5171 "SintoMeUmaMerda/Maze.ml" 275 5170 5192
+type(
+  room list
+)
+"SintoMeUmaMerda/Maze.ml" 280 5222 5226 "SintoMeUmaMerda/Maze.ml" 280 5222 5236
+type(
+  maze -> room -> bool
+)
+ident(
+  def isLeafRoom "SintoMeUmaMerda/Maze.ml" 287 5286 5286 "SintoMeUmaMerda/Maze.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Maze.ml" 280 5222 5237 "SintoMeUmaMerda/Maze.ml" 280 5222 5238
+type(
+  maze
+)
+ident(
+  def m "SintoMeUmaMerda/Maze.ml" 280 5222 5239 "SintoMeUmaMerda/Maze.ml" 281 5242 5256
+)
+"SintoMeUmaMerda/Maze.ml" 280 5222 5239 "SintoMeUmaMerda/Maze.ml" 280 5222 5240
+type(
+  room
+)
+ident(
+  def r "SintoMeUmaMerda/Maze.ml" 281 5242 5243 "SintoMeUmaMerda/Maze.ml" 281 5242 5256
+)
+"SintoMeUmaMerda/Maze.ml" 281 5242 5243 "SintoMeUmaMerda/Maze.ml" 281 5242 5247
+type(
+  maze -> room -> room list
+)
+ident(
+  int_ref next "SintoMeUmaMerda/Maze.ml" 213 4060 4064 "SintoMeUmaMerda/Maze.ml" 213 4060 4068
+)
+"SintoMeUmaMerda/Maze.ml" 281 5242 5248 "SintoMeUmaMerda/Maze.ml" 281 5242 5249
+type(
+  maze
+)
+ident(
+  int_ref m "SintoMeUmaMerda/Maze.ml" 280 5222 5237 "SintoMeUmaMerda/Maze.ml" 280 5222 5238
+)
+"SintoMeUmaMerda/Maze.ml" 281 5242 5250 "SintoMeUmaMerda/Maze.ml" 281 5242 5251
+type(
+  room
+)
+ident(
+  int_ref r "SintoMeUmaMerda/Maze.ml" 280 5222 5239 "SintoMeUmaMerda/Maze.ml" 280 5222 5240
+)
+"SintoMeUmaMerda/Maze.ml" 281 5242 5243 "SintoMeUmaMerda/Maze.ml" 281 5242 5251
+type(
+  room list
+)
+"SintoMeUmaMerda/Maze.ml" 281 5242 5252 "SintoMeUmaMerda/Maze.ml" 281 5242 5253
+type(
+  room list -> room list -> bool
+)
+ident(
+  int_ref Stdlib.( = ) "stdlib.mli" 118 4976 4976 "stdlib.mli" 118 4976 5020
+)
+"SintoMeUmaMerda/Maze.ml" 281 5242 5254 "SintoMeUmaMerda/Maze.ml" 281 5242 5256
+type(
+  room list
+)
+"SintoMeUmaMerda/Maze.ml" 281 5242 5243 "SintoMeUmaMerda/Maze.ml" 281 5242 5256
+type(
+  bool
+)
+"SintoMeUmaMerda/Maze.ml" 287 5286 5294 "SintoMeUmaMerda/Maze.ml" 287 5286 5301
+type(
+  maze -> room list -> room list
+)
+ident(
+  def explore "SintoMeUmaMerda/Maze.ml" 287 5286 5286 "SintoMeUmaMerda/Maze.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Maze.ml" 287 5286 5302 "SintoMeUmaMerda/Maze.ml" 287 5286 5303
+type(
+  maze
+)
+ident(
+  def m "SintoMeUmaMerda/Maze.ml" 287 5286 5304 "SintoMeUmaMerda/Maze.ml" 292 5363 5376
+)
+"SintoMeUmaMerda/Maze.ml" 287 5286 5304 "SintoMeUmaMerda/Maze.ml" 287 5286 5307
+type(
+  room list
+)
+ident(
+  def set "SintoMeUmaMerda/Maze.ml" 288 5309 5310 "SintoMeUmaMerda/Maze.ml" 292 5363 5376
+)
+"SintoMeUmaMerda/Maze.ml" 288 5309 5314 "SintoMeUmaMerda/Maze.ml" 288 5309 5315
+type(
+  room list
+)
+ident(
+  def x "SintoMeUmaMerda/Maze.ml" 289 5336 5337 "SintoMeUmaMerda/Maze.ml" 292 5363 5376
+)
+"SintoMeUmaMerda/Maze.ml" 288 5309 5317 "SintoMeUmaMerda/Maze.ml" 288 5309 5326
+type(
+  maze -> room list -> room list
+)
+ident(
+  int_ref adjacent2 "SintoMeUmaMerda/Maze.ml" 294 5380 5384 "SintoMeUmaMerda/Maze.ml" 294 5380 5393
+)
+"SintoMeUmaMerda/Maze.ml" 288 5309 5327 "SintoMeUmaMerda/Maze.ml" 288 5309 5328
+type(
+  maze
+)
+ident(
+  int_ref m "SintoMeUmaMerda/Maze.ml" 287 5286 5302 "SintoMeUmaMerda/Maze.ml" 287 5286 5303
+)
+"SintoMeUmaMerda/Maze.ml" 288 5309 5329 "SintoMeUmaMerda/Maze.ml" 288 5309 5332
+type(
+  room list
+)
+ident(
+  int_ref set "SintoMeUmaMerda/Maze.ml" 287 5286 5304 "SintoMeUmaMerda/Maze.ml" 287 5286 5307
+)
+"SintoMeUmaMerda/Maze.ml" 288 5309 5317 "SintoMeUmaMerda/Maze.ml" 288 5309 5332
+type(
+  room list
+)
+"SintoMeUmaMerda/Maze.ml" 289 5336 5340 "SintoMeUmaMerda/Maze.ml" 289 5336 5341
+type(
+  room list
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Maze.ml" 288 5309 5314 "SintoMeUmaMerda/Maze.ml" 288 5309 5315
+)
+"SintoMeUmaMerda/Maze.ml" 289 5336 5341 "SintoMeUmaMerda/Maze.ml" 289 5336 5342
+type(
+  room list -> room list -> bool
+)
+ident(
+  int_ref Stdlib.( = ) "stdlib.mli" 118 4976 4976 "stdlib.mli" 118 4976 5020
+)
+"SintoMeUmaMerda/Maze.ml" 289 5336 5342 "SintoMeUmaMerda/Maze.ml" 289 5336 5345
+type(
+  room list
+)
+ident(
+  int_ref set "SintoMeUmaMerda/Maze.ml" 287 5286 5304 "SintoMeUmaMerda/Maze.ml" 287 5286 5307
+)
+"SintoMeUmaMerda/Maze.ml" 289 5336 5340 "SintoMeUmaMerda/Maze.ml" 289 5336 5345
+type(
+  bool
+)
+"SintoMeUmaMerda/Maze.ml" 290 5351 5353 "SintoMeUmaMerda/Maze.ml" 290 5351 5356
+type(
+  room list
+)
+ident(
+  int_ref set "SintoMeUmaMerda/Maze.ml" 287 5286 5304 "SintoMeUmaMerda/Maze.ml" 287 5286 5307
+)
+"SintoMeUmaMerda/Maze.ml" 292 5363 5365 "SintoMeUmaMerda/Maze.ml" 292 5363 5372
+type(
+  maze -> room list -> room list
+)
+ident(
+  int_ref explore "SintoMeUmaMerda/Maze.ml" 287 5286 5294 "SintoMeUmaMerda/Maze.ml" 287 5286 5301
+)
+"SintoMeUmaMerda/Maze.ml" 292 5363 5373 "SintoMeUmaMerda/Maze.ml" 292 5363 5374
+type(
+  maze
+)
+ident(
+  int_ref m "SintoMeUmaMerda/Maze.ml" 287 5286 5302 "SintoMeUmaMerda/Maze.ml" 287 5286 5303
+)
+"SintoMeUmaMerda/Maze.ml" 292 5363 5375 "SintoMeUmaMerda/Maze.ml" 292 5363 5376
+type(
+  room list
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Maze.ml" 288 5309 5314 "SintoMeUmaMerda/Maze.ml" 288 5309 5315
+)
+"SintoMeUmaMerda/Maze.ml" 292 5363 5365 "SintoMeUmaMerda/Maze.ml" 292 5363 5376
+type(
+  room list
+)
+"SintoMeUmaMerda/Maze.ml" 289 5336 5337 "SintoMeUmaMerda/Maze.ml" 292 5363 5376
+type(
+  room list
+)
+"SintoMeUmaMerda/Maze.ml" 288 5309 5310 "SintoMeUmaMerda/Maze.ml" 292 5363 5376
+type(
+  room list
+)
+"SintoMeUmaMerda/Maze.ml" 294 5380 5384 "SintoMeUmaMerda/Maze.ml" 294 5380 5393
+type(
+  maze -> room list -> room list
+)
+ident(
+  def adjacent2 "SintoMeUmaMerda/Maze.ml" 287 5286 5286 "SintoMeUmaMerda/Maze.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Maze.ml" 294 5380 5394 "SintoMeUmaMerda/Maze.ml" 294 5380 5395
+type(
+  maze
+)
+ident(
+  def m "SintoMeUmaMerda/Maze.ml" 294 5380 5396 "SintoMeUmaMerda/Maze.ml" 297 5427 5502
+)
+"SintoMeUmaMerda/Maze.ml" 294 5380 5396 "SintoMeUmaMerda/Maze.ml" 294 5380 5399
+type(
+  room list
+)
+ident(
+  def set "SintoMeUmaMerda/Maze.ml" 295 5401 5402 "SintoMeUmaMerda/Maze.ml" 297 5427 5502
+)
+"SintoMeUmaMerda/Maze.ml" 295 5401 5408 "SintoMeUmaMerda/Maze.ml" 295 5401 5411
+type(
+  room list
+)
+ident(
+  int_ref set "SintoMeUmaMerda/Maze.ml" 294 5380 5396 "SintoMeUmaMerda/Maze.ml" 294 5380 5399
+)
+"SintoMeUmaMerda/Maze.ml" 296 5417 5420 "SintoMeUmaMerda/Maze.ml" 296 5417 5422
+type(
+  room list
+)
+"SintoMeUmaMerda/Maze.ml" 296 5417 5424 "SintoMeUmaMerda/Maze.ml" 296 5417 5426
+type(
+  room list
+)
+"SintoMeUmaMerda/Maze.ml" 297 5427 5430 "SintoMeUmaMerda/Maze.ml" 297 5427 5434
+type(
+  room
+)
+ident(
+  def head "SintoMeUmaMerda/Maze.ml" 297 5427 5444 "SintoMeUmaMerda/Maze.ml" 297 5427 5502
+)
+"SintoMeUmaMerda/Maze.ml" 297 5427 5436 "SintoMeUmaMerda/Maze.ml" 297 5427 5441
+type(
+  room list
+)
+ident(
+  def trail "SintoMeUmaMerda/Maze.ml" 297 5427 5444 "SintoMeUmaMerda/Maze.ml" 297 5427 5502
+)
+"SintoMeUmaMerda/Maze.ml" 297 5427 5430 "SintoMeUmaMerda/Maze.ml" 297 5427 5441
+type(
+  room list
+)
+"SintoMeUmaMerda/Maze.ml" 297 5427 5444 "SintoMeUmaMerda/Maze.ml" 297 5427 5449
+type(
+  room list -> room list -> room list
+)
+ident(
+  int_ref union "SintoMeUmaMerda/Maze.ml" 81 1336 1340 "SintoMeUmaMerda/Maze.ml" 81 1336 1345
+)
+"SintoMeUmaMerda/Maze.ml" 297 5427 5451 "SintoMeUmaMerda/Maze.ml" 297 5427 5456
+type(
+  room list -> room list -> room list
+)
+ident(
+  int_ref union "SintoMeUmaMerda/Maze.ml" 81 1336 1340 "SintoMeUmaMerda/Maze.ml" 81 1336 1345
+)
+"SintoMeUmaMerda/Maze.ml" 297 5427 5458 "SintoMeUmaMerda/Maze.ml" 297 5427 5462
+type(
+  room
+)
+ident(
+  int_ref head "SintoMeUmaMerda/Maze.ml" 297 5427 5430 "SintoMeUmaMerda/Maze.ml" 297 5427 5434
+)
+"SintoMeUmaMerda/Maze.ml" 297 5427 5457 "SintoMeUmaMerda/Maze.ml" 297 5427 5463
+type(
+  room list
+)
+"SintoMeUmaMerda/Maze.ml" 297 5427 5465 "SintoMeUmaMerda/Maze.ml" 297 5427 5473
+type(
+  maze -> room -> room list
+)
+ident(
+  int_ref adjacent "SintoMeUmaMerda/Maze.ml" 249 4570 4574 "SintoMeUmaMerda/Maze.ml" 249 4570 4582
+)
+"SintoMeUmaMerda/Maze.ml" 297 5427 5474 "SintoMeUmaMerda/Maze.ml" 297 5427 5475
+type(
+  maze
+)
+ident(
+  int_ref m "SintoMeUmaMerda/Maze.ml" 294 5380 5394 "SintoMeUmaMerda/Maze.ml" 294 5380 5395
+)
+"SintoMeUmaMerda/Maze.ml" 297 5427 5476 "SintoMeUmaMerda/Maze.ml" 297 5427 5480
+type(
+  room
+)
+ident(
+  int_ref head "SintoMeUmaMerda/Maze.ml" 297 5427 5430 "SintoMeUmaMerda/Maze.ml" 297 5427 5434
+)
+"SintoMeUmaMerda/Maze.ml" 297 5427 5464 "SintoMeUmaMerda/Maze.ml" 297 5427 5481
+type(
+  room list
+)
+"SintoMeUmaMerda/Maze.ml" 297 5427 5450 "SintoMeUmaMerda/Maze.ml" 297 5427 5482
+type(
+  room list
+)
+"SintoMeUmaMerda/Maze.ml" 297 5427 5484 "SintoMeUmaMerda/Maze.ml" 297 5427 5493
+type(
+  maze -> room list -> room list
+)
+ident(
+  int_ref adjacent2 "SintoMeUmaMerda/Maze.ml" 294 5380 5384 "SintoMeUmaMerda/Maze.ml" 294 5380 5393
+)
+"SintoMeUmaMerda/Maze.ml" 297 5427 5494 "SintoMeUmaMerda/Maze.ml" 297 5427 5495
+type(
+  maze
+)
+ident(
+  int_ref m "SintoMeUmaMerda/Maze.ml" 294 5380 5394 "SintoMeUmaMerda/Maze.ml" 294 5380 5395
+)
+"SintoMeUmaMerda/Maze.ml" 297 5427 5496 "SintoMeUmaMerda/Maze.ml" 297 5427 5501
+type(
+  room list
+)
+ident(
+  int_ref trail "SintoMeUmaMerda/Maze.ml" 297 5427 5436 "SintoMeUmaMerda/Maze.ml" 297 5427 5441
+)
+"SintoMeUmaMerda/Maze.ml" 297 5427 5483 "SintoMeUmaMerda/Maze.ml" 297 5427 5502
+type(
+  room list
+)
+"SintoMeUmaMerda/Maze.ml" 297 5427 5444 "SintoMeUmaMerda/Maze.ml" 297 5427 5502
+type(
+  room list
+)
+"SintoMeUmaMerda/Maze.ml" 295 5401 5402 "SintoMeUmaMerda/Maze.ml" 297 5427 5502
+type(
+  room list
+)
+"SintoMeUmaMerda/Maze.ml" 300 5507 5515 "SintoMeUmaMerda/Maze.ml" 300 5507 5525
+type(
+  maze -> room list -> room list list
+)
+ident(
+  def islandsAux "SintoMeUmaMerda/Maze.ml" 300 5507 5507 "SintoMeUmaMerda/Maze.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Maze.ml" 300 5507 5526 "SintoMeUmaMerda/Maze.ml" 300 5507 5527
+type(
+  maze
+)
+ident(
+  def m "SintoMeUmaMerda/Maze.ml" 300 5507 5528 "SintoMeUmaMerda/Maze.ml" 304 5604 5643
+)
+"SintoMeUmaMerda/Maze.ml" 300 5507 5528 "SintoMeUmaMerda/Maze.ml" 300 5507 5531
+type(
+  room list
+)
+ident(
+  def set "SintoMeUmaMerda/Maze.ml" 301 5533 5534 "SintoMeUmaMerda/Maze.ml" 304 5604 5643
+)
+"SintoMeUmaMerda/Maze.ml" 301 5533 5540 "SintoMeUmaMerda/Maze.ml" 301 5533 5543
+type(
+  room list
+)
+ident(
+  int_ref set "SintoMeUmaMerda/Maze.ml" 300 5507 5528 "SintoMeUmaMerda/Maze.ml" 300 5507 5531
+)
+"SintoMeUmaMerda/Maze.ml" 302 5549 5552 "SintoMeUmaMerda/Maze.ml" 302 5549 5554
+type(
+  room list
+)
+"SintoMeUmaMerda/Maze.ml" 302 5549 5556 "SintoMeUmaMerda/Maze.ml" 302 5549 5558
+type(
+  room list list
+)
+"SintoMeUmaMerda/Maze.ml" 303 5559 5562 "SintoMeUmaMerda/Maze.ml" 303 5559 5566
+type(
+  room
+)
+ident(
+  def head "SintoMeUmaMerda/Maze.ml" 303 5559 5577 "SintoMeUmaMerda/Maze.ml" 304 5604 5643
+)
+"SintoMeUmaMerda/Maze.ml" 303 5559 5568 "SintoMeUmaMerda/Maze.ml" 303 5559 5573
+type(
+  room list
+)
+ident(
+  def trail "SintoMeUmaMerda/Maze.ml" 303 5559 5577 "SintoMeUmaMerda/Maze.ml" 304 5604 5643
+)
+"SintoMeUmaMerda/Maze.ml" 303 5559 5562 "SintoMeUmaMerda/Maze.ml" 303 5559 5573
+type(
+  room list
+)
+"SintoMeUmaMerda/Maze.ml" 303 5559 5581 "SintoMeUmaMerda/Maze.ml" 303 5559 5582
+type(
+  room list
+)
+ident(
+  def x "SintoMeUmaMerda/Maze.ml" 304 5604 5613 "SintoMeUmaMerda/Maze.ml" 304 5604 5643
+)
+"SintoMeUmaMerda/Maze.ml" 303 5559 5584 "SintoMeUmaMerda/Maze.ml" 303 5559 5591
+type(
+  maze -> room list -> room list
+)
+ident(
+  int_ref explore "SintoMeUmaMerda/Maze.ml" 287 5286 5294 "SintoMeUmaMerda/Maze.ml" 287 5286 5301
+)
+"SintoMeUmaMerda/Maze.ml" 303 5559 5592 "SintoMeUmaMerda/Maze.ml" 303 5559 5593
+type(
+  maze
+)
+ident(
+  int_ref m "SintoMeUmaMerda/Maze.ml" 300 5507 5526 "SintoMeUmaMerda/Maze.ml" 300 5507 5527
+)
+"SintoMeUmaMerda/Maze.ml" 303 5559 5595 "SintoMeUmaMerda/Maze.ml" 303 5559 5599
+type(
+  room
+)
+ident(
+  int_ref head "SintoMeUmaMerda/Maze.ml" 303 5559 5562 "SintoMeUmaMerda/Maze.ml" 303 5559 5566
+)
+"SintoMeUmaMerda/Maze.ml" 303 5559 5594 "SintoMeUmaMerda/Maze.ml" 303 5559 5600
+type(
+  room list
+)
+"SintoMeUmaMerda/Maze.ml" 303 5559 5584 "SintoMeUmaMerda/Maze.ml" 303 5559 5600
+type(
+  room list
+)
+"SintoMeUmaMerda/Maze.ml" 304 5604 5613 "SintoMeUmaMerda/Maze.ml" 304 5604 5614
+type(
+  room list
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Maze.ml" 303 5559 5581 "SintoMeUmaMerda/Maze.ml" 303 5559 5582
+)
+"SintoMeUmaMerda/Maze.ml" 304 5604 5617 "SintoMeUmaMerda/Maze.ml" 304 5604 5627
+type(
+  maze -> room list -> room list list
+)
+ident(
+  int_ref islandsAux "SintoMeUmaMerda/Maze.ml" 300 5507 5515 "SintoMeUmaMerda/Maze.ml" 300 5507 5525
+)
+"SintoMeUmaMerda/Maze.ml" 304 5604 5628 "SintoMeUmaMerda/Maze.ml" 304 5604 5629
+type(
+  maze
+)
+ident(
+  int_ref m "SintoMeUmaMerda/Maze.ml" 300 5507 5526 "SintoMeUmaMerda/Maze.ml" 300 5507 5527
+)
+"SintoMeUmaMerda/Maze.ml" 304 5604 5631 "SintoMeUmaMerda/Maze.ml" 304 5604 5635
+type(
+  room list -> room list -> room list
+)
+ident(
+  int_ref diff "SintoMeUmaMerda/Maze.ml" 88 1430 1434 "SintoMeUmaMerda/Maze.ml" 88 1430 1438
+)
+"SintoMeUmaMerda/Maze.ml" 304 5604 5636 "SintoMeUmaMerda/Maze.ml" 304 5604 5639
+type(
+  room list
+)
+ident(
+  int_ref set "SintoMeUmaMerda/Maze.ml" 300 5507 5528 "SintoMeUmaMerda/Maze.ml" 300 5507 5531
+)
+"SintoMeUmaMerda/Maze.ml" 304 5604 5640 "SintoMeUmaMerda/Maze.ml" 304 5604 5641
+type(
+  room list
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Maze.ml" 303 5559 5581 "SintoMeUmaMerda/Maze.ml" 303 5559 5582
+)
+"SintoMeUmaMerda/Maze.ml" 304 5604 5630 "SintoMeUmaMerda/Maze.ml" 304 5604 5642
+type(
+  room list
+)
+"SintoMeUmaMerda/Maze.ml" 304 5604 5616 "SintoMeUmaMerda/Maze.ml" 304 5604 5643
+type(
+  room list list
+)
+"SintoMeUmaMerda/Maze.ml" 304 5604 5613 "SintoMeUmaMerda/Maze.ml" 304 5604 5643
+type(
+  room list list
+)
+"SintoMeUmaMerda/Maze.ml" 303 5559 5577 "SintoMeUmaMerda/Maze.ml" 304 5604 5643
+type(
+  room list list
+)
+"SintoMeUmaMerda/Maze.ml" 301 5533 5534 "SintoMeUmaMerda/Maze.ml" 304 5604 5643
+type(
+  room list list
+)
+"SintoMeUmaMerda/Maze.ml" 306 5647 5655 "SintoMeUmaMerda/Maze.ml" 306 5647 5662
+type(
+  maze -> room list list
+)
+ident(
+  def islands "SintoMeUmaMerda/Maze.ml" 306 5647 5647 "SintoMeUmaMerda/Maze.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Maze.ml" 306 5647 5663 "SintoMeUmaMerda/Maze.ml" 306 5647 5664
+type(
+  maze
+)
+ident(
+  def m "SintoMeUmaMerda/Maze.ml" 307 5666 5667 "SintoMeUmaMerda/Maze.ml" 307 5666 5687
+)
+"SintoMeUmaMerda/Maze.ml" 307 5666 5667 "SintoMeUmaMerda/Maze.ml" 307 5666 5677
+type(
+  maze -> rooms -> room list list
+)
+ident(
+  int_ref islandsAux "SintoMeUmaMerda/Maze.ml" 300 5507 5515 "SintoMeUmaMerda/Maze.ml" 300 5507 5525
+)
+"SintoMeUmaMerda/Maze.ml" 307 5666 5678 "SintoMeUmaMerda/Maze.ml" 307 5666 5679
+type(
+  maze
+)
+ident(
+  int_ref m "SintoMeUmaMerda/Maze.ml" 306 5647 5663 "SintoMeUmaMerda/Maze.ml" 306 5647 5664
+)
+"SintoMeUmaMerda/Maze.ml" 307 5666 5680 "SintoMeUmaMerda/Maze.ml" 307 5666 5681
+type(
+  maze
+)
+ident(
+  int_ref m "SintoMeUmaMerda/Maze.ml" 306 5647 5663 "SintoMeUmaMerda/Maze.ml" 306 5647 5664
+)
+"SintoMeUmaMerda/Maze.ml" 307 5666 5680 "SintoMeUmaMerda/Maze.ml" 307 5666 5687
+type(
+  rooms
+)
+"SintoMeUmaMerda/Maze.ml" 307 5666 5667 "SintoMeUmaMerda/Maze.ml" 307 5666 5687
+type(
+  room list list
+)
+"SintoMeUmaMerda/Maze.ml" 311 5716 5724 "SintoMeUmaMerda/Maze.ml" 311 5716 5739
+type(
+  maze -> room list -> room -> int
+)
+ident(
+  def distanceFromAux "SintoMeUmaMerda/Maze.ml" 311 5716 5716 "SintoMeUmaMerda/Maze.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Maze.ml" 311 5716 5740 "SintoMeUmaMerda/Maze.ml" 311 5716 5741
+type(
+  maze
+)
+ident(
+  def m "SintoMeUmaMerda/Maze.ml" 311 5716 5742 "SintoMeUmaMerda/Maze.ml" 317 5867 5911
+)
+"SintoMeUmaMerda/Maze.ml" 311 5716 5742 "SintoMeUmaMerda/Maze.ml" 311 5716 5745
+type(
+  room list
+)
+ident(
+  def set "SintoMeUmaMerda/Maze.ml" 311 5716 5746 "SintoMeUmaMerda/Maze.ml" 317 5867 5911
+)
+"SintoMeUmaMerda/Maze.ml" 311 5716 5746 "SintoMeUmaMerda/Maze.ml" 311 5716 5751
+type(
+  room
+)
+ident(
+  def room2 "SintoMeUmaMerda/Maze.ml" 312 5753 5755 "SintoMeUmaMerda/Maze.ml" 317 5867 5911
+)
+"SintoMeUmaMerda/Maze.ml" 312 5753 5758 "SintoMeUmaMerda/Maze.ml" 312 5753 5761
+type(
+  room list
+)
+ident(
+  int_ref set "SintoMeUmaMerda/Maze.ml" 311 5716 5742 "SintoMeUmaMerda/Maze.ml" 311 5716 5745
+)
+"SintoMeUmaMerda/Maze.ml" 312 5753 5762 "SintoMeUmaMerda/Maze.ml" 312 5753 5763
+type(
+  room list -> room list -> bool
+)
+ident(
+  int_ref Stdlib.( = ) "stdlib.mli" 118 4976 4976 "stdlib.mli" 118 4976 5020
+)
+"SintoMeUmaMerda/Maze.ml" 312 5753 5763 "SintoMeUmaMerda/Maze.ml" 312 5753 5765
+type(
+  room list
+)
+"SintoMeUmaMerda/Maze.ml" 312 5753 5758 "SintoMeUmaMerda/Maze.ml" 312 5753 5765
+type(
+  bool
+)
+"SintoMeUmaMerda/Maze.ml" 313 5771 5774 "SintoMeUmaMerda/Maze.ml" 313 5771 5782
+type(
+  string -> int
+)
+ident(
+  int_ref Stdlib.failwith "stdlib.mli" 41 1919 1919 "stdlib.mli" 41 1919 1946
+)
+"SintoMeUmaMerda/Maze.ml" 313 5771 5783 "SintoMeUmaMerda/Maze.ml" 313 5771 5822
+type(
+  string
+)
+"SintoMeUmaMerda/Maze.ml" 313 5771 5774 "SintoMeUmaMerda/Maze.ml" 313 5771 5822
+type(
+  int
+)
+"SintoMeUmaMerda/Maze.ml" 314 5823 5833 "SintoMeUmaMerda/Maze.ml" 314 5823 5840
+type(
+  room -> room list -> bool
+)
+ident(
+  int_ref belongs "SintoMeUmaMerda/Maze.ml" 53 1080 1084 "SintoMeUmaMerda/Maze.ml" 53 1080 1091
+)
+"SintoMeUmaMerda/Maze.ml" 314 5823 5841 "SintoMeUmaMerda/Maze.ml" 314 5823 5846
+type(
+  room
+)
+ident(
+  int_ref room2 "SintoMeUmaMerda/Maze.ml" 311 5716 5746 "SintoMeUmaMerda/Maze.ml" 311 5716 5751
+)
+"SintoMeUmaMerda/Maze.ml" 314 5823 5847 "SintoMeUmaMerda/Maze.ml" 314 5823 5850
+type(
+  room list
+)
+ident(
+  int_ref set "SintoMeUmaMerda/Maze.ml" 311 5716 5742 "SintoMeUmaMerda/Maze.ml" 311 5716 5745
+)
+"SintoMeUmaMerda/Maze.ml" 314 5823 5833 "SintoMeUmaMerda/Maze.ml" 314 5823 5850
+type(
+  bool
+)
+"SintoMeUmaMerda/Maze.ml" 315 5856 5858 "SintoMeUmaMerda/Maze.ml" 315 5856 5859
+type(
+  int
+)
+"SintoMeUmaMerda/Maze.ml" 317 5867 5869 "SintoMeUmaMerda/Maze.ml" 317 5867 5870
+type(
+  int
+)
+"SintoMeUmaMerda/Maze.ml" 317 5867 5870 "SintoMeUmaMerda/Maze.ml" 317 5867 5871
+type(
+  int -> int -> int
+)
+ident(
+  int_ref Stdlib.( + ) "stdlib.mli" 338 13360 13360 "stdlib.mli" 338 13360 13406
+)
+"SintoMeUmaMerda/Maze.ml" 317 5867 5873 "SintoMeUmaMerda/Maze.ml" 317 5867 5888
+type(
+  maze -> room list -> room -> int
+)
+ident(
+  int_ref distanceFromAux "SintoMeUmaMerda/Maze.ml" 311 5716 5724 "SintoMeUmaMerda/Maze.ml" 311 5716 5739
+)
+"SintoMeUmaMerda/Maze.ml" 317 5867 5889 "SintoMeUmaMerda/Maze.ml" 317 5867 5890
+type(
+  maze
+)
+ident(
+  int_ref m "SintoMeUmaMerda/Maze.ml" 311 5716 5740 "SintoMeUmaMerda/Maze.ml" 311 5716 5741
+)
+"SintoMeUmaMerda/Maze.ml" 317 5867 5892 "SintoMeUmaMerda/Maze.ml" 317 5867 5897
+type(
+  maze -> room list -> room list
+)
+ident(
+  int_ref next2 "SintoMeUmaMerda/Maze.ml" 226 4274 4278 "SintoMeUmaMerda/Maze.ml" 226 4274 4283
+)
+"SintoMeUmaMerda/Maze.ml" 317 5867 5898 "SintoMeUmaMerda/Maze.ml" 317 5867 5899
+type(
+  maze
+)
+ident(
+  int_ref m "SintoMeUmaMerda/Maze.ml" 311 5716 5740 "SintoMeUmaMerda/Maze.ml" 311 5716 5741
+)
+"SintoMeUmaMerda/Maze.ml" 317 5867 5900 "SintoMeUmaMerda/Maze.ml" 317 5867 5903
+type(
+  room list
+)
+ident(
+  int_ref set "SintoMeUmaMerda/Maze.ml" 311 5716 5742 "SintoMeUmaMerda/Maze.ml" 311 5716 5745
+)
+"SintoMeUmaMerda/Maze.ml" 317 5867 5891 "SintoMeUmaMerda/Maze.ml" 317 5867 5904
+type(
+  room list
+)
+"SintoMeUmaMerda/Maze.ml" 317 5867 5905 "SintoMeUmaMerda/Maze.ml" 317 5867 5910
+type(
+  room
+)
+ident(
+  int_ref room2 "SintoMeUmaMerda/Maze.ml" 311 5716 5746 "SintoMeUmaMerda/Maze.ml" 311 5716 5751
+)
+"SintoMeUmaMerda/Maze.ml" 317 5867 5872 "SintoMeUmaMerda/Maze.ml" 317 5867 5911
+type(
+  int
+)
+"SintoMeUmaMerda/Maze.ml" 317 5867 5869 "SintoMeUmaMerda/Maze.ml" 317 5867 5911
+type(
+  int
+)
+"SintoMeUmaMerda/Maze.ml" 314 5823 5830 "SintoMeUmaMerda/Maze.ml" 317 5867 5911
+type(
+  int
+)
+"SintoMeUmaMerda/Maze.ml" 312 5753 5755 "SintoMeUmaMerda/Maze.ml" 317 5867 5911
+type(
+  int
+)
+"SintoMeUmaMerda/Maze.ml" 319 5915 5919 "SintoMeUmaMerda/Maze.ml" 319 5915 5931
+type(
+  maze -> room -> room -> int
+)
+ident(
+  def distanceFrom "SintoMeUmaMerda/Maze.ml" 328 6376 6376 "SintoMeUmaMerda/Maze.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Maze.ml" 319 5915 5932 "SintoMeUmaMerda/Maze.ml" 319 5915 5933
+type(
+  maze
+)
+ident(
+  def m "SintoMeUmaMerda/Maze.ml" 319 5915 5934 "SintoMeUmaMerda/Maze.ml" 320 5947 5979
+)
+"SintoMeUmaMerda/Maze.ml" 319 5915 5934 "SintoMeUmaMerda/Maze.ml" 319 5915 5939
+type(
+  room
+)
+ident(
+  def room1 "SintoMeUmaMerda/Maze.ml" 319 5915 5940 "SintoMeUmaMerda/Maze.ml" 320 5947 5979
+)
+"SintoMeUmaMerda/Maze.ml" 319 5915 5940 "SintoMeUmaMerda/Maze.ml" 319 5915 5945
+type(
+  room
+)
+ident(
+  def room2 "SintoMeUmaMerda/Maze.ml" 320 5947 5948 "SintoMeUmaMerda/Maze.ml" 320 5947 5979
+)
+"SintoMeUmaMerda/Maze.ml" 320 5947 5948 "SintoMeUmaMerda/Maze.ml" 320 5947 5963
+type(
+  maze -> room list -> room -> int
+)
+ident(
+  int_ref distanceFromAux "SintoMeUmaMerda/Maze.ml" 311 5716 5724 "SintoMeUmaMerda/Maze.ml" 311 5716 5739
+)
+"SintoMeUmaMerda/Maze.ml" 320 5947 5964 "SintoMeUmaMerda/Maze.ml" 320 5947 5965
+type(
+  maze
+)
+ident(
+  int_ref m "SintoMeUmaMerda/Maze.ml" 319 5915 5932 "SintoMeUmaMerda/Maze.ml" 319 5915 5933
+)
+"SintoMeUmaMerda/Maze.ml" 320 5947 5967 "SintoMeUmaMerda/Maze.ml" 320 5947 5972
+type(
+  room
+)
+ident(
+  int_ref room1 "SintoMeUmaMerda/Maze.ml" 319 5915 5934 "SintoMeUmaMerda/Maze.ml" 319 5915 5939
+)
+"SintoMeUmaMerda/Maze.ml" 320 5947 5966 "SintoMeUmaMerda/Maze.ml" 320 5947 5973
+type(
+  room list
+)
+"SintoMeUmaMerda/Maze.ml" 320 5947 5974 "SintoMeUmaMerda/Maze.ml" 320 5947 5979
+type(
+  room
+)
+ident(
+  int_ref room2 "SintoMeUmaMerda/Maze.ml" 319 5915 5940 "SintoMeUmaMerda/Maze.ml" 319 5915 5945
+)
+"SintoMeUmaMerda/Maze.ml" 320 5947 5948 "SintoMeUmaMerda/Maze.ml" 320 5947 5979
+type(
+  int
+)
+"SintoMeUmaMerda/Maze.ml" 328 6376 6380 "SintoMeUmaMerda/Maze.ml" 328 6376 6388
+type(
+  'a -> 'b list
+)
+ident(
+  def shortest "SintoMeUmaMerda/Maze.ml" 335 6430 6430 "SintoMeUmaMerda/Maze.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Maze.ml" 328 6376 6389 "SintoMeUmaMerda/Maze.ml" 328 6376 6390
+type(
+  'a
+)
+ident(
+  def m "SintoMeUmaMerda/Maze.ml" 329 6393 6394 "SintoMeUmaMerda/Maze.ml" 329 6393 6402
+)
+"SintoMeUmaMerda/Maze.ml" 329 6393 6394 "SintoMeUmaMerda/Maze.ml" 329 6393 6402
+type(
+  'b list
+)
+ident(
+  int_ref _NO_PATH "SintoMeUmaMerda/Maze.ml" 134 2162 2166 "SintoMeUmaMerda/Maze.ml" 134 2162 2174
+)
+"SintoMeUmaMerda/Maze.ml" 335 6430 6438 "SintoMeUmaMerda/Maze.ml" 335 6430 6448
+type(
+  ('a * 'b) list -> 'a -> 'b list list
+)
+ident(
+  def auxNextaux "SintoMeUmaMerda/Maze.ml" 335 6430 6430 "SintoMeUmaMerda/Maze.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Maze.ml" 335 6430 6449 "SintoMeUmaMerda/Maze.ml" 335 6430 6452
+type(
+  ('a * 'b) list
+)
+ident(
+  def set "SintoMeUmaMerda/Maze.ml" 335 6430 6453 "SintoMeUmaMerda/Maze.ml" 341 6565 6594
+)
+"SintoMeUmaMerda/Maze.ml" 335 6430 6453 "SintoMeUmaMerda/Maze.ml" 335 6430 6454
+type(
+  'a
+)
+ident(
+  def r "SintoMeUmaMerda/Maze.ml" 336 6456 6457 "SintoMeUmaMerda/Maze.ml" 341 6565 6594
+)
+"SintoMeUmaMerda/Maze.ml" 336 6456 6463 "SintoMeUmaMerda/Maze.ml" 336 6456 6466
+type(
+  ('a * 'b) list
+)
+ident(
+  int_ref set "SintoMeUmaMerda/Maze.ml" 335 6430 6449 "SintoMeUmaMerda/Maze.ml" 335 6430 6452
+)
+"SintoMeUmaMerda/Maze.ml" 337 6472 6475 "SintoMeUmaMerda/Maze.ml" 337 6472 6477
+type(
+  ('a * 'b) list
+)
+"SintoMeUmaMerda/Maze.ml" 337 6472 6479 "SintoMeUmaMerda/Maze.ml" 337 6472 6481
+type(
+  'b list list
+)
+"SintoMeUmaMerda/Maze.ml" 338 6482 6486 "SintoMeUmaMerda/Maze.ml" 338 6482 6487
+type(
+  'a
+)
+ident(
+  def a "SintoMeUmaMerda/Maze.ml" 338 6482 6500 "SintoMeUmaMerda/Maze.ml" 341 6565 6594
+)
+"SintoMeUmaMerda/Maze.ml" 338 6482 6488 "SintoMeUmaMerda/Maze.ml" 338 6482 6489
+type(
+  'b
+)
+ident(
+  def b "SintoMeUmaMerda/Maze.ml" 338 6482 6500 "SintoMeUmaMerda/Maze.ml" 341 6565 6594
+)
+"SintoMeUmaMerda/Maze.ml" 338 6482 6485 "SintoMeUmaMerda/Maze.ml" 338 6482 6490
+type(
+  'a * 'b
+)
+"SintoMeUmaMerda/Maze.ml" 338 6482 6492 "SintoMeUmaMerda/Maze.ml" 338 6482 6497
+type(
+  ('a * 'b) list
+)
+ident(
+  def trail "SintoMeUmaMerda/Maze.ml" 338 6482 6500 "SintoMeUmaMerda/Maze.ml" 341 6565 6594
+)
+"SintoMeUmaMerda/Maze.ml" 338 6482 6485 "SintoMeUmaMerda/Maze.ml" 338 6482 6497
+type(
+  ('a * 'b) list
+)
+"SintoMeUmaMerda/Maze.ml" 338 6482 6503 "SintoMeUmaMerda/Maze.ml" 338 6482 6504
+type(
+  'a
+)
+ident(
+  int_ref a "SintoMeUmaMerda/Maze.ml" 338 6482 6486 "SintoMeUmaMerda/Maze.ml" 338 6482 6487
+)
+"SintoMeUmaMerda/Maze.ml" 338 6482 6504 "SintoMeUmaMerda/Maze.ml" 338 6482 6505
+type(
+  'a -> 'a -> bool
+)
+ident(
+  int_ref Stdlib.( = ) "stdlib.mli" 118 4976 4976 "stdlib.mli" 118 4976 5020
+)
+"SintoMeUmaMerda/Maze.ml" 338 6482 6506 "SintoMeUmaMerda/Maze.ml" 338 6482 6507
+type(
+  'a
+)
+ident(
+  int_ref r "SintoMeUmaMerda/Maze.ml" 335 6430 6453 "SintoMeUmaMerda/Maze.ml" 335 6430 6454
+)
+"SintoMeUmaMerda/Maze.ml" 338 6482 6503 "SintoMeUmaMerda/Maze.ml" 338 6482 6507
+type(
+  bool
+)
+"SintoMeUmaMerda/Maze.ml" 339 6513 6524 "SintoMeUmaMerda/Maze.ml" 339 6513 6525
+type(
+  'b
+)
+ident(
+  int_ref b "SintoMeUmaMerda/Maze.ml" 338 6482 6488 "SintoMeUmaMerda/Maze.ml" 338 6482 6489
+)
+"SintoMeUmaMerda/Maze.ml" 339 6513 6523 "SintoMeUmaMerda/Maze.ml" 339 6513 6526
+type(
+  'b list
+)
+"SintoMeUmaMerda/Maze.ml" 339 6513 6529 "SintoMeUmaMerda/Maze.ml" 339 6513 6539
+type(
+  ('a * 'b) list -> 'a -> 'b list list
+)
+ident(
+  int_ref auxNextaux "SintoMeUmaMerda/Maze.ml" 335 6430 6438 "SintoMeUmaMerda/Maze.ml" 335 6430 6448
+)
+"SintoMeUmaMerda/Maze.ml" 339 6513 6540 "SintoMeUmaMerda/Maze.ml" 339 6513 6545
+type(
+  ('a * 'b) list
+)
+ident(
+  int_ref trail "SintoMeUmaMerda/Maze.ml" 338 6482 6492 "SintoMeUmaMerda/Maze.ml" 338 6482 6497
+)
+"SintoMeUmaMerda/Maze.ml" 339 6513 6546 "SintoMeUmaMerda/Maze.ml" 339 6513 6547
+type(
+  'a
+)
+ident(
+  int_ref r "SintoMeUmaMerda/Maze.ml" 335 6430 6453 "SintoMeUmaMerda/Maze.ml" 335 6430 6454
+)
+"SintoMeUmaMerda/Maze.ml" 339 6513 6528 "SintoMeUmaMerda/Maze.ml" 339 6513 6548
+type(
+  'b list list
+)
+"SintoMeUmaMerda/Maze.ml" 339 6513 6523 "SintoMeUmaMerda/Maze.ml" 339 6513 6548
+type(
+  'b list list
+)
+"SintoMeUmaMerda/Maze.ml" 341 6565 6576 "SintoMeUmaMerda/Maze.ml" 341 6565 6586
+type(
+  ('a * 'b) list -> 'a -> 'b list list
+)
+ident(
+  int_ref auxNextaux "SintoMeUmaMerda/Maze.ml" 335 6430 6438 "SintoMeUmaMerda/Maze.ml" 335 6430 6448
+)
+"SintoMeUmaMerda/Maze.ml" 341 6565 6587 "SintoMeUmaMerda/Maze.ml" 341 6565 6592
+type(
+  ('a * 'b) list
+)
+ident(
+  int_ref trail "SintoMeUmaMerda/Maze.ml" 338 6482 6492 "SintoMeUmaMerda/Maze.ml" 338 6482 6497
+)
+"SintoMeUmaMerda/Maze.ml" 341 6565 6593 "SintoMeUmaMerda/Maze.ml" 341 6565 6594
+type(
+  'a
+)
+ident(
+  int_ref r "SintoMeUmaMerda/Maze.ml" 335 6430 6453 "SintoMeUmaMerda/Maze.ml" 335 6430 6454
+)
+"SintoMeUmaMerda/Maze.ml" 341 6565 6576 "SintoMeUmaMerda/Maze.ml" 341 6565 6594
+type(
+  'b list list
+)
+"SintoMeUmaMerda/Maze.ml" 338 6482 6500 "SintoMeUmaMerda/Maze.ml" 341 6565 6594
+type(
+  'b list list
+)
+"SintoMeUmaMerda/Maze.ml" 336 6456 6457 "SintoMeUmaMerda/Maze.ml" 341 6565 6594
+type(
+  'b list list
+)
+"SintoMeUmaMerda/Maze.ml" 344 6599 6603 "SintoMeUmaMerda/Maze.ml" 344 6599 6610
+type(
+  maze -> room -> room list list
+)
+ident(
+  def auxNext "SintoMeUmaMerda/Maze.ml" 348 6647 6647 "SintoMeUmaMerda/Maze.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Maze.ml" 344 6599 6611 "SintoMeUmaMerda/Maze.ml" 344 6599 6612
+type(
+  maze
+)
+ident(
+  def m "SintoMeUmaMerda/Maze.ml" 344 6599 6613 "SintoMeUmaMerda/Maze.ml" 345 6618 6642
+)
+"SintoMeUmaMerda/Maze.ml" 344 6599 6613 "SintoMeUmaMerda/Maze.ml" 344 6599 6614
+type(
+  room
+)
+ident(
+  def r "SintoMeUmaMerda/Maze.ml" 345 6618 6619 "SintoMeUmaMerda/Maze.ml" 345 6618 6642
+)
+"SintoMeUmaMerda/Maze.ml" 345 6618 6619 "SintoMeUmaMerda/Maze.ml" 345 6618 6629
+type(
+  passages -> room -> room list list
+)
+ident(
+  int_ref auxNextaux "SintoMeUmaMerda/Maze.ml" 335 6430 6438 "SintoMeUmaMerda/Maze.ml" 335 6430 6448
+)
+"SintoMeUmaMerda/Maze.ml" 345 6618 6630 "SintoMeUmaMerda/Maze.ml" 345 6618 6631
+type(
+  maze
+)
+ident(
+  int_ref m "SintoMeUmaMerda/Maze.ml" 344 6599 6611 "SintoMeUmaMerda/Maze.ml" 344 6599 6612
+)
+"SintoMeUmaMerda/Maze.ml" 345 6618 6630 "SintoMeUmaMerda/Maze.ml" 345 6618 6640
+type(
+  passages
+)
+"SintoMeUmaMerda/Maze.ml" 345 6618 6641 "SintoMeUmaMerda/Maze.ml" 345 6618 6642
+type(
+  room
+)
+ident(
+  int_ref r "SintoMeUmaMerda/Maze.ml" 344 6599 6613 "SintoMeUmaMerda/Maze.ml" 344 6599 6614
+)
+"SintoMeUmaMerda/Maze.ml" 345 6618 6619 "SintoMeUmaMerda/Maze.ml" 345 6618 6642
+type(
+  room list list
+)
+"SintoMeUmaMerda/Maze.ml" 348 6647 6655 "SintoMeUmaMerda/Maze.ml" 348 6647 6664
+type(
+  'a list list -> 'a list -> 'a list list
+)
+ident(
+  def concatSep "SintoMeUmaMerda/Maze.ml" 348 6647 6647 "SintoMeUmaMerda/Maze.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Maze.ml" 348 6647 6665 "SintoMeUmaMerda/Maze.ml" 348 6647 6667
+type(
+  'a list list
+)
+ident(
+  def ll "SintoMeUmaMerda/Maze.ml" 348 6647 6668 "SintoMeUmaMerda/Maze.ml" 352 6739 6778
+)
+"SintoMeUmaMerda/Maze.ml" 348 6647 6668 "SintoMeUmaMerda/Maze.ml" 348 6647 6669
+type(
+  'a list
+)
+ident(
+  def l "SintoMeUmaMerda/Maze.ml" 349 6671 6672 "SintoMeUmaMerda/Maze.ml" 352 6739 6778
+)
+"SintoMeUmaMerda/Maze.ml" 349 6671 6678 "SintoMeUmaMerda/Maze.ml" 349 6671 6680
+type(
+  'a list list
+)
+ident(
+  int_ref ll "SintoMeUmaMerda/Maze.ml" 348 6647 6665 "SintoMeUmaMerda/Maze.ml" 348 6647 6667
+)
+"SintoMeUmaMerda/Maze.ml" 350 6686 6689 "SintoMeUmaMerda/Maze.ml" 350 6686 6691
+type(
+  'a list list
+)
+"SintoMeUmaMerda/Maze.ml" 350 6686 6693 "SintoMeUmaMerda/Maze.ml" 350 6686 6695
+type(
+  'a list list
+)
+"SintoMeUmaMerda/Maze.ml" 351 6696 6699 "SintoMeUmaMerda/Maze.ml" 351 6696 6703
+type(
+  'a list
+)
+ident(
+  def head "SintoMeUmaMerda/Maze.ml" 351 6696 6713 "SintoMeUmaMerda/Maze.ml" 352 6739 6778
+)
+"SintoMeUmaMerda/Maze.ml" 351 6696 6705 "SintoMeUmaMerda/Maze.ml" 351 6696 6710
+type(
+  'a list list
+)
+ident(
+  def trail "SintoMeUmaMerda/Maze.ml" 351 6696 6713 "SintoMeUmaMerda/Maze.ml" 352 6739 6778
+)
+"SintoMeUmaMerda/Maze.ml" 351 6696 6699 "SintoMeUmaMerda/Maze.ml" 351 6696 6710
+type(
+  'a list list
+)
+"SintoMeUmaMerda/Maze.ml" 351 6696 6718 "SintoMeUmaMerda/Maze.ml" 351 6696 6719
+type(
+  'a
+)
+ident(
+  def a "SintoMeUmaMerda/Maze.ml" 352 6739 6748 "SintoMeUmaMerda/Maze.ml" 352 6739 6778
+)
+"SintoMeUmaMerda/Maze.ml" 351 6696 6720 "SintoMeUmaMerda/Maze.ml" 351 6696 6721
+type(
+  'a list
+)
+ident(
+  def b "SintoMeUmaMerda/Maze.ml" 352 6739 6748 "SintoMeUmaMerda/Maze.ml" 352 6739 6778
+)
+"SintoMeUmaMerda/Maze.ml" 351 6696 6717 "SintoMeUmaMerda/Maze.ml" 351 6696 6722
+type(
+  'a * 'a list
+)
+"SintoMeUmaMerda/Maze.ml" 351 6696 6724 "SintoMeUmaMerda/Maze.ml" 351 6696 6733
+type(
+  'a list -> 'a * 'a list
+)
+ident(
+  int_ref xtracHead "SintoMeUmaMerda/Maze.ml" 354 6782 6786 "SintoMeUmaMerda/Maze.ml" 354 6782 6795
+)
+"SintoMeUmaMerda/Maze.ml" 351 6696 6734 "SintoMeUmaMerda/Maze.ml" 351 6696 6735
+type(
+  'a list
+)
+ident(
+  int_ref l "SintoMeUmaMerda/Maze.ml" 348 6647 6668 "SintoMeUmaMerda/Maze.ml" 348 6647 6669
+)
+"SintoMeUmaMerda/Maze.ml" 351 6696 6724 "SintoMeUmaMerda/Maze.ml" 351 6696 6735
+type(
+  'a * 'a list
+)
+"SintoMeUmaMerda/Maze.ml" 352 6739 6749 "SintoMeUmaMerda/Maze.ml" 352 6739 6750
+type(
+  'a
+)
+ident(
+  int_ref a "SintoMeUmaMerda/Maze.ml" 351 6696 6718 "SintoMeUmaMerda/Maze.ml" 351 6696 6719
+)
+"SintoMeUmaMerda/Maze.ml" 352 6739 6752 "SintoMeUmaMerda/Maze.ml" 352 6739 6756
+type(
+  'a list
+)
+ident(
+  int_ref head "SintoMeUmaMerda/Maze.ml" 351 6696 6699 "SintoMeUmaMerda/Maze.ml" 351 6696 6703
+)
+"SintoMeUmaMerda/Maze.ml" 352 6739 6748 "SintoMeUmaMerda/Maze.ml" 352 6739 6757
+type(
+  'a list
+)
+"SintoMeUmaMerda/Maze.ml" 352 6739 6760 "SintoMeUmaMerda/Maze.ml" 352 6739 6769
+type(
+  'a list list -> 'a list -> 'a list list
+)
+ident(
+  int_ref concatSep "SintoMeUmaMerda/Maze.ml" 348 6647 6655 "SintoMeUmaMerda/Maze.ml" 348 6647 6664
+)
+"SintoMeUmaMerda/Maze.ml" 352 6739 6770 "SintoMeUmaMerda/Maze.ml" 352 6739 6775
+type(
+  'a list list
+)
+ident(
+  int_ref trail "SintoMeUmaMerda/Maze.ml" 351 6696 6705 "SintoMeUmaMerda/Maze.ml" 351 6696 6710
+)
+"SintoMeUmaMerda/Maze.ml" 352 6739 6776 "SintoMeUmaMerda/Maze.ml" 352 6739 6777
+type(
+  'a list
+)
+ident(
+  int_ref b "SintoMeUmaMerda/Maze.ml" 351 6696 6720 "SintoMeUmaMerda/Maze.ml" 351 6696 6721
+)
+"SintoMeUmaMerda/Maze.ml" 352 6739 6759 "SintoMeUmaMerda/Maze.ml" 352 6739 6778
+type(
+  'a list list
+)
+"SintoMeUmaMerda/Maze.ml" 352 6739 6748 "SintoMeUmaMerda/Maze.ml" 352 6739 6778
+type(
+  'a list list
+)
+"SintoMeUmaMerda/Maze.ml" 351 6696 6713 "SintoMeUmaMerda/Maze.ml" 352 6739 6778
+type(
+  'a list list
+)
+"SintoMeUmaMerda/Maze.ml" 349 6671 6672 "SintoMeUmaMerda/Maze.ml" 352 6739 6778
+type(
+  'a list list
+)
+"SintoMeUmaMerda/Maze.ml" 354 6782 6786 "SintoMeUmaMerda/Maze.ml" 354 6782 6795
+type(
+  'a list -> 'a * 'a list
+)
+ident(
+  def xtracHead "SintoMeUmaMerda/Maze.ml" 348 6647 6647 "SintoMeUmaMerda/Maze.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Maze.ml" 354 6782 6796 "SintoMeUmaMerda/Maze.ml" 354 6782 6797
+type(
+  'a list
+)
+ident(
+  def l "SintoMeUmaMerda/Maze.ml" 355 6799 6800 "SintoMeUmaMerda/Maze.ml" 357 6866 6895
+)
+"SintoMeUmaMerda/Maze.ml" 355 6799 6806 "SintoMeUmaMerda/Maze.ml" 355 6799 6807
+type(
+  'a list
+)
+ident(
+  int_ref l "SintoMeUmaMerda/Maze.ml" 354 6782 6796 "SintoMeUmaMerda/Maze.ml" 354 6782 6797
+)
+"SintoMeUmaMerda/Maze.ml" 356 6813 6816 "SintoMeUmaMerda/Maze.ml" 356 6813 6818
+type(
+  'a list
+)
+"SintoMeUmaMerda/Maze.ml" 356 6813 6820 "SintoMeUmaMerda/Maze.ml" 356 6813 6828
+type(
+  string -> 'a * 'a list
+)
+ident(
+  int_ref Stdlib.failwith "stdlib.mli" 41 1919 1919 "stdlib.mli" 41 1919 1946
+)
+"SintoMeUmaMerda/Maze.ml" 356 6813 6829 "SintoMeUmaMerda/Maze.ml" 356 6813 6865
+type(
+  string
+)
+"SintoMeUmaMerda/Maze.ml" 356 6813 6820 "SintoMeUmaMerda/Maze.ml" 356 6813 6865
+type(
+  'a * 'a list
+)
+"SintoMeUmaMerda/Maze.ml" 357 6866 6869 "SintoMeUmaMerda/Maze.ml" 357 6866 6873
+type(
+  'a
+)
+ident(
+  def head "SintoMeUmaMerda/Maze.ml" 357 6866 6883 "SintoMeUmaMerda/Maze.ml" 357 6866 6895
+)
+"SintoMeUmaMerda/Maze.ml" 357 6866 6875 "SintoMeUmaMerda/Maze.ml" 357 6866 6880
+type(
+  'a list
+)
+ident(
+  def trail "SintoMeUmaMerda/Maze.ml" 357 6866 6883 "SintoMeUmaMerda/Maze.ml" 357 6866 6895
+)
+"SintoMeUmaMerda/Maze.ml" 357 6866 6869 "SintoMeUmaMerda/Maze.ml" 357 6866 6880
+type(
+  'a list
+)
+"SintoMeUmaMerda/Maze.ml" 357 6866 6884 "SintoMeUmaMerda/Maze.ml" 357 6866 6888
+type(
+  'a
+)
+ident(
+  int_ref head "SintoMeUmaMerda/Maze.ml" 357 6866 6869 "SintoMeUmaMerda/Maze.ml" 357 6866 6873
+)
+"SintoMeUmaMerda/Maze.ml" 357 6866 6889 "SintoMeUmaMerda/Maze.ml" 357 6866 6894
+type(
+  'a list
+)
+ident(
+  int_ref trail "SintoMeUmaMerda/Maze.ml" 357 6866 6875 "SintoMeUmaMerda/Maze.ml" 357 6866 6880
+)
+"SintoMeUmaMerda/Maze.ml" 357 6866 6883 "SintoMeUmaMerda/Maze.ml" 357 6866 6895
+type(
+  'a * 'a list
+)
+"SintoMeUmaMerda/Maze.ml" 355 6799 6800 "SintoMeUmaMerda/Maze.ml" 357 6866 6895
+type(
+  'a * 'a list
+)
+"SintoMeUmaMerda/Maze.ml" 360 6900 6908 "SintoMeUmaMerda/Maze.ml" 360 6900 6918
+type(
+  maze -> room list -> room list -> int
+)
+ident(
+  def countPaths "SintoMeUmaMerda/Maze.ml" 360 6900 6900 "SintoMeUmaMerda/Maze.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Maze.ml" 360 6900 6919 "SintoMeUmaMerda/Maze.ml" 360 6900 6920
+type(
+  maze
+)
+ident(
+  def m "SintoMeUmaMerda/Maze.ml" 360 6900 6921 "SintoMeUmaMerda/Maze.ml" 367 7100 7159
+)
+"SintoMeUmaMerda/Maze.ml" 360 6900 6921 "SintoMeUmaMerda/Maze.ml" 360 6900 6923
+type(
+  room list
+)
+ident(
+  def en "SintoMeUmaMerda/Maze.ml" 360 6900 6924 "SintoMeUmaMerda/Maze.ml" 367 7100 7159
+)
+"SintoMeUmaMerda/Maze.ml" 360 6900 6924 "SintoMeUmaMerda/Maze.ml" 360 6900 6926
+type(
+  room list
+)
+ident(
+  def ex "SintoMeUmaMerda/Maze.ml" 361 6928 6929 "SintoMeUmaMerda/Maze.ml" 367 7100 7159
+)
+"SintoMeUmaMerda/Maze.ml" 361 6928 6935 "SintoMeUmaMerda/Maze.ml" 361 6928 6937
+type(
+  room list
+)
+ident(
+  int_ref en "SintoMeUmaMerda/Maze.ml" 360 6900 6921 "SintoMeUmaMerda/Maze.ml" 360 6900 6923
+)
+"SintoMeUmaMerda/Maze.ml" 362 6943 6946 "SintoMeUmaMerda/Maze.ml" 362 6943 6948
+type(
+  room list
+)
+"SintoMeUmaMerda/Maze.ml" 362 6943 6950 "SintoMeUmaMerda/Maze.ml" 362 6943 6951
+type(
+  int
+)
+"SintoMeUmaMerda/Maze.ml" 363 6952 6955 "SintoMeUmaMerda/Maze.ml" 363 6952 6959
+type(
+  room
+)
+ident(
+  def head "SintoMeUmaMerda/Maze.ml" 363 6952 6969 "SintoMeUmaMerda/Maze.ml" 367 7100 7159
+)
+"SintoMeUmaMerda/Maze.ml" 363 6952 6961 "SintoMeUmaMerda/Maze.ml" 363 6952 6966
+type(
+  room list
+)
+ident(
+  def trail "SintoMeUmaMerda/Maze.ml" 363 6952 6969 "SintoMeUmaMerda/Maze.ml" 367 7100 7159
+)
+"SintoMeUmaMerda/Maze.ml" 363 6952 6955 "SintoMeUmaMerda/Maze.ml" 363 6952 6966
+type(
+  room list
+)
+"SintoMeUmaMerda/Maze.ml" 363 6952 6973 "SintoMeUmaMerda/Maze.ml" 363 6952 6975
+type(
+  room list
+)
+ident(
+  def ls "SintoMeUmaMerda/Maze.ml" 364 6992 7001 "SintoMeUmaMerda/Maze.ml" 367 7100 7159
+)
+"SintoMeUmaMerda/Maze.ml" 363 6952 6977 "SintoMeUmaMerda/Maze.ml" 363 6952 6981
+type(
+  maze -> room -> room list
+)
+ident(
+  int_ref next "SintoMeUmaMerda/Maze.ml" 213 4060 4064 "SintoMeUmaMerda/Maze.ml" 213 4060 4068
+)
+"SintoMeUmaMerda/Maze.ml" 363 6952 6982 "SintoMeUmaMerda/Maze.ml" 363 6952 6983
+type(
+  maze
+)
+ident(
+  int_ref m "SintoMeUmaMerda/Maze.ml" 360 6900 6919 "SintoMeUmaMerda/Maze.ml" 360 6900 6920
+)
+"SintoMeUmaMerda/Maze.ml" 363 6952 6984 "SintoMeUmaMerda/Maze.ml" 363 6952 6988
+type(
+  room
+)
+ident(
+  int_ref head "SintoMeUmaMerda/Maze.ml" 363 6952 6955 "SintoMeUmaMerda/Maze.ml" 363 6952 6959
+)
+"SintoMeUmaMerda/Maze.ml" 363 6952 6977 "SintoMeUmaMerda/Maze.ml" 363 6952 6988
+type(
+  room list
+)
+"SintoMeUmaMerda/Maze.ml" 364 6992 7004 "SintoMeUmaMerda/Maze.ml" 364 6992 7011
+type(
+  room -> room list -> bool
+)
+ident(
+  int_ref belongs "SintoMeUmaMerda/Maze.ml" 53 1080 1084 "SintoMeUmaMerda/Maze.ml" 53 1080 1091
+)
+"SintoMeUmaMerda/Maze.ml" 364 6992 7012 "SintoMeUmaMerda/Maze.ml" 364 6992 7016
+type(
+  room
+)
+ident(
+  int_ref head "SintoMeUmaMerda/Maze.ml" 363 6952 6955 "SintoMeUmaMerda/Maze.ml" 363 6952 6959
+)
+"SintoMeUmaMerda/Maze.ml" 364 6992 7017 "SintoMeUmaMerda/Maze.ml" 364 6992 7019
+type(
+  room list
+)
+ident(
+  int_ref ex "SintoMeUmaMerda/Maze.ml" 360 6900 6924 "SintoMeUmaMerda/Maze.ml" 360 6900 6926
+)
+"SintoMeUmaMerda/Maze.ml" 364 6992 7004 "SintoMeUmaMerda/Maze.ml" 364 6992 7019
+type(
+  bool
+)
+"SintoMeUmaMerda/Maze.ml" 365 7025 7036 "SintoMeUmaMerda/Maze.ml" 365 7025 7037
+type(
+  int
+)
+"SintoMeUmaMerda/Maze.ml" 365 7025 7037 "SintoMeUmaMerda/Maze.ml" 365 7025 7038
+type(
+  int -> int -> int
+)
+ident(
+  int_ref Stdlib.( + ) "stdlib.mli" 338 13360 13360 "stdlib.mli" 338 13360 13406
+)
+"SintoMeUmaMerda/Maze.ml" 365 7025 7039 "SintoMeUmaMerda/Maze.ml" 365 7025 7049
+type(
+  maze -> room list -> room list -> int
+)
+ident(
+  int_ref countPaths "SintoMeUmaMerda/Maze.ml" 360 6900 6908 "SintoMeUmaMerda/Maze.ml" 360 6900 6918
+)
+"SintoMeUmaMerda/Maze.ml" 365 7025 7050 "SintoMeUmaMerda/Maze.ml" 365 7025 7051
+type(
+  maze
+)
+ident(
+  int_ref m "SintoMeUmaMerda/Maze.ml" 360 6900 6919 "SintoMeUmaMerda/Maze.ml" 360 6900 6920
+)
+"SintoMeUmaMerda/Maze.ml" 365 7025 7052 "SintoMeUmaMerda/Maze.ml" 365 7025 7054
+type(
+  room list
+)
+ident(
+  int_ref ls "SintoMeUmaMerda/Maze.ml" 363 6952 6973 "SintoMeUmaMerda/Maze.ml" 363 6952 6975
+)
+"SintoMeUmaMerda/Maze.ml" 365 7025 7055 "SintoMeUmaMerda/Maze.ml" 365 7025 7057
+type(
+  room list
+)
+ident(
+  int_ref ex "SintoMeUmaMerda/Maze.ml" 360 6900 6924 "SintoMeUmaMerda/Maze.ml" 360 6900 6926
+)
+"SintoMeUmaMerda/Maze.ml" 365 7025 7038 "SintoMeUmaMerda/Maze.ml" 365 7025 7058
+type(
+  int
+)
+"SintoMeUmaMerda/Maze.ml" 365 7025 7036 "SintoMeUmaMerda/Maze.ml" 365 7025 7058
+type(
+  int
+)
+"SintoMeUmaMerda/Maze.ml" 365 7025 7059 "SintoMeUmaMerda/Maze.ml" 365 7025 7060
+type(
+  int -> int -> int
+)
+ident(
+  int_ref Stdlib.( + ) "stdlib.mli" 338 13360 13360 "stdlib.mli" 338 13360 13406
+)
+"SintoMeUmaMerda/Maze.ml" 365 7025 7061 "SintoMeUmaMerda/Maze.ml" 365 7025 7071
+type(
+  maze -> room list -> room list -> int
+)
+ident(
+  int_ref countPaths "SintoMeUmaMerda/Maze.ml" 360 6900 6908 "SintoMeUmaMerda/Maze.ml" 360 6900 6918
+)
+"SintoMeUmaMerda/Maze.ml" 365 7025 7072 "SintoMeUmaMerda/Maze.ml" 365 7025 7073
+type(
+  maze
+)
+ident(
+  int_ref m "SintoMeUmaMerda/Maze.ml" 360 6900 6919 "SintoMeUmaMerda/Maze.ml" 360 6900 6920
+)
+"SintoMeUmaMerda/Maze.ml" 365 7025 7074 "SintoMeUmaMerda/Maze.ml" 365 7025 7079
+type(
+  room list
+)
+ident(
+  int_ref trail "SintoMeUmaMerda/Maze.ml" 363 6952 6961 "SintoMeUmaMerda/Maze.ml" 363 6952 6966
+)
+"SintoMeUmaMerda/Maze.ml" 365 7025 7080 "SintoMeUmaMerda/Maze.ml" 365 7025 7082
+type(
+  room list
+)
+ident(
+  int_ref ex "SintoMeUmaMerda/Maze.ml" 360 6900 6924 "SintoMeUmaMerda/Maze.ml" 360 6900 6926
+)
+"SintoMeUmaMerda/Maze.ml" 365 7025 7060 "SintoMeUmaMerda/Maze.ml" 365 7025 7083
+type(
+  int
+)
+"SintoMeUmaMerda/Maze.ml" 365 7025 7036 "SintoMeUmaMerda/Maze.ml" 365 7025 7083
+type(
+  int
+)
+"SintoMeUmaMerda/Maze.ml" 367 7100 7111 "SintoMeUmaMerda/Maze.ml" 367 7100 7112
+type(
+  int
+)
+"SintoMeUmaMerda/Maze.ml" 367 7100 7112 "SintoMeUmaMerda/Maze.ml" 367 7100 7113
+type(
+  int -> int -> int
+)
+ident(
+  int_ref Stdlib.( + ) "stdlib.mli" 338 13360 13360 "stdlib.mli" 338 13360 13406
+)
+"SintoMeUmaMerda/Maze.ml" 367 7100 7115 "SintoMeUmaMerda/Maze.ml" 367 7100 7125
+type(
+  maze -> room list -> room list -> int
+)
+ident(
+  int_ref countPaths "SintoMeUmaMerda/Maze.ml" 360 6900 6908 "SintoMeUmaMerda/Maze.ml" 360 6900 6918
+)
+"SintoMeUmaMerda/Maze.ml" 367 7100 7126 "SintoMeUmaMerda/Maze.ml" 367 7100 7127
+type(
+  maze
+)
+ident(
+  int_ref m "SintoMeUmaMerda/Maze.ml" 360 6900 6919 "SintoMeUmaMerda/Maze.ml" 360 6900 6920
+)
+"SintoMeUmaMerda/Maze.ml" 367 7100 7128 "SintoMeUmaMerda/Maze.ml" 367 7100 7130
+type(
+  room list
+)
+ident(
+  int_ref ls "SintoMeUmaMerda/Maze.ml" 363 6952 6973 "SintoMeUmaMerda/Maze.ml" 363 6952 6975
+)
+"SintoMeUmaMerda/Maze.ml" 367 7100 7131 "SintoMeUmaMerda/Maze.ml" 367 7100 7133
+type(
+  room list
+)
+ident(
+  int_ref ex "SintoMeUmaMerda/Maze.ml" 360 6900 6924 "SintoMeUmaMerda/Maze.ml" 360 6900 6926
+)
+"SintoMeUmaMerda/Maze.ml" 367 7100 7114 "SintoMeUmaMerda/Maze.ml" 367 7100 7134
+type(
+  int
+)
+"SintoMeUmaMerda/Maze.ml" 367 7100 7111 "SintoMeUmaMerda/Maze.ml" 367 7100 7134
+type(
+  int
+)
+"SintoMeUmaMerda/Maze.ml" 367 7100 7135 "SintoMeUmaMerda/Maze.ml" 367 7100 7136
+type(
+  int -> int -> int
+)
+ident(
+  int_ref Stdlib.( + ) "stdlib.mli" 338 13360 13360 "stdlib.mli" 338 13360 13406
+)
+"SintoMeUmaMerda/Maze.ml" 367 7100 7137 "SintoMeUmaMerda/Maze.ml" 367 7100 7147
+type(
+  maze -> room list -> room list -> int
+)
+ident(
+  int_ref countPaths "SintoMeUmaMerda/Maze.ml" 360 6900 6908 "SintoMeUmaMerda/Maze.ml" 360 6900 6918
+)
+"SintoMeUmaMerda/Maze.ml" 367 7100 7148 "SintoMeUmaMerda/Maze.ml" 367 7100 7149
+type(
+  maze
+)
+ident(
+  int_ref m "SintoMeUmaMerda/Maze.ml" 360 6900 6919 "SintoMeUmaMerda/Maze.ml" 360 6900 6920
+)
+"SintoMeUmaMerda/Maze.ml" 367 7100 7150 "SintoMeUmaMerda/Maze.ml" 367 7100 7155
+type(
+  room list
+)
+ident(
+  int_ref trail "SintoMeUmaMerda/Maze.ml" 363 6952 6961 "SintoMeUmaMerda/Maze.ml" 363 6952 6966
+)
+"SintoMeUmaMerda/Maze.ml" 367 7100 7156 "SintoMeUmaMerda/Maze.ml" 367 7100 7158
+type(
+  room list
+)
+ident(
+  int_ref ex "SintoMeUmaMerda/Maze.ml" 360 6900 6924 "SintoMeUmaMerda/Maze.ml" 360 6900 6926
+)
+"SintoMeUmaMerda/Maze.ml" 367 7100 7136 "SintoMeUmaMerda/Maze.ml" 367 7100 7159
+type(
+  int
+)
+"SintoMeUmaMerda/Maze.ml" 367 7100 7111 "SintoMeUmaMerda/Maze.ml" 367 7100 7159
+type(
+  int
+)
+"SintoMeUmaMerda/Maze.ml" 364 6992 7001 "SintoMeUmaMerda/Maze.ml" 367 7100 7159
+type(
+  int
+)
+"SintoMeUmaMerda/Maze.ml" 363 6952 6969 "SintoMeUmaMerda/Maze.ml" 367 7100 7159
+type(
+  int
+)
+"SintoMeUmaMerda/Maze.ml" 361 6928 6929 "SintoMeUmaMerda/Maze.ml" 367 7100 7159
+type(
+  int
+)
+"SintoMeUmaMerda/Maze.ml" 371 7166 7174 "SintoMeUmaMerda/Maze.ml" 371 7166 7178
+type(
+  'a list list -> 'a -> 'a list list
+)
+ident(
+  def conc "SintoMeUmaMerda/Maze.ml" 371 7166 7166 "SintoMeUmaMerda/Maze.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Maze.ml" 371 7166 7179 "SintoMeUmaMerda/Maze.ml" 371 7166 7181
+type(
+  'a list list
+)
+ident(
+  def ll "SintoMeUmaMerda/Maze.ml" 371 7166 7182 "SintoMeUmaMerda/Maze.ml" 374 7211 7253
+)
+"SintoMeUmaMerda/Maze.ml" 371 7166 7182 "SintoMeUmaMerda/Maze.ml" 371 7166 7183
+type(
+  'a
+)
+ident(
+  def x "SintoMeUmaMerda/Maze.ml" 372 7186 7187 "SintoMeUmaMerda/Maze.ml" 374 7211 7253
+)
+"SintoMeUmaMerda/Maze.ml" 372 7186 7193 "SintoMeUmaMerda/Maze.ml" 372 7186 7195
+type(
+  'a list list
+)
+ident(
+  int_ref ll "SintoMeUmaMerda/Maze.ml" 371 7166 7179 "SintoMeUmaMerda/Maze.ml" 371 7166 7181
+)
+"SintoMeUmaMerda/Maze.ml" 373 7201 7204 "SintoMeUmaMerda/Maze.ml" 373 7201 7206
+type(
+  'a list list
+)
+"SintoMeUmaMerda/Maze.ml" 373 7201 7208 "SintoMeUmaMerda/Maze.ml" 373 7201 7210
+type(
+  'a list list
+)
+"SintoMeUmaMerda/Maze.ml" 374 7211 7214 "SintoMeUmaMerda/Maze.ml" 374 7211 7218
+type(
+  'a list
+)
+ident(
+  def head "SintoMeUmaMerda/Maze.ml" 374 7211 7228 "SintoMeUmaMerda/Maze.ml" 374 7211 7253
+)
+"SintoMeUmaMerda/Maze.ml" 374 7211 7220 "SintoMeUmaMerda/Maze.ml" 374 7211 7225
+type(
+  'a list list
+)
+ident(
+  def trail "SintoMeUmaMerda/Maze.ml" 374 7211 7228 "SintoMeUmaMerda/Maze.ml" 374 7211 7253
+)
+"SintoMeUmaMerda/Maze.ml" 374 7211 7214 "SintoMeUmaMerda/Maze.ml" 374 7211 7225
+type(
+  'a list list
+)
+"SintoMeUmaMerda/Maze.ml" 374 7211 7229 "SintoMeUmaMerda/Maze.ml" 374 7211 7230
+type(
+  'a
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Maze.ml" 371 7166 7182 "SintoMeUmaMerda/Maze.ml" 371 7166 7183
+)
+"SintoMeUmaMerda/Maze.ml" 374 7211 7232 "SintoMeUmaMerda/Maze.ml" 374 7211 7236
+type(
+  'a list
+)
+ident(
+  int_ref head "SintoMeUmaMerda/Maze.ml" 374 7211 7214 "SintoMeUmaMerda/Maze.ml" 374 7211 7218
+)
+"SintoMeUmaMerda/Maze.ml" 374 7211 7228 "SintoMeUmaMerda/Maze.ml" 374 7211 7237
+type(
+  'a list
+)
+"SintoMeUmaMerda/Maze.ml" 374 7211 7240 "SintoMeUmaMerda/Maze.ml" 374 7211 7244
+type(
+  'a list list -> 'a -> 'a list list
+)
+ident(
+  int_ref conc "SintoMeUmaMerda/Maze.ml" 371 7166 7174 "SintoMeUmaMerda/Maze.ml" 371 7166 7178
+)
+"SintoMeUmaMerda/Maze.ml" 374 7211 7245 "SintoMeUmaMerda/Maze.ml" 374 7211 7250
+type(
+  'a list list
+)
+ident(
+  int_ref trail "SintoMeUmaMerda/Maze.ml" 374 7211 7220 "SintoMeUmaMerda/Maze.ml" 374 7211 7225
+)
+"SintoMeUmaMerda/Maze.ml" 374 7211 7251 "SintoMeUmaMerda/Maze.ml" 374 7211 7252
+type(
+  'a
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Maze.ml" 371 7166 7182 "SintoMeUmaMerda/Maze.ml" 371 7166 7183
+)
+"SintoMeUmaMerda/Maze.ml" 374 7211 7239 "SintoMeUmaMerda/Maze.ml" 374 7211 7253
+type(
+  'a list list
+)
+"SintoMeUmaMerda/Maze.ml" 374 7211 7228 "SintoMeUmaMerda/Maze.ml" 374 7211 7253
+type(
+  'a list list
+)
+"SintoMeUmaMerda/Maze.ml" 372 7186 7187 "SintoMeUmaMerda/Maze.ml" 374 7211 7253
+type(
+  'a list list
+)
+"SintoMeUmaMerda/Maze.ml" 386 7833 7841 "SintoMeUmaMerda/Maze.ml" 386 7833 7848
+type(
+  'a list -> 'a
+)
+ident(
+  def getLast "SintoMeUmaMerda/Maze.ml" 386 7833 7833 "SintoMeUmaMerda/Maze.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Maze.ml" 386 7833 7849 "SintoMeUmaMerda/Maze.ml" 386 7833 7850
+type(
+  'a list
+)
+ident(
+  def l "SintoMeUmaMerda/Maze.ml" 387 7852 7853 "SintoMeUmaMerda/Maze.ml" 390 7918 7949
+)
+"SintoMeUmaMerda/Maze.ml" 387 7852 7859 "SintoMeUmaMerda/Maze.ml" 387 7852 7860
+type(
+  'a list
+)
+ident(
+  int_ref l "SintoMeUmaMerda/Maze.ml" 386 7833 7849 "SintoMeUmaMerda/Maze.ml" 386 7833 7850
+)
+"SintoMeUmaMerda/Maze.ml" 388 7866 7869 "SintoMeUmaMerda/Maze.ml" 388 7866 7871
+type(
+  'a list
+)
+"SintoMeUmaMerda/Maze.ml" 388 7866 7874 "SintoMeUmaMerda/Maze.ml" 388 7866 7882
+type(
+  string -> 'a
+)
+ident(
+  int_ref Stdlib.failwith "stdlib.mli" 41 1919 1919 "stdlib.mli" 41 1919 1946
+)
+"SintoMeUmaMerda/Maze.ml" 388 7866 7883 "SintoMeUmaMerda/Maze.ml" 388 7866 7907
+type(
+  string
+)
+"SintoMeUmaMerda/Maze.ml" 388 7866 7874 "SintoMeUmaMerda/Maze.ml" 388 7866 7907
+type(
+  'a
+)
+"SintoMeUmaMerda/Maze.ml" 389 7908 7912 "SintoMeUmaMerda/Maze.ml" 389 7908 7913
+type(
+  'a
+)
+ident(
+  def x "SintoMeUmaMerda/Maze.ml" 389 7908 7916 "SintoMeUmaMerda/Maze.ml" 389 7908 7917
+)
+"SintoMeUmaMerda/Maze.ml" 389 7908 7911 "SintoMeUmaMerda/Maze.ml" 389 7908 7914
+type(
+  'a list
+)
+"SintoMeUmaMerda/Maze.ml" 389 7908 7916 "SintoMeUmaMerda/Maze.ml" 389 7908 7917
+type(
+  'a
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Maze.ml" 389 7908 7912 "SintoMeUmaMerda/Maze.ml" 389 7908 7913
+)
+"SintoMeUmaMerda/Maze.ml" 390 7918 7921 "SintoMeUmaMerda/Maze.ml" 390 7918 7925
+type(
+  'a
+)
+ident(
+  def head "SintoMeUmaMerda/Maze.ml" 390 7918 7936 "SintoMeUmaMerda/Maze.ml" 390 7918 7949
+)
+"SintoMeUmaMerda/Maze.ml" 390 7918 7927 "SintoMeUmaMerda/Maze.ml" 390 7918 7932
+type(
+  'a list
+)
+ident(
+  def trail "SintoMeUmaMerda/Maze.ml" 390 7918 7936 "SintoMeUmaMerda/Maze.ml" 390 7918 7949
+)
+"SintoMeUmaMerda/Maze.ml" 390 7918 7921 "SintoMeUmaMerda/Maze.ml" 390 7918 7932
+type(
+  'a list
+)
+"SintoMeUmaMerda/Maze.ml" 390 7918 7936 "SintoMeUmaMerda/Maze.ml" 390 7918 7943
+type(
+  'a list -> 'a
+)
+ident(
+  int_ref getLast "SintoMeUmaMerda/Maze.ml" 386 7833 7841 "SintoMeUmaMerda/Maze.ml" 386 7833 7848
+)
+"SintoMeUmaMerda/Maze.ml" 390 7918 7944 "SintoMeUmaMerda/Maze.ml" 390 7918 7949
+type(
+  'a list
+)
+ident(
+  int_ref trail "SintoMeUmaMerda/Maze.ml" 390 7918 7927 "SintoMeUmaMerda/Maze.ml" 390 7918 7932
+)
+"SintoMeUmaMerda/Maze.ml" 390 7918 7936 "SintoMeUmaMerda/Maze.ml" 390 7918 7949
+type(
+  'a
+)
+"SintoMeUmaMerda/Maze.ml" 387 7852 7853 "SintoMeUmaMerda/Maze.ml" 390 7918 7949
+type(
+  'a
+)
+"SintoMeUmaMerda/Maze.ml" 393 7954 7962 "SintoMeUmaMerda/Maze.ml" 393 7954 7973
+type(
+  maze -> room list -> room list -> room list list
+)
+ident(
+  def multListAux "SintoMeUmaMerda/Maze.ml" 393 7954 7954 "SintoMeUmaMerda/Maze.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Maze.ml" 393 7954 7974 "SintoMeUmaMerda/Maze.ml" 393 7954 7975
+type(
+  maze
+)
+ident(
+  def m "SintoMeUmaMerda/Maze.ml" 393 7954 7976 "SintoMeUmaMerda/Maze.ml" 396 8007 8058
+)
+"SintoMeUmaMerda/Maze.ml" 393 7954 7976 "SintoMeUmaMerda/Maze.ml" 393 7954 7977
+type(
+  room list
+)
+ident(
+  def l "SintoMeUmaMerda/Maze.ml" 393 7954 7978 "SintoMeUmaMerda/Maze.ml" 396 8007 8058
+)
+"SintoMeUmaMerda/Maze.ml" 393 7954 7978 "SintoMeUmaMerda/Maze.ml" 393 7954 7980
+type(
+  room list
+)
+ident(
+  def lr "SintoMeUmaMerda/Maze.ml" 394 7982 7983 "SintoMeUmaMerda/Maze.ml" 396 8007 8058
+)
+"SintoMeUmaMerda/Maze.ml" 394 7982 7989 "SintoMeUmaMerda/Maze.ml" 394 7982 7991
+type(
+  room list
+)
+ident(
+  int_ref lr "SintoMeUmaMerda/Maze.ml" 393 7954 7978 "SintoMeUmaMerda/Maze.ml" 393 7954 7980
+)
+"SintoMeUmaMerda/Maze.ml" 395 7997 8000 "SintoMeUmaMerda/Maze.ml" 395 7997 8002
+type(
+  room list
+)
+"SintoMeUmaMerda/Maze.ml" 395 7997 8004 "SintoMeUmaMerda/Maze.ml" 395 7997 8006
+type(
+  room list list
+)
+"SintoMeUmaMerda/Maze.ml" 396 8007 8010 "SintoMeUmaMerda/Maze.ml" 396 8007 8014
+type(
+  room
+)
+ident(
+  def head "SintoMeUmaMerda/Maze.ml" 396 8007 8023 "SintoMeUmaMerda/Maze.ml" 396 8007 8058
+)
+"SintoMeUmaMerda/Maze.ml" 396 8007 8016 "SintoMeUmaMerda/Maze.ml" 396 8007 8021
+type(
+  room list
+)
+ident(
+  def trail "SintoMeUmaMerda/Maze.ml" 396 8007 8023 "SintoMeUmaMerda/Maze.ml" 396 8007 8058
+)
+"SintoMeUmaMerda/Maze.ml" 396 8007 8010 "SintoMeUmaMerda/Maze.ml" 396 8007 8021
+type(
+  room list
+)
+"SintoMeUmaMerda/Maze.ml" 396 8007 8024 "SintoMeUmaMerda/Maze.ml" 396 8007 8025
+type(
+  room list
+)
+ident(
+  int_ref l "SintoMeUmaMerda/Maze.ml" 393 7954 7976 "SintoMeUmaMerda/Maze.ml" 393 7954 7977
+)
+"SintoMeUmaMerda/Maze.ml" 396 8007 8025 "SintoMeUmaMerda/Maze.ml" 396 8007 8026
+type(
+  room list -> room list -> room list
+)
+ident(
+  int_ref Stdlib.( @ ) "stdlib.mli" 782 29359 29359 "stdlib.mli" 782 29359 29400
+)
+"SintoMeUmaMerda/Maze.ml" 396 8007 8027 "SintoMeUmaMerda/Maze.ml" 396 8007 8031
+type(
+  room
+)
+ident(
+  int_ref head "SintoMeUmaMerda/Maze.ml" 396 8007 8010 "SintoMeUmaMerda/Maze.ml" 396 8007 8014
+)
+"SintoMeUmaMerda/Maze.ml" 396 8007 8026 "SintoMeUmaMerda/Maze.ml" 396 8007 8032
+type(
+  room list
+)
+"SintoMeUmaMerda/Maze.ml" 396 8007 8023 "SintoMeUmaMerda/Maze.ml" 396 8007 8033
+type(
+  room list
+)
+"SintoMeUmaMerda/Maze.ml" 396 8007 8036 "SintoMeUmaMerda/Maze.ml" 396 8007 8047
+type(
+  maze -> room list -> room list -> room list list
+)
+ident(
+  int_ref multListAux "SintoMeUmaMerda/Maze.ml" 393 7954 7962 "SintoMeUmaMerda/Maze.ml" 393 7954 7973
+)
+"SintoMeUmaMerda/Maze.ml" 396 8007 8048 "SintoMeUmaMerda/Maze.ml" 396 8007 8049
+type(
+  maze
+)
+ident(
+  int_ref m "SintoMeUmaMerda/Maze.ml" 393 7954 7974 "SintoMeUmaMerda/Maze.ml" 393 7954 7975
+)
+"SintoMeUmaMerda/Maze.ml" 396 8007 8050 "SintoMeUmaMerda/Maze.ml" 396 8007 8051
+type(
+  room list
+)
+ident(
+  int_ref l "SintoMeUmaMerda/Maze.ml" 393 7954 7976 "SintoMeUmaMerda/Maze.ml" 393 7954 7977
+)
+"SintoMeUmaMerda/Maze.ml" 396 8007 8052 "SintoMeUmaMerda/Maze.ml" 396 8007 8057
+type(
+  room list
+)
+ident(
+  int_ref trail "SintoMeUmaMerda/Maze.ml" 396 8007 8016 "SintoMeUmaMerda/Maze.ml" 396 8007 8021
+)
+"SintoMeUmaMerda/Maze.ml" 396 8007 8035 "SintoMeUmaMerda/Maze.ml" 396 8007 8058
+type(
+  room list list
+)
+"SintoMeUmaMerda/Maze.ml" 396 8007 8023 "SintoMeUmaMerda/Maze.ml" 396 8007 8058
+type(
+  room list list
+)
+"SintoMeUmaMerda/Maze.ml" 394 7982 7983 "SintoMeUmaMerda/Maze.ml" 396 8007 8058
+type(
+  room list list
+)
+"SintoMeUmaMerda/Maze.ml" 398 8070 8074 "SintoMeUmaMerda/Maze.ml" 398 8070 8089
+type(
+  maze -> room list list -> room list list
+)
+ident(
+  def multListOfLists "SintoMeUmaMerda/Maze.ml" 393 7954 7954 "SintoMeUmaMerda/Maze.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Maze.ml" 398 8070 8090 "SintoMeUmaMerda/Maze.ml" 398 8070 8091
+type(
+  maze
+)
+ident(
+  def m "SintoMeUmaMerda/Maze.ml" 398 8070 8092 "SintoMeUmaMerda/Maze.ml" 402 8139 8192
+)
+"SintoMeUmaMerda/Maze.ml" 398 8070 8092 "SintoMeUmaMerda/Maze.ml" 398 8070 8094
+type(
+  room list list
+)
+ident(
+  def ll "SintoMeUmaMerda/Maze.ml" 399 8096 8097 "SintoMeUmaMerda/Maze.ml" 402 8139 8192
+)
+"SintoMeUmaMerda/Maze.ml" 399 8096 8103 "SintoMeUmaMerda/Maze.ml" 399 8096 8105
+type(
+  room list list
+)
+ident(
+  int_ref ll "SintoMeUmaMerda/Maze.ml" 398 8070 8092 "SintoMeUmaMerda/Maze.ml" 398 8070 8094
+)
+"SintoMeUmaMerda/Maze.ml" 400 8111 8114 "SintoMeUmaMerda/Maze.ml" 400 8111 8116
+type(
+  room list list
+)
+"SintoMeUmaMerda/Maze.ml" 400 8111 8118 "SintoMeUmaMerda/Maze.ml" 400 8111 8120
+type(
+  room list list
+)
+"SintoMeUmaMerda/Maze.ml" 401 8121 8124 "SintoMeUmaMerda/Maze.ml" 401 8121 8128
+type(
+  room list
+)
+ident(
+  def head "SintoMeUmaMerda/Maze.ml" 402 8139 8149 "SintoMeUmaMerda/Maze.ml" 402 8139 8192
+)
+"SintoMeUmaMerda/Maze.ml" 401 8121 8130 "SintoMeUmaMerda/Maze.ml" 401 8121 8135
+type(
+  room list list
+)
+ident(
+  def trail "SintoMeUmaMerda/Maze.ml" 402 8139 8149 "SintoMeUmaMerda/Maze.ml" 402 8139 8192
+)
+"SintoMeUmaMerda/Maze.ml" 401 8121 8124 "SintoMeUmaMerda/Maze.ml" 401 8121 8135
+type(
+  room list list
+)
+"SintoMeUmaMerda/Maze.ml" 402 8139 8150 "SintoMeUmaMerda/Maze.ml" 402 8139 8158
+type(
+  maze -> room list -> room list list
+)
+ident(
+  int_ref multList "SintoMeUmaMerda/Maze.ml" 403 8193 8197 "SintoMeUmaMerda/Maze.ml" 403 8193 8205
+)
+"SintoMeUmaMerda/Maze.ml" 402 8139 8159 "SintoMeUmaMerda/Maze.ml" 402 8139 8160
+type(
+  maze
+)
+ident(
+  int_ref m "SintoMeUmaMerda/Maze.ml" 398 8070 8090 "SintoMeUmaMerda/Maze.ml" 398 8070 8091
+)
+"SintoMeUmaMerda/Maze.ml" 402 8139 8161 "SintoMeUmaMerda/Maze.ml" 402 8139 8165
+type(
+  room list
+)
+ident(
+  int_ref head "SintoMeUmaMerda/Maze.ml" 401 8121 8124 "SintoMeUmaMerda/Maze.ml" 401 8121 8128
+)
+"SintoMeUmaMerda/Maze.ml" 402 8139 8149 "SintoMeUmaMerda/Maze.ml" 402 8139 8166
+type(
+  room list list
+)
+"SintoMeUmaMerda/Maze.ml" 402 8139 8166 "SintoMeUmaMerda/Maze.ml" 402 8139 8167
+type(
+  room list list -> room list list -> room list list
+)
+ident(
+  int_ref Stdlib.( @ ) "stdlib.mli" 782 29359 29359 "stdlib.mli" 782 29359 29400
+)
+"SintoMeUmaMerda/Maze.ml" 402 8139 8168 "SintoMeUmaMerda/Maze.ml" 402 8139 8183
+type(
+  maze -> room list list -> room list list
+)
+ident(
+  int_ref multListOfLists "SintoMeUmaMerda/Maze.ml" 398 8070 8074 "SintoMeUmaMerda/Maze.ml" 398 8070 8089
+)
+"SintoMeUmaMerda/Maze.ml" 402 8139 8184 "SintoMeUmaMerda/Maze.ml" 402 8139 8185
+type(
+  maze
+)
+ident(
+  int_ref m "SintoMeUmaMerda/Maze.ml" 398 8070 8090 "SintoMeUmaMerda/Maze.ml" 398 8070 8091
+)
+"SintoMeUmaMerda/Maze.ml" 402 8139 8186 "SintoMeUmaMerda/Maze.ml" 402 8139 8191
+type(
+  room list list
+)
+ident(
+  int_ref trail "SintoMeUmaMerda/Maze.ml" 401 8121 8130 "SintoMeUmaMerda/Maze.ml" 401 8121 8135
+)
+"SintoMeUmaMerda/Maze.ml" 402 8139 8167 "SintoMeUmaMerda/Maze.ml" 402 8139 8192
+type(
+  room list list
+)
+"SintoMeUmaMerda/Maze.ml" 402 8139 8149 "SintoMeUmaMerda/Maze.ml" 402 8139 8192
+type(
+  room list list
+)
+"SintoMeUmaMerda/Maze.ml" 399 8096 8097 "SintoMeUmaMerda/Maze.ml" 402 8139 8192
+type(
+  room list list
+)
+"SintoMeUmaMerda/Maze.ml" 403 8193 8197 "SintoMeUmaMerda/Maze.ml" 403 8193 8205
+type(
+  maze -> room list -> room list list
+)
+ident(
+  def multList "SintoMeUmaMerda/Maze.ml" 393 7954 7954 "SintoMeUmaMerda/Maze.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Maze.ml" 403 8193 8206 "SintoMeUmaMerda/Maze.ml" 403 8193 8207
+type(
+  maze
+)
+ident(
+  def m "SintoMeUmaMerda/Maze.ml" 403 8193 8208 "SintoMeUmaMerda/Maze.ml" 406 8252 8270
+)
+"SintoMeUmaMerda/Maze.ml" 403 8193 8208 "SintoMeUmaMerda/Maze.ml" 403 8193 8209
+type(
+  room list
+)
+ident(
+  def l "SintoMeUmaMerda/Maze.ml" 404 8211 8212 "SintoMeUmaMerda/Maze.ml" 406 8252 8270
+)
+"SintoMeUmaMerda/Maze.ml" 404 8211 8216 "SintoMeUmaMerda/Maze.ml" 404 8211 8217
+type(
+  room
+)
+ident(
+  def x "SintoMeUmaMerda/Maze.ml" 405 8232 8233 "SintoMeUmaMerda/Maze.ml" 406 8252 8270
+)
+"SintoMeUmaMerda/Maze.ml" 404 8211 8219 "SintoMeUmaMerda/Maze.ml" 404 8211 8226
+type(
+  room list -> room
+)
+ident(
+  int_ref getLast "SintoMeUmaMerda/Maze.ml" 386 7833 7841 "SintoMeUmaMerda/Maze.ml" 386 7833 7848
+)
+"SintoMeUmaMerda/Maze.ml" 404 8211 8227 "SintoMeUmaMerda/Maze.ml" 404 8211 8228
+type(
+  room list
+)
+ident(
+  int_ref l "SintoMeUmaMerda/Maze.ml" 403 8193 8208 "SintoMeUmaMerda/Maze.ml" 403 8193 8209
+)
+"SintoMeUmaMerda/Maze.ml" 404 8211 8219 "SintoMeUmaMerda/Maze.ml" 404 8211 8228
+type(
+  room
+)
+"SintoMeUmaMerda/Maze.ml" 405 8232 8237 "SintoMeUmaMerda/Maze.ml" 405 8232 8238
+type(
+  room list
+)
+ident(
+  def y "SintoMeUmaMerda/Maze.ml" 406 8252 8253 "SintoMeUmaMerda/Maze.ml" 406 8252 8270
+)
+"SintoMeUmaMerda/Maze.ml" 405 8232 8240 "SintoMeUmaMerda/Maze.ml" 405 8232 8244
+type(
+  maze -> room -> room list
+)
+ident(
+  int_ref next "SintoMeUmaMerda/Maze.ml" 213 4060 4064 "SintoMeUmaMerda/Maze.ml" 213 4060 4068
+)
+"SintoMeUmaMerda/Maze.ml" 405 8232 8245 "SintoMeUmaMerda/Maze.ml" 405 8232 8246
+type(
+  maze
+)
+ident(
+  int_ref m "SintoMeUmaMerda/Maze.ml" 403 8193 8206 "SintoMeUmaMerda/Maze.ml" 403 8193 8207
+)
+"SintoMeUmaMerda/Maze.ml" 405 8232 8247 "SintoMeUmaMerda/Maze.ml" 405 8232 8248
+type(
+  room
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Maze.ml" 404 8211 8216 "SintoMeUmaMerda/Maze.ml" 404 8211 8217
+)
+"SintoMeUmaMerda/Maze.ml" 405 8232 8240 "SintoMeUmaMerda/Maze.ml" 405 8232 8248
+type(
+  room list
+)
+"SintoMeUmaMerda/Maze.ml" 406 8252 8253 "SintoMeUmaMerda/Maze.ml" 406 8252 8264
+type(
+  maze -> room list -> room list -> room list list
+)
+ident(
+  int_ref multListAux "SintoMeUmaMerda/Maze.ml" 393 7954 7962 "SintoMeUmaMerda/Maze.ml" 393 7954 7973
+)
+"SintoMeUmaMerda/Maze.ml" 406 8252 8265 "SintoMeUmaMerda/Maze.ml" 406 8252 8266
+type(
+  maze
+)
+ident(
+  int_ref m "SintoMeUmaMerda/Maze.ml" 403 8193 8206 "SintoMeUmaMerda/Maze.ml" 403 8193 8207
+)
+"SintoMeUmaMerda/Maze.ml" 406 8252 8267 "SintoMeUmaMerda/Maze.ml" 406 8252 8268
+type(
+  room list
+)
+ident(
+  int_ref l "SintoMeUmaMerda/Maze.ml" 403 8193 8208 "SintoMeUmaMerda/Maze.ml" 403 8193 8209
+)
+"SintoMeUmaMerda/Maze.ml" 406 8252 8269 "SintoMeUmaMerda/Maze.ml" 406 8252 8270
+type(
+  room list
+)
+ident(
+  int_ref y "SintoMeUmaMerda/Maze.ml" 405 8232 8237 "SintoMeUmaMerda/Maze.ml" 405 8232 8238
+)
+"SintoMeUmaMerda/Maze.ml" 406 8252 8253 "SintoMeUmaMerda/Maze.ml" 406 8252 8270
+type(
+  room list list
+)
+"SintoMeUmaMerda/Maze.ml" 405 8232 8233 "SintoMeUmaMerda/Maze.ml" 406 8252 8270
+type(
+  room list list
+)
+"SintoMeUmaMerda/Maze.ml" 404 8211 8212 "SintoMeUmaMerda/Maze.ml" 406 8252 8270
+type(
+  room list list
+)
+"SintoMeUmaMerda/Maze.ml" 407 8271 8275 "SintoMeUmaMerda/Maze.ml" 407 8271 8294
+type(
+  maze -> room list -> 'a -> room list list
+)
+ident(
+  def multListOfListsMore "SintoMeUmaMerda/Maze.ml" 393 7954 7954 "SintoMeUmaMerda/Maze.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Maze.ml" 407 8271 8295 "SintoMeUmaMerda/Maze.ml" 407 8271 8296
+type(
+  maze
+)
+ident(
+  def m "SintoMeUmaMerda/Maze.ml" 407 8271 8297 "SintoMeUmaMerda/Maze.ml" 412 8413 8491
+)
+"SintoMeUmaMerda/Maze.ml" 407 8271 8297 "SintoMeUmaMerda/Maze.ml" 407 8271 8299
+type(
+  room list
+)
+ident(
+  def en "SintoMeUmaMerda/Maze.ml" 407 8271 8300 "SintoMeUmaMerda/Maze.ml" 412 8413 8491
+)
+"SintoMeUmaMerda/Maze.ml" 407 8271 8300 "SintoMeUmaMerda/Maze.ml" 407 8271 8302
+type(
+  'a
+)
+ident(
+  def ex "SintoMeUmaMerda/Maze.ml" 408 8304 8305 "SintoMeUmaMerda/Maze.ml" 412 8413 8491
+)
+"SintoMeUmaMerda/Maze.ml" 408 8304 8311 "SintoMeUmaMerda/Maze.ml" 408 8304 8313
+type(
+  room list
+)
+ident(
+  int_ref en "SintoMeUmaMerda/Maze.ml" 407 8271 8297 "SintoMeUmaMerda/Maze.ml" 407 8271 8299
+)
+"SintoMeUmaMerda/Maze.ml" 409 8319 8322 "SintoMeUmaMerda/Maze.ml" 409 8319 8324
+type(
+  room list
+)
+"SintoMeUmaMerda/Maze.ml" 409 8319 8326 "SintoMeUmaMerda/Maze.ml" 409 8319 8328
+type(
+  room list list
+)
+"SintoMeUmaMerda/Maze.ml" 410 8329 8332 "SintoMeUmaMerda/Maze.ml" 410 8329 8336
+type(
+  room
+)
+ident(
+  def head "SintoMeUmaMerda/Maze.ml" 410 8329 8346 "SintoMeUmaMerda/Maze.ml" 412 8413 8491
+)
+"SintoMeUmaMerda/Maze.ml" 410 8329 8338 "SintoMeUmaMerda/Maze.ml" 410 8329 8343
+type(
+  room list
+)
+ident(
+  def trail "SintoMeUmaMerda/Maze.ml" 410 8329 8346 "SintoMeUmaMerda/Maze.ml" 412 8413 8491
+)
+"SintoMeUmaMerda/Maze.ml" 410 8329 8332 "SintoMeUmaMerda/Maze.ml" 410 8329 8343
+type(
+  room list
+)
+"SintoMeUmaMerda/Maze.ml" 410 8329 8350 "SintoMeUmaMerda/Maze.ml" 410 8329 8351
+type(
+  room list list
+)
+ident(
+  def x "SintoMeUmaMerda/Maze.ml" 411 8374 8383 "SintoMeUmaMerda/Maze.ml" 412 8413 8491
+)
+"SintoMeUmaMerda/Maze.ml" 410 8329 8353 "SintoMeUmaMerda/Maze.ml" 410 8329 8361
+type(
+  maze -> room list -> room list list
+)
+ident(
+  int_ref multList "SintoMeUmaMerda/Maze.ml" 403 8193 8197 "SintoMeUmaMerda/Maze.ml" 403 8193 8205
+)
+"SintoMeUmaMerda/Maze.ml" 410 8329 8362 "SintoMeUmaMerda/Maze.ml" 410 8329 8363
+type(
+  maze
+)
+ident(
+  int_ref m "SintoMeUmaMerda/Maze.ml" 407 8271 8295 "SintoMeUmaMerda/Maze.ml" 407 8271 8296
+)
+"SintoMeUmaMerda/Maze.ml" 410 8329 8365 "SintoMeUmaMerda/Maze.ml" 410 8329 8369
+type(
+  room
+)
+ident(
+  int_ref head "SintoMeUmaMerda/Maze.ml" 410 8329 8332 "SintoMeUmaMerda/Maze.ml" 410 8329 8336
+)
+"SintoMeUmaMerda/Maze.ml" 410 8329 8364 "SintoMeUmaMerda/Maze.ml" 410 8329 8370
+type(
+  room list
+)
+"SintoMeUmaMerda/Maze.ml" 410 8329 8353 "SintoMeUmaMerda/Maze.ml" 410 8329 8370
+type(
+  room list list
+)
+"SintoMeUmaMerda/Maze.ml" 411 8374 8387 "SintoMeUmaMerda/Maze.ml" 411 8374 8388
+type(
+  room list list
+)
+ident(
+  def y "SintoMeUmaMerda/Maze.ml" 412 8413 8413 "SintoMeUmaMerda/Maze.ml" 412 8413 8491
+)
+"SintoMeUmaMerda/Maze.ml" 411 8374 8390 "SintoMeUmaMerda/Maze.ml" 411 8374 8405
+type(
+  maze -> room list list -> room list list
+)
+ident(
+  int_ref multListOfLists "SintoMeUmaMerda/Maze.ml" 398 8070 8074 "SintoMeUmaMerda/Maze.ml" 398 8070 8089
+)
+"SintoMeUmaMerda/Maze.ml" 411 8374 8406 "SintoMeUmaMerda/Maze.ml" 411 8374 8407
+type(
+  maze
+)
+ident(
+  int_ref m "SintoMeUmaMerda/Maze.ml" 407 8271 8295 "SintoMeUmaMerda/Maze.ml" 407 8271 8296
+)
+"SintoMeUmaMerda/Maze.ml" 411 8374 8408 "SintoMeUmaMerda/Maze.ml" 411 8374 8409
+type(
+  room list list
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Maze.ml" 410 8329 8350 "SintoMeUmaMerda/Maze.ml" 410 8329 8351
+)
+"SintoMeUmaMerda/Maze.ml" 411 8374 8390 "SintoMeUmaMerda/Maze.ml" 411 8374 8409
+type(
+  room list list
+)
+"SintoMeUmaMerda/Maze.ml" 412 8413 8413 "SintoMeUmaMerda/Maze.ml" 412 8413 8414
+type(
+  room list list
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Maze.ml" 410 8329 8350 "SintoMeUmaMerda/Maze.ml" 410 8329 8351
+)
+"SintoMeUmaMerda/Maze.ml" 412 8413 8414 "SintoMeUmaMerda/Maze.ml" 412 8413 8415
+type(
+  room list list -> room list list -> room list list
+)
+ident(
+  int_ref Stdlib.( @ ) "stdlib.mli" 782 29359 29359 "stdlib.mli" 782 29359 29400
+)
+"SintoMeUmaMerda/Maze.ml" 412 8413 8416 "SintoMeUmaMerda/Maze.ml" 412 8413 8431
+type(
+  maze -> room list list -> room list list
+)
+ident(
+  int_ref multListOfLists "SintoMeUmaMerda/Maze.ml" 398 8070 8074 "SintoMeUmaMerda/Maze.ml" 398 8070 8089
+)
+"SintoMeUmaMerda/Maze.ml" 412 8413 8432 "SintoMeUmaMerda/Maze.ml" 412 8413 8433
+type(
+  maze
+)
+ident(
+  int_ref m "SintoMeUmaMerda/Maze.ml" 407 8271 8295 "SintoMeUmaMerda/Maze.ml" 407 8271 8296
+)
+"SintoMeUmaMerda/Maze.ml" 412 8413 8434 "SintoMeUmaMerda/Maze.ml" 412 8413 8435
+type(
+  room list list
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Maze.ml" 410 8329 8350 "SintoMeUmaMerda/Maze.ml" 410 8329 8351
+)
+"SintoMeUmaMerda/Maze.ml" 412 8413 8415 "SintoMeUmaMerda/Maze.ml" 412 8413 8436
+type(
+  room list list
+)
+"SintoMeUmaMerda/Maze.ml" 412 8413 8436 "SintoMeUmaMerda/Maze.ml" 412 8413 8437
+type(
+  room list list -> room list list -> room list list
+)
+ident(
+  int_ref Stdlib.( @ ) "stdlib.mli" 782 29359 29359 "stdlib.mli" 782 29359 29400
+)
+"SintoMeUmaMerda/Maze.ml" 412 8413 8438 "SintoMeUmaMerda/Maze.ml" 412 8413 8453
+type(
+  maze -> room list list -> room list list
+)
+ident(
+  int_ref multListOfLists "SintoMeUmaMerda/Maze.ml" 398 8070 8074 "SintoMeUmaMerda/Maze.ml" 398 8070 8089
+)
+"SintoMeUmaMerda/Maze.ml" 412 8413 8454 "SintoMeUmaMerda/Maze.ml" 412 8413 8455
+type(
+  maze
+)
+ident(
+  int_ref m "SintoMeUmaMerda/Maze.ml" 407 8271 8295 "SintoMeUmaMerda/Maze.ml" 407 8271 8296
+)
+"SintoMeUmaMerda/Maze.ml" 412 8413 8456 "SintoMeUmaMerda/Maze.ml" 412 8413 8457
+type(
+  room list list
+)
+ident(
+  int_ref y "SintoMeUmaMerda/Maze.ml" 411 8374 8387 "SintoMeUmaMerda/Maze.ml" 411 8374 8388
+)
+"SintoMeUmaMerda/Maze.ml" 412 8413 8437 "SintoMeUmaMerda/Maze.ml" 412 8413 8458
+type(
+  room list list
+)
+"SintoMeUmaMerda/Maze.ml" 412 8413 8458 "SintoMeUmaMerda/Maze.ml" 412 8413 8459
+type(
+  room list list -> room list list -> room list list
+)
+ident(
+  int_ref Stdlib.( @ ) "stdlib.mli" 782 29359 29359 "stdlib.mli" 782 29359 29400
+)
+"SintoMeUmaMerda/Maze.ml" 412 8413 8460 "SintoMeUmaMerda/Maze.ml" 412 8413 8479
+type(
+  maze -> room list -> 'a -> room list list
+)
+ident(
+  int_ref multListOfListsMore "SintoMeUmaMerda/Maze.ml" 407 8271 8275 "SintoMeUmaMerda/Maze.ml" 407 8271 8294
+)
+"SintoMeUmaMerda/Maze.ml" 412 8413 8480 "SintoMeUmaMerda/Maze.ml" 412 8413 8481
+type(
+  maze
+)
+ident(
+  int_ref m "SintoMeUmaMerda/Maze.ml" 407 8271 8295 "SintoMeUmaMerda/Maze.ml" 407 8271 8296
+)
+"SintoMeUmaMerda/Maze.ml" 412 8413 8482 "SintoMeUmaMerda/Maze.ml" 412 8413 8487
+type(
+  room list
+)
+ident(
+  int_ref trail "SintoMeUmaMerda/Maze.ml" 410 8329 8338 "SintoMeUmaMerda/Maze.ml" 410 8329 8343
+)
+"SintoMeUmaMerda/Maze.ml" 412 8413 8488 "SintoMeUmaMerda/Maze.ml" 412 8413 8490
+type(
+  'a
+)
+ident(
+  int_ref ex "SintoMeUmaMerda/Maze.ml" 407 8271 8300 "SintoMeUmaMerda/Maze.ml" 407 8271 8302
+)
+"SintoMeUmaMerda/Maze.ml" 412 8413 8459 "SintoMeUmaMerda/Maze.ml" 412 8413 8491
+type(
+  room list list
+)
+"SintoMeUmaMerda/Maze.ml" 412 8413 8437 "SintoMeUmaMerda/Maze.ml" 412 8413 8491
+type(
+  room list list
+)
+"SintoMeUmaMerda/Maze.ml" 412 8413 8415 "SintoMeUmaMerda/Maze.ml" 412 8413 8491
+type(
+  room list list
+)
+"SintoMeUmaMerda/Maze.ml" 412 8413 8413 "SintoMeUmaMerda/Maze.ml" 412 8413 8491
+type(
+  room list list
+)
+"SintoMeUmaMerda/Maze.ml" 411 8374 8383 "SintoMeUmaMerda/Maze.ml" 412 8413 8491
+type(
+  room list list
+)
+"SintoMeUmaMerda/Maze.ml" 410 8329 8346 "SintoMeUmaMerda/Maze.ml" 412 8413 8491
+type(
+  room list list
+)
+"SintoMeUmaMerda/Maze.ml" 408 8304 8305 "SintoMeUmaMerda/Maze.ml" 412 8413 8491
+type(
+  room list list
+)
+"SintoMeUmaMerda/Maze.ml" 417 8500 8504 "SintoMeUmaMerda/Maze.ml" 417 8500 8509
+type(
+  'a -> 'b list
+)
+ident(
+  def paths "SintoMeUmaMerda/Maze.ml" 423 8547 8547 "SintoMeUmaMerda/Maze.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Maze.ml" 417 8500 8510 "SintoMeUmaMerda/Maze.ml" 417 8500 8511
+type(
+  'a
+)
+ident(
+  def m "SintoMeUmaMerda/Maze.ml" 418 8515 8516 "SintoMeUmaMerda/Maze.ml" 418 8515 8518
+)
+"SintoMeUmaMerda/Maze.ml" 418 8515 8516 "SintoMeUmaMerda/Maze.ml" 418 8515 8518
+type(
+  'b list
+)
+"SintoMeUmaMerda/Maze.ml" 423 8547 8551 "SintoMeUmaMerda/Maze.ml" 423 8547 8558
+type(
+  'a -> bool
+)
+ident(
+  def hasLoop "SintoMeUmaMerda/Maze.ml" 429 8601 8601 "SintoMeUmaMerda/Maze.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Maze.ml" 423 8547 8559 "SintoMeUmaMerda/Maze.ml" 423 8547 8560
+type(
+  'a
+)
+ident(
+  def m "SintoMeUmaMerda/Maze.ml" 424 8564 8565 "SintoMeUmaMerda/Maze.ml" 424 8564 8570
+)
+"SintoMeUmaMerda/Maze.ml" 424 8564 8565 "SintoMeUmaMerda/Maze.ml" 424 8564 8570
+type(
+  bool
+)
+"SintoMeUmaMerda/Maze.ml" 429 8601 8605 "SintoMeUmaMerda/Maze.ml" 429 8601 8614
+type(
+  'a -> 'b list
+)
+ident(
+  def shortest2 "SintoMeUmaMerda/Maze.ml" 436 8742 8742 "SintoMeUmaMerda/Maze.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Maze.ml" 429 8601 8615 "SintoMeUmaMerda/Maze.ml" 429 8601 8616
+type(
+  'a
+)
+ident(
+  def m "SintoMeUmaMerda/Maze.ml" 430 8620 8621 "SintoMeUmaMerda/Maze.ml" 430 8620 8629
+)
+"SintoMeUmaMerda/Maze.ml" 430 8620 8621 "SintoMeUmaMerda/Maze.ml" 430 8620 8629
+type(
+  'b list
+)
+ident(
+  int_ref _NO_PATH "SintoMeUmaMerda/Maze.ml" 134 2162 2166 "SintoMeUmaMerda/Maze.ml" 134 2162 2174
+)
+"SintoMeUmaMerda/Maze.ml" 436 8742 8746 "SintoMeUmaMerda/Maze.ml" 436 8742 8750
+type(
+  ('a -> 'b) -> 'a -> 'b
+)
+ident(
+  def time "SintoMeUmaMerda/Maze.ml" 442 8874 8874 "SintoMeUmaMerda/Maze.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Maze.ml" 436 8742 8751 "SintoMeUmaMerda/Maze.ml" 436 8742 8752
+type(
+  'a -> 'b
+)
+ident(
+  def f "SintoMeUmaMerda/Maze.ml" 436 8742 8753 "SintoMeUmaMerda/Maze.ml" 440 8864 8870
+)
+"SintoMeUmaMerda/Maze.ml" 436 8742 8753 "SintoMeUmaMerda/Maze.ml" 436 8742 8754
+type(
+  'a
+)
+ident(
+  def x "SintoMeUmaMerda/Maze.ml" 437 8757 8761 "SintoMeUmaMerda/Maze.ml" 440 8864 8870
+)
+"SintoMeUmaMerda/Maze.ml" 437 8757 8765 "SintoMeUmaMerda/Maze.ml" 437 8757 8766
+type(
+  float
+)
+ident(
+  def t "SintoMeUmaMerda/Maze.ml" 438 8783 8787 "SintoMeUmaMerda/Maze.ml" 440 8864 8870
+)
+"SintoMeUmaMerda/Maze.ml" 437 8757 8769 "SintoMeUmaMerda/Maze.ml" 437 8757 8777
+type(
+  unit -> float
+)
+ident(
+  int_ref Stdlib.Sys.time "sys.mli" 71 3260 3260 "sys.mli" 72 3305 3358
+)
+"SintoMeUmaMerda/Maze.ml" 437 8757 8777 "SintoMeUmaMerda/Maze.ml" 437 8757 8779
+type(
+  unit
+)
+"SintoMeUmaMerda/Maze.ml" 437 8757 8769 "SintoMeUmaMerda/Maze.ml" 437 8757 8779
+type(
+  float
+)
+"SintoMeUmaMerda/Maze.ml" 438 8783 8791 "SintoMeUmaMerda/Maze.ml" 438 8783 8793
+type(
+  'b
+)
+ident(
+  def fx "SintoMeUmaMerda/Maze.ml" 439 8803 8807 "SintoMeUmaMerda/Maze.ml" 440 8864 8870
+)
+"SintoMeUmaMerda/Maze.ml" 438 8783 8796 "SintoMeUmaMerda/Maze.ml" 438 8783 8797
+type(
+  'a -> 'b
+)
+ident(
+  int_ref f "SintoMeUmaMerda/Maze.ml" 436 8742 8751 "SintoMeUmaMerda/Maze.ml" 436 8742 8752
+)
+"SintoMeUmaMerda/Maze.ml" 438 8783 8798 "SintoMeUmaMerda/Maze.ml" 438 8783 8799
+type(
+  'a
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Maze.ml" 436 8742 8753 "SintoMeUmaMerda/Maze.ml" 436 8742 8754
+)
+"SintoMeUmaMerda/Maze.ml" 438 8783 8796 "SintoMeUmaMerda/Maze.ml" 438 8783 8799
+type(
+  'b
+)
+"SintoMeUmaMerda/Maze.ml" 439 8803 8807 "SintoMeUmaMerda/Maze.ml" 439 8803 8820
+type(
+  (float -> unit, out_channel, unit) format -> float -> unit
+)
+ident(
+  int_ref Stdlib.Printf.printf "printf.mli" 123 6510 6510 "printf.mli" 123 6510 6559
+)
+"SintoMeUmaMerda/Maze.ml" 439 8803 8821 "SintoMeUmaMerda/Maze.ml" 439 8803 8844
+type(
+  (float -> unit, out_channel, unit) format
+)
+"SintoMeUmaMerda/Maze.ml" 439 8803 8846 "SintoMeUmaMerda/Maze.ml" 439 8803 8854
+type(
+  unit -> float
+)
+ident(
+  int_ref Stdlib.Sys.time "sys.mli" 71 3260 3260 "sys.mli" 72 3305 3358
+)
+"SintoMeUmaMerda/Maze.ml" 439 8803 8854 "SintoMeUmaMerda/Maze.ml" 439 8803 8856
+type(
+  unit
+)
+"SintoMeUmaMerda/Maze.ml" 439 8803 8846 "SintoMeUmaMerda/Maze.ml" 439 8803 8856
+type(
+  float
+)
+"SintoMeUmaMerda/Maze.ml" 439 8803 8857 "SintoMeUmaMerda/Maze.ml" 439 8803 8859
+type(
+  float -> float -> float
+)
+ident(
+  int_ref Stdlib.( -. ) "stdlib.mli" 456 17641 17641 "stdlib.mli" 456 17641 17696
+)
+"SintoMeUmaMerda/Maze.ml" 439 8803 8860 "SintoMeUmaMerda/Maze.ml" 439 8803 8861
+type(
+  float
+)
+ident(
+  int_ref t "SintoMeUmaMerda/Maze.ml" 437 8757 8765 "SintoMeUmaMerda/Maze.ml" 437 8757 8766
+)
+"SintoMeUmaMerda/Maze.ml" 439 8803 8845 "SintoMeUmaMerda/Maze.ml" 439 8803 8862
+type(
+  float
+)
+"SintoMeUmaMerda/Maze.ml" 439 8803 8807 "SintoMeUmaMerda/Maze.ml" 439 8803 8862
+type(
+  unit
+)
+"SintoMeUmaMerda/Maze.ml" 440 8864 8868 "SintoMeUmaMerda/Maze.ml" 440 8864 8870
+type(
+  'b
+)
+ident(
+  int_ref fx "SintoMeUmaMerda/Maze.ml" 438 8783 8791 "SintoMeUmaMerda/Maze.ml" 438 8783 8793
+)
+"SintoMeUmaMerda/Maze.ml" 439 8803 8807 "SintoMeUmaMerda/Maze.ml" 440 8864 8870
+type(
+  'b
+)
+"SintoMeUmaMerda/Maze.ml" 438 8783 8787 "SintoMeUmaMerda/Maze.ml" 440 8864 8870
+type(
+  'b
+)
+"SintoMeUmaMerda/Maze.ml" 437 8757 8761 "SintoMeUmaMerda/Maze.ml" 440 8864 8870
+type(
+  'b
+)
+"SintoMeUmaMerda/Maze.ml" 442 8874 8878 "SintoMeUmaMerda/Maze.ml" 442 8874 8882
+type(
+  unit -> room list list
+)
+ident(
+  def main "SintoMeUmaMerda/Maze.ml" 446 8912 8912 "SintoMeUmaMerda/Maze.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Maze.ml" 442 8874 8883 "SintoMeUmaMerda/Maze.ml" 442 8874 8885
+type(
+  unit
+)
+"SintoMeUmaMerda/Maze.ml" 443 8887 8888 "SintoMeUmaMerda/Maze.ml" 443 8887 8892
+type(
+  (maze -> room list list) -> maze -> room list list
+)
+ident(
+  int_ref time "SintoMeUmaMerda/Maze.ml" 436 8742 8746 "SintoMeUmaMerda/Maze.ml" 436 8742 8750
+)
+"SintoMeUmaMerda/Maze.ml" 443 8887 8893 "SintoMeUmaMerda/Maze.ml" 443 8887 8900
+type(
+  maze -> room list list
+)
+ident(
+  int_ref islands "SintoMeUmaMerda/Maze.ml" 306 5647 5655 "SintoMeUmaMerda/Maze.ml" 306 5647 5662
+)
+"SintoMeUmaMerda/Maze.ml" 443 8887 8901 "SintoMeUmaMerda/Maze.ml" 443 8887 8907
+type(
+  maze
+)
+ident(
+  int_ref myMaze "SintoMeUmaMerda/Maze.ml" 139 2222 2226 "SintoMeUmaMerda/Maze.ml" 139 2222 2232
+)
+"SintoMeUmaMerda/Maze.ml" 443 8887 8888 "SintoMeUmaMerda/Maze.ml" 443 8887 8907
+type(
+  room list list
+)
+"SintoMeUmaMerda/Maze.ml" 446 8912 8916 "SintoMeUmaMerda/Maze.ml" 446 8912 8917
+type(
+  room list list
+)
+ident(
+  def y "SintoMeUmaMerda/Maze.ml" 446 8912 8926 "SintoMeUmaMerda/Maze.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Maze.ml" 446 8912 8919 "SintoMeUmaMerda/Maze.ml" 446 8912 8923
+type(
+  unit -> room list list
+)
+ident(
+  int_ref main "SintoMeUmaMerda/Maze.ml" 442 8874 8878 "SintoMeUmaMerda/Maze.ml" 442 8874 8882
+)
+"SintoMeUmaMerda/Maze.ml" 446 8912 8924 "SintoMeUmaMerda/Maze.ml" 446 8912 8926
+type(
+  unit
+)
+"SintoMeUmaMerda/Maze.ml" 446 8912 8919 "SintoMeUmaMerda/Maze.ml" 446 8912 8926
+type(
+  room list list
+)

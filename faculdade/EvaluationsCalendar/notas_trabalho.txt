@@ -1,0 +1,52 @@
+- Comentar:
+	- METODOS PUBLICOS de classes nas interfaces implementadas por essas classes.
+	- Métodos privados (como métodos grow() em coleções, ou métodos auxiliares de cálculo) nas classes/ classes abstratas.
+	- Variáveis de instância nas próprias classes.
+- Não retornar arrays (retornar iteradores).
+- Quando se cria uma relação entre dois objetos, não criar um novo objeto( how?)
+- Na main, Para se iterar todos os membros de uma coleção, o ideal é devolver um iterador de versões das interfaces que escondem os "setters" das originais.
+
+Apontamentos para o trabalho de POO:
+
+Nesta aula, estamos a aprender a usar o pacote de classes de datas que o JDK tem que nos poupa muito trabalho. Vamos precisar disto para as datas dos testes, os prazos (deadlines)...., etc.
+
+
+A keyword final atribuida como modificador de uma variável no java significa que para essa variável, só pode ser modificada uma vez (Na inicialização).
+
+Aquela cenas esquisita de, nos arrays genéricos, instanciar objetos "inline" para encontrar o index de um objeto que possua certos valores em determinadoes campos não tem problema e é normal, se a classe desse objeto possuir um método equals adequado. E também não tem problema combinar isso com o método "get" com "searchIndexOf". É um pouco esquisito, mas é necessário de forma a que possamos trabalhar com estruturas de dados genéricas. (Outra razão para usar isto é o facto de que a linguagem é garbage collected, ou seja, não precisamos de allocar e libertar memória de forma explícita)
+
+Dar return de um método é independente do valor. Não é preciso dar valor para dar return. Se o método for void, por exemplo, dá para dar return de nada.
+
+Boa! Dá para usar vários returns para um método.
+
+Não faz mal ter 212123 listas no trabalho. Sacrificamos performance em termos de memória mas é muito mais simples em termos de implementação.
+
+Vai ficar disponivel no moodle um método para os arrays genéricos que ordena os seus elementos. Temos de fazer um compareTo genérico para as nossas Classes para o poder utilizar.
+
+Cursos diferenciam-se por nome (que tem espaços);
+Pessoas diferenciam-se por nome (que tem espaços);
+Deadlines diferenciam-se por nome (que tem espaços);
+Alunos diferenciam-se por nome e numero de aluno (o nome tem espaços);
+
+As strings são finais. 
+Assim que se cria uma string, essa string não pode ser modificada.
+Por ex: Quando se concatena uma string, o runtime do java automaticamente cria uma string nova com os caracteres a mais (com uma nova referência).
+
+Classes final:
+	Não podem ser extendidas por outras.
+Métodos final:
+	Não podem ser redefinidos por classes que extendem as classes onde estão.
+Variáveis final:
+	Não podem ser alteradas durante a execução.
+
+Como fazer uma classe de objetos imutáveis:
+	1º- todas as variaveis de instância são finais;
+	2º- as instâncias só possuem "getters"
+	
+
+
+Programação por contrato:
+	Assume-se, quando se define um método, que quem o utiliza cumpre as pre-condições.
+	
+Programação defensiva:
+	Todas as pré condições são verificadas enquanto o método corre.

@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include "integrate.h"
+#include "taylor.h"
+
+long double func(long double x,long double y);
+int main(int argc, char *argv[])
+{
+  long double c;
+	/*long double a,b;
+	scanf("%Lf %Lf",&a,&b);
+  printf("%Lf\n",integrateNum(func,a,b));
+  
+ printf("Escreve aqui a constante c da primitiva\n");
+ scanf("%Lf",&c);
+  FILE* primitiva=fopen("graficoPrimitiva.dat","w");
+  for(long double i=-3;i<3;i+=0.0001){
+	fprintf(primitiva,"%Lf %Lf\n",i,Primitive(func,i,c));
+  }*/
+  FILE* original=fopen("grafico.dat","w");
+  for(long double j=-4;j<4;j+=0.1){
+  for(long double i=-4;i<4;i+=0.1){
+	fprintf(original,"%Lf %Lf %Lf\n",j-i-1,j+i+1,0.1*i);
+  }/* (x,y,z)=(1,2,3)+k(2,3,4)+m(5,6,7), k,m E R
+  x=1+2k+5m
+  y=2+3*i+6*j
+  z=3+4*i+7*j
+  */
+  }
+  /*
+ FILE * derivada=fopen("graficoDerivada.dat","w");
+  for(long double i=-1;i<1;i+=0.001){
+	fprintf(derivada,"%Lf %Lf\n",i,derivadalocal(func,i));
+  }
+  FILE *taylor=fopen("taylor.dat","w");
+  for(long double i=closeToZero;i<60;i+=0.001){
+	fprintf(taylor,"%Lf %Lf\n",i,taylorPoly(func,i,1,10));
+  }
+  fclose(taylor);
+  fclose(derivada);
+  fclose(primitiva);*/
+  fclose(original);
+}
+
+long double func(long double x,long double y){
+    return -1/(x*x+y*y);
+    
+    }

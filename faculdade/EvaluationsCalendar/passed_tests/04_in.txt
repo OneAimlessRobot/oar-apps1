@@ -1,0 +1,54 @@
+roster IP
+professor Injun Joe
+professor Aunt Polly
+professor Mr. Walters
+professor Judge Thatcher
+professor Jim
+professor Mr. Sprague
+professor Mr. Jones
+professor Mr. Dobbins
+professor Alfred Temple
+professor Mary
+people
+course IP
+course POO
+course AM I
+course AM II
+course Fancy course name
+course Karaoke 101
+course Extreme Mooshaking
+courses
+roster IP
+roster POO
+roster Fancy course name
+roster Extreme Mooshaking
+roster of a course that I just made up
+assign Santa Claus
+Karaoke 101
+assign Mr. Dobbins
+a course that does not exist
+assign Injun Joe
+IP
+roster IP
+roster POO
+assign Injun Joe
+AM II
+assign Injun Joe
+Extreme Mooshaking
+assign Mary
+POO
+assign Mary
+POO
+assign Mary
+IP
+assign Judge Thatcher
+Karaoke 101
+roster IP
+roster POO
+roster AM I
+roster AM II
+roster Extreme Mooshaking
+roster Karaoke 101
+people
+courses
+exit

@@ -1,0 +1,25 @@
+let rec firstNat x=
+		match x with
+		|0 -> []
+		|x -> x-1::(firstNat (x-1))
+	
+;;
+
+firstNat 7
+
+let rec pack x=
+		match x with
+		| [] -> []
+		| head::sHead::trail ->
+																	(head,1)::(pack secondHead::trail)  
+																	else
+																		if head=secondHead then
+																			
+																		
+;;
+
+let rec len x=
+		match x with
+		| [] ->0
+		| head::trail-> 1+ len trail
+;;

@@ -1,0 +1,34 @@
+Course IP added.
+Course POO added.
+Course AM I added.
+Course AM II added.
+Course Fancy course name added.
+Course Karaoke 101 added.
+Course Extreme Mooshaking added.
+Course Advanced Procastination does not exist!
+No deadlines defined for IP!
+No deadlines defined for AM II!
+No deadlines defined for Extreme Mooshaking!
+Deadline 2022-05-28 added to POO.
+Deadline 2022-04-28 added to POO.
+Deadline 2022-06-06 added to POO.
+Deadline 2022-04-28 added to IP.
+Deadline 2022-04-29 added to Karaoke 101.
+Deadline 2022-04-29 added to AM I.
+Course Parachuting does not exist!
+Deadline Bad Singing Project already exists!
+Deadline 2022-04-30 added to POO.
+Deadlines for course POO:
+Calendar Project: 2022-04-28
+Bad Singing Project: 2022-04-30
+New Project: 2022-05-28
+Final Project: 2022-06-06
+Deadlines for course IP:
+Easy Calendar Project: 2022-04-28
+Deadlines for course Karaoke 101:
+Bad Singing Project: 2022-04-29
+Deadlines for course AM I:
+Strange Project: 2022-04-29
+No deadlines defined for Extreme Mooshaking!
+Course Parachuting does not exist!
+Bye!

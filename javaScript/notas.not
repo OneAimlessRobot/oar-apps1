@@ -1,0 +1,9 @@
+Um terminal de linux e simplesmente uma interface de um interpretador de BASH
+
+\nUma linguagem de scripting e simplesmente um guiao para controlar primitivas pre definitas
+Uma linguagem classica e uma linguagem de scripting so que cada componente tem de ser programado
+Sacar a primeira linha de um ficheiro: comando 'head -1 *ficheiro*'
+Os personagens na linguagem de bash sao os ficheiros e o filesystem
+Objetos em java sao classes. Objetos em javaScript sao prototipos.\n
+Um objeto em javascript e criado com prototipos.
+

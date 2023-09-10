@@ -1,0 +1,1095 @@
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 4 120 128 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 4 120 131
+type(
+  int -> int
+)
+ident(
+  def fib "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 4 120 120 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 0 0 -1
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 4 120 132 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 4 120 133
+type(
+  int
+)
+ident(
+  def n "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 5 135 137 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 8 179 199
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 5 135 140 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 5 135 141
+type(
+  int
+)
+ident(
+  int_ref n "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 4 120 132 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 4 120 133
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 5 135 141 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 5 135 142
+type(
+  int -> int -> bool
+)
+ident(
+  int_ref Stdlib.( = ) "stdlib.mli" 118 4976 4976 "stdlib.mli" 118 4976 5020
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 5 135 142 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 5 135 143
+type(
+  int
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 5 135 140 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 5 135 143
+type(
+  bool
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 5 135 149 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 5 135 150
+type(
+  int
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 6 151 161 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 6 151 162
+type(
+  int
+)
+ident(
+  int_ref n "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 4 120 132 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 4 120 133
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 6 151 162 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 6 151 163
+type(
+  int -> int -> bool
+)
+ident(
+  int_ref Stdlib.( = ) "stdlib.mli" 118 4976 4976 "stdlib.mli" 118 4976 5020
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 6 151 163 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 6 151 164
+type(
+  int
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 6 151 161 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 6 151 164
+type(
+  bool
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 6 151 170 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 6 151 171
+type(
+  int
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 8 179 182 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 8 179 185
+type(
+  int -> int
+)
+ident(
+  int_ref fib "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 4 120 128 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 4 120 131
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 8 179 186 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 8 179 187
+type(
+  int
+)
+ident(
+  int_ref n "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 4 120 132 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 4 120 133
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 8 179 187 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 8 179 188
+type(
+  int -> int -> int
+)
+ident(
+  int_ref Stdlib.( - ) "stdlib.mli" 343 13509 13509 "stdlib.mli" 343 13509 13555
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 8 179 188 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 8 179 189
+type(
+  int
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 8 179 185 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 8 179 190
+type(
+  int
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 8 179 182 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 8 179 190
+type(
+  int
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 8 179 190 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 8 179 191
+type(
+  int -> int -> int
+)
+ident(
+  int_ref Stdlib.( + ) "stdlib.mli" 338 13360 13360 "stdlib.mli" 338 13360 13406
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 8 179 191 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 8 179 194
+type(
+  int -> int
+)
+ident(
+  int_ref fib "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 4 120 128 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 4 120 131
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 8 179 195 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 8 179 196
+type(
+  int
+)
+ident(
+  int_ref n "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 4 120 132 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 4 120 133
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 8 179 196 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 8 179 197
+type(
+  int -> int -> int
+)
+ident(
+  int_ref Stdlib.( - ) "stdlib.mli" 343 13509 13509 "stdlib.mli" 343 13509 13555
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 8 179 197 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 8 179 198
+type(
+  int
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 8 179 194 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 8 179 199
+type(
+  int
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 8 179 191 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 8 179 199
+type(
+  int
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 8 179 182 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 8 179 199
+type(
+  int
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 6 151 158 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 8 179 199
+type(
+  int
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 5 135 137 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 8 179 199
+type(
+  int
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 10 203 203 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 10 203 207
+type(
+  int -> unit
+)
+ident(
+  int_ref Stdlib.Random.init "random.mli" 20 1155 1155 "random.mli" 20 1155 1177
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 11 210 214 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 11 210 215
+type(
+  int
+)
+ident(
+  def x "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 13 226 226 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 0 0 -1
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 11 210 217 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 11 210 220
+type(
+  int -> int
+)
+ident(
+  int_ref fib "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 4 120 128 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 4 120 131
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 11 210 221 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 11 210 222
+type(
+  int
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 11 210 217 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 11 210 222
+type(
+  int
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 13 226 234 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 13 226 242
+type(
+  int -> int -> int list
+)
+ident(
+  def randList "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 13 226 226 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 0 0 -1
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 13 226 243 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 13 226 244
+type(
+  int
+)
+ident(
+  def n "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 13 226 245 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 16 278 324
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 13 226 245 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 13 226 250
+type(
+  int
+)
+ident(
+  def bound "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 14 252 254 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 16 278 324
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 14 252 260 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 14 252 261
+type(
+  int
+)
+ident(
+  int_ref n "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 13 226 243 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 13 226 244
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 15 267 271 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 15 267 272
+type(
+  int
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 15 267 275 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 15 267 277
+type(
+  int list
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 16 278 282 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 16 278 283
+type(
+  int
+)
+ident(
+  def x "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 16 278 286 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 16 278 324
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 16 278 287 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 16 278 290
+type(
+  int -> int
+)
+ident(
+  int_ref Stdlib.Random.int "random.mli" 40 1912 1912 "random.mli" 40 1912 1932
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 16 278 292 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 16 278 297
+ident(
+  int_ref bound "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 13 226 245 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 13 226 250
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 16 278 291 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 16 278 298
+type(
+  int
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 16 278 286 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 16 278 299
+type(
+  int
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 16 278 303 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 16 278 311
+type(
+  int -> int -> int list
+)
+ident(
+  int_ref randList "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 13 226 234 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 13 226 242
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 16 278 313 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 16 278 314
+type(
+  int
+)
+ident(
+  int_ref n "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 13 226 243 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 13 226 244
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 16 278 314 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 16 278 315
+type(
+  int -> int -> int
+)
+ident(
+  int_ref Stdlib.( - ) "stdlib.mli" 343 13509 13509 "stdlib.mli" 343 13509 13555
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 16 278 315 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 16 278 316
+type(
+  int
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 16 278 312 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 16 278 317
+type(
+  int
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 16 278 318 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 16 278 323
+type(
+  int
+)
+ident(
+  int_ref bound "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 13 226 245 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 13 226 250
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 16 278 301 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 16 278 324
+type(
+  int list
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 16 278 286 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 16 278 324
+type(
+  int list
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 14 252 254 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 16 278 324
+type(
+  int list
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 19 329 333 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 19 329 342
+type(
+  int list
+)
+ident(
+  def superList "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 128 5573 5574 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 0 0 -1
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 19 329 343 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 19 329 351
+type(
+  int -> int -> int list
+)
+ident(
+  int_ref randList "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 13 226 234 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 13 226 242
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 19 329 352 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 19 329 357
+type(
+  int
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 19 329 358 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 19 329 361
+type(
+  int
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 19 329 343 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 19 329 361
+type(
+  int list
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 128 5573 5582 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 128 5573 5591
+type(
+  'a -> 'a list -> 'a list * 'a list
+)
+ident(
+  def partition "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 128 5573 5574 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 0 0 -1
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 128 5573 5592 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 128 5573 5593
+type(
+  'a
+)
+ident(
+  def p "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 128 5573 5594 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 133 5707 5764
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 128 5573 5594 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 128 5573 5595
+type(
+  'a list
+)
+ident(
+  def l "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 129 5598 5606 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 133 5707 5764
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 129 5598 5612 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 129 5598 5613
+type(
+  'a list
+)
+ident(
+  int_ref l "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 128 5573 5594 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 128 5573 5595
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 130 5619 5629 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 130 5619 5631
+type(
+  'a list
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 130 5619 5636 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 130 5619 5638
+type(
+  'a list
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 130 5619 5639 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 130 5619 5641
+type(
+  'a list
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 130 5619 5635 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 130 5619 5642
+type(
+  'a list * 'a list
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 131 5643 5653 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 131 5643 5654
+type(
+  'a
+)
+ident(
+  def x "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 132 5662 5677 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 133 5707 5764
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 131 5643 5656 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 131 5643 5658
+type(
+  'a list
+)
+ident(
+  def xs "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 132 5662 5677 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 133 5707 5764
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 131 5643 5653 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 131 5643 5658
+type(
+  'a list
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 132 5662 5682 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 132 5662 5683
+type(
+  'a list
+)
+ident(
+  def a "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 133 5707 5726 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 133 5707 5764
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 132 5662 5684 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 132 5662 5685
+type(
+  'a list
+)
+ident(
+  def b "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 133 5707 5726 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 133 5707 5764
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 132 5662 5681 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 132 5662 5686
+type(
+  'a list * 'a list
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 132 5662 5689 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 132 5662 5698
+type(
+  'a -> 'a list -> 'a list * 'a list
+)
+ident(
+  int_ref partition "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 128 5573 5582 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 128 5573 5591
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 132 5662 5699 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 132 5662 5700
+type(
+  'a
+)
+ident(
+  int_ref p "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 128 5573 5592 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 128 5573 5593
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 132 5662 5701 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 132 5662 5703
+type(
+  'a list
+)
+ident(
+  int_ref xs "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 131 5643 5656 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 131 5643 5658
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 132 5662 5689 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 132 5662 5703
+type(
+  'a list * 'a list
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 133 5707 5729 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 133 5707 5730
+type(
+  'a
+)
+ident(
+  int_ref x "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 131 5643 5653 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 131 5643 5654
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 133 5707 5731 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 133 5707 5733
+type(
+  'a -> 'a -> bool
+)
+ident(
+  int_ref Stdlib.( <= ) "stdlib.mli" 142 5958 5958 "stdlib.mli" 142 5958 6007
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 133 5707 5734 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 133 5707 5735
+type(
+  'a
+)
+ident(
+  int_ref p "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 128 5573 5592 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 128 5573 5593
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 133 5707 5729 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 133 5707 5735
+type(
+  bool
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 133 5707 5742 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 133 5707 5743
+type(
+  'a
+)
+ident(
+  int_ref x "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 131 5643 5653 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 131 5643 5654
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 133 5707 5745 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 133 5707 5746
+type(
+  'a list
+)
+ident(
+  int_ref a "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 132 5662 5682 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 132 5662 5683
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 133 5707 5742 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 133 5707 5746
+type(
+  'a list
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 133 5707 5747 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 133 5707 5748
+type(
+  'a list
+)
+ident(
+  int_ref b "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 132 5662 5684 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 132 5662 5685
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 133 5707 5741 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 133 5707 5749
+type(
+  'a list * 'a list
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 133 5707 5756 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 133 5707 5757
+type(
+  'a list
+)
+ident(
+  int_ref a "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 132 5662 5682 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 132 5662 5683
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 133 5707 5759 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 133 5707 5760
+type(
+  'a
+)
+ident(
+  int_ref x "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 131 5643 5653 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 131 5643 5654
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 133 5707 5762 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 133 5707 5763
+type(
+  'a list
+)
+ident(
+  int_ref b "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 132 5662 5684 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 132 5662 5685
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 133 5707 5759 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 133 5707 5763
+type(
+  'a list
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 133 5707 5755 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 133 5707 5764
+type(
+  'a list * 'a list
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 133 5707 5726 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 133 5707 5764
+type(
+  'a list * 'a list
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 132 5662 5677 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 133 5707 5764
+type(
+  'a list * 'a list
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 129 5598 5606 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 133 5707 5764
+type(
+  'a list * 'a list
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 135 5772 5784 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 135 5772 5793
+type(
+  'a list -> 'a list
+)
+ident(
+  def quickSort "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 135 5772 5776 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 0 0 -1
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 135 5772 5794 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 135 5772 5795
+type(
+  'a list
+)
+ident(
+  def l "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 136 5798 5806 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 140 5904 5960
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 136 5798 5812 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 136 5798 5813
+type(
+  'a list
+)
+ident(
+  int_ref l "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 135 5772 5794 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 135 5772 5795
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 137 5819 5829 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 137 5819 5831
+type(
+  'a list
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 137 5819 5835 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 137 5819 5837
+type(
+  'a list
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 138 5838 5848 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 138 5838 5849
+type(
+  'a
+)
+ident(
+  def x "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 139 5857 5872 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 140 5904 5960
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 138 5838 5851 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 138 5838 5853
+type(
+  'a list
+)
+ident(
+  def xs "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 139 5857 5872 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 140 5904 5960
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 138 5838 5848 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 138 5838 5853
+type(
+  'a list
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 139 5857 5877 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 139 5857 5879
+type(
+  'a list
+)
+ident(
+  def us "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 140 5904 5923 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 140 5904 5960
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 139 5857 5880 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 139 5857 5882
+type(
+  'a list
+)
+ident(
+  def vs "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 140 5904 5923 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 140 5904 5960
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 139 5857 5876 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 139 5857 5883
+type(
+  'a list * 'a list
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 139 5857 5886 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 139 5857 5895
+type(
+  'a -> 'a list -> 'a list * 'a list
+)
+ident(
+  int_ref partition "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 128 5573 5582 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 128 5573 5591
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 139 5857 5896 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 139 5857 5897
+type(
+  'a
+)
+ident(
+  int_ref x "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 138 5838 5848 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 138 5838 5849
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 139 5857 5898 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 139 5857 5900
+type(
+  'a list
+)
+ident(
+  int_ref xs "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 138 5838 5851 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 138 5838 5853
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 139 5857 5886 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 139 5857 5900
+type(
+  'a list * 'a list
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 140 5904 5924 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 140 5904 5933
+type(
+  'a list -> 'a list
+)
+ident(
+  int_ref quickSort "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 135 5772 5784 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 135 5772 5793
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 140 5904 5934 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 140 5904 5936
+type(
+  'a list
+)
+ident(
+  int_ref us "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 139 5857 5877 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 139 5857 5879
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 140 5904 5923 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 140 5904 5937
+type(
+  'a list
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 140 5904 5938 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 140 5904 5939
+type(
+  'a list -> 'a list -> 'a list
+)
+ident(
+  int_ref Stdlib.( @ ) "stdlib.mli" 782 29359 29359 "stdlib.mli" 782 29359 29400
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 140 5904 5941 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 140 5904 5942
+type(
+  'a
+)
+ident(
+  int_ref x "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 138 5838 5848 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 138 5838 5849
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 140 5904 5940 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 140 5904 5943
+type(
+  'a list
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 140 5904 5944 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 140 5904 5945
+type(
+  'a list -> 'a list -> 'a list
+)
+ident(
+  int_ref Stdlib.( @ ) "stdlib.mli" 782 29359 29359 "stdlib.mli" 782 29359 29400
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 140 5904 5947 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 140 5904 5956
+type(
+  'a list -> 'a list
+)
+ident(
+  int_ref quickSort "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 135 5772 5784 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 135 5772 5793
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 140 5904 5957 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 140 5904 5959
+type(
+  'a list
+)
+ident(
+  int_ref vs "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 139 5857 5880 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 139 5857 5882
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 140 5904 5946 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 140 5904 5960
+type(
+  'a list
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 140 5904 5940 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 140 5904 5960
+type(
+  'a list
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 140 5904 5923 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 140 5904 5960
+type(
+  'a list
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 139 5857 5872 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 140 5904 5960
+type(
+  'a list
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 136 5798 5806 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 140 5904 5960
+type(
+  'a list
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 143 5970 5978 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 143 5970 5992
+type(
+  'a -> 'a list -> 'a list
+)
+ident(
+  def removeFromList "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 143 5970 5970 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 0 0 -1
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 143 5970 5993 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 143 5970 5994
+type(
+  'a
+)
+ident(
+  def v "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 143 5970 5995 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 148 6092 6136
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 143 5970 5995 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 143 5970 5996
+type(
+  'a list
+)
+ident(
+  def l "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 144 5999 6007 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 148 6092 6136
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 144 5999 6013 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 144 5999 6014
+type(
+  'a list
+)
+ident(
+  int_ref l "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 143 5970 5995 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 143 5970 5996
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 145 6020 6030 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 145 6020 6032
+type(
+  'a list
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 145 6020 6036 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 145 6020 6038
+type(
+  'a list
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 146 6039 6049 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 146 6039 6050
+type(
+  'a
+)
+ident(
+  def x "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 147 6058 6075 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 148 6092 6136
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 146 6039 6052 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 146 6039 6054
+type(
+  'a list
+)
+ident(
+  def xs "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 147 6058 6075 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 148 6092 6136
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 146 6039 6049 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 146 6039 6054
+type(
+  'a list
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 147 6058 6078 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 147 6058 6079
+type(
+  'a
+)
+ident(
+  int_ref x "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 146 6039 6049 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 146 6039 6050
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 147 6058 6080 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 147 6058 6081
+type(
+  'a -> 'a -> bool
+)
+ident(
+  int_ref Stdlib.( = ) "stdlib.mli" 118 4976 4976 "stdlib.mli" 118 4976 5020
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 147 6058 6082 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 147 6058 6083
+type(
+  'a
+)
+ident(
+  int_ref v "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 143 5970 5993 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 143 5970 5994
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 147 6058 6078 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 147 6058 6083
+type(
+  bool
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 147 6058 6089 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 147 6058 6091
+type(
+  'a list
+)
+ident(
+  int_ref xs "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 146 6039 6052 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 146 6039 6054
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 148 6092 6114 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 148 6092 6115
+type(
+  'a
+)
+ident(
+  int_ref x "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 146 6039 6049 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 146 6039 6050
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 148 6092 6117 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 148 6092 6131
+type(
+  'a -> 'a list -> 'a list
+)
+ident(
+  int_ref removeFromList "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 143 5970 5978 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 143 5970 5992
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 148 6092 6132 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 148 6092 6133
+type(
+  'a
+)
+ident(
+  int_ref v "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 143 5970 5993 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 143 5970 5994
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 148 6092 6134 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 148 6092 6136
+type(
+  'a list
+)
+ident(
+  int_ref xs "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 146 6039 6052 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 146 6039 6054
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 148 6092 6117 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 148 6092 6136
+type(
+  'a list
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 148 6092 6114 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 148 6092 6136
+type(
+  'a list
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 147 6058 6075 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 148 6092 6136
+type(
+  'a list
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 144 5999 6007 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 148 6092 6136
+type(
+  'a list
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 152 6212 6224 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 152 6212 6231
+type(
+  'a list -> 'a
+)
+ident(
+  def minList "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 152 6212 6216 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 0 0 -1
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 152 6212 6232 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 152 6212 6233
+type(
+  'a list
+)
+ident(
+  def l "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 153 6236 6244 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 156 6305 6342
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 153 6236 6250 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 153 6236 6251
+type(
+  'a list
+)
+ident(
+  int_ref l "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 152 6212 6232 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 152 6212 6233
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 154 6257 6263 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 154 6257 6265
+type(
+  'a list
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 154 6257 6268 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 154 6257 6276
+type(
+  string -> 'a
+)
+ident(
+  int_ref Stdlib.failwith "stdlib.mli" 41 1919 1919 "stdlib.mli" 41 1919 1946
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 154 6257 6277 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 154 6257 6285
+type(
+  string
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 154 6257 6268 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 154 6257 6285
+type(
+  'a
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 155 6286 6297 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 155 6286 6298
+type(
+  'a
+)
+ident(
+  def x "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 155 6286 6303 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 155 6286 6304
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 155 6286 6296 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 155 6286 6299
+type(
+  'a list
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 155 6286 6303 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 155 6286 6304
+type(
+  'a
+)
+ident(
+  int_ref x "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 155 6286 6297 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 155 6286 6298
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 156 6305 6315 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 156 6305 6316
+type(
+  'a
+)
+ident(
+  def x "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 156 6305 6324 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 156 6305 6342
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 156 6305 6318 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 156 6305 6320
+type(
+  'a list
+)
+ident(
+  def xs "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 156 6305 6324 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 156 6305 6342
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 156 6305 6315 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 156 6305 6320
+type(
+  'a list
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 156 6305 6324 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 156 6305 6327
+type(
+  'a -> 'a -> 'a
+)
+ident(
+  int_ref Stdlib.min "stdlib.mli" 178 7724 7724 "stdlib.mli" 178 7724 7748
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 156 6305 6328 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 156 6305 6329
+type(
+  'a
+)
+ident(
+  int_ref x "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 156 6305 6315 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 156 6305 6316
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 156 6305 6331 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 156 6305 6338
+type(
+  'a list -> 'a
+)
+ident(
+  int_ref minList "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 152 6212 6224 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 152 6212 6231
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 156 6305 6339 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 156 6305 6341
+type(
+  'a list
+)
+ident(
+  int_ref xs "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 156 6305 6318 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 156 6305 6320
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 156 6305 6330 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 156 6305 6342
+type(
+  'a
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 156 6305 6324 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 156 6305 6342
+type(
+  'a
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 153 6236 6244 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 156 6305 6342
+type(
+  'a
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 160 6447 6459 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 160 6447 6466
+type(
+  'a list -> 'a list
+)
+ident(
+  def minSort "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 160 6447 6451 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 0 0 -1
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 160 6447 6467 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 160 6447 6468
+type(
+  'a list
+)
+ident(
+  def l "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 161 6471 6479 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 165 6567 6619
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 161 6471 6485 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 161 6471 6486
+type(
+  'a list
+)
+ident(
+  int_ref l "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 160 6447 6467 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 160 6447 6468
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 162 6492 6502 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 162 6492 6504
+type(
+  'a list
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 162 6492 6508 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 162 6492 6510
+type(
+  'a list
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 163 6511 6521 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 163 6511 6525
+type(
+  'a list
+)
+ident(
+  def list "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 164 6529 6543 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 165 6567 6619
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 164 6529 6547 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 164 6529 6548
+type(
+  'a
+)
+ident(
+  def m "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 165 6567 6585 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 165 6567 6619
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 164 6529 6551 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 164 6529 6558
+type(
+  'a list -> 'a
+)
+ident(
+  int_ref minList "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 152 6212 6224 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 152 6212 6231
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 164 6529 6559 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 164 6529 6563
+type(
+  'a list
+)
+ident(
+  int_ref list "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 163 6511 6521 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 163 6511 6525
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 164 6529 6551 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 164 6529 6563
+type(
+  'a
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 165 6567 6585 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 165 6567 6586
+type(
+  'a
+)
+ident(
+  int_ref m "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 164 6529 6547 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 164 6529 6548
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 165 6567 6588 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 165 6567 6595
+type(
+  'a list -> 'a list
+)
+ident(
+  int_ref minSort "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 160 6447 6459 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 160 6447 6466
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 165 6567 6597 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 165 6567 6611
+type(
+  'a -> 'a list -> 'a list
+)
+ident(
+  int_ref removeFromList "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 143 5970 5978 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 143 5970 5992
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 165 6567 6612 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 165 6567 6613
+type(
+  'a
+)
+ident(
+  int_ref m "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 164 6529 6547 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 164 6529 6548
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 165 6567 6614 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 165 6567 6618
+type(
+  'a list
+)
+ident(
+  int_ref list "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 163 6511 6521 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 163 6511 6525
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 165 6567 6596 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 165 6567 6619
+type(
+  'a list
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 165 6567 6588 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 165 6567 6619
+type(
+  'a list
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 165 6567 6585 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 165 6567 6619
+type(
+  'a list
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 164 6529 6543 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 165 6567 6619
+type(
+  'a list
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 161 6471 6479 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 165 6567 6619
+type(
+  'a list
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 179 7275 7280 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 179 7275 7287
+type(
+  int list
+)
+ident(
+  def result1 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 180 7310 7311 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 0 0 -1
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 179 7275 7288 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 179 7275 7297
+type(
+  int list -> int list
+)
+ident(
+  int_ref quickSort "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 135 5772 5784 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 135 5772 5793
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 179 7275 7298 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 179 7275 7307
+type(
+  int list
+)
+ident(
+  int_ref superList "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 19 329 333 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 19 329 342
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 179 7275 7288 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 179 7275 7307
+type(
+  int list
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 180 7310 7315 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 180 7310 7322
+type(
+  int list
+)
+ident(
+  def result2 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 180 7310 7340 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 0 0 -1
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 180 7310 7323 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 180 7310 7330
+type(
+  int list -> int list
+)
+ident(
+  int_ref minSort "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 160 6447 6459 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 160 6447 6466
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 180 7310 7331 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 180 7310 7340
+type(
+  int list
+)
+ident(
+  int_ref superList "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 19 329 333 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 19 329 342
+)
+"SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 180 7310 7323 "SintoMeUmaMerda/tiposDeFuncoesRecursivas.ml" 180 7310 7340
+type(
+  int list
+)

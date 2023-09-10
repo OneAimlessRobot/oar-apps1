@@ -1,0 +1,42 @@
+No courses registered!
+Course IP added.
+All courses:
+IP: 0 professors, 0 students, 0 tests and 0 deadlines.
+Course IP already exists!
+Course POO added.
+Course POO already exists!
+Course IP already exists!
+Course AM I added.
+Course AM II added.
+Course Fancy course name added.
+Course Karaoke 101 added.
+All courses:
+IP: 0 professors, 0 students, 0 tests and 0 deadlines.
+POO: 0 professors, 0 students, 0 tests and 0 deadlines.
+AM I: 0 professors, 0 students, 0 tests and 0 deadlines.
+AM II: 0 professors, 0 students, 0 tests and 0 deadlines.
+Fancy course name: 0 professors, 0 students, 0 tests and 0 deadlines.
+Karaoke 101: 0 professors, 0 students, 0 tests and 0 deadlines.
+Course Extreme Mooshaking added.
+Course IP already exists!
+Course Fancy course name already exists!
+Course Karaoke 101 already exists!
+All courses:
+IP: 0 professors, 0 students, 0 tests and 0 deadlines.
+POO: 0 professors, 0 students, 0 tests and 0 deadlines.
+AM I: 0 professors, 0 students, 0 tests and 0 deadlines.
+AM II: 0 professors, 0 students, 0 tests and 0 deadlines.
+Fancy course name: 0 professors, 0 students, 0 tests and 0 deadlines.
+Karaoke 101: 0 professors, 0 students, 0 tests and 0 deadlines.
+Extreme Mooshaking: 0 professors, 0 students, 0 tests and 0 deadlines.
+Course ip added.
+All courses:
+IP: 0 professors, 0 students, 0 tests and 0 deadlines.
+POO: 0 professors, 0 students, 0 tests and 0 deadlines.
+AM I: 0 professors, 0 students, 0 tests and 0 deadlines.
+AM II: 0 professors, 0 students, 0 tests and 0 deadlines.
+Fancy course name: 0 professors, 0 students, 0 tests and 0 deadlines.
+Karaoke 101: 0 professors, 0 students, 0 tests and 0 deadlines.
+Extreme Mooshaking: 0 professors, 0 students, 0 tests and 0 deadlines.
+ip: 0 professors, 0 students, 0 tests and 0 deadlines.
+Bye!

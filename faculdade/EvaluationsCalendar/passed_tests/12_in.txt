@@ -1,0 +1,71 @@
+superprofessor
+course IP
+course POO
+course AM I
+course AM II
+course Fancy course name
+course Karaoke 101
+course Extreme Mooshaking
+coursedeadlines Advanced Procastination
+coursedeadlines IP
+coursedeadlines AM II
+coursedeadlines Extreme Mooshaking
+professor Injun Joe
+superprofessor
+student 23234 Sid Sawyer
+student 10730 Amy Lawrence
+student 3254 Mary
+student 9983 Muff Potter
+student 12435 Alfred Temple
+student 32424 Injun Joe
+student 12334 Tom Sawyer
+student 13242 Becky Thatcher
+student 3243 Huckleberry Finn
+student 23143 Joe Harper
+professor Aunt Polly
+professor Mr. Walters
+professor Judge Thatcher
+professor Jim
+professor Mr. Sprague
+professor Mr. Jones
+superprofessor
+assign Mr. Jones
+IP
+superprofessor
+assign Mr. Walters
+POO
+superprofessor
+assign Mr. Walters
+AM II
+assign Mr. Walters
+AM I
+superprofessor
+assign Aunt Polly
+AM I
+assign Mr. Jones
+POO
+assign Mr. Jones
+AM I
+superprofessor
+enrol 5 POO
+Tom Sawyer
+Huckleberry Finn
+Becky Thatcher
+Muff Potter
+Amy Lawrence
+superprofessor
+enrol 2 AM I
+Becky Thatcher
+Tom Sawyer
+superprofessor
+enrol 4 IP
+Tom Sawyer
+Sid Sawyer
+Muff Potter
+Amy Lawrence
+superprofessor
+roster IP
+roster POO
+roster AM I
+people
+exit

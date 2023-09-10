@@ -1,0 +1,46 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Personal Hideout</title>
+    <link rel="stylesheet" href="{%static '/hideout/mainstuff/style/main.css'%}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <h1 style="text-align:center;color:blue">My Personal Hideout</h1>
+    <div id="background">
+        <ul class="sidebar">
+            <li>212313231232132</li>
+            <li>123312312312312</li>
+        </ul>
+
+        <div id="videocontainer">
+            {%for i in coolvideos%}
+            <video controls>
+                <source src="{%static '/hideout/mainstuff/video/'%}{{i}}" type="video/mp4">
+            </video>
+            <br>
+            {%endfor%}
+        </div>
+
+        <ul class="sidebar">
+            <li>phrase 1</li>
+            <li>phrase 2</li>
+        </ul>
+
+    </div>
+
+    <ul id="links">
+        {%for link in list%}
+        <li><a href={{link}}>{{link}}</a></li>
+        {%endfor%}
+    </ul>
+</body>
+
+
+
+<a href="..">Voltar à página inicial</a>
+
+</html>

@@ -1,0 +1,2875 @@
+"SintoMeUmaMerda/Trees.ml" 6 91 99 "SintoMeUmaMerda/Trees.ml" 6 91 106
+type(
+  'a -> 'a tree -> int
+)
+ident(
+  def howMany "SintoMeUmaMerda/Trees.ml" 6 91 91 "SintoMeUmaMerda/Trees.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Trees.ml" 6 91 107 "SintoMeUmaMerda/Trees.ml" 6 91 108
+type(
+  'a
+)
+ident(
+  def v "SintoMeUmaMerda/Trees.ml" 6 91 109 "SintoMeUmaMerda/Trees.ml" 11 247 303
+)
+"SintoMeUmaMerda/Trees.ml" 6 91 109 "SintoMeUmaMerda/Trees.ml" 6 91 110
+type(
+  'a tree
+)
+ident(
+  def t "SintoMeUmaMerda/Trees.ml" 6 91 113 "SintoMeUmaMerda/Trees.ml" 11 247 303
+)
+"SintoMeUmaMerda/Trees.ml" 6 91 119 "SintoMeUmaMerda/Trees.ml" 6 91 120
+type(
+  'a tree
+)
+ident(
+  int_ref t "SintoMeUmaMerda/Trees.ml" 6 91 109 "SintoMeUmaMerda/Trees.ml" 6 91 110
+)
+"SintoMeUmaMerda/Trees.ml" 7 126 128 "SintoMeUmaMerda/Trees.ml" 7 126 131
+type(
+  'a tree
+)
+"SintoMeUmaMerda/Trees.ml" 7 126 135 "SintoMeUmaMerda/Trees.ml" 7 126 136
+type(
+  int
+)
+"SintoMeUmaMerda/Trees.ml" 8 137 144 "SintoMeUmaMerda/Trees.ml" 8 137 145
+type(
+  'a
+)
+ident(
+  def x "SintoMeUmaMerda/Trees.ml" 8 137 160 "SintoMeUmaMerda/Trees.ml" 11 247 303
+)
+"SintoMeUmaMerda/Trees.ml" 8 137 146 "SintoMeUmaMerda/Trees.ml" 8 137 150
+type(
+  'a tree
+)
+ident(
+  def left "SintoMeUmaMerda/Trees.ml" 8 137 160 "SintoMeUmaMerda/Trees.ml" 11 247 303
+)
+"SintoMeUmaMerda/Trees.ml" 8 137 151 "SintoMeUmaMerda/Trees.ml" 8 137 156
+type(
+  'a tree
+)
+ident(
+  def right "SintoMeUmaMerda/Trees.ml" 8 137 160 "SintoMeUmaMerda/Trees.ml" 11 247 303
+)
+"SintoMeUmaMerda/Trees.ml" 8 137 139 "SintoMeUmaMerda/Trees.ml" 8 137 157
+type(
+  'a tree
+)
+"SintoMeUmaMerda/Trees.ml" 8 137 163 "SintoMeUmaMerda/Trees.ml" 8 137 164
+type(
+  'a
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Trees.ml" 8 137 144 "SintoMeUmaMerda/Trees.ml" 8 137 145
+)
+"SintoMeUmaMerda/Trees.ml" 8 137 164 "SintoMeUmaMerda/Trees.ml" 8 137 165
+type(
+  'a -> 'a -> bool
+)
+ident(
+  int_ref Stdlib.( = ) "stdlib.mli" 118 4976 4976 "stdlib.mli" 118 4976 5020
+)
+"SintoMeUmaMerda/Trees.ml" 8 137 165 "SintoMeUmaMerda/Trees.ml" 8 137 166
+type(
+  'a
+)
+ident(
+  int_ref v "SintoMeUmaMerda/Trees.ml" 6 91 107 "SintoMeUmaMerda/Trees.ml" 6 91 108
+)
+"SintoMeUmaMerda/Trees.ml" 8 137 163 "SintoMeUmaMerda/Trees.ml" 8 137 166
+type(
+  bool
+)
+"SintoMeUmaMerda/Trees.ml" 9 172 184 "SintoMeUmaMerda/Trees.ml" 9 172 185
+type(
+  int
+)
+"SintoMeUmaMerda/Trees.ml" 9 172 186 "SintoMeUmaMerda/Trees.ml" 9 172 187
+type(
+  int -> int -> int
+)
+ident(
+  int_ref Stdlib.( + ) "stdlib.mli" 338 13360 13360 "stdlib.mli" 338 13360 13406
+)
+"SintoMeUmaMerda/Trees.ml" 9 172 188 "SintoMeUmaMerda/Trees.ml" 9 172 195
+type(
+  'a -> 'a tree -> int
+)
+ident(
+  int_ref howMany "SintoMeUmaMerda/Trees.ml" 6 91 99 "SintoMeUmaMerda/Trees.ml" 6 91 106
+)
+"SintoMeUmaMerda/Trees.ml" 9 172 196 "SintoMeUmaMerda/Trees.ml" 9 172 197
+type(
+  'a
+)
+ident(
+  int_ref v "SintoMeUmaMerda/Trees.ml" 6 91 107 "SintoMeUmaMerda/Trees.ml" 6 91 108
+)
+"SintoMeUmaMerda/Trees.ml" 9 172 198 "SintoMeUmaMerda/Trees.ml" 9 172 202
+type(
+  'a tree
+)
+ident(
+  int_ref left "SintoMeUmaMerda/Trees.ml" 8 137 146 "SintoMeUmaMerda/Trees.ml" 8 137 150
+)
+"SintoMeUmaMerda/Trees.ml" 9 172 188 "SintoMeUmaMerda/Trees.ml" 9 172 202
+type(
+  int
+)
+"SintoMeUmaMerda/Trees.ml" 9 172 184 "SintoMeUmaMerda/Trees.ml" 9 172 202
+type(
+  int
+)
+"SintoMeUmaMerda/Trees.ml" 9 172 203 "SintoMeUmaMerda/Trees.ml" 9 172 204
+type(
+  int -> int -> int
+)
+ident(
+  int_ref Stdlib.( + ) "stdlib.mli" 338 13360 13360 "stdlib.mli" 338 13360 13406
+)
+"SintoMeUmaMerda/Trees.ml" 9 172 205 "SintoMeUmaMerda/Trees.ml" 9 172 212
+type(
+  'a -> 'a tree -> int
+)
+ident(
+  int_ref howMany "SintoMeUmaMerda/Trees.ml" 6 91 99 "SintoMeUmaMerda/Trees.ml" 6 91 106
+)
+"SintoMeUmaMerda/Trees.ml" 9 172 213 "SintoMeUmaMerda/Trees.ml" 9 172 214
+type(
+  'a
+)
+ident(
+  int_ref v "SintoMeUmaMerda/Trees.ml" 6 91 107 "SintoMeUmaMerda/Trees.ml" 6 91 108
+)
+"SintoMeUmaMerda/Trees.ml" 9 172 215 "SintoMeUmaMerda/Trees.ml" 9 172 220
+type(
+  'a tree
+)
+ident(
+  int_ref right "SintoMeUmaMerda/Trees.ml" 8 137 151 "SintoMeUmaMerda/Trees.ml" 8 137 156
+)
+"SintoMeUmaMerda/Trees.ml" 9 172 205 "SintoMeUmaMerda/Trees.ml" 9 172 220
+type(
+  int
+)
+"SintoMeUmaMerda/Trees.ml" 9 172 184 "SintoMeUmaMerda/Trees.ml" 9 172 220
+type(
+  int
+)
+"SintoMeUmaMerda/Trees.ml" 11 247 267 "SintoMeUmaMerda/Trees.ml" 11 247 268
+type(
+  int
+)
+"SintoMeUmaMerda/Trees.ml" 11 247 269 "SintoMeUmaMerda/Trees.ml" 11 247 270
+type(
+  int -> int -> int
+)
+ident(
+  int_ref Stdlib.( + ) "stdlib.mli" 338 13360 13360 "stdlib.mli" 338 13360 13406
+)
+"SintoMeUmaMerda/Trees.ml" 11 247 271 "SintoMeUmaMerda/Trees.ml" 11 247 278
+type(
+  'a -> 'a tree -> int
+)
+ident(
+  int_ref howMany "SintoMeUmaMerda/Trees.ml" 6 91 99 "SintoMeUmaMerda/Trees.ml" 6 91 106
+)
+"SintoMeUmaMerda/Trees.ml" 11 247 279 "SintoMeUmaMerda/Trees.ml" 11 247 280
+type(
+  'a
+)
+ident(
+  int_ref v "SintoMeUmaMerda/Trees.ml" 6 91 107 "SintoMeUmaMerda/Trees.ml" 6 91 108
+)
+"SintoMeUmaMerda/Trees.ml" 11 247 281 "SintoMeUmaMerda/Trees.ml" 11 247 285
+type(
+  'a tree
+)
+ident(
+  int_ref left "SintoMeUmaMerda/Trees.ml" 8 137 146 "SintoMeUmaMerda/Trees.ml" 8 137 150
+)
+"SintoMeUmaMerda/Trees.ml" 11 247 271 "SintoMeUmaMerda/Trees.ml" 11 247 285
+type(
+  int
+)
+"SintoMeUmaMerda/Trees.ml" 11 247 267 "SintoMeUmaMerda/Trees.ml" 11 247 285
+type(
+  int
+)
+"SintoMeUmaMerda/Trees.ml" 11 247 286 "SintoMeUmaMerda/Trees.ml" 11 247 287
+type(
+  int -> int -> int
+)
+ident(
+  int_ref Stdlib.( + ) "stdlib.mli" 338 13360 13360 "stdlib.mli" 338 13360 13406
+)
+"SintoMeUmaMerda/Trees.ml" 11 247 288 "SintoMeUmaMerda/Trees.ml" 11 247 295
+type(
+  'a -> 'a tree -> int
+)
+ident(
+  int_ref howMany "SintoMeUmaMerda/Trees.ml" 6 91 99 "SintoMeUmaMerda/Trees.ml" 6 91 106
+)
+"SintoMeUmaMerda/Trees.ml" 11 247 296 "SintoMeUmaMerda/Trees.ml" 11 247 297
+type(
+  'a
+)
+ident(
+  int_ref v "SintoMeUmaMerda/Trees.ml" 6 91 107 "SintoMeUmaMerda/Trees.ml" 6 91 108
+)
+"SintoMeUmaMerda/Trees.ml" 11 247 298 "SintoMeUmaMerda/Trees.ml" 11 247 303
+type(
+  'a tree
+)
+ident(
+  int_ref right "SintoMeUmaMerda/Trees.ml" 8 137 151 "SintoMeUmaMerda/Trees.ml" 8 137 156
+)
+"SintoMeUmaMerda/Trees.ml" 11 247 288 "SintoMeUmaMerda/Trees.ml" 11 247 303
+type(
+  int
+)
+"SintoMeUmaMerda/Trees.ml" 11 247 267 "SintoMeUmaMerda/Trees.ml" 11 247 303
+type(
+  int
+)
+"SintoMeUmaMerda/Trees.ml" 8 137 160 "SintoMeUmaMerda/Trees.ml" 11 247 303
+type(
+  int
+)
+"SintoMeUmaMerda/Trees.ml" 6 91 113 "SintoMeUmaMerda/Trees.ml" 11 247 303
+type(
+  int
+)
+"SintoMeUmaMerda/Trees.ml" 12 306 314 "SintoMeUmaMerda/Trees.ml" 12 306 321
+type(
+  ('a * 'a) tree -> int
+)
+ident(
+  def eqPairs "SintoMeUmaMerda/Trees.ml" 12 306 306 "SintoMeUmaMerda/Trees.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Trees.ml" 12 306 322 "SintoMeUmaMerda/Trees.ml" 12 306 323
+type(
+  ('a * 'a) tree
+)
+ident(
+  def t "SintoMeUmaMerda/Trees.ml" 12 306 326 "SintoMeUmaMerda/Trees.ml" 17 484 536
+)
+"SintoMeUmaMerda/Trees.ml" 12 306 332 "SintoMeUmaMerda/Trees.ml" 12 306 333
+type(
+  ('a * 'a) tree
+)
+ident(
+  int_ref t "SintoMeUmaMerda/Trees.ml" 12 306 322 "SintoMeUmaMerda/Trees.ml" 12 306 323
+)
+"SintoMeUmaMerda/Trees.ml" 13 339 349 "SintoMeUmaMerda/Trees.ml" 13 339 352
+type(
+  ('a * 'a) tree
+)
+"SintoMeUmaMerda/Trees.ml" 13 339 356 "SintoMeUmaMerda/Trees.ml" 13 339 357
+type(
+  int
+)
+"SintoMeUmaMerda/Trees.ml" 14 358 374 "SintoMeUmaMerda/Trees.ml" 14 358 375
+type(
+  'a
+)
+ident(
+  def x "SintoMeUmaMerda/Trees.ml" 14 358 393 "SintoMeUmaMerda/Trees.ml" 17 484 536
+)
+"SintoMeUmaMerda/Trees.ml" 14 358 376 "SintoMeUmaMerda/Trees.ml" 14 358 377
+type(
+  'a
+)
+ident(
+  def y "SintoMeUmaMerda/Trees.ml" 14 358 393 "SintoMeUmaMerda/Trees.ml" 17 484 536
+)
+"SintoMeUmaMerda/Trees.ml" 14 358 373 "SintoMeUmaMerda/Trees.ml" 14 358 378
+type(
+  'a * 'a
+)
+"SintoMeUmaMerda/Trees.ml" 14 358 379 "SintoMeUmaMerda/Trees.ml" 14 358 383
+type(
+  ('a * 'a) tree
+)
+ident(
+  def left "SintoMeUmaMerda/Trees.ml" 14 358 393 "SintoMeUmaMerda/Trees.ml" 17 484 536
+)
+"SintoMeUmaMerda/Trees.ml" 14 358 384 "SintoMeUmaMerda/Trees.ml" 14 358 389
+type(
+  ('a * 'a) tree
+)
+ident(
+  def right "SintoMeUmaMerda/Trees.ml" 14 358 393 "SintoMeUmaMerda/Trees.ml" 17 484 536
+)
+"SintoMeUmaMerda/Trees.ml" 14 358 368 "SintoMeUmaMerda/Trees.ml" 14 358 390
+type(
+  ('a * 'a) tree
+)
+"SintoMeUmaMerda/Trees.ml" 14 358 396 "SintoMeUmaMerda/Trees.ml" 14 358 397
+type(
+  'a
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Trees.ml" 14 358 374 "SintoMeUmaMerda/Trees.ml" 14 358 375
+)
+"SintoMeUmaMerda/Trees.ml" 14 358 397 "SintoMeUmaMerda/Trees.ml" 14 358 398
+type(
+  'a -> 'a -> bool
+)
+ident(
+  int_ref Stdlib.( = ) "stdlib.mli" 118 4976 4976 "stdlib.mli" 118 4976 5020
+)
+"SintoMeUmaMerda/Trees.ml" 14 358 398 "SintoMeUmaMerda/Trees.ml" 14 358 399
+type(
+  'a
+)
+ident(
+  int_ref y "SintoMeUmaMerda/Trees.ml" 14 358 376 "SintoMeUmaMerda/Trees.ml" 14 358 377
+)
+"SintoMeUmaMerda/Trees.ml" 14 358 396 "SintoMeUmaMerda/Trees.ml" 14 358 399
+type(
+  bool
+)
+"SintoMeUmaMerda/Trees.ml" 15 405 425 "SintoMeUmaMerda/Trees.ml" 15 405 426
+type(
+  int
+)
+"SintoMeUmaMerda/Trees.ml" 15 405 427 "SintoMeUmaMerda/Trees.ml" 15 405 428
+type(
+  int -> int -> int
+)
+ident(
+  int_ref Stdlib.( + ) "stdlib.mli" 338 13360 13360 "stdlib.mli" 338 13360 13406
+)
+"SintoMeUmaMerda/Trees.ml" 15 405 429 "SintoMeUmaMerda/Trees.ml" 15 405 436
+type(
+  ('a * 'a) tree -> int
+)
+ident(
+  int_ref eqPairs "SintoMeUmaMerda/Trees.ml" 12 306 314 "SintoMeUmaMerda/Trees.ml" 12 306 321
+)
+"SintoMeUmaMerda/Trees.ml" 15 405 437 "SintoMeUmaMerda/Trees.ml" 15 405 441
+type(
+  ('a * 'a) tree
+)
+ident(
+  int_ref left "SintoMeUmaMerda/Trees.ml" 14 358 379 "SintoMeUmaMerda/Trees.ml" 14 358 383
+)
+"SintoMeUmaMerda/Trees.ml" 15 405 429 "SintoMeUmaMerda/Trees.ml" 15 405 441
+type(
+  int
+)
+"SintoMeUmaMerda/Trees.ml" 15 405 425 "SintoMeUmaMerda/Trees.ml" 15 405 441
+type(
+  int
+)
+"SintoMeUmaMerda/Trees.ml" 15 405 442 "SintoMeUmaMerda/Trees.ml" 15 405 443
+type(
+  int -> int -> int
+)
+ident(
+  int_ref Stdlib.( + ) "stdlib.mli" 338 13360 13360 "stdlib.mli" 338 13360 13406
+)
+"SintoMeUmaMerda/Trees.ml" 15 405 444 "SintoMeUmaMerda/Trees.ml" 15 405 451
+type(
+  ('a * 'a) tree -> int
+)
+ident(
+  int_ref eqPairs "SintoMeUmaMerda/Trees.ml" 12 306 314 "SintoMeUmaMerda/Trees.ml" 12 306 321
+)
+"SintoMeUmaMerda/Trees.ml" 15 405 452 "SintoMeUmaMerda/Trees.ml" 15 405 457
+type(
+  ('a * 'a) tree
+)
+ident(
+  int_ref right "SintoMeUmaMerda/Trees.ml" 14 358 384 "SintoMeUmaMerda/Trees.ml" 14 358 389
+)
+"SintoMeUmaMerda/Trees.ml" 15 405 444 "SintoMeUmaMerda/Trees.ml" 15 405 457
+type(
+  int
+)
+"SintoMeUmaMerda/Trees.ml" 15 405 425 "SintoMeUmaMerda/Trees.ml" 15 405 457
+type(
+  int
+)
+"SintoMeUmaMerda/Trees.ml" 17 484 504 "SintoMeUmaMerda/Trees.ml" 17 484 505
+type(
+  int
+)
+"SintoMeUmaMerda/Trees.ml" 17 484 506 "SintoMeUmaMerda/Trees.ml" 17 484 507
+type(
+  int -> int -> int
+)
+ident(
+  int_ref Stdlib.( + ) "stdlib.mli" 338 13360 13360 "stdlib.mli" 338 13360 13406
+)
+"SintoMeUmaMerda/Trees.ml" 17 484 508 "SintoMeUmaMerda/Trees.ml" 17 484 515
+type(
+  ('a * 'a) tree -> int
+)
+ident(
+  int_ref eqPairs "SintoMeUmaMerda/Trees.ml" 12 306 314 "SintoMeUmaMerda/Trees.ml" 12 306 321
+)
+"SintoMeUmaMerda/Trees.ml" 17 484 516 "SintoMeUmaMerda/Trees.ml" 17 484 520
+type(
+  ('a * 'a) tree
+)
+ident(
+  int_ref left "SintoMeUmaMerda/Trees.ml" 14 358 379 "SintoMeUmaMerda/Trees.ml" 14 358 383
+)
+"SintoMeUmaMerda/Trees.ml" 17 484 508 "SintoMeUmaMerda/Trees.ml" 17 484 520
+type(
+  int
+)
+"SintoMeUmaMerda/Trees.ml" 17 484 504 "SintoMeUmaMerda/Trees.ml" 17 484 520
+type(
+  int
+)
+"SintoMeUmaMerda/Trees.ml" 17 484 521 "SintoMeUmaMerda/Trees.ml" 17 484 522
+type(
+  int -> int -> int
+)
+ident(
+  int_ref Stdlib.( + ) "stdlib.mli" 338 13360 13360 "stdlib.mli" 338 13360 13406
+)
+"SintoMeUmaMerda/Trees.ml" 17 484 523 "SintoMeUmaMerda/Trees.ml" 17 484 530
+type(
+  ('a * 'a) tree -> int
+)
+ident(
+  int_ref eqPairs "SintoMeUmaMerda/Trees.ml" 12 306 314 "SintoMeUmaMerda/Trees.ml" 12 306 321
+)
+"SintoMeUmaMerda/Trees.ml" 17 484 531 "SintoMeUmaMerda/Trees.ml" 17 484 536
+type(
+  ('a * 'a) tree
+)
+ident(
+  int_ref right "SintoMeUmaMerda/Trees.ml" 14 358 384 "SintoMeUmaMerda/Trees.ml" 14 358 389
+)
+"SintoMeUmaMerda/Trees.ml" 17 484 523 "SintoMeUmaMerda/Trees.ml" 17 484 536
+type(
+  int
+)
+"SintoMeUmaMerda/Trees.ml" 17 484 504 "SintoMeUmaMerda/Trees.ml" 17 484 536
+type(
+  int
+)
+"SintoMeUmaMerda/Trees.ml" 14 358 393 "SintoMeUmaMerda/Trees.ml" 17 484 536
+type(
+  int
+)
+"SintoMeUmaMerda/Trees.ml" 12 306 326 "SintoMeUmaMerda/Trees.ml" 17 484 536
+type(
+  int
+)
+"SintoMeUmaMerda/Trees.ml" 20 600 608 "SintoMeUmaMerda/Trees.ml" 20 600 618
+type(
+  'a tree -> 'a list
+)
+ident(
+  def treeToList "SintoMeUmaMerda/Trees.ml" 20 600 600 "SintoMeUmaMerda/Trees.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Trees.ml" 20 600 619 "SintoMeUmaMerda/Trees.ml" 20 600 620
+type(
+  'a tree
+)
+ident(
+  def t "SintoMeUmaMerda/Trees.ml" 21 622 623 "SintoMeUmaMerda/Trees.ml" 23 649 710
+)
+"SintoMeUmaMerda/Trees.ml" 21 622 629 "SintoMeUmaMerda/Trees.ml" 21 622 630
+type(
+  'a tree
+)
+ident(
+  int_ref t "SintoMeUmaMerda/Trees.ml" 20 600 619 "SintoMeUmaMerda/Trees.ml" 20 600 620
+)
+"SintoMeUmaMerda/Trees.ml" 22 636 639 "SintoMeUmaMerda/Trees.ml" 22 636 642
+type(
+  'a tree
+)
+"SintoMeUmaMerda/Trees.ml" 22 636 646 "SintoMeUmaMerda/Trees.ml" 22 636 648
+type(
+  'a list
+)
+"SintoMeUmaMerda/Trees.ml" 23 649 657 "SintoMeUmaMerda/Trees.ml" 23 649 658
+type(
+  'a
+)
+ident(
+  def x "SintoMeUmaMerda/Trees.ml" 23 649 673 "SintoMeUmaMerda/Trees.ml" 23 649 710
+)
+"SintoMeUmaMerda/Trees.ml" 23 649 659 "SintoMeUmaMerda/Trees.ml" 23 649 663
+type(
+  'a tree
+)
+ident(
+  def left "SintoMeUmaMerda/Trees.ml" 23 649 673 "SintoMeUmaMerda/Trees.ml" 23 649 710
+)
+"SintoMeUmaMerda/Trees.ml" 23 649 664 "SintoMeUmaMerda/Trees.ml" 23 649 669
+type(
+  'a tree
+)
+ident(
+  def right "SintoMeUmaMerda/Trees.ml" 23 649 673 "SintoMeUmaMerda/Trees.ml" 23 649 710
+)
+"SintoMeUmaMerda/Trees.ml" 23 649 652 "SintoMeUmaMerda/Trees.ml" 23 649 670
+type(
+  'a tree
+)
+"SintoMeUmaMerda/Trees.ml" 23 649 674 "SintoMeUmaMerda/Trees.ml" 23 649 675
+type(
+  'a
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Trees.ml" 23 649 657 "SintoMeUmaMerda/Trees.ml" 23 649 658
+)
+"SintoMeUmaMerda/Trees.ml" 23 649 677 "SintoMeUmaMerda/Trees.ml" 23 649 687
+type(
+  'a tree -> 'a list
+)
+ident(
+  int_ref treeToList "SintoMeUmaMerda/Trees.ml" 20 600 608 "SintoMeUmaMerda/Trees.ml" 20 600 618
+)
+"SintoMeUmaMerda/Trees.ml" 23 649 688 "SintoMeUmaMerda/Trees.ml" 23 649 692
+type(
+  'a tree
+)
+ident(
+  int_ref left "SintoMeUmaMerda/Trees.ml" 23 649 659 "SintoMeUmaMerda/Trees.ml" 23 649 663
+)
+"SintoMeUmaMerda/Trees.ml" 23 649 677 "SintoMeUmaMerda/Trees.ml" 23 649 692
+type(
+  'a list
+)
+"SintoMeUmaMerda/Trees.ml" 23 649 673 "SintoMeUmaMerda/Trees.ml" 23 649 693
+type(
+  'a list
+)
+"SintoMeUmaMerda/Trees.ml" 23 649 693 "SintoMeUmaMerda/Trees.ml" 23 649 694
+type(
+  'a list -> 'a list -> 'a list
+)
+ident(
+  int_ref Stdlib.( @ ) "stdlib.mli" 782 29359 29359 "stdlib.mli" 782 29359 29400
+)
+"SintoMeUmaMerda/Trees.ml" 23 649 694 "SintoMeUmaMerda/Trees.ml" 23 649 704
+type(
+  'a tree -> 'a list
+)
+ident(
+  int_ref treeToList "SintoMeUmaMerda/Trees.ml" 20 600 608 "SintoMeUmaMerda/Trees.ml" 20 600 618
+)
+"SintoMeUmaMerda/Trees.ml" 23 649 705 "SintoMeUmaMerda/Trees.ml" 23 649 710
+type(
+  'a tree
+)
+ident(
+  int_ref right "SintoMeUmaMerda/Trees.ml" 23 649 664 "SintoMeUmaMerda/Trees.ml" 23 649 669
+)
+"SintoMeUmaMerda/Trees.ml" 23 649 694 "SintoMeUmaMerda/Trees.ml" 23 649 710
+type(
+  'a list
+)
+"SintoMeUmaMerda/Trees.ml" 23 649 673 "SintoMeUmaMerda/Trees.ml" 23 649 710
+type(
+  'a list
+)
+"SintoMeUmaMerda/Trees.ml" 21 622 623 "SintoMeUmaMerda/Trees.ml" 23 649 710
+type(
+  'a list
+)
+"SintoMeUmaMerda/Trees.ml" 27 737 745 "SintoMeUmaMerda/Trees.ml" 27 737 751
+type(
+  'a tree -> int
+)
+ident(
+  def height "SintoMeUmaMerda/Trees.ml" 27 737 737 "SintoMeUmaMerda/Trees.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Trees.ml" 27 737 752 "SintoMeUmaMerda/Trees.ml" 27 737 753
+type(
+  'a tree
+)
+ident(
+  def t "SintoMeUmaMerda/Trees.ml" 28 756 760 "SintoMeUmaMerda/Trees.ml" 31 816 870
+)
+"SintoMeUmaMerda/Trees.ml" 28 756 766 "SintoMeUmaMerda/Trees.ml" 28 756 767
+type(
+  'a tree
+)
+ident(
+  int_ref t "SintoMeUmaMerda/Trees.ml" 27 737 752 "SintoMeUmaMerda/Trees.ml" 27 737 753
+)
+"SintoMeUmaMerda/Trees.ml" 29 773 779 "SintoMeUmaMerda/Trees.ml" 29 773 782
+type(
+  'a tree
+)
+"SintoMeUmaMerda/Trees.ml" 29 773 786 "SintoMeUmaMerda/Trees.ml" 29 773 787
+type(
+  int
+)
+"SintoMeUmaMerda/Trees.ml" 30 788 799 "SintoMeUmaMerda/Trees.ml" 30 788 800
+type(
+  'a
+)
+ident(
+  def x "SintoMeUmaMerda/Trees.ml" 31 816 827 "SintoMeUmaMerda/Trees.ml" 31 816 870
+)
+"SintoMeUmaMerda/Trees.ml" 30 788 801 "SintoMeUmaMerda/Trees.ml" 30 788 805
+type(
+  'a tree
+)
+ident(
+  def left "SintoMeUmaMerda/Trees.ml" 31 816 827 "SintoMeUmaMerda/Trees.ml" 31 816 870
+)
+"SintoMeUmaMerda/Trees.ml" 30 788 806 "SintoMeUmaMerda/Trees.ml" 30 788 811
+type(
+  'a tree
+)
+ident(
+  def right "SintoMeUmaMerda/Trees.ml" 31 816 827 "SintoMeUmaMerda/Trees.ml" 31 816 870
+)
+"SintoMeUmaMerda/Trees.ml" 30 788 794 "SintoMeUmaMerda/Trees.ml" 30 788 812
+type(
+  'a tree
+)
+"SintoMeUmaMerda/Trees.ml" 31 816 827 "SintoMeUmaMerda/Trees.ml" 31 816 828
+type(
+  int
+)
+"SintoMeUmaMerda/Trees.ml" 31 816 829 "SintoMeUmaMerda/Trees.ml" 31 816 830
+type(
+  int -> int -> int
+)
+ident(
+  int_ref Stdlib.( + ) "stdlib.mli" 338 13360 13360 "stdlib.mli" 338 13360 13406
+)
+"SintoMeUmaMerda/Trees.ml" 31 816 831 "SintoMeUmaMerda/Trees.ml" 31 816 841
+type(
+  int -> int -> int
+)
+ident(
+  int_ref Stdlib.max "stdlib.mli" 183 7888 7888 "stdlib.mli" 183 7888 7912
+)
+"SintoMeUmaMerda/Trees.ml" 31 816 843 "SintoMeUmaMerda/Trees.ml" 31 816 849
+type(
+  'a tree -> int
+)
+ident(
+  int_ref height "SintoMeUmaMerda/Trees.ml" 27 737 745 "SintoMeUmaMerda/Trees.ml" 27 737 751
+)
+"SintoMeUmaMerda/Trees.ml" 31 816 850 "SintoMeUmaMerda/Trees.ml" 31 816 854
+type(
+  'a tree
+)
+ident(
+  int_ref left "SintoMeUmaMerda/Trees.ml" 30 788 801 "SintoMeUmaMerda/Trees.ml" 30 788 805
+)
+"SintoMeUmaMerda/Trees.ml" 31 816 842 "SintoMeUmaMerda/Trees.ml" 31 816 855
+type(
+  int
+)
+"SintoMeUmaMerda/Trees.ml" 31 816 857 "SintoMeUmaMerda/Trees.ml" 31 816 863
+type(
+  'a tree -> int
+)
+ident(
+  int_ref height "SintoMeUmaMerda/Trees.ml" 27 737 745 "SintoMeUmaMerda/Trees.ml" 27 737 751
+)
+"SintoMeUmaMerda/Trees.ml" 31 816 864 "SintoMeUmaMerda/Trees.ml" 31 816 869
+type(
+  'a tree
+)
+ident(
+  int_ref right "SintoMeUmaMerda/Trees.ml" 30 788 806 "SintoMeUmaMerda/Trees.ml" 30 788 811
+)
+"SintoMeUmaMerda/Trees.ml" 31 816 856 "SintoMeUmaMerda/Trees.ml" 31 816 870
+type(
+  int
+)
+"SintoMeUmaMerda/Trees.ml" 31 816 831 "SintoMeUmaMerda/Trees.ml" 31 816 870
+type(
+  int
+)
+"SintoMeUmaMerda/Trees.ml" 31 816 827 "SintoMeUmaMerda/Trees.ml" 31 816 870
+type(
+  int
+)
+"SintoMeUmaMerda/Trees.ml" 28 756 760 "SintoMeUmaMerda/Trees.ml" 31 816 870
+type(
+  int
+)
+"SintoMeUmaMerda/Trees.ml" 34 875 883 "SintoMeUmaMerda/Trees.ml" 34 875 891
+type(
+  'a tree -> bool
+)
+ident(
+  def balanced "SintoMeUmaMerda/Trees.ml" 34 875 875 "SintoMeUmaMerda/Trees.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Trees.ml" 34 875 892 "SintoMeUmaMerda/Trees.ml" 34 875 893
+type(
+  'a tree
+)
+ident(
+  def t "SintoMeUmaMerda/Trees.ml" 35 895 897 "SintoMeUmaMerda/Trees.ml" 37 925 1021
+)
+"SintoMeUmaMerda/Trees.ml" 35 895 903 "SintoMeUmaMerda/Trees.ml" 35 895 904
+type(
+  'a tree
+)
+ident(
+  int_ref t "SintoMeUmaMerda/Trees.ml" 34 875 892 "SintoMeUmaMerda/Trees.ml" 34 875 893
+)
+"SintoMeUmaMerda/Trees.ml" 36 910 914 "SintoMeUmaMerda/Trees.ml" 36 910 917
+type(
+  'a tree
+)
+"SintoMeUmaMerda/Trees.ml" 36 910 920 "SintoMeUmaMerda/Trees.ml" 36 910 924
+type(
+  bool
+)
+"SintoMeUmaMerda/Trees.ml" 37 925 934 "SintoMeUmaMerda/Trees.ml" 37 925 935
+type(
+  'a
+)
+ident(
+  def x "SintoMeUmaMerda/Trees.ml" 37 925 951 "SintoMeUmaMerda/Trees.ml" 37 925 1021
+)
+"SintoMeUmaMerda/Trees.ml" 37 925 936 "SintoMeUmaMerda/Trees.ml" 37 925 940
+type(
+  'a tree
+)
+ident(
+  def left "SintoMeUmaMerda/Trees.ml" 37 925 951 "SintoMeUmaMerda/Trees.ml" 37 925 1021
+)
+"SintoMeUmaMerda/Trees.ml" 37 925 942 "SintoMeUmaMerda/Trees.ml" 37 925 947
+type(
+  'a tree
+)
+ident(
+  def right "SintoMeUmaMerda/Trees.ml" 37 925 951 "SintoMeUmaMerda/Trees.ml" 37 925 1021
+)
+"SintoMeUmaMerda/Trees.ml" 37 925 929 "SintoMeUmaMerda/Trees.ml" 37 925 948
+type(
+  'a tree
+)
+"SintoMeUmaMerda/Trees.ml" 37 925 951 "SintoMeUmaMerda/Trees.ml" 37 925 954
+type(
+  int -> int
+)
+ident(
+  int_ref Stdlib.abs "stdlib.mli" 374 14735 14735 "stdlib.mli" 374 14735 14755
+)
+"SintoMeUmaMerda/Trees.ml" 37 925 956 "SintoMeUmaMerda/Trees.ml" 37 925 962
+type(
+  'a tree -> int
+)
+ident(
+  int_ref height "SintoMeUmaMerda/Trees.ml" 27 737 745 "SintoMeUmaMerda/Trees.ml" 27 737 751
+)
+"SintoMeUmaMerda/Trees.ml" 37 925 963 "SintoMeUmaMerda/Trees.ml" 37 925 967
+type(
+  'a tree
+)
+ident(
+  int_ref left "SintoMeUmaMerda/Trees.ml" 37 925 936 "SintoMeUmaMerda/Trees.ml" 37 925 940
+)
+"SintoMeUmaMerda/Trees.ml" 37 925 956 "SintoMeUmaMerda/Trees.ml" 37 925 967
+type(
+  int
+)
+"SintoMeUmaMerda/Trees.ml" 37 925 968 "SintoMeUmaMerda/Trees.ml" 37 925 969
+type(
+  int -> int -> int
+)
+ident(
+  int_ref Stdlib.( - ) "stdlib.mli" 343 13509 13509 "stdlib.mli" 343 13509 13555
+)
+"SintoMeUmaMerda/Trees.ml" 37 925 970 "SintoMeUmaMerda/Trees.ml" 37 925 976
+type(
+  'a tree -> int
+)
+ident(
+  int_ref height "SintoMeUmaMerda/Trees.ml" 27 737 745 "SintoMeUmaMerda/Trees.ml" 27 737 751
+)
+"SintoMeUmaMerda/Trees.ml" 37 925 978 "SintoMeUmaMerda/Trees.ml" 37 925 983
+type(
+  'a tree
+)
+ident(
+  int_ref right "SintoMeUmaMerda/Trees.ml" 37 925 942 "SintoMeUmaMerda/Trees.ml" 37 925 947
+)
+"SintoMeUmaMerda/Trees.ml" 37 925 970 "SintoMeUmaMerda/Trees.ml" 37 925 983
+type(
+  int
+)
+"SintoMeUmaMerda/Trees.ml" 37 925 954 "SintoMeUmaMerda/Trees.ml" 37 925 984
+type(
+  int
+)
+"SintoMeUmaMerda/Trees.ml" 37 925 951 "SintoMeUmaMerda/Trees.ml" 37 925 984
+type(
+  int
+)
+"SintoMeUmaMerda/Trees.ml" 37 925 984 "SintoMeUmaMerda/Trees.ml" 37 925 985
+type(
+  int -> int -> bool
+)
+ident(
+  int_ref Stdlib.( < ) "stdlib.mli" 132 5646 5646 "stdlib.mli" 132 5646 5693
+)
+"SintoMeUmaMerda/Trees.ml" 37 925 985 "SintoMeUmaMerda/Trees.ml" 37 925 986
+type(
+  int
+)
+"SintoMeUmaMerda/Trees.ml" 37 925 951 "SintoMeUmaMerda/Trees.ml" 37 925 986
+type(
+  bool
+)
+"SintoMeUmaMerda/Trees.ml" 37 925 987 "SintoMeUmaMerda/Trees.ml" 37 925 989
+type(
+  bool -> bool -> bool
+)
+ident(
+  int_ref Stdlib.( && ) "stdlib.mli" 211 8885 8885 "stdlib.mli" 211 8885 8936
+)
+"SintoMeUmaMerda/Trees.ml" 37 925 990 "SintoMeUmaMerda/Trees.ml" 37 925 998
+type(
+  'a tree -> bool
+)
+ident(
+  int_ref balanced "SintoMeUmaMerda/Trees.ml" 34 875 883 "SintoMeUmaMerda/Trees.ml" 34 875 891
+)
+"SintoMeUmaMerda/Trees.ml" 37 925 999 "SintoMeUmaMerda/Trees.ml" 37 925 1003
+type(
+  'a tree
+)
+ident(
+  int_ref left "SintoMeUmaMerda/Trees.ml" 37 925 936 "SintoMeUmaMerda/Trees.ml" 37 925 940
+)
+"SintoMeUmaMerda/Trees.ml" 37 925 990 "SintoMeUmaMerda/Trees.ml" 37 925 1003
+type(
+  bool
+)
+"SintoMeUmaMerda/Trees.ml" 37 925 1004 "SintoMeUmaMerda/Trees.ml" 37 925 1006
+type(
+  bool -> bool -> bool
+)
+ident(
+  int_ref Stdlib.( && ) "stdlib.mli" 211 8885 8885 "stdlib.mli" 211 8885 8936
+)
+"SintoMeUmaMerda/Trees.ml" 37 925 1007 "SintoMeUmaMerda/Trees.ml" 37 925 1015
+type(
+  'a tree -> bool
+)
+ident(
+  int_ref balanced "SintoMeUmaMerda/Trees.ml" 34 875 883 "SintoMeUmaMerda/Trees.ml" 34 875 891
+)
+"SintoMeUmaMerda/Trees.ml" 37 925 1016 "SintoMeUmaMerda/Trees.ml" 37 925 1021
+type(
+  'a tree
+)
+ident(
+  int_ref right "SintoMeUmaMerda/Trees.ml" 37 925 942 "SintoMeUmaMerda/Trees.ml" 37 925 947
+)
+"SintoMeUmaMerda/Trees.ml" 37 925 1007 "SintoMeUmaMerda/Trees.ml" 37 925 1021
+type(
+  bool
+)
+"SintoMeUmaMerda/Trees.ml" 37 925 990 "SintoMeUmaMerda/Trees.ml" 37 925 1021
+type(
+  bool
+)
+"SintoMeUmaMerda/Trees.ml" 37 925 951 "SintoMeUmaMerda/Trees.ml" 37 925 1021
+type(
+  bool
+)
+"SintoMeUmaMerda/Trees.ml" 35 895 897 "SintoMeUmaMerda/Trees.ml" 37 925 1021
+type(
+  bool
+)
+"SintoMeUmaMerda/Trees.ml" 41 1027 1035 "SintoMeUmaMerda/Trees.ml" 41 1027 1043
+type(
+  'a tree -> 'a tree list
+)
+ident(
+  def subTrees "SintoMeUmaMerda/Trees.ml" 41 1027 1027 "SintoMeUmaMerda/Trees.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Trees.ml" 41 1027 1044 "SintoMeUmaMerda/Trees.ml" 41 1027 1045
+type(
+  'a tree
+)
+ident(
+  def t "SintoMeUmaMerda/Trees.ml" 42 1047 1049 "SintoMeUmaMerda/Trees.ml" 44 1079 1149
+)
+"SintoMeUmaMerda/Trees.ml" 42 1047 1055 "SintoMeUmaMerda/Trees.ml" 42 1047 1056
+type(
+  'a tree
+)
+ident(
+  int_ref t "SintoMeUmaMerda/Trees.ml" 41 1027 1044 "SintoMeUmaMerda/Trees.ml" 41 1027 1045
+)
+"SintoMeUmaMerda/Trees.ml" 43 1062 1066 "SintoMeUmaMerda/Trees.ml" 43 1062 1069
+type(
+  'a tree
+)
+"SintoMeUmaMerda/Trees.ml" 43 1062 1074 "SintoMeUmaMerda/Trees.ml" 43 1062 1077
+type(
+  'a tree
+)
+"SintoMeUmaMerda/Trees.ml" 43 1062 1073 "SintoMeUmaMerda/Trees.ml" 43 1062 1078
+type(
+  'a tree list
+)
+"SintoMeUmaMerda/Trees.ml" 44 1079 1088 "SintoMeUmaMerda/Trees.ml" 44 1079 1089
+type(
+  'a
+)
+ident(
+  def x "SintoMeUmaMerda/Trees.ml" 44 1079 1106 "SintoMeUmaMerda/Trees.ml" 44 1079 1149
+)
+"SintoMeUmaMerda/Trees.ml" 44 1079 1090 "SintoMeUmaMerda/Trees.ml" 44 1079 1094
+type(
+  'a tree
+)
+ident(
+  def left "SintoMeUmaMerda/Trees.ml" 44 1079 1106 "SintoMeUmaMerda/Trees.ml" 44 1079 1149
+)
+"SintoMeUmaMerda/Trees.ml" 44 1079 1096 "SintoMeUmaMerda/Trees.ml" 44 1079 1101
+type(
+  'a tree
+)
+ident(
+  def right "SintoMeUmaMerda/Trees.ml" 44 1079 1106 "SintoMeUmaMerda/Trees.ml" 44 1079 1149
+)
+"SintoMeUmaMerda/Trees.ml" 44 1079 1083 "SintoMeUmaMerda/Trees.ml" 44 1079 1102
+type(
+  'a tree
+)
+"SintoMeUmaMerda/Trees.ml" 44 1079 1106 "SintoMeUmaMerda/Trees.ml" 44 1079 1107
+type(
+  'a tree
+)
+ident(
+  int_ref t "SintoMeUmaMerda/Trees.ml" 41 1027 1044 "SintoMeUmaMerda/Trees.ml" 41 1027 1045
+)
+"SintoMeUmaMerda/Trees.ml" 44 1079 1110 "SintoMeUmaMerda/Trees.ml" 44 1079 1115
+type(
+  'a tree list -> 'a tree list -> 'a tree list
+)
+ident(
+  int_ref Sets.union "SintoMeUmaMerda/Sets.ml" 47 615 623 "SintoMeUmaMerda/Sets.ml" 47 615 628
+)
+"SintoMeUmaMerda/Trees.ml" 44 1079 1117 "SintoMeUmaMerda/Trees.ml" 44 1079 1125
+type(
+  'a tree -> 'a tree list
+)
+ident(
+  int_ref subTrees "SintoMeUmaMerda/Trees.ml" 41 1027 1035 "SintoMeUmaMerda/Trees.ml" 41 1027 1043
+)
+"SintoMeUmaMerda/Trees.ml" 44 1079 1126 "SintoMeUmaMerda/Trees.ml" 44 1079 1130
+type(
+  'a tree
+)
+ident(
+  int_ref left "SintoMeUmaMerda/Trees.ml" 44 1079 1090 "SintoMeUmaMerda/Trees.ml" 44 1079 1094
+)
+"SintoMeUmaMerda/Trees.ml" 44 1079 1116 "SintoMeUmaMerda/Trees.ml" 44 1079 1131
+type(
+  'a tree list
+)
+"SintoMeUmaMerda/Trees.ml" 44 1079 1133 "SintoMeUmaMerda/Trees.ml" 44 1079 1141
+type(
+  'a tree -> 'a tree list
+)
+ident(
+  int_ref subTrees "SintoMeUmaMerda/Trees.ml" 41 1027 1035 "SintoMeUmaMerda/Trees.ml" 41 1027 1043
+)
+"SintoMeUmaMerda/Trees.ml" 44 1079 1142 "SintoMeUmaMerda/Trees.ml" 44 1079 1147
+type(
+  'a tree
+)
+ident(
+  int_ref right "SintoMeUmaMerda/Trees.ml" 44 1079 1096 "SintoMeUmaMerda/Trees.ml" 44 1079 1101
+)
+"SintoMeUmaMerda/Trees.ml" 44 1079 1132 "SintoMeUmaMerda/Trees.ml" 44 1079 1148
+type(
+  'a tree list
+)
+"SintoMeUmaMerda/Trees.ml" 44 1079 1109 "SintoMeUmaMerda/Trees.ml" 44 1079 1149
+type(
+  'a tree list
+)
+"SintoMeUmaMerda/Trees.ml" 44 1079 1106 "SintoMeUmaMerda/Trees.ml" 44 1079 1149
+type(
+  'a tree list
+)
+"SintoMeUmaMerda/Trees.ml" 42 1047 1049 "SintoMeUmaMerda/Trees.ml" 44 1079 1149
+type(
+  'a tree list
+)
+"SintoMeUmaMerda/Trees.ml" 48 1155 1163 "SintoMeUmaMerda/Trees.ml" 48 1155 1169
+type(
+  'a -> 'a tree -> 'a tree
+)
+ident(
+  def spring "SintoMeUmaMerda/Trees.ml" 48 1155 1155 "SintoMeUmaMerda/Trees.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Trees.ml" 48 1155 1171 "SintoMeUmaMerda/Trees.ml" 48 1155 1172
+type(
+  'a
+)
+ident(
+  def v "SintoMeUmaMerda/Trees.ml" 48 1155 1173 "SintoMeUmaMerda/Trees.ml" 51 1218 1281
+)
+"SintoMeUmaMerda/Trees.ml" 48 1155 1173 "SintoMeUmaMerda/Trees.ml" 48 1155 1174
+type(
+  'a tree
+)
+ident(
+  def t "SintoMeUmaMerda/Trees.ml" 49 1176 1178 "SintoMeUmaMerda/Trees.ml" 51 1218 1281
+)
+"SintoMeUmaMerda/Trees.ml" 49 1176 1184 "SintoMeUmaMerda/Trees.ml" 49 1176 1185
+type(
+  'a tree
+)
+ident(
+  int_ref t "SintoMeUmaMerda/Trees.ml" 48 1155 1173 "SintoMeUmaMerda/Trees.ml" 48 1155 1174
+)
+"SintoMeUmaMerda/Trees.ml" 50 1191 1195 "SintoMeUmaMerda/Trees.ml" 50 1191 1198
+type(
+  'a tree
+)
+"SintoMeUmaMerda/Trees.ml" 50 1191 1207 "SintoMeUmaMerda/Trees.ml" 50 1191 1208
+type(
+  'a
+)
+ident(
+  int_ref v "SintoMeUmaMerda/Trees.ml" 48 1155 1171 "SintoMeUmaMerda/Trees.ml" 48 1155 1172
+)
+"SintoMeUmaMerda/Trees.ml" 50 1191 1209 "SintoMeUmaMerda/Trees.ml" 50 1191 1212
+type(
+  'a tree
+)
+"SintoMeUmaMerda/Trees.ml" 50 1191 1213 "SintoMeUmaMerda/Trees.ml" 50 1191 1216
+type(
+  'a tree
+)
+"SintoMeUmaMerda/Trees.ml" 50 1191 1202 "SintoMeUmaMerda/Trees.ml" 50 1191 1217
+type(
+  'a tree
+)
+"SintoMeUmaMerda/Trees.ml" 51 1218 1227 "SintoMeUmaMerda/Trees.ml" 51 1218 1228
+type(
+  'a
+)
+ident(
+  def x "SintoMeUmaMerda/Trees.ml" 51 1218 1245 "SintoMeUmaMerda/Trees.ml" 51 1218 1281
+)
+"SintoMeUmaMerda/Trees.ml" 51 1218 1229 "SintoMeUmaMerda/Trees.ml" 51 1218 1233
+type(
+  'a tree
+)
+ident(
+  def left "SintoMeUmaMerda/Trees.ml" 51 1218 1245 "SintoMeUmaMerda/Trees.ml" 51 1218 1281
+)
+"SintoMeUmaMerda/Trees.ml" 51 1218 1235 "SintoMeUmaMerda/Trees.ml" 51 1218 1240
+type(
+  'a tree
+)
+ident(
+  def right "SintoMeUmaMerda/Trees.ml" 51 1218 1245 "SintoMeUmaMerda/Trees.ml" 51 1218 1281
+)
+"SintoMeUmaMerda/Trees.ml" 51 1218 1222 "SintoMeUmaMerda/Trees.ml" 51 1218 1241
+type(
+  'a tree
+)
+"SintoMeUmaMerda/Trees.ml" 51 1218 1250 "SintoMeUmaMerda/Trees.ml" 51 1218 1251
+type(
+  'a
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Trees.ml" 51 1218 1227 "SintoMeUmaMerda/Trees.ml" 51 1218 1228
+)
+"SintoMeUmaMerda/Trees.ml" 51 1218 1252 "SintoMeUmaMerda/Trees.ml" 51 1218 1258
+type(
+  'a -> 'a tree -> 'a tree
+)
+ident(
+  int_ref spring "SintoMeUmaMerda/Trees.ml" 48 1155 1163 "SintoMeUmaMerda/Trees.ml" 48 1155 1169
+)
+"SintoMeUmaMerda/Trees.ml" 51 1218 1259 "SintoMeUmaMerda/Trees.ml" 51 1218 1260
+type(
+  'a
+)
+ident(
+  int_ref v "SintoMeUmaMerda/Trees.ml" 48 1155 1171 "SintoMeUmaMerda/Trees.ml" 48 1155 1172
+)
+"SintoMeUmaMerda/Trees.ml" 51 1218 1261 "SintoMeUmaMerda/Trees.ml" 51 1218 1265
+type(
+  'a tree
+)
+ident(
+  int_ref left "SintoMeUmaMerda/Trees.ml" 51 1218 1229 "SintoMeUmaMerda/Trees.ml" 51 1218 1233
+)
+"SintoMeUmaMerda/Trees.ml" 51 1218 1252 "SintoMeUmaMerda/Trees.ml" 51 1218 1265
+type(
+  'a tree
+)
+"SintoMeUmaMerda/Trees.ml" 51 1218 1266 "SintoMeUmaMerda/Trees.ml" 51 1218 1272
+type(
+  'a -> 'a tree -> 'a tree
+)
+ident(
+  int_ref spring "SintoMeUmaMerda/Trees.ml" 48 1155 1163 "SintoMeUmaMerda/Trees.ml" 48 1155 1169
+)
+"SintoMeUmaMerda/Trees.ml" 51 1218 1273 "SintoMeUmaMerda/Trees.ml" 51 1218 1274
+type(
+  'a
+)
+ident(
+  int_ref v "SintoMeUmaMerda/Trees.ml" 48 1155 1171 "SintoMeUmaMerda/Trees.ml" 48 1155 1172
+)
+"SintoMeUmaMerda/Trees.ml" 51 1218 1275 "SintoMeUmaMerda/Trees.ml" 51 1218 1280
+type(
+  'a tree
+)
+ident(
+  int_ref right "SintoMeUmaMerda/Trees.ml" 51 1218 1235 "SintoMeUmaMerda/Trees.ml" 51 1218 1240
+)
+"SintoMeUmaMerda/Trees.ml" 51 1218 1266 "SintoMeUmaMerda/Trees.ml" 51 1218 1280
+type(
+  'a tree
+)
+"SintoMeUmaMerda/Trees.ml" 51 1218 1245 "SintoMeUmaMerda/Trees.ml" 51 1218 1281
+type(
+  'a tree
+)
+"SintoMeUmaMerda/Trees.ml" 49 1176 1178 "SintoMeUmaMerda/Trees.ml" 51 1218 1281
+type(
+  'a tree
+)
+"SintoMeUmaMerda/Trees.ml" 54 1286 1294 "SintoMeUmaMerda/Trees.ml" 54 1286 1298
+type(
+  'a tree -> 'a tree
+)
+ident(
+  def fall "SintoMeUmaMerda/Trees.ml" 54 1286 1286 "SintoMeUmaMerda/Trees.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Trees.ml" 54 1286 1299 "SintoMeUmaMerda/Trees.ml" 54 1286 1300
+type(
+  'a tree
+)
+ident(
+  def t "SintoMeUmaMerda/Trees.ml" 55 1302 1304 "SintoMeUmaMerda/Trees.ml" 58 1369 1423
+)
+"SintoMeUmaMerda/Trees.ml" 55 1302 1310 "SintoMeUmaMerda/Trees.ml" 55 1302 1311
+type(
+  'a tree
+)
+ident(
+  int_ref t "SintoMeUmaMerda/Trees.ml" 54 1286 1299 "SintoMeUmaMerda/Trees.ml" 54 1286 1300
+)
+"SintoMeUmaMerda/Trees.ml" 56 1317 1321 "SintoMeUmaMerda/Trees.ml" 56 1317 1324
+type(
+  'a tree
+)
+"SintoMeUmaMerda/Trees.ml" 56 1317 1328 "SintoMeUmaMerda/Trees.ml" 56 1317 1336
+type(
+  string -> 'a tree
+)
+ident(
+  int_ref Stdlib.failwith "stdlib.mli" 41 1919 1919 "stdlib.mli" 41 1919 1946
+)
+"SintoMeUmaMerda/Trees.ml" 56 1317 1337 "SintoMeUmaMerda/Trees.ml" 56 1317 1343
+type(
+  string
+)
+"SintoMeUmaMerda/Trees.ml" 56 1317 1328 "SintoMeUmaMerda/Trees.ml" 56 1317 1343
+type(
+  'a tree
+)
+"SintoMeUmaMerda/Trees.ml" 57 1344 1353 "SintoMeUmaMerda/Trees.ml" 57 1344 1354
+type(
+  'a
+)
+ident(
+  def x "SintoMeUmaMerda/Trees.ml" 57 1344 1365 "SintoMeUmaMerda/Trees.ml" 57 1344 1368
+)
+"SintoMeUmaMerda/Trees.ml" 57 1344 1355 "SintoMeUmaMerda/Trees.ml" 57 1344 1358
+type(
+  'a tree
+)
+"SintoMeUmaMerda/Trees.ml" 57 1344 1359 "SintoMeUmaMerda/Trees.ml" 57 1344 1362
+type(
+  'a tree
+)
+"SintoMeUmaMerda/Trees.ml" 57 1344 1348 "SintoMeUmaMerda/Trees.ml" 57 1344 1363
+type(
+  'a tree
+)
+"SintoMeUmaMerda/Trees.ml" 57 1344 1365 "SintoMeUmaMerda/Trees.ml" 57 1344 1368
+type(
+  'a tree
+)
+"SintoMeUmaMerda/Trees.ml" 58 1369 1378 "SintoMeUmaMerda/Trees.ml" 58 1369 1379
+type(
+  'a
+)
+ident(
+  def x "SintoMeUmaMerda/Trees.ml" 58 1369 1395 "SintoMeUmaMerda/Trees.ml" 58 1369 1423
+)
+"SintoMeUmaMerda/Trees.ml" 58 1369 1380 "SintoMeUmaMerda/Trees.ml" 58 1369 1384
+type(
+  'a tree
+)
+ident(
+  def left "SintoMeUmaMerda/Trees.ml" 58 1369 1395 "SintoMeUmaMerda/Trees.ml" 58 1369 1423
+)
+"SintoMeUmaMerda/Trees.ml" 58 1369 1385 "SintoMeUmaMerda/Trees.ml" 58 1369 1390
+type(
+  'a tree
+)
+ident(
+  def right "SintoMeUmaMerda/Trees.ml" 58 1369 1395 "SintoMeUmaMerda/Trees.ml" 58 1369 1423
+)
+"SintoMeUmaMerda/Trees.ml" 58 1369 1373 "SintoMeUmaMerda/Trees.ml" 58 1369 1391
+type(
+  'a tree
+)
+"SintoMeUmaMerda/Trees.ml" 58 1369 1400 "SintoMeUmaMerda/Trees.ml" 58 1369 1401
+type(
+  'a
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Trees.ml" 58 1369 1378 "SintoMeUmaMerda/Trees.ml" 58 1369 1379
+)
+"SintoMeUmaMerda/Trees.ml" 58 1369 1402 "SintoMeUmaMerda/Trees.ml" 58 1369 1406
+type(
+  'a tree -> 'a tree
+)
+ident(
+  int_ref fall "SintoMeUmaMerda/Trees.ml" 54 1286 1294 "SintoMeUmaMerda/Trees.ml" 54 1286 1298
+)
+"SintoMeUmaMerda/Trees.ml" 58 1369 1407 "SintoMeUmaMerda/Trees.ml" 58 1369 1411
+type(
+  'a tree
+)
+ident(
+  int_ref left "SintoMeUmaMerda/Trees.ml" 58 1369 1380 "SintoMeUmaMerda/Trees.ml" 58 1369 1384
+)
+"SintoMeUmaMerda/Trees.ml" 58 1369 1402 "SintoMeUmaMerda/Trees.ml" 58 1369 1411
+type(
+  'a tree
+)
+"SintoMeUmaMerda/Trees.ml" 58 1369 1412 "SintoMeUmaMerda/Trees.ml" 58 1369 1416
+type(
+  'a tree -> 'a tree
+)
+ident(
+  int_ref fall "SintoMeUmaMerda/Trees.ml" 54 1286 1294 "SintoMeUmaMerda/Trees.ml" 54 1286 1298
+)
+"SintoMeUmaMerda/Trees.ml" 58 1369 1417 "SintoMeUmaMerda/Trees.ml" 58 1369 1422
+type(
+  'a tree
+)
+ident(
+  int_ref right "SintoMeUmaMerda/Trees.ml" 58 1369 1385 "SintoMeUmaMerda/Trees.ml" 58 1369 1390
+)
+"SintoMeUmaMerda/Trees.ml" 58 1369 1412 "SintoMeUmaMerda/Trees.ml" 58 1369 1422
+type(
+  'a tree
+)
+"SintoMeUmaMerda/Trees.ml" 58 1369 1395 "SintoMeUmaMerda/Trees.ml" 58 1369 1423
+type(
+  'a tree
+)
+"SintoMeUmaMerda/Trees.ml" 55 1302 1304 "SintoMeUmaMerda/Trees.ml" 58 1369 1423
+type(
+  'a tree
+)
+"SintoMeUmaMerda/Trees.ml" 87 1505 1513 "SintoMeUmaMerda/Trees.ml" 87 1505 1522
+type(
+  'a ntree -> 'a list
+)
+ident(
+  def nTreeList "SintoMeUmaMerda/Trees.ml" 87 1505 1505 "SintoMeUmaMerda/Trees.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Trees.ml" 87 1505 1523 "SintoMeUmaMerda/Trees.ml" 87 1505 1524
+type(
+  'a ntree
+)
+ident(
+  def t "SintoMeUmaMerda/Trees.ml" 88 1526 1529 "SintoMeUmaMerda/Trees.ml" 90 1558 1594
+)
+"SintoMeUmaMerda/Trees.ml" 88 1526 1535 "SintoMeUmaMerda/Trees.ml" 88 1526 1536
+type(
+  'a ntree
+)
+ident(
+  int_ref t "SintoMeUmaMerda/Trees.ml" 87 1505 1523 "SintoMeUmaMerda/Trees.ml" 87 1505 1524
+)
+"SintoMeUmaMerda/Trees.ml" 89 1542 1547 "SintoMeUmaMerda/Trees.ml" 89 1542 1551
+type(
+  'a ntree
+)
+"SintoMeUmaMerda/Trees.ml" 89 1542 1555 "SintoMeUmaMerda/Trees.ml" 89 1542 1557
+type(
+  'a list
+)
+"SintoMeUmaMerda/Trees.ml" 90 1558 1569 "SintoMeUmaMerda/Trees.ml" 90 1558 1570
+type(
+  'a
+)
+ident(
+  def x "SintoMeUmaMerda/Trees.ml" 90 1558 1577 "SintoMeUmaMerda/Trees.ml" 90 1558 1594
+)
+"SintoMeUmaMerda/Trees.ml" 90 1558 1571 "SintoMeUmaMerda/Trees.ml" 90 1558 1572
+type(
+  'a ntree list
+)
+ident(
+  def l "SintoMeUmaMerda/Trees.ml" 90 1558 1577 "SintoMeUmaMerda/Trees.ml" 90 1558 1594
+)
+"SintoMeUmaMerda/Trees.ml" 90 1558 1563 "SintoMeUmaMerda/Trees.ml" 90 1558 1573
+type(
+  'a ntree
+)
+"SintoMeUmaMerda/Trees.ml" 90 1558 1577 "SintoMeUmaMerda/Trees.ml" 90 1558 1578
+type(
+  'a
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Trees.ml" 90 1558 1569 "SintoMeUmaMerda/Trees.ml" 90 1558 1570
+)
+"SintoMeUmaMerda/Trees.ml" 90 1558 1581 "SintoMeUmaMerda/Trees.ml" 90 1558 1591
+type(
+  'a ntree list -> 'a list
+)
+ident(
+  int_ref nTreeListL "SintoMeUmaMerda/Trees.ml" 92 1599 1603 "SintoMeUmaMerda/Trees.ml" 92 1599 1613
+)
+"SintoMeUmaMerda/Trees.ml" 90 1558 1592 "SintoMeUmaMerda/Trees.ml" 90 1558 1593
+type(
+  'a ntree list
+)
+ident(
+  int_ref l "SintoMeUmaMerda/Trees.ml" 90 1558 1571 "SintoMeUmaMerda/Trees.ml" 90 1558 1572
+)
+"SintoMeUmaMerda/Trees.ml" 90 1558 1580 "SintoMeUmaMerda/Trees.ml" 90 1558 1594
+type(
+  'a list
+)
+"SintoMeUmaMerda/Trees.ml" 90 1558 1577 "SintoMeUmaMerda/Trees.ml" 90 1558 1594
+type(
+  'a list
+)
+"SintoMeUmaMerda/Trees.ml" 88 1526 1529 "SintoMeUmaMerda/Trees.ml" 90 1558 1594
+type(
+  'a list
+)
+"SintoMeUmaMerda/Trees.ml" 92 1599 1603 "SintoMeUmaMerda/Trees.ml" 92 1599 1613
+type(
+  'a ntree list -> 'a list
+)
+ident(
+  def nTreeListL "SintoMeUmaMerda/Trees.ml" 87 1505 1505 "SintoMeUmaMerda/Trees.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Trees.ml" 92 1599 1614 "SintoMeUmaMerda/Trees.ml" 92 1599 1616
+type(
+  'a ntree list
+)
+ident(
+  def tl "SintoMeUmaMerda/Trees.ml" 94 1621 1624 "SintoMeUmaMerda/Trees.ml" 96 1652 1708
+)
+"SintoMeUmaMerda/Trees.ml" 94 1621 1630 "SintoMeUmaMerda/Trees.ml" 94 1621 1632
+type(
+  'a ntree list
+)
+ident(
+  int_ref tl "SintoMeUmaMerda/Trees.ml" 92 1599 1614 "SintoMeUmaMerda/Trees.ml" 92 1599 1616
+)
+"SintoMeUmaMerda/Trees.ml" 95 1638 1643 "SintoMeUmaMerda/Trees.ml" 95 1638 1645
+type(
+  'a ntree list
+)
+"SintoMeUmaMerda/Trees.ml" 95 1638 1649 "SintoMeUmaMerda/Trees.ml" 95 1638 1651
+type(
+  'a list
+)
+"SintoMeUmaMerda/Trees.ml" 96 1652 1657 "SintoMeUmaMerda/Trees.ml" 96 1652 1661
+type(
+  'a ntree
+)
+ident(
+  def head "SintoMeUmaMerda/Trees.ml" 96 1652 1671 "SintoMeUmaMerda/Trees.ml" 96 1652 1708
+)
+"SintoMeUmaMerda/Trees.ml" 96 1652 1663 "SintoMeUmaMerda/Trees.ml" 96 1652 1668
+type(
+  'a ntree list
+)
+ident(
+  def trail "SintoMeUmaMerda/Trees.ml" 96 1652 1671 "SintoMeUmaMerda/Trees.ml" 96 1652 1708
+)
+"SintoMeUmaMerda/Trees.ml" 96 1652 1657 "SintoMeUmaMerda/Trees.ml" 96 1652 1668
+type(
+  'a ntree list
+)
+"SintoMeUmaMerda/Trees.ml" 96 1652 1673 "SintoMeUmaMerda/Trees.ml" 96 1652 1682
+type(
+  'a ntree -> 'a list
+)
+ident(
+  int_ref nTreeList "SintoMeUmaMerda/Trees.ml" 87 1505 1513 "SintoMeUmaMerda/Trees.ml" 87 1505 1522
+)
+"SintoMeUmaMerda/Trees.ml" 96 1652 1683 "SintoMeUmaMerda/Trees.ml" 96 1652 1687
+type(
+  'a ntree
+)
+ident(
+  int_ref head "SintoMeUmaMerda/Trees.ml" 96 1652 1657 "SintoMeUmaMerda/Trees.ml" 96 1652 1661
+)
+"SintoMeUmaMerda/Trees.ml" 96 1652 1672 "SintoMeUmaMerda/Trees.ml" 96 1652 1688
+type(
+  'a list
+)
+"SintoMeUmaMerda/Trees.ml" 96 1652 1688 "SintoMeUmaMerda/Trees.ml" 96 1652 1689
+type(
+  'a list -> 'a list -> 'a list
+)
+ident(
+  int_ref Stdlib.( @ ) "stdlib.mli" 782 29359 29359 "stdlib.mli" 782 29359 29400
+)
+"SintoMeUmaMerda/Trees.ml" 96 1652 1690 "SintoMeUmaMerda/Trees.ml" 96 1652 1700
+type(
+  'a ntree list -> 'a list
+)
+ident(
+  int_ref nTreeListL "SintoMeUmaMerda/Trees.ml" 92 1599 1603 "SintoMeUmaMerda/Trees.ml" 92 1599 1613
+)
+"SintoMeUmaMerda/Trees.ml" 96 1652 1701 "SintoMeUmaMerda/Trees.ml" 96 1652 1706
+type(
+  'a ntree list
+)
+ident(
+  int_ref trail "SintoMeUmaMerda/Trees.ml" 96 1652 1663 "SintoMeUmaMerda/Trees.ml" 96 1652 1668
+)
+"SintoMeUmaMerda/Trees.ml" 96 1652 1689 "SintoMeUmaMerda/Trees.ml" 96 1652 1707
+type(
+  'a list
+)
+"SintoMeUmaMerda/Trees.ml" 96 1652 1671 "SintoMeUmaMerda/Trees.ml" 96 1652 1708
+type(
+  'a list
+)
+"SintoMeUmaMerda/Trees.ml" 94 1621 1624 "SintoMeUmaMerda/Trees.ml" 96 1652 1708
+type(
+  'a list
+)
+"SintoMeUmaMerda/Trees.ml" 101 1715 1723 "SintoMeUmaMerda/Trees.ml" 101 1715 1732
+type(
+  'a ntree -> 'a ntree list
+)
+ident(
+  def nSubTrees "SintoMeUmaMerda/Trees.ml" 101 1715 1715 "SintoMeUmaMerda/Trees.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Trees.ml" 101 1715 1733 "SintoMeUmaMerda/Trees.ml" 101 1715 1734
+type(
+  'a ntree
+)
+ident(
+  def t "SintoMeUmaMerda/Trees.ml" 102 1736 1739 "SintoMeUmaMerda/Trees.ml" 104 1772 1808
+)
+"SintoMeUmaMerda/Trees.ml" 102 1736 1745 "SintoMeUmaMerda/Trees.ml" 102 1736 1746
+type(
+  'a ntree
+)
+ident(
+  int_ref t "SintoMeUmaMerda/Trees.ml" 101 1715 1733 "SintoMeUmaMerda/Trees.ml" 101 1715 1734
+)
+"SintoMeUmaMerda/Trees.ml" 103 1752 1757 "SintoMeUmaMerda/Trees.ml" 103 1752 1761
+type(
+  'a ntree
+)
+"SintoMeUmaMerda/Trees.ml" 103 1752 1766 "SintoMeUmaMerda/Trees.ml" 103 1752 1770
+type(
+  'a ntree
+)
+"SintoMeUmaMerda/Trees.ml" 103 1752 1765 "SintoMeUmaMerda/Trees.ml" 103 1752 1771
+type(
+  'a ntree list
+)
+"SintoMeUmaMerda/Trees.ml" 104 1772 1783 "SintoMeUmaMerda/Trees.ml" 104 1772 1784
+type(
+  'a
+)
+ident(
+  def x "SintoMeUmaMerda/Trees.ml" 104 1772 1791 "SintoMeUmaMerda/Trees.ml" 104 1772 1808
+)
+"SintoMeUmaMerda/Trees.ml" 104 1772 1785 "SintoMeUmaMerda/Trees.ml" 104 1772 1786
+type(
+  'a ntree list
+)
+ident(
+  def l "SintoMeUmaMerda/Trees.ml" 104 1772 1791 "SintoMeUmaMerda/Trees.ml" 104 1772 1808
+)
+"SintoMeUmaMerda/Trees.ml" 104 1772 1777 "SintoMeUmaMerda/Trees.ml" 104 1772 1787
+type(
+  'a ntree
+)
+"SintoMeUmaMerda/Trees.ml" 104 1772 1791 "SintoMeUmaMerda/Trees.ml" 104 1772 1792
+type(
+  'a ntree
+)
+ident(
+  int_ref t "SintoMeUmaMerda/Trees.ml" 101 1715 1733 "SintoMeUmaMerda/Trees.ml" 101 1715 1734
+)
+"SintoMeUmaMerda/Trees.ml" 104 1772 1795 "SintoMeUmaMerda/Trees.ml" 104 1772 1805
+type(
+  'a ntree list -> 'a ntree list
+)
+ident(
+  int_ref nSubTreesL "SintoMeUmaMerda/Trees.ml" 106 1813 1817 "SintoMeUmaMerda/Trees.ml" 106 1813 1827
+)
+"SintoMeUmaMerda/Trees.ml" 104 1772 1806 "SintoMeUmaMerda/Trees.ml" 104 1772 1807
+type(
+  'a ntree list
+)
+ident(
+  int_ref l "SintoMeUmaMerda/Trees.ml" 104 1772 1785 "SintoMeUmaMerda/Trees.ml" 104 1772 1786
+)
+"SintoMeUmaMerda/Trees.ml" 104 1772 1794 "SintoMeUmaMerda/Trees.ml" 104 1772 1808
+type(
+  'a ntree list
+)
+"SintoMeUmaMerda/Trees.ml" 104 1772 1791 "SintoMeUmaMerda/Trees.ml" 104 1772 1808
+type(
+  'a ntree list
+)
+"SintoMeUmaMerda/Trees.ml" 102 1736 1739 "SintoMeUmaMerda/Trees.ml" 104 1772 1808
+type(
+  'a ntree list
+)
+"SintoMeUmaMerda/Trees.ml" 106 1813 1817 "SintoMeUmaMerda/Trees.ml" 106 1813 1827
+type(
+  'a ntree list -> 'a ntree list
+)
+ident(
+  def nSubTreesL "SintoMeUmaMerda/Trees.ml" 101 1715 1715 "SintoMeUmaMerda/Trees.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Trees.ml" 106 1813 1828 "SintoMeUmaMerda/Trees.ml" 106 1813 1830
+type(
+  'a ntree list
+)
+ident(
+  def tl "SintoMeUmaMerda/Trees.ml" 108 1835 1838 "SintoMeUmaMerda/Trees.ml" 110 1866 1928
+)
+"SintoMeUmaMerda/Trees.ml" 108 1835 1844 "SintoMeUmaMerda/Trees.ml" 108 1835 1846
+type(
+  'a ntree list
+)
+ident(
+  int_ref tl "SintoMeUmaMerda/Trees.ml" 106 1813 1828 "SintoMeUmaMerda/Trees.ml" 106 1813 1830
+)
+"SintoMeUmaMerda/Trees.ml" 109 1852 1857 "SintoMeUmaMerda/Trees.ml" 109 1852 1859
+type(
+  'a ntree list
+)
+"SintoMeUmaMerda/Trees.ml" 109 1852 1863 "SintoMeUmaMerda/Trees.ml" 109 1852 1865
+type(
+  'a ntree list
+)
+"SintoMeUmaMerda/Trees.ml" 110 1866 1871 "SintoMeUmaMerda/Trees.ml" 110 1866 1875
+type(
+  'a ntree
+)
+ident(
+  def head "SintoMeUmaMerda/Trees.ml" 110 1866 1885 "SintoMeUmaMerda/Trees.ml" 110 1866 1928
+)
+"SintoMeUmaMerda/Trees.ml" 110 1866 1877 "SintoMeUmaMerda/Trees.ml" 110 1866 1882
+type(
+  'a ntree list
+)
+ident(
+  def trail "SintoMeUmaMerda/Trees.ml" 110 1866 1885 "SintoMeUmaMerda/Trees.ml" 110 1866 1928
+)
+"SintoMeUmaMerda/Trees.ml" 110 1866 1871 "SintoMeUmaMerda/Trees.ml" 110 1866 1882
+type(
+  'a ntree list
+)
+"SintoMeUmaMerda/Trees.ml" 110 1866 1886 "SintoMeUmaMerda/Trees.ml" 110 1866 1891
+type(
+  'a ntree list -> 'a ntree list -> 'a ntree list
+)
+ident(
+  int_ref Sets.union "SintoMeUmaMerda/Sets.ml" 47 615 623 "SintoMeUmaMerda/Sets.ml" 47 615 628
+)
+"SintoMeUmaMerda/Trees.ml" 110 1866 1893 "SintoMeUmaMerda/Trees.ml" 110 1866 1902
+type(
+  'a ntree -> 'a ntree list
+)
+ident(
+  int_ref nSubTrees "SintoMeUmaMerda/Trees.ml" 101 1715 1723 "SintoMeUmaMerda/Trees.ml" 101 1715 1732
+)
+"SintoMeUmaMerda/Trees.ml" 110 1866 1903 "SintoMeUmaMerda/Trees.ml" 110 1866 1907
+type(
+  'a ntree
+)
+ident(
+  int_ref head "SintoMeUmaMerda/Trees.ml" 110 1866 1871 "SintoMeUmaMerda/Trees.ml" 110 1866 1875
+)
+"SintoMeUmaMerda/Trees.ml" 110 1866 1892 "SintoMeUmaMerda/Trees.ml" 110 1866 1908
+type(
+  'a ntree list
+)
+"SintoMeUmaMerda/Trees.ml" 110 1866 1910 "SintoMeUmaMerda/Trees.ml" 110 1866 1920
+type(
+  'a ntree list -> 'a ntree list
+)
+ident(
+  int_ref nSubTreesL "SintoMeUmaMerda/Trees.ml" 106 1813 1817 "SintoMeUmaMerda/Trees.ml" 106 1813 1827
+)
+"SintoMeUmaMerda/Trees.ml" 110 1866 1921 "SintoMeUmaMerda/Trees.ml" 110 1866 1926
+type(
+  'a ntree list
+)
+ident(
+  int_ref trail "SintoMeUmaMerda/Trees.ml" 110 1866 1877 "SintoMeUmaMerda/Trees.ml" 110 1866 1882
+)
+"SintoMeUmaMerda/Trees.ml" 110 1866 1909 "SintoMeUmaMerda/Trees.ml" 110 1866 1927
+type(
+  'a ntree list
+)
+"SintoMeUmaMerda/Trees.ml" 110 1866 1885 "SintoMeUmaMerda/Trees.ml" 110 1866 1928
+type(
+  'a ntree list
+)
+"SintoMeUmaMerda/Trees.ml" 108 1835 1838 "SintoMeUmaMerda/Trees.ml" 110 1866 1928
+type(
+  'a ntree list
+)
+"SintoMeUmaMerda/Trees.ml" 115 1935 1943 "SintoMeUmaMerda/Trees.ml" 115 1935 1950
+type(
+  'a -> 'a ntree -> 'a ntree
+)
+ident(
+  def nSpring "SintoMeUmaMerda/Trees.ml" 115 1935 1935 "SintoMeUmaMerda/Trees.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Trees.ml" 115 1935 1951 "SintoMeUmaMerda/Trees.ml" 115 1935 1952
+type(
+  'a
+)
+ident(
+  def v "SintoMeUmaMerda/Trees.ml" 115 1935 1953 "SintoMeUmaMerda/Trees.ml" 118 1997 2039
+)
+"SintoMeUmaMerda/Trees.ml" 115 1935 1953 "SintoMeUmaMerda/Trees.ml" 115 1935 1954
+type(
+  'a ntree
+)
+ident(
+  def t "SintoMeUmaMerda/Trees.ml" 116 1956 1959 "SintoMeUmaMerda/Trees.ml" 118 1997 2039
+)
+"SintoMeUmaMerda/Trees.ml" 116 1956 1965 "SintoMeUmaMerda/Trees.ml" 116 1956 1966
+type(
+  'a ntree
+)
+ident(
+  int_ref t "SintoMeUmaMerda/Trees.ml" 115 1935 1953 "SintoMeUmaMerda/Trees.ml" 115 1935 1954
+)
+"SintoMeUmaMerda/Trees.ml" 117 1972 1977 "SintoMeUmaMerda/Trees.ml" 117 1972 1981
+type(
+  'a ntree
+)
+"SintoMeUmaMerda/Trees.ml" 117 1972 1991 "SintoMeUmaMerda/Trees.ml" 117 1972 1992
+type(
+  'a
+)
+ident(
+  int_ref v "SintoMeUmaMerda/Trees.ml" 115 1935 1951 "SintoMeUmaMerda/Trees.ml" 115 1935 1952
+)
+"SintoMeUmaMerda/Trees.ml" 117 1972 1993 "SintoMeUmaMerda/Trees.ml" 117 1972 1995
+type(
+  'a ntree list
+)
+"SintoMeUmaMerda/Trees.ml" 117 1972 1985 "SintoMeUmaMerda/Trees.ml" 117 1972 1996
+type(
+  'a ntree
+)
+"SintoMeUmaMerda/Trees.ml" 118 1997 2008 "SintoMeUmaMerda/Trees.ml" 118 1997 2009
+type(
+  'a
+)
+ident(
+  def x "SintoMeUmaMerda/Trees.ml" 118 1997 2016 "SintoMeUmaMerda/Trees.ml" 118 1997 2039
+)
+"SintoMeUmaMerda/Trees.ml" 118 1997 2010 "SintoMeUmaMerda/Trees.ml" 118 1997 2011
+type(
+  'a ntree list
+)
+ident(
+  def l "SintoMeUmaMerda/Trees.ml" 118 1997 2016 "SintoMeUmaMerda/Trees.ml" 118 1997 2039
+)
+"SintoMeUmaMerda/Trees.ml" 118 1997 2002 "SintoMeUmaMerda/Trees.ml" 118 1997 2012
+type(
+  'a ntree
+)
+"SintoMeUmaMerda/Trees.ml" 118 1997 2022 "SintoMeUmaMerda/Trees.ml" 118 1997 2023
+type(
+  'a
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Trees.ml" 118 1997 2008 "SintoMeUmaMerda/Trees.ml" 118 1997 2009
+)
+"SintoMeUmaMerda/Trees.ml" 118 1997 2025 "SintoMeUmaMerda/Trees.ml" 118 1997 2033
+type(
+  'a -> 'a ntree list -> 'a ntree list
+)
+ident(
+  int_ref nSpringL "SintoMeUmaMerda/Trees.ml" 120 2044 2048 "SintoMeUmaMerda/Trees.ml" 120 2044 2056
+)
+"SintoMeUmaMerda/Trees.ml" 118 1997 2034 "SintoMeUmaMerda/Trees.ml" 118 1997 2035
+type(
+  'a
+)
+ident(
+  int_ref v "SintoMeUmaMerda/Trees.ml" 115 1935 1951 "SintoMeUmaMerda/Trees.ml" 115 1935 1952
+)
+"SintoMeUmaMerda/Trees.ml" 118 1997 2036 "SintoMeUmaMerda/Trees.ml" 118 1997 2037
+type(
+  'a ntree list
+)
+ident(
+  int_ref l "SintoMeUmaMerda/Trees.ml" 118 1997 2010 "SintoMeUmaMerda/Trees.ml" 118 1997 2011
+)
+"SintoMeUmaMerda/Trees.ml" 118 1997 2024 "SintoMeUmaMerda/Trees.ml" 118 1997 2038
+type(
+  'a ntree list
+)
+"SintoMeUmaMerda/Trees.ml" 118 1997 2016 "SintoMeUmaMerda/Trees.ml" 118 1997 2039
+type(
+  'a ntree
+)
+"SintoMeUmaMerda/Trees.ml" 116 1956 1959 "SintoMeUmaMerda/Trees.ml" 118 1997 2039
+type(
+  'a ntree
+)
+"SintoMeUmaMerda/Trees.ml" 120 2044 2048 "SintoMeUmaMerda/Trees.ml" 120 2044 2056
+type(
+  'a -> 'a ntree list -> 'a ntree list
+)
+ident(
+  def nSpringL "SintoMeUmaMerda/Trees.ml" 115 1935 1935 "SintoMeUmaMerda/Trees.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Trees.ml" 120 2044 2057 "SintoMeUmaMerda/Trees.ml" 120 2044 2058
+type(
+  'a
+)
+ident(
+  def v "SintoMeUmaMerda/Trees.ml" 120 2044 2059 "SintoMeUmaMerda/Trees.ml" 124 2097 2152
+)
+"SintoMeUmaMerda/Trees.ml" 120 2044 2059 "SintoMeUmaMerda/Trees.ml" 120 2044 2061
+type(
+  'a ntree list
+)
+ident(
+  def tl "SintoMeUmaMerda/Trees.ml" 122 2066 2069 "SintoMeUmaMerda/Trees.ml" 124 2097 2152
+)
+"SintoMeUmaMerda/Trees.ml" 122 2066 2075 "SintoMeUmaMerda/Trees.ml" 122 2066 2077
+type(
+  'a ntree list
+)
+ident(
+  int_ref tl "SintoMeUmaMerda/Trees.ml" 120 2044 2059 "SintoMeUmaMerda/Trees.ml" 120 2044 2061
+)
+"SintoMeUmaMerda/Trees.ml" 123 2083 2088 "SintoMeUmaMerda/Trees.ml" 123 2083 2090
+type(
+  'a ntree list
+)
+"SintoMeUmaMerda/Trees.ml" 123 2083 2094 "SintoMeUmaMerda/Trees.ml" 123 2083 2096
+type(
+  'a ntree list
+)
+"SintoMeUmaMerda/Trees.ml" 124 2097 2102 "SintoMeUmaMerda/Trees.ml" 124 2097 2106
+type(
+  'a ntree
+)
+ident(
+  def head "SintoMeUmaMerda/Trees.ml" 124 2097 2116 "SintoMeUmaMerda/Trees.ml" 124 2097 2152
+)
+"SintoMeUmaMerda/Trees.ml" 124 2097 2108 "SintoMeUmaMerda/Trees.ml" 124 2097 2113
+type(
+  'a ntree list
+)
+ident(
+  def trail "SintoMeUmaMerda/Trees.ml" 124 2097 2116 "SintoMeUmaMerda/Trees.ml" 124 2097 2152
+)
+"SintoMeUmaMerda/Trees.ml" 124 2097 2102 "SintoMeUmaMerda/Trees.ml" 124 2097 2113
+type(
+  'a ntree list
+)
+"SintoMeUmaMerda/Trees.ml" 124 2097 2117 "SintoMeUmaMerda/Trees.ml" 124 2097 2124
+type(
+  'a -> 'a ntree -> 'a ntree
+)
+ident(
+  int_ref nSpring "SintoMeUmaMerda/Trees.ml" 115 1935 1943 "SintoMeUmaMerda/Trees.ml" 115 1935 1950
+)
+"SintoMeUmaMerda/Trees.ml" 124 2097 2125 "SintoMeUmaMerda/Trees.ml" 124 2097 2126
+type(
+  'a
+)
+ident(
+  int_ref v "SintoMeUmaMerda/Trees.ml" 120 2044 2057 "SintoMeUmaMerda/Trees.ml" 120 2044 2058
+)
+"SintoMeUmaMerda/Trees.ml" 124 2097 2127 "SintoMeUmaMerda/Trees.ml" 124 2097 2131
+type(
+  'a ntree
+)
+ident(
+  int_ref head "SintoMeUmaMerda/Trees.ml" 124 2097 2102 "SintoMeUmaMerda/Trees.ml" 124 2097 2106
+)
+"SintoMeUmaMerda/Trees.ml" 124 2097 2116 "SintoMeUmaMerda/Trees.ml" 124 2097 2132
+type(
+  'a ntree
+)
+"SintoMeUmaMerda/Trees.ml" 124 2097 2135 "SintoMeUmaMerda/Trees.ml" 124 2097 2143
+type(
+  'a -> 'a ntree list -> 'a ntree list
+)
+ident(
+  int_ref nSpringL "SintoMeUmaMerda/Trees.ml" 120 2044 2048 "SintoMeUmaMerda/Trees.ml" 120 2044 2056
+)
+"SintoMeUmaMerda/Trees.ml" 124 2097 2144 "SintoMeUmaMerda/Trees.ml" 124 2097 2145
+type(
+  'a
+)
+ident(
+  int_ref v "SintoMeUmaMerda/Trees.ml" 120 2044 2057 "SintoMeUmaMerda/Trees.ml" 120 2044 2058
+)
+"SintoMeUmaMerda/Trees.ml" 124 2097 2146 "SintoMeUmaMerda/Trees.ml" 124 2097 2151
+type(
+  'a ntree list
+)
+ident(
+  int_ref trail "SintoMeUmaMerda/Trees.ml" 124 2097 2108 "SintoMeUmaMerda/Trees.ml" 124 2097 2113
+)
+"SintoMeUmaMerda/Trees.ml" 124 2097 2134 "SintoMeUmaMerda/Trees.ml" 124 2097 2152
+type(
+  'a ntree list
+)
+"SintoMeUmaMerda/Trees.ml" 124 2097 2116 "SintoMeUmaMerda/Trees.ml" 124 2097 2152
+type(
+  'a ntree list
+)
+"SintoMeUmaMerda/Trees.ml" 122 2066 2069 "SintoMeUmaMerda/Trees.ml" 124 2097 2152
+type(
+  'a ntree list
+)
+"SintoMeUmaMerda/Trees.ml" 129 2159 2167 "SintoMeUmaMerda/Trees.ml" 129 2159 2172
+type(
+  'a ntree -> 'a ntree
+)
+ident(
+  def nFall "SintoMeUmaMerda/Trees.ml" 129 2159 2159 "SintoMeUmaMerda/Trees.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Trees.ml" 129 2159 2173 "SintoMeUmaMerda/Trees.ml" 129 2159 2174
+type(
+  'a ntree
+)
+ident(
+  def t "SintoMeUmaMerda/Trees.ml" 130 2176 2179 "SintoMeUmaMerda/Trees.ml" 133 2249 2287
+)
+"SintoMeUmaMerda/Trees.ml" 130 2176 2185 "SintoMeUmaMerda/Trees.ml" 130 2176 2186
+type(
+  'a ntree
+)
+ident(
+  int_ref t "SintoMeUmaMerda/Trees.ml" 129 2159 2173 "SintoMeUmaMerda/Trees.ml" 129 2159 2174
+)
+"SintoMeUmaMerda/Trees.ml" 131 2192 2197 "SintoMeUmaMerda/Trees.ml" 131 2192 2201
+type(
+  'a ntree
+)
+"SintoMeUmaMerda/Trees.ml" 131 2192 2205 "SintoMeUmaMerda/Trees.ml" 131 2192 2213
+type(
+  string -> 'a ntree
+)
+ident(
+  int_ref Stdlib.failwith "stdlib.mli" 41 1919 1919 "stdlib.mli" 41 1919 1946
+)
+"SintoMeUmaMerda/Trees.ml" 131 2192 2214 "SintoMeUmaMerda/Trees.ml" 131 2192 2223
+type(
+  string
+)
+"SintoMeUmaMerda/Trees.ml" 131 2192 2205 "SintoMeUmaMerda/Trees.ml" 131 2192 2223
+type(
+  'a ntree
+)
+"SintoMeUmaMerda/Trees.ml" 132 2224 2235 "SintoMeUmaMerda/Trees.ml" 132 2224 2236
+type(
+  'a
+)
+ident(
+  def x "SintoMeUmaMerda/Trees.ml" 132 2224 2244 "SintoMeUmaMerda/Trees.ml" 132 2224 2248
+)
+"SintoMeUmaMerda/Trees.ml" 132 2224 2237 "SintoMeUmaMerda/Trees.ml" 132 2224 2239
+type(
+  'a ntree list
+)
+"SintoMeUmaMerda/Trees.ml" 132 2224 2229 "SintoMeUmaMerda/Trees.ml" 132 2224 2240
+type(
+  'a ntree
+)
+"SintoMeUmaMerda/Trees.ml" 132 2224 2244 "SintoMeUmaMerda/Trees.ml" 132 2224 2248
+type(
+  'a ntree
+)
+"SintoMeUmaMerda/Trees.ml" 133 2249 2260 "SintoMeUmaMerda/Trees.ml" 133 2249 2261
+type(
+  'a
+)
+ident(
+  def x "SintoMeUmaMerda/Trees.ml" 133 2249 2268 "SintoMeUmaMerda/Trees.ml" 133 2249 2287
+)
+"SintoMeUmaMerda/Trees.ml" 133 2249 2262 "SintoMeUmaMerda/Trees.ml" 133 2249 2263
+type(
+  'a ntree list
+)
+ident(
+  def l "SintoMeUmaMerda/Trees.ml" 133 2249 2268 "SintoMeUmaMerda/Trees.ml" 133 2249 2287
+)
+"SintoMeUmaMerda/Trees.ml" 133 2249 2254 "SintoMeUmaMerda/Trees.ml" 133 2249 2264
+type(
+  'a ntree
+)
+"SintoMeUmaMerda/Trees.ml" 133 2249 2274 "SintoMeUmaMerda/Trees.ml" 133 2249 2275
+type(
+  'a
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Trees.ml" 133 2249 2260 "SintoMeUmaMerda/Trees.ml" 133 2249 2261
+)
+"SintoMeUmaMerda/Trees.ml" 133 2249 2277 "SintoMeUmaMerda/Trees.ml" 133 2249 2283
+type(
+  'a ntree list -> 'a ntree list
+)
+ident(
+  int_ref nFallL "SintoMeUmaMerda/Trees.ml" 135 2292 2296 "SintoMeUmaMerda/Trees.ml" 135 2292 2302
+)
+"SintoMeUmaMerda/Trees.ml" 133 2249 2284 "SintoMeUmaMerda/Trees.ml" 133 2249 2285
+type(
+  'a ntree list
+)
+ident(
+  int_ref l "SintoMeUmaMerda/Trees.ml" 133 2249 2262 "SintoMeUmaMerda/Trees.ml" 133 2249 2263
+)
+"SintoMeUmaMerda/Trees.ml" 133 2249 2276 "SintoMeUmaMerda/Trees.ml" 133 2249 2286
+type(
+  'a ntree list
+)
+"SintoMeUmaMerda/Trees.ml" 133 2249 2268 "SintoMeUmaMerda/Trees.ml" 133 2249 2287
+type(
+  'a ntree
+)
+"SintoMeUmaMerda/Trees.ml" 130 2176 2179 "SintoMeUmaMerda/Trees.ml" 133 2249 2287
+type(
+  'a ntree
+)
+"SintoMeUmaMerda/Trees.ml" 135 2292 2296 "SintoMeUmaMerda/Trees.ml" 135 2292 2302
+type(
+  'a ntree list -> 'a ntree list
+)
+ident(
+  def nFallL "SintoMeUmaMerda/Trees.ml" 129 2159 2159 "SintoMeUmaMerda/Trees.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Trees.ml" 135 2292 2303 "SintoMeUmaMerda/Trees.ml" 135 2292 2305
+type(
+  'a ntree list
+)
+ident(
+  def tl "SintoMeUmaMerda/Trees.ml" 137 2310 2313 "SintoMeUmaMerda/Trees.ml" 139 2341 2388
+)
+"SintoMeUmaMerda/Trees.ml" 137 2310 2319 "SintoMeUmaMerda/Trees.ml" 137 2310 2321
+type(
+  'a ntree list
+)
+ident(
+  int_ref tl "SintoMeUmaMerda/Trees.ml" 135 2292 2303 "SintoMeUmaMerda/Trees.ml" 135 2292 2305
+)
+"SintoMeUmaMerda/Trees.ml" 138 2327 2332 "SintoMeUmaMerda/Trees.ml" 138 2327 2334
+type(
+  'a ntree list
+)
+"SintoMeUmaMerda/Trees.ml" 138 2327 2338 "SintoMeUmaMerda/Trees.ml" 138 2327 2340
+type(
+  'a ntree list
+)
+"SintoMeUmaMerda/Trees.ml" 139 2341 2346 "SintoMeUmaMerda/Trees.ml" 139 2341 2350
+type(
+  'a ntree
+)
+ident(
+  def head "SintoMeUmaMerda/Trees.ml" 139 2341 2360 "SintoMeUmaMerda/Trees.ml" 139 2341 2388
+)
+"SintoMeUmaMerda/Trees.ml" 139 2341 2352 "SintoMeUmaMerda/Trees.ml" 139 2341 2357
+type(
+  'a ntree list
+)
+ident(
+  def trail "SintoMeUmaMerda/Trees.ml" 139 2341 2360 "SintoMeUmaMerda/Trees.ml" 139 2341 2388
+)
+"SintoMeUmaMerda/Trees.ml" 139 2341 2346 "SintoMeUmaMerda/Trees.ml" 139 2341 2357
+type(
+  'a ntree list
+)
+"SintoMeUmaMerda/Trees.ml" 139 2341 2361 "SintoMeUmaMerda/Trees.ml" 139 2341 2366
+type(
+  'a ntree -> 'a ntree
+)
+ident(
+  int_ref nFall "SintoMeUmaMerda/Trees.ml" 129 2159 2167 "SintoMeUmaMerda/Trees.ml" 129 2159 2172
+)
+"SintoMeUmaMerda/Trees.ml" 139 2341 2367 "SintoMeUmaMerda/Trees.ml" 139 2341 2371
+type(
+  'a ntree
+)
+ident(
+  int_ref head "SintoMeUmaMerda/Trees.ml" 139 2341 2346 "SintoMeUmaMerda/Trees.ml" 139 2341 2350
+)
+"SintoMeUmaMerda/Trees.ml" 139 2341 2360 "SintoMeUmaMerda/Trees.ml" 139 2341 2372
+type(
+  'a ntree
+)
+"SintoMeUmaMerda/Trees.ml" 139 2341 2375 "SintoMeUmaMerda/Trees.ml" 139 2341 2381
+type(
+  'a ntree list -> 'a ntree list
+)
+ident(
+  int_ref nFallL "SintoMeUmaMerda/Trees.ml" 135 2292 2296 "SintoMeUmaMerda/Trees.ml" 135 2292 2302
+)
+"SintoMeUmaMerda/Trees.ml" 139 2341 2382 "SintoMeUmaMerda/Trees.ml" 139 2341 2387
+type(
+  'a ntree list
+)
+ident(
+  int_ref trail "SintoMeUmaMerda/Trees.ml" 139 2341 2352 "SintoMeUmaMerda/Trees.ml" 139 2341 2357
+)
+"SintoMeUmaMerda/Trees.ml" 139 2341 2374 "SintoMeUmaMerda/Trees.ml" 139 2341 2388
+type(
+  'a ntree list
+)
+"SintoMeUmaMerda/Trees.ml" 139 2341 2360 "SintoMeUmaMerda/Trees.ml" 139 2341 2388
+type(
+  'a ntree list
+)
+"SintoMeUmaMerda/Trees.ml" 137 2310 2313 "SintoMeUmaMerda/Trees.ml" 139 2341 2388
+type(
+  'a ntree list
+)
+"SintoMeUmaMerda/Trees.ml" 143 2394 2402 "SintoMeUmaMerda/Trees.ml" 143 2394 2406
+type(
+  'a list -> 'a tree
+)
+ident(
+  def make "SintoMeUmaMerda/Trees.ml" 143 2394 2394 "SintoMeUmaMerda/Trees.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Trees.ml" 143 2394 2407 "SintoMeUmaMerda/Trees.ml" 143 2394 2410
+type(
+  'a list
+)
+ident(
+  def set "SintoMeUmaMerda/Trees.ml" 144 2412 2414 "SintoMeUmaMerda/Trees.ml" 146 2441 2483
+)
+"SintoMeUmaMerda/Trees.ml" 144 2412 2420 "SintoMeUmaMerda/Trees.ml" 144 2412 2423
+type(
+  'a list
+)
+ident(
+  int_ref set "SintoMeUmaMerda/Trees.ml" 143 2394 2407 "SintoMeUmaMerda/Trees.ml" 143 2394 2410
+)
+"SintoMeUmaMerda/Trees.ml" 145 2429 2433 "SintoMeUmaMerda/Trees.ml" 145 2429 2435
+type(
+  'a list
+)
+"SintoMeUmaMerda/Trees.ml" 145 2429 2437 "SintoMeUmaMerda/Trees.ml" 145 2429 2440
+type(
+  'a tree
+)
+"SintoMeUmaMerda/Trees.ml" 146 2441 2445 "SintoMeUmaMerda/Trees.ml" 146 2441 2449
+type(
+  'a
+)
+ident(
+  def head "SintoMeUmaMerda/Trees.ml" 146 2441 2458 "SintoMeUmaMerda/Trees.ml" 146 2441 2483
+)
+"SintoMeUmaMerda/Trees.ml" 146 2441 2451 "SintoMeUmaMerda/Trees.ml" 146 2441 2456
+type(
+  'a list
+)
+ident(
+  def trail "SintoMeUmaMerda/Trees.ml" 146 2441 2458 "SintoMeUmaMerda/Trees.ml" 146 2441 2483
+)
+"SintoMeUmaMerda/Trees.ml" 146 2441 2445 "SintoMeUmaMerda/Trees.ml" 146 2441 2456
+type(
+  'a list
+)
+"SintoMeUmaMerda/Trees.ml" 146 2441 2463 "SintoMeUmaMerda/Trees.ml" 146 2441 2467
+type(
+  'a
+)
+ident(
+  int_ref head "SintoMeUmaMerda/Trees.ml" 146 2441 2445 "SintoMeUmaMerda/Trees.ml" 146 2441 2449
+)
+"SintoMeUmaMerda/Trees.ml" 146 2441 2468 "SintoMeUmaMerda/Trees.ml" 146 2441 2471
+type(
+  'a tree
+)
+"SintoMeUmaMerda/Trees.ml" 146 2441 2472 "SintoMeUmaMerda/Trees.ml" 146 2441 2476
+type(
+  'a list -> 'a tree
+)
+ident(
+  int_ref make "SintoMeUmaMerda/Trees.ml" 143 2394 2402 "SintoMeUmaMerda/Trees.ml" 143 2394 2406
+)
+"SintoMeUmaMerda/Trees.ml" 146 2441 2477 "SintoMeUmaMerda/Trees.ml" 146 2441 2482
+type(
+  'a list
+)
+ident(
+  int_ref trail "SintoMeUmaMerda/Trees.ml" 146 2441 2451 "SintoMeUmaMerda/Trees.ml" 146 2441 2456
+)
+"SintoMeUmaMerda/Trees.ml" 146 2441 2472 "SintoMeUmaMerda/Trees.ml" 146 2441 2482
+type(
+  'a tree
+)
+"SintoMeUmaMerda/Trees.ml" 146 2441 2458 "SintoMeUmaMerda/Trees.ml" 146 2441 2483
+type(
+  'a tree
+)
+"SintoMeUmaMerda/Trees.ml" 144 2412 2414 "SintoMeUmaMerda/Trees.ml" 146 2441 2483
+type(
+  'a tree
+)
+"SintoMeUmaMerda/Trees.ml" 159 3160 3168 "SintoMeUmaMerda/Trees.ml" 159 3160 3171
+type(
+  'a tree -> 'a
+)
+ident(
+  def max "SintoMeUmaMerda/Trees.ml" 159 3160 3160 "SintoMeUmaMerda/Trees.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Trees.ml" 159 3160 3172 "SintoMeUmaMerda/Trees.ml" 159 3160 3173
+type(
+  'a tree
+)
+ident(
+  def t "SintoMeUmaMerda/Trees.ml" 160 3175 3177 "SintoMeUmaMerda/Trees.ml" 165 3340 3432
+)
+"SintoMeUmaMerda/Trees.ml" 160 3175 3183 "SintoMeUmaMerda/Trees.ml" 160 3175 3184
+type(
+  'a tree
+)
+ident(
+  int_ref t "SintoMeUmaMerda/Trees.ml" 159 3160 3172 "SintoMeUmaMerda/Trees.ml" 159 3160 3173
+)
+"SintoMeUmaMerda/Trees.ml" 161 3190 3194 "SintoMeUmaMerda/Trees.ml" 161 3190 3197
+type(
+  'a tree
+)
+"SintoMeUmaMerda/Trees.ml" 161 3190 3200 "SintoMeUmaMerda/Trees.ml" 161 3190 3208
+type(
+  string -> 'a
+)
+ident(
+  int_ref Stdlib.failwith "stdlib.mli" 41 1919 1919 "stdlib.mli" 41 1919 1946
+)
+"SintoMeUmaMerda/Trees.ml" 161 3190 3209 "SintoMeUmaMerda/Trees.ml" 161 3190 3217
+type(
+  string
+)
+"SintoMeUmaMerda/Trees.ml" 161 3190 3200 "SintoMeUmaMerda/Trees.ml" 161 3190 3217
+type(
+  'a
+)
+"SintoMeUmaMerda/Trees.ml" 162 3218 3227 "SintoMeUmaMerda/Trees.ml" 162 3218 3228
+type(
+  'a
+)
+ident(
+  def x "SintoMeUmaMerda/Trees.ml" 162 3218 3241 "SintoMeUmaMerda/Trees.ml" 162 3218 3242
+)
+"SintoMeUmaMerda/Trees.ml" 162 3218 3229 "SintoMeUmaMerda/Trees.ml" 162 3218 3232
+type(
+  'a tree
+)
+"SintoMeUmaMerda/Trees.ml" 162 3218 3233 "SintoMeUmaMerda/Trees.ml" 162 3218 3236
+type(
+  'a tree
+)
+"SintoMeUmaMerda/Trees.ml" 162 3218 3222 "SintoMeUmaMerda/Trees.ml" 162 3218 3237
+type(
+  'a tree
+)
+"SintoMeUmaMerda/Trees.ml" 162 3218 3241 "SintoMeUmaMerda/Trees.ml" 162 3218 3242
+type(
+  'a
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Trees.ml" 162 3218 3227 "SintoMeUmaMerda/Trees.ml" 162 3218 3228
+)
+"SintoMeUmaMerda/Trees.ml" 163 3243 3252 "SintoMeUmaMerda/Trees.ml" 163 3243 3253
+type(
+  'a
+)
+ident(
+  def x "SintoMeUmaMerda/Trees.ml" 163 3243 3266 "SintoMeUmaMerda/Trees.ml" 163 3243 3289
+)
+"SintoMeUmaMerda/Trees.ml" 163 3243 3254 "SintoMeUmaMerda/Trees.ml" 163 3243 3258
+type(
+  'a tree
+)
+ident(
+  def left "SintoMeUmaMerda/Trees.ml" 163 3243 3266 "SintoMeUmaMerda/Trees.ml" 163 3243 3289
+)
+"SintoMeUmaMerda/Trees.ml" 163 3243 3259 "SintoMeUmaMerda/Trees.ml" 163 3243 3262
+type(
+  'a tree
+)
+"SintoMeUmaMerda/Trees.ml" 163 3243 3247 "SintoMeUmaMerda/Trees.ml" 163 3243 3263
+type(
+  'a tree
+)
+"SintoMeUmaMerda/Trees.ml" 163 3243 3266 "SintoMeUmaMerda/Trees.ml" 163 3243 3276
+type(
+  'a -> 'a -> 'a
+)
+ident(
+  int_ref Stdlib.max "stdlib.mli" 183 7888 7888 "stdlib.mli" 183 7888 7912
+)
+"SintoMeUmaMerda/Trees.ml" 163 3243 3277 "SintoMeUmaMerda/Trees.ml" 163 3243 3278
+type(
+  'a
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Trees.ml" 163 3243 3252 "SintoMeUmaMerda/Trees.ml" 163 3243 3253
+)
+"SintoMeUmaMerda/Trees.ml" 163 3243 3280 "SintoMeUmaMerda/Trees.ml" 163 3243 3283
+type(
+  'a tree -> 'a
+)
+ident(
+  int_ref max "SintoMeUmaMerda/Trees.ml" 159 3160 3168 "SintoMeUmaMerda/Trees.ml" 159 3160 3171
+)
+"SintoMeUmaMerda/Trees.ml" 163 3243 3284 "SintoMeUmaMerda/Trees.ml" 163 3243 3288
+type(
+  'a tree
+)
+ident(
+  int_ref left "SintoMeUmaMerda/Trees.ml" 163 3243 3254 "SintoMeUmaMerda/Trees.ml" 163 3243 3258
+)
+"SintoMeUmaMerda/Trees.ml" 163 3243 3279 "SintoMeUmaMerda/Trees.ml" 163 3243 3289
+type(
+  'a
+)
+"SintoMeUmaMerda/Trees.ml" 163 3243 3266 "SintoMeUmaMerda/Trees.ml" 163 3243 3289
+type(
+  'a
+)
+"SintoMeUmaMerda/Trees.ml" 164 3290 3299 "SintoMeUmaMerda/Trees.ml" 164 3290 3300
+type(
+  'a
+)
+ident(
+  def x "SintoMeUmaMerda/Trees.ml" 164 3290 3315 "SintoMeUmaMerda/Trees.ml" 164 3290 3339
+)
+"SintoMeUmaMerda/Trees.ml" 164 3290 3301 "SintoMeUmaMerda/Trees.ml" 164 3290 3304
+type(
+  'a tree
+)
+"SintoMeUmaMerda/Trees.ml" 164 3290 3305 "SintoMeUmaMerda/Trees.ml" 164 3290 3310
+type(
+  'a tree
+)
+ident(
+  def right "SintoMeUmaMerda/Trees.ml" 164 3290 3315 "SintoMeUmaMerda/Trees.ml" 164 3290 3339
+)
+"SintoMeUmaMerda/Trees.ml" 164 3290 3294 "SintoMeUmaMerda/Trees.ml" 164 3290 3311
+type(
+  'a tree
+)
+"SintoMeUmaMerda/Trees.ml" 164 3290 3315 "SintoMeUmaMerda/Trees.ml" 164 3290 3325
+type(
+  'a -> 'a -> 'a
+)
+ident(
+  int_ref Stdlib.max "stdlib.mli" 183 7888 7888 "stdlib.mli" 183 7888 7912
+)
+"SintoMeUmaMerda/Trees.ml" 164 3290 3326 "SintoMeUmaMerda/Trees.ml" 164 3290 3327
+type(
+  'a
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Trees.ml" 164 3290 3299 "SintoMeUmaMerda/Trees.ml" 164 3290 3300
+)
+"SintoMeUmaMerda/Trees.ml" 164 3290 3329 "SintoMeUmaMerda/Trees.ml" 164 3290 3332
+type(
+  'a tree -> 'a
+)
+ident(
+  int_ref max "SintoMeUmaMerda/Trees.ml" 159 3160 3168 "SintoMeUmaMerda/Trees.ml" 159 3160 3171
+)
+"SintoMeUmaMerda/Trees.ml" 164 3290 3333 "SintoMeUmaMerda/Trees.ml" 164 3290 3338
+type(
+  'a tree
+)
+ident(
+  int_ref right "SintoMeUmaMerda/Trees.ml" 164 3290 3305 "SintoMeUmaMerda/Trees.ml" 164 3290 3310
+)
+"SintoMeUmaMerda/Trees.ml" 164 3290 3328 "SintoMeUmaMerda/Trees.ml" 164 3290 3339
+type(
+  'a
+)
+"SintoMeUmaMerda/Trees.ml" 164 3290 3315 "SintoMeUmaMerda/Trees.ml" 164 3290 3339
+type(
+  'a
+)
+"SintoMeUmaMerda/Trees.ml" 165 3340 3349 "SintoMeUmaMerda/Trees.ml" 165 3340 3350
+type(
+  'a
+)
+ident(
+  def x "SintoMeUmaMerda/Trees.ml" 165 3340 3367 "SintoMeUmaMerda/Trees.ml" 165 3340 3432
+)
+"SintoMeUmaMerda/Trees.ml" 165 3340 3351 "SintoMeUmaMerda/Trees.ml" 165 3340 3355
+type(
+  'a tree
+)
+ident(
+  def left "SintoMeUmaMerda/Trees.ml" 165 3340 3367 "SintoMeUmaMerda/Trees.ml" 165 3340 3432
+)
+"SintoMeUmaMerda/Trees.ml" 165 3340 3356 "SintoMeUmaMerda/Trees.ml" 165 3340 3361
+type(
+  'a tree
+)
+ident(
+  def right "SintoMeUmaMerda/Trees.ml" 165 3340 3367 "SintoMeUmaMerda/Trees.ml" 165 3340 3432
+)
+"SintoMeUmaMerda/Trees.ml" 165 3340 3344 "SintoMeUmaMerda/Trees.ml" 165 3340 3362
+type(
+  'a tree
+)
+"SintoMeUmaMerda/Trees.ml" 165 3340 3367 "SintoMeUmaMerda/Trees.ml" 165 3340 3377
+type(
+  'a -> 'a -> 'a
+)
+ident(
+  int_ref Stdlib.max "stdlib.mli" 183 7888 7888 "stdlib.mli" 183 7888 7912
+)
+"SintoMeUmaMerda/Trees.ml" 165 3340 3380 "SintoMeUmaMerda/Trees.ml" 165 3340 3390
+type(
+  'a -> 'a -> 'a
+)
+ident(
+  int_ref Stdlib.max "stdlib.mli" 183 7888 7888 "stdlib.mli" 183 7888 7912
+)
+"SintoMeUmaMerda/Trees.ml" 165 3340 3391 "SintoMeUmaMerda/Trees.ml" 165 3340 3392
+type(
+  'a
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Trees.ml" 165 3340 3349 "SintoMeUmaMerda/Trees.ml" 165 3340 3350
+)
+"SintoMeUmaMerda/Trees.ml" 165 3340 3394 "SintoMeUmaMerda/Trees.ml" 165 3340 3397
+type(
+  'a tree -> 'a
+)
+ident(
+  int_ref max "SintoMeUmaMerda/Trees.ml" 159 3160 3168 "SintoMeUmaMerda/Trees.ml" 159 3160 3171
+)
+"SintoMeUmaMerda/Trees.ml" 165 3340 3398 "SintoMeUmaMerda/Trees.ml" 165 3340 3403
+type(
+  'a tree
+)
+ident(
+  int_ref right "SintoMeUmaMerda/Trees.ml" 165 3340 3356 "SintoMeUmaMerda/Trees.ml" 165 3340 3361
+)
+"SintoMeUmaMerda/Trees.ml" 165 3340 3393 "SintoMeUmaMerda/Trees.ml" 165 3340 3404
+type(
+  'a
+)
+"SintoMeUmaMerda/Trees.ml" 165 3340 3378 "SintoMeUmaMerda/Trees.ml" 165 3340 3405
+type(
+  'a
+)
+"SintoMeUmaMerda/Trees.ml" 165 3340 3408 "SintoMeUmaMerda/Trees.ml" 165 3340 3418
+type(
+  'a -> 'a -> 'a
+)
+ident(
+  int_ref Stdlib.max "stdlib.mli" 183 7888 7888 "stdlib.mli" 183 7888 7912
+)
+"SintoMeUmaMerda/Trees.ml" 165 3340 3419 "SintoMeUmaMerda/Trees.ml" 165 3340 3420
+type(
+  'a
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Trees.ml" 165 3340 3349 "SintoMeUmaMerda/Trees.ml" 165 3340 3350
+)
+"SintoMeUmaMerda/Trees.ml" 165 3340 3422 "SintoMeUmaMerda/Trees.ml" 165 3340 3425
+type(
+  'a tree -> 'a
+)
+ident(
+  int_ref max "SintoMeUmaMerda/Trees.ml" 159 3160 3168 "SintoMeUmaMerda/Trees.ml" 159 3160 3171
+)
+"SintoMeUmaMerda/Trees.ml" 165 3340 3426 "SintoMeUmaMerda/Trees.ml" 165 3340 3430
+type(
+  'a tree
+)
+ident(
+  int_ref left "SintoMeUmaMerda/Trees.ml" 165 3340 3351 "SintoMeUmaMerda/Trees.ml" 165 3340 3355
+)
+"SintoMeUmaMerda/Trees.ml" 165 3340 3421 "SintoMeUmaMerda/Trees.ml" 165 3340 3431
+type(
+  'a
+)
+"SintoMeUmaMerda/Trees.ml" 165 3340 3406 "SintoMeUmaMerda/Trees.ml" 165 3340 3432
+type(
+  'a
+)
+"SintoMeUmaMerda/Trees.ml" 165 3340 3367 "SintoMeUmaMerda/Trees.ml" 165 3340 3432
+type(
+  'a
+)
+"SintoMeUmaMerda/Trees.ml" 160 3175 3177 "SintoMeUmaMerda/Trees.ml" 165 3340 3432
+type(
+  'a
+)
+"SintoMeUmaMerda/Trees.ml" 170 3441 3445 "SintoMeUmaMerda/Trees.ml" 170 3441 3457
+type(
+  'a tree tree -> 'a tree
+)
+ident(
+  def getNodeValue "SintoMeUmaMerda/Trees.ml" 176 3510 3510 "SintoMeUmaMerda/Trees.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Trees.ml" 170 3441 3458 "SintoMeUmaMerda/Trees.ml" 170 3441 3459
+type(
+  'a tree tree
+)
+ident(
+  def t "SintoMeUmaMerda/Trees.ml" 171 3461 3462 "SintoMeUmaMerda/Trees.ml" 173 3487 3505
+)
+"SintoMeUmaMerda/Trees.ml" 171 3461 3468 "SintoMeUmaMerda/Trees.ml" 171 3461 3469
+type(
+  'a tree tree
+)
+ident(
+  int_ref t "SintoMeUmaMerda/Trees.ml" 170 3441 3458 "SintoMeUmaMerda/Trees.ml" 170 3441 3459
+)
+"SintoMeUmaMerda/Trees.ml" 172 3475 3478 "SintoMeUmaMerda/Trees.ml" 172 3475 3481
+type(
+  'a tree tree
+)
+"SintoMeUmaMerda/Trees.ml" 172 3475 3483 "SintoMeUmaMerda/Trees.ml" 172 3475 3486
+type(
+  'a tree
+)
+"SintoMeUmaMerda/Trees.ml" 173 3487 3495 "SintoMeUmaMerda/Trees.ml" 173 3487 3496
+type(
+  'a tree
+)
+ident(
+  def x "SintoMeUmaMerda/Trees.ml" 173 3487 3504 "SintoMeUmaMerda/Trees.ml" 173 3487 3505
+)
+"SintoMeUmaMerda/Trees.ml" 173 3487 3497 "SintoMeUmaMerda/Trees.ml" 173 3487 3498
+type(
+  'a tree tree
+)
+ident(
+  def y "SintoMeUmaMerda/Trees.ml" 173 3487 3504 "SintoMeUmaMerda/Trees.ml" 173 3487 3505
+)
+"SintoMeUmaMerda/Trees.ml" 173 3487 3499 "SintoMeUmaMerda/Trees.ml" 173 3487 3500
+type(
+  'a tree tree
+)
+ident(
+  def z "SintoMeUmaMerda/Trees.ml" 173 3487 3504 "SintoMeUmaMerda/Trees.ml" 173 3487 3505
+)
+"SintoMeUmaMerda/Trees.ml" 173 3487 3490 "SintoMeUmaMerda/Trees.ml" 173 3487 3501
+type(
+  'a tree tree
+)
+"SintoMeUmaMerda/Trees.ml" 173 3487 3504 "SintoMeUmaMerda/Trees.ml" 173 3487 3505
+type(
+  'a tree
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Trees.ml" 173 3487 3495 "SintoMeUmaMerda/Trees.ml" 173 3487 3496
+)
+"SintoMeUmaMerda/Trees.ml" 171 3461 3462 "SintoMeUmaMerda/Trees.ml" 173 3487 3505
+type(
+  'a tree
+)
+"SintoMeUmaMerda/Trees.ml" 176 3510 3518 "SintoMeUmaMerda/Trees.ml" 176 3510 3528
+type(
+  'a list -> 'a tree
+)
+ident(
+  def makeBinInv "SintoMeUmaMerda/Trees.ml" 176 3510 3510 "SintoMeUmaMerda/Trees.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Trees.ml" 176 3510 3529 "SintoMeUmaMerda/Trees.ml" 176 3510 3532
+type(
+  'a list
+)
+ident(
+  def set "SintoMeUmaMerda/Trees.ml" 177 3534 3536 "SintoMeUmaMerda/Trees.ml" 179 3563 3610
+)
+"SintoMeUmaMerda/Trees.ml" 177 3534 3542 "SintoMeUmaMerda/Trees.ml" 177 3534 3545
+type(
+  'a list
+)
+ident(
+  int_ref set "SintoMeUmaMerda/Trees.ml" 176 3510 3529 "SintoMeUmaMerda/Trees.ml" 176 3510 3532
+)
+"SintoMeUmaMerda/Trees.ml" 178 3551 3555 "SintoMeUmaMerda/Trees.ml" 178 3551 3557
+type(
+  'a list
+)
+"SintoMeUmaMerda/Trees.ml" 178 3551 3559 "SintoMeUmaMerda/Trees.ml" 178 3551 3562
+type(
+  'a tree
+)
+"SintoMeUmaMerda/Trees.ml" 179 3563 3567 "SintoMeUmaMerda/Trees.ml" 179 3563 3571
+type(
+  'a
+)
+ident(
+  def head "SintoMeUmaMerda/Trees.ml" 179 3563 3580 "SintoMeUmaMerda/Trees.ml" 179 3563 3610
+)
+"SintoMeUmaMerda/Trees.ml" 179 3563 3573 "SintoMeUmaMerda/Trees.ml" 179 3563 3578
+type(
+  'a list
+)
+ident(
+  def trail "SintoMeUmaMerda/Trees.ml" 179 3563 3580 "SintoMeUmaMerda/Trees.ml" 179 3563 3610
+)
+"SintoMeUmaMerda/Trees.ml" 179 3563 3567 "SintoMeUmaMerda/Trees.ml" 179 3563 3578
+type(
+  'a list
+)
+"SintoMeUmaMerda/Trees.ml" 179 3563 3580 "SintoMeUmaMerda/Trees.ml" 179 3563 3586
+type(
+  'a -> 'a tree -> 'a tree
+)
+ident(
+  int_ref insert "SintoMeUmaMerda/Trees.ml" 180 3611 3615 "SintoMeUmaMerda/Trees.ml" 180 3611 3621
+)
+"SintoMeUmaMerda/Trees.ml" 179 3563 3587 "SintoMeUmaMerda/Trees.ml" 179 3563 3591
+type(
+  'a
+)
+ident(
+  int_ref head "SintoMeUmaMerda/Trees.ml" 179 3563 3567 "SintoMeUmaMerda/Trees.ml" 179 3563 3571
+)
+"SintoMeUmaMerda/Trees.ml" 179 3563 3593 "SintoMeUmaMerda/Trees.ml" 179 3563 3603
+type(
+  'a list -> 'a tree
+)
+ident(
+  int_ref makeBinInv "SintoMeUmaMerda/Trees.ml" 176 3510 3518 "SintoMeUmaMerda/Trees.ml" 176 3510 3528
+)
+"SintoMeUmaMerda/Trees.ml" 179 3563 3604 "SintoMeUmaMerda/Trees.ml" 179 3563 3609
+type(
+  'a list
+)
+ident(
+  int_ref trail "SintoMeUmaMerda/Trees.ml" 179 3563 3573 "SintoMeUmaMerda/Trees.ml" 179 3563 3578
+)
+"SintoMeUmaMerda/Trees.ml" 179 3563 3592 "SintoMeUmaMerda/Trees.ml" 179 3563 3610
+type(
+  'a tree
+)
+"SintoMeUmaMerda/Trees.ml" 179 3563 3580 "SintoMeUmaMerda/Trees.ml" 179 3563 3610
+type(
+  'a tree
+)
+"SintoMeUmaMerda/Trees.ml" 177 3534 3536 "SintoMeUmaMerda/Trees.ml" 179 3563 3610
+type(
+  'a tree
+)
+"SintoMeUmaMerda/Trees.ml" 180 3611 3615 "SintoMeUmaMerda/Trees.ml" 180 3611 3621
+type(
+  'a -> 'a tree -> 'a tree
+)
+ident(
+  def insert "SintoMeUmaMerda/Trees.ml" 176 3510 3510 "SintoMeUmaMerda/Trees.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Trees.ml" 180 3611 3622 "SintoMeUmaMerda/Trees.ml" 180 3611 3626
+type(
+  'a
+)
+ident(
+  def elem "SintoMeUmaMerda/Trees.ml" 180 3611 3627 "SintoMeUmaMerda/Trees.ml" 188 3862 3879
+)
+"SintoMeUmaMerda/Trees.ml" 180 3611 3627 "SintoMeUmaMerda/Trees.ml" 180 3611 3628
+type(
+  'a tree
+)
+ident(
+  def t "SintoMeUmaMerda/Trees.ml" 181 3630 3632 "SintoMeUmaMerda/Trees.ml" 188 3862 3879
+)
+"SintoMeUmaMerda/Trees.ml" 181 3630 3638 "SintoMeUmaMerda/Trees.ml" 181 3630 3639
+type(
+  'a tree
+)
+ident(
+  int_ref t "SintoMeUmaMerda/Trees.ml" 180 3611 3627 "SintoMeUmaMerda/Trees.ml" 180 3611 3628
+)
+"SintoMeUmaMerda/Trees.ml" 182 3645 3649 "SintoMeUmaMerda/Trees.ml" 182 3645 3652
+type(
+  'a tree
+)
+"SintoMeUmaMerda/Trees.ml" 182 3645 3660 "SintoMeUmaMerda/Trees.ml" 182 3645 3664
+type(
+  'a
+)
+ident(
+  int_ref elem "SintoMeUmaMerda/Trees.ml" 180 3611 3622 "SintoMeUmaMerda/Trees.ml" 180 3611 3626
+)
+"SintoMeUmaMerda/Trees.ml" 182 3645 3665 "SintoMeUmaMerda/Trees.ml" 182 3645 3668
+type(
+  'a tree
+)
+"SintoMeUmaMerda/Trees.ml" 182 3645 3669 "SintoMeUmaMerda/Trees.ml" 182 3645 3672
+type(
+  'a tree
+)
+"SintoMeUmaMerda/Trees.ml" 182 3645 3655 "SintoMeUmaMerda/Trees.ml" 182 3645 3673
+type(
+  'a tree
+)
+"SintoMeUmaMerda/Trees.ml" 183 3674 3683 "SintoMeUmaMerda/Trees.ml" 183 3674 3684
+type(
+  'a
+)
+ident(
+  def x "SintoMeUmaMerda/Trees.ml" 183 3674 3699 "SintoMeUmaMerda/Trees.ml" 188 3862 3879
+)
+"SintoMeUmaMerda/Trees.ml" 183 3674 3685 "SintoMeUmaMerda/Trees.ml" 183 3674 3689
+type(
+  'a tree
+)
+ident(
+  def left "SintoMeUmaMerda/Trees.ml" 183 3674 3699 "SintoMeUmaMerda/Trees.ml" 188 3862 3879
+)
+"SintoMeUmaMerda/Trees.ml" 183 3674 3690 "SintoMeUmaMerda/Trees.ml" 183 3674 3695
+type(
+  'a tree
+)
+ident(
+  def right "SintoMeUmaMerda/Trees.ml" 183 3674 3699 "SintoMeUmaMerda/Trees.ml" 188 3862 3879
+)
+"SintoMeUmaMerda/Trees.ml" 183 3674 3678 "SintoMeUmaMerda/Trees.ml" 183 3674 3696
+type(
+  'a tree
+)
+"SintoMeUmaMerda/Trees.ml" 183 3674 3703 "SintoMeUmaMerda/Trees.ml" 183 3674 3707
+type(
+  'a
+)
+ident(
+  int_ref elem "SintoMeUmaMerda/Trees.ml" 180 3611 3622 "SintoMeUmaMerda/Trees.ml" 180 3611 3626
+)
+"SintoMeUmaMerda/Trees.ml" 183 3674 3707 "SintoMeUmaMerda/Trees.ml" 183 3674 3708
+type(
+  'a -> 'a -> bool
+)
+ident(
+  int_ref Stdlib.( < ) "stdlib.mli" 132 5646 5646 "stdlib.mli" 132 5646 5693
+)
+"SintoMeUmaMerda/Trees.ml" 183 3674 3708 "SintoMeUmaMerda/Trees.ml" 183 3674 3709
+type(
+  'a
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Trees.ml" 183 3674 3683 "SintoMeUmaMerda/Trees.ml" 183 3674 3684
+)
+"SintoMeUmaMerda/Trees.ml" 183 3674 3703 "SintoMeUmaMerda/Trees.ml" 183 3674 3709
+type(
+  bool
+)
+"SintoMeUmaMerda/Trees.ml" 184 3715 3734 "SintoMeUmaMerda/Trees.ml" 184 3715 3735
+type(
+  'a
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Trees.ml" 183 3674 3683 "SintoMeUmaMerda/Trees.ml" 183 3674 3684
+)
+"SintoMeUmaMerda/Trees.ml" 184 3715 3737 "SintoMeUmaMerda/Trees.ml" 184 3715 3743
+type(
+  'a -> 'a tree -> 'a tree
+)
+ident(
+  int_ref insert "SintoMeUmaMerda/Trees.ml" 180 3611 3615 "SintoMeUmaMerda/Trees.ml" 180 3611 3621
+)
+"SintoMeUmaMerda/Trees.ml" 184 3715 3744 "SintoMeUmaMerda/Trees.ml" 184 3715 3748
+type(
+  'a
+)
+ident(
+  int_ref elem "SintoMeUmaMerda/Trees.ml" 180 3611 3622 "SintoMeUmaMerda/Trees.ml" 180 3611 3626
+)
+"SintoMeUmaMerda/Trees.ml" 184 3715 3749 "SintoMeUmaMerda/Trees.ml" 184 3715 3753
+type(
+  'a tree
+)
+ident(
+  int_ref left "SintoMeUmaMerda/Trees.ml" 183 3674 3685 "SintoMeUmaMerda/Trees.ml" 183 3674 3689
+)
+"SintoMeUmaMerda/Trees.ml" 184 3715 3737 "SintoMeUmaMerda/Trees.ml" 184 3715 3753
+type(
+  'a tree
+)
+"SintoMeUmaMerda/Trees.ml" 184 3715 3754 "SintoMeUmaMerda/Trees.ml" 184 3715 3759
+type(
+  'a tree
+)
+ident(
+  int_ref right "SintoMeUmaMerda/Trees.ml" 183 3674 3690 "SintoMeUmaMerda/Trees.ml" 183 3674 3695
+)
+"SintoMeUmaMerda/Trees.ml" 184 3715 3729 "SintoMeUmaMerda/Trees.ml" 184 3715 3760
+type(
+  'a tree
+)
+"SintoMeUmaMerda/Trees.ml" 185 3761 3783 "SintoMeUmaMerda/Trees.ml" 185 3761 3787
+type(
+  'a
+)
+ident(
+  int_ref elem "SintoMeUmaMerda/Trees.ml" 180 3611 3622 "SintoMeUmaMerda/Trees.ml" 180 3611 3626
+)
+"SintoMeUmaMerda/Trees.ml" 185 3761 3788 "SintoMeUmaMerda/Trees.ml" 185 3761 3789
+type(
+  'a -> 'a -> bool
+)
+ident(
+  int_ref Stdlib.( > ) "stdlib.mli" 137 5800 5800 "stdlib.mli" 137 5800 5850
+)
+"SintoMeUmaMerda/Trees.ml" 185 3761 3789 "SintoMeUmaMerda/Trees.ml" 185 3761 3790
+type(
+  'a
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Trees.ml" 183 3674 3683 "SintoMeUmaMerda/Trees.ml" 183 3674 3684
+)
+"SintoMeUmaMerda/Trees.ml" 185 3761 3783 "SintoMeUmaMerda/Trees.ml" 185 3761 3790
+type(
+  bool
+)
+"SintoMeUmaMerda/Trees.ml" 186 3796 3815 "SintoMeUmaMerda/Trees.ml" 186 3796 3816
+type(
+  'a
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Trees.ml" 183 3674 3683 "SintoMeUmaMerda/Trees.ml" 183 3674 3684
+)
+"SintoMeUmaMerda/Trees.ml" 186 3796 3818 "SintoMeUmaMerda/Trees.ml" 186 3796 3822
+type(
+  'a tree
+)
+ident(
+  int_ref left "SintoMeUmaMerda/Trees.ml" 183 3674 3685 "SintoMeUmaMerda/Trees.ml" 183 3674 3689
+)
+"SintoMeUmaMerda/Trees.ml" 186 3796 3823 "SintoMeUmaMerda/Trees.ml" 186 3796 3829
+type(
+  'a -> 'a tree -> 'a tree
+)
+ident(
+  int_ref insert "SintoMeUmaMerda/Trees.ml" 180 3611 3615 "SintoMeUmaMerda/Trees.ml" 180 3611 3621
+)
+"SintoMeUmaMerda/Trees.ml" 186 3796 3830 "SintoMeUmaMerda/Trees.ml" 186 3796 3834
+type(
+  'a
+)
+ident(
+  int_ref elem "SintoMeUmaMerda/Trees.ml" 180 3611 3622 "SintoMeUmaMerda/Trees.ml" 180 3611 3626
+)
+"SintoMeUmaMerda/Trees.ml" 186 3796 3835 "SintoMeUmaMerda/Trees.ml" 186 3796 3840
+type(
+  'a tree
+)
+ident(
+  int_ref right "SintoMeUmaMerda/Trees.ml" 183 3674 3690 "SintoMeUmaMerda/Trees.ml" 183 3674 3695
+)
+"SintoMeUmaMerda/Trees.ml" 186 3796 3823 "SintoMeUmaMerda/Trees.ml" 186 3796 3840
+type(
+  'a tree
+)
+"SintoMeUmaMerda/Trees.ml" 186 3796 3810 "SintoMeUmaMerda/Trees.ml" 186 3796 3841
+type(
+  'a tree
+)
+"SintoMeUmaMerda/Trees.ml" 188 3862 3878 "SintoMeUmaMerda/Trees.ml" 188 3862 3879
+type(
+  'a tree
+)
+ident(
+  int_ref t "SintoMeUmaMerda/Trees.ml" 180 3611 3627 "SintoMeUmaMerda/Trees.ml" 180 3611 3628
+)
+"SintoMeUmaMerda/Trees.ml" 185 3761 3780 "SintoMeUmaMerda/Trees.ml" 188 3862 3879
+type(
+  'a tree
+)
+"SintoMeUmaMerda/Trees.ml" 183 3674 3699 "SintoMeUmaMerda/Trees.ml" 188 3862 3879
+type(
+  'a tree
+)
+"SintoMeUmaMerda/Trees.ml" 181 3630 3632 "SintoMeUmaMerda/Trees.ml" 188 3862 3879
+type(
+  'a tree
+)
+"SintoMeUmaMerda/Trees.ml" 191 3884 3888 "SintoMeUmaMerda/Trees.ml" 191 3884 3895
+type(
+  'a list -> 'a tree
+)
+ident(
+  def makeBin "SintoMeUmaMerda/Trees.ml" 192 3901 3926 "SintoMeUmaMerda/Trees.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Trees.ml" 191 3884 3896 "SintoMeUmaMerda/Trees.ml" 191 3884 3899
+type(
+  'a list
+)
+ident(
+  def set "SintoMeUmaMerda/Trees.ml" 192 3901 3902 "SintoMeUmaMerda/Trees.ml" 192 3901 3926
+)
+"SintoMeUmaMerda/Trees.ml" 192 3901 3902 "SintoMeUmaMerda/Trees.ml" 192 3901 3912
+type(
+  'a list -> 'a tree
+)
+ident(
+  int_ref makeBinInv "SintoMeUmaMerda/Trees.ml" 176 3510 3518 "SintoMeUmaMerda/Trees.ml" 176 3510 3528
+)
+"SintoMeUmaMerda/Trees.ml" 192 3901 3914 "SintoMeUmaMerda/Trees.ml" 192 3901 3921
+type(
+  'a list -> 'a list
+)
+ident(
+  int_ref Sets.inverse "SintoMeUmaMerda/Sets.ml" 117 1933 1941 "SintoMeUmaMerda/Sets.ml" 117 1933 1948
+)
+"SintoMeUmaMerda/Trees.ml" 192 3901 3922 "SintoMeUmaMerda/Trees.ml" 192 3901 3925
+type(
+  'a list
+)
+ident(
+  int_ref set "SintoMeUmaMerda/Trees.ml" 191 3884 3896 "SintoMeUmaMerda/Trees.ml" 191 3884 3899
+)
+"SintoMeUmaMerda/Trees.ml" 192 3901 3913 "SintoMeUmaMerda/Trees.ml" 192 3901 3926
+type(
+  'a list
+)
+"SintoMeUmaMerda/Trees.ml" 192 3901 3902 "SintoMeUmaMerda/Trees.ml" 192 3901 3926
+type(
+  'a tree
+)

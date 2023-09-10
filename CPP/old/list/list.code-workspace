@@ -1,0 +1,28 @@
+{
+	"folders": [
+		{
+			"path": "../lust"
+		},
+		{
+			"path": ".."
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"list": "cpp",
+			"istream": "cpp",
+			"iostream": "cpp",
+			"array": "cpp",
+			"deque": "cpp",
+			"string": "cpp",
+			"unordered_map": "cpp",
+			"vector": "cpp",
+			"string_view": "cpp",
+			"initializer_list": "cpp",
+			"iterator": "cpp"
+		}
+	}
+}

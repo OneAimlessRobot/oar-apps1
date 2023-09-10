@@ -1,0 +1,11 @@
+ADD b1 basic
+ADD p1 premium
+ADD p1 basic
+ADD p1 premium
+ADD b1 basic
+ADD p2 premium
+ADD p3 premium
+ADD b2 basic
+LISTALL
+EXIT
+

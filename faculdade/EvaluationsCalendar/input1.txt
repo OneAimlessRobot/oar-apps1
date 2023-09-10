@@ -1,0 +1,62 @@
+course IP
+course Object-Oriented Programming
+course AM I
+course AM II
+course Fancy course name
+course Karaoke 101
+course Extreme Mooshaking
+coursetests Advanced Procastination
+coursetests IP
+coursetests AM I
+coursetests Extreme Mooshaking
+professor Injun Joe
+student 23234 Sid Sawyer
+student 10730 Amy Lawrence
+student 3254 Mary
+student 9983 Muff Potter
+student 12435 Alfred Temple
+student 32424 Injun Joe
+student 12334 Tom Sawyer
+student 13242 Becky Thatcher
+student 3243 Huckleberry Finn
+student 23143 Joe Harper
+professor Aunt Polly
+professor Mr. Walters
+professor Judge Thatcher
+professor Jim
+professor Mr. Sprague
+professor Mr. Jones
+assign Mr. Jones
+IP
+assign Mr. Walters
+Object-Oriented Programming
+assign Mr. Walters
+AM II
+assign Mr. Walters
+AM I
+assign Aunt Polly
+AM I
+assign Mr. Jones
+Object-Oriented Programming
+assign Mr. Jones
+AM I
+enrol 5 Object-Oriented Programming
+Tom Sawyer
+Huckleberry Finn
+Becky Thatcher
+Muff Potter
+Amy Lawrence
+enrol 2 IP
+Becky Thatcher
+Tom Sawyer
+enrol 3 AM I
+Becky Thatcher
+Joe Harper
+Huckleberry Finn
+intersection 2 Object-Oriented Programming
+IP
+schedule 2022 4 7 12 00 1 Object-Oriented Programming
+Hell
+schedule 2022 4 7 12 30 2 AM II
+Kill me please
+

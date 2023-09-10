@@ -1,0 +1,25 @@
+Account was added.
+
+Account was added.
+
+Account already exists.
+
+Account already exists.
+
+Account already exists.
+
+Account was added.
+
+Account was added.
+
+Account was added.
+
+All accounts:
+b1 (Basic)
+p1 (Premium)
+p2 (Premium)
+p3 (Premium)
+b2 (Basic)
+
+Exiting...
+

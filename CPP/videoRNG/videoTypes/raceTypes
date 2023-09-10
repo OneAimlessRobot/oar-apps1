@@ -1,0 +1,30 @@
+
+#Instruções: Os meus programas nunca têm instruções como deve ser. Isso muda agora.
+#1º Isto são comentários. Os algoritmos deste programa contam linhas que começam com "#" como comentários, ou seja, o que se  segue a eles na mesma linha não vai ser considerado. 
+#2º O programa pede ao utilizador para fornecer um caracter, (n) e depois vem a este ficheiro, extrai dele todas as linhas  que não possuem comentários (que são categorias),escolhe uma aleatória e depois escolhe o ficheiro que possui a linha  escolhida como nome.
+#3º- Depois, escolhe, na mesma lógica que na primeira seleção, extrai todas as linhas válidas( não vazias e que não comecem por "#"), escolhe uma aleatória e apresenta o resultado no terminal.
+# Este ficheiro é uma lista de categorias de corridas. Cada categoria corresponde a um ficheiro de texto cheio de linhas contendo corridas que sejam dessa categoria. Para se acrescentar uma categoria de corridas a este ficheiro, é necessário colocar uma entrada aqui e um ficheiro que contenha o mesmo texto como nome no folder "racecategories", escrito na forma:
+#|===========================================
+#|cat1
+#|cat2
+#|cat3
+#|....
+#|catn
+#|com1
+#|catk
+#|com2
+#|com3
+#|....
+#|catf
+#|===========================================
+#em que tudo o que não tenha "#"(ou linhas só com whitespace) vai contar como categoria
+
+#Isto são categorias aleatórias com ficheiros já feitos. Sê livre para acrescentar mais :)
+
+one make
+low budget
+touring
+formula
+endurance
+rally
+

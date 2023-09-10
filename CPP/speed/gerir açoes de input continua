@@ -1,0 +1,35 @@
+
+
+            if(OnesAreContained(gameState,ARMY_MASK)){
+                    if(button & SDL_BUTTON_LMASK){
+                            SDL_Point point=(SDL_Point){x1,y1};
+                            SDL_bool detect1=SDL_PointInRect(&point,army[counter->getCurrent()].obj->getBody());
+                    if(detect1){
+                            army[counter->getCurrent()].value=1;
+                    }
+                }
+                else{
+                    army[counter->getCurrent()].value=0;
+                }
+            }
+
+                if (KEYBOARD[SDL_SCANCODE_LEFT])
+                {
+                    jumper->moveX(-15);
+                }
+
+                if (KEYBOARD[SDL_SCANCODE_RIGHT])
+                {
+
+                    jumper->moveX(15);
+                }
+
+
+                if (KEYBOARD[SDL_SCANCODE_D])
+                {
+                    gameState|=DRAW_MASK;
+                }
+                else
+                {
+                    gameState&=N_DRAW_MASK;
+                }

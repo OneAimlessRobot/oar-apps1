@@ -1,0 +1,30 @@
+
+                int tick=SDL_GetTicks()-currentJumpTick;
+                counter->setModulus(army.size());
+
+                int initFrame=SDL_GetTicks(),delta= SDL_GetTicks()- initFrame;
+
+                Uint32 button=SDL_GetMouseState(&x1,&y1);
+
+                SDL_Point startPos=(SDL_Point){jumper->getX(),jumper->getY()};
+
+            textBox * mouseSpeedOmeter=new textBox(renderer,fontSize,0,text2->getYPos()+text2->getHeight(),"/usr/share/fonts/truetype/freefont/FreeSans.ttf",255,255,255,255,std::to_string(mSpeed).std::string::c_str());
+
+            std::string pos="("+std::to_string(x1)+","+std::to_string(y1)+")";
+            textBox * mousePositionMeter=new textBox(renderer,fontSize*0.5,0,mouseSpeedOmeter->getYPos()+mouseSpeedOmeter->getHeight(),"/usr/share/fonts/truetype/freefont/FreeSans.ttf",255,255,255,255,pos.std::string::c_str());
+
+            textBox * objTelemetryBox=new textBox(renderer,fontSize*0.5,x1+3,y1+3,"/usr/share/fonts/truetype/freefont/FreeSans.ttf",255,255,255,255," ");
+
+            int var=trail.size();
+            textBox * particleNumberBox=createTextBoxForVariable(renderer,fontSize,0,mousePositionMeter->getYPos()+mousePositionMeter->getHeight(),"/usr/share/fonts/truetype/freefont/FreeSans.ttf",255,255,255,255,&var,"Numero de particulas: ");
+
+            var=army.size();
+            textBox * armySizeBox=createTextBoxForVariable(renderer,fontSize,0,particleNumberBox->getYPos()+particleNumberBox->getHeight(),"/usr/share/fonts/truetype/freefont/FreeSans.ttf",255,255,255,255,&var,"Tamanho de army: ");
+
+            textBox * jumpTickBox=createTextBoxForVariable(renderer,fontSize,0,armySizeBox->getYPos()+armySizeBox->getHeight(),"/usr/share/fonts/truetype/freefont/FreeSans.ttf",255,255,255,255,&currentJumpTick,"TickAtualDeSalto: ");
+
+            textBox * jSpeedBox=createTextBoxForVariable(renderer,fontSize,0,jumpTickBox->getYPos()+jumpTickBox->getHeight(),"/usr/share/fonts/truetype/freefont/FreeSans.ttf",255,255,255,255,&jSpeed,"TickAtualDeSalto: ");
+            var=counter->getCurrent();
+            textBox * counterBox=createTextBoxForVariable(renderer,fontSize,0,jSpeedBox->getYPos()+jSpeedBox->getHeight(),"/usr/share/fonts/truetype/freefont/FreeSans.ttf",255,255,255,255,&var,"Counter: ");
+
+

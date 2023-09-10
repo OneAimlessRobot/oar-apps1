@@ -1,0 +1,119 @@
+User peralta was registered as manager with clearance level 3.
+User santiago was registered as manager with clearance level 4.
+User holt was registered as manager with clearance level 5.
+User diaz was registered as manager with clearance level 4.
+User boyle was registered as developer with clearance level 3.
+User bob was registered as developer with clearance level 2.
+User linetti was registered as developer with clearance level 4.
+User pimento was registered as developer with clearance level 2.
+User wells was registered as developer with clearance level 2.
+User john was registered as developer with clearance level 4.
+User mary was registered as developer with clearance level 3.
+User jeffords was registered as developer with clearance level 5.
+All registered users:
+developer bob is managed by holt [0]
+developer boyle is managed by peralta [0]
+manager diaz [2, 0, 0]
+manager holt [4, 0, 0]
+developer jeffords is managed by holt [0]
+developer john is managed by diaz [0]
+developer linetti is managed by holt [0]
+developer mary is managed by holt [0]
+manager peralta [2, 0, 0]
+developer pimento is managed by peralta [0]
+manager santiago [0, 0, 0]
+developer wells is managed by diaz [0]
+Online occurrence reporting project was created.
+Online occurrence reporting UI project was created.
+Wordle project was created.
+Top secret project was created.
+Yet another online app project was created.
+My fabulous app project was created.
+Sell stuff online app project was created.
+Accounting service project was created.
+All projects:
+in-house Online occurrence reporting is managed by santiago [2, 0, 0, 0]
+outsourced Online occurrence reporting UI is managed by diaz and developed by UI4All
+in-house Wordle is managed by holt [2, 0, 0, 0]
+in-house Top secret is managed by holt [5, 0, 0, 0]
+in-house Yet another online app is managed by diaz [4, 0, 0, 0]
+in-house My fabulous app is managed by diaz [3, 0, 0, 0]
+in-house Sell stuff online app is managed by peralta [3, 0, 0, 0]
+outsourced Accounting service is managed by peralta and developed by Mendix
+Latest team members:
+boyle: insufficient clearance level.
+peralta: insufficient clearance level.
+linetti: added to the team.
+jeffords: added to the team.
+alice: does not exist.
+Latest team members:
+diaz: already a member.
+linetti: already a member.
+john: added to the team.
+santiago: added to the team.
+Project manager alice does not exist.
+Latest team members:
+holt: added to the team.
+diaz: already a member.
+santiago: added to the team.
+Latest team members:
+peralta: already a member.
+bob: insufficient clearance level.
+wells: insufficient clearance level.
+boyle: added to the team.
+Latest team members:
+bob: added to the team.
+wells: added to the team.
+pimento: added to the team.
+santiago: added to the team.
+Latest team members:
+mary: added to the team.
+boyle: already a member.
+pimento: insufficient clearance level.
+alice: does not exist.
+All projects:
+in-house Online occurrence reporting is managed by santiago [2, 0, 0, 0]
+outsourced Online occurrence reporting UI is managed by diaz and developed by UI4All
+in-house Wordle is managed by holt [2, 4, 0, 0]
+in-house Top secret is managed by holt [5, 0, 0, 0]
+in-house Yet another online app is managed by diaz [4, 4, 0, 0]
+in-house My fabulous app is managed by diaz [3, 2, 0, 0]
+in-house Sell stuff online app is managed by peralta [3, 2, 0, 0]
+outsourced Accounting service is managed by peralta and developed by Mendix
+Latest project artefacts:
+main.java: added to the project.
+diagram.jpg: added to the project.
+passwords.xlsx: exceeds project confidentiality level.
+Latest project artefacts:
+main.java: already in the project.
+diagram.jpg: already in the project.
+todo.txt: added to the project.
+Latest project artefacts:
+file1.py: added to the project.
+class_diagram.jpg: added to the project.
+file2.py: added to the project.
+User alice does not exist.
+User peralta does not belong to the team of Online occurrence reporting.
+Latest project artefacts:
+file1.erl: added to the project.
+class_diagram.jpg: added to the project.
+file2.erl: added to the project.
+Accounting service project does not exist.
+Latest project artefacts:
+file3.erl: added to the project.
+class_diagram.jpg: already in the project.
+file4.erl: added to the project.
+User jeffords does not belong to the team of My fabulous app.
+Latest project artefacts:
+file1.erl: added to the project.
+file.erl: exceeds project confidentiality level.
+All projects:
+in-house Online occurrence reporting is managed by santiago [2, 0, 3, 0]
+outsourced Online occurrence reporting UI is managed by diaz and developed by UI4All
+in-house Wordle is managed by holt [2, 4, 0, 0]
+in-house Top secret is managed by holt [5, 0, 5, 0]
+in-house Yet another online app is managed by diaz [4, 4, 3, 0]
+in-house My fabulous app is managed by diaz [3, 2, 1, 0]
+in-house Sell stuff online app is managed by peralta [3, 2, 0, 0]
+outsourced Accounting service is managed by peralta and developed by Mendix
+Bye!

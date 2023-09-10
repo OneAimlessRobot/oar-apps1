@@ -1,0 +1,27 @@
+Account was added.
+
+All accounts:
+p1 (Premium)
+
+Account was added.
+
+All accounts:
+p1 (Premium)
+b1 (Basic)
+
+Account was added.
+
+Account was added.
+
+All accounts:
+p1 (Premium)
+b1 (Basic)
+p2 (Premium)
+b2 (Basic)
+
+Account was added.
+
+Account was added.
+
+Exiting...
+

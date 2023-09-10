@@ -1,0 +1,26 @@
+tr{
+    border: 2px solid black;
+    font-weight: bold;
+}
+td,th{
+    padding:10px;
+    border: 2px solid black;
+    text-align:center;
+    color:blue;
+
+}
+table{
+    border: 5px solid black;
+    font-weight: bolder;
+    margin:auto;
+    border-collapse:collapse;
+}
+
+thead{
+    border: 1px solid green;
+    text-align:center;
+}
+tbody{
+    border: 1px solid red;
+    text-align:center;
+}

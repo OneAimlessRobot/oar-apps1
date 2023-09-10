@@ -1,0 +1,28 @@
+Account does not exist.
+
+Account was added.
+
+File uploaded into account.
+
+File already exists in the account.
+
+File size exceeds account capacity.
+
+Account files:
+file1 (1000 MB)
+
+Account does not exist.
+
+Account was added.
+
+File uploaded into account.
+
+File already exists in the account.
+
+File size exceeds account capacity.
+
+Account files:
+file1 (1000 MB)
+
+Exiting...
+

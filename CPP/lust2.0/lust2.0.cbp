@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="lust2.0" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/lust2" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option parameters="debug " />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+				<Linker>
+					<Add option="-lSDL2 -lSDL2_image -lpthread -lm -g `sdl2-config --cflags --libs`" />
+				</Linker>
+				<ExtraCommands>
+					<Add before="./buildObjects.sh" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/lust2" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="LustModernized.code-workspace" />
+		<Unit filename="buildObjects.sh" />
+		<Unit filename="compile.sh" />
+		<Unit filename="crushes.csv" />
+		<Unit filename="debugging.sh" />
+		<Unit filename="headers/audio.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="headers/audio.h" />
+		<Unit filename="headers/auxiliaryMenuStuff.h" />
+		<Unit filename="headers/classesAndAuxiliaryStuff.h" />
+		<Unit filename="headers/fileBinaries.h" />
+		<Unit filename="headers/globals.h" />
+		<Unit filename="headers/handleList.h" />
+		<Unit filename="headers/handleMedia.h" />
+		<Unit filename="headers/handleSounds.h" />
+		<Unit filename="headers/menuFunction.h" />
+		<Unit filename="headers/roleplay.h" />
+		<Unit filename="lust" />
+		<Unit filename="lust.cpp">
+			<Option weight="0" />
+		</Unit>
+		<Unit filename="resources/embeded/file.txt" />
+		<Unit filename="resources/embeded/file2.txt" />
+		<Unit filename="resources/embeded/file3.txt" />
+		<Unit filename="resources/embeded/img1" />
+		<Unit filename="resources/embeded/img2" />
+		<Unit filename="resources/embeded/img3" />
+		<Unit filename="resources/embeded/img4" />
+		<Unit filename="resources/embeded/img5" />
+		<Unit filename="resources/embeded/img6" />
+		<Unit filename="resources/embeded/img7" />
+		<Unit filename="resources/embeded/kissing" />
+		<Unit filename="resources/embeded/kissing2" />
+		<Unit filename="resources/embeded/musica" />
+		<Unit filename="resources/embeded/musica2" />
+		<Unit filename="resources/embeded/musica3" />
+		<Unit filename="resources/embeded/password" />
+		<Unit filename="resources/embeded/splash" />
+		<Unit filename="resources/objects/file.o" />
+		<Unit filename="resources/objects/file2.o" />
+		<Unit filename="resources/objects/file3.o" />
+		<Unit filename="resources/objects/img1.o" />
+		<Unit filename="resources/objects/img2.o" />
+		<Unit filename="resources/objects/img3.o" />
+		<Unit filename="resources/objects/img4.o" />
+		<Unit filename="resources/objects/img5.o" />
+		<Unit filename="resources/objects/img6.o" />
+		<Unit filename="resources/objects/img7.o" />
+		<Unit filename="resources/objects/kissing.o" />
+		<Unit filename="resources/objects/kissing2.o" />
+		<Unit filename="resources/objects/musica.o" />
+		<Unit filename="resources/objects/musica2.o" />
+		<Unit filename="resources/objects/musica3.o" />
+		<Unit filename="resources/objects/password.o" />
+		<Unit filename="resources/objects/splash.o" />
+		<Unit filename="resources/phrases/roleplay.txt" />
+		<Unit filename="tests/notes.txt" />
+		<Unit filename="tests/test" />
+		<Unit filename="tests/valgrind-out.txt" />
+		<Unit filename="tests/valgrind-out2.txt" />
+		<Unit filename="tests/valgrind.sh" />
+		<Extensions />
+	</Project>
+</CodeBlocks_project_file>

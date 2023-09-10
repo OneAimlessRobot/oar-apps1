@@ -1,0 +1,104 @@
+
+        body{
+            background-color: rgb(179,0,63);
+        }
+        h1{
+            text-align:center;
+            color:black;
+        }
+        embed{
+            padding-left:100px;
+            padding-right:100px;
+            padding-bottom:100px;
+            width:1000px;
+            height:550px;
+        }
+
+        img{
+            padding-left:100px;
+            padding-right:100px;
+            padding-bottom:100px;
+        }
+        video{
+            padding-left:100px;
+            padding-right:100px;
+            padding-bottom:100px;
+            width:800px;
+            height:600px;
+        }
+
+        h2{
+            text-align:left;
+            color:blueviolet;
+        }
+
+
+        @media(max-width:800px){
+        body{
+            background-color: rgb(179,0,63);
+        }
+        h1{
+            text-align:center;
+            color:black;
+        }
+        embed{
+            padding-left:50px;
+            padding-right:50px;
+            padding-bottom:50px;
+            width:750px;
+            height:300px;
+        }
+
+        img{
+            padding-left:50px;
+            padding-right:50px;
+            padding-bottom:50px;
+        }
+        video{
+
+            padding-left:50px;
+            padding-right:50px;
+            padding-bottom:50px;
+            width:500px;
+            height:350px;
+        }
+
+        h2{
+            text-align:left;
+            color:blueviolet;
+        }
+    }
+    @media(max-width:500px){
+    body{
+        background-color: rgb(179,0,63);
+    }
+    h1{
+        text-align:center;
+        color:black;
+    }
+    embed{
+        padding-left:20px;
+        padding-right:20px;
+        padding-bottom:20px;
+        width:500px;
+        height:250px;
+    }
+
+    img{
+        padding-left:20px;
+        padding-right:20px;
+        padding-bottom:20px;
+    }
+    video{
+        padding-left:20px;
+        padding-right:20px;
+        padding-bottom:20px;
+        width:300px;
+        height:250px;
+    }
+
+    h2{
+        text-align:left;
+        color:blueviolet;
+    }
+}

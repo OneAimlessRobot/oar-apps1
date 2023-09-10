@@ -1,0 +1,1062 @@
+"SintoMeUmaMerda/Main.ml" 4 48 56 "SintoMeUmaMerda/Main.ml" 4 48 66
+type(
+  string -> unit
+)
+ident(
+  def mostraFich "SintoMeUmaMerda/Main.ml" 4 48 48 "SintoMeUmaMerda/Main.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Main.ml" 4 48 67 "SintoMeUmaMerda/Main.ml" 4 48 71
+type(
+  string
+)
+ident(
+  def path "SintoMeUmaMerda/Main.ml" 5 73 74 "SintoMeUmaMerda/Main.ml" 5 73 101
+)
+"SintoMeUmaMerda/Main.ml" 5 73 74 "SintoMeUmaMerda/Main.ml" 5 73 78
+type(
+  int BinTree.tree -> unit
+)
+ident(
+  int_ref BinTree.show "SintoMeUmaMerda/BinTree.ml" 151 4258 4262 "SintoMeUmaMerda/BinTree.ml" 151 4258 4266
+)
+"SintoMeUmaMerda/Main.ml" 5 73 79 "SintoMeUmaMerda/Main.ml" 5 73 95
+type(
+  string -> int BinTree.tree
+)
+ident(
+  int_ref BinTree.readTree "SintoMeUmaMerda/BinTree.ml" 130 3467 3471 "SintoMeUmaMerda/BinTree.ml" 130 3467 3479
+)
+"SintoMeUmaMerda/Main.ml" 5 73 96 "SintoMeUmaMerda/Main.ml" 5 73 100
+type(
+  string
+)
+ident(
+  int_ref path "SintoMeUmaMerda/Main.ml" 4 48 67 "SintoMeUmaMerda/Main.ml" 4 48 71
+)
+"SintoMeUmaMerda/Main.ml" 5 73 78 "SintoMeUmaMerda/Main.ml" 5 73 101
+type(
+  int BinTree.tree
+)
+"SintoMeUmaMerda/Main.ml" 5 73 74 "SintoMeUmaMerda/Main.ml" 5 73 101
+type(
+  unit
+)
+"SintoMeUmaMerda/Main.ml" 7 105 113 "SintoMeUmaMerda/Main.ml" 7 105 120
+type(
+  string -> int
+)
+ident(
+  def maxFich "SintoMeUmaMerda/Main.ml" 7 105 105 "SintoMeUmaMerda/Main.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Main.ml" 7 105 121 "SintoMeUmaMerda/Main.ml" 7 105 125
+type(
+  string
+)
+ident(
+  def path "SintoMeUmaMerda/Main.ml" 8 127 128 "SintoMeUmaMerda/Main.ml" 8 127 163
+)
+"SintoMeUmaMerda/Main.ml" 8 127 128 "SintoMeUmaMerda/Main.ml" 8 127 139
+type(
+  int BinTree.tree -> int
+)
+ident(
+  int_ref BinTree.max "SintoMeUmaMerda/BinTree.ml" 78 2192 2200 "SintoMeUmaMerda/BinTree.ml" 78 2192 2203
+)
+"SintoMeUmaMerda/Main.ml" 8 127 141 "SintoMeUmaMerda/Main.ml" 8 127 157
+type(
+  string -> int BinTree.tree
+)
+ident(
+  int_ref BinTree.readTree "SintoMeUmaMerda/BinTree.ml" 130 3467 3471 "SintoMeUmaMerda/BinTree.ml" 130 3467 3479
+)
+"SintoMeUmaMerda/Main.ml" 8 127 158 "SintoMeUmaMerda/Main.ml" 8 127 162
+type(
+  string
+)
+ident(
+  int_ref path "SintoMeUmaMerda/Main.ml" 7 105 121 "SintoMeUmaMerda/Main.ml" 7 105 125
+)
+"SintoMeUmaMerda/Main.ml" 8 127 140 "SintoMeUmaMerda/Main.ml" 8 127 163
+type(
+  int BinTree.tree
+)
+"SintoMeUmaMerda/Main.ml" 8 127 128 "SintoMeUmaMerda/Main.ml" 8 127 163
+type(
+  int
+)
+"SintoMeUmaMerda/Main.ml" 11 263 267 "SintoMeUmaMerda/Main.ml" 11 263 270
+type(
+  string -> char * string
+)
+ident(
+  def cut "SintoMeUmaMerda/Main.ml" 15 450 450 "SintoMeUmaMerda/Main.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Main.ml" 11 263 271 "SintoMeUmaMerda/Main.ml" 11 263 272
+type(
+  string
+)
+ident(
+  def s "SintoMeUmaMerda/Main.ml" 12 295 299 "SintoMeUmaMerda/Main.ml" 12 295 353
+)
+"SintoMeUmaMerda/Main.ml" 12 295 300 "SintoMeUmaMerda/Main.ml" 12 295 310
+type(
+  string -> int -> char
+)
+ident(
+  int_ref Stdlib.String.get "string.mli" 52 2791 2791 "string.mli" 52 2791 2848
+)
+"SintoMeUmaMerda/Main.ml" 12 295 311 "SintoMeUmaMerda/Main.ml" 12 295 312
+type(
+  string
+)
+ident(
+  int_ref s "SintoMeUmaMerda/Main.ml" 11 263 271 "SintoMeUmaMerda/Main.ml" 11 263 272
+)
+"SintoMeUmaMerda/Main.ml" 12 295 313 "SintoMeUmaMerda/Main.ml" 12 295 314
+type(
+  int
+)
+"SintoMeUmaMerda/Main.ml" 12 295 300 "SintoMeUmaMerda/Main.ml" 12 295 314
+type(
+  char
+)
+"SintoMeUmaMerda/Main.ml" 12 295 316 "SintoMeUmaMerda/Main.ml" 12 295 326
+type(
+  string -> int -> int -> string
+)
+ident(
+  int_ref Stdlib.String.sub "string.mli" 100 4546 4546 "string.mli" 100 4546 4586
+)
+"SintoMeUmaMerda/Main.ml" 12 295 327 "SintoMeUmaMerda/Main.ml" 12 295 328
+type(
+  string
+)
+ident(
+  int_ref s "SintoMeUmaMerda/Main.ml" 11 263 271 "SintoMeUmaMerda/Main.ml" 11 263 272
+)
+"SintoMeUmaMerda/Main.ml" 12 295 329 "SintoMeUmaMerda/Main.ml" 12 295 330
+type(
+  int
+)
+"SintoMeUmaMerda/Main.ml" 12 295 333 "SintoMeUmaMerda/Main.ml" 12 295 346
+type(
+  string -> int
+)
+ident(
+  int_ref Stdlib.String.length "string.mli" 49 2670 2670 "string.mli" 49 2670 2720
+)
+"SintoMeUmaMerda/Main.ml" 12 295 347 "SintoMeUmaMerda/Main.ml" 12 295 348
+type(
+  string
+)
+ident(
+  int_ref s "SintoMeUmaMerda/Main.ml" 11 263 271 "SintoMeUmaMerda/Main.ml" 11 263 272
+)
+"SintoMeUmaMerda/Main.ml" 12 295 332 "SintoMeUmaMerda/Main.ml" 12 295 349
+type(
+  int
+)
+"SintoMeUmaMerda/Main.ml" 12 295 349 "SintoMeUmaMerda/Main.ml" 12 295 350
+type(
+  int -> int -> int
+)
+ident(
+  int_ref Stdlib.( - ) "stdlib.mli" 343 13509 13509 "stdlib.mli" 343 13509 13555
+)
+"SintoMeUmaMerda/Main.ml" 12 295 350 "SintoMeUmaMerda/Main.ml" 12 295 351
+type(
+  int
+)
+"SintoMeUmaMerda/Main.ml" 12 295 331 "SintoMeUmaMerda/Main.ml" 12 295 352
+type(
+  int
+)
+"SintoMeUmaMerda/Main.ml" 12 295 316 "SintoMeUmaMerda/Main.ml" 12 295 352
+type(
+  string
+)
+"SintoMeUmaMerda/Main.ml" 12 295 299 "SintoMeUmaMerda/Main.ml" 12 295 353
+type(
+  char * string
+)
+"SintoMeUmaMerda/Main.ml" 15 450 454 "SintoMeUmaMerda/Main.ml" 15 450 458
+type(
+  char -> string -> string
+)
+ident(
+  def join "SintoMeUmaMerda/Main.ml" 18 491 491 "SintoMeUmaMerda/Main.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Main.ml" 15 450 459 "SintoMeUmaMerda/Main.ml" 15 450 460
+type(
+  char
+)
+ident(
+  def x "SintoMeUmaMerda/Main.ml" 15 450 461 "SintoMeUmaMerda/Main.ml" 16 466 489
+)
+"SintoMeUmaMerda/Main.ml" 15 450 461 "SintoMeUmaMerda/Main.ml" 15 450 463
+type(
+  string
+)
+ident(
+  def xs "SintoMeUmaMerda/Main.ml" 16 466 470 "SintoMeUmaMerda/Main.ml" 16 466 489
+)
+"SintoMeUmaMerda/Main.ml" 16 466 471 "SintoMeUmaMerda/Main.ml" 16 466 483
+type(
+  char -> string
+)
+ident(
+  int_ref Stdlib.Char.escaped "char.mli" 26 1363 1363 "char.mli" 26 1363 1391
+)
+"SintoMeUmaMerda/Main.ml" 16 466 484 "SintoMeUmaMerda/Main.ml" 16 466 485
+type(
+  char
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Main.ml" 15 450 459 "SintoMeUmaMerda/Main.ml" 15 450 460
+)
+"SintoMeUmaMerda/Main.ml" 16 466 470 "SintoMeUmaMerda/Main.ml" 16 466 486
+type(
+  string
+)
+"SintoMeUmaMerda/Main.ml" 16 466 486 "SintoMeUmaMerda/Main.ml" 16 466 487
+type(
+  string -> string -> string
+)
+ident(
+  int_ref Stdlib.( ^ ) "stdlib.mli" 661 25349 25349 "stdlib.mli" 661 25349 25387
+)
+"SintoMeUmaMerda/Main.ml" 16 466 487 "SintoMeUmaMerda/Main.ml" 16 466 489
+type(
+  string
+)
+ident(
+  int_ref xs "SintoMeUmaMerda/Main.ml" 15 450 461 "SintoMeUmaMerda/Main.ml" 15 450 463
+)
+"SintoMeUmaMerda/Main.ml" 16 466 470 "SintoMeUmaMerda/Main.ml" 16 466 489
+type(
+  string
+)
+"SintoMeUmaMerda/Main.ml" 18 491 499 "SintoMeUmaMerda/Main.ml" 18 491 504
+type(
+  string -> string * string
+)
+ident(
+  def split "SintoMeUmaMerda/Main.ml" 18 491 491 "SintoMeUmaMerda/Main.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Main.ml" 18 491 505 "SintoMeUmaMerda/Main.ml" 18 491 506
+type(
+  string
+)
+ident(
+  def s "SintoMeUmaMerda/Main.ml" 19 605 609 "SintoMeUmaMerda/Main.ml" 24 898 924
+)
+"SintoMeUmaMerda/Main.ml" 19 605 612 "SintoMeUmaMerda/Main.ml" 19 605 613
+type(
+  string
+)
+ident(
+  int_ref s "SintoMeUmaMerda/Main.ml" 18 491 505 "SintoMeUmaMerda/Main.ml" 18 491 506
+)
+"SintoMeUmaMerda/Main.ml" 19 605 614 "SintoMeUmaMerda/Main.ml" 19 605 615
+type(
+  string -> string -> bool
+)
+ident(
+  int_ref Stdlib.( = ) "stdlib.mli" 118 4976 4976 "stdlib.mli" 118 4976 5020
+)
+"SintoMeUmaMerda/Main.ml" 19 605 616 "SintoMeUmaMerda/Main.ml" 19 605 618
+type(
+  string
+)
+"SintoMeUmaMerda/Main.ml" 19 605 612 "SintoMeUmaMerda/Main.ml" 19 605 618
+type(
+  bool
+)
+"SintoMeUmaMerda/Main.ml" 19 605 625 "SintoMeUmaMerda/Main.ml" 19 605 627
+type(
+  string
+)
+"SintoMeUmaMerda/Main.ml" 19 605 629 "SintoMeUmaMerda/Main.ml" 19 605 631
+type(
+  string
+)
+"SintoMeUmaMerda/Main.ml" 19 605 624 "SintoMeUmaMerda/Main.ml" 19 605 632
+type(
+  string * string
+)
+"SintoMeUmaMerda/Main.ml" 21 678 689 "SintoMeUmaMerda/Main.ml" 21 678 690
+type(
+  char
+)
+ident(
+  def x "SintoMeUmaMerda/Main.ml" 22 746 755 "SintoMeUmaMerda/Main.ml" 24 898 924
+)
+"SintoMeUmaMerda/Main.ml" 21 678 691 "SintoMeUmaMerda/Main.ml" 21 678 693
+type(
+  string
+)
+ident(
+  def xs "SintoMeUmaMerda/Main.ml" 22 746 755 "SintoMeUmaMerda/Main.ml" 24 898 924
+)
+"SintoMeUmaMerda/Main.ml" 21 678 688 "SintoMeUmaMerda/Main.ml" 21 678 694
+type(
+  char * string
+)
+"SintoMeUmaMerda/Main.ml" 21 678 697 "SintoMeUmaMerda/Main.ml" 21 678 700
+type(
+  string -> char * string
+)
+ident(
+  int_ref cut "SintoMeUmaMerda/Main.ml" 11 263 267 "SintoMeUmaMerda/Main.ml" 11 263 270
+)
+"SintoMeUmaMerda/Main.ml" 21 678 701 "SintoMeUmaMerda/Main.ml" 21 678 702
+type(
+  string
+)
+ident(
+  int_ref s "SintoMeUmaMerda/Main.ml" 18 491 505 "SintoMeUmaMerda/Main.ml" 18 491 506
+)
+"SintoMeUmaMerda/Main.ml" 21 678 697 "SintoMeUmaMerda/Main.ml" 21 678 702
+type(
+  char * string
+)
+"SintoMeUmaMerda/Main.ml" 22 746 758 "SintoMeUmaMerda/Main.ml" 22 746 759
+type(
+  char
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Main.ml" 21 678 689 "SintoMeUmaMerda/Main.ml" 21 678 690
+)
+"SintoMeUmaMerda/Main.ml" 22 746 760 "SintoMeUmaMerda/Main.ml" 22 746 761
+type(
+  char -> char -> bool
+)
+ident(
+  int_ref Stdlib.( = ) "stdlib.mli" 118 4976 4976 "stdlib.mli" 118 4976 5020
+)
+"SintoMeUmaMerda/Main.ml" 22 746 762 "SintoMeUmaMerda/Main.ml" 22 746 765
+type(
+  char
+)
+"SintoMeUmaMerda/Main.ml" 22 746 758 "SintoMeUmaMerda/Main.ml" 22 746 765
+type(
+  bool
+)
+"SintoMeUmaMerda/Main.ml" 22 746 772 "SintoMeUmaMerda/Main.ml" 22 746 774
+type(
+  string
+)
+"SintoMeUmaMerda/Main.ml" 22 746 776 "SintoMeUmaMerda/Main.ml" 22 746 778
+type(
+  string
+)
+ident(
+  int_ref xs "SintoMeUmaMerda/Main.ml" 21 678 691 "SintoMeUmaMerda/Main.ml" 21 678 693
+)
+"SintoMeUmaMerda/Main.ml" 22 746 771 "SintoMeUmaMerda/Main.ml" 22 746 779
+type(
+  string * string
+)
+"SintoMeUmaMerda/Main.ml" 23 809 828 "SintoMeUmaMerda/Main.ml" 23 809 829
+type(
+  string
+)
+ident(
+  def a "SintoMeUmaMerda/Main.ml" 24 898 911 "SintoMeUmaMerda/Main.ml" 24 898 924
+)
+"SintoMeUmaMerda/Main.ml" 23 809 830 "SintoMeUmaMerda/Main.ml" 23 809 831
+type(
+  string
+)
+ident(
+  def b "SintoMeUmaMerda/Main.ml" 24 898 911 "SintoMeUmaMerda/Main.ml" 24 898 924
+)
+"SintoMeUmaMerda/Main.ml" 23 809 827 "SintoMeUmaMerda/Main.ml" 23 809 832
+type(
+  string * string
+)
+"SintoMeUmaMerda/Main.ml" 23 809 835 "SintoMeUmaMerda/Main.ml" 23 809 840
+type(
+  string -> string * string
+)
+ident(
+  int_ref split "SintoMeUmaMerda/Main.ml" 18 491 499 "SintoMeUmaMerda/Main.ml" 18 491 504
+)
+"SintoMeUmaMerda/Main.ml" 23 809 841 "SintoMeUmaMerda/Main.ml" 23 809 843
+type(
+  string
+)
+ident(
+  int_ref xs "SintoMeUmaMerda/Main.ml" 21 678 691 "SintoMeUmaMerda/Main.ml" 21 678 693
+)
+"SintoMeUmaMerda/Main.ml" 23 809 835 "SintoMeUmaMerda/Main.ml" 23 809 843
+type(
+  string * string
+)
+"SintoMeUmaMerda/Main.ml" 24 898 912 "SintoMeUmaMerda/Main.ml" 24 898 916
+type(
+  char -> string -> string
+)
+ident(
+  int_ref join "SintoMeUmaMerda/Main.ml" 15 450 454 "SintoMeUmaMerda/Main.ml" 15 450 458
+)
+"SintoMeUmaMerda/Main.ml" 24 898 917 "SintoMeUmaMerda/Main.ml" 24 898 918
+type(
+  char
+)
+ident(
+  int_ref x "SintoMeUmaMerda/Main.ml" 21 678 689 "SintoMeUmaMerda/Main.ml" 21 678 690
+)
+"SintoMeUmaMerda/Main.ml" 24 898 919 "SintoMeUmaMerda/Main.ml" 24 898 920
+type(
+  string
+)
+ident(
+  int_ref a "SintoMeUmaMerda/Main.ml" 23 809 828 "SintoMeUmaMerda/Main.ml" 23 809 829
+)
+"SintoMeUmaMerda/Main.ml" 24 898 912 "SintoMeUmaMerda/Main.ml" 24 898 920
+type(
+  string
+)
+"SintoMeUmaMerda/Main.ml" 24 898 922 "SintoMeUmaMerda/Main.ml" 24 898 923
+type(
+  string
+)
+ident(
+  int_ref b "SintoMeUmaMerda/Main.ml" 23 809 830 "SintoMeUmaMerda/Main.ml" 23 809 831
+)
+"SintoMeUmaMerda/Main.ml" 24 898 911 "SintoMeUmaMerda/Main.ml" 24 898 924
+type(
+  string * string
+)
+"SintoMeUmaMerda/Main.ml" 23 809 823 "SintoMeUmaMerda/Main.ml" 24 898 924
+type(
+  string * string
+)
+"SintoMeUmaMerda/Main.ml" 22 746 755 "SintoMeUmaMerda/Main.ml" 24 898 924
+type(
+  string * string
+)
+"SintoMeUmaMerda/Main.ml" 21 678 684 "SintoMeUmaMerda/Main.ml" 24 898 924
+type(
+  string * string
+)
+"SintoMeUmaMerda/Main.ml" 19 605 609 "SintoMeUmaMerda/Main.ml" 24 898 924
+type(
+  string * string
+)
+"SintoMeUmaMerda/Main.ml" 26 926 930 "SintoMeUmaMerda/Main.ml" 26 926 934
+type(
+  unit -> unit
+)
+ident(
+  def help "SintoMeUmaMerda/Main.ml" 33 1123 1123 "SintoMeUmaMerda/Main.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Main.ml" 26 926 935 "SintoMeUmaMerda/Main.ml" 26 926 937
+type(
+  unit
+)
+"SintoMeUmaMerda/Main.ml" 27 940 944 "SintoMeUmaMerda/Main.ml" 27 940 956
+type(
+  string -> unit
+)
+ident(
+  int_ref Stdlib.print_string "stdlib.mli" 812 30126 30126 "stdlib.mli" 812 30126 30159
+)
+"SintoMeUmaMerda/Main.ml" 27 940 957 "SintoMeUmaMerda/Main.ml" 27 940 978
+type(
+  string
+)
+"SintoMeUmaMerda/Main.ml" 27 940 944 "SintoMeUmaMerda/Main.ml" 27 940 978
+type(
+  unit
+)
+"SintoMeUmaMerda/Main.ml" 28 981 985 "SintoMeUmaMerda/Main.ml" 28 981 997
+type(
+  string -> unit
+)
+ident(
+  int_ref Stdlib.print_string "stdlib.mli" 812 30126 30126 "stdlib.mli" 812 30126 30159
+)
+"SintoMeUmaMerda/Main.ml" 28 981 998 "SintoMeUmaMerda/Main.ml" 28 981 1017
+type(
+  string
+)
+"SintoMeUmaMerda/Main.ml" 28 981 985 "SintoMeUmaMerda/Main.ml" 28 981 1017
+type(
+  unit
+)
+"SintoMeUmaMerda/Main.ml" 29 1020 1024 "SintoMeUmaMerda/Main.ml" 29 1020 1036
+type(
+  string -> unit
+)
+ident(
+  int_ref Stdlib.print_string "stdlib.mli" 812 30126 30126 "stdlib.mli" 812 30126 30159
+)
+"SintoMeUmaMerda/Main.ml" 29 1020 1037 "SintoMeUmaMerda/Main.ml" 29 1020 1056
+type(
+  string
+)
+"SintoMeUmaMerda/Main.ml" 29 1020 1024 "SintoMeUmaMerda/Main.ml" 29 1020 1056
+type(
+  unit
+)
+"SintoMeUmaMerda/Main.ml" 30 1059 1063 "SintoMeUmaMerda/Main.ml" 30 1059 1075
+type(
+  string -> unit
+)
+ident(
+  int_ref Stdlib.print_string "stdlib.mli" 812 30126 30126 "stdlib.mli" 812 30126 30159
+)
+"SintoMeUmaMerda/Main.ml" 30 1059 1076 "SintoMeUmaMerda/Main.ml" 30 1059 1089
+type(
+  string
+)
+"SintoMeUmaMerda/Main.ml" 30 1059 1063 "SintoMeUmaMerda/Main.ml" 30 1059 1089
+type(
+  unit
+)
+"SintoMeUmaMerda/Main.ml" 31 1092 1096 "SintoMeUmaMerda/Main.ml" 31 1092 1108
+type(
+  string -> unit
+)
+ident(
+  int_ref Stdlib.print_string "stdlib.mli" 812 30126 30126 "stdlib.mli" 812 30126 30159
+)
+"SintoMeUmaMerda/Main.ml" 31 1092 1109 "SintoMeUmaMerda/Main.ml" 31 1092 1121
+type(
+  string
+)
+"SintoMeUmaMerda/Main.ml" 31 1092 1096 "SintoMeUmaMerda/Main.ml" 31 1092 1121
+type(
+  unit
+)
+"SintoMeUmaMerda/Main.ml" 30 1059 1063 "SintoMeUmaMerda/Main.ml" 31 1092 1121
+type(
+  unit
+)
+"SintoMeUmaMerda/Main.ml" 29 1020 1024 "SintoMeUmaMerda/Main.ml" 31 1092 1121
+type(
+  unit
+)
+"SintoMeUmaMerda/Main.ml" 28 981 985 "SintoMeUmaMerda/Main.ml" 31 1092 1121
+type(
+  unit
+)
+"SintoMeUmaMerda/Main.ml" 27 940 944 "SintoMeUmaMerda/Main.ml" 31 1092 1121
+type(
+  unit
+)
+"SintoMeUmaMerda/Main.ml" 33 1123 1127 "SintoMeUmaMerda/Main.ml" 33 1123 1133
+type(
+  unit -> 'a
+)
+ident(
+  def byeBye "SintoMeUmaMerda/Main.ml" 37 1188 1188 "SintoMeUmaMerda/Main.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Main.ml" 33 1123 1134 "SintoMeUmaMerda/Main.ml" 33 1123 1136
+type(
+  unit
+)
+"SintoMeUmaMerda/Main.ml" 34 1139 1143 "SintoMeUmaMerda/Main.ml" 34 1139 1155
+type(
+  string -> unit
+)
+ident(
+  int_ref Stdlib.print_string "stdlib.mli" 812 30126 30126 "stdlib.mli" 812 30126 30159
+)
+"SintoMeUmaMerda/Main.ml" 34 1139 1156 "SintoMeUmaMerda/Main.ml" 34 1139 1174
+type(
+  string
+)
+"SintoMeUmaMerda/Main.ml" 34 1139 1143 "SintoMeUmaMerda/Main.ml" 34 1139 1174
+type(
+  unit
+)
+"SintoMeUmaMerda/Main.ml" 35 1176 1180 "SintoMeUmaMerda/Main.ml" 35 1176 1184
+type(
+  int -> 'a
+)
+ident(
+  int_ref Stdlib.exit "stdlib.mli" 1291 49826 49826 "stdlib.mli" 1291 49826 49846
+)
+"SintoMeUmaMerda/Main.ml" 35 1176 1185 "SintoMeUmaMerda/Main.ml" 35 1176 1186
+type(
+  int
+)
+"SintoMeUmaMerda/Main.ml" 35 1176 1180 "SintoMeUmaMerda/Main.ml" 35 1176 1186
+type(
+  'a
+)
+"SintoMeUmaMerda/Main.ml" 34 1139 1143 "SintoMeUmaMerda/Main.ml" 35 1176 1186
+type(
+  'a
+)
+"SintoMeUmaMerda/Main.ml" 37 1188 1192 "SintoMeUmaMerda/Main.ml" 37 1188 1196
+type(
+  string -> string -> unit
+)
+ident(
+  def exec "SintoMeUmaMerda/Main.ml" 45 1459 1459 "SintoMeUmaMerda/Main.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Main.ml" 37 1188 1197 "SintoMeUmaMerda/Main.ml" 37 1188 1201
+type(
+  string
+)
+ident(
+  def comm "SintoMeUmaMerda/Main.ml" 37 1188 1202 "SintoMeUmaMerda/Main.ml" 43 1437 1457
+)
+"SintoMeUmaMerda/Main.ml" 37 1188 1202 "SintoMeUmaMerda/Main.ml" 37 1188 1210
+type(
+  string
+)
+ident(
+  def filename "SintoMeUmaMerda/Main.ml" 38 1254 1258 "SintoMeUmaMerda/Main.ml" 43 1437 1457
+)
+"SintoMeUmaMerda/Main.ml" 38 1254 1264 "SintoMeUmaMerda/Main.ml" 38 1254 1268
+type(
+  string
+)
+ident(
+  int_ref comm "SintoMeUmaMerda/Main.ml" 37 1188 1197 "SintoMeUmaMerda/Main.ml" 37 1188 1201
+)
+"SintoMeUmaMerda/Main.ml" 39 1274 1282 "SintoMeUmaMerda/Main.ml" 39 1274 1290
+type(
+  string
+)
+"SintoMeUmaMerda/Main.ml" 39 1274 1294 "SintoMeUmaMerda/Main.ml" 39 1274 1304
+type(
+  string -> unit
+)
+ident(
+  int_ref mostraFich "SintoMeUmaMerda/Main.ml" 4 48 56 "SintoMeUmaMerda/Main.ml" 4 48 66
+)
+"SintoMeUmaMerda/Main.ml" 39 1274 1305 "SintoMeUmaMerda/Main.ml" 39 1274 1313
+type(
+  string
+)
+ident(
+  int_ref filename "SintoMeUmaMerda/Main.ml" 37 1188 1202 "SintoMeUmaMerda/Main.ml" 37 1188 1210
+)
+"SintoMeUmaMerda/Main.ml" 39 1274 1294 "SintoMeUmaMerda/Main.ml" 39 1274 1313
+type(
+  unit
+)
+"SintoMeUmaMerda/Main.ml" 40 1314 1322 "SintoMeUmaMerda/Main.ml" 40 1314 1330
+type(
+  string
+)
+"SintoMeUmaMerda/Main.ml" 40 1314 1334 "SintoMeUmaMerda/Main.ml" 40 1314 1346
+type(
+  string -> unit
+)
+ident(
+  int_ref Stdlib.print_string "stdlib.mli" 812 30126 30126 "stdlib.mli" 812 30126 30159
+)
+"SintoMeUmaMerda/Main.ml" 40 1314 1348 "SintoMeUmaMerda/Main.ml" 40 1314 1361
+type(
+  int -> string
+)
+ident(
+  int_ref Stdlib.string_of_int "stdlib.mli" 709 26773 26773 "stdlib.mli" 709 26773 26806
+)
+"SintoMeUmaMerda/Main.ml" 40 1314 1363 "SintoMeUmaMerda/Main.ml" 40 1314 1370
+type(
+  string -> int
+)
+ident(
+  int_ref maxFich "SintoMeUmaMerda/Main.ml" 7 105 113 "SintoMeUmaMerda/Main.ml" 7 105 120
+)
+"SintoMeUmaMerda/Main.ml" 40 1314 1371 "SintoMeUmaMerda/Main.ml" 40 1314 1379
+type(
+  string
+)
+ident(
+  int_ref filename "SintoMeUmaMerda/Main.ml" 37 1188 1202 "SintoMeUmaMerda/Main.ml" 37 1188 1210
+)
+"SintoMeUmaMerda/Main.ml" 40 1314 1362 "SintoMeUmaMerda/Main.ml" 40 1314 1380
+type(
+  int
+)
+"SintoMeUmaMerda/Main.ml" 40 1314 1347 "SintoMeUmaMerda/Main.ml" 40 1314 1381
+type(
+  string
+)
+"SintoMeUmaMerda/Main.ml" 40 1314 1334 "SintoMeUmaMerda/Main.ml" 40 1314 1381
+type(
+  unit
+)
+"SintoMeUmaMerda/Main.ml" 41 1382 1390 "SintoMeUmaMerda/Main.ml" 41 1382 1397
+type(
+  string
+)
+"SintoMeUmaMerda/Main.ml" 41 1382 1401 "SintoMeUmaMerda/Main.ml" 41 1382 1405
+type(
+  unit -> unit
+)
+ident(
+  int_ref help "SintoMeUmaMerda/Main.ml" 26 926 930 "SintoMeUmaMerda/Main.ml" 26 926 934
+)
+"SintoMeUmaMerda/Main.ml" 41 1382 1406 "SintoMeUmaMerda/Main.ml" 41 1382 1408
+type(
+  unit
+)
+"SintoMeUmaMerda/Main.ml" 41 1382 1401 "SintoMeUmaMerda/Main.ml" 41 1382 1408
+type(
+  unit
+)
+"SintoMeUmaMerda/Main.ml" 42 1409 1417 "SintoMeUmaMerda/Main.ml" 42 1409 1423
+type(
+  string
+)
+"SintoMeUmaMerda/Main.ml" 42 1409 1427 "SintoMeUmaMerda/Main.ml" 42 1409 1433
+type(
+  unit -> unit
+)
+ident(
+  int_ref byeBye "SintoMeUmaMerda/Main.ml" 33 1123 1127 "SintoMeUmaMerda/Main.ml" 33 1123 1133
+)
+"SintoMeUmaMerda/Main.ml" 42 1409 1434 "SintoMeUmaMerda/Main.ml" 42 1409 1436
+type(
+  unit
+)
+"SintoMeUmaMerda/Main.ml" 42 1409 1427 "SintoMeUmaMerda/Main.ml" 42 1409 1436
+type(
+  unit
+)
+"SintoMeUmaMerda/Main.ml" 43 1437 1445 "SintoMeUmaMerda/Main.ml" 43 1437 1446
+type(
+  string
+)
+"SintoMeUmaMerda/Main.ml" 43 1437 1450 "SintoMeUmaMerda/Main.ml" 43 1437 1454
+type(
+  unit -> unit
+)
+ident(
+  int_ref help "SintoMeUmaMerda/Main.ml" 26 926 930 "SintoMeUmaMerda/Main.ml" 26 926 934
+)
+"SintoMeUmaMerda/Main.ml" 43 1437 1455 "SintoMeUmaMerda/Main.ml" 43 1437 1457
+type(
+  unit
+)
+"SintoMeUmaMerda/Main.ml" 43 1437 1450 "SintoMeUmaMerda/Main.ml" 43 1437 1457
+type(
+  unit
+)
+"SintoMeUmaMerda/Main.ml" 38 1254 1258 "SintoMeUmaMerda/Main.ml" 43 1437 1457
+type(
+  unit
+)
+"SintoMeUmaMerda/Main.ml" 45 1459 1463 "SintoMeUmaMerda/Main.ml" 45 1459 1468
+type(
+  string -> unit
+)
+ident(
+  def error "SintoMeUmaMerda/Main.ml" 50 1559 1559 "SintoMeUmaMerda/Main.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Main.ml" 45 1459 1469 "SintoMeUmaMerda/Main.ml" 45 1459 1473
+type(
+  string
+)
+ident(
+  def mesg "SintoMeUmaMerda/Main.ml" 46 1476 1480 "SintoMeUmaMerda/Main.ml" 48 1541 1557
+)
+"SintoMeUmaMerda/Main.ml" 46 1476 1480 "SintoMeUmaMerda/Main.ml" 46 1476 1493
+type(
+  out_channel -> string -> unit
+)
+ident(
+  int_ref Stdlib.output_string "stdlib.mli" 942 34753 34753 "stdlib.mli" 942 34753 34802
+)
+"SintoMeUmaMerda/Main.ml" 46 1476 1494 "SintoMeUmaMerda/Main.ml" 46 1476 1500
+type(
+  out_channel
+)
+ident(
+  int_ref Stdlib.stderr "stdlib.mli" 803 29925 29925 "stdlib.mli" 803 29925 29949
+)
+"SintoMeUmaMerda/Main.ml" 46 1476 1501 "SintoMeUmaMerda/Main.ml" 46 1476 1505
+type(
+  string
+)
+ident(
+  int_ref mesg "SintoMeUmaMerda/Main.ml" 45 1459 1469 "SintoMeUmaMerda/Main.ml" 45 1459 1473
+)
+"SintoMeUmaMerda/Main.ml" 46 1476 1480 "SintoMeUmaMerda/Main.ml" 46 1476 1505
+type(
+  unit
+)
+"SintoMeUmaMerda/Main.ml" 47 1508 1512 "SintoMeUmaMerda/Main.ml" 47 1508 1525
+type(
+  out_channel -> string -> unit
+)
+ident(
+  int_ref Stdlib.output_string "stdlib.mli" 942 34753 34753 "stdlib.mli" 942 34753 34802
+)
+"SintoMeUmaMerda/Main.ml" 47 1508 1526 "SintoMeUmaMerda/Main.ml" 47 1508 1532
+type(
+  out_channel
+)
+ident(
+  int_ref Stdlib.stderr "stdlib.mli" 803 29925 29925 "stdlib.mli" 803 29925 29949
+)
+"SintoMeUmaMerda/Main.ml" 47 1508 1533 "SintoMeUmaMerda/Main.ml" 47 1508 1538
+type(
+  string
+)
+"SintoMeUmaMerda/Main.ml" 47 1508 1512 "SintoMeUmaMerda/Main.ml" 47 1508 1538
+type(
+  unit
+)
+"SintoMeUmaMerda/Main.ml" 48 1541 1545 "SintoMeUmaMerda/Main.ml" 48 1541 1550
+type(
+  out_channel -> unit
+)
+ident(
+  int_ref Stdlib.flush "stdlib.mli" 930 34305 34305 "stdlib.mli" 930 34305 34336
+)
+"SintoMeUmaMerda/Main.ml" 48 1541 1551 "SintoMeUmaMerda/Main.ml" 48 1541 1557
+type(
+  out_channel
+)
+ident(
+  int_ref Stdlib.stderr "stdlib.mli" 803 29925 29925 "stdlib.mli" 803 29925 29949
+)
+"SintoMeUmaMerda/Main.ml" 48 1541 1545 "SintoMeUmaMerda/Main.ml" 48 1541 1557
+type(
+  unit
+)
+"SintoMeUmaMerda/Main.ml" 47 1508 1512 "SintoMeUmaMerda/Main.ml" 48 1541 1557
+type(
+  unit
+)
+"SintoMeUmaMerda/Main.ml" 46 1476 1480 "SintoMeUmaMerda/Main.ml" 48 1541 1557
+type(
+  unit
+)
+"SintoMeUmaMerda/Main.ml" 50 1559 1567 "SintoMeUmaMerda/Main.ml" 50 1559 1571
+type(
+  unit -> 'a
+)
+ident(
+  def main "SintoMeUmaMerda/Main.ml" 50 1559 1559 "SintoMeUmaMerda/Main.ml" 0 0 -1
+)
+"SintoMeUmaMerda/Main.ml" 50 1559 1572 "SintoMeUmaMerda/Main.ml" 50 1559 1574
+type(
+  unit
+)
+"SintoMeUmaMerda/Main.ml" 52 1615 1623 "SintoMeUmaMerda/Main.ml" 52 1615 1635
+type(
+  string -> unit
+)
+ident(
+  int_ref Stdlib.print_string "stdlib.mli" 812 30126 30126 "stdlib.mli" 812 30126 30159
+)
+"SintoMeUmaMerda/Main.ml" 52 1615 1636 "SintoMeUmaMerda/Main.ml" 52 1615 1640
+type(
+  string
+)
+"SintoMeUmaMerda/Main.ml" 52 1615 1623 "SintoMeUmaMerda/Main.ml" 52 1615 1640
+type(
+  unit
+)
+"SintoMeUmaMerda/Main.ml" 53 1643 1655 "SintoMeUmaMerda/Main.ml" 53 1643 1659
+type(
+  string
+)
+ident(
+  def line "SintoMeUmaMerda/Main.ml" 54 1678 1690 "SintoMeUmaMerda/Main.ml" 55 1727 1760
+)
+"SintoMeUmaMerda/Main.ml" 53 1643 1662 "SintoMeUmaMerda/Main.ml" 53 1643 1671
+type(
+  unit -> string
+)
+ident(
+  int_ref Stdlib.read_line "stdlib.mli" 864 31600 31600 "stdlib.mli" 864 31600 31630
+)
+"SintoMeUmaMerda/Main.ml" 53 1643 1672 "SintoMeUmaMerda/Main.ml" 53 1643 1674
+type(
+  unit
+)
+"SintoMeUmaMerda/Main.ml" 53 1643 1662 "SintoMeUmaMerda/Main.ml" 53 1643 1674
+type(
+  string
+)
+"SintoMeUmaMerda/Main.ml" 54 1678 1695 "SintoMeUmaMerda/Main.ml" 54 1678 1699
+type(
+  string
+)
+ident(
+  def comm "SintoMeUmaMerda/Main.ml" 55 1727 1742 "SintoMeUmaMerda/Main.ml" 55 1727 1760
+)
+"SintoMeUmaMerda/Main.ml" 54 1678 1701 "SintoMeUmaMerda/Main.ml" 54 1678 1709
+type(
+  string
+)
+ident(
+  def fileName "SintoMeUmaMerda/Main.ml" 55 1727 1742 "SintoMeUmaMerda/Main.ml" 55 1727 1760
+)
+"SintoMeUmaMerda/Main.ml" 54 1678 1694 "SintoMeUmaMerda/Main.ml" 54 1678 1710
+type(
+  string * string
+)
+"SintoMeUmaMerda/Main.ml" 54 1678 1713 "SintoMeUmaMerda/Main.ml" 54 1678 1718
+type(
+  string -> string * string
+)
+ident(
+  int_ref split "SintoMeUmaMerda/Main.ml" 18 491 499 "SintoMeUmaMerda/Main.ml" 18 491 504
+)
+"SintoMeUmaMerda/Main.ml" 54 1678 1719 "SintoMeUmaMerda/Main.ml" 54 1678 1723
+type(
+  string
+)
+ident(
+  int_ref line "SintoMeUmaMerda/Main.ml" 53 1643 1655 "SintoMeUmaMerda/Main.ml" 53 1643 1659
+)
+"SintoMeUmaMerda/Main.ml" 54 1678 1713 "SintoMeUmaMerda/Main.ml" 54 1678 1723
+type(
+  string * string
+)
+"SintoMeUmaMerda/Main.ml" 55 1727 1742 "SintoMeUmaMerda/Main.ml" 55 1727 1746
+type(
+  string -> string -> unit
+)
+ident(
+  int_ref exec "SintoMeUmaMerda/Main.ml" 37 1188 1192 "SintoMeUmaMerda/Main.ml" 37 1188 1196
+)
+"SintoMeUmaMerda/Main.ml" 55 1727 1747 "SintoMeUmaMerda/Main.ml" 55 1727 1751
+type(
+  string
+)
+ident(
+  int_ref comm "SintoMeUmaMerda/Main.ml" 54 1678 1695 "SintoMeUmaMerda/Main.ml" 54 1678 1699
+)
+"SintoMeUmaMerda/Main.ml" 55 1727 1752 "SintoMeUmaMerda/Main.ml" 55 1727 1760
+type(
+  string
+)
+ident(
+  int_ref fileName "SintoMeUmaMerda/Main.ml" 54 1678 1701 "SintoMeUmaMerda/Main.ml" 54 1678 1709
+)
+"SintoMeUmaMerda/Main.ml" 55 1727 1742 "SintoMeUmaMerda/Main.ml" 55 1727 1760
+type(
+  unit
+)
+"SintoMeUmaMerda/Main.ml" 54 1678 1690 "SintoMeUmaMerda/Main.ml" 55 1727 1760
+type(
+  unit
+)
+"SintoMeUmaMerda/Main.ml" 53 1643 1651 "SintoMeUmaMerda/Main.ml" 55 1727 1760
+type(
+  unit
+)
+"SintoMeUmaMerda/Main.ml" 52 1615 1623 "SintoMeUmaMerda/Main.ml" 55 1727 1760
+type(
+  unit
+)
+"SintoMeUmaMerda/Main.ml" 57 1770 1777 "SintoMeUmaMerda/Main.ml" 57 1770 1788
+type(
+  exn
+)
+"SintoMeUmaMerda/Main.ml" 57 1770 1792 "SintoMeUmaMerda/Main.ml" 57 1770 1798
+type(
+  unit -> unit
+)
+ident(
+  int_ref byeBye "SintoMeUmaMerda/Main.ml" 33 1123 1127 "SintoMeUmaMerda/Main.ml" 33 1123 1133
+)
+"SintoMeUmaMerda/Main.ml" 57 1770 1799 "SintoMeUmaMerda/Main.ml" 57 1770 1801
+type(
+  unit
+)
+"SintoMeUmaMerda/Main.ml" 57 1770 1792 "SintoMeUmaMerda/Main.ml" 57 1770 1801
+type(
+  unit
+)
+"SintoMeUmaMerda/Main.ml" 58 1802 1819 "SintoMeUmaMerda/Main.ml" 58 1802 1822
+type(
+  string
+)
+ident(
+  def str "SintoMeUmaMerda/Main.ml" 58 1802 1826 "SintoMeUmaMerda/Main.ml" 58 1802 1835
+)
+"SintoMeUmaMerda/Main.ml" 58 1802 1809 "SintoMeUmaMerda/Main.ml" 58 1802 1822
+type(
+  exn
+)
+"SintoMeUmaMerda/Main.ml" 58 1802 1826 "SintoMeUmaMerda/Main.ml" 58 1802 1831
+type(
+  string -> unit
+)
+ident(
+  int_ref error "SintoMeUmaMerda/Main.ml" 45 1459 1463 "SintoMeUmaMerda/Main.ml" 45 1459 1468
+)
+"SintoMeUmaMerda/Main.ml" 58 1802 1832 "SintoMeUmaMerda/Main.ml" 58 1802 1835
+type(
+  string
+)
+ident(
+  int_ref str "SintoMeUmaMerda/Main.ml" 58 1802 1819 "SintoMeUmaMerda/Main.ml" 58 1802 1822
+)
+"SintoMeUmaMerda/Main.ml" 58 1802 1826 "SintoMeUmaMerda/Main.ml" 58 1802 1835
+type(
+  unit
+)
+"SintoMeUmaMerda/Main.ml" 59 1836 1843 "SintoMeUmaMerda/Main.ml" 59 1836 1844
+type(
+  exn
+)
+"SintoMeUmaMerda/Main.ml" 59 1836 1848 "SintoMeUmaMerda/Main.ml" 59 1836 1853
+type(
+  string -> unit
+)
+ident(
+  int_ref error "SintoMeUmaMerda/Main.ml" 45 1459 1463 "SintoMeUmaMerda/Main.ml" 45 1459 1468
+)
+"SintoMeUmaMerda/Main.ml" 59 1836 1854 "SintoMeUmaMerda/Main.ml" 59 1836 1860
+type(
+  string
+)
+"SintoMeUmaMerda/Main.ml" 59 1836 1848 "SintoMeUmaMerda/Main.ml" 59 1836 1860
+type(
+  unit
+)
+"SintoMeUmaMerda/Main.ml" 51 1606 1610 "SintoMeUmaMerda/Main.ml" 60 1861 1866
+type(
+  unit
+)
+"SintoMeUmaMerda/Main.ml" 61 1868 1872 "SintoMeUmaMerda/Main.ml" 61 1868 1876
+type(
+  unit -> 'a
+)
+ident(
+  int_ref main "SintoMeUmaMerda/Main.ml" 50 1559 1567 "SintoMeUmaMerda/Main.ml" 50 1559 1571
+)
+"SintoMeUmaMerda/Main.ml" 61 1868 1877 "SintoMeUmaMerda/Main.ml" 61 1868 1879
+type(
+  unit
+)
+"SintoMeUmaMerda/Main.ml" 61 1868 1872 "SintoMeUmaMerda/Main.ml" 61 1868 1879
+type(
+  'a
+)
+"SintoMeUmaMerda/Main.ml" 51 1606 1610 "SintoMeUmaMerda/Main.ml" 61 1868 1879
+type(
+  'a
+)
+"SintoMeUmaMerda/Main.ml" 64 1884 1884 "SintoMeUmaMerda/Main.ml" 64 1884 1888
+type(
+  unit -> 'a
+)
+ident(
+  int_ref main "SintoMeUmaMerda/Main.ml" 50 1559 1567 "SintoMeUmaMerda/Main.ml" 50 1559 1571
+)
+"SintoMeUmaMerda/Main.ml" 64 1884 1889 "SintoMeUmaMerda/Main.ml" 64 1884 1891
+type(
+  unit
+)
+"SintoMeUmaMerda/Main.ml" 64 1884 1884 "SintoMeUmaMerda/Main.ml" 64 1884 1891
+type(
+  'a
+)

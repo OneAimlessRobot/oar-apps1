@@ -1,0 +1,14 @@
+ 
+.data
+	.w 512
+	.b 30
+	.w 40
+	.b 5
+.code
+ 	mov 9,r1
+ 	mov r1,(8)
+ 	mov 341 ,r1
+ 	mov 484, r2
+ 	or .w r1,r2,r3
+ 	mov 0, r1
+ 	int 0

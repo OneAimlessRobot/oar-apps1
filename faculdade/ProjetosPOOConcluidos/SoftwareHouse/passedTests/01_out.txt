@@ -1,0 +1,74 @@
+Available commands:
+register - adds a new user
+users - lists all registered users
+create - creates a new project
+projects - lists all projects
+team - adds team members to a project
+artefacts - adds artefacts to a project
+project - shows detailed project information
+revision - revises an artefact
+manages - lists developers of a manager
+keyword - filters projects by keyword
+confidentiality - filters projects by confidentiality level
+workaholics - top 3 employees with more artefacts updates
+common - employees with more projects in common
+help - shows the available commands
+exit - terminates the execution of the program
+Available commands:
+register - adds a new user
+users - lists all registered users
+create - creates a new project
+projects - lists all projects
+team - adds team members to a project
+artefacts - adds artefacts to a project
+project - shows detailed project information
+revision - revises an artefact
+manages - lists developers of a manager
+keyword - filters projects by keyword
+confidentiality - filters projects by confidentiality level
+workaholics - top 3 employees with more artefacts updates
+common - employees with more projects in common
+help - shows the available commands
+exit - terminates the execution of the program
+Unknown command. Type help to see available commands.
+Unknown command. Type help to see available commands.
+Available commands:
+register - adds a new user
+users - lists all registered users
+create - creates a new project
+projects - lists all projects
+team - adds team members to a project
+artefacts - adds artefacts to a project
+project - shows detailed project information
+revision - revises an artefact
+manages - lists developers of a manager
+keyword - filters projects by keyword
+confidentiality - filters projects by confidentiality level
+workaholics - top 3 employees with more artefacts updates
+common - employees with more projects in common
+help - shows the available commands
+exit - terminates the execution of the program
+Unknown command. Type help to see available commands.
+Unknown command. Type help to see available commands.
+Unknown command. Type help to see available commands.
+Unknown command. Type help to see available commands.
+Unknown command. Type help to see available commands.
+Unknown command. Type help to see available commands.
+Unknown command. Type help to see available commands.
+Available commands:
+register - adds a new user
+users - lists all registered users
+create - creates a new project
+projects - lists all projects
+team - adds team members to a project
+artefacts - adds artefacts to a project
+project - shows detailed project information
+revision - revises an artefact
+manages - lists developers of a manager
+keyword - filters projects by keyword
+confidentiality - filters projects by confidentiality level
+workaholics - top 3 employees with more artefacts updates
+common - employees with more projects in common
+help - shows the available commands
+exit - terminates the execution of the program
+Bye!

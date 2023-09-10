@@ -1,0 +1,39 @@
+Account does not exist.
+
+Account was added.
+
+Account was added.
+
+File uploaded into account.
+
+File uploaded into account.
+
+File uploaded into account.
+
+Account files:
+file1 (3000 MB)
+file2 (2000 MB)
+file3 (120 MB)
+
+File uploaded into account.
+
+File uploaded into account.
+
+Account files:
+file1 (1000 MB)
+file2 (500 MB)
+
+Account does not exist.
+
+Account does not exist.
+
+Account does not allow file sharing.
+
+File size exceeds account capacity.
+
+Account files:
+file1 (1000 MB)
+file2 (500 MB)
+
+Exiting...
+

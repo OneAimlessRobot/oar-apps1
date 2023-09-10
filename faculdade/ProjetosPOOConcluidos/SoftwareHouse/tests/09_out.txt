@@ -1,0 +1,38 @@
+No projects within levels 1 and 3.
+User peralta was registered as manager with clearance level 3.
+User santiago was registered as manager with clearance level 4.
+User holt was registered as manager with clearance level 5.
+User diaz was registered as manager with clearance level 4.
+Online occurrence reporting project was created.
+Online occurrence reporting UI project was created.
+Wordle project was created.
+Top secret project was created.
+Yet another online app project was created.
+My fabulous app project was created.
+Sell stuff online app project was created.
+Accounting service project was created.
+All new restaurant review app project was created.
+All projects within levels 0 and 5:
+My fabulous app is managed by diaz and has keywords c#, redis, json, html.
+Online occurrence reporting is managed by santiago and has keywords web, javascript, css, mysql.
+Sell stuff online app is managed by peralta and has keywords distribution, erlang, html, json, microservices.
+Top secret is managed by holt and has keywords c#, oracle, rust.
+Wordle is managed by holt and has keywords web, javascript, css, outsystems, c#, oracle.
+Yet another online app is managed by diaz and has keywords erlang, distribution, redis.
+All projects within levels 3 and 4:
+My fabulous app is managed by diaz and has keywords c#, redis, json, html.
+Sell stuff online app is managed by peralta and has keywords distribution, erlang, html, json, microservices.
+Yet another online app is managed by diaz and has keywords erlang, distribution, redis.
+One more app project was created.
+Another app project was created.
+All projects within levels 3 and 4:
+Another app is managed by diaz and has keywords c#, redis, json, html.
+My fabulous app is managed by diaz and has keywords c#, redis, json, html.
+One more app is managed by peralta and has keywords javascript, rust, oracle.
+Sell stuff online app is managed by peralta and has keywords distribution, erlang, html, json, microservices.
+Yet another online app is managed by diaz and has keywords erlang, distribution, redis.
+All projects within levels 3 and 3:
+My fabulous app is managed by diaz and has keywords c#, redis, json, html.
+One more app is managed by peralta and has keywords javascript, rust, oracle.
+Sell stuff online app is managed by peralta and has keywords distribution, erlang, html, json, microservices.
+Bye!

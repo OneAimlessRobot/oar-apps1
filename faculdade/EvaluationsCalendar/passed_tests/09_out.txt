@@ -1,0 +1,116 @@
+Course IP added.
+Course POO added.
+Course AM I added.
+Course AM II added.
+Course Fancy course name added.
+Course Karaoke 101 added.
+Course Extreme Mooshaking added.
+Course Advanced Procastination does not exist!
+No deadlines defined for IP!
+No deadlines defined for AM II!
+No deadlines defined for Extreme Mooshaking!
+Injun Joe added.
+Sid Sawyer added.
+Amy Lawrence added.
+Mary added.
+Muff Potter added.
+Alfred Temple added.
+Injun Joe already exists!
+Tom Sawyer added.
+Becky Thatcher added.
+Huckleberry Finn added.
+Joe Harper added.
+Aunt Polly added.
+Mr. Walters added.
+Judge Thatcher added.
+Jim added.
+Mr. Sprague added.
+Mr. Jones added.
+Professor Mr. Jones assigned to IP.
+Professor Mr. Walters assigned to POO.
+Professor Mr. Walters assigned to AM II.
+Professor Mr. Walters assigned to AM I.
+Professor Aunt Polly assigned to AM I.
+Professor Mr. Jones assigned to POO.
+Professor Mr. Jones assigned to AM I.
+Deadline 2022-05-28 added to POO.
+Deadline 2022-04-28 added to POO.
+5 students added to course POO.
+Deadline 2022-06-06 added to POO.
+2 students added to course AM I.
+Deadline 2022-04-28 added to IP.
+Deadline 2022-04-29 added to Karaoke 101.
+Deadline 2022-04-29 added to AM I.
+Course Parachuting does not exist!
+Deadline Bad Singing Project already exists!
+Deadline 2022-04-30 added to POO.
+4 students added to course IP.
+Deadline 2022-05-07 added to IP.
+Deadlines for course POO:
+Calendar Project: 2022-04-28
+Bad Singing Project: 2022-04-30
+New Project: 2022-05-28
+Final Project: 2022-06-06
+Deadlines for course IP:
+Easy Calendar Project: 2022-04-28
+Hard Calendar Project: 2022-05-07
+Deadlines for course Karaoke 101:
+Bad Singing Project: 2022-04-29
+Deadlines for course AM I:
+Strange Project: 2022-04-29
+No deadlines defined for Extreme Mooshaking!
+Course Parachuting does not exist!
+Roster for course POO:
+Professors:
+Mr. Walters
+Mr. Jones
+Students:
+12334 Tom Sawyer
+3243 Huckleberry Finn
+13242 Becky Thatcher
+9983 Muff Potter
+10730 Amy Lawrence
+Deadlines for Tom Sawyer:
+[IP] Easy Calendar Project: 2022-04-28
+[POO] Calendar Project: 2022-04-28
+[AM I] Strange Project: 2022-04-29
+[POO] Bad Singing Project: 2022-04-30
+[IP] Hard Calendar Project: 2022-05-07
+[POO] New Project: 2022-05-28
+[POO] Final Project: 2022-06-06
+Tom Waits does not exist!
+Deadlines for Sid Sawyer:
+[IP] Easy Calendar Project: 2022-04-28
+[IP] Hard Calendar Project: 2022-05-07
+Santa Claus does not exist!
+Deadlines for Huckleberry Finn:
+[POO] Calendar Project: 2022-04-28
+[POO] Bad Singing Project: 2022-04-30
+[POO] New Project: 2022-05-28
+[POO] Final Project: 2022-06-06
+Mark Twain does not exist!
+Deadlines for Amy Lawrence:
+[IP] Easy Calendar Project: 2022-04-28
+[POO] Calendar Project: 2022-04-28
+[POO] Bad Singing Project: 2022-04-30
+[IP] Hard Calendar Project: 2022-05-07
+[POO] New Project: 2022-05-28
+[POO] Final Project: 2022-06-06
+Amy Winehouse does not exist!
+Deadlines for Mr. Walters:
+[POO] Calendar Project: 2022-04-28
+[AM I] Strange Project: 2022-04-29
+[POO] Bad Singing Project: 2022-04-30
+[POO] New Project: 2022-05-28
+[POO] Final Project: 2022-06-06
+Marlon Brando does not exist!
+Deadlines for Mr. Jones:
+[IP] Easy Calendar Project: 2022-04-28
+[POO] Calendar Project: 2022-04-28
+[AM I] Strange Project: 2022-04-29
+[POO] Bad Singing Project: 2022-04-30
+[IP] Hard Calendar Project: 2022-05-07
+[POO] New Project: 2022-05-28
+[POO] Final Project: 2022-06-06
+Unicorn does not exist!
+Bye!

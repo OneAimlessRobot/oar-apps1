@@ -1,0 +1,110 @@
+Account was added.
+
+Account was added.
+
+Account was added.
+
+Account was added.
+
+File uploaded into account.
+
+File uploaded into account.
+
+File uploaded into account.
+
+File uploaded into account.
+
+File uploaded into account.
+
+Account files:
+file1 (2000 MB)
+file2 (500 MB)
+file3 (1000 MB)
+file4 (1000 MB)
+file5 (500 MB)
+
+File uploaded into account.
+
+File uploaded into account.
+
+File uploaded into account.
+
+File uploaded into account.
+
+File uploaded into account.
+
+Account files:
+file1 (2000 MB)
+file2 (500 MB)
+file3 (1000 MB)
+file4 (1000 MB)
+file5 (500 MB)
+
+File uploaded into account.
+
+File uploaded into account.
+
+File uploaded into account.
+
+Account files:
+file1 (1000 MB)
+file2 (250 MB)
+file3 (250 MB)
+
+File uploaded into account.
+
+File uploaded into account.
+
+File uploaded into account.
+
+Account files:
+file1 (1040 MB)
+file2 (250 MB)
+file3 (250 MB)
+
+File was shared.
+
+File was shared.
+
+File was shared.
+
+File was shared.
+
+File was shared.
+
+Account files:
+file1 (2000 MB)
+file2 (500 MB)
+file3 (1000 MB)
+file4 (1000 MB)
+file5 (500 MB)
+file1 (2000 MB) (shared)
+file2 (500 MB) (shared)
+file3 (1000 MB) (shared)
+file4 (1000 MB) (shared)
+file5 (500 MB) (shared)
+
+File was shared.
+
+File was shared.
+
+Account files:
+file1 (1000 MB)
+file2 (250 MB)
+file3 (250 MB)
+file5 (500 MB) (shared)
+file5 (500 MB) (shared)
+
+File was shared.
+
+File was shared.
+
+Account files:
+file1 (1040 MB)
+file2 (250 MB)
+file3 (250 MB)
+file2 (500 MB) (shared)
+file2 (500 MB) (shared)
+
+Exiting...
+

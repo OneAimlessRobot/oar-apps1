@@ -1,0 +1,10 @@
+compil_mode/<project>=byte-code
+compil_mode/BinTree.exe=byte-code
+compil_mode/Main.exe=byte-code
+compil_mode/Maze.exe=byte-code
+compil_mode/trees.exe=byte-code
+eclipse.preferences.version=1
+flags/<project>=-g\u00A0
+make_exe/Main.ml=Main.exe
+make_exe/Maze.ml=Maze.exe
+make_exe/trees.ml=trees.exe

@@ -1,0 +1,90 @@
+Available commands:
+people - lists all people
+professor - adds a new professor
+student - adds a new student
+courses - lists all courses
+course - adds a new course
+roster - lists the professors and students of a course
+assign - adds a professor to a course
+enrol - adds students to a course
+intersection - lists all the people involved in all the given courses
+coursedeadlines - lists all deadlines in a given course
+personaldeadlines - lists all the deadlines of a given person
+deadline - adds a new deadline
+coursetests - lists all tests in a given course
+personaltests - lists all tests for a given student
+schedule - add a new test to a course
+superprofessor - presents the professor with more students
+stressometer - presents the students with the top N stressful sequences of evaluations
+help - shows the available commands
+exit - terminates the execution of the program
+Available commands:
+people - lists all people
+professor - adds a new professor
+student - adds a new student
+courses - lists all courses
+course - adds a new course
+roster - lists the professors and students of a course
+assign - adds a professor to a course
+enrol - adds students to a course
+intersection - lists all the people involved in all the given courses
+coursedeadlines - lists all deadlines in a given course
+personaldeadlines - lists all the deadlines of a given person
+deadline - adds a new deadline
+coursetests - lists all tests in a given course
+personaltests - lists all tests for a given student
+schedule - add a new test to a course
+superprofessor - presents the professor with more students
+stressometer - presents the students with the top N stressful sequences of evaluations
+help - shows the available commands
+exit - terminates the execution of the program
+Unknown command SILLY. Type help to see available commands.
+Unknown command COMMAND. Type help to see available commands.
+Available commands:
+people - lists all people
+professor - adds a new professor
+student - adds a new student
+courses - lists all courses
+course - adds a new course
+roster - lists the professors and students of a course
+assign - adds a professor to a course
+enrol - adds students to a course
+intersection - lists all the people involved in all the given courses
+coursedeadlines - lists all deadlines in a given course
+personaldeadlines - lists all the deadlines of a given person
+deadline - adds a new deadline
+coursetests - lists all tests in a given course
+personaltests - lists all tests for a given student
+schedule - add a new test to a course
+superprofessor - presents the professor with more students
+stressometer - presents the students with the top N stressful sequences of evaluations
+help - shows the available commands
+exit - terminates the execution of the program
+Unknown command NOT. Type help to see available commands.
+Unknown command A. Type help to see available commands.
+Unknown command COMMAND. Type help to see available commands.
+Unknown command NOT. Type help to see available commands.
+Unknown command A. Type help to see available commands.
+Unknown command COMMAND. Type help to see available commands.
+Unknown command EITHER. Type help to see available commands.
+Available commands:
+people - lists all people
+professor - adds a new professor
+student - adds a new student
+courses - lists all courses
+course - adds a new course
+roster - lists the professors and students of a course
+assign - adds a professor to a course
+enrol - adds students to a course
+intersection - lists all the people involved in all the given courses
+coursedeadlines - lists all deadlines in a given course
+personaldeadlines - lists all the deadlines of a given person
+deadline - adds a new deadline
+coursetests - lists all tests in a given course
+personaltests - lists all tests for a given student
+schedule - add a new test to a course
+superprofessor - presents the professor with more students
+stressometer - presents the students with the top N stressful sequences of evaluations
+help - shows the available commands
+exit - terminates the execution of the program
+Bye!

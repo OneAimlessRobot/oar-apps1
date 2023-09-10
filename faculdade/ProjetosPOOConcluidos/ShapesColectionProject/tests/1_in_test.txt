@@ -1,0 +1,16 @@
+LIST
+CIRCLE circle1 0 0 12
+CIRCLE circle1 4 2 5
+RECTANGLE rectangle1 0 7 2 8
+RECTANGLE circle1 8 5 6 7
+CIRCLE circle2 4 2 5
+CIRCLE circle3 -1 0 5
+RECTANGLE rectangle2 -1 4 2 78
+RECTANGLE rectangle3 6 7 4 9
+RECTANGLE rectangle3 -1 0 23 9
+LIST
+MOVE circle3 4 4
+MOVE myCircle 3 7
+MOVE rectangle2 -3 -9
+LIST
+EXIT

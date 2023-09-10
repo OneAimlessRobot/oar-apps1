@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>SintoMeUmaMerda</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>Ocaml.ocamlbuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>ocaml.ocamlnature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>External files/char.mli</name>
+			<type>1</type>
+			<location>/usr/lib/ocaml/char.mli</location>
+		</link>
+		<link>
+			<name>External files/float.mli</name>
+			<type>1</type>
+			<location>/usr/lib/ocaml/float.mli</location>
+		</link>
+		<link>
+			<name>External files/list.mli</name>
+			<type>1</type>
+			<location>/usr/lib/ocaml/list.mli</location>
+		</link>
+		<link>
+			<name>External files/printf.mli</name>
+			<type>1</type>
+			<location>/usr/lib/ocaml/printf.mli</location>
+		</link>
+		<link>
+			<name>External files/random.mli</name>
+			<type>1</type>
+			<location>/usr/lib/ocaml/random.mli</location>
+		</link>
+		<link>
+			<name>External files/stdlib.mli</name>
+			<type>1</type>
+			<location>/usr/lib/ocaml/stdlib.mli</location>
+		</link>
+		<link>
+			<name>External files/string.mli</name>
+			<type>1</type>
+			<location>/usr/lib/ocaml/string.mli</location>
+		</link>
+		<link>
+			<name>External files/sys.mli</name>
+			<type>1</type>
+			<location>/usr/lib/ocaml/sys.mli</location>
+		</link>
+		<link>
+			<name>External files/unix.mli</name>
+			<type>1</type>
+			<location>/usr/lib/ocaml/unix.mli</location>
+		</link>
+	</linkedResources>
+</projectDescription>

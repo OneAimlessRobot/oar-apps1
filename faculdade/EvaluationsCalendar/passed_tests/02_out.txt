@@ -1,0 +1,72 @@
+No people registered!
+Tom Sawyer added.
+Becky Thatcher added.
+Huckleberry Finn added.
+All people:
+[12334] Tom Sawyer (0)
+[13242] Becky Thatcher (0)
+[3243] Huckleberry Finn (0)
+Joe Harper added.
+Sid Sawyer added.
+Injun Joe added.
+Aunt Polly added.
+Mr. Walters added.
+Amy Lawrence added.
+Judge Thatcher added.
+Jim added.
+Mary added.
+Muff Potter added.
+Mr. Sprague added.
+Mr. Jones added.
+Alfred Temple added.
+Mr. Dobbins added.
+All people:
+[12334] Tom Sawyer (0)
+[13242] Becky Thatcher (0)
+[3243] Huckleberry Finn (0)
+[23143] Joe Harper (0)
+[23234] Sid Sawyer (0)
+Injun Joe (0)
+Aunt Polly (0)
+Mr. Walters (0)
+[10730] Amy Lawrence (0)
+Judge Thatcher (0)
+Jim (0)
+[3254] Mary (0)
+[9983] Muff Potter (0)
+Mr. Sprague (0)
+Mr. Jones (0)
+[12435] Alfred Temple (0)
+Mr. Dobbins (0)
+There is already a student with the number 3243!
+There is already a student with the number 12334!
+Tom Sawyer already exists!
+There is already a student with the number 23143!
+There is already a student with the number 12435!
+Injun Joe already exists!
+Tom Sawyer already exists!
+Injun Joe already exists!
+Mr. Walters already exists!
+Mr. Dobbins already exists!
+Mr. Jones already exists!
+Alfred Temple already exists!
+Mary already exists!
+All people:
+[12334] Tom Sawyer (0)
+[13242] Becky Thatcher (0)
+[3243] Huckleberry Finn (0)
+[23143] Joe Harper (0)
+[23234] Sid Sawyer (0)
+Injun Joe (0)
+Aunt Polly (0)
+Mr. Walters (0)
+[10730] Amy Lawrence (0)
+Judge Thatcher (0)
+Jim (0)
+[3254] Mary (0)
+[9983] Muff Potter (0)
+Mr. Sprague (0)
+Mr. Jones (0)
+[12435] Alfred Temple (0)
+Mr. Dobbins (0)
+Bye!

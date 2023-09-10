@@ -1,0 +1,161 @@
+Course IP added.
+Course Object-Oriented Programming added.
+Course AM I added.
+Course AM II added.
+Course Fancy course name added.
+Course Karaoke 101 added.
+Course Extreme Mooshaking added.
+Course Advanced Procastination does not exist!
+No scheduled tests for IP!
+No scheduled tests for AM I!
+No scheduled tests for Extreme Mooshaking!
+Injun Joe added.
+Sid Sawyer added.
+Amy Lawrence added.
+Mary added.
+Muff Potter added.
+Alfred Temple added.
+Injun Joe already exists!
+Tom Sawyer added.
+Becky Thatcher added.
+Huckleberry Finn added.
+Joe Harper added.
+Aunt Polly added.
+Mr. Walters added.
+Judge Thatcher added.
+Jim added.
+Mr. Sprague added.
+Mr. Jones added.
+Professor Mr. Jones assigned to IP.
+Professor Mr. Walters assigned to Object-Oriented Programming.
+Professor Mr. Walters assigned to AM II.
+Professor Mr. Walters assigned to AM I.
+Professor Aunt Polly assigned to AM I.
+Professor Mr. Jones assigned to Object-Oriented Programming.
+Professor Mr. Jones assigned to AM I.
+5 students added to course Object-Oriented Programming.
+2 students added to course IP.
+3 students added to course AM I.
+Intersection:
+Professors:
+Mr. Jones
+Students:
+12334 Tom Sawyer
+13242 Becky Thatcher
+Course Liberty 101 does not exist!
+free Object-Oriented Programming super test 2022-05-03 14h30-16h30 (0, 0)
+severe IP test at the same time as OOP 2022-05-03 14h30-16h30 (1, 2)
+Deadline 2022-03-11 added to Object-Oriented Programming.
+free Object-Oriented Programming awesome test 2022-03-12 17h00-18h00 (0, 0)
+free Object-Oriented Programming some test 2022-06-04 09h00-10h00 (0, 0)
+mild Object-Oriented Programming super early test 2022-05-03 09h00-12h00 (1, 2)
+Course Object-Oriented Programming already has a test named some test!
+free Object-Oriented Programming same day test 2022-03-12 09h00-10h00 (0, 0)
+Cannot schedule test same time test at that time!
+severe IP same time different course test 2022-03-12 17h00-18h00 (1, 2)
+free Karaoke 101 same time unrelated course test 2022-03-12 17h00-18h00 (0, 0)
+severe AM I test at the same time as OOP and IP 2022-05-03 14h30-16h30 (3, 3)
+mild AM I test at the same day as OOP and IP 2022-05-03 22h00-23h00 (3, 3)
+Deadline 2022-04-28 added to IP.
+Deadline 2022-04-29 added to Karaoke 101.
+Deadline 2022-04-29 added to AM I.
+Course Parachuting does not exist!
+Deadline 2022-03-12 added to AM I.
+Deadline 2022-03-13 added to Object-Oriented Programming.
+Deadline 2022-03-14 added to Object-Oriented Programming.
+Tests for course Object-Oriented Programming:
+2022-03-12 09h00-10h00: same day test
+2022-03-12 17h00-18h00: awesome test
+2022-05-03 09h00-12h00: super early test
+2022-05-03 14h30-16h30: super test
+2022-06-04 09h00-10h00: some test
+Course Mississipi 101 does not exist!
+Tests for course IP:
+2022-03-12 17h00-18h00: same time different course test
+2022-05-03 14h30-16h30: test at the same time as OOP
+Course Mississipi 999 does not exist!
+Tests for Tom Sawyer:
+2022-03-12 09h00-10h00: Object-Oriented Programming - same day test
+2022-03-12 17h00-18h00: IP - same time different course test
+2022-03-12 17h00-18h00: Object-Oriented Programming - awesome test
+2022-05-03 09h00-12h00: Object-Oriented Programming - super early test
+2022-05-03 14h30-16h30: IP - test at the same time as OOP
+2022-05-03 14h30-16h30: Object-Oriented Programming - super test
+2022-06-04 09h00-10h00: Object-Oriented Programming - some test
+Deadlines for Tom Sawyer:
+[Object-Oriented Programming] Small project deadline: 2022-03-11
+[Object-Oriented Programming] Bad Singing Project: 2022-03-13
+[Object-Oriented Programming] Bad Singing Project II: 2022-03-14
+[IP] Easy Calendar Project: 2022-04-28
+Student Karate Kid does not exist!
+Tests for Becky Thatcher:
+2022-03-12 09h00-10h00: Object-Oriented Programming - same day test
+2022-03-12 17h00-18h00: IP - same time different course test
+2022-03-12 17h00-18h00: Object-Oriented Programming - awesome test
+2022-05-03 09h00-12h00: Object-Oriented Programming - super early test
+2022-05-03 14h30-16h30: AM I - test at the same time as OOP and IP
+2022-05-03 14h30-16h30: IP - test at the same time as OOP
+2022-05-03 14h30-16h30: Object-Oriented Programming - super test
+2022-05-03 22h00-23h00: AM I - test at the same day as OOP and IP
+2022-06-04 09h00-10h00: Object-Oriented Programming - some test
+Deadlines for Becky Thatcher:
+[Object-Oriented Programming] Small project deadline: 2022-03-11
+[AM I] Weird Project: 2022-03-12
+[Object-Oriented Programming] Bad Singing Project: 2022-03-13
+[Object-Oriented Programming] Bad Singing Project II: 2022-03-14
+[IP] Easy Calendar Project: 2022-04-28
+[AM I] Strange Project: 2022-04-29
+Student Santa Claus does not exist!
+Tests for Huckleberry Finn:
+2022-03-12 09h00-10h00: Object-Oriented Programming - same day test
+2022-03-12 17h00-18h00: Object-Oriented Programming - awesome test
+2022-05-03 09h00-12h00: Object-Oriented Programming - super early test
+2022-05-03 14h30-16h30: AM I - test at the same time as OOP and IP
+2022-05-03 14h30-16h30: Object-Oriented Programming - super test
+2022-05-03 22h00-23h00: AM I - test at the same day as OOP and IP
+2022-06-04 09h00-10h00: Object-Oriented Programming - some test
+Deadlines for Huckleberry Finn:
+[Object-Oriented Programming] Small project deadline: 2022-03-11
+[AM I] Weird Project: 2022-03-12
+[Object-Oriented Programming] Bad Singing Project: 2022-03-13
+[Object-Oriented Programming] Bad Singing Project II: 2022-03-14
+[AM I] Strange Project: 2022-04-29
+Student Guy tougher than Chuck Norris does not exist!
+Tests for Joe Harper:
+2022-05-03 14h30-16h30: AM I - test at the same time as OOP and IP
+2022-05-03 22h00-23h00: AM I - test at the same day as OOP and IP
+Deadlines for Joe Harper:
+[AM I] Weird Project: 2022-03-12
+[AM I] Strange Project: 2022-04-29
+Student Injun Joe does not exist!
+Tests for Muff Potter:
+2022-03-12 09h00-10h00: Object-Oriented Programming - same day test
+2022-03-12 17h00-18h00: Object-Oriented Programming - awesome test
+2022-05-03 09h00-12h00: Object-Oriented Programming - super early test
+2022-05-03 14h30-16h30: Object-Oriented Programming - super test
+2022-06-04 09h00-10h00: Object-Oriented Programming - some test
+Deadlines for Muff Potter:
+[Object-Oriented Programming] Small project deadline: 2022-03-11
+[Object-Oriented Programming] Bad Singing Project: 2022-03-13
+[Object-Oriented Programming] Bad Singing Project II: 2022-03-14
+No scheduled tests for Alfred Temple!
+Deadlines for Amy Lawrence:
+[Object-Oriented Programming] Small project deadline: 2022-03-11
+[Object-Oriented Programming] Bad Singing Project: 2022-03-13
+[Object-Oriented Programming] Bad Singing Project II: 2022-03-14
+Invalid number of students!
+Invalid number of students!
+Most stressed students:
+13242 Becky Thatcher (4 days, 7 evaluations)
+Student Mark Twain does not exist!
+Most stressed students:
+13242 Becky Thatcher (4 days, 7 evaluations)
+3243 Huckleberry Finn (4 days, 6 evaluations)
+Student Samuel Langhorne Clemens does not exist!
+Most stressed students:
+13242 Becky Thatcher (4 days, 7 evaluations)
+3243 Huckleberry Finn (4 days, 6 evaluations)
+12334 Tom Sawyer (4 days, 6 evaluations)
+9983 Muff Potter (4 days, 5 evaluations)
+10730 Amy Lawrence (4 days, 5 evaluations)
+Bye!

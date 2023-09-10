@@ -1,0 +1,341 @@
+# depslib dependency file v1.0
+1675276496 source:/home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/MyLittleSandbox/auxFunctions.cpp
+	"Menu.hpp"
+	<math.h>
+	<stdint.h>
+	<string>
+	<cstring>
+	"auxFunctions.h"
+
+1664485403 /home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/MyLittleSandbox/Menu.hpp
+	<SDL2/SDL.h>
+	<SDL2/SDL_ttf.h>
+	<iostream>
+
+1676049332 /home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/MyLittleSandbox/auxFunctions.h
+
+1664485403 source:/home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/MyLittleSandbox/Circler.cpp
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	<string>
+	<vector>
+	<iostream>
+	"Trail.hpp"
+	"graphicalLib1.hpp"
+	"Circler.hpp"
+
+1676045415 /home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/MyLittleSandbox/Trail.hpp
+
+1676045919 /home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/MyLittleSandbox/graphicalLib1.hpp
+
+1664485403 /home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/MyLittleSandbox/Circler.hpp
+
+1664485403 source:/home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/MyLittleSandbox/FadingTexture.cpp
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	<SDL2/SDL_ttf.h>
+	<vector>
+	"graphicalLib1.hpp"
+	<iostream>
+	"FadingTexture.hpp"
+
+1664485403 /home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/MyLittleSandbox/FadingTexture.hpp
+
+1664485403 source:/home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/MyLittleSandbox/FluidLayer.cpp
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	<vector>
+	<iostream>
+	"Obstacle.hpp"
+	"LTexture.hpp"
+	"Object.hpp"
+	"Menu.hpp"
+	"graphicalLib1.hpp"
+	"auxFunctions.h"
+	"GeometricVector.hpp"
+	"throwable.hpp"
+	"FluidLayer.hpp"
+
+1664485404 /home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/MyLittleSandbox/Obstacle.hpp
+	"HitBox.hpp"
+
+1664485403 /home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/MyLittleSandbox/HitBox.hpp
+
+1664485403 /home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/MyLittleSandbox/LTexture.hpp
+
+1664485404 /home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/MyLittleSandbox/Object.hpp
+
+1664485403 /home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/MyLittleSandbox/GeometricVector.hpp
+	"GeometricVector.tpp"
+
+1664485907 /home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/MyLittleSandbox/GeometricVector.tpp
+
+1664485404 /home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/MyLittleSandbox/throwable.hpp
+
+1676046698 /home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/MyLittleSandbox/FluidLayer.hpp
+
+1675275170 source:/home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/MyLittleSandbox/ForceField.cpp
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	"LTexture.hpp"
+	<vector>
+	"Menu.hpp"
+	<string>
+	<iostream>
+	"auxFunctions.h"
+	"graphicalLib1.hpp"
+	"GeometricVector.hpp"
+	"Trail.hpp"
+	"Object.hpp"
+	"Obstacle.hpp"
+	"throwable.hpp"
+	"ForceField.hpp"
+
+1664485403 /home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/MyLittleSandbox/ForceField.hpp
+
+1675431419 source:/home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/MyLittleSandbox/graphicalLib1.cpp
+	<SDL2/SDL.h>
+	<iostream>
+	<string>
+	<vector>
+	<math.h>
+	"graphicalLib1.hpp"
+
+1675431467 source:/home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/MyLittleSandbox/gridObject.cpp
+	<SDL2/SDL.h>
+	<string>
+	<iostream>
+	<vector>
+	"Menu.hpp"
+	"gridObject.hpp"
+	"graphicalLib1.hpp"
+
+1664485403 /home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/MyLittleSandbox/gridObject.hpp
+
+1675275174 source:/home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/MyLittleSandbox/HitBox.cpp
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	<vector>
+	<iostream>
+	"HitBox.hpp"
+
+1664486481 source:/home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/MyLittleSandbox/jumper.cpp
+	<SDL2/SDL.h>
+	<math.h>
+	<vector>
+	<iostream>
+	"Menu.hpp"
+	"auxFunctions.h"
+	"graphicalLib1.hpp"
+	"LTexture.hpp"
+	"Trail.hpp"
+	"GeometricVector.hpp"
+	"Object.hpp"
+	"jumper.hpp"
+
+1664486280 /home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/MyLittleSandbox/jumper.hpp
+
+1664485403 source:/home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/MyLittleSandbox/Level.cpp
+	<vector>
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	<string>
+	<cstring>
+	<iostream>
+	<fstream>
+	"LTexture.hpp"
+	"Menu.hpp"
+	"auxFunctions.h"
+	"graphicalLib1.hpp"
+	"Object.hpp"
+	"GeometricVector.hpp"
+	"Obstacle.hpp"
+	"throwable.hpp"
+	"Planet.hpp"
+	"Iterator.hpp"
+	"FluidLayer.hpp"
+	"Level.hpp"
+
+1676048665 /home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/MyLittleSandbox/Planet.hpp
+
+1675437777 /home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/MyLittleSandbox/Iterator.hpp
+	"Iterator.tpp"
+
+1675437758 /home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/MyLittleSandbox/Iterator.tpp
+
+1664485403 /home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/MyLittleSandbox/Level.hpp
+
+1664485403 source:/home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/MyLittleSandbox/LTexture.cpp
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	<SDL2/SDL_ttf.h>
+	<vector>
+	"graphicalLib1.hpp"
+	<iostream>
+	"LTexture.hpp"
+
+1675438523 source:/home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/MyLittleSandbox/main.cpp
+	"ImportsAndDefines.hpp"
+
+1675275181 /home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/MyLittleSandbox/ImportsAndDefines.hpp
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	<SDL2/SDL_ttf.h>
+	"Menu.hpp"
+	"gridObject.hpp"
+	<math.h>
+	<iostream>
+	<vector>
+	<string>
+	"graphicalLib1.hpp"
+	<cstring>
+	"auxFunctions.h"
+	"Trail.hpp"
+	"HitBox.hpp"
+	<fstream>
+	<limits>
+	"TemporaryTexture.hpp"
+	"LTexture.hpp"
+	"FadingTexture.hpp"
+	"Pen.hpp"
+	"Sprite.hpp"
+	<algorithm>
+	"Obstacle.hpp"
+	"Iterator.hpp"
+	"Object.hpp"
+	"Circler.hpp"
+	"GeometricVector.hpp"
+	"throwable.hpp"
+	"jumper.hpp"
+	"Planet.hpp"
+	"FluidLayer.hpp"
+	"ForceField.hpp"
+	"Level.hpp"
+	"ODESolver.hpp"
+
+1664485404 /home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/MyLittleSandbox/TemporaryTexture.hpp
+
+1664485404 /home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/MyLittleSandbox/Pen.hpp
+
+1664485404 /home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/MyLittleSandbox/Sprite.hpp
+
+1664485404 /home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/MyLittleSandbox/ODESolver.hpp
+
+1664485403 source:/home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/MyLittleSandbox/Menu.cpp
+	"Menu.hpp"
+
+1664485404 source:/home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/MyLittleSandbox/Object.cpp
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	<iostream>
+	<vector>
+	"LTexture.hpp"
+	"Trail.hpp"
+	"Object.hpp"
+
+1664485404 source:/home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/MyLittleSandbox/Obstacle.cpp
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	<vector>
+	"HitBox.hpp"
+	"Obstacle.hpp"
+
+1664485404 source:/home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/MyLittleSandbox/ODESolver.cpp
+	<SDL2/SDL.h>
+	<math.h>
+	<vector>
+	"Menu.hpp"
+	"auxFunctions.h"
+	"graphicalLib1.hpp"
+	"GeometricVector.hpp"
+	"ODESolver.hpp"
+
+1664485404 source:/home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/MyLittleSandbox/Pen.cpp
+	<SDL2/SDL.h>
+	<vector>
+	"Pen.hpp"
+
+1664485404 source:/home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/MyLittleSandbox/Planet.cpp
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	"LTexture.hpp"
+	<vector>
+	"Menu.hpp"
+	<string>
+	"auxFunctions.h"
+	"graphicalLib1.hpp"
+	"GeometricVector.hpp"
+	"Trail.hpp"
+	"Object.hpp"
+	"Obstacle.hpp"
+	"throwable.hpp"
+	"Planet.hpp"
+
+1664485404 source:/home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/MyLittleSandbox/Sprite.cpp
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	<vector>
+	"graphicalLib1.hpp"
+	<fstream>
+	<iostream>
+	<string>
+	"TemporaryTexture.hpp"
+	"Sprite.hpp"
+
+1664485404 source:/home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/MyLittleSandbox/TemporaryTexture.cpp
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	<SDL2/SDL_ttf.h>
+	<vector>
+	"graphicalLib1.hpp"
+	"TemporaryTexture.hpp"
+	<iostream>
+
+1664485404 source:/home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/MyLittleSandbox/throwable.cpp
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	"Obstacle.hpp"
+	"LTexture.hpp"
+	<vector>
+	"Menu.hpp"
+	"auxFunctions.h"
+	"graphicalLib1.hpp"
+	<iostream>
+	"Obstacle.hpp"
+	"Trail.hpp"
+	"GeometricVector.hpp"
+	"Object.hpp"
+	"throwable.hpp"
+
+1664485404 source:/home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/MyLittleSandbox/Trail.cpp
+	<SDL2/SDL.h>
+	<vector>
+	<string>
+	"Menu.hpp"
+	"graphicalLib1.hpp"
+	"auxFunctions.h"
+	"Trail.hpp"
+
+1664485404 source:/home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/MyLittleSandbox/usefulCode/game.cpp
+	<SDL2/SDL.h>
+	<stdlib.h>
+	<iostream>
+	"entities.hpp"
+	"Projectile.hpp"
+	"ProjectileIterator.hpp"
+	"VolleyGenerator.hpp"
+	"Player.hpp"
+
+1664485404 /home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/MyLittleSandbox/usefulCode/entities.hpp
+
+1664485404 /home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/MyLittleSandbox/usefulCode/Projectile.hpp
+
+1664485404 /home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/MyLittleSandbox/usefulCode/ProjectileIterator.hpp
+
+1664485404 /home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/MyLittleSandbox/usefulCode/VolleyGenerator.hpp
+
+1664485404 /home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/MyLittleSandbox/usefulCode/Player.hpp
+
+1675436611 source:/home/oneaimlessrobot/storageDisk/Adriano/scripts/CPP/Programs within CPP syntax/MyLittleSandbox/main2.cpp
+	"ImportsAndDefines.hpp"
+

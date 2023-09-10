@@ -1,0 +1,146 @@
+register manager peralta 3
+register manager santiago 4
+register manager holt 5
+register manager diaz 4
+register developer boyle peralta 3
+register developer bob holt 2
+register developer linetti holt 4
+register developer pimento peralta 2
+register developer wells diaz 2
+register developer john diaz 4
+register developer mary holt 3
+register developer jeffords holt 5
+users
+create santiago inhouse Online occurrence reporting
+4 web javascript css mysql
+2
+create diaz outsourced Online occurrence reporting UI
+4 css javascript ruby-on-rails redis
+UI4All
+create holt inhouse Wordle
+6 web javascript css outsystems c# oracle
+2
+create holt inhouse Top secret
+3 c# oracle rust
+5 
+create diaz inhouse Yet another online app
+3 erlang distribution redis
+4
+create diaz inhouse My fabulous app
+4 c# redis json html
+3
+create peralta inhouse Sell stuff online app
+5 distribution erlang html json microservicea
+3
+create peralta outsourced Accounting service
+2 go microservices
+Mendix
+projects
+team diaz Yet another online app
+5 boyle peralta linetti jeffords alice
+team diaz Yet another online app
+4 diaz linetti john santiago
+team alice My fabulous app
+5 boyle peralta linetti jeffords alice
+team diaz My fabulous app
+3 holt diaz santiago
+team peralta Sell stuff online app
+4 peralta bob wells boyle
+team holt Wordle
+4 scully wells pimento santiago
+team peralta Sell stuff online app
+4 mary boyle pimento alice
+projects
+artefacts diaz Yet another online app
+23-03-2022
+3
+main.java 3 java
+diagram.jpg 4 jpg image
+passwords.xlsx 5 passwords in an excel file!?
+artefacts linetti Yet another online app
+25-03-2022
+3
+todo.txt 3 text file
+main.java 3 java
+diagram.jpg 4 jpg image
+artefacts santiago Online occurrence reporting
+25-01-2022
+3
+file2.py 2 python
+class_diagram.jpg 1 jpg image
+file1.py 2 python
+artefacts holt Top secret
+04-02-2022
+3
+file2.erl 4 erlang file
+class_diagram.jpg 5 entities
+file1.erl 5 erlang file
+artefacts holt Top secret
+04-02-2022
+3
+file4.erl 5 erlang file
+class_diagram.jpg 5 entities
+file3.erl 5 erlang file
+artefacts holt My fabulous app
+06-02-2021
+2
+file1.erl 3 erlang file
+file.erl 5 erlang file
+projects
+project Online occurrence reporting
+project Yet another online app
+project Wordle
+project Top secret
+project Top secrets
+project Online occurrence reporting UI
+artefacts pimento Wordle
+13-03-2021
+1
+wordle.cpp 2 c++ file
+artefacts santiago Wordle
+14-03-2021
+1
+readme 0 compiling instructions
+revision wells Wordle
+wordle.cpp 15-03-2021 minor fix
+revision pimento Wordle
+readme 14-03-2021 added more detail
+revision santiago Wordle
+wordle.cpp 18-03-2021 updated comments
+project Wordle
+team santiago Online occurrence reporting
+1 mary
+revision mary Online occurrence reporting
+class_diagram.jpg 27-01-2022 revise diagram
+revision alice Wordle
+wordle.cpp 29-03-2021 refactored code
+revision holt Some app
+wordle.cpp 29-03-2021 refactored code
+revision diaz Online occurrence reporting UI
+main.cpp 12-12-2019 refactored code
+revision peralta Wordle
+wordle.cpp 29-03-2021 refactored code
+project Wordle
+revision santiago Wordle
+readme 18-03-2021 minor fix
+project Wordle
+revision linetti Yet another online app
+main.java 25-03-2022 add new commands
+project Yet another online app
+revision jeffords Yet another online app
+diagram.jpg 25-03-2022 updated diagram
+revision alice Yet another online app
+diagram.jpg 25-03-2022 fixed typo
+revision santiago Some app
+diagram.jpg 25-03-2022 fixed typo
+revision santiago Online occurrence reporting UI
+diagram.jpg 25-03-2022 fixed typo
+revision jeffords Yet another online app
+no_file.txt 25-03-2022 fixed typo
+revision peralta Yet another online app
+diagram.jpg 25-03-2022 fixed typo
+project Yet another online app
+project Some app
+project Online occurrence reporting UI
+projects
+exit

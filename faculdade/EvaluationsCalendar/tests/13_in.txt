@@ -1,0 +1,127 @@
+course IP
+course Object-Oriented Programming
+course AM I
+course AM II
+course Fancy course name
+course Karaoke 101
+course Extreme Mooshaking
+coursetests Advanced Procastination
+coursetests IP
+coursetests AM I
+coursetests Extreme Mooshaking
+professor Injun Joe
+student 23234 Sid Sawyer
+student 10730 Amy Lawrence
+student 3254 Mary
+student 9983 Muff Potter
+student 12435 Alfred Temple
+student 32424 Injun Joe
+student 12334 Tom Sawyer
+student 13242 Becky Thatcher
+student 3243 Huckleberry Finn
+student 23143 Joe Harper
+professor Aunt Polly
+professor Mr. Walters
+professor Judge Thatcher
+professor Jim
+professor Mr. Sprague
+professor Mr. Jones
+assign Mr. Jones
+IP
+assign Mr. Walters
+Object-Oriented Programming
+assign Mr. Walters
+AM II
+assign Mr. Walters
+AM I
+assign Aunt Polly
+AM I
+assign Mr. Jones
+Object-Oriented Programming
+assign Mr. Jones
+AM I
+enrol 5 Object-Oriented Programming
+Tom Sawyer
+Huckleberry Finn
+Becky Thatcher
+Muff Potter
+Amy Lawrence
+enrol 2 IP
+Becky Thatcher
+Tom Sawyer
+enrol 3 AM I
+Becky Thatcher
+Joe Harper
+Huckleberry Finn
+intersection 2 Object-Oriented Programming
+IP
+schedule 2022 5 25 9 0 2 Liberty 101
+test on a course that does not exist
+schedule 2022 5 3 14 30 2 Object-Oriented Programming
+super test
+schedule 2022 5 3 14 30 2 IP
+test at the same time as OOP
+deadline Object-Oriented Programming
+2022 3 11 Small project deadline
+schedule 2022 3 12 17 00 1 Object-Oriented Programming
+awesome test
+schedule 2022 6 4 9 00 1 Object-Oriented Programming
+some test
+schedule 2022 5 3 9 00 3 Object-Oriented Programming
+super early test
+schedule 2023 2 1 10 00 2 Object-Oriented Programming
+some test
+schedule 2022 3 12 9 00 1 Object-Oriented Programming
+same day test
+schedule 2022 3 12 17 00 1 Object-Oriented Programming
+same time test
+schedule 2022 3 12 17 00 1 IP
+same time different course test
+schedule 2022 3 12 17 00 1 Karaoke 101
+same time unrelated course test
+schedule 2022 5 3 14 30 2 AM I
+test at the same time as OOP and IP
+schedule 2022 5 3 22 00 1 AM I
+test at the same day as OOP and IP
+deadline IP
+2022 4 28 Easy Calendar Project
+deadline Karaoke 101
+2022 4 29 Bad Singing Project
+deadline AM I
+2022 4 29 Strange Project
+deadline Parachuting
+2022 4 30 Scary Jumping Project
+deadline AM I
+2022 3 12 Weird Project
+deadline Object-Oriented Programming
+2022 3 13 Bad Singing Project
+deadline Object-Oriented Programming
+2022 3 14 Bad Singing Project II
+coursetests Object-Oriented Programming
+coursetests Mississipi 101
+coursetests IP
+coursetests Mississipi 999
+personaltests Tom Sawyer
+personaldeadlines Tom Sawyer
+personaltests Karate Kid
+personaltests Becky Thatcher
+personaldeadlines Becky Thatcher
+personaltests Santa Claus
+personaltests Huckleberry Finn
+personaldeadlines Huckleberry Finn
+personaltests Guy tougher than Chuck Norris
+personaltests Joe Harper
+personaldeadlines Joe Harper
+personaltests Injun Joe
+personaltests Muff Potter
+personaldeadlines Muff Potter
+personaltests Alfred Temple
+personaldeadlines Amy Lawrence
+stressometer -1
+stressometer 0
+stressometer 1
+personaltests Mark Twain
+stressometer 2
+personaltests Samuel Langhorne Clemens
+stressometer 5
+exit
