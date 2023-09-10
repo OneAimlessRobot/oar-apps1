@@ -20,6 +20,9 @@ int menuw=9,menuh=10,menux=statsx,menuy=pety+petw+3;
 int warningsx=statsx+2,warningsy=menuy+menuw+1;
 
 
+int gohomew=9,gohomeh=10,gohomex=petx+peth,gohomey=pety;
+
+
 needs[0]=newwin(titleh,titlew,hudx,hudy);
 needs[1]=newwin(statsh,statsw,statsx,statsy);
 needs[2]=newwin(menuh,menuw,menux,menuy);
@@ -34,6 +37,7 @@ needs[9]=newwin(1,strlen("POO!"),warningsx+5,warningsy);
 needs[10]=newwin(1,strlen("PEE!"),warningsx+6,warningsy);
 
 
+needs[11]= newwin(gohomeh,gohomew,gohomex,gohomey);
 
 
 

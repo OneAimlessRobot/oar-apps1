@@ -1,9 +1,20 @@
 #include "Include/preprocessorStuff.h"
 
-void graphics(Animal* an,char** buffs,WINDOW** needs);
+void updateGraphics(Animal* an,char** buffs,WINDOW** needs,int*mode);
+
+//Graphical for diferent modes
+void statsGraphics(Animal* an,char** buffs,WINDOW** needs);
+void petGraphics(Animal* an,char** buffs,WINDOW** needs);
+void emptyGraphics(Animal* an,char** buffs,WINDOW** needs);
+
 void displayHud(Animal * an,WINDOW** needs);
-void cmdFunc(Animal* an,int option);
-void input(MENU**menu,Animal*an,int*online);
+
+//Functions for the menus
+void cmdFunc(Animal* an,int option,char** buffs,WINDOW** needs,int *mode);
+void homeFunc(Animal* an,int option,char** buffs,WINDOW** needs,int *mode);
+void goHomeFunc(Animal* an,int option,char** buffs,WINDOW** needs,int *mode);
+
+void input(MENU**menu,Animal*an,int*online,int*mode);
 void print_in_middle(WINDOW *win, int starty, int startx, int width, char *string, chtype color);
 void flashingDyingAlert(Animal* an);
 void checkValue(int *isZero);
@@ -12,7 +23,11 @@ int main(int argc, char** argv){
 
 
 paused=0;
-int online=1;
+int online=1,
+    mode=0;//0-Home
+            //1- Commands
+            //2- Stats
+            //3- Check pet
 
 
 char* name;
@@ -41,12 +56,10 @@ WINDOW** needs=malloc(sizeof(WINDOW*)*(NUM_OF_WINDOWS));
 initscr();
 start_color();
 initAllColors();
-keypad(stdscr,TRUE);
 halfdelay(1);
 refresh();
 noecho();
 curs_set(0);
-erase();
 
 int baseStat=840;
 spawnAnimal(&an,baseStat,baseStat,baseStat,baseStat,baseStat*4,name);
@@ -74,12 +87,23 @@ pthread_t biologyWorker,alertWorker;
 
 	while(online && !an.dead)
 	{
-        input(&cmdMenu,&an,&online);
-
-	print_in_middle(needs[2], 1, 0, 10, "Commands:", COLOR_PAIR(33));
-
-		graphics(&an,buffs,needs);
 	refresh();
+		updateGraphics(&an,buffs,needs,&mode);
+		switch(mode){
+            case modes.home:
+        input(&cmdMenu,&an,&online);
+        break;
+        case modes.commands:
+        break;
+
+        case modes.stats:
+        break;
+        case modes.pet:
+        break;
+        default:
+        break;
+        }
+
 
 post_menu(cmdMenu);
 wrefresh(needs[2]);
@@ -170,7 +194,41 @@ void cmdFunc(Animal* an,int option){
 
 }
 
-void graphics(Animal* an,char** buffs,WINDOW** needs){
+
+void updateGraphics(Animal* an,char** buffs,WINDOW** needs,int*mode){
+
+switch(*mode){
+
+case modes.home:
+
+
+break;
+
+case modes.commands:
+
+break;
+
+case modes.stats:
+
+    statsGraphics(an,buffs,needs);
+
+break;
+
+case modes.pet:
+
+    petGraphics(an,buffs,needs);
+
+break;
+
+default:
+break;
+
+
+
+}
+
+}
+void petGraphics(Animal* an,char** buffs,WINDOW** needs){
 if(paused){
 
     wbkgd(needs[3],COLOR_PAIR(31));
@@ -205,13 +263,18 @@ if(paused){
 
 
  }
+ displayHud(an,needs);
+
+}
+
+void statsGraphics(Animal* an,char** buffs,WINDOW** needs){
+
+
  wrefresh(needs[3]);
  free(buffs[3]);
  buffs[3]=animalStatHud(*an);
  makeWinWithText(needs[1],buffs[3],0,0);
  wrefresh(needs[1]);
- displayHud(an,needs);
-
 }
 void displayHud(Animal * an,WINDOW** needs){
     if(!(an->boredom>0)){

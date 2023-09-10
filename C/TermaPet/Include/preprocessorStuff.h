@@ -1,6 +1,9 @@
 #ifndef PREPROCESSOR_H
 #define PREPROCESSOR_H
 
+enum modes{home,commands,stats,pet};
+
+
 #include "graphicalDefines.h"
 #include <ncurses.h>
 #include <stdlib.h>
