@@ -14,7 +14,9 @@ void cmdFunc(Animal* an,int option,char** buffs,WINDOW** needs,int *mode);
 void homeFunc(Animal* an,int option,char** buffs,WINDOW** needs,int *mode);
 void goHomeFunc(Animal* an,int option,char** buffs,WINDOW** needs,int *mode);
 
-void input(MENU**menu,Animal*an,int*online,int*mode);
+void postCurrMenu(MENU**menuList,int mode,int size);
+
+void input(MENU**menu,Animal*an,int*online,int*mode,char** buffs,WINDOW** needs);
 void print_in_middle(WINDOW *win, int starty, int startx, int width, char *string, chtype color);
 void flashingDyingAlert(Animal* an);
 void checkValue(int *isZero);
@@ -44,9 +46,6 @@ else{
 
 }
 Animal an;
-PackagedMenu pMenu;
-	MENU *cmdMenu;
-
 
 char** buffs= malloc(sizeof(char*)*NUM_OF_BUFFERS);
 WINDOW** needs=malloc(sizeof(WINDOW*)*(NUM_OF_WINDOWS));
@@ -70,12 +69,38 @@ initBuffers(&an,buffs);
 
 showTitleScreen(needs[0],buffs[2],0,0);
 
+PackagedMenu pHomeMenu,
+             pCmdMenu,
+             pGoHomeMenu;
 
-int nCmd = ARRAY_SIZE(cmdMenuLabels);
+	MENU *cmdMenu,
+            *homeMenu,
+            *goHomeMenu,
+            ** menus=malloc(sizeof(MENU*)*NUM_OF_MODES);
 
-ITEM** cmdItems = (ITEM **)calloc(nCmd + 1, sizeof(ITEM *));
 
-    initMenu(&pMenu,&cmdMenu,nCmd,needs[2],cmdFunc,cmdMenuLabels,cmdItems);
+
+
+int nCmd = ARRAY_SIZE(cmdLabels),
+    nHome = ARRAY_SIZE(homeLabels),
+    nGoHome = ARRAY_SIZE(goHomeLabels);
+
+ITEM** cmdItems = (ITEM **)calloc(nCmd + 1, sizeof(ITEM *)),
+        **homeItems = (ITEM **)calloc(nHome + 1, sizeof(ITEM *)),
+        **goHomeItems = (ITEM **)calloc(nGoHome + 1, sizeof(ITEM *));
+
+
+    initMenu(&pCmdMenu,&cmdMenu,nCmd,needs[2],cmdFunc,cmdLabels,cmdItems);
+
+    initMenu(&pHomeMenu,&homeMenu,nHome,needs[2],homeFunc,homeLabels,homeItems);
+
+    initMenu(&pGoHomeMenu,&goHomeMenu,nGoHome,needs[12],goHomeFunc,goHomeLabels,goHomeItems);
+
+            menus[0]=homeMenu;
+            menus[1]=cmdMenu;
+            menus[2]=goHomeMenu;
+            menus[3]=goHomeMenu;
+
 
 pthread_t biologyWorker,alertWorker;
 
@@ -89,28 +114,39 @@ pthread_t biologyWorker,alertWorker;
 	{
 	refresh();
 		updateGraphics(&an,buffs,needs,&mode);
-		switch(mode){
-            case modes.home:
-        input(&cmdMenu,&an,&online);
+        enum modes currMode;
+
+        currMode=mode;
+        switch(currMode){
+        case home:
+        input(&homeMenu,&an,&online,&mode,buffs,needs);
         break;
-        case modes.commands:
+        case commands:
+
+        input(&cmdMenu,&an,&online,&mode,buffs,needs);
         break;
 
-        case modes.stats:
+        case stats:
+        input(&goHomeMenu,&an,&online,&mode,buffs,needs);
         break;
-        case modes.pet:
+        case pet:
+        input(&goHomeMenu,&an,&online,&mode,buffs,needs);
         break;
         default:
         break;
         }
 
 
-post_menu(cmdMenu);
-wrefresh(needs[2]);
 
+postCurrMenu(menus,mode,NUM_OF_MODES);
+
+wrefresh(needs[2]);
 	}
 
-destroyMenu(&pMenu);
+destroyMenu(&pHomeMenu);
+destroyMenu(&pCmdMenu);
+destroyMenu(&pGoHomeMenu);
+
 
 nocbreak();
 
@@ -127,7 +163,7 @@ endwin();
 return 0;
 }
 
-void input(MENU**menu,Animal*an,int*online){
+void input(MENU**menu,Animal*an,int*online,int*mode,char** buffs,WINDOW** needs){
     int c=(int) wgetch(menu_win(*menu));
         switch(c)
 	    {	case KEY_DOWN:
@@ -138,10 +174,10 @@ void input(MENU**menu,Animal*an,int*online){
 				break;
 			case 10:
 			{	ITEM *cur;
-				void (*p)(Animal*,int);
+				void (*p)(Animal*,int,char**,WINDOW**,int*);
 				cur = current_item(*menu);
 				p = item_userptr(cur);
-				p(an,item_index(cur));
+				p(an,item_index(cur),buffs,needs,mode);
 				pos_menu_cursor(*menu);
 				break;
 			}
@@ -172,17 +208,14 @@ void print_in_middle(WINDOW *win, int starty, int startx, int width, char *strin
 	refresh();
 }
 
-void cmdFunc(Animal* an,int option){
+void cmdFunc(Animal* an,int option,char** buffs,WINDOW** needs,int *mode){
     beep();
     if(option < 6){
     if(!(paused)){
     petCare(an,option);
     }
-    else{
-    return;
     }
-    }
-    else{
+    else if(option==6){
 
         if(paused){
             paused=0;
@@ -191,30 +224,53 @@ void cmdFunc(Animal* an,int option){
             paused=1;
         }
     }
+    else if(option==7){
+
+        *mode=0;
+
+    }
+
+}
+
+void homeFunc(Animal* an,int option,char** buffs,WINDOW** needs,int *mode){
+killAllWindows(needs);
+*mode=option;
+initWindows(needs);
 
 }
 
 
+void goHomeFunc(Animal* an,int option,char** buffs,WINDOW** needs,int *mode){
+killAllWindows(needs);
+*mode=0;
+initWindows(needs);
+
+
+
+}
 void updateGraphics(Animal* an,char** buffs,WINDOW** needs,int*mode){
 
-switch(*mode){
+enum modes currMode;
 
-case modes.home:
+currMode=*mode;
+switch(currMode){
+
+case home:
 
 
 break;
 
-case modes.commands:
+case commands:
 
 break;
 
-case modes.stats:
+case stats:
 
     statsGraphics(an,buffs,needs);
 
 break;
 
-case modes.pet:
+case pet:
 
     petGraphics(an,buffs,needs);
 
@@ -228,6 +284,26 @@ break;
 }
 
 }
+
+
+void postCurrMenu(MENU**menuList,int mode,int size){
+
+    for(int i=0;i<size;i++){
+        if(i==mode){
+            post_menu(menuList[i]);
+            }
+        else{
+            unpost_menu(menuList[i]);
+        }
+
+        }
+
+
+
+
+}
+
+
 void petGraphics(Animal* an,char** buffs,WINDOW** needs){
 if(paused){
 

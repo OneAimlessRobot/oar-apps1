@@ -5,6 +5,7 @@
 
 #define NUM_OF_BUFFERS 8
 #define NUM_OF_WINDOWS 14
+#define NUM_OF_MODES 4
 int getRandomInteger(int min, int max);
 
 void incAndTruncateNum(float* var,int sign,float value,float inc);
