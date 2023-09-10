@@ -1,6 +1,10 @@
 #ifndef AUX_H
 #define AUX_H
 
+#define ARRAY_SIZE(a) (sizeof(a) / sizeof(a[0]))
+
+#define NUM_OF_BUFFERS 8
+#define NUM_OF_WINDOWS 14
 int getRandomInteger(int min, int max);
 
 void incAndTruncateNum(float* var,int sign,float value,float inc);
@@ -13,6 +17,13 @@ void multIntByFactor(int* var,int sign,int fact);
 
 int min(int num1, int num2);
 
+typedef struct PackagedMenu{
 
+MENU* menu;
+void* funcPtr;
+int nRows;
+char**labelArr;
+
+}PackagedMenu;
 
 #endif

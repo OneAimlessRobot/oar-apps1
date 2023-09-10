@@ -2,7 +2,8 @@
 
 void graphics(Animal* an,char** buffs,WINDOW** needs);
 void displayHud(Animal * an,WINDOW** needs);
-void func(Animal* an,int option);
+void cmdFunc(Animal* an,int option);
+void input(MENU**menu,Animal*an,int*online);
 void print_in_middle(WINDOW *win, int starty, int startx, int width, char *string, chtype color);
 void flashingDyingAlert(Animal* an);
 void checkValue(int *isZero);
@@ -11,6 +12,7 @@ int main(int argc, char** argv){
 
 
 paused=0;
+int online=1;
 
 
 char* name;
@@ -27,16 +29,12 @@ else{
 
 }
 Animal an;
-
-pthread_t biologyWorker,alertWorker;
-
-ITEM **my_items;
-	int n_choices, i, c, online=1;
-	MENU *my_menu;
+PackagedMenu pMenu;
+	MENU *cmdMenu;
 
 
-char** buffs= malloc(sizeof(char*)*8);
-WINDOW** needs=malloc(sizeof(WINDOW*)*(11));
+char** buffs= malloc(sizeof(char*)*NUM_OF_BUFFERS);
+WINDOW** needs=malloc(sizeof(WINDOW*)*(NUM_OF_WINDOWS));
 
 
 
@@ -60,29 +58,13 @@ initBuffers(&an,buffs);
 showTitleScreen(needs[0],buffs[2],0,0);
 
 
-n_choices = ARRAY_SIZE(cmdMenu);
+int nCmd = ARRAY_SIZE(cmdMenuLabels);
 
-my_items = (ITEM **)calloc(n_choices + 1, sizeof(ITEM *));
-for(i = 0; i < n_choices; ++i)
-	{
-	my_items[i] = new_item(cmdMenu[i], cmdMenu[i]);
-		/* Set the user pointer */
-		set_item_userptr(my_items[i], func);
-	}
+ITEM** cmdItems = (ITEM **)calloc(nCmd + 1, sizeof(ITEM *));
 
-my_items[n_choices] = (ITEM *)NULL;
+    initMenu(&pMenu,&cmdMenu,nCmd,needs[2],cmdFunc,cmdMenuLabels,cmdItems);
 
-my_menu = new_menu((ITEM **)my_items);
-
-menu_opts_off(my_menu, O_SHOWDESC);
-
-keypad(needs[2], TRUE);
-
-set_menu_win(my_menu, needs[2]);
-set_menu_sub(my_menu, derwin(needs[2], 0, 0, 2, 0));
-
-set_menu_mark(my_menu,"");
-
+pthread_t biologyWorker,alertWorker;
 
  pthread_create(&biologyWorker,NULL,petDecayLoop,(&an));
  pthread_detach(biologyWorker);
@@ -92,48 +74,19 @@ set_menu_mark(my_menu,"");
 
 	while(online && !an.dead)
 	{
-        c=getch();
-        switch(c)
-	    {	case KEY_DOWN:
-		        menu_driver(my_menu, REQ_DOWN_ITEM);
-				break;
-			case KEY_UP:
-				menu_driver(my_menu, REQ_UP_ITEM);
-				break;
-			case 10:
-			{	ITEM *cur;
-				void (*p)(Animal*,int);
-				cur = current_item(my_menu);
-				p = item_userptr(cur);
-				p(&an,item_index(cur));
-				pos_menu_cursor(my_menu);
-				break;
-			}
-			case 'q':
-			{
-                online=0;
-                break;
-			}
-            default:
-                break;
-		}
+        input(&cmdMenu,&an,&online);
+
 	print_in_middle(needs[2], 1, 0, 10, "Commands:", COLOR_PAIR(33));
 
 		graphics(&an,buffs,needs);
 	refresh();
 
-post_menu(my_menu);
+post_menu(cmdMenu);
 wrefresh(needs[2]);
 
 	}
 
-
-	unpost_menu(my_menu);
-	for(i = 0; i < n_choices; ++i)
-		free_item(my_items[i]);
-	free_menu(my_menu);
-
-
+destroyMenu(&pMenu);
 
 nocbreak();
 
@@ -150,7 +103,34 @@ endwin();
 return 0;
 }
 
+void input(MENU**menu,Animal*an,int*online){
+    int c=(int) wgetch(menu_win(*menu));
+        switch(c)
+	    {	case KEY_DOWN:
+		        menu_driver(*menu, REQ_DOWN_ITEM);
+				break;
+			case KEY_UP:
+				menu_driver(*menu, REQ_UP_ITEM);
+				break;
+			case 10:
+			{	ITEM *cur;
+				void (*p)(Animal*,int);
+				cur = current_item(*menu);
+				p = item_userptr(cur);
+				p(an,item_index(cur));
+				pos_menu_cursor(*menu);
+				break;
+			}
+			case 'q':
+			{
+                *online=0;
+                break;
+			}
+            default:
+                break;
+		}
 
+}
 
 void print_in_middle(WINDOW *win, int starty, int startx, int width, char *string, chtype color)
 {	int x, y;
@@ -168,7 +148,7 @@ void print_in_middle(WINDOW *win, int starty, int startx, int width, char *strin
 	refresh();
 }
 
-void func(Animal* an,int option){
+void cmdFunc(Animal* an,int option){
     beep();
     if(option < 6){
     if(!(paused)){

@@ -6,6 +6,7 @@
 #include <ncurses.h>
 #include <string.h>
 #include <time.h>
+#include <menu.h>
 #include "../Include/aux.h"
 #include "../Include/graphicalDefines.h"
 #include "../Include/petEngine.h"

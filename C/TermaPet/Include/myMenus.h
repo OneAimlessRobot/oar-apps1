@@ -1,9 +1,7 @@
 
 #ifndef MENUS_H
 #define MENUS_H
-#define ARRAY_SIZE(a) (sizeof(a) / sizeof(a[0]))
-
-char *cmdMenu[] = {
+char *cmdMenuLabels[] = {
                         "Feed",
                         "Play",
                         "Quench",
@@ -12,5 +10,26 @@ char *cmdMenu[] = {
                         "Rest",
                         "(un)Pause"
                   };
+//char *cmdMenuLabels[] = {
+//                        "Home",
+//                        "Feed",
+//                        "Play",
+//                        "Quench",
+//                        "Heal",
+//                        "Poo/Pee",
+//                        "Rest",
+//                        "(un)Pause"
+//                  };
+//char *homeMenuLabels[] = {
+//                    "Stats",
+//                    "Commands",
+//                    "Pet",
+//                    "Activities",
+//
+//
+//                  };
+//char *goHomeLabels[] = {
+//                        "Go Home",
+//                  };
 
 #endif

@@ -4,6 +4,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <limits.h>
+#include <menu.h>
 #include "../Include/aux.h"
 #include "../Include/petEngine.h"
 

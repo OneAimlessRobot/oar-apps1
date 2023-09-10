@@ -1,6 +1,7 @@
 #include <ncurses.h>
 #include <stdlib.h>
 #include <string.h>
+#include <menu.h>
 #include "../Include/aux.h"
 #include "../Include/embeded.h"
 #include "../Include/petEngine.h"
@@ -65,7 +66,7 @@ void showTitleScreen(WINDOW* logo,char* buff,int x,int y){
 }
 void killAllBuffs(char** buffs){
 
-    for(int i=0;i<4;i++){
+    for(int i=0;i<NUM_OF_BUFFERS;i++){
 
         free(buffs[i]);
 
@@ -91,11 +92,52 @@ init_pair(8,COLOR_MAGENTA,COLOR_MAGENTA);//bored //
 init_pair(9,COLOR_RED,COLOR_CYAN);//Pet color
 
 }
+void initMenu(PackagedMenu*pMenu,MENU**menu,int nRows,WINDOW** win,void*func,char**labels,ITEM**items){
 
+pMenu->funcPtr=func;
+pMenu->nRows=nRows;
+
+for(int i = 0; i < nRows; ++i)
+	{
+	items[i] = new_item(labels[i],labels[i]);
+		/* Set the user pointer */
+		set_item_userptr(items[i], func);
+	}
+
+items[nRows] = (ITEM *)NULL;
+
+*menu = new_menu((ITEM **)items);
+
+menu_opts_off(*menu, O_SHOWDESC);
+
+keypad(win, TRUE);
+
+set_menu_win(*menu,win);
+set_menu_sub(*menu, derwin(win, 0, 0, 2, 0));
+
+set_menu_mark(*menu,"");
+
+pMenu->menu=*menu;
+pMenu->labelArr=labels;
+
+
+}
+
+
+void destroyMenu(PackagedMenu*pMenu){
+
+	unpost_menu(pMenu->menu);
+	for(int i = 0; i < pMenu->nRows; ++i)
+		free_item(menu_items(pMenu->menu)[i]);
+	free_menu(pMenu->menu);
+
+
+
+}
 void killAllWindows(WINDOW** needs){
 
 
-for(int i=0;i<6+4;i++){
+for(int i=0;i<NUM_OF_WINDOWS;i++){
 
     delwin(needs[i]);
 
