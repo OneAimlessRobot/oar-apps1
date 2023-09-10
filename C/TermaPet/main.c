@@ -59,7 +59,6 @@ initscr();
 start_color();
 initAllColors();
 halfdelay(1);
-refresh();
 noecho();
 curs_set(0);
 
@@ -114,7 +113,13 @@ pthread_t biologyWorker,alertWorker;
 
 	while(online && !an.dead)
 	{
-        enum modes currMode;
+
+		updateGraphics(&an,buffs,needs,&mode);
+		wrefresh(curscr);
+		        doupdate();
+clearAll(needs,&mode);
+
+enum modes currMode;
 
         currMode=mode;
         switch(currMode){
@@ -138,13 +143,7 @@ pthread_t biologyWorker,alertWorker;
         default:
         break;
         }
-
-
-		updateGraphics(&an,buffs,needs,&mode);
-
 postCurrMenu(menus,mode,NUM_OF_MODES);
-        refreshAll(needs,&mode);
-doupdate();
 	}
 
 destroyMenu(&pHomeMenu);
@@ -238,15 +237,14 @@ void cmdFunc(Animal* an,int option,char** buffs,WINDOW** needs,int *mode){
 
 void homeFunc(Animal* an,int option,char** buffs,WINDOW** needs,int *mode){
 
-*mode=option;
 
+*mode=option;
 }
 
 
 void goHomeFunc(Animal* an,int option,char** buffs,WINDOW** needs,int *mode){
 
-*mode=0;
-
+    homeFunc(an,0,buffs,needs,mode);
 
 
 }
@@ -294,7 +292,7 @@ break;
 
 void postCurrMenu(MENU**menuList,int mode,int size){
 
-    for(int i=0;i<size;i++){
+    for(int i=0;i<size-2;i++){
         if(i==mode){
             post_menu(menuList[i]);
             }
@@ -483,14 +481,11 @@ case home:
 
 for(int i=1;i<7;i++){
 
-if(i==2){
+if(i!=2){
 
+    werase(needs[i]);
 
 }
-else{
-    werase(needs[i]);
-    }
-
 }
 
 
@@ -499,14 +494,11 @@ break;
 case commands:
 for(int i=1;i<7;i++){
 
-if(i==2){
+if(i!=2){
 
+    werase(needs[i]);
 
 }
-else{
-    werase(needs[i]);
-    }
-
 }
 
 
@@ -524,14 +516,11 @@ break;
 
 case pet:
 for(int i=1;i<7;i++){
-if(i==3){
+if(i!=3){
 
+    werase(needs[i]);
 
 }
-else{
-    werase(needs[i]);
-    }
-
 }
 break;
 case activities:
@@ -555,81 +544,89 @@ break;
 }
 void refreshAll(WINDOW** needs,int *mode){
 
+//for(int i=1;i<NUM_OF_WINDOWS;i++){
+//
+//
+//    wnoutrefresh(needs[i]);
+//}
+
+
+
 enum modes currMode;
 
 currMode=*mode;
 switch(currMode){
 
 case home:
-//wnoutrefresh(needs[2]);
+wnoutrefresh(needs[2]);
 
-for(int i=1;i<7;i++){
-
-if(i==2){
-
-
-}
-else{
-    wnoutrefresh(needs[i]);
-    }
-
-}
+//for(int i=1;i<7;i++){
+//
+//if(i==2){
+//
+//
+//}
+//else{
+//    wnoutrefresh(needs[i]);
+//    }
+//
+//}
 
 
 break;
 
 case commands:
-//wnoutrefresh(needs[2]);
+wnoutrefresh(needs[2]);
 
-for(int i=1;i<7;i++){
-
-if(i==2){
-
-
-}
-else{
-    wnoutrefresh(needs[i]);
-    }
-
-}
+//for(int i=1;i<7;i++){
+//
+//if(i==2){
+//
+//
+//}
+//else{
+//    wnoutrefresh(needs[i]);
+//    }
+//
+//}
 
 break;
 
 case stats:
-//wnoutrefresh(needs[1]);
+wnoutrefresh(needs[1]);
 
-for(int i=2;i<7;i++){
-
-    wnoutrefresh(needs[i]);
-
-}
+//for(int i=2;i<7;i++){
+//
+//    wnoutrefresh(needs[i]);
+//
+//}
 
 break;
 
 case pet:
-//wnoutrefresh(needs[3]);
+wnoutrefresh(needs[3]);
 
-for(int i=1;i<7;i++){
-
-if(i==3){
-
-
-}
-else{
-    wnoutrefresh(needs[i]);
-    }
-
-}
+//for(int i=1;i<7;i++){
+//
+//if(i==3){
+//
+//
+//}
+//else{
+//    wnoutrefresh(needs[i]);
+//    }
+//
+//}
 
 
 break;
 case activities:
 
-for(int i=1;i<7;i++){
-
-    wnoutrefresh(needs[i]);
-
-}
+//for(int i=1;i<7;i++){
+//
+//    wnoutrefresh(needs[i]);
+//
+//}
 
 break;
 
