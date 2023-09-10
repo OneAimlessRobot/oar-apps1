@@ -1,7 +1,7 @@
 #ifndef PREPROCESSOR_H
 #define PREPROCESSOR_H
 
-enum modes{home,commands,stats,pet};
+enum modes{home,commands,stats,pet,activities};
 
 
 #include "graphicalDefines.h"

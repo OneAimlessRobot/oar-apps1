@@ -9,6 +9,9 @@ void emptyGraphics(Animal* an,char** buffs,WINDOW** needs);
 
 void displayHud(Animal * an,WINDOW** needs);
 
+void clearAll(WINDOW**needs,int*mode);
+void refreshAll(WINDOW** needs,int*mode);
+
 //Functions for the menus
 void cmdFunc(Animal* an,int option,char** buffs,WINDOW** needs,int *mode);
 void homeFunc(Animal* an,int option,char** buffs,WINDOW** needs,int *mode);
@@ -109,11 +112,8 @@ pthread_t biologyWorker,alertWorker;
  pthread_create(&alertWorker,NULL,flashingDyingAlert,&an);
  pthread_detach(alertWorker);
 
-
 	while(online && !an.dead)
 	{
-	refresh();
-		updateGraphics(&an,buffs,needs,&mode);
         enum modes currMode;
 
         currMode=mode;
@@ -132,15 +132,19 @@ pthread_t biologyWorker,alertWorker;
         case pet:
         input(&goHomeMenu,&an,&online,&mode,buffs,needs);
         break;
+        case activities:
+        input(&goHomeMenu,&an,&online,&mode,buffs,needs);
+        break;
         default:
         break;
         }
 
 
+		updateGraphics(&an,buffs,needs,&mode);
 
 postCurrMenu(menus,mode,NUM_OF_MODES);
-
-wrefresh(needs[2]);
+        refreshAll(needs,&mode);
+doupdate();
 	}
 
 destroyMenu(&pHomeMenu);
@@ -233,17 +237,15 @@ void cmdFunc(Animal* an,int option,char** buffs,WINDOW** needs,int *mode){
 }
 
 void homeFunc(Animal* an,int option,char** buffs,WINDOW** needs,int *mode){
-killAllWindows(needs);
+
 *mode=option;
-initWindows(needs);
 
 }
 
 
 void goHomeFunc(Animal* an,int option,char** buffs,WINDOW** needs,int *mode){
-killAllWindows(needs);
+
 *mode=0;
-initWindows(needs);
 
 
 
@@ -275,6 +277,10 @@ case pet:
     petGraphics(an,buffs,needs);
 
 break;
+case activities:
+
+break;
+
 
 default:
 break;
@@ -340,17 +346,15 @@ if(paused){
 
  }
  displayHud(an,needs);
-
+// wnoutrefresh(needs[3]);
 }
 
 void statsGraphics(Animal* an,char** buffs,WINDOW** needs){
 
 
- wrefresh(needs[3]);
  free(buffs[3]);
  buffs[3]=animalStatHud(*an);
  makeWinWithText(needs[1],buffs[3],0,0);
- wrefresh(needs[1]);
 }
 void displayHud(Animal * an,WINDOW** needs){
     if(!(an->boredom>0)){
@@ -366,7 +370,6 @@ void displayHud(Animal * an,WINDOW** needs){
 
     }
 
-    wrefresh(needs[5]);
 
     if(!(an->hunger>0)){
     wbkgd(needs[6],COLOR_PAIR(2));
@@ -381,7 +384,6 @@ void displayHud(Animal * an,WINDOW** needs){
 
     }
 
-    wrefresh(needs[6]);
     if(!(an->thirst>0)){
     wbkgd(needs[7],COLOR_PAIR(3));
      makeWinWithText(needs[7],"THIRSTY!\n",0,0);
@@ -395,7 +397,6 @@ void displayHud(Animal * an,WINDOW** needs){
 
     }
 
-    wrefresh(needs[7]);
     if(!(an->energy>0)){
     wbkgd(needs[8],COLOR_PAIR(4));
      makeWinWithText(needs[8],"TIRED!\n",0,0);
@@ -409,7 +410,6 @@ void displayHud(Animal * an,WINDOW** needs){
 
     }
 
-    wrefresh(needs[8]);
     if(an->gotPoo){
     wbkgd(needs[9],COLOR_PAIR(5));
      makeWinWithText(needs[9],"POO!\n",0,0);
@@ -422,7 +422,6 @@ void displayHud(Animal * an,WINDOW** needs){
 
 
     }
-    wrefresh(needs[9]);
     if(an->gotPee){
 
     wbkgd(needs[10],COLOR_PAIR(6));
@@ -436,7 +435,6 @@ void displayHud(Animal * an,WINDOW** needs){
 
 
     }
-    wrefresh(needs[10]);
     if(an->sleeping){
 
     wbkgd(needs[4],COLOR_PAIR(1));
@@ -450,7 +448,13 @@ void displayHud(Animal * an,WINDOW** needs){
 
 
     }
-    wrefresh(needs[4]);
+//    wnoutrefresh(needs[4]);
+//    wnoutrefresh(needs[10]);
+//    wnoutrefresh(needs[9]);
+//    wnoutrefresh(needs[8]);
+//    wnoutrefresh(needs[7]);
+//    wnoutrefresh(needs[6]);
+//    wnoutrefresh(needs[5]);
 
 
 }
@@ -468,7 +472,176 @@ void flashingDyingAlert(Animal* an){
 
 
 }
+void clearAll(WINDOW** needs,int *mode){
 
+enum modes currMode;
+
+currMode=*mode;
+switch(currMode){
+
+case home:
+
+for(int i=1;i<7;i++){
+
+if(i==2){
+
+
+}
+else{
+    werase(needs[i]);
+    }
+
+}
+
+
+break;
+
+case commands:
+for(int i=1;i<7;i++){
+
+if(i==2){
+
+
+}
+else{
+    werase(needs[i]);
+    }
+
+}
+
+
+break;
+
+case stats:
+
+for(int i=2;i<7;i++){
+
+    werase(needs[i]);
+
+}
+
+break;
+
+case pet:
+for(int i=1;i<7;i++){
+if(i==3){
+
+
+}
+else{
+    werase(needs[i]);
+    }
+
+}
+break;
+case activities:
+
+for(int i=1;i<7;i++){
+
+    werase(needs[i]);
+
+}
+
+break;
+
+
+default:
+break;
+
+
+
+}
+
+}
+void refreshAll(WINDOW** needs,int *mode){
+
+enum modes currMode;
+
+currMode=*mode;
+switch(currMode){
+
+case home:
+//wnoutrefresh(needs[2]);
+
+for(int i=1;i<7;i++){
+
+if(i==2){
+
+
+}
+else{
+    wnoutrefresh(needs[i]);
+    }
+
+}
+
+
+break;
+
+case commands:
+//wnoutrefresh(needs[2]);
+
+for(int i=1;i<7;i++){
+
+if(i==2){
+
+
+}
+else{
+    wnoutrefresh(needs[i]);
+    }
+
+}
+
+break;
+
+case stats:
+//wnoutrefresh(needs[1]);
+
+for(int i=2;i<7;i++){
+
+    wnoutrefresh(needs[i]);
+
+}
+
+break;
+
+case pet:
+//wnoutrefresh(needs[3]);
+
+for(int i=1;i<7;i++){
+
+if(i==3){
+
+
+}
+else{
+    wnoutrefresh(needs[i]);
+    }
+
+}
+
+
+break;
+case activities:
+
+for(int i=1;i<7;i++){
+
+    wnoutrefresh(needs[i]);
+
+}
+
+break;
+
+
+default:
+break;
+
+
+
+}
+
+}
 void checkValue(int * isZero){
 
     while(true){

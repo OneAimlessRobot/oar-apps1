@@ -26,8 +26,9 @@ char *cmdLabels[] = {
                         "Home",
                   };
 char *homeLabels[] = {
-                    "Stats",
+                    " ",
                     "Commands",
+                    "Stats",
                     "Pet",
                     "Activities",
 

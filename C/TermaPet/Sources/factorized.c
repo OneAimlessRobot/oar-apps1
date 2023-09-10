@@ -64,6 +64,8 @@ void showTitleScreen(WINDOW* logo,char* buff,int x,int y){
     makeWinWithText(logo,buff,x,y);
     wrefresh(logo);
     usleep((int)(TICK_DURATION_MICROSECS*GAME_SMOOTHNESS_FACTOR)*3);
+    werase(logo);
+    wrefresh(logo);
     delwin(logo);
 
 
