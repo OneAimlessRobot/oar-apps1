@@ -30,7 +30,6 @@ char *homeLabels[] = {
                     "Commands",
                     "Stats",
                     "Pet",
-                    "Activities",
 
 
                   };

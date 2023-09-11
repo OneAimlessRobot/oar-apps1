@@ -12,32 +12,21 @@
 void initWindows(WINDOW** needs){
 
 
-int hudx=0,hudy=0;
-int titleh=3,titlew=44;
-int statsw=(int)(STATBARSIZES)+3,statsh=15,statsx=hudx+1,statsy=hudy;
-int peth=5,petw=11,petx=hudx+statsx+3,pety=hudy+statsw+1;
-int menuw=9,menuh=10,menux=statsx,menuy=pety+petw+3;
-int warningsx=statsx+2,warningsy=menuy+menuw+1;
+needs[0]=newwin(TITLEH,TITLEW,HUDX,HUDY);
+needs[1]=newwin(STATSH,STATSW,STATSX,STATSY);
+needs[2]=newwin(MENUH,MENUW,MENUX,MENUY);
+needs[3]= newwin(PETH,PETW,PETX,PETY);
+
+needs[4]=newwin(1,strlen("SLEEPING!"),WARNINGSX,WARNINGSY);
+needs[5]=newwin(1,strlen("BORED!"),WARNINGSX+1,WARNINGSY);
+needs[6]=newwin(1,strlen("HUNGRY!"),WARNINGSX+2,WARNINGSY);
+needs[7]=newwin(1,strlen("THIRSTY!"),WARNINGSX+3,WARNINGSY);
+needs[8]=newwin(1,strlen("TIRED!"),WARNINGSX+4,WARNINGSY);
+needs[9]=newwin(1,strlen("POO!"),WARNINGSX+5,WARNINGSY);
+needs[10]=newwin(1,strlen("PEE!"),WARNINGSX+6,WARNINGSY);
 
 
-int gohomew=9,gohomeh=10,gohomex=petx+peth,gohomey=pety;
-
-
-needs[0]=newwin(titleh,titlew,hudx,hudy);
-needs[1]=newwin(statsh,statsw,statsx,statsy);
-needs[2]=newwin(menuh,menuw,menux,menuy);
-needs[3]= newwin(peth,petw,petx,pety);
-
-needs[4]=newwin(1,strlen("SLEEPING!"),warningsx,warningsy);
-needs[5]=newwin(1,strlen("BORED!"),warningsx+1,warningsy);
-needs[6]=newwin(1,strlen("HUNGRY!"),warningsx+2,warningsy);
-needs[7]=newwin(1,strlen("THIRSTY!"),warningsx+3,warningsy);
-needs[8]=newwin(1,strlen("TIRED!"),warningsx+4,warningsy);
-needs[9]=newwin(1,strlen("POO!"),warningsx+5,warningsy);
-needs[10]=newwin(1,strlen("PEE!"),warningsx+6,warningsy);
-
-
-needs[11]= newwin(gohomeh,gohomew,gohomex,gohomey);
+needs[11]= newwin(GOHOMEH,GOHOMEW,GOHOMEX,GOHOMEY);
 
 
 
@@ -119,7 +108,7 @@ menu_opts_off(*menu, O_SHOWDESC);
 keypad(win, TRUE);
 
 set_menu_win(*menu,win);
-set_menu_sub(*menu, derwin(win, 0, 0, 2, 0));
+set_menu_sub(*menu, derwin(win, 0, 0, (MENUX+STATSX+3), (MENUY+3)));
 
 set_menu_mark(*menu,"");
 

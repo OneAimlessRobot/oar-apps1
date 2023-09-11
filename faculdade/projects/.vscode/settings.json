@@ -1,7 +1,0 @@
-{
-    "files.associations": {
-        "taylor.h": "c",
-        "integrate.h": "c",
-        "derivative.h": "c"
-    }
-}

@@ -6,7 +6,7 @@ void updateGraphics(Animal* an,char** buffs,WINDOW** needs,int*mode);
 void statsGraphics(Animal* an,char** buffs,WINDOW** needs);
 void petGraphics(Animal* an,char** buffs,WINDOW** needs);
 void emptyGraphics(Animal* an,char** buffs,WINDOW** needs);
-
+void resetColors(WINDOW** needs);
 void displayHud(Animal * an,WINDOW** needs);
 
 void clearAll(WINDOW**needs,int*mode);
@@ -114,10 +114,12 @@ pthread_t biologyWorker,alertWorker;
 	while(online && !an.dead)
 	{
 
-		updateGraphics(&an,buffs,needs,&mode);
-		wrefresh(curscr);
-		        doupdate();
 clearAll(needs,&mode);
+		doupdate();
+
+		updateGraphics(&an,buffs,needs,&mode);
+		refreshAll(needs,&mode);
+		        doupdate();
 
 enum modes currMode;
 
@@ -135,9 +137,6 @@ enum modes currMode;
         input(&goHomeMenu,&an,&online,&mode,buffs,needs);
         break;
         case pet:
-        input(&goHomeMenu,&an,&online,&mode,buffs,needs);
-        break;
-        case activities:
         input(&goHomeMenu,&an,&online,&mode,buffs,needs);
         break;
         default:
@@ -159,6 +158,13 @@ makeWinWithText(stdscr,buffs[0],0,0);
 refresh();
 getch();
 }
+erase();
+refresh();
+bkgd(COLOR_PAIR(31));
+makeWinWithText(stdscr,"Adeus! Espero que se lembrem de fazer com que isto grave no futuro!\n",0,0);
+refresh();
+getch();
+
 killAllWindows(needs);
 killAllBuffs(buffs);
 endwin();
@@ -167,6 +173,7 @@ return 0;
 }
 
 void input(MENU**menu,Animal*an,int*online,int*mode,char** buffs,WINDOW** needs){
+    wrefresh(menu_win(*menu));
     int c=(int) wgetch(menu_win(*menu));
         switch(c)
 	    {	case KEY_DOWN:
@@ -255,15 +262,6 @@ enum modes currMode;
 currMode=*mode;
 switch(currMode){
 
-case home:
-
-
-break;
-
-case commands:
-
-break;
-
 case stats:
 
     statsGraphics(an,buffs,needs);
@@ -275,11 +273,6 @@ case pet:
     petGraphics(an,buffs,needs);
 
 break;
-case activities:
-
-break;
-
-
 default:
 break;
 
@@ -344,7 +337,6 @@ if(paused){
 
  }
  displayHud(an,needs);
-// wnoutrefresh(needs[3]);
 }
 
 void statsGraphics(Animal* an,char** buffs,WINDOW** needs){
@@ -352,6 +344,7 @@ void statsGraphics(Animal* an,char** buffs,WINDOW** needs){
 
  free(buffs[3]);
  buffs[3]=animalStatHud(*an);
+       wbkgd(needs[1],COLOR_PAIR(31));
  makeWinWithText(needs[1],buffs[3],0,0);
 }
 void displayHud(Animal * an,WINDOW** needs){
@@ -446,14 +439,6 @@ void displayHud(Animal * an,WINDOW** needs){
 
 
     }
-//    wnoutrefresh(needs[4]);
-//    wnoutrefresh(needs[10]);
-//    wnoutrefresh(needs[9]);
-//    wnoutrefresh(needs[8]);
-//    wnoutrefresh(needs[7]);
-//    wnoutrefresh(needs[6]);
-//    wnoutrefresh(needs[5]);
-
 
 }
 
@@ -461,8 +446,9 @@ void flashingDyingAlert(Animal* an){
     while(!an->dead){
         if(an->dying){
 
-            flash();
             usleep((int)(TICK_DURATION_MICROSECS*GAME_SMOOTHNESS_FACTOR));
+
+            flash();
         }
 
     }
@@ -481,10 +467,12 @@ case home:
 
 for(int i=1;i<7;i++){
 
+wbkgdset(needs[i],COLOR_PAIR(7));
 if(i!=2){
 
     werase(needs[i]);
-
+    wprintw(needs[i],"");
+    touchwin(needs[i]);
 }
 }
 
@@ -493,10 +481,12 @@ break;
 
 case commands:
 for(int i=1;i<7;i++){
-
+wbkgdset(needs[i],COLOR_PAIR(7));
 if(i!=2){
 
     werase(needs[i]);
+    wprintw(needs[i],"");
+    touchwin(needs[i]);
 
 }
 }
@@ -507,8 +497,11 @@ break;
 case stats:
 
 for(int i=2;i<7;i++){
+wbkgdset(needs[i],COLOR_PAIR(7));
 
     werase(needs[i]);
+    wprintw(needs[i],"");
+    touchwin(needs[i]);
 
 }
 
@@ -516,21 +509,15 @@ break;
 
 case pet:
 for(int i=1;i<7;i++){
+wbkgdset(needs[i],COLOR_PAIR(7));
 if(i!=3){
 
     werase(needs[i]);
+    wprintw(needs[i],"");
+    touchwin(needs[i]);
 
 }
 }
-break;
-case activities:
-
-for(int i=1;i<7;i++){
-
-    werase(needs[i]);
-
-}
-
 break;
 
 
@@ -544,13 +531,6 @@ break;
 }
 void refreshAll(WINDOW** needs,int *mode){
 
-//for(int i=1;i<NUM_OF_WINDOWS;i++){
-//
-//
-//    wnoutrefresh(needs[i]);
-//}
-
-
 
 enum modes currMode;
 
@@ -560,76 +540,25 @@ switch(currMode){
 case home:
 wnoutrefresh(needs[2]);
 
-//for(int i=1;i<7;i++){
-//
-//if(i==2){
-//
-//
-//}
-//else{
-//    wnoutrefresh(needs[i]);
-//    }
-//
-//}
-
-
 break;
 
 case commands:
 wnoutrefresh(needs[2]);
 
-//for(int i=1;i<7;i++){
-//
-//if(i==2){
-//
-//
-//}
-//else{
-//    wnoutrefresh(needs[i]);
-//    }
-//
-//}
 
 break;
 
 case stats:
 wnoutrefresh(needs[1]);
 
-//for(int i=2;i<7;i++){
-//
-//    wnoutrefresh(needs[i]);
-//
-//}
 
 break;
 
 case pet:
 wnoutrefresh(needs[3]);
 
-//for(int i=1;i<7;i++){
-//
-//if(i==3){
-//
-//
-//}
-//else{
-//    wnoutrefresh(needs[i]);
-//    }
-//
-//}
-
 
 break;
-case activities:
-
-//for(int i=1;i<7;i++){
-//
-//    wnoutrefresh(needs[i]);
-//
-//}
-
-break;
-
 
 default:
 break;
@@ -648,5 +577,13 @@ void checkValue(int * isZero){
         }
 
     }
+
+}
+void resetColors(WINDOW**needs){
+for(int i=0;i<NUM_OF_WINDOWS;i++){
+
+    wbkgd(needs[i],COLOR_PAIR(31));
+}
+
 
 }
