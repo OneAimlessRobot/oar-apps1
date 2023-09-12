@@ -13,7 +13,14 @@ pthread_t biology,alert;
 }Game;
 Game* initGame(char* animalName);
 
+void initBuffers(Game* game); //takes a char** buffer with 4 * char* size
+void initWindows(Game* game); //takes a WINDOW** buffer with 11 * WINDOW* size
+void initAllColors();
+void initMenus(Game*game);
+
 void gameLoop(Game* game);
+
+void petLoop(Game*game);
 
 void destroyGame(Game*game);
 void updateGraphics(Game* game);
@@ -31,5 +38,10 @@ void goHomeFunc(Game*game,int option);
 void postCurrMenu(Game*game);
 
 void input(Game*game);
-void flashingDyingAlert(Animal* an);
+void flashingDyingAlert(Game* game);
+
+
+void killAllBuffs(Game*game);
+void killAllWindows(Game*game);
+void killMenus(Game*game);
 #endif

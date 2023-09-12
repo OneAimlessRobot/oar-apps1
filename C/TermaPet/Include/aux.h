@@ -5,6 +5,7 @@
 
 #define NUM_OF_BUFFERS 8
 #define NUM_OF_WINDOWS 12
+#define NUM_OF_DIFERENT_MENUS 3
 #define NUM_OF_MODES 4
 
 int getRandomInteger(int min, int max);

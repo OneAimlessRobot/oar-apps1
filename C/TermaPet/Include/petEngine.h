@@ -92,6 +92,8 @@ typedef struct Animal{
         age,
         level,
 
+        currAgeCounter,
+
         digestionCounter,
         digesting,
 
@@ -118,11 +120,9 @@ typedef struct Animal{
 
 }Animal;
 
-int paused;
+void destroyAnimal(Animal*an);
 
 void petCare(Animal* an,int option);
-
-void petCareLoop(Animal* an);
 
 void petDecayLoop(Animal* an);
 

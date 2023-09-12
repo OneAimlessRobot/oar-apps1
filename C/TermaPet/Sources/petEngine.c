@@ -264,8 +264,7 @@ an->pooToleranceCounter=POO_TOLERANCE_COUNTER;
 
 an->dyingCounter=INT_MAX-1;
 
-an->digesting=an->hydrating=an->dying=an->dead=an->gotPee=an->gotPoo=an->sleeping=an->holdingPee=an->holdingPoo=an->xp=an->level=an->age=0;
-
+an->digesting=an->hydrating=an->dying=an->dead=an->gotPee=an->gotPoo=an->sleeping=an->holdingPee=an->holdingPoo=an->xp=an->level=an->age=an->currAgeCounter=0;
 an->name=name;
 
 }
@@ -329,9 +328,6 @@ void petCare(Animal* an,int option){
     }
 void petDecayLoop(Animal* an){
 
-int ageTicks=0;
-while(1){
-    if(!(paused)){
     handleBodyFunctions(an);
     usleep((int)(TICK_DURATION_MICROSECS));
     incAndTruncateNum(&an->boredom,0,0,BOREDOMDECAY);
@@ -339,16 +335,19 @@ while(1){
     incAndTruncateNum(&an->hunger,0,0,HUNGERDECAY);
     incAndTruncateNum(&an->thirst,0,0,THIRSTDECAY);
     incAndTruncateNum(&an->energy,0,0,ENERGYDECAY);
-    ageTicks++;
-    if(ageTicks==(int)AGE_TICK_DURATION){
+    an->currAgeCounter++;
+    if(an->currAgeCounter==(int)AGE_TICK_DURATION){
 
         an->age++;
-        ageTicks=0;
+        an->currAgeCounter=0;
 
     }
     }
-    }
+void destroyAnimal(Animal*an){
 
+    free(an->name);
+    free(an);
 
 
 }
+

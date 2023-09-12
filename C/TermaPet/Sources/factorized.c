@@ -9,44 +9,6 @@
 #include "../Include/engine.h"
 #include "../Include/factorized.h"
 
-void initWindows(WINDOW** needs){
-
-
-needs[0]=newwin(TITLEH,TITLEW,HUDX,HUDY);
-needs[1]=newwin(STATSH,STATSW,STATSX,STATSY);
-needs[2]=newwin(MENUH,MENUW,MENUX,MENUY);
-needs[3]= newwin(PETH,PETW,PETX,PETY);
-
-needs[4]=newwin(1,strlen("SLEEPING!"),WARNINGSX,WARNINGSY);
-needs[5]=newwin(1,strlen("BORED!"),WARNINGSX+1,WARNINGSY);
-needs[6]=newwin(1,strlen("HUNGRY!"),WARNINGSX+2,WARNINGSY);
-needs[7]=newwin(1,strlen("THIRSTY!"),WARNINGSX+3,WARNINGSY);
-needs[8]=newwin(1,strlen("TIRED!"),WARNINGSX+4,WARNINGSY);
-needs[9]=newwin(1,strlen("POO!"),WARNINGSX+5,WARNINGSY);
-needs[10]=newwin(1,strlen("PEE!"),WARNINGSX+6,WARNINGSY);
-
-
-needs[11]= newwin(GOHOMEH,GOHOMEW,GOHOMEX,GOHOMEY);
-
-
-
-}
-
-
-void initBuffers(Animal * an,char** buffs){
-    buffs[0]=getASCII(_binary_dead_res_end,_binary_dead_res_start);
-    buffs[1]=getASCII(_binary_pet_res_end,_binary_pet_res_start);
-    buffs[2]=getASCII(_binary_title_res_end,_binary_title_res_start);
-    buffs[3]=animalStatHud(*an);
-    buffs[4]=getASCII(_binary_pethurt_res_end,_binary_pethurt_res_start);
-    buffs[5]=getASCII(_binary_petholding_res_end,_binary_petholding_res_start);
-    buffs[6]=getASCII(_binary_petinpain_res_end,_binary_petinpain_res_start);
-    buffs[7]=getASCII(_binary_pethappy_res_end,_binary_pethappy_res_start);
-
-
-
-}
-
 void showTitleScreen(WINDOW* logo,char* buff,int x,int y){
 
     wbkgdset(logo,COLOR_PAIR(30));
@@ -59,34 +21,7 @@ void showTitleScreen(WINDOW* logo,char* buff,int x,int y){
 
 
 }
-void killAllBuffs(char** buffs){
 
-    for(int i=0;i<NUM_OF_BUFFERS;i++){
-
-        free(buffs[i]);
-
-    }
-    free(buffs);
-
-}
-void initAllColors(){
-
- init_pair(30,COLOR_GREEN,COLOR_BLACK); //Title color
- init_pair(31,COLOR_WHITE,COLOR_BLACK); //default
- init_pair(32,COLOR_BLACK,COLOR_RED); //DEATH color
- init_pair(33,COLOR_RED,COLOR_BLACK);//commands highlight color
-
-init_pair(1,COLOR_BLACK,COLOR_WHITE);//sleeping color //
-init_pair(2,COLOR_WHITE,COLOR_RED);//hungry color //
-init_pair(3,COLOR_WHITE,COLOR_CYAN);//thirsty color //
-init_pair(4,COLOR_BLACK,COLOR_MAGENTA);//tired //
-init_pair(5,COLOR_WHITE,COLOR_BLACK);//poo //
-init_pair(6,COLOR_BLACK,COLOR_YELLOW);//pee //
-init_pair(7,COLOR_BLACK,COLOR_BLACK);//neutral //
-init_pair(8,COLOR_MAGENTA,COLOR_MAGENTA);//bored //
-init_pair(9,COLOR_RED,COLOR_CYAN);//Pet color
-
-}
 void initMenu(PackagedMenu*pMenu,MENU**menu,int nRows,WINDOW** win,void*func,char**labels,ITEM**items){
 
 pMenu->funcPtr=func;
@@ -127,16 +62,5 @@ void destroyMenu(PackagedMenu*pMenu){
 	free_menu(pMenu->menu);
 
 
-
-}
-void killAllWindows(WINDOW** needs){
-
-
-for(int i=0;i<NUM_OF_WINDOWS;i++){
-
-    delwin(needs[i]);
-
-}
-free(needs);
 
 }

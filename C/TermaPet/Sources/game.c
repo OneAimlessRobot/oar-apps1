@@ -1,6 +1,145 @@
 
 #include "../Include/preprocessorStuff.h"
+//Game* initGame(char*animalName){
+//
+//
+//initscr();
+//start_color();
+//halfdelay(1);
+//noecho();
+//curs_set(0);
+//
+//initWindows(game);
+//initBuffers(game);
+//initAllColors();
+//initMenus(game);
+//
+//showTitleScreen(game->needs[0],game->buffs[2],0,0);
+//
+// pthread_create(&game->biology,NULL,petLoop,(game->an));
+// pthread_detach(game->biology);
+// pthread_create(&game->alert,NULL,flashingDyingAlert,game->an);
+// pthread_detach(game->alert);
+//
+//return game;
+//
+//
+//}
 
+void initMenus(Game*game){
+
+char *cmdLabels[] = {
+                        "Feed",
+                        "Play",
+                        "Quench",
+                        "Heal",
+                        "Poo/Pee",
+                        "Rest",
+                        "(un)Pause",
+                        "Home",
+                  };
+char *homeLabels[] = {
+                    "Commands",
+                    "Stats",
+                    "Pet",
+
+
+                  };
+char *goHomeLabels[] = {
+                        "Go Home",
+                  };
+
+game->pMenus=malloc(sizeof(PackagedMenu)*NUM_OF_MODES);
+game->menus=malloc(sizeof(MENU*)*NUM_OF_MODES);
+
+int nCmd = ARRAY_SIZE(cmdLabels),
+    nHome = ARRAY_SIZE(homeLabels),
+    nGoHome = ARRAY_SIZE(goHomeLabels);
+
+ITEM** cmdItems = (ITEM **)calloc(nCmd + 1, sizeof(ITEM *)),
+        **homeItems = (ITEM **)calloc(nHome + 1, sizeof(ITEM *)),
+        **goHomeItems = (ITEM **)calloc(nGoHome + 1, sizeof(ITEM *));
+
+
+    initMenu(&game->pMenus[0],&game->menus[0],nHome,game->needs[2],homeFunc,homeLabels,homeItems);
+
+    initMenu(&game->pMenus[1],&game->menus[1],nCmd,game->needs[2],cmdFunc,cmdLabels,cmdItems);
+
+    initMenu(&game->pMenus[2],&game->menus[2],nGoHome,game->needs[11],goHomeFunc,goHomeLabels,goHomeItems);
+
+
+    initMenu(&game->pMenus[3],&game->menus[3],nGoHome,game->needs[11],goHomeFunc,goHomeLabels,goHomeItems);
+
+
+
+
+
+
+
+}
+
+void initWindows(Game*game){
+
+
+
+
+game->needs=malloc(sizeof(WINDOW*)*(NUM_OF_WINDOWS));
+
+game->needs[0]=newwin(TITLEH,TITLEW,HUDX,HUDY);
+game->needs[1]=newwin(STATSH,STATSW,STATSX,STATSY);
+game->needs[2]=newwin(MENUH,MENUW,MENUX,MENUY);
+game->needs[3]= newwin(PETH,PETW,PETX,PETY);
+
+game->needs[4]=newwin(1,strlen("SLEEPING!"),WARNINGSX,WARNINGSY);
+game->needs[5]=newwin(1,strlen("BORED!"),WARNINGSX+1,WARNINGSY);
+game->needs[6]=newwin(1,strlen("HUNGRY!"),WARNINGSX+2,WARNINGSY);
+game->needs[7]=newwin(1,strlen("THIRSTY!"),WARNINGSX+3,WARNINGSY);
+game->needs[8]=newwin(1,strlen("TIRED!"),WARNINGSX+4,WARNINGSY);
+game->needs[9]=newwin(1,strlen("POO!"),WARNINGSX+5,WARNINGSY);
+game->needs[10]=newwin(1,strlen("PEE!"),WARNINGSX+6,WARNINGSY);
+
+
+game->needs[11]= newwin(GOHOMEH,GOHOMEW,GOHOMEX,GOHOMEY);
+
+
+
+}
+
+void initBuffers(Game*game){
+
+game->buffs= malloc(sizeof(char*)*NUM_OF_BUFFERS);
+
+    game->buffs[0]=getASCII(_binary_dead_res_end,_binary_dead_res_start);
+    game->buffs[1]=getASCII(_binary_pet_res_end,_binary_pet_res_start);
+    game->buffs[2]=getASCII(_binary_title_res_end,_binary_title_res_start);
+    game->buffs[3]=animalStatHud(*(game->an));
+    game->buffs[4]=getASCII(_binary_pethurt_res_end,_binary_pethurt_res_start);
+    game->buffs[5]=getASCII(_binary_petholding_res_end,_binary_petholding_res_start);
+    game->buffs[6]=getASCII(_binary_petinpain_res_end,_binary_petinpain_res_start);
+    game->buffs[7]=getASCII(_binary_pethappy_res_end,_binary_pethappy_res_start);
+
+
+
+}
+
+void initAllColors(){
+
+ init_pair(30,COLOR_GREEN,COLOR_BLACK); //Title color
+ init_pair(31,COLOR_WHITE,COLOR_BLACK); //default
+ init_pair(32,COLOR_BLACK,COLOR_RED); //DEATH color
+ init_pair(33,COLOR_RED,COLOR_BLACK);//commands highlight color
+
+init_pair(1,COLOR_BLACK,COLOR_WHITE);//sleeping color //
+init_pair(2,COLOR_WHITE,COLOR_RED);//hungry color //
+init_pair(3,COLOR_WHITE,COLOR_CYAN);//thirsty color //
+init_pair(4,COLOR_BLACK,COLOR_MAGENTA);//tired //
+init_pair(5,COLOR_WHITE,COLOR_BLACK);//poo //
+init_pair(6,COLOR_BLACK,COLOR_YELLOW);//pee //
+init_pair(7,COLOR_BLACK,COLOR_BLACK);//neutral //
+init_pair(8,COLOR_MAGENTA,COLOR_MAGENTA);//bored //
+init_pair(9,COLOR_RED,COLOR_CYAN);//Pet color
+
+}
 void gameLoop(Game* game){
 
 
@@ -20,16 +159,12 @@ void gameLoop(Game* game){
 
 	}
 
+    destroyGame(game);
 
 
 }
 void destroyGame(Game*game){
 
-
-destroyMenu(&game->pMenus[0]);
-destroyMenu(&game->pMenus[1]);
-destroyMenu(&game->pMenus[2]);
-destroyMenu(&game->pMenus[3]);
 
 
 nocbreak();
@@ -47,8 +182,10 @@ makeWinWithText(stdscr,"Adeus! Espero que se lembrem de fazer com que isto grave
 refresh();
 getch();
 
-killAllWindows(game->needs);
-killAllBuffs(game->buffs);
+killAllWindows(game);
+killAllBuffs(game);
+killMenus(game);
+destroyAnimal(game->an);
 endwin();
 
 
@@ -312,9 +449,10 @@ void displayHud(Game * game){
 
 }
 
-void flashingDyingAlert(Animal* an){
-    while(!an->dead){
-        if(an->dying){
+void flashingDyingAlert(Game* game){
+
+    while(!game->an->dead){
+        if(game->an->dying){
 
             usleep((int)(TICK_DURATION_MICROSECS*GAME_SMOOTHNESS_FACTOR));
 
@@ -437,5 +575,48 @@ break;
 
 
 }
+
+}
+
+void killMenus(Game*game){
+
+
+for(int i=0;i<NUM_OF_DIFERENT_MENUS;i++){
+destroyMenu(&game->pMenus[i]);
+}
+
+}
+void killAllWindows(Game*game){
+
+
+for(int i=0;i<NUM_OF_WINDOWS;i++){
+
+    delwin(game->needs[i]);
+
+}
+free(game->needs);
+
+}
+void killAllBuffs(Game*game){
+
+    for(int i=0;i<NUM_OF_BUFFERS;i++){
+
+        free(game->buffs[i]);
+
+    }
+    free(game->buffs);
+
+}
+
+void petLoop(Game*game){
+
+while(1){
+    if(!(game->paused)){
+        petDecayLoop(game->an);
+        }
+    }
+
+
+
 
 }

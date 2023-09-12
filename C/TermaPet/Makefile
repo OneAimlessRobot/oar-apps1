@@ -1,6 +1,6 @@
 LDLIBS= -lmenu -lncurses -lpthread -lm
 
-INCLUDE= ./Include
+INCLUDE= ./Include .
 BINARY=TermaPet
 SOURCES= . ./Sources
 RESDIR= ./resource
