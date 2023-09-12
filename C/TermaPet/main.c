@@ -1,16 +1,5 @@
 #include "Include/preprocessorStuff.h"
-//int main(int argc, char** argv){
-//
-//
-//Game*game=initGame(name);
-//
-//    gameLoop(game);
-//
-//    destroyGame(game);
-//
-//return 0;
-//}
-//
+
 int main(int argc, char** argv){
 
 char* name=malloc(1024);
@@ -24,6 +13,7 @@ if(argc<2){
 }
 else{
 
+
     strcpy(name,argv[1]);
 
 
@@ -36,11 +26,7 @@ game.mode=0;
 game.paused=0;
 game.online=1;
 int baseStat=840;
-spawnAnimal(game.an,baseStat,baseStat,baseStat,baseStat,baseStat*4,"");
-
-
-game.an->name=malloc(strlen(argv[1]));
-strcpy(game.an->name,argv[1]);
+spawnAnimal(game.an,baseStat,baseStat,baseStat,baseStat,baseStat*4,name);
 
 game.buffs= malloc(sizeof(char*)*NUM_OF_BUFFERS);
 game.needs=malloc(sizeof(WINDOW*)*(NUM_OF_WINDOWS));

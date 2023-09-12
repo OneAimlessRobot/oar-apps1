@@ -65,10 +65,10 @@ ITEM** cmdItems = (ITEM **)calloc(nCmd + 1, sizeof(ITEM *)),
 
     initMenu(&game->pMenus[1],&game->menus[1],nCmd,game->needs[2],cmdFunc,cmdLabels,cmdItems);
 
-    initMenu(&game->pMenus[2],&game->menus[2],nGoHome,game->needs[11],goHomeFunc,goHomeLabels,goHomeItems);
+    initMenu(&game->pMenus[2],&game->menus[2],nGoHome,game->needs[13],goHomeFunc,goHomeLabels,goHomeItems);
 
 
-    initMenu(&game->pMenus[3],&game->menus[3],nGoHome,game->needs[11],goHomeFunc,goHomeLabels,goHomeItems);
+    initMenu(&game->pMenus[3],&game->menus[3],nGoHome,game->needs[13],goHomeFunc,goHomeLabels,goHomeItems);
 
 
 
@@ -98,8 +98,11 @@ game->needs[8]=newwin(1,strlen("TIRED!"),WARNINGSX+4,WARNINGSY);
 game->needs[9]=newwin(1,strlen("POO!"),WARNINGSX+5,WARNINGSY);
 game->needs[10]=newwin(1,strlen("PEE!"),WARNINGSX+6,WARNINGSY);
 
+game->needs[11]=newwin(1,strlen("DIGESTING!"),WARNINGSX+7,WARNINGSY);
+game->needs[12]=newwin(1,strlen("HYDRATING!"),WARNINGSX+8,WARNINGSY);
 
-game->needs[11]= newwin(GOHOMEH,GOHOMEW,GOHOMEX,GOHOMEY);
+
+game->needs[13]= newwin(GOHOMEH,GOHOMEW,GOHOMEX,GOHOMEY);
 
 
 
@@ -138,6 +141,8 @@ init_pair(6,COLOR_BLACK,COLOR_YELLOW);//pee //
 init_pair(7,COLOR_BLACK,COLOR_BLACK);//neutral //
 init_pair(8,COLOR_MAGENTA,COLOR_MAGENTA);//bored //
 init_pair(9,COLOR_RED,COLOR_CYAN);//Pet color
+init_pair(10,COLOR_GREEN,COLOR_WHITE);//digesting //
+init_pair(11,COLOR_WHITE,COLOR_GREEN);//hydrating
 
 }
 void gameLoop(Game* game){
@@ -446,6 +451,32 @@ void displayHud(Game * game){
 
 
     }
+    if(game->an->digesting){
+
+    wbkgd(game->needs[11],COLOR_PAIR(10));
+        makeWinWithText(game->needs[11],"DIGESTING!\n",0,0);
+
+    }
+    else{
+    wbkgd(game->needs[11],COLOR_PAIR(7));
+
+        makeWinWithText(game->needs[11],"          \n",0,0);
+
+
+    }
+    if(game->an->hydrating){
+
+    wbkgd(game->needs[12],COLOR_PAIR(11));
+        makeWinWithText(game->needs[12],"HYDRATING\n",0,0);
+
+    }
+    else{
+    wbkgd(game->needs[12],COLOR_PAIR(7));
+
+        makeWinWithText(game->needs[12],"         \n",0,0);
+
+
+    }
 
 }
 
@@ -473,7 +504,7 @@ switch(currMode){
 
 case home:
 
-for(int i=1;i<11;i++){
+for(int i=1;i<NUM_OF_WINDOWS-1;i++){
 wbkgdset(game->needs[i],COLOR_PAIR(7));
 if(i!=2){
 
@@ -485,7 +516,7 @@ if(i!=2){
 break;
 
 case commands:
-for(int i=1;i<11;i++){
+for(int i=1;i<NUM_OF_WINDOWS-1;i++){
 wbkgdset(game->needs[i],COLOR_PAIR(7));
 if(i==1||i==3||i==11){
 
@@ -500,7 +531,7 @@ break;
 
 case stats:
 
-for(int i=2;i<11;i++){
+for(int i=2;i<NUM_OF_WINDOWS-1;i++){
 wbkgdset(game->needs[i],COLOR_PAIR(7));
 
     werase(game->needs[i]);
@@ -512,7 +543,7 @@ wbkgdset(game->needs[i],COLOR_PAIR(7));
 break;
 
 case pet:
-for(int i=1;i<11;i++){
+for(int i=1;i<NUM_OF_WINDOWS-1;i++){
 wbkgdset(game->needs[i],COLOR_PAIR(7));
 if(i!=3){
 
@@ -548,7 +579,7 @@ break;
 case commands:
 wnoutrefresh(game->needs[2]);
 
-for(int i=4;i<11;i++){
+for(int i=4;i<NUM_OF_WINDOWS-1;i++){
 
 wnoutrefresh(game->needs[i]);
 

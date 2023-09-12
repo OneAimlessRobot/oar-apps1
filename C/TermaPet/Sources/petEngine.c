@@ -10,7 +10,6 @@
 
 void handleBodyFunctions(Animal * an){
 if(!an->dying){
-    if(!an->gotPee&&!an->gotPoo){
         if(an->sleeping){
 
 
@@ -32,8 +31,8 @@ if(!an->dying){
 
         }
 
-    }
-    else{
+
+    if(an->gotPee||an->gotPoo){
         handleExcretion(an);
 
     }

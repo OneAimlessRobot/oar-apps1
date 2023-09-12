@@ -4,7 +4,7 @@
 #define ARRAY_SIZE(a) (sizeof(a) / sizeof(a[0]))
 
 #define NUM_OF_BUFFERS 8
-#define NUM_OF_WINDOWS 12
+#define NUM_OF_WINDOWS 14
 #define NUM_OF_DIFERENT_MENUS 3
 #define NUM_OF_MODES 4
 
