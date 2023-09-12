@@ -3,7 +3,6 @@
 
 enum modes{home,commands,stats,pet,activities};
 
-
 #include "graphicalDefines.h"
 #include <ncurses.h>
 #include <stdlib.h>
@@ -12,12 +11,11 @@ enum modes{home,commands,stats,pet,activities};
 #include <string.h>
 #include <unistd.h>
 #include <menu.h>
-#include "myMenus.h"
 #include "embeded.h"
 #include "aux.h"
 #include "petEngine.h"
 #include "engine.h"
 #include "factorized.h" //Contains all global things (Including windows and color pairs)
-
+#include "../game.h"
 
 #endif

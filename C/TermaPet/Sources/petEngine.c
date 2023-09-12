@@ -51,7 +51,6 @@ else{
 
         an->dyingCounter=INT_MAX;
         an->dying=1;
-	wprintf(stdscr,"%d\n",an->peeToleranceCounter);
     }
     handleDying(an);
     }
@@ -272,12 +271,13 @@ an->name=name;
 }
 
 void petCare(Animal* an,int option){
-    if(!an->sleeping){
     switch(option){
 
     case(0):
+    if(!an->sleeping){
         an->digesting=1;
         an->dying=0;
+        }
     break;
     case(1):
     if(!an->dying&&!an->sleeping){
@@ -286,13 +286,17 @@ void petCare(Animal* an,int option){
     }
     break;
     case(2):
+    if(!an->sleeping){
     an->hydrating=1;
 
         an->dying=0;
+        }
     break;
     case(3):
+    if(!an->sleeping){
         incAndTruncateNum(&an->health,1,an->maxHealth,TREATMENT_SCORE);
 
+        }
     break;
     case(4):
     if(an->gotPee){
@@ -308,18 +312,21 @@ void petCare(Animal* an,int option){
         an->holdingPoo=0;
     }
         an->dying=0;
+        an->sleeping=0;
     break;
     case(5):
-    an->sleeping=1;
+    if(!an->sleeping){
+        an->sleeping=1;
         an->dying=0;
+        }
+    else{
+        an->sleeping=0;
+        }
     break;
     default:
     break;
     }
     }
-
-
-}
 void petDecayLoop(Animal* an){
 
 int ageTicks=0;

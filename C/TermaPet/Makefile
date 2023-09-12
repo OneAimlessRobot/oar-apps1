@@ -35,7 +35,7 @@ $(BINARY): $(OBJECTS)
 
 
 %.o:%.c
-	$(CC)  $(CFLAGS) -c -o $@ $<  $(LDLIBS)
+	$(CC) -g  $(CFLAGS) -c -o $@ $<  $(LDLIBS)
 	echo $(CFLAGS)
 
 clean:

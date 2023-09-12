@@ -108,7 +108,7 @@ menu_opts_off(*menu, O_SHOWDESC);
 keypad(win, TRUE);
 
 set_menu_win(*menu,win);
-set_menu_sub(*menu, derwin(win, 0, 0, (MENUX+STATSX+3), (MENUY+3)));
+set_menu_sub(*menu, derwin(win, SUBMENUH, SUBMENUW, SUBMENUX, SUBMENUY));
 
 set_menu_mark(*menu,"");
 

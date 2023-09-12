@@ -51,10 +51,14 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Sources/factorized.d" />
+		<Unit filename="Sources/game.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="Sources/petEngine.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Sources/petEngine.d" />
+		<Unit filename="game.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
