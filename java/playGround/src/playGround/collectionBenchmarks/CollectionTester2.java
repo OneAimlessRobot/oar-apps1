@@ -2,7 +2,7 @@ package playGround.collectionBenchmarks;
 
 import playGround.adt.collections.*;
 import playGround.ds.*;
-import playGround.aux.smallAlgorithms.*;
+import playGround.auxPackage.smallAlgorithms.*;
 public class CollectionTester2 {
 
 

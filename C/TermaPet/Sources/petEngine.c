@@ -168,6 +168,8 @@ void handleSleeping(Animal * an){
     an->digesting=0;
     an->hydrating=0;
     an->health+=HEALTHDECAY;
+   an->thirst+=THIRSTDECAY;
+   an->hunger+=HUNGERDECAY;
     an->energy+=SLEEPING_ENERGY_SCORE;
     an->sleepCounter--;
     if(an->energy>an->maxEnergy){

@@ -1,4 +1,4 @@
-package playGround.aux.smallAlgorithms;
+package playGround.auxPackage.smallAlgorithms;
 
 import java.io.*;
 import java.util.Scanner;

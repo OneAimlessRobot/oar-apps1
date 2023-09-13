@@ -1,4 +1,4 @@
-package playGround.aux.smallAlgorithms;
+package playGround.auxPackage.smallAlgorithms;
 
 import playGround.adt.collections.List;
 import playGround.ds.Vector;

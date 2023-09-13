@@ -3,7 +3,7 @@ package playGround.collectionBenchmarks;
 
 import playGround.adt.collections.*;
 import playGround.ds.*;
-import playGround.aux.smallAlgorithms.*;
+import playGround.auxPackage.smallAlgorithms.*;
 public class CollectionTester {
 
 	private static final String PATH_TO_DS="/home/k/oar-apps1/java/playGround/src/testStuff/stringFiles/FirstDsResults";

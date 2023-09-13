@@ -2,7 +2,7 @@ package playGround.sortingAlgorithmTests;
 import playGround.ds.*;
 import playGround.adt.collections.*;
 import playGround.adt.exceptions.CollectionEmptyException;
-import playGround.aux.smallAlgorithms.*;
+import playGround.auxPackage.smallAlgorithms.*;
 public class SortingAlgorithmTests2 {
 	private static final String PATH_TO_SA="/home/k/oar-apps1/java/playGround/src/testStuff/stringFiles/SecondSortingResults";
 

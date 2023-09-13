@@ -1,4 +1,4 @@
-package playGround.aux.smallAlgorithms;
+package playGround.auxPackage.smallAlgorithms;
 import playGround.adt.Iterator;
 import playGround.adt.*;
 import playGround.adt.collections.List;
@@ -6,7 +6,7 @@ import playGround.adt.collections.MySet;
 import playGround.adt.exceptions.CollectionEmptyException;
 import playGround.adt.exceptions.StackEmptyException;
 import playGround.ds.*;
-import playGround.aux.numeric.*;
+import playGround.auxPackage.numeric.*;
 public class CollectionAlgorithms {
 	
 	

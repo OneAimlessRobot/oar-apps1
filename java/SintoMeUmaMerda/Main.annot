@@ -17,14 +17,14 @@ type(
   int BinTree.tree -> unit
 )
 ident(
-  int_ref BinTree.show "SintoMeUmaMerda/BinTree.ml" 151 4258 4262 "SintoMeUmaMerda/BinTree.ml" 151 4258 4266
+  int_ref BinTree.show "SintoMeUmaMerda/BinTree.mli" 22 765 765 "SintoMeUmaMerda/BinTree.mli" 22 765 792
 )
 "SintoMeUmaMerda/Main.ml" 5 73 79 "SintoMeUmaMerda/Main.ml" 5 73 95
 type(
   string -> int BinTree.tree
 )
 ident(
-  int_ref BinTree.readTree "SintoMeUmaMerda/BinTree.ml" 130 3467 3471 "SintoMeUmaMerda/BinTree.ml" 130 3467 3479
+  int_ref BinTree.readTree "SintoMeUmaMerda/BinTree.mli" 19 645 645 "SintoMeUmaMerda/BinTree.mli" 19 645 678
 )
 "SintoMeUmaMerda/Main.ml" 5 73 96 "SintoMeUmaMerda/Main.ml" 5 73 100
 type(
@@ -60,14 +60,14 @@ type(
   int BinTree.tree -> int
 )
 ident(
-  int_ref BinTree.max "SintoMeUmaMerda/BinTree.ml" 78 2192 2200 "SintoMeUmaMerda/BinTree.ml" 78 2192 2203
+  int_ref BinTree.max "SintoMeUmaMerda/BinTree.mli" 12 379 379 "SintoMeUmaMerda/BinTree.mli" 12 379 402
 )
 "SintoMeUmaMerda/Main.ml" 8 127 141 "SintoMeUmaMerda/Main.ml" 8 127 157
 type(
   string -> int BinTree.tree
 )
 ident(
-  int_ref BinTree.readTree "SintoMeUmaMerda/BinTree.ml" 130 3467 3471 "SintoMeUmaMerda/BinTree.ml" 130 3467 3479
+  int_ref BinTree.readTree "SintoMeUmaMerda/BinTree.mli" 19 645 645 "SintoMeUmaMerda/BinTree.mli" 19 645 678
 )
 "SintoMeUmaMerda/Main.ml" 8 127 158 "SintoMeUmaMerda/Main.ml" 8 127 162
 type(

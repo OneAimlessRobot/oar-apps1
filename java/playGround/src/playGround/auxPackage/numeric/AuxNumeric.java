@@ -1,4 +1,4 @@
-package playGround.aux.numeric;
+package playGround.auxPackage.numeric;
 
 public class AuxNumeric {
 
