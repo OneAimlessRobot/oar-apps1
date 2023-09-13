@@ -326,7 +326,7 @@ if(game->paused){
     if(!(game->an->energy>0)){
     makeWinWithText(game->needs[3],game->buffs[1],0,0);
     }
-    if(game->an->holdingPee||game->an->holdingPoo){
+    if(game->an->gotPee||game->an->gotPoo){
     makeWinWithText(game->needs[3],game->buffs[5],0,0);
     }
     else{
@@ -337,7 +337,7 @@ if(game->paused){
 }
  else{
     wbkgd(game->needs[3],COLOR_PAIR(9));
-    if(game->an->holdingPee||game->an->holdingPoo){
+    if(game->an->gotPee||game->an->gotPoo){
     makeWinWithText(game->needs[3],game->buffs[5],0,0);
     }
     else if(game->an->sleeping){

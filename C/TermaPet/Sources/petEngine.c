@@ -18,6 +18,8 @@ if(!an->dying){
         }
         else{
 
+
+
             if(an->hydrating){
                 handleHydration(an);
             }
@@ -74,12 +76,12 @@ void handleDying(Animal * an){
 
 
     }
-    if(an->holdingPoo){
+    if(an->gotPoo){
         an->dyingCounter=min(an->dyingCounter,HOLDINGPOODYINGCOUNTER);
 
     }
 
-    if(an->holdingPee){
+    if(an->gotPee){
 
         an->dyingCounter=min(an->dyingCounter,HOLDINGPEEDYINGCOUNTER);
 
@@ -125,48 +127,20 @@ void handleLearning(Animal * an){
 }
 void handleExcretion(Animal *an){
 
-if(an->gotPee&&!an->holdingPee){
 
-    an->holdingPee=1;
-    an->peeToleranceCounter=PEE_TOLERANCE_COUNTER;
-    return;
-}
-
-
-if(an->gotPoo&&!an->holdingPoo){
-
-    an->holdingPoo=1;
-    an->pooToleranceCounter=POO_TOLERANCE_COUNTER;
-    return;
-}
-if(an->holdingPoo){
+if(an->gotPoo){
 
     incAndTruncateInt(&an->pooToleranceCounter,0,0,1);
-
-
-
 }
-if(an->holdingPee){
-
+if(an->gotPee){
 
     incAndTruncateInt(&an->peeToleranceCounter,0,0,1);
 
 
-
-}
-if(!an->gotPee){
-
-    an->peeToleranceCounter=PEE_TOLERANCE_COUNTER;
-}
-if(!an->gotPoo){
-
-    an->pooToleranceCounter=POO_TOLERANCE_COUNTER;
 }
 }
 void handleSleeping(Animal * an){
 
-    an->digesting=0;
-    an->hydrating=0;
     an->health+=HEALTHDECAY;
    an->thirst+=THIRSTDECAY;
    an->hunger+=HUNGERDECAY;
@@ -233,6 +207,8 @@ void handleDigestion(Animal * an){
         an->digestionCounter=DIGESTIONCOUNTER;
         an->gotPoo=1;
         an->digesting=0;
+    an->pooToleranceCounter=POO_TOLERANCE_COUNTER;
+
 
     }
     else if(an->digestionCounter==0){
@@ -240,6 +216,8 @@ void handleDigestion(Animal * an){
         an->digestionCounter=DIGESTIONCOUNTER;
         an->digesting=0;
         an->gotPoo=1;
+    an->pooToleranceCounter=POO_TOLERANCE_COUNTER;
+
 
     }
 
@@ -265,7 +243,7 @@ an->pooToleranceCounter=POO_TOLERANCE_COUNTER;
 
 an->dyingCounter=INT_MAX-1;
 
-an->digesting=an->hydrating=an->dying=an->dead=an->gotPee=an->gotPoo=an->sleeping=an->holdingPee=an->holdingPoo=an->xp=an->level=an->age=an->currAgeCounter=0;
+an->digesting=an->hydrating=an->dying=an->dead=an->gotPee=an->gotPoo=an->sleeping=an->xp=an->level=an->age=an->currAgeCounter=0;
 an->name=name;
 
 }
@@ -274,7 +252,7 @@ void petCare(Animal* an,int option){
     switch(option){
 
     case(0):
-    if(!an->sleeping){
+    if(!an->sleeping&&!an->gotPoo){
         an->digesting=1;
         an->dying=0;
         }
@@ -286,7 +264,7 @@ void petCare(Animal* an,int option){
     }
     break;
     case(2):
-    if(!an->sleeping){
+    if(!an->sleeping&&!an->gotPee){
     an->hydrating=1;
 
         an->dying=0;
@@ -301,15 +279,13 @@ void petCare(Animal* an,int option){
     case(4):
     if(an->gotPee){
 
-    an->peeToleranceCounter=PEE_TOLERANCE_COUNTER;
         an->gotPee=0;
-        an->holdingPee=0;
+    an->peeToleranceCounter=PEE_TOLERANCE_COUNTER;
     }
     if(an->gotPoo){
 
-    an->pooToleranceCounter=POO_TOLERANCE_COUNTER;
         an->gotPoo=0;
-        an->holdingPoo=0;
+    an->pooToleranceCounter=POO_TOLERANCE_COUNTER;
     }
         an->dying=0;
         an->sleeping=0;
@@ -317,6 +293,8 @@ void petCare(Animal* an,int option){
     case(5):
     if(!an->sleeping){
         an->sleeping=1;
+        an->digesting=0;
+        an->hydrating=0;
         an->dying=0;
         }
     else{
