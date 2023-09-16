@@ -56,11 +56,10 @@ void linearSumRow(Matrix*matrix,int firstRow,int secRow,float coefficient){
 			return;
 		}
 
-	multLine(matrix,secRow,coefficient);
 	for(int i=0;i<matrix->w;i++){
 
 	
-		matrix->table[firstRow][i]+=matrix->table[secRow][i];
+		matrix->table[firstRow][i]+=matrix->table[secRow][i]*coefficient;
 
 	}
 
@@ -73,6 +72,19 @@ void linearSumRow(Matrix*matrix,int firstRow,int secRow,float coefficient){
 
 
 }
+
+int isSorted(Matrix*matrix){
+	int result=1;
+	for(int i=1;i<matrix->h;i++){
+		result=result&&(cmpLines(matrix,i-1,i)<=0);
+
+	}
+	return result;
+
+
+
+}
+
 void multLine(Matrix*matrix, int row,float coefficient){
 
 
@@ -117,6 +129,24 @@ void switchLines(Matrix*matrix,int firstRow,int secRow){
 
 
 }
+
+int factorial(int n){
+	if(n==0){
+
+		return 1;
+	}
+	int result=1;
+	for(int i=2;i<n;i++){
+	
+		result*=i;
+
+	}
+	return result;
+
+
+
+
+}
 int cmpLines(Matrix*matrix,int index1,int index2){
 
 	
@@ -129,26 +159,26 @@ int cmpLines(Matrix*matrix,int index1,int index2){
 	for(int i=0;i<matrix->w;i++){
 		
 		if(matrix->table[index1][i]>EPSILON||matrix->table[index1][i]<-EPSILON){
-
 			pos1=i;
-		}	i=matrix->w;
-
+			i=matrix->w;
+		}
 	}
 	for(int i=0;i<matrix->w;i++){
 		
 		if(matrix->table[index2][i]>EPSILON||matrix->table[index2][i]<-EPSILON){
 
+			
 			pos2=i;
-		}	i=matrix->w;
+			i=matrix->w;
 
+		}
 	}
-	printf("%d %d\n",pos1,pos2);
 	if(pos1>pos2){
 
 		return 1;
 	}
 	else{
-		if(pos2<pos1){
+		if(pos1<pos2){
 
 			return -1;
 		}
@@ -159,19 +189,26 @@ int cmpLines(Matrix*matrix,int index1,int index2){
 	}
 }
 
-void sortLines(Matrix*matrix){
-
+rowSwitchArr* sortLines(Matrix*matrix){
+	rowSwitchArr*rsArr=malloc(sizeof(rowSwitchArr));
+	rsArr->arr=malloc(sizeof(rowSwitch)*factorial(matrix->h));
+	int cursor=0;
 	int h=matrix->h;
 		for(int i=0;i<h-1;i++){
 
-			for( int j=i;j<h;j++){
+			for( int j=i+1;j<h;j++){
 				
 				if(cmpLines(matrix,i,j)>0){
+					
+					rsArr->arr[cursor].row1=i;
+					rsArr->arr[cursor++].row2=j;
 					switchLines(matrix,i,j);
 				}
 			}
 			
 		}
+	rsArr->count=cursor;
+	return rsArr;
 
 
 }
@@ -220,12 +257,32 @@ Matrix * loadMatrix(char* fileName){
 
 
 }
-void testOP1(Matrix*matrix,int index1);
-void testOP2(Matrix*matrix,int index1,int index2,int var);
-
-Matrix* getInverseAndPutInRRF(Matrix*matrix){
 
 
+rowCombArr* rowsWar(Matrix*matrix){
+	
+	rowCombArr* rcArr= malloc(sizeof(rowCombArr));
+	rcArr->arr=malloc(sizeof(rowComb)*factorial(matrix->h));
+	int cursor=0;
+	for(int i=0;i<matrix->h-1;i++){
+
+		for(int j=i+1;j<matrix->h;j++){
+
+			if(cmpLines(matrix,i,j)==0){
+				
+				rcArr->arr[cursor].first=j;
+				rcArr->arr[cursor].sec=i;
+				rcArr->arr[cursor++].secCoeff=1.0f;
+				linearSumRow(matrix,j,i,-1.0f);
+				
+			}
+
+		}
+
+
+	}
+	rcArr->count=cursor;
+	return rcArr;
 
 
 
@@ -233,6 +290,156 @@ Matrix* getInverseAndPutInRRF(Matrix*matrix){
 
 
 }
+
+
+rowCombArr* reverseRowsWar(Matrix*matrix){
+	
+	rowCombArr* rcArr= malloc(sizeof(rowCombArr));
+	rcArr->arr=malloc(sizeof(rowComb)*factorial(matrix->h));
+	int cursor=0;
+	pivot* parr= getPivotArray(matrix);
+	for(int i=matrix->h-1;i>-1;i--){
+		printf("Pivot:\nPos: (linha,coluna): %d %d\nValor: %f\n",parr[i].x,parr[i].y,parr[i].value);
+		for(int j=i-1;j>-1;j--){
+			float targetNum=matrix->table[j][parr[i].x];
+			float currCoeff=-targetNum/parr[i].value;
+				rcArr->arr[cursor].first=j;
+				rcArr->arr[cursor].sec=i;
+				rcArr->arr[cursor++].secCoeff=currCoeff;
+			linearSumRow(matrix,j,i,currCoeff);
+		}
+
+
+	}
+	free(parr);
+	rcArr->count=cursor;
+	return rcArr;
+	
+}
+
+void applyRowCombs(Matrix*matrix,rowCombArr* rcArr){
+
+	for(int i=0;i<rcArr->count;i++){
+		rowComb comb=rcArr->arr[i];
+		linearSumRow(matrix,comb.first,comb.sec,comb.secCoeff);
+
+	}
+
+	free(rcArr->arr);
+	free(rcArr);
+
+
+
+
+}
+void applyRowSwitches(Matrix*matrix,rowSwitchArr* rsArr){
+
+
+	
+	for(int i=0;i<rsArr->count;i++){
+		rowSwitch swtch=rsArr->arr[i];
+		switchLines(matrix,swtch.row1,swtch.row2);
+	}
+
+	free(rsArr->arr);
+	free(rsArr);
+
+
+}
+void applyRowMults(Matrix*matrix,rowMultArr* rmArr){
+	
+	
+	for(int i=0;i<rmArr->count;i++){
+		rowMult mult=rmArr->arr[i];
+		multLine(matrix,mult.row,mult.coeff);
+	}
+
+	free(rmArr->arr);
+	free(rmArr);
+	
+
+
+
+}
+
+int isRRF(Matrix*matrix){
+
+	pivot* parr=getPivotArray(matrix);
+	int result=1;
+	for(int i=0;i<matrix->h-1;i++){
+		
+		int pivotsCondition=parr[i].x<parr[i+1].x;
+		result=result&&pivotsCondition;
+	
+	}
+	
+
+
+}
+
+Matrix* getInverseAndPutInRRF(Matrix*matrix){
+
+	if(matrix->w!=matrix->h){
+
+		return NULL;
+	}
+	int n=matrix->w;
+	Matrix*image=createIdentityMatrix(n);
+	while(!isSorted(matrix)){
+		
+		applyRowSwitches(image,sortLines(matrix));
+		applyRowMults(image,makeAllPivotsEqualOne(matrix));
+		applyRowCombs(image,rowsWar(matrix));
+		applyRowCombs(image,reverseRowsWar(matrix));
+		printMatrix(matrix);
+
+	}
+	
+	return image;
+
+}
+
+rowMultArr* makeAllPivotsEqualOne(Matrix* matrix){
+	rowMultArr* rmArr=malloc(sizeof(rowMultArr));
+	rmArr->arr=malloc(sizeof(rowMult)*matrix->h);
+	rmArr->count=matrix->h;
+	int h=matrix->h;
+	pivot* parr= getPivotArray(matrix);
+	
+	for(int i=0;i<h;i++){
+		
+		float currCoeff=1.0f/matrix->table[parr[i].y][parr[i].x];
+		rmArr->arr[i].row=i;
+		rmArr->arr[i].coeff=currCoeff;
+		multLine(matrix,i,currCoeff);
+
+	}
+	free(parr);
+
+	return rmArr;
+
+
+}
+
+
+pivot* getPivotArray(Matrix*matrix){
+	
+	pivot* arr= malloc(sizeof(pivot)*matrix->h);
+	for(int j=0;j<matrix->h;j++){
+	for(int i=0;i<matrix->w;i++){
+		
+		if(matrix->table[j][i]>EPSILON||matrix->table[j][i]<-EPSILON){
+			arr[j].value=matrix->table[j][i];
+			printf("%f\n",arr[j].value);
+			arr[j].x=i;
+			arr[j].y=j;	
+			i=matrix->w;
+		}
+	}
+	}
+	return arr;
+}
+
 Matrix* matrixMult(Matrix*m1,Matrix*m2){
 		
 		int h1,h2,w1,w2;
@@ -398,6 +605,7 @@ void writeMatrix(Matrix* matrix,char* fileName){
 			fprintf(file,"%.2f",matrix->table[i][j]);
 		
 		}
+		fprintf(file,"\n");
 
 	}
 
