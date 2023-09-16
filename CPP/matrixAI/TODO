@@ -1,3 +1,0 @@
-- Acabar a função de verificar se a matrix está em forma de escada.
-    Ideia:
-        Crio um vetor de pivots(Acho que tenho de criar OUTRA classe para fazer uma coleção de pivots)
