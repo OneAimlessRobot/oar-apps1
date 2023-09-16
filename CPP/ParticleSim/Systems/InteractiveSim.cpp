@@ -648,7 +648,8 @@ std::cout<<"1- Ve informacoes de uma arma\n";
     std::cin>>whatToDo;
     Resources::printMenu(Resources::generateMenu(GUNMENU_PATH));
     std::cin>>choice;
-    std::string path= GUNSPATH+choice;
+    std::string extension=".gun";
+    std::string path= GUNSPATH+choice+extension;
 
         if(!whatToDo){
                 caliber chosenCaliber;

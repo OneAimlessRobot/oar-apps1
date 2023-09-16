@@ -15,7 +15,7 @@
 #include <unistd.h>
 #include <string.h>
 
-#include "headers/audio.c"
+#include "headers/audio.h"
 
 #include "headers/fileBinaries.h"
 #include "headers/classesAndAuxiliaryStuff.h"
