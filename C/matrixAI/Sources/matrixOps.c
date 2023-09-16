@@ -42,6 +42,65 @@ Matrix* createIdentityMatrix(int n){
 
 
 }
+
+
+float getDet(Matrix*matrix){
+
+	if(matrix->w!=matrix->h){
+		
+		return 0.0f;
+
+	}
+
+	Matrix*copy=matrixCopy(matrix);
+	putInRRF(copy);
+	pivotArr*parr=getPivotArray(matrix);
+	float result=1.0f;
+	for(int i=0;i<parr->count;i++){
+
+		result*=parr->arr[i].value;
+
+	}
+	free(parr->arr);
+	free(parr);
+	destroyMatrix(copy);
+	return result;
+
+
+}
+
+int lessThanEpsilon(float num){
+
+
+	return fabs(num)<EPSILON;
+
+}
+
+
+int isSquareMatrix(Matrix*matrix){
+
+	return matrix->w==matrix->h;
+
+
+}
+int isInvertible(Matrix*matrix){
+
+
+		return isSquareMatrix(matrix)&&!lessThanEpsilon(getDet(matrix));
+
+
+
+}
+void putInRRF(Matrix*matrix){
+
+
+	destroyMatrix(getInverseAndPutInRRF(matrix));
+
+
+}
+
+
+
 void linearSumRow(Matrix*matrix,int firstRow,int secRow,float coefficient){
 
 	
@@ -51,7 +110,7 @@ void linearSumRow(Matrix*matrix,int firstRow,int secRow,float coefficient){
 		}
 	
 
-        if(coefficient < EPSILON &&coefficient > 0||coefficient>-EPSILON&&coefficient<0){
+        if(lessThanEpsilon(coefficient)){
 
 
 			return;
@@ -96,8 +155,7 @@ void multLine(Matrix*matrix, int row,float coefficient){
                 }
 
     
-        if(coefficient < EPSILON &&coefficient > 0||coefficient>-EPSILON&&coefficient<0){
-
+        if(lessThanEpsilon(coefficient)){
                         return;
                 }
 	for(int i=0;i<matrix->w;i++){
@@ -159,15 +217,14 @@ int cmpLines(Matrix*matrix,int index1,int index2){
 	int pos1=0,pos2=0;
 	for(int i=0;i<matrix->w;i++){
 		
-		if(matrix->table[index1][i]>EPSILON||matrix->table[index1][i]<-EPSILON){
+		if(!lessThanEpsilon(matrix->table[index1][i])){
 			pos1=i;
 			i=matrix->w;
 		}
 	}
 	for(int i=0;i<matrix->w;i++){
 		
-		if(matrix->table[index2][i]>EPSILON||matrix->table[index2][i]<-EPSILON){
-
+		if(!lessThanEpsilon(matrix->table[index2][i])){
 			
 			pos2=i;
 			i=matrix->w;
@@ -376,8 +433,7 @@ int isRRF(Matrix*matrix){
 	}
 	for(int i=0;i<parr->count;i++){
 		
-		int pivotsCondition=fabs(parr->arr[i].value-1.0f)<EPSILON;
-		result=result&&pivotsCondition;
+		result=result&&lessThanEpsilon(parr->arr[i].value-1.0f);
 	
 	}
 	int*pivotCols=malloc(sizeof(int)*parr->count);
@@ -390,7 +446,7 @@ int isRRF(Matrix*matrix){
 		pivot curr=parr->arr[i];
 		for(int j=curr.y-1;j>-1;j--){
 			float target=matrix->table[j][curr.x];
-			result=result&&(!(target>EPSILON||target<-EPSILON));
+			result=result&&(lessThanEpsilon(target));
 		
 		}
 	
@@ -417,7 +473,7 @@ Matrix* getInverseAndPutInRRF(Matrix*matrix){
 		applyRowMults(image,makeAllPivotsEqualOne(matrix));
 		applyRowCombs(image,rowsWar(matrix));
 		applyRowCombs(image,reverseRowsWar(matrix));
-		//printMatrix(matrix);
+	
 	}
 		
 	return image;
@@ -456,8 +512,9 @@ pivotArr* getPivotArray(Matrix*matrix){
 	parr->count=0;
 	for(int j=0;j<matrix->h;j++){
 	for(int i=0;i<matrix->w;i++){
-		
-		if(matrix->table[j][i]>EPSILON||matrix->table[j][i]<-EPSILON){		parr->count++;
+		if(!lessThanEpsilon(matrix->table[j][i])){
+
+			parr->count++;
 			arr[j].value=matrix->table[j][i];
 			printf("%f\n",arr[j].value);
 			arr[j].x=i;
@@ -588,13 +645,6 @@ void printMatrix(Matrix* matrix){
 }
 
 void scaleMatrix(Matrix* matrix, float coeff){
-
-	
-        if(coeff < EPSILON &&coeff > 0||coeff>-EPSILON&&coeff<0){
-
-
-                        return;
-        }	
 
 	for(int i=0;i<matrix->h;i++){
 

@@ -30,7 +30,13 @@ int main(int argc,char** argv){
 	printMatrix(inv);
 	printf("\n\n\n\nProduto entre Inversa e original\n\n\n\n");
 	Matrix* prod=matrixMult(inv,mat2);
+
 	printMatrix(prod);;
+
+	printf("\n\n\n\n\nDeterminante: %f\nOutra vez a original:\n\n\n\n\n",getDet(mat2));
+
+	printMatrix(mat2);
+
 	destroyMatrix(mat1);
 	destroyMatrix(mat2);
 	destroyMatrix(inv);

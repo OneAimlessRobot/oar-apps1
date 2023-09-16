@@ -26,9 +26,19 @@ void applyRowMults(Matrix*matrix,rowMultArr* rmArr);
 pivotArr* getPivotArray(Matrix*matrix);
 
 int factorial(int n);
+
+int lessThanEpsilon(float num);
+
 int isSorted(Matrix*matrix);
 int isRRF(Matrix*matrix);
 
+float getDet(Matrix*matrix);
+
+int isInvertible(Matrix*matrix);
+
+void putInRRF(Matrix*matrix);
+
+int isSquareMatrix(Matrix*matrix);
 
 Matrix* loadMatrix(char *fileName);
 void destroyMatrix(Matrix* matrix);

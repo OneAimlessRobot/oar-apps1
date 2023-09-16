@@ -11,7 +11,6 @@ std::string toString();
 //Rule 1
 //rule 2
 //...
-FootballGame create(Pitch pitch,team A, team B, Ball ball);
 
 
 
