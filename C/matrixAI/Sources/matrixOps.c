@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <math.h>
 #include "../Includes/matrixStructs.h"
 #include "../Includes/matrixOps.h"
 
@@ -297,12 +298,12 @@ rowCombArr* reverseRowsWar(Matrix*matrix){
 	rowCombArr* rcArr= malloc(sizeof(rowCombArr));
 	rcArr->arr=malloc(sizeof(rowComb)*factorial(matrix->h));
 	int cursor=0;
-	pivot* parr= getPivotArray(matrix);
+	pivotArr* parr= getPivotArray(matrix);
 	for(int i=matrix->h-1;i>-1;i--){
-		printf("Pivot:\nPos: (linha,coluna): %d %d\nValor: %f\n",parr[i].x,parr[i].y,parr[i].value);
+		printf("Pivot:\nPos: (linha,coluna): %d %d\nValor: %f\n",parr->arr[i].x,parr->arr[i].y,parr->arr[i].value);
 		for(int j=i-1;j>-1;j--){
-			float targetNum=matrix->table[j][parr[i].x];
-			float currCoeff=-targetNum/parr[i].value;
+			float targetNum=matrix->table[j][parr->arr[i].x];
+			float currCoeff=-targetNum/parr->arr[i].value;
 				rcArr->arr[cursor].first=j;
 				rcArr->arr[cursor].sec=i;
 				rcArr->arr[cursor++].secCoeff=currCoeff;
@@ -311,6 +312,7 @@ rowCombArr* reverseRowsWar(Matrix*matrix){
 
 
 	}
+	free(parr->arr);
 	free(parr);
 	rcArr->count=cursor;
 	return rcArr;
@@ -364,16 +366,40 @@ void applyRowMults(Matrix*matrix,rowMultArr* rmArr){
 
 int isRRF(Matrix*matrix){
 
-	pivot* parr=getPivotArray(matrix);
+	pivotArr* parr=getPivotArray(matrix);
 	int result=1;
-	for(int i=0;i<matrix->h-1;i++){
+	for(int i=0;i<parr->count-1;i++){
 		
-		int pivotsCondition=parr[i].x<parr[i+1].x;
+		int pivotsCondition=parr->arr[i].x<parr->arr[i+1].x;
 		result=result&&pivotsCondition;
 	
 	}
+	for(int i=0;i<parr->count;i++){
+		
+		int pivotsCondition=fabs(parr->arr[i].value-1.0f)<EPSILON;
+		result=result&&pivotsCondition;
 	
-
+	}
+	int*pivotCols=malloc(sizeof(int)*parr->count);
+	for(int i=0;i<parr->count;i++){
+		pivotCols[i]=parr->arr[i].y;
+	
+	
+	}
+	for(int i=0;i<parr->count;i++){
+		pivot curr=parr->arr[i];
+		for(int j=curr.y-1;j>-1;j--){
+			float target=matrix->table[j][curr.x];
+			result=result&&(!(target>EPSILON||target<-EPSILON));
+		
+		}
+	
+	
+	}
+	free(pivotCols);
+	free(parr->arr);
+	free(parr);
+	return result;
 
 }
 
@@ -385,16 +411,15 @@ Matrix* getInverseAndPutInRRF(Matrix*matrix){
 	}
 	int n=matrix->w;
 	Matrix*image=createIdentityMatrix(n);
-	while(!isSorted(matrix)){
+	while(!isRRF(matrix)){
 		
 		applyRowSwitches(image,sortLines(matrix));
 		applyRowMults(image,makeAllPivotsEqualOne(matrix));
 		applyRowCombs(image,rowsWar(matrix));
 		applyRowCombs(image,reverseRowsWar(matrix));
-		printMatrix(matrix);
-
+		//printMatrix(matrix);
 	}
-	
+		
 	return image;
 
 }
@@ -404,16 +429,17 @@ rowMultArr* makeAllPivotsEqualOne(Matrix* matrix){
 	rmArr->arr=malloc(sizeof(rowMult)*matrix->h);
 	rmArr->count=matrix->h;
 	int h=matrix->h;
-	pivot* parr= getPivotArray(matrix);
+	pivotArr* parr= getPivotArray(matrix);
 	
 	for(int i=0;i<h;i++){
 		
-		float currCoeff=1.0f/matrix->table[parr[i].y][parr[i].x];
+		float currCoeff=1.0f/matrix->table[parr->arr[i].y][parr->arr[i].x];
 		rmArr->arr[i].row=i;
 		rmArr->arr[i].coeff=currCoeff;
 		multLine(matrix,i,currCoeff);
 
 	}
+	free(parr->arr);
 	free(parr);
 
 	return rmArr;
@@ -422,13 +448,16 @@ rowMultArr* makeAllPivotsEqualOne(Matrix* matrix){
 }
 
 
-pivot* getPivotArray(Matrix*matrix){
+pivotArr* getPivotArray(Matrix*matrix){
 	
-	pivot* arr= malloc(sizeof(pivot)*matrix->h);
+	pivotArr* parr= malloc(sizeof(pivotArr));
+	parr->arr=malloc(sizeof(pivot)*matrix->h);
+	pivot*arr=parr->arr;
+	parr->count=0;
 	for(int j=0;j<matrix->h;j++){
 	for(int i=0;i<matrix->w;i++){
 		
-		if(matrix->table[j][i]>EPSILON||matrix->table[j][i]<-EPSILON){
+		if(matrix->table[j][i]>EPSILON||matrix->table[j][i]<-EPSILON){		parr->count++;
 			arr[j].value=matrix->table[j][i];
 			printf("%f\n",arr[j].value);
 			arr[j].x=i;
@@ -437,7 +466,7 @@ pivot* getPivotArray(Matrix*matrix){
 		}
 	}
 	}
-	return arr;
+	return parr;
 }
 
 Matrix* matrixMult(Matrix*m1,Matrix*m2){
