@@ -1,6 +1,6 @@
-#define EPSILON (0.0000001)
+#define EPSILON (0.0001)
 #define NUM_OF_TRANSFORMATIONS 30
-#define NUM_OF_CYCLES 3
+#define NUM_OF_CYCLES 2
 
 
 double genRanddouble(double min, double max);

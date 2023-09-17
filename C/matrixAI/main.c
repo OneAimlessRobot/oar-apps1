@@ -20,13 +20,14 @@ int main(int argc,char** argv){
 		return 1;
 	}
 	fclose(file);
-//	Matrix*mat1=generateWordMatrix("Cerebro");
-	Matrix*mat1=loadMatrix(argv[1]);
+	Matrix*mat1=generateWordMatrix("Maytrix Comunication");
+//	Matrix*mat1=loadMatrix(argv[1]);
 	
 	for(int i=0;i<NUM_OF_CYCLES;i++){
 	applyRowCombs(mat1,genRandTransformations(mat1));
 	}
 	
+	printf("aqui\n");
 	printf("\n\n\n\nMATRIZ BARALHADA!!!!!!\n\n\n\n\n");
 	
 	printMatrix(mat1);

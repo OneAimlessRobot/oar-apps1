@@ -88,7 +88,6 @@ int isInvertible(Matrix*matrix){
 void putInRRF(Matrix*matrix){
 
 	while(!isRRF(matrix)){
-		
 		destroyRowSwitchArr(sortLines(matrix));
 		destroyRowMultArr(makeAllPivotsEqualOne(matrix));
 		destroyRowCombArr(rowsWar(matrix));
@@ -406,6 +405,11 @@ int isRRF(Matrix*matrix){
 
 	pivotArr* parr=getPivotArray(matrix);
 	int result=1;
+	if(parr->count==1){
+		free(parr->arr);
+		free(parr);
+		return 1;
+	}
 	for(int i=0;i<parr->count-1;i++){
 		
 		int pivotsCondition=parr->arr[i].x<parr->arr[i+1].x;
@@ -671,12 +675,19 @@ void writeMatrix(Matrix* matrix,char* fileName){
 }
 
 rowCombArr* genRandTransformations(Matrix*mat){
+	
+
+	if(mat->h==1){
+
+		return NULL;
+	
+	}
 	int numOfOps=NUM_OF_TRANSFORMATIONS;
 	rowCombArr* rcArr=malloc(sizeof(rowCombArr));
 	rcArr->arr=malloc(sizeof(rowComb)*numOfOps);
 	rcArr->count=numOfOps;
 	int minRow=0,maxRow=mat->h-1;
-	double minVal=-5.0,maxVal=5.0;
+	double minVal=-2.0,maxVal=2.0;
 	for(int i=0;i<rcArr->count;i++){
 
 
@@ -686,7 +697,7 @@ rowCombArr* genRandTransformations(Matrix*mat){
 		
 		do{
 		rcArr->arr[i].sec=genRandInt(minRow,maxRow);
-		
+		printf("%d %d\n",rcArr->arr[i].sec,rcArr->arr[i].first);
 		}while(rcArr->arr[i].sec==first);
 		
 		rcArr->arr[i].secCoeff=genRanddouble(minVal,maxVal);
