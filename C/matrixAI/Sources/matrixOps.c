@@ -2,21 +2,21 @@
 #include <string.h>
 #include <stdlib.h>
 #include <math.h>
+#include "../Includes/auxFuncs.h"
 #include "../Includes/matrixStructs.h"
 #include "../Includes/matrixOps.h"
-
 Matrix* createNullMatrix(int h,int w){
 
 	Matrix * matrix= malloc(sizeof(Matrix));
-	matrix->table=malloc(sizeof(float*)*h);
+	matrix->table=malloc(sizeof(double*)*h);
 	matrix->h=h;
 	matrix->w=w;
 	for(int i=0;i<h;i++){
 		
-		matrix->table[i]=malloc(sizeof(float)*w);
+		matrix->table[i]=malloc(sizeof(double)*w);
 		for(int j=0;j<w;j++){
 
-			matrix->table[i][j]= 0.0f;	
+			matrix->table[i][j]= 0.0;	
 		}
 
 	}
@@ -33,7 +33,7 @@ Matrix* createIdentityMatrix(int n){
 	for(int i=0;i<n;i++){
 
 
-		mat->table[i][i]= 1.0f;
+		mat->table[i][i]= 1.0;
 	
 	}
 	return mat;
@@ -44,7 +44,7 @@ Matrix* createIdentityMatrix(int n){
 }
 
 
-float getDet(Matrix*matrix){
+double getDet(Matrix*matrix){
 
 	if(matrix->w!=matrix->h){
 		
@@ -55,7 +55,7 @@ float getDet(Matrix*matrix){
 	Matrix*copy=matrixCopy(matrix);
 	putInRRF(copy);
 	pivotArr*parr=getPivotArray(matrix);
-	float result=1.0f;
+	double result=1.0f;
 	for(int i=0;i<parr->count;i++){
 
 		result*=parr->arr[i].value;
@@ -69,17 +69,11 @@ float getDet(Matrix*matrix){
 
 }
 
-int lessThanEpsilon(float num){
-
-
-	return fabs(num)<EPSILON;
-
-}
-
 
 int isSquareMatrix(Matrix*matrix){
 
 	return matrix->w==matrix->h;
+
 
 
 }
@@ -93,15 +87,20 @@ int isInvertible(Matrix*matrix){
 }
 void putInRRF(Matrix*matrix){
 
-
-	destroyMatrix(getInverseAndPutInRRF(matrix));
-
+	while(!isRRF(matrix)){
+		
+		destroyRowSwitchArr(sortLines(matrix));
+		destroyRowMultArr(makeAllPivotsEqualOne(matrix));
+		destroyRowCombArr(rowsWar(matrix));
+		destroyRowCombArr(reverseRowsWar(matrix));
+	
+	}
 
 }
 
 
 
-void linearSumRow(Matrix*matrix,int firstRow,int secRow,float coefficient){
+void linearSumRow(Matrix*matrix,int firstRow,int secRow,double coefficient){
 
 	
 	if(firstRow < 0 || secRow <0||firstRow >=matrix->h||secRow >=matrix->h){
@@ -145,7 +144,7 @@ int isSorted(Matrix*matrix){
 
 }
 
-void multLine(Matrix*matrix, int row,float coefficient){
+void multLine(Matrix*matrix, int row,double coefficient){
 
 
 	  if(row <0 || row>=matrix->h){
@@ -177,7 +176,7 @@ void switchLines(Matrix*matrix,int firstRow,int secRow){
 	
 	for(int i=0;i<matrix->w;i++){
 
-		float aux=matrix->table[firstRow][i];
+		double aux=matrix->table[firstRow][i];
 		matrix->table[firstRow][i]=matrix->table[secRow][i];
 		matrix->table[secRow][i]=aux;
 		
@@ -189,23 +188,6 @@ void switchLines(Matrix*matrix,int firstRow,int secRow){
 
 }
 
-int factorial(int n){
-	if(n==0){
-
-		return 1;
-	}
-	int result=1;
-	for(int i=2;i<n;i++){
-	
-		result*=i;
-
-	}
-	return result;
-
-
-
-
-}
 int cmpLines(Matrix*matrix,int index1,int index2){
 
 	
@@ -299,7 +281,7 @@ Matrix * loadMatrix(char* fileName){
 
 		for(int j=0;j<matrix->w;j++){
 
-			fscanf(file,"%f",&matrix->table[i][j]);
+			fscanf(file,"%lf",&matrix->table[i][j]);
 		
 		}
 		fscanf(stdout,"\n");
@@ -330,8 +312,8 @@ rowCombArr* rowsWar(Matrix*matrix){
 				
 				rcArr->arr[cursor].first=j;
 				rcArr->arr[cursor].sec=i;
-				rcArr->arr[cursor++].secCoeff=1.0f;
-				linearSumRow(matrix,j,i,-1.0f);
+				rcArr->arr[cursor++].secCoeff=1.0;
+				linearSumRow(matrix,j,i,-1.0);
 				
 			}
 
@@ -357,10 +339,9 @@ rowCombArr* reverseRowsWar(Matrix*matrix){
 	int cursor=0;
 	pivotArr* parr= getPivotArray(matrix);
 	for(int i=matrix->h-1;i>-1;i--){
-		printf("Pivot:\nPos: (linha,coluna): %d %d\nValor: %f\n",parr->arr[i].x,parr->arr[i].y,parr->arr[i].value);
 		for(int j=i-1;j>-1;j--){
-			float targetNum=matrix->table[j][parr->arr[i].x];
-			float currCoeff=-targetNum/parr->arr[i].value;
+			double targetNum=matrix->table[j][parr->arr[i].x];
+			double currCoeff=-targetNum/parr->arr[i].value;
 				rcArr->arr[cursor].first=j;
 				rcArr->arr[cursor].sec=i;
 				rcArr->arr[cursor++].secCoeff=currCoeff;
@@ -445,7 +426,7 @@ int isRRF(Matrix*matrix){
 	for(int i=0;i<parr->count;i++){
 		pivot curr=parr->arr[i];
 		for(int j=curr.y-1;j>-1;j--){
-			float target=matrix->table[j][curr.x];
+			double target=matrix->table[j][curr.x];
 			result=result&&(lessThanEpsilon(target));
 		
 		}
@@ -489,7 +470,7 @@ rowMultArr* makeAllPivotsEqualOne(Matrix* matrix){
 	
 	for(int i=0;i<h;i++){
 		
-		float currCoeff=1.0f/matrix->table[parr->arr[i].y][parr->arr[i].x];
+		double currCoeff=1.0f/matrix->table[parr->arr[i].y][parr->arr[i].x];
 		rmArr->arr[i].row=i;
 		rmArr->arr[i].coeff=currCoeff;
 		multLine(matrix,i,currCoeff);
@@ -516,7 +497,6 @@ pivotArr* getPivotArray(Matrix*matrix){
 
 			parr->count++;
 			arr[j].value=matrix->table[j][i];
-			printf("%f\n",arr[j].value);
 			arr[j].x=i;
 			arr[j].y=j;	
 			i=matrix->w;
@@ -610,12 +590,8 @@ void matrixPower(Matrix**m1,int k){
 	Matrix* result=matrixCopy(*m1);
 	Matrix*tmp;
 	for(int i=k;i>0;i--){
-		printf("\n\n\nANTES:\n\n\n");
-		printMatrix(result);
 		tmp=matrixMult(result,*m1);
 		matrixOverwrite(result,tmp);
-		printf("\n\n\nDEPOIS:\n\n\n");
-		printMatrix(result);
 		destroyMatrix(tmp);
 	}
 	
@@ -628,7 +604,7 @@ void printMatrix(Matrix* matrix){
 	for(int i=0;i<matrix->h;i++){
 		for(int j=0;j<matrix->w;j++){
 	
-			printf("%.2f  ",matrix->table[i][j]);		
+			printf("%.0lf  ",matrix->table[i][j]);		
 
 		}
 		printf("\n\n");
@@ -644,7 +620,7 @@ void printMatrix(Matrix* matrix){
 
 }
 
-void scaleMatrix(Matrix* matrix, float coeff){
+void scaleMatrix(Matrix* matrix, double coeff){
 
 	for(int i=0;i<matrix->h;i++){
 
@@ -681,7 +657,7 @@ void writeMatrix(Matrix* matrix,char* fileName){
 
 		for(int j=0;j<matrix->w;j++){
 
-			fprintf(file,"%.2f",matrix->table[i][j]);
+			fprintf(file,"%.20lf ",matrix->table[i][j]);
 		
 		}
 		fprintf(file,"\n");
@@ -694,3 +670,86 @@ void writeMatrix(Matrix* matrix,char* fileName){
 
 }
 
+rowCombArr* genRandTransformations(Matrix*mat){
+	int numOfOps=NUM_OF_TRANSFORMATIONS;
+	rowCombArr* rcArr=malloc(sizeof(rowCombArr));
+	rcArr->arr=malloc(sizeof(rowComb)*numOfOps);
+	rcArr->count=numOfOps;
+	int minRow=0,maxRow=mat->h-1;
+	double minVal=-5.0,maxVal=5.0;
+	for(int i=0;i<rcArr->count;i++){
+
+
+		rcArr->arr[i].first=genRandInt(minRow,maxRow);
+		
+		int first=rcArr->arr[i].first;
+		
+		do{
+		rcArr->arr[i].sec=genRandInt(minRow,maxRow);
+		
+		}while(rcArr->arr[i].sec==first);
+		
+		rcArr->arr[i].secCoeff=genRanddouble(minVal,maxVal);
+		
+
+	}
+	return rcArr;
+
+}
+void destroyRowCombArr(rowCombArr*arr){
+
+
+	free(arr->arr);
+	free(arr);
+
+
+
+
+
+}
+
+
+void destroyRowMultArr(rowMultArr*arr){
+
+
+	free(arr->arr);
+	free(arr);
+
+
+
+
+
+}
+void destroyRowSwitchArr(rowSwitchArr*arr){
+
+
+	free(arr->arr);
+	free(arr);
+
+
+
+
+
+}
+
+Matrix* generateWordMatrix(const char* nullTermedString){
+
+	int matrixHeight= strlen(nullTermedString);
+	
+	Matrix* mat=createNullMatrix(matrixHeight,matrixHeight+1);
+	
+	for(int i=0;i<mat->h;i++){
+
+		mat->table[i][i]=1.0;
+
+	}
+	
+	for(int i=0;i<mat->h;i++){
+
+		mat->table[i][mat->w-1]= (double)((int)(nullTermedString[i]));
+	
+	}
+
+	return mat;
+
+}

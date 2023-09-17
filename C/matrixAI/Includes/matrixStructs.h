@@ -1,16 +1,15 @@
 
-#define EPSILON (0.0001f)
 typedef struct Matrix{
 
 	int h,w;
-	float ** table;
+	double ** table;
 
 
 }Matrix;
 typedef struct pivot{
 
 	int x,y;
-	float value;
+	double value;
 
 }pivot;
 
@@ -23,13 +22,13 @@ typedef struct rowSwitch{
 typedef struct rowMult{
 
 	int row;
-	float coeff;
+	double coeff;
 }rowMult;
 
 typedef struct rowComb{
 	
 	int first,sec;
-	float secCoeff;
+	double secCoeff;
 
 }rowComb;
 typedef struct pivotArr{
