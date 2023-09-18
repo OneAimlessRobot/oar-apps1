@@ -8,19 +8,19 @@ void printResultOfMatrix(Matrix*mat);
 int main(int argc,char** argv){
 
 	srand(time(NULL));
-	if(argc<3){
+//	if(argc<){
 		
-		printf("Erro n meteste o nome do ficheiro da matrix. (path)\nOu o tamanho da matrix identidade a ser computada\nOu o ficheiro de destino da matrix identidade criada\n");
-		return 2;
+//		printf("Erro n meteste o nome do ficheiro da matrix. (path)\nOu o tamanho da matrix identidade a ser computada\nOu o ficheiro de destino da matrix identidade criada\n");
+//		return 2;
 
-}
-	FILE*file=fopen(argv[1],"rw+");
-	if(!file){
-		printf("ficheiro não existe!!!\n");
-		return 1;
-	}
-	fclose(file);
-	Matrix*mat1=generateWordMatrix("Maytrix Comunication");
+//}
+//	FILE*file=fopen(argv[1],"rw+");
+//	if(!file){
+//		printf("ficheiro não existe!!!\n");
+//		return 1;
+//	}
+//	fclose(file);
+	Matrix*mat1=generateWordMatrix("Comunication");
 //	Matrix*mat1=loadMatrix(argv[1]);
 	
 	for(int i=0;i<NUM_OF_CYCLES;i++){
@@ -32,7 +32,7 @@ int main(int argc,char** argv){
 	
 	printMatrix(mat1);
 	Matrix*mat2=matrixCopy(mat1);
-	writeMatrix(mat1,argv[2]);
+//	writeMatrix(mat1,argv[2]);
 
 	printf("\n\n\n\nMATRIZ RESOLVIDA!!!!!!\n\n\n\n\n");
 		
