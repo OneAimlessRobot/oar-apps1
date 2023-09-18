@@ -1,1 +1,0 @@
--usar um algoritmo recursivo para limpar a linked list causa stack overflow facilmente
