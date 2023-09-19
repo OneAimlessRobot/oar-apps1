@@ -1,7 +1,8 @@
 #include <SDL2/SDL.h>
 #include <vector>
+#include <list>
 #include <string>
-#include "Menu.hpp"
+#include "TextBox.hpp"
 #include "graphicalLib1.hpp"
 #include"auxFunctions.h"
 #include "Trail.hpp"
@@ -26,7 +27,7 @@
 
         if((this->getLength()>=this->trailLength)){
 
-                trailPoints.pop_front();
+                trailPoints.erase(trailPoints.begin());
 
 
         }
@@ -55,9 +56,9 @@
         if(trailPoints.size()<2){
         return 0;
         }
-        for(std::iterator it= trailPoints.begin();it!=trailPoints.end();it++){
+        for(std::iterator<std::vector<SDL_FPoint>> it= trailPoints.begin();it!=trailPoints.end();it++){
 
-            result+=aux::distBetPoints(it,(it+1));
+            result+=aux::distBetPoints((SDL_FPoint*)it,(SDL_FPoint*)(it+1));
 
         }
         return result;

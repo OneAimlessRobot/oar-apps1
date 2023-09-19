@@ -4,7 +4,7 @@
 
 class Pen{
 
-std::list<SDL_FRect> drawing;
+std::vector<SDL_FRect> drawing;
 SDL_Color inkColor;
 float thickness;
 

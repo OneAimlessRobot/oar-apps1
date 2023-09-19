@@ -1,19 +1,20 @@
 #include<SDL2/SDL.h>
 #include<SDL2/SDL_image.h>
 #include<SDL2/SDL_ttf.h>
-#include"Menu.hpp"
+#include"TextBox.hpp"
 #include"gridObject.hpp"
-#include<math.h>
-#include<iostream>
-#include<vector>
-#include<string>
+#include <math.h>
+#include <iostream>
+#include <vector>
+#include <string>
+#include <list>
 #include"graphicalLib1.hpp"
-#include<cstring>
+#include <cstring>
 #include"auxFunctions.h"
 #include "Trail.hpp"
 #include"HitBox.hpp"
 #include <fstream>
-#include<limits>
+#include <limits>
 #include "TemporaryTexture.hpp"
 #include "LTexture.hpp"
 #include "FadingTexture.hpp"

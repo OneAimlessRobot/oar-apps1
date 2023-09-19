@@ -28,7 +28,7 @@
     void graphicalLib1::drawWireFrameNAgon(SDL_Renderer* renderer,SDL_Color color,int xOrigin,int yOrigin,int radius,int nSides,int facing){
 
                     SDL_SetRenderDrawColor(renderer,color.r,color.g,color.b,color.a);
-                    std::list<SDL_Point> vertexes={};
+                    std::vector<SDL_Point> vertexes={};
                     SDL_Point origin;
                     if(facing==0){
                         origin=(SDL_Point){xOrigin,yOrigin-radius};
@@ -66,7 +66,7 @@
         }
         void graphicalLib1::drawEquation(SDL_Renderer*renderer,int (*f)(int),SDL_Color color, int xOrigin,int yOrigin,int xEnd){
                     SDL_SetRenderDrawColor(renderer,color.r,color.g,color.b,color.a);
-                    std::list<SDL_Point> vertexes={};
+                    std::vector<SDL_Point> vertexes={};
             for(size_t i=xOrigin;i<xEnd;i++){
             SDL_Point point=(SDL_Point){i,f(i)};
                     vertexes.push_back(point);
@@ -82,7 +82,7 @@
 
 
         }
-        void graphicalLib1::drawLineFromPointList(SDL_Renderer*renderer,SDL_Color color, std::list<SDL_FPoint> vec){
+        void graphicalLib1::drawLineFromPointVector(SDL_Renderer*renderer,SDL_Color color, std::vector<SDL_FPoint> vec){
 
                 SDL_SetRenderDrawColor(renderer,color.r,color.g,color.b,color.a);
 
@@ -92,7 +92,7 @@
                 }
 
         }
-        void graphicalLib1::drawThickLineFromPointList(SDL_Renderer*renderer,SDL_Color color, float thickness,std::list<SDL_FPoint> vec){
+        void graphicalLib1::drawThickLineFromPointVector(SDL_Renderer*renderer,SDL_Color color, float thickness,std::vector<SDL_FPoint> vec){
 
 
                 for(std::iterator it= vec.begin()+1;it!= vec.end();it++){
@@ -103,7 +103,7 @@
         }
         void graphicalLib1::drawCircunference(SDL_Renderer*renderer,SDL_Color color, float radius,float xCenter,float yCenter,float precision){
             float per=0,newX,newY;
-            std::list<SDL_FPoint> points={};
+            std::vector<SDL_FPoint> points={};
         while((per<2*precision)){
 
         newX=radius*cos(per*M_PI/precision)+xCenter;

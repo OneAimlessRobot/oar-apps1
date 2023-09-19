@@ -4,7 +4,7 @@
 #define SPRITE_H
 class Sprite{
     clockCounter* frameCounter,*cycleCounter;
-    std::list<TemporaryTexture*> frames;
+    std::vector<TemporaryTexture*> frames;
     int timePerFrame,xInit,yInit,unlimitted;
 
 public:

@@ -5,7 +5,7 @@
 class Trail{
 
 
-    std::list<SDL_FPoint> trailPoints;
+    std::vector<SDL_FPoint> trailPoints;
     SDL_Color color;
     float trailLength,trailThickness,currentX,currentY;
 public:

@@ -2,7 +2,8 @@
 #include<string>
 #include<iostream>
 #include <vector>
-#include"Menu.hpp"
+#include <list>
+#include"TextBox.hpp"
 #include"gridObject.hpp"
 #include"graphicalLib1.hpp"
 

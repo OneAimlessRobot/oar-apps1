@@ -1,8 +1,9 @@
 #include <SDL2/SDL.h>
 #include <math.h>
 #include <vector>
+#include <list>
 #include <iostream>
-#include "Menu.hpp"
+#include "TextBox.hpp"
 #include "auxFunctions.h"
 #include "graphicalLib1.hpp"
 #include "LTexture.hpp"

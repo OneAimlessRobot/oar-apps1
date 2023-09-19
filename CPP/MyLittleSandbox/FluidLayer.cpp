@@ -5,7 +5,7 @@
 #include "Obstacle.hpp"
 #include "LTexture.hpp"
 #include "Object.hpp"
-#include "Menu.hpp"
+#include "TextBox.hpp"
 #include "graphicalLib1.hpp"
 #include "auxFunctions.h"
 #include "GeometricVector.hpp"

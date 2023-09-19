@@ -1,6 +1,7 @@
 #include<SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 #include <SDL2/SDL_ttf.h>
+#include <list>
 #include <vector>
 #include "graphicalLib1.hpp"
 #include <iostream>

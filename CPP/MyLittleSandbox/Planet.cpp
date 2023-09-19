@@ -2,7 +2,7 @@
 #include <SDL2/SDL_image.h>
 #include"LTexture.hpp"
 #include <vector>
-#include "Menu.hpp"
+#include "TextBox.hpp"
 #include <string>
 #include "auxFunctions.h"
 #include "graphicalLib1.hpp"

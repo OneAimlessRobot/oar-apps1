@@ -3,7 +3,7 @@
 
 class FluidLayer:public Obstacle{
 
-std::list<Throwable*> bodies;
+std::vector<Throwable*> bodies;
 GeometricVector<float>* flowVec;
 float density;
 

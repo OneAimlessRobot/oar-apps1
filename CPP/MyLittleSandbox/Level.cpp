@@ -1,12 +1,13 @@
 #include <vector>
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
+#include <list>
 #include <string>
 #include <cstring>
 #include <iostream>
 #include <fstream>
 #include "LTexture.hpp"
-#include "Menu.hpp"
+#include "TextBox.hpp"
 #include "auxFunctions.h"
 #include "graphicalLib1.hpp"
 #include "Object.hpp"

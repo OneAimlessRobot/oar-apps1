@@ -9,9 +9,9 @@ public:
 
     static void drawEquation(SDL_Renderer*renderer,int (*f)(int),SDL_Color color, int xOrigin,int yOrigin,int xEnd);
 
-    static void drawLineFromPointList(SDL_Renderer*renderer,SDL_Color color, std::list<SDL_FPoint> vec);
+    static void drawLineFromPointVector(SDL_Renderer*renderer,SDL_Color color, std::vector<SDL_FPoint> vec);
 
-    static void drawThickLineFromPointList(SDL_Renderer*renderer,SDL_Color color, float thickness,std::list<SDL_FPoint> vec);
+    static void drawThickLineFromPointVector(SDL_Renderer*renderer,SDL_Color color, float thickness,std::vector<SDL_FPoint> vec);
 
     static void drawCircle(SDL_Renderer*renderer,SDL_Color color, float radius,float x,float y);
 

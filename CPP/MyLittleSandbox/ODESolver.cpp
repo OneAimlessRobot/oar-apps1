@@ -1,7 +1,7 @@
 #include <SDL2/SDL.h>
 #include <math.h>
 #include <vector>
-#include "Menu.hpp"
+#include "TextBox.hpp"
 #include "auxFunctions.h"
 #include "graphicalLib1.hpp"
 #include "GeometricVector.hpp"
