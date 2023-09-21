@@ -7,10 +7,10 @@
 #include <string.h>
 #include <time.h>
 #include <menu.h>
-#include "../Include/aux.h"
-#include "../Include/graphicalDefines.h"
-#include "../Include/petEngine.h"
-#include "../Include/engine.h"
+#include "../Includes/aux.h"
+#include "../Includes/graphicalDefines.h"
+#include "../Includes/petEngine.h"
+#include "../Includes/engine.h"
 
 void printASCII(const char *end, const char *start)
 {

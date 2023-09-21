@@ -2,12 +2,12 @@
 #include <stdlib.h>
 #include <string.h>
 #include <menu.h>
-#include "../Include/aux.h"
-#include "../Include/embeded.h"
-#include "../Include/petEngine.h"
-#include "../Include/graphicalDefines.h"
-#include "../Include/engine.h"
-#include "../Include/factorized.h"
+#include "../Includes/aux.h"
+#include "../Includes/embeded.h"
+#include "../Includes/petEngine.h"
+#include "../Includes/graphicalDefines.h"
+#include "../Includes/engine.h"
+#include "../Includes/factorized.h"
 
 void showTitleScreen(WINDOW* logo,char* buff,int x,int y){
 

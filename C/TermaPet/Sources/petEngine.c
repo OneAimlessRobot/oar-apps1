@@ -5,8 +5,8 @@
 #include <stdlib.h>
 #include <limits.h>
 #include <menu.h>
-#include "../Include/aux.h"
-#include "../Include/petEngine.h"
+#include "../Includes/aux.h"
+#include "../Includes/petEngine.h"
 
 void handleBodyFunctions(Animal * an){
 if(!an->dying){

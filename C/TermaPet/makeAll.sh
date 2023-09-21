@@ -1,5 +1,5 @@
 #!/bin/bash
-cd resource
+cd resources
 bash makeResources.sh
 cd ..
 make -d

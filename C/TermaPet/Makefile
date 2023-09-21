@@ -1,9 +1,9 @@
 LDLIBS= -lmenu -lncurses -lpthread -lm
 
-INCLUDE= ./Include .
+INCLUDE= ./Includes .
 BINARY=TermaPet
 SOURCES= . ./Sources
-RESDIR= ./resource
+RESDIR= ./resources
 
 CURRDIR=echo `pwd`
 
@@ -39,4 +39,4 @@ $(BINARY): $(OBJECTS)
 	echo $(CFLAGS)
 
 clean:
-	rm -rf $(BINARY) $(ALLMODULES) $(DEPFILES)
+	rm -rf $(BINARY) $(ALLMODULES) $(DEPFILES) $(RESDIR)/*.o
