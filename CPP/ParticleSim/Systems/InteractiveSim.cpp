@@ -177,9 +177,16 @@ int startTime= SDL_GetTicks();
         quit=SDL_TRUE;
 
 
-        }if (e.type == SDL_KEYDOWN && e.key.repeat == 0) {
-            handleToggles(KEYS);
-  }
+        }
+	if (e.type == SDL_KEYDOWN && e.key.repeat == 0) {
+	if(KEYS[SDL_SCANCODE_Q]) {
+    		
+        	quit=SDL_TRUE;
+	}
+	else{
+            	handleToggles(KEYS);
+  	}
+	}
 
 
     }
