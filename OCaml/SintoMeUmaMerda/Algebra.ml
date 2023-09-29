@@ -1,11 +1,11 @@
 type exp =
-      Add of exp*exp   (* soma *)
-    | Sub of exp*exp   (* subtração *)
-    | Mult of exp*exp  (* multiplicação *)
-    | Div of exp*exp   (* divisão *)
-    | Power of exp*int (* potência *)
+      Add of (float -> float)*exp   (* soma *)
+    | Sub of (float -> float)*exp   (* subtração *)
+    | Mult of (float -> float)*exp  (* multiplicação *)
+    | Div of (float -> float)*exp   (* divisão *)
+    | Power of (float -> float)*int (* potência *)
     | Sym of exp       (* simétrico *)
-    | Const of float   (* constante*)
+    | Const of (float -> float)   (* constante*)
     | Var              (* variável *)
 ;;
 
@@ -18,16 +18,16 @@ let rec power g e=
 		else g *. power g (e-1)
 		;;
 
-let rec eval f e=
+let rec eval v e=
 	match e with
-	| Const(x)-> x
-	| Var -> f
-	| Add(x,y) -> eval f x +. eval f y
-	| Sub(x,y) -> eval f x -. eval f y
-	| Div(x,y) -> eval f x /. eval f y
-	| Mult(x,y) -> eval f x *. eval f y
-	| Power(x,y) -> power (eval f x) y
-	| Sym(x) -> -1.0 *. eval f x
+	| Const(x)-> fun p -> x
+	| Var -> fun x -> x
+	| Add(x,y) -> fun x y -> x v +. eval v y
+	| Sub(x,y) -> fun x y -> x v -. eval v y
+	| Div(x,y) -> fun x y -> eval v x /. eval v y
+	| Mult(x,y) -> fun x y -> eval v x *. eval v y
+	| Power(x,y) -> fun x y -> power (eval v x) y
+	| Sym(x) -> fun x y -> -1.0 *. eval v x
 
 ;;
 
