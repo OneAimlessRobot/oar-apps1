@@ -4,10 +4,10 @@ import java.util.function.*;
 import playGround.adt.collections.*;
 import playGround.auxPackage.smallAlgorithms.*;
 public class SortingAlgorithmTests1 {
-	private static final String PATH_TO_SA="/home/k/oar-apps1/java/playGround/src/testStuff/stringFiles/FirstSortingResults";
+	private static final String PATH_TO_SA=System.getProperty("user.dir")+"/src/testStuff/stringFiles/FirstSortingResults";
 
 
-	private static final String HEADER_PATH="/home/k/oar-apps1/java/playGround/src/playGround/res/sTestHeader";
+	private static final String HEADER_PATH=System.getProperty("user.dir")+"/src/playGround/res/sTestHeader";
 	private static final int DEFAULT_SIZE=10;
 
 	public static <T> void main(String[] args) {
@@ -38,11 +38,12 @@ public class SortingAlgorithmTests1 {
 			
 			System.out.println("Finished warming-up VM");
 			long time1= System.nanoTime()/1000;
-			SortingAlgorithms.QuickSort.sort(list2);
+			SortingAlgorithms.myQuickSort.sort(list2);
 			long time2=System.nanoTime()/1000;
 			FileOperations.printToFile(PATH_TO_SA,intValue+","+(time2-time1)+"\n");
-
 			
+
+			System.out.println("Done! This is the list:"+list2);
 		
 	}
 

@@ -43,7 +43,8 @@ public class SortingAlgorithmTests2 {
 			long time2=System.nanoTime()/1000;
 			FileOperations.printToFile(PATH_TO_SA,intValue+","+(time2-time1)+"\n");
 
-			
+
+			System.out.println("Done! This is the list:"+list2);
 		
 	}
 }

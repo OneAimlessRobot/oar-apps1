@@ -6,9 +6,12 @@ import playGround.auxPackage.smallAlgorithms.*;
 public class CollectionTester2 {
 
 
-	private static final String PATH_TO_DS="/home/k/oar-apps1/java/playGround/src/testStuff/stringFiles/SecondDsResults";
 
-	private static final String HEADER_PATH="/home/k/oar-apps1/java/playGround/src/playGround/res/HEADER";
+	private static final String PATH_TO_DS=System.getProperty("user.dir")+"/src/testStuff/stringFiles/FirstDsResults";
+	
+	private static final String HEADER_PATH=System.getProperty("user.dir")+"/src/playGround/res/sTestHeader";
+	
+
 	private static final int DEFAULT_SIZE=2000;
 	
 	//Teste de coleçoes

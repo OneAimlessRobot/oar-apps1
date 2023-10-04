@@ -25,6 +25,7 @@ public class FileOperations {
 			fwrite.close();
 		} catch (FileNotFoundException e) {
 			System.out.println("Ficheiro nao encontrado!!!!\n");
+
 		} catch (IOException e) {
 
 			System.out.println("Erro de escrita!!!!\n");
@@ -118,6 +119,8 @@ public class FileOperations {
 			fwrite.close();
 		} catch (FileNotFoundException e) {
 			System.out.println("Ficheiro nao encontrado!!!!\n");
+
+			System.out.println();
 		} catch (IOException e) {
 
 			System.out.println("Erro de escrita!!!!\n");

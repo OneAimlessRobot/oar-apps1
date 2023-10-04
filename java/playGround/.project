@@ -14,11 +14,4 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>src/testStuff/stringFiles/FirstSortingResults</name>
-			<type>1</type>
-			<location>/home/k/oar-apps1/java/playGround/src/testStuff/stringFiles/FirstSortingResults</location>
-		</link>
-	</linkedResources>
 </projectDescription>

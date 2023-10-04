@@ -6,10 +6,11 @@ import playGround.ds.*;
 import playGround.auxPackage.smallAlgorithms.*;
 public class CollectionTester {
 
-	private static final String PATH_TO_DS="/home/k/oar-apps1/java/playGround/src/testStuff/stringFiles/FirstDsResults";
+	private static final String PATH_TO_DS=System.getProperty("user.dir")+"/src/testStuff/stringFiles/FirstDsResults";
+	
+	private static final String HEADER_PATH=System.getProperty("user.dir")+"/src/playGround/res/sTestHeader";
+	
 
-
-	private static final String HEADER_PATH="/home/k/oar-apps1/java/playGround/src/playGround/res/HEADER";
 	private static final int DEFAULT_SIZE=2000;
 	public static void main(String[] args){
 		int intValue=DEFAULT_SIZE;
