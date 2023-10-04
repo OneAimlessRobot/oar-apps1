@@ -1,13 +1,14 @@
-package playGround.sortingAlgorithmTests;
+>>package playGround.sortingAlgorithmTests;
 import playGround.ds.*;
 import playGround.adt.collections.*;
 import playGround.adt.exceptions.CollectionEmptyException;
 import playGround.auxPackage.smallAlgorithms.*;
 public class SortingAlgorithmTests2 {
-	private static final String PATH_TO_SA="/home/k/oar-apps1/java/playGround/src/testStuff/stringFiles/SecondSortingResults";
+	private static final String PATH_TO_SA=System.getProperty("user.dir")+"/src/testStuff/stringFiles/SecondSortingResults";
 
 
-	private static final String HEADER_PATH="/home/k/oar-apps1/java/playGround/src/playGround/res/sTestHeader";
+	private static final String HEADER_PATH=System.getProperty("user.dir")+"/src/playGround/res/sTestHeader";
+
 	private static final int DEFAULT_SIZE=10000;
 
 	public static void main(String[] args) {
