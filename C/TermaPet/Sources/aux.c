@@ -6,7 +6,7 @@
 #include <ncurses.h>
 #include <string.h>
 #include <time.h>
-#include "../Includes/aux.h"
+#include "../Includes/auxFuncs.h"
 int getRandomInteger(int min, int max) {
     // Seed the random number generator with the current time.
     srand(time(NULL));

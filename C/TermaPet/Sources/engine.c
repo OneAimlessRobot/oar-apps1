@@ -7,7 +7,7 @@
 #include <string.h>
 #include <time.h>
 #include <menu.h>
-#include "../Includes/aux.h"
+#include "../Includes/auxFuncs.h"
 #include "../Includes/graphicalDefines.h"
 #include "../Includes/petEngine.h"
 #include "../Includes/engine.h"

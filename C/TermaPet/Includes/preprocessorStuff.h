@@ -12,7 +12,7 @@ enum modes{home,commands,stats,pet,activities};
 #include <unistd.h>
 #include <menu.h>
 #include "embeded.h"
-#include "aux.h"
+#include "auxFuncs.h"
 #include "petEngine.h"
 #include "engine.h"
 #include "factorized.h" //Contains all global things (Including windows and color pairs)

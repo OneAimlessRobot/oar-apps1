@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <limits.h>
 #include <menu.h>
-#include "../Includes/aux.h"
+#include "../Includes/auxFuncs.h"
 #include "../Includes/petEngine.h"
 
 void handleBodyFunctions(Animal * an){

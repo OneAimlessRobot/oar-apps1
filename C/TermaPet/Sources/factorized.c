@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <menu.h>
-#include "../Includes/aux.h"
+#include "../Includes/auxFuncs.h"
 #include "../Includes/embeded.h"
 #include "../Includes/petEngine.h"
 #include "../Includes/graphicalDefines.h"
