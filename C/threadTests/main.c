@@ -16,7 +16,7 @@ int factorial(int num){
 void* func(pausableFuncArgs* args){
 	int* resultMem= args->mem;
 	while((*(args->twowaysem[0]))){
-		system("ping 10.250.24.1");
+		*(resultMem)=0;
 	}
 	printf("Done!");
 	return NULL;	
@@ -28,11 +28,11 @@ int main(int argc, char ** argv){
 
 	funcArgs args;
 	args.num=5;
-	thread_tree* tree=generateTree(10,3,func,&args,0);
+	thread_tree* tree=generateTree(3,3,func,&args,0);
 	printf("generated!!!\n");
 	sleep(3);
-	freezeTree(tree);
 	printf("unfrozen!!!\n");
+	freezeTree(tree);
 	joinTree(tree);
 	printf("%d\n",sumTreeResults(tree));
 	destroyTree(tree);
