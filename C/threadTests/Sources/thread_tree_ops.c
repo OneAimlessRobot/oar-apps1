@@ -15,18 +15,18 @@ static int noChildren(thread_tree_node* node){
 
 
 }
-int sumTreeResultsOnArray(thread_tree_node**array,int nsizetwo);
+static int sumTreeResultsOnArray(thread_tree_node**array,int nsizetwo);
 
-int sumTreeResultsOnNode(thread_tree_node* node);
+static int sumTreeResultsOnNode(thread_tree_node* node);
 
-int sumTreeResultsOnArray(thread_tree_node**array,int nsizetwo){
+static int sumTreeResultsOnArray(thread_tree_node**array,int nsizetwo){
 
 	if(nsizetwo>=0){
   		return sumTreeResultsOnNode(array[nsizetwo])+sumTreeResultsOnArray(array,nsizetwo-1);
 	}
 		return 0;
 }
-int sumTreeResultsOnNode(thread_tree_node* node){
+static int sumTreeResultsOnNode(thread_tree_node* node){
 
 
 	

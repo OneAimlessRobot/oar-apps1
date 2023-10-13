@@ -22,7 +22,7 @@ static thread_tree_node* createNewThreadNode(int nsize,void* (*pfunc)(pausableFu
 		node->thread=malloc(sizeof(pthread_t));
 		node->children=malloc(node->nsize*(sizeof(thread_tree_node*)));
 		memset(node->children,0,node->nsize*(sizeof(thread_tree_node*)));
-		pthread_create(node->thread,NULL,node->pfunc->func,node->pfunc->args);
+		pthread_create(node->thread,NULL,(void*(*)(void*))node->pfunc->func,node->pfunc->args);
 		return node;
 
 
