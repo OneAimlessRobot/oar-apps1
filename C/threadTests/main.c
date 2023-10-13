@@ -15,8 +15,9 @@ int factorial(int num){
 }
 void* func(pausableFuncArgs* args){
 	int* resultMem= args->mem;
-		
-	*(resultMem)=factorial(5);
+	while((*(args->twowaysem[0]))){
+		system("ping 10.250.24.1");
+	}
 	printf("Done!");
 	return NULL;	
 }
@@ -27,7 +28,7 @@ int main(int argc, char ** argv){
 
 	funcArgs args;
 	args.num=5;
-	thread_tree* tree=generateTree(3,3,func,&args,1);
+	thread_tree* tree=generateTree(10,3,func,&args,0);
 	printf("generated!!!\n");
 	sleep(3);
 	freezeTree(tree);
