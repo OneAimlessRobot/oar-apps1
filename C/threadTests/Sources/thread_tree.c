@@ -1,10 +1,10 @@
 #include "../Includes/preprocessor.h"
 
-static void* threadTreeFuncRun(threadTreeFuncArgs* args){
-	
+static void* threadTreeFuncRun(void* argv){
+	threadTreeFuncArgs* args=(threadTreeFuncArgs*)argv;
 	while(!(*(args->twostagesem[1]))){
 		pthread_mutex_lock(args->mutex);
-		while(!(*args->twostagesem[0])&&!(*(args->twostagesem[1]))){
+		while(!(*args->twostagesem[0])&&!(*(args->twostagesem[1]))){			
 			
 			pthread_cond_wait(args->running,args->mutex);
 
@@ -16,7 +16,6 @@ static void* threadTreeFuncRun(threadTreeFuncArgs* args){
 			free(resultMem);
 		}
 		*(args->twostagesem[0])=0;
-		
 	}
 	return NULL;	
 
@@ -91,6 +90,7 @@ static thread_tree_node* createNewThreadNode(int nsize,u_int64_t memsize,void* (
 		treeArgs->mem=node->mem;
 		treeArgs->memsize=node->memsize;
 
+		pthread_mutex_init(node->mutex,NULL);
 		pthread_cond_init(node->running,NULL);
 		*(node->twostagesem[0])=startRunning;
 		*(node->twostagesem[1])=0;
