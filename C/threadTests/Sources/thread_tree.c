@@ -2,7 +2,6 @@
 
 static void* threadTreeFuncRun(threadTreeFuncArgs* args){
 	
-	u_int64_t* resultMem=malloc(args->memsize);;
 	while(!(*(args->twostagesem[1]))){
 		pthread_mutex_lock(args->mutex);
 		while(!(*args->twostagesem[0])&&!(*(args->twostagesem[1]))){
@@ -12,13 +11,13 @@ static void* threadTreeFuncRun(threadTreeFuncArgs* args){
 		}
 		pthread_mutex_unlock(args->mutex);
 		if(*(args->twostagesem[0])){
-			*(resultMem)=args->func(args->actualArgs);
+			u_int64_t*resultMem=args->func(args->actualArgs);
 			memcpy(args->mem,resultMem,args->memsize);
+			free(resultMem);
 		}
 		*(args->twostagesem[0])=0;
 		
 	}
-	free(resultMem);
 	return NULL;	
 
 
