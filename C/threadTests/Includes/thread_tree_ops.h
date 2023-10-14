@@ -2,6 +2,6 @@
 #define THREAD_TREE_OPS_H
 
 
-int sumTreeResults(thread_tree* tree);
+int sumTreeResults(thread_tree_node* tree);
 
 #endif

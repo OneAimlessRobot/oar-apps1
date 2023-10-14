@@ -13,6 +13,7 @@ DEPFLAGS= -MP -MD
 CFLAGS= -Wall -fsanitize=address -DPROGRAMPATHAUX="$(CURRDIR)" -Wextra -g $(foreach D, $(INCLUDE), -I$(D)) $(DEPFLAGS) `sdl2-config --libs`
 
 SOURCEFILES=$(foreach D,$(SOURCES), $(wildcard $(D)/*.c))
+INCLUDEFILES=$(foreach D,$(INCLUDE), $(wildcard $(D)/*.h))
 
 
 RESOURCEFILES=$(wildcard $(RESDIR)/*.o)
@@ -33,7 +34,7 @@ $(BINARY): $(OBJECTS)
 	$(CC) -g -v  $(CFLAGS) -o  $@ $^ $(RESOURCEFILES)  $(LDLIBS)
 
 
-%.o:%.c
+%.o:%.c %.h
 	$(CC) -g  $(CFLAGS) -c -o $@ $<  $(LDLIBS)
 	echo $(CFLAGS)
 

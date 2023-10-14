@@ -39,10 +39,13 @@ static int sumTreeResultsOnNode(thread_tree_node* node){
 		
 	}
 
-int sumTreeResults(thread_tree* tree){
+int sumTreeResults(thread_tree_node* tree){
 
-	
-	return sumTreeResultsOnNode(tree->root);
+	if(!tree){
+
+	return 0;
+	}
+	return sumTreeResultsOnNode(tree);
 
 
 }
