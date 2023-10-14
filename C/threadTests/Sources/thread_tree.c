@@ -92,6 +92,7 @@ static thread_tree_node* createNewThreadNode(int nsize,u_int64_t memsize,void* (
 		treeArgs->memsize=node->memsize;
 
 		pthread_cond_init(node->running,NULL);
+		pthread_mutex_init(node->mutex,NULL);
 		*(node->twostagesem[0])=startRunning;
 		*(node->twostagesem[1])=0;
 		node->args=treeArgs;
