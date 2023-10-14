@@ -3,10 +3,11 @@
 
 
 typedef struct pausableFuncArgs{
-	int*mem;
+	void*mem;
 	void* actualArgs;
-	int* twowaysem[2];
-
+	int* twostagesem[2];
+	pthread_cond_t* running;
+	pthread_mutex_t* mutex;
 }pausableFuncArgs;
 
 typedef struct pausableFunc{
@@ -18,7 +19,10 @@ typedef struct pausableFunc{
 
 typedef struct thread_tree_node{
 int nsize;
-int* mem;
+void* mem;
+int* twostagesem[2];
+pthread_cond_t* running;
+pthread_mutex_t* mutex;
 pausableFunc* pfunc;
 pthread_t* thread;
 struct thread_tree_node** children;
@@ -26,18 +30,17 @@ struct thread_tree_node** children;
  
 
 typedef struct thread_tree{
-int nsize,nheight;
-int* twowaysem[2];
+int nheight;
 thread_tree_node* root;
 
 }thread_tree;
 
-thread_tree* generateTree(int nheight,int nsize,void* (*pfunc)(pausableFuncArgs*),void* args,int startFrozen);
+thread_tree* generateTree(int nheight,int nsize,void* (*pfunc)(pausableFuncArgs*),void* args,int startRunning);
 
 
 void freezeTree(thread_tree*tree);
-
-int treeIsFrozen(thread_tree*tree);
+void terminateTree(thread_tree*tree);
+int treeIsRunning(thread_tree*tree);
 
 
 void joinTree(thread_tree* tree);

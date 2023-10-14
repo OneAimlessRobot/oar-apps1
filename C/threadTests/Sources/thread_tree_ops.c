@@ -31,11 +31,11 @@ static int sumTreeResultsOnNode(thread_tree_node* node){
 
 	
 		if(noChildren(node)){
-				return (int)(node->mem[0]);
+				return (int)(*((int*)node->mem));
                   
 			}
 		
-		return (int)(node->mem[0])+ sumTreeResultsOnArray(node->children,node->nsize-1);
+		return (int)(*((int*)node->mem))+ sumTreeResultsOnArray(node->children,node->nsize-1);
 		
 	}
 

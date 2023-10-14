@@ -1,9 +1,10 @@
 #include "Includes/preprocessor.h"
 typedef struct funcArgs{
 
-	int num;
-
+	int fd;
+	
 }funcArgs;
+
 
 int factorial(int num){
 	if(!num){
@@ -14,11 +15,22 @@ int factorial(int num){
 
 }
 void* func(pausableFuncArgs* args){
-	int* resultMem= args->mem;
-	while((*(args->twowaysem[0]))){
-		*(resultMem)=0;
+	int* resultMem=(int*) args->mem;
+	while(!(*(args->twostagesem[1]))){
+		pthread_mutex_lock(args->mutex);
+		while(!(*args->twostagesem[0])&&!(*(args->twostagesem[1]))){
+			
+			pthread_cond_wait(args->running,args->mutex);
+
+		}
+		pthread_mutex_unlock(args->mutex);
+		if(*(args->twostagesem[0])){
+			
+			write(((funcArgs*)args->actualArgs)->fd,".",1);
+		}
+		*(args->twostagesem[0])=0;
+		
 	}
-	printf("Done!");
 	return NULL;	
 }
 
@@ -27,19 +39,21 @@ void* func(pausableFuncArgs* args){
 int main(int argc, char ** argv){
 
 	funcArgs args;
-	args.num=5;
-	thread_tree* tree=generateTree(3,3,func,&args,0);
+	int fd= creat(argv[1],0777);
+	args.fd=1;
+	thread_tree* tree=generateTree(0,1,func,&args,0);
 	printf("generated!!!\n");
-	sleep(3);
-	printf("unfrozen!!!\n");
+	args.fd=fd;
 	freezeTree(tree);
+	while(treeIsRunning(tree));
+	printf("%d\n",treeIsRunning(tree));
 	joinTree(tree);
-	printf("%d\n",sumTreeResults(tree));
 	destroyTree(tree);
-
+	close(fd);
 	
 
 
 	return 0;
 }
+
 
