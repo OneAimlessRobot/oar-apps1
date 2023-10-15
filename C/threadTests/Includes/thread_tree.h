@@ -6,19 +6,19 @@ typedef struct threadTreeFuncArgs{
 	void*mem;
 	int memsize;
 	void* actualArgs;
-	u_int64_t* (*func)(void*);
+	void* (*func)(void*);
 	int* twostagesem[2];
 	pthread_cond_t* running;
-	pthread_mutex_t* mutex;
+	pthread_mutex_t* mutex,*mutex2,*mutex3;
 }threadTreeFuncArgs;
 
 typedef struct thread_tree_node{
 int nsize;
 u_int64_t memsize;
 void* mem;
-int* twostagesem[2];
+int twostagesem[2];
 pthread_cond_t* running;
-pthread_mutex_t* mutex;
+pthread_mutex_t* mutex,*mutex2,*mutex3;
 threadTreeFuncArgs* args;
 pthread_t* thread;
 struct thread_tree_node** children;

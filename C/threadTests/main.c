@@ -16,16 +16,16 @@ int factorial(int num){
 	return num*factorial(num-1);
 
 }
-u_int64_t* func(void* args){
+void* func(void* args){
 	funcArgs* argv= (funcArgs*)args;
-	u_int64_t* result=malloc(sizeof(void*));
+	int* result=malloc(sizeof(void*));
 	*(result)=0;
 
 	for(int i=0;i<argv->size;i++){
 		*(result)+=argv->arr[i];
 	}
 	
-	return result;
+	return (void*) result;
 
 }
 
@@ -35,10 +35,14 @@ int main(int argc, char ** argv){
 	int arr[5]={1,2,3,4,5};
 	args.arr=arr;
 	args.size=5;
-	thread_tree_node* tree=generateTree(2,10,1*sizeof(void*),(void*(*)(void*))func,&args,1);printf("generated!!!\n");
-        while(treeIsRunning(tree));
-        printf("%d\n",sumTreeResults(tree));
-	destroyTree(tree);
+	thread_tree_node* tree=generateTree(1,0,1*sizeof(void*),func,&args,1);
+	printf("generated!!!\n");
+	while(treeIsRunning(tree));
+        printf("generated!!!\n");
+        joinTree(tree);
+	printf("generated!!!\n");
+        destroyTree(tree);
+	
 
 	return 0;
 }

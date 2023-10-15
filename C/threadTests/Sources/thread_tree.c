@@ -1,22 +1,85 @@
 #include "../Includes/preprocessor.h"
 
+static void atomicCheckCondVar(pthread_cond_t* cond, pthread_mutex_t* mut1,pthread_mutex_t* mut2){
+
+
+			pthread_mutex_lock(mut2);
+			pthread_cond_wait(cond,mut1);
+			pthread_mutex_unlock(mut2);
+
+
+}
+static void toggleBooleanPointer(int* boolean,pthread_mutex_t* mutex){
+
+	pthread_mutex_lock(mutex);
+	
+	if(*(boolean)){
+
+		*(boolean)=0;
+	
+	}
+	else{
+
+	*(boolean)=1;
+	
+	
+	}
+//	*(boolean)=!*(boolean);
+	pthread_mutex_unlock(mutex);
+
+
+}
+
+static void turnOffBooleanPointer(int* boolean,pthread_mutex_t* mutex){
+
+	pthread_mutex_lock(mutex);
+	*(boolean)=0;
+	pthread_mutex_unlock(mutex);
+
+
+}
+
+static void turnOnBooleanPointer(int* boolean,pthread_mutex_t* mutex){
+
+	pthread_mutex_lock(mutex);
+	*(boolean)=1;
+	pthread_mutex_unlock(mutex);
+
+
+}
+
+static int checkBooleanPointer(int* boolean,pthread_mutex_t* mutex){
+	int result=0;
+	pthread_mutex_lock(mutex);
+	result=*boolean;
+	pthread_mutex_unlock(mutex);
+	return result;
+
+}
+
 static void* threadTreeFuncRun(void* argv){
 	threadTreeFuncArgs* args=(threadTreeFuncArgs*)argv;
-	while(!(*(args->twostagesem[1]))){
+	while(1){
+		int toExit=checkBooleanPointer(args->twostagesem[1],args->mutex2),
+			keepGoing=checkBooleanPointer(args->twostagesem[0],args->mutex);
+		if(toExit){
+			break;
+		}
 		pthread_mutex_lock(args->mutex);
-		while(!(*args->twostagesem[0])&&!(*(args->twostagesem[1]))){			
-			
-			pthread_cond_wait(args->running,args->mutex);
+		while(!keepGoing&&!toExit){
 
+		atomicCheckCondVar(args->running, args->mutex,args->mutex);
+		
 		}
 		pthread_mutex_unlock(args->mutex);
-		if(*(args->twostagesem[0])){
-			u_int64_t*resultMem=args->func(args->actualArgs);
+		if(checkBooleanPointer(args->twostagesem[0],args->mutex)){
+			void*resultMem=args->func(args->actualArgs);
 			memcpy(args->mem,resultMem,args->memsize);
 			free(resultMem);
 		}
-		*(args->twostagesem[0])=0;
+		turnOffBooleanPointer(args->twostagesem[0],args->mutex);
 	}
+	printf("Done!!\n");
 	return NULL;	
 
 
@@ -52,9 +115,11 @@ static int checkRunningOnNode(thread_tree_node* node){
 
 
 		if(noChildren(node)){
-				return (*(node->twostagesem[0]));
+				//return checkBooleanPointer(node->twostagesem[0],node->mutex2);
+				return *(node->twostagesem[0]);
 			}
-		return (*(node->twostagesem[0])) || checkRunningOnArray(node->children,node->nsize-1);
+		//return checkBooleanPointer(node->twostagesem[0],node->mutex2) || checkRunningOnArray(node->children,node->nsize-1);
+		return *(node->twostagesem[0]) || checkRunningOnArray(node->children,node->nsize-1);
 	}
 
 int treeIsRunning(thread_tree_node* tree){
@@ -62,8 +127,9 @@ int treeIsRunning(thread_tree_node* tree){
 	if(!tree){
 		return 0;
 	}
-	return checkRunningOnNode(tree);
-
+	int* result=malloc(sizeof(int));
+	*(result)=checkRunningOnNode(tree);
+	return result;
 
 }
 static thread_tree_node* createNewThreadNode(int nsize,u_int64_t memsize,void* (*pfunc)(void*),void* args,int startRunning){
@@ -74,6 +140,8 @@ static thread_tree_node* createNewThreadNode(int nsize,u_int64_t memsize,void* (
 		memset(node->children,0,nsize*(sizeof(thread_tree_node*)));
 		node->running=malloc(sizeof(pthread_cond_t));
 		node->mutex=malloc(sizeof(pthread_mutex_t));
+		node->mutex2=malloc(sizeof(pthread_mutex_t));
+		node->mutex3=malloc(sizeof(pthread_mutex_t));
 		node->twostagesem[0]=malloc(sizeof(int));
 		node->twostagesem[1]=malloc(sizeof(int));
 		node->mem=malloc(memsize);
@@ -81,9 +149,11 @@ static thread_tree_node* createNewThreadNode(int nsize,u_int64_t memsize,void* (
 
 		threadTreeFuncArgs* treeArgs=malloc(sizeof(threadTreeFuncArgs));
 			
-		treeArgs->func=(u_int64_t*(*)(void*))pfunc;
+		treeArgs->func=pfunc;
 		treeArgs->running=node->running;
 		treeArgs->mutex=node->mutex;
+		treeArgs->mutex2=node->mutex2;
+		treeArgs->mutex3=node->mutex3;
 		treeArgs->actualArgs=args;
 		treeArgs->twostagesem[0]=node->twostagesem[0];
 		treeArgs->twostagesem[1]=node->twostagesem[1];
@@ -91,13 +161,14 @@ static thread_tree_node* createNewThreadNode(int nsize,u_int64_t memsize,void* (
 		treeArgs->memsize=node->memsize;
 
 		pthread_mutex_init(node->mutex,NULL);
+		pthread_mutex_init(node->mutex2,NULL);
+		pthread_mutex_init(node->mutex3,NULL);
 		pthread_cond_init(node->running,NULL);
-		pthread_mutex_init(node->mutex,NULL);
 		*(node->twostagesem[0])=startRunning;
 		*(node->twostagesem[1])=0;
 		node->args=treeArgs;
 		node->nsize=nsize;
-		pthread_create(node->thread,NULL,(void*(*)(void*))threadTreeFuncRun,node->args);
+		pthread_create(node->thread,NULL,threadTreeFuncRun,node->args);
 		return node;
 
 
@@ -147,42 +218,32 @@ static void freezeWorkHorse(thread_tree_node* tree){
 
 	
 	if(tree->children[i]){
-		if(*(tree->children[i]->twostagesem[0])){
+			toggleBooleanPointer(tree->children[i]->twostagesem[0],tree->children[i]->mutex);
+			/*
+			if((*tree->children[i]->twostagesem[0])){
 
-			pthread_mutex_lock(tree->children[i]->mutex);
 			*(tree->children[i]->twostagesem[0])=0;
-			pthread_mutex_unlock(tree->children[i]->mutex);
-	
-		}
-		else{
-			
-			pthread_mutex_lock(tree->children[i]->mutex);
+			}	
+			else{
+
 			*(tree->children[i]->twostagesem[0])=1;
-			pthread_cond_signal(tree->children[i]->running);
-			pthread_mutex_unlock(tree->children[i]->mutex);
-	
-		}
-	
+			}*/
 	}
 
 
 	}
-	if(*(tree->twostagesem[0])){
+	toggleBooleanPointer(tree->twostagesem[0],tree->mutex);
+	
+	/*		if((*tree->twostagesem[0])){
 
-			pthread_mutex_lock(tree->mutex);
 			*(tree->twostagesem[0])=0;
-			pthread_mutex_unlock(tree->mutex);
-		}
-		else{
+			}	
+			else{
 
-			pthread_mutex_lock(tree->mutex);
 			*(tree->twostagesem[0])=1;
-			pthread_cond_signal(tree->running);
-			pthread_mutex_unlock(tree->mutex);
-		
-	}
+			}
 	
-	
+*/	
 }
 
 void freezeTree(thread_tree_node*tree){
@@ -206,16 +267,23 @@ static void terminateWorkHorse(thread_tree_node* tree){
 	
 	if(tree->children[i]){
 
+	
+		turnOnBooleanPointer(tree->children[i]->twostagesem[1],tree->children[i]->mutex2);
+				
+		//	*(tree->children[i]->twostagesem[1])=1;
 			
-		*(tree->children[i]->twostagesem[1])=1;
-	
 	
 	}
 
 
 	}
-			*(tree->twostagesem[1])=1;
+			
 	
+		turnOnBooleanPointer(tree->twostagesem[1],tree->mutex2);
+
+		
+		//	*(tree->twostagesem[1])=1;
+			
 	
 }
 
@@ -238,14 +306,17 @@ static void joinWorkHorse(thread_tree_node* tree){
 
 
 	if(tree->children[i]){
-		*(tree->children[i]->twostagesem[1])=1;
+		
+		tree->children[i]->twostagesem[1]=1;
 		joinWorkHorse(tree->children[i]);
 		pthread_join(*(tree->children[i]->thread),NULL);
 	}
 
 
 	}
-	*(tree->twostagesem[1])=1;
+	
+		tree->twostagesem[1]=1;
+	//turnOnBooleanPointer(tree->twostagesem[1],tree->mutex2);	
 	pthread_join(*(tree->thread),NULL);
 	
 }
@@ -306,8 +377,11 @@ static void destroyThreadTreeNode(thread_tree_node* node){
 	}
 	pthread_cond_destroy(node->running);
 	pthread_mutex_destroy(node->mutex);
+	pthread_mutex_destroy(node->mutex2);
+	pthread_mutex_destroy(node->mutex3);
 	free(node->running);
 	free(node->mutex);
+	free(node->mutex2);
 	free(node->twostagesem[0]);
 	free(node->twostagesem[1]);
 	free(node->args->mem);
