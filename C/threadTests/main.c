@@ -18,13 +18,8 @@ int factorial(int num){
 }
 void* func(void* args){
 	funcArgs* argv= (funcArgs*)args;
-	int* result=malloc(sizeof(void*));
-	*(result)=0;
-
-	for(int i=0;i<argv->size;i++){
-		*(result)+=argv->arr[i];
-	}
-	
+	u_int64_t* result=malloc(sizeof(void*));
+	*(result)=5;
 	return (void*) result;
 
 }
@@ -35,14 +30,18 @@ int main(int argc, char ** argv){
 	int arr[5]={1,2,3,4,5};
 	args.arr=arr;
 	args.size=5;
-	thread_tree_node* tree=generateTree(1,0,1*sizeof(void*),func,&args,1);
-	printf("generated!!!\n");
+	thread_tree_node* tree=generateTree(3,10,1*sizeof(void*),func,&args,1);
 	while(treeIsRunning(tree));
-        printf("generated!!!\n");
-        joinTree(tree);
-	printf("generated!!!\n");
-        destroyTree(tree);
+	printf("Results: %lu\n",sumTreeResults(tree));
+	freezeTree(tree);
+	while(treeIsRunning(tree));
 	
+	
+	terminateTree(tree);
+	printf("Results: %lu. Tree is running: %d\n",sumTreeResults(tree),treeIsRunning(tree));
+	printf("Results: %lu\n",sumTreeResults(tree));
+	joinTree(tree);
+	destroyTree(tree);
 
 	return 0;
 }

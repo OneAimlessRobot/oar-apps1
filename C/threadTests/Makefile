@@ -10,7 +10,12 @@ CURRDIR=echo `pwd`
 CC= clang
 DEPFLAGS= -MP -MD
 
-CFLAGS= -Wall -fsanitize=thread  -DPROGRAMPATHAUX="$(CURRDIR)" -Wextra -g $(foreach D, $(INCLUDE), -I$(D)) $(DEPFLAGS) 
+THREAD_DEBUGGING= -fsanitize=thread
+MEMORY_DEBUGGING= -fsanitize=address
+NO_DEBUGGING=
+DEBUGGING_MODE= 
+
+CFLAGS= -Wall $(MEMORY_DEBUGGING)  -DPROGRAMPATHAUX="$(CURRDIR)" -Wextra -g $(foreach D, $(INCLUDE), -I$(D)) $(DEPFLAGS) 
 SOURCEFILES=$(foreach D,$(SOURCES), $(wildcard $(D)/*.c))
 INCLUDEFILES=$(foreach D,$(INCLUDE), $(wildcard $(D)/*.h))
 
