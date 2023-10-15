@@ -32,15 +32,17 @@ int main(int argc, char ** argv){
 	args.size=5;
 	thread_tree_node* tree=generateTree(3,10,1*sizeof(void*),func,&args,1);
 	while(treeIsRunning(tree));
-	printf("Results: %lu\n",sumTreeResults(tree));
+//	printf("Results: %lu\n",sumTreeResults(tree));
+	for(int i=0; i<10;i++){
+          while(treeIsRunning(tree));
 	freezeTree(tree);
 	while(treeIsRunning(tree));
-	
-	
-	terminateTree(tree);
-	printf("Results: %lu. Tree is running: %d\n",sumTreeResults(tree),treeIsRunning(tree));
 	printf("Results: %lu\n",sumTreeResults(tree));
-	joinTree(tree);
+        }	
+	terminateTree(tree);
+//	printf("Results: %lu. Tree is running: %d\n",sumTreeResults(tree),treeIsRunning(tree));
+//	printf("Results: %lu\n",sumTreeResults(tree));
+//	joinTree(tree);
 	destroyTree(tree);
 
 	return 0;
