@@ -174,3 +174,29 @@ thread_tree_node* createNewThreadNode(int nsize,u_int64_t memsize,void* (*pfunc)
 
 
 }
+
+void destroyThreadTreeNode(thread_tree_node* node){
+
+	if(!node){
+
+	return;
+	}
+	pthread_cond_destroy(node->condVars[0]);
+	pthread_mutex_destroy(node->mutexes[0]);
+	pthread_mutex_destroy(node->mutexes[1]);
+	pthread_mutex_destroy(node->mutexes[2]);
+
+	free(node->mutexes[0]);
+	free(node->mutexes[1]);
+	free(node->mutexes[2]);
+	free(node->condVars[0]);
+	free(node->twostagesem[0]);
+	free(node->twostagesem[1]);
+	free(node->mem);
+	free(node->args);
+	free(node->thread);
+	free(node->children);
+	free(node);
+	node=NULL;
+	
+}

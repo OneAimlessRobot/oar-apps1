@@ -34,5 +34,6 @@ int noChildren(thread_tree_node* node);
 
 thread_tree_node* createNewThreadNode(int nsize,u_int64_t memsize,void* (*pfunc)(void*),void* args,int startRunning);
 int doOpOnNode(thread_tree_node*worker,int val,int whichVal,nodeOp mode);
+void destroyThreadTreeNode(thread_tree_node* node);
 
 #endif
