@@ -28,23 +28,20 @@ void* nodeValOp(thread_tree_node*lootnode,nodeValueOp mode,void* value,u_int64_t
 static int doOpOnNode(thread_tree_node*worker,int val,int whichVal,nodeOp mode){
 
 		int result=0;
+pthread_mutex_lock(worker->mutexes[1]);
+pthread_mutex_lock(worker->mutexes[0]);
 	switch(mode){
 		case CHECKVAR:
-		pthread_mutex_lock(worker->mutexes[whichVal]);
 		result=*(worker->twostagesem[whichVal]);
-		pthread_mutex_unlock(worker->mutexes[whichVal]);
-		return result;
 		break;
 		case SETVAR:	
-		pthread_mutex_lock(worker->mutexes[whichVal]);
 		*(worker->twostagesem[whichVal])=val;
-		pthread_mutex_unlock(worker->mutexes[whichVal]);
-		return -1;
+		result= -1;
 		break;
 		case TOGGLEFREEZE:
-		pthread_mutex_lock(worker->mutexes[whichVal]);
+		//printf("%d\n",*(worker->twostagesem[whichVal]));
 		if(*(worker->twostagesem[whichVal])){
-		
+
 		*(worker->twostagesem[whichVal])=0;
 		
 		}
@@ -54,31 +51,21 @@ static int doOpOnNode(thread_tree_node*worker,int val,int whichVal,nodeOp mode){
 		pthread_cond_signal(worker->condVars[whichVal]);
 		
 		}
-		pthread_mutex_unlock(worker->mutexes[whichVal]);
-
-		return -2;
+		result=-2;
 		break;
 		case SETFREEVAR:
 		
-		pthread_mutex_lock(worker->mutexes[whichVal]);
 		*(worker->twostagesem[whichVal])=val;
 		pthread_cond_signal(worker->condVars[whichVal]);
-		pthread_mutex_unlock(worker->mutexes[whichVal]);
-		return -3;
+		result=-3;
 		break;
 		case CANCELNODE:
-		pthread_mutex_lock(worker->mutexes[1]);
-		pthread_mutex_lock(worker->mutexes[0]);
 		*(worker->twostagesem[1])=1;
 		*(worker->twostagesem[0])=0;
 		pthread_cond_signal(worker->condVars[0]);
-		pthread_mutex_unlock(worker->mutexes[1]);
-		pthread_mutex_unlock(worker->mutexes[0]);
-		return -4;
+		result=-4;
 		break;
 		case TOGGLEVARNORMALLY:
-		pthread_mutex_lock(worker->mutexes[whichVal]);
-		
 		if(*(worker->twostagesem[whichVal])){
 
 		*(worker->twostagesem[whichVal])=0;
@@ -88,19 +75,20 @@ static int doOpOnNode(thread_tree_node*worker,int val,int whichVal,nodeOp mode){
 		*(worker->twostagesem[whichVal])=1;
 		
 		}
-		pthread_mutex_unlock(worker->mutexes[whichVal]);
-		return -5;
+	result=-5;
 		break;
 		default:
 		perror("Bad OP code on node: 0 for checking var with index 'whichVar'\n 1 for setting var with index\n 2 for toggling\n 3 for unlocking with index\n 4 for locking with index\n");
-		return -6;
+		result=-6;
 		break;
 
 
 
 
 	}
-
+pthread_mutex_unlock(worker->mutexes[0]);
+pthread_mutex_unlock(worker->mutexes[1]);
+return result;
 
 
 }
@@ -108,20 +96,21 @@ static int doOpOnNode(thread_tree_node*worker,int val,int whichVal,nodeOp mode){
 static void* threadTreeFuncRun(void* argv){
 	threadTreeFuncArgs* args=(threadTreeFuncArgs*)argv;
 	while(1){
+
+		
 		pthread_mutex_lock(args->spawner->mutexes[0]);
 		while(!*(args->spawner->twostagesem[1])&&!*(args->spawner->twostagesem[0])){
 
 		pthread_cond_wait(args->spawner->condVars[0],args->spawner->mutexes[0]);
 		}
-		pthread_mutex_unlock(args->spawner->mutexes[0]);
+pthread_mutex_unlock(args->spawner->mutexes[0]);
 		if(doOpOnNode(args->spawner,0,0,CHECKVAR)){
-			void*resultMem=args->func(args->actualArgs);
+			int64_t*resultMem=args->func(args->actualArgs);
 			nodeValOp(args->spawner,SETVAL,resultMem,args->spawner->memsize);
 			free(resultMem);
 		}
 		doOpOnNode(args->spawner,0,0,SETVAR);
 		if(doOpOnNode(args->spawner,0,1,CHECKVAR)){
-
 			return NULL;
 		}
 	}
@@ -285,13 +274,14 @@ static void freezeWorkHorse(thread_tree_node* tree){
 
 		return;
 	}
-	if(noChildren(tree)){
+/*	if(noChildren(tree)){
 		
 	doOpOnNode(tree,0,0,TOGGLEFREEZE);
 	
 
 	}
-	for(int i=0;i<tree->nsize;i++){
+/
+g*/	for(int i=0;i<tree->nsize;i++){
 
 
 	
@@ -434,10 +424,10 @@ static void destroyThreadTreeNode(thread_tree_node* node){
 	return;
 	}
 	pthread_cond_destroy(node->condVars[0]);
-	pthread_mutex_destroy(node->mutexes[0]);
+/*	pthread_mutex_destroy(node->mutexes[0]);
 	pthread_mutex_destroy(node->mutexes[1]);
 	pthread_mutex_destroy(node->mutexes[2]);
-
+*/
 	free(node->mutexes[0]);
 	free(node->mutexes[1]);
 	free(node->mutexes[2]);
