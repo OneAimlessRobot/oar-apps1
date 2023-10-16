@@ -8,5 +8,7 @@
 #include <unistd.h>
 #include <limits.h>
 #include <time.h>
+#include "thread_tree_node.h"
 #include "thread_tree.h"
 #include "thread_tree_ops.h"
+

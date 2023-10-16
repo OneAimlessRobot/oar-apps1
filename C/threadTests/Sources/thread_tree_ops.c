@@ -1,22 +1,5 @@
 #include "../Includes/preprocessor.h"
 
-static int noChildren(thread_tree_node* node){
-
-	if(!node){
-
-		return 1;
-	}
-	for(int i=0;i<node->nsize;i++){
-
-	if(node->children[i]){
-
-		return 0;
-
-	}
-	}
-	return 1;
-
-}
 static u_int64_t sumTreeResultsOnArray(thread_tree_node**array,int nsizetwo);
 
 static u_int64_t sumTreeResultsOnNode(thread_tree_node* node);
