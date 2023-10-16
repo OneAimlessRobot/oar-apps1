@@ -1,4 +1,4 @@
-BINARY= threadTests
+BINARY= threadTests.exe
 
 LDLIBS=  -lm -lpthread
 INCLUDE= ./Includes .
@@ -13,7 +13,6 @@ DEPFLAGS= -MP -MD
 THREAD_DEBUGGING= -fsanitize=thread
 MEMORY_DEBUGGING= -fsanitize=address
 NO_DEBUGGING=
-DEBUGGING_MODE= 
 
 CFLAGS= -Wall $(THREAD_DEBUGGING)  -DPROGRAMPATHAUX="$(CURRDIR)" -Wextra -g $(foreach D, $(INCLUDE), -I$(D)) $(DEPFLAGS) 
 SOURCEFILES=$(foreach D,$(SOURCES), $(wildcard $(D)/*.c))

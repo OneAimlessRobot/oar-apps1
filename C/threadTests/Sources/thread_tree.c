@@ -1,8 +1,3 @@
-
-
-
-
-
 #include "../Includes/preprocessor.h"
 
 static int checkRunningOnArray(thread_tree_node**array,int nsizetwo);
@@ -237,7 +232,6 @@ void detachTree(thread_tree_node* tree){
 
 
 }
-
 
 static void destroyWorkOnNode(thread_tree_node* tree);
 	

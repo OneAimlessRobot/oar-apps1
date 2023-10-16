@@ -60,28 +60,5 @@ return malloc(8);
 }
 int main(int argc, char ** argv){
 
-	funcArgs args;
-	args.arr=genArr(10000);
-	args.size=10000;
-
-	thread_tree_node* tree=generateTree(9,1,1*sizeof(void*),func,&args,1);
-	
-while(treeIsRunning(tree));
-
-	freezeTree(tree);
-	for(int i=0; i<10;i++){
-          while(treeIsRunning(tree));
-while(treeIsRunning(tree));
-
-	printf("Results: %ld\n",(int64_t)sumTreeResults(tree));
-	free(incArr(&args));
-freezeTree(tree);
-    }	
-while(treeIsRunning(tree));
-	terminateTree(tree);
-	free(args.arr);
-	joinTree(tree);
-	destroyTree(tree);
-
-	return 0;
+return 0;
 }
