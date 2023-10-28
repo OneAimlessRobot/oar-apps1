@@ -4,7 +4,7 @@
 extern SDL_Thread* thread,*sthread;
 extern SDL_mutex* globalmtx;
 extern SDL_cond* sglobalcond;
-extern int currsong,canswitch,playerready;
+extern int currsong,canswitch,playerready,forward;
 
 static int playMusicMEM(void* args){
 
@@ -110,10 +110,18 @@ static void waitswitchSongMEM(returnthingMEM** thing,metadata* meta,int fd,playM
 			return;
 
 		}
-                 free((*thing)->buff);
-                 free((*thing));
-                 (*thing)=selectsongMEM(meta,fd,(currsong++)%meta->numofpairs);
-
+                free((*thing)->buff);
+                free((*thing));
+                int tmpvar=currsong%meta->numofpairs;
+		if(forward){
+		
+		currsong=(currsong+1);
+		}
+		else{
+		currsong=abs(currsong-1);
+		}
+		(*thing)=selectsongMEM(meta,fd,tmpvar);
+		printf("Song number %d\n",tmpvar);
 		if(!(*thing)->music){
 
 		exit(-1);
@@ -160,6 +168,13 @@ switch(c){
 	}
 	case 'n':{
 		acessVar(&args->switching,globalmtx,CHANGE,1);
+		forward=1;
+		SDL_CondSignal(sglobalcond);
+		break;
+	}
+	case 'p':{
+		acessVar(&args->switching,globalmtx,CHANGE,1);
+		forward=0;
 		SDL_CondSignal(sglobalcond);
 		break;
 	}
