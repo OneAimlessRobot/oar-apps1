@@ -1,0 +1,161 @@
+#include "../Includes/preprocessor.h"
+void concatenate_files_into_ramp(char**strings,metadata*meta,int fd){
+lseek(fd,meta->pairs[0].start,SEEK_SET);
+char buff[STRING_SIZE];
+memset(buff,0,STRING_SIZE);
+int numread=0;
+for(int i=0;i<meta->numofpairs;i++){
+	
+	int currfd=open(strings[i],O_RDWR,0777);
+	while((numread=read(currfd,buff,STRING_SIZE))){
+
+		write(fd,buff,numread);
+	}
+	close(currfd);
+
+
+
+
+}
+
+
+
+
+
+
+
+}
+int calculateNumOfLinesOfHeader(metadata* meta){
+
+return 2+meta->numofpairs*2;
+
+}
+void sum_offset_to_header_table(metadata* meta,u_int64_t offset){
+
+for(int i=0;i<meta->numofpairs;i++){
+
+	meta->pairs[i].start+=offset;
+	meta->pairs[i].end+=offset;
+
+
+}
+}
+int printheader(metadata* meta){
+        
+	int result=0;
+	printf("%d\n",meta->numofpairs);
+	result++;
+for(int i=0;i<meta->numofpairs;i++){
+
+	printf("%d\n",meta->pairs[i].id);
+	printf("%ld %ld\n",meta->pairs[i].start,meta->pairs[i].end);
+	result+=2;
+}
+
+printf("\n");
+result++;
+
+return result;
+}
+
+
+metadata* metadata_init(char* filepathfile,char** arr,int size){
+                FILE* file,*currfile;
+	
+                        if(!(file=fopen(filepathfile,"r"))){
+
+                        perror("Erro na abertura de fichero no criador de meta\n");
+                        exit(-1);
+                        }
+
+metadata* meta=malloc(sizeof(metadata));
+meta->numofpairs=size;
+meta->pairs=malloc(sizeof(pair)*size);
+char* string=malloc(1024);
+memset(string,0,1024);
+u_int64_t currpos=0,currstart,currend;
+
+int lengthofline= 1024;
+int numOfLines=0;
+while((lengthofline=getline(&string,&lengthofline,file))>=0){
+
+
+	string[lengthofline-1]=string[lengthofline]=0;
+	arr[numOfLines]= malloc(STRING_SIZE);
+	arr[numOfLines][lengthofline-1]=arr[numOfLines][lengthofline]=0;
+	memcpy(arr[numOfLines],string,lengthofline-1);
+	
+                	printf("%s\n",string);
+                               if(!(currfile=fopen(string,"r"))){
+		 fprintf(stderr, "Cant open this file!!!!%s : %s\n",string,strerror(errno));
+			exit(-1);
+                        }
+	fseek(currfile,0,SEEK_SET);
+	currstart=ftell(currfile);
+    fseek(currfile,0,SEEK_END);
+    	currend=ftell(currfile)-2;
+    fseek(currfile,0,SEEK_SET);
+	meta->pairs[numOfLines].start=currpos;
+	meta->pairs[numOfLines].end=currpos+(currend-currstart);
+	meta->pairs[numOfLines].id=numOfLines;
+
+numOfLines++;
+currpos+=currend-currstart+2;
+fclose(currfile);
+}
+fclose(file);
+free(string);
+return meta;
+}
+u_int64_t printheadertofile(char* filepathfile,metadata* meta){
+        FILE* file;
+	if(!(file=fopen(filepathfile,"w+"))){
+
+                        perror("Erro na abertura de fichero no criador de meta\n");
+                        exit(-1);
+                        }
+	fprintf(file,"%d\n",meta->numofpairs);
+for(int i=0;i<meta->numofpairs;i++){
+
+	fprintf(file,"%d\n",meta->pairs[i].id);
+	fprintf(file,"%ld %ld\n",meta->pairs[i].start,meta->pairs[i].end);
+}
+u_int64_t result=0;
+fseek(file,0,SEEK_END);
+result=ftell(file)+4;
+fclose(file);
+return result;
+}
+
+
+
+
+
+
+
+
+
+metadata* parseheader(char* filepathfile){
+metadata* meta=malloc(sizeof(metadata));
+FILE* file;
+
+        if(!(file=fopen(filepathfile,"r"))){
+
+                perror("File not opened\n");
+                exit(-1);
+
+        }
+
+
+fscanf(file,"%d",&meta->numofpairs);
+meta->pairs=malloc(sizeof(pair)*meta->numofpairs);
+for(int i=0;i<meta->numofpairs;i++){
+
+	fscanf(file,"%d\n",&meta->pairs[i].id);
+	fscanf(file,"%lu %lu\n",&meta->pairs[i].start,&meta->pairs[i].end);
+	
+}
+
+return meta;
+}
+
