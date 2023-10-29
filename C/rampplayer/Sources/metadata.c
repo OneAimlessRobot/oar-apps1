@@ -4,9 +4,10 @@ lseek(fd,meta->pairs[0].start,SEEK_SET);
 char buff[STRING_SIZE];
 memset(buff,0,STRING_SIZE);
 int numread=0;
+int currfd=0;
 for(int i=0;i<meta->numofpairs;i++){
 	
-	int currfd=open(strings[i],O_RDWR,0777);
+	currfd=open(strings[i],O_RDWR,0777);
 	while((numread=read(currfd,buff,STRING_SIZE))){
 
 		write(fd,buff,numread);
@@ -17,12 +18,6 @@ for(int i=0;i<meta->numofpairs;i++){
 
 
 }
-
-
-
-
-
-
 
 }
 int calculateNumOfLinesOfHeader(metadata* meta){
@@ -81,14 +76,36 @@ while((lengthofline=getline(&string,&maxLengthOfLine,file))>=0){
 
 	string[lengthofline-1]=string[lengthofline]=0;
 	arr[numOfLines]= malloc(STRING_SIZE);
-	arr[numOfLines][lengthofline-1]=arr[numOfLines][lengthofline]=0;
+	memset(arr[numOfLines],0,STRING_SIZE);
 	memcpy(arr[numOfLines],string,lengthofline-1);
+	numOfLines++;
+}
+vecList*list=fillupVector(arr,size);
+numOfLines=0;
+while(list->size>0){
 	
-                	printf("%s\n",string);
-                               if(!(currfile=fopen(string,"r"))){
-		 fprintf(stderr, "Cant open this file!!!!%s : %s\n",string,strerror(errno));
-			exit(-1);
-                        }
+	int numOfOption=0;
+	system("clear");
+	printf("Estas sao as opçoes: Vai escolhendo por ordem:\n");
+	printVector(list);
+	if(scanf("%d",&numOfOption)<1){
+		int ch;
+		while((ch=getc(stdin))!=EOF && ch != '\n');
+		continue;
+	}
+	if(numOfOption>=0&& numOfOption<list->size){
+	memset(arr[numOfLines],0,STRING_SIZE);
+	memcpy(arr[numOfLines],list->arr[numOfOption].string,STRING_SIZE);
+        if(!(currfile=fopen(list->arr[numOfOption].string,"r"))){
+	fprintf(stderr, "Cant open this file!!!!%s : %s\n",list->arr[numOfOption].string,strerror(errno));
+	exit(-1);
+       	}
+	removeElement(numOfOption,list);
+	
+	}
+	else{
+		continue;
+	}
 	fseek(currfile,0,SEEK_SET);
 	currstart=ftell(currfile);
     fseek(currfile,0,SEEK_END);
@@ -98,10 +115,11 @@ while((lengthofline=getline(&string,&maxLengthOfLine,file))>=0){
 	meta->pairs[numOfLines].end=currpos+(currend-currstart);
 	meta->pairs[numOfLines].id=numOfLines;
 
-numOfLines++;
 currpos+=currend-currstart+2;
 fclose(currfile);
+numOfLines++;
 }
+clearVector(list);
 fclose(file);
 free(string);
 return meta;

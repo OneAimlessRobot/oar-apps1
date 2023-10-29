@@ -1,9 +1,9 @@
 #include "../Includes/preprocessor.h"
 
 
-int acessVar(int* var, SDL_mutex* mtx,varAcessMode mode,int value){
+int64_t acessVar(int64_t* var, SDL_mutex* mtx,varAcessMode mode,int64_t value){
         SDL_mutexP(mtx);
-        int result=0;
+        int64_t result=0;
         switch(mode){
                 case CHANGE:{
                 (*var)=value;
@@ -78,4 +78,5 @@ return 0; /* never called Mix_OpenAudio()?! */
  /* (sample frames * 1000) / frequency == play length in ms */
  return (frames * 1000) / freq;
 }
+
 

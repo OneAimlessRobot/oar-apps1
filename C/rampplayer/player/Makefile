@@ -10,10 +10,10 @@ RESDIR= ./resources
  
 CURRDIR=echo `pwd`
  
-CC= gcc
+CC= clang
 DEPFLAGS= -MP -MD
 
-CFLAGS= -Wall  -DPROGRAMPATHAUX="$(CURRDIR)"  -Wextra -g $(foreach D, $(INCLUDE), -I$(D)) $(DEPFLAGS) `sdl2-config --libs`
+CFLAGS= -Wall -fsanitize=thread -DPROGRAMPATHAUX="$(CURRDIR)"  -Wextra -g $(foreach D, $(INCLUDE), -I$(D)) $(DEPFLAGS) `sdl2-config --libs`
 
 SOURCEFILES=$(foreach D,$(SOURCES), $(wildcard $(D)/*.c))
 

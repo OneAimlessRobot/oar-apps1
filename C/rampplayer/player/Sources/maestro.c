@@ -4,9 +4,10 @@
 #include "../Includes/maestro.h"
 
 SDL_Thread* thread,*sthread;
-SDL_mutex* globalmtx;
+SDL_mutex* globalmtx,*waitmtx;
 SDL_cond*sglobalcond;
-int currsong=0,canswitch=0,playerready=0,forward=0;
+int nextsong,prevsong;
+int64_t canswitch=0,playerready=0,forward=0;
 
 void musicPlayingMaestro(metadata* meta,int fd){
 

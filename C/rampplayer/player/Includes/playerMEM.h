@@ -10,7 +10,7 @@ typedef struct playMusicMEMArgs{
 Mix_Chunk* currMusic;
 SDL_mutex* mtx;
 SDL_cond* condplay,*condswitch;
-int going,playing,switching;
+int64_t going,playing,switching;
 }playMusicMEMArgs;
 
 typedef struct songWaiterMEMArgs{

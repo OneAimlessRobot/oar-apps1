@@ -16,7 +16,7 @@
 #define INITDIR (strcat(getcwd(0,STRING_SIZE),"/"))
 
 #include "auxiliar.h"
-
+#include "choicemenu.h"
 
 
 

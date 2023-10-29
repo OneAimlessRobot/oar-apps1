@@ -2,9 +2,10 @@
 #include "../Includes/player.h"
 
 extern SDL_Thread* thread,*sthread;
-extern SDL_mutex* globalmtx;
+extern SDL_mutex* globalmtx,*waitmtx;
 extern SDL_cond*sglobalcond;
-extern int currsong,canswitch,playerready,forward;
+extern int nextsong,prevsong;
+extern int64_t canswitch,playerready,forward;
 
 
 static int playMusic(void* args){
@@ -12,28 +13,25 @@ static int playMusic(void* args){
 	playMusicArgs* argv= (playMusicArgs*)args;
 int duration=0;
 	SDL_mutexP(argv->mtx);
-	while(!playerready){
+	while(!acessVar(&playerready,globalmtx,GET,0)){
 		SDL_CondWait(sglobalcond,argv->mtx);
 	}
-	canswitch=1;
+	acessVar(&canswitch,globalmtx,CHANGE,1);
 	SDL_CondSignal(sglobalcond);
 	SDL_mutexV(argv->mtx);
 while(acessVar(&argv->playing,globalmtx,GET,0)){
 
 	SDL_mutexP(argv->mtx);
-	while((argv->switching||!argv->currMusic)&&argv->playing){
+	while((acessVar(&argv->switching,globalmtx,GET,0)||!acessVar((int64_t*)&argv->currMusic,globalmtx,GET,0))&&acessVar(&argv->playing,globalmtx,GET,0)){
 
 		SDL_CondWait(argv->condswitch,argv->mtx);
 
 	}
-	if(!argv->playing){
-		if(argv->currMusic){
-		Mix_FreeMusic(argv->currMusic);
-		}
+	SDL_mutexV(argv->mtx);
+	if(!acessVar(&argv->playing,globalmtx,GET,0)){
 		break;
 	}
-
-	SDL_mutexV(argv->mtx);
+	
 	duration=((int)(Mix_MusicDuration(argv->currMusic)*1000.0));
 	if(Mix_PlayMusic(argv->currMusic,0)<0){
 
@@ -44,37 +42,32 @@ while(acessVar(&argv->playing,globalmtx,GET,0)){
 	while(!acessVar(&argv->switching,globalmtx,GET,0)&&duration){
 	
 	SDL_mutexP(argv->mtx);
-	while(argv->playing&&!argv->going){
+	while(acessVar(&argv->playing,globalmtx,GET,0)&&!acessVar(&argv->going,globalmtx,GET,0)){
 		Mix_PauseMusic();
 		SDL_CondWait(argv->condplay,argv->mtx);
 		Mix_ResumeMusic();
 	}
-	SDL_mutexV(argv->mtx);
 	duration--;
 	SDL_Delay(1);
+	SDL_mutexV(argv->mtx);
 	
-	if(argv->switching||!argv->playing||!duration){
+	if(acessVar(&argv->switching,globalmtx,GET,0)||!acessVar(&argv->playing,globalmtx,GET,0)||!duration){
 	Mix_HaltMusic();
-	if(argv->currMusic){
-        Mix_FreeMusic(argv->currMusic);
-	argv->currMusic=NULL;
-        }	
+	
+	
+	acessVar(&canswitch,globalmtx,CHANGE,1);
 		
-	canswitch=1;
-	if(!argv->switching){
-		argv->switching=1;
+	if(!acessVar(&argv->switching,globalmtx,GET,0)){
+		acessVar(&argv->switching,globalmtx,CHANGE,1);
 	}
 		SDL_CondSignal(sglobalcond);
-		SDL_mutexV(argv->mtx);
 		break;
 	}
-
-	SDL_mutexV(argv->mtx);
+	}
 
 	}
+return 0;
 }
-
-	return 0;}
 
 
 
@@ -117,43 +110,53 @@ return result;
 }
 static void waitswitchSong(returnthing** thing,metadata* meta,int fd,playMusicArgs* args){
 
-                 SDL_mutexP(args->mtx);
+                 SDL_mutexP(waitmtx);
                  while(!acessVar(&canswitch,globalmtx,GET,0)&&acessVar(&args->playing,globalmtx,GET,0)){
 
-                         SDL_CondWait(sglobalcond,args->mtx);
+                         SDL_CondWait(sglobalcond,waitmtx);
 
                  }
 		acessVar(&canswitch,globalmtx,CHANGE,0);
                  
 		if(!acessVar(&args->playing,globalmtx,GET,0)){
+		SDL_mutexV(waitmtx);
+
 			return;
 
 		}
+		Mix_Music* ptr=(Mix_Music*)acessVar((int64_t*)&args->currMusic,globalmtx,GET,0);
+		if(ptr){
+		Mix_FreeMusic(ptr);
+		acessVar((int64_t*)&args->currMusic,globalmtx,CHANGE,0);
+		
+		}
 		free((*thing)->buff);
                 free((*thing));
-                int tmpvar=currsong%meta->numofpairs;
+                int tmpvar;
 		if(forward){
-		
-		currsong=(currsong+1);
+		tmpvar=nextsong%meta->numofpairs;
 		}
 		else{
-		currsong=abs(currsong-1);
+		tmpvar=prevsong%meta->numofpairs;
 		}
-		(*thing)=selectsong(meta,fd,tmpvar);
-		printf("Song number %d\n",tmpvar);
+		prevsong=abs(tmpvar-1);
+		nextsong=abs(tmpvar+1);
+		(*thing)=selectsong(meta,fd,abs(tmpvar));
+		printf("Song number %d\n",abs(tmpvar));
 		if(!(*thing)->music){
 
+		printf("ERRO NA MUSICA!!!!\n");
 		exit(-1);
 		}
-		args->currMusic=(*thing)->music;
+		acessVar((int64_t*)&args->currMusic,globalmtx,CHANGE,(int64_t)(*thing)->music);
                 acessVar(&args->switching,globalmtx,CHANGE,0);
                 SDL_CondSignal(args->condswitch);
- 		SDL_mutexV(args->mtx);
+ 		SDL_mutexV(waitmtx);
 }
 static int songWaiterAndSwitcher(void* args){
 
 	songWaiterArgs * argv=(songWaiterArgs *)args;
-	playerready=1;
+	acessVar(&playerready,globalmtx,CHANGE,1);
 	SDL_CondSignal(sglobalcond);
 while(acessVar(&argv->args->playing,globalmtx,GET,0)){
 
@@ -219,9 +222,12 @@ songWaiterArgs* sargs=malloc(sizeof(songWaiterArgs));
 	args->currMusic=NULL;
 	args->mtx=SDL_CreateMutex();
 	globalmtx= SDL_CreateMutex();
+	waitmtx= SDL_CreateMutex();
 	args->condplay=SDL_CreateCond();
 	args->condswitch=SDL_CreateCond();
 	sglobalcond=SDL_CreateCond();
+	prevsong=meta->numofpairs-1;
+	nextsong=0;
 	args->going=1;
 	args->playing=1;
 	args->switching=0;
@@ -234,7 +240,11 @@ songWaiterArgs* sargs=malloc(sizeof(songWaiterArgs));
 	char c;
 	
 	do{
-	scanf("%c",&c);
+	if(scanf("%c",&c)<1){
+		int ch;
+		while((ch=getc(stdin))!=EOF && ch != '\n');
+		continue;
+	}
 	menu(c,args);
 
 
@@ -242,9 +252,14 @@ songWaiterArgs* sargs=malloc(sizeof(songWaiterArgs));
 	}while(c!='s');
 	SDL_WaitThread(thread,NULL);
 	SDL_WaitThread(sthread,NULL);
+	if(args->currMusic){
+		Mix_FreeMusic(args->currMusic);
+	}
 	SDL_DestroyCond(args->condplay);
 	SDL_DestroyCond(args->condswitch);
 	SDL_DestroyMutex(args->mtx);	
+	SDL_DestroyMutex(globalmtx);	
+	SDL_DestroyMutex(waitmtx);	
 	SDL_DestroyCond(sglobalcond);
 	free(thing->buff);
 	free(thing);

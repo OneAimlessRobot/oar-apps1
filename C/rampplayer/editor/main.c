@@ -6,6 +6,8 @@
 
 int editor(int argc, char ** argv){
 
+//int main(int argc, char ** argv){
+
                 FILE* file;
 char* stringBuff=malloc(1024);
 memset(stringBuff,0,1024);
@@ -43,6 +45,7 @@ int fd=creat(argv[2],0777);
 sum_offset_to_header_table( meta, startpos);
 printheadertofile(argv[2],meta);
 concatenate_files_into_ramp(strings,meta,fd);
+
 free(meta->pairs);
 free(meta);
 close(fd);

@@ -5,7 +5,7 @@ typedef struct playMusicArgs{
 Mix_Music* currMusic;
 SDL_mutex* mtx;
 SDL_cond* condplay,*condswitch;
-int going,playing,switching;
+int64_t going,playing,switching;
 }playMusicArgs;
 
 
