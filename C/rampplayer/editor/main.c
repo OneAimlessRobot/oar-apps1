@@ -24,9 +24,10 @@ memset(stringBuff,0,1024);
                         }
 			close(creat(argv[2],0777));
 
+u_int64_t maxlengthofline= 1024;
 int lengthofline= 1024;
 int numOfLines=0;
-while((lengthofline=getline(&stringBuff,&lengthofline,file))>=0){
+while((lengthofline=getline(&stringBuff,&maxlengthofline,file))>=0){
 
 	numOfLines++;
 

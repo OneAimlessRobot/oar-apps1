@@ -168,13 +168,13 @@ switch(c){
 	}
 	case 'n':{
 		acessVar(&args->switching,globalmtx,CHANGE,1);
-		forward=1;
+		acessVar(&forward,globalmtx,CHANGE,1);
 		SDL_CondSignal(sglobalcond);
 		break;
 	}
 	case 'p':{
 		acessVar(&args->switching,globalmtx,CHANGE,1);
-		forward=0;
+		acessVar(&forward,globalmtx,CHANGE,0);
 		SDL_CondSignal(sglobalcond);
 		break;
 	}

@@ -73,11 +73,10 @@ meta->numofpairs=size;
 meta->pairs=malloc(sizeof(pair)*size);
 char* string=malloc(1024);
 memset(string,0,1024);
-u_int64_t currpos=0,currstart,currend;
-
+u_int64_t currpos=0,currstart,currend,maxLengthOfLine=STRING_SIZE;
 int lengthofline= 1024;
 int numOfLines=0;
-while((lengthofline=getline(&string,&lengthofline,file))>=0){
+while((lengthofline=getline(&string,&maxLengthOfLine,file))>=0){
 
 
 	string[lengthofline-1]=string[lengthofline]=0;
