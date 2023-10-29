@@ -13,7 +13,7 @@ CURRDIR=echo `pwd`
 CC= clang
 DEPFLAGS= -MP -MD
 
-CFLAGS= -Wall -fsanitize=thread -DPROGRAMPATHAUX="$(CURRDIR)"  -Wextra -g $(foreach D, $(INCLUDE), -I$(D)) $(DEPFLAGS) `sdl2-config --libs`
+CFLAGS= -Wall -DPROGRAMPATHAUX="$(CURRDIR)"  -Wextra -g $(foreach D, $(INCLUDE), -I$(D)) $(DEPFLAGS) `sdl2-config --libs`
 
 SOURCEFILES=$(foreach D,$(SOURCES), $(wildcard $(D)/*.c))
 
