@@ -4,7 +4,7 @@
 
 
 
-int main(int argc, char ** argv){
+int editor(int argc, char ** argv){
 
                 FILE* file;
 char* stringBuff=malloc(1024);

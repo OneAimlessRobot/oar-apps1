@@ -4,8 +4,8 @@ LDLIBS = -lm -pthread -lpthread
 LDLIBS += `pkg-config --libs   SDL2_mixer`
 LDLIBS += `pkg-config --libs  sdl2`
 
-INCLUDE= ./Includes .
-SOURCES= . ./Sources
+INCLUDE= ./Includes . ./editor/Includes
+SOURCES= . ./Sources ./editor ./editor/Sources
 RESDIR= ./resources
  
 CURRDIR=echo `pwd`
