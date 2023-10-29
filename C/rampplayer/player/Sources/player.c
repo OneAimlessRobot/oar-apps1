@@ -35,10 +35,12 @@ while(acessVar(&argv->playing,globalmtx,GET,0)){
 	duration=((int)(Mix_MusicDuration(argv->currMusic)*1000.0));
 	if(Mix_PlayMusic(argv->currMusic,0)<0){
 
-                printf("Duraçao: %d %s\n",duration,SDL_GetError());
-		exit(-1);
+                printf("\nERRO!!!!!: Duraçao: %d %s\n",duration,SDL_GetError());
+        	exit(-1);
 
         }
+	printf("\nDuraçao: %ds\n",duration/1000);
+	
 	while(!acessVar(&argv->switching,globalmtx,GET,0)&&duration){
 	
 	SDL_mutexP(argv->mtx);
@@ -142,7 +144,7 @@ static void waitswitchSong(returnthing** thing,metadata* meta,int fd,playMusicAr
 		prevsong=abs(tmpvar-1);
 		nextsong=abs(tmpvar+1);
 		(*thing)=selectsong(meta,fd,abs(tmpvar));
-		printf("Song number %d\n",abs(tmpvar));
+		printf("Song number: %d\nTitle: %s\n",abs(tmpvar),meta->pairs[abs(tmpvar)].filename);
 		if(!(*thing)->music){
 
 		printf("ERRO NA MUSICA!!!!\n");

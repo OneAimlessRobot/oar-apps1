@@ -43,7 +43,7 @@ int printheader(metadata* meta){
 for(int i=0;i<meta->numofpairs;i++){
 
 	printf("%d\n",meta->pairs[i].id);
-	printf("%ld %ld\n",meta->pairs[i].start,meta->pairs[i].end);
+	printf("%ld %ld %s\n",meta->pairs[i].start,meta->pairs[i].end,meta->pairs[i].filename);
 	result+=2;
 }
 
@@ -85,7 +85,7 @@ numOfLines=0;
 while(list->size>0){
 	
 	int numOfOption=0;
-	system("clear");
+	//system("clear");
 	printf("Estas sao as opçoes: Vai escolhendo por ordem:\n");
 	printVector(list);
 	if(scanf("%d",&numOfOption)<1){
@@ -114,7 +114,12 @@ while(list->size>0){
 	meta->pairs[numOfLines].start=currpos;
 	meta->pairs[numOfLines].end=currpos+(currend-currstart);
 	meta->pairs[numOfLines].id=numOfLines;
-
+	meta->pairs[numOfLines].filename=malloc(STRING_SIZE);
+	memset(meta->pairs[numOfLines].filename,0,STRING_SIZE);
+	memcpy(meta->pairs[numOfLines].filename,arr[numOfLines],STRING_SIZE);
+	removeBloatFromFilePath(&meta->pairs[numOfLines].filename);
+	takeoutspaces(meta->pairs[numOfLines].filename);
+	printf("%s\n",meta->pairs[numOfLines].filename);
 currpos+=currend-currstart+2;
 fclose(currfile);
 numOfLines++;
@@ -131,11 +136,11 @@ u_int64_t printheadertofile(char* filepathfile,metadata* meta){
                         perror("Erro na abertura de fichero no criador de meta\n");
                         exit(-1);
                         }
-	fprintf(file,"%d\n",meta->numofpairs);
+	fprintf(file,"%x",meta->numofpairs);
 for(int i=0;i<meta->numofpairs;i++){
 
-	fprintf(file,"%d\n",meta->pairs[i].id);
-	fprintf(file,"%ld %ld\n",meta->pairs[i].start,meta->pairs[i].end);
+	fprintf(file," %x ",meta->pairs[i].id);
+	fprintf(file," %lx %lx %s ",meta->pairs[i].start,meta->pairs[i].end,meta->pairs[i].filename);
 }
 u_int64_t result=0;
 fseek(file,0,SEEK_END);
@@ -163,14 +168,14 @@ FILE* file;
 
         }
 
-
-fscanf(file,"%d",&meta->numofpairs);
+u_int64_t size=STRING_SIZE;
+fscanf(file,"%x",&meta->numofpairs);
 meta->pairs=malloc(sizeof(pair)*meta->numofpairs);
 for(int i=0;i<meta->numofpairs;i++){
-
-	fscanf(file,"%d\n",&meta->pairs[i].id);
-	fscanf(file,"%lu %lu\n",&meta->pairs[i].start,&meta->pairs[i].end);
-	
+	meta->pairs[i].filename= malloc(STRING_SIZE);
+	memset(meta->pairs[i].filename,0,STRING_SIZE);
+	fscanf(file," %x ",&meta->pairs[i].id);
+	fscanf(file,"%lx %lx %s ",&meta->pairs[i].start,&meta->pairs[i].end,meta->pairs[i].filename);
 }
 
 return meta;

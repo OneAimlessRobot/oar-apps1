@@ -45,7 +45,10 @@ int fd=creat(argv[2],0777);
 sum_offset_to_header_table( meta, startpos);
 printheadertofile(argv[2],meta);
 concatenate_files_into_ramp(strings,meta,fd);
+for(int i=0;i<meta->numofpairs;i++){
 
+	free(meta->pairs[i].filename);
+}
 free(meta->pairs);
 free(meta);
 close(fd);

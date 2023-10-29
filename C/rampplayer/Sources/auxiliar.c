@@ -1,5 +1,25 @@
 #include "../Includes/preprocessor.h"
 
+void removeBloatFromFilePath(char** nilEndedBuff){
+   
+char* init= (*nilEndedBuff);
+char* ssc=strstr(*nilEndedBuff,"/");
+int l=0;
+do{
+	l=strlen(ssc)+1;
+	(*nilEndedBuff)= &(*nilEndedBuff)[strlen(*nilEndedBuff)-l+2];
+	ssc= strstr(*nilEndedBuff,"/");
+
+
+}while(ssc);
+char* result=malloc(strlen(*nilEndedBuff)+1);
+memset(result,0,strlen(*nilEndedBuff)+1);
+strcpy(result,*nilEndedBuff);
+free(init);
+(*nilEndedBuff)=result;
+
+}
+
 
 int64_t acessVar(int64_t* var, SDL_mutex* mtx,varAcessMode mode,int64_t value){
         SDL_mutexP(mtx);
@@ -79,4 +99,19 @@ return 0; /* never called Mix_OpenAudio()?! */
  return (frames * 1000) / freq;
 }
 
+
+
+void takeoutspaces(char* nilEndedBuff){
+
+    for(int i=0;nilEndedBuff[i]!=0;i++){
+    char* c=nilEndedBuff+i;
+    if(!isalpha(*c)){
+
+        *c='_';
+    }
+    }
+
+
+
+}
 

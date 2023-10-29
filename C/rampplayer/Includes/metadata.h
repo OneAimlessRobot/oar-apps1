@@ -5,7 +5,7 @@ typedef struct pair{
 
 int id;
 u_int64_t start,end;
-
+char* filename;
 }pair;
 
 typedef struct metadata{

@@ -25,6 +25,10 @@ int main(int argc, char ** argv){
 	Mix_CloseAudio();
         Mix_Quit();
         SDL_Quit();
+	for(int i=0;i<meta->numofpairs;i++){
+
+        	free(meta->pairs[i].filename);
+	}
 	free(meta->pairs);
 	free(meta);
 
