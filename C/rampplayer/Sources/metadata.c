@@ -85,7 +85,7 @@ numOfLines=0;
 while(list->size>0){
 	
 	int numOfOption=0;
-	//system("clear");
+	system("clear");
 	printf("Estas sao as opçoes: Vai escolhendo por ordem:\n");
 	printVector(list);
 	if(scanf("%d",&numOfOption)<1){
