@@ -6,16 +6,17 @@ Mix_Chunk* music;
 extern char* buff,filename[STRING_SIZE],*helpmenu;
 extern SDL_Thread* thread,*sthread;
 extern SDL_mutex* varmtx,* playmtx;
-extern SDL_cond*condswitching,* condplay,*condswitched;
+extern SDL_cond*condswitching,* condplay,*condswitched,*condpause;
 extern u_int32_t nextsong,prevsong;
-extern int64_t canswitch,playerready,forward,going,playing;
+extern int64_t canswitch,playerready,forward,going,playing,pausepls;
 
 
 void menu(char c);
 
 static int playMusicMEM(void* args){
 
-int duration=0,initduration=0;
+
+int initduration=0,duration=0;
 	SDL_mutexP(playmtx);
 	while(!acessVar(&playerready,varmtx,GET,0)){
 		SDL_CondWait(condswitching,playmtx);
@@ -47,12 +48,14 @@ while(acessVar(&playing,varmtx,GET,0)){
 	SDL_mutexP(playmtx);
 	while(acessVar(&playing,varmtx,GET,0)&&!acessVar(&going,varmtx,GET,0)){
 		Mix_Pause(0);
+		acessVar(&pausepls,varmtx,CHANGE,1);
+		SDL_CondSignal(condpause);
 		SDL_CondWait(condplay,playmtx);
 		Mix_Resume(0);
 	}
 	printf("\e[2J%s\nMusica: %s\nTempo passado: %d s de %d s\n",helpmenu,filename,duration/1000,initduration/1000);
-	duration--;
 	SDL_Delay(1);
+	duration--;
 	SDL_mutexV(playmtx);
 	}
 	Mix_HaltChannel(0);
@@ -147,6 +150,7 @@ songWaiterArgs sargs;
 	condplay=SDL_CreateCond();
 	condswitched=SDL_CreateCond();
 	condswitching=SDL_CreateCond();
+	condpause=SDL_CreateCond();
 	prevsong=meta->numofpairs-1;
 	nextsong=0;
 	sargs.meta=meta;
@@ -174,6 +178,7 @@ songWaiterArgs sargs;
 		
 	SDL_DestroyCond(condplay);
 	SDL_DestroyCond(condswitched);
+	SDL_DestroyCond(condpause);
 	SDL_DestroyMutex(playmtx);
 	SDL_DestroyMutex(varmtx);
 	SDL_DestroyCond(condswitching);
