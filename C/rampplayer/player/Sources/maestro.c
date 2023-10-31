@@ -3,60 +3,68 @@
 #include "../Includes/playerMEM.h"
 #include "../Includes/player.h"
 #include "../Includes/maestro.h"
-char* buff;
+
+char* buff,filename[STRING_SIZE],*pleasesiryouhavetounpauseitfirst="\e[2JDespausa essa merda!!!\n",*helpmenu="-------------------------------------------------\nChoose one of the following characters and press enter:\nn -> next song\np -> previous song\ns -> exit rampplayer\n(SPACE) -> pause (Just like real music players omg im so cool)\n-------------------------------------------------";
+
 SDL_Thread* thread,*sthread;
-SDL_mutex* globalmtx,* mtx;
-SDL_cond*sglobalcond,* condplay,*condswitch;
-int nextsong,prevsong;
+SDL_mutex* varmtx,* playmtx;
+SDL_cond*condswitching,* condplay,*condswitched;
+u_int32_t nextsong,prevsong;
 int64_t canswitch=0,playerready=0,forward=0,going=1,playing=1;
 
 void menu(char c){
-
 switch(c){
 	
 	case ' ':{
-		int value=acessVar(&going,globalmtx,GET,0);
+		int value=acessVar(&going,varmtx,GET,0);
 		value=(value+1)%2;
-		acessVar(&going,globalmtx,CHANGE,value);
+		acessVar(&going,varmtx,CHANGE,value);
 		SDL_CondSignal(condplay);
-		SDL_CondSignal(sglobalcond);
-		break;
+	 
+	break;
 	}
 	case 's':{
-		acessVar(&playing,globalmtx,CHANGE,0);
+		acessVar(&playing,varmtx,CHANGE,0);
 		SDL_CondSignal(condplay);
-		SDL_CondSignal(condswitch);
-		SDL_CondSignal(sglobalcond);
+		SDL_CondSignal(condswitched);
+		SDL_CondSignal(condswitching);
 	break;
 	}
 	case 'n':{
-		acessVar(&canswitch,globalmtx,CHANGE,1);
-		acessVar(&forward,globalmtx,CHANGE,1);
-		SDL_CondSignal(condplay);
-		SDL_CondSignal(sglobalcond);
-		
-		SDL_mutexP(mtx);
-		while(acessVar(&canswitch,globalmtx,GET,0)){
+		if(!acessVar(&going,varmtx,GET,0)){
+			
+			printf("%s\n",pleasesiryouhavetounpauseitfirst);
+			break;
+		}
+		acessVar(&canswitch,varmtx,CHANGE,1);
+		acessVar(&forward,varmtx,CHANGE,1);
+		SDL_CondSignal(condswitching);
+		SDL_mutexP(playmtx);
+		while(acessVar(&canswitch,varmtx,GET,0)){
 
-		SDL_CondWait(condswitch,mtx);
+		SDL_CondWait(condswitched,playmtx);
 
 		}
-		SDL_mutexV(mtx);
+		SDL_mutexV(playmtx);
 		break;
 	}
 	case 'p':{
-		acessVar(&canswitch,globalmtx,CHANGE,1);
-		acessVar(&forward,globalmtx,CHANGE,0);
-		SDL_CondSignal(condplay);
-		SDL_CondSignal(sglobalcond);
 		
-		SDL_mutexP(mtx);
-		while(acessVar(&canswitch,globalmtx,GET,0)){
+		if(!acessVar(&going,varmtx,GET,0)){
 
-		SDL_CondWait(condswitch,mtx);
+			printf("%s\n",pleasesiryouhavetounpauseitfirst);
+			break;
+		}
+		acessVar(&canswitch,varmtx,CHANGE,1);
+		acessVar(&forward,varmtx,CHANGE,0);
+		SDL_CondSignal(condswitching);
+		SDL_mutexP(playmtx);
+		while(acessVar(&canswitch,varmtx,GET,0)){
+
+		SDL_CondWait(condswitched,playmtx);
 
 		}
-		SDL_mutexV(mtx);
+		SDL_mutexV(playmtx);
 		break;
 	}
 	default:
