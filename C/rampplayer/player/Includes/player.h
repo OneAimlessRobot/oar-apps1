@@ -5,4 +5,5 @@
 
 void initplayer(metadata* meta,int fd);
 
+void incVolume();
 #endif

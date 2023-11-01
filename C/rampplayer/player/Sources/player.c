@@ -10,7 +10,7 @@ extern SDL_mutex* varmtx,* playmtx;
 extern SDL_cond*condswitching,* condplay,*condswitched,*condpause;
 extern u_int32_t nextsong,prevsong;
 extern int64_t canswitch,playerready,forward,going,playing,pausepls;
-
+extern int8_t volume;
 
 void menu(char c);
 
@@ -55,7 +55,8 @@ while(acessVar(&playing,varmtx,GET,0)){
 		SDL_CondWait(condplay,playmtx);
 		Mix_ResumeMusic();
 	}
-	printf("\e[2J%s\nMusica: %s\nTempo passado: %d s de %d s\n",helpmenu,filename,(int)(Mix_GetMusicPosition(music)),duration/1000);
+	int displayedvolume=(int)(100*Mix_VolumeMusic(-1)/128.0);
+	printf("\e[2J%s\nMusica: %s\nTempo passado: %d s de %d s\nVolume: %d de %d\n",helpmenu,filename,(int)(Mix_GetMusicPosition(music)),duration/1000,displayedvolume,100);
 	SDL_Delay(1);
 	SDL_mutexV(playmtx);
 	
