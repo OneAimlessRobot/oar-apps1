@@ -3,7 +3,7 @@
 
 
 
-void initplayer(metadata* meta,int fd);
+void initplayer(int fd);
 
 void incVolume();
 #endif

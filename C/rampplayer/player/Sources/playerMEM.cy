@@ -4,21 +4,21 @@
 #include "../Includes/playerMEM.h"
 
 Mix_Chunk* music;
-extern char* buff,*helpmenu,*screenclearer;
+extern char* buff,filename[STRING_SIZE],*helpmenu,*screenclearer;
 extern SDL_Thread* thread,*sthread;
 extern SDL_mutex* varmtx,* playmtx;
 extern SDL_cond*condswitching,* condplay,*condswitched,*condpause;
-extern u_int32_t nextsong,prevsong,currsong;
+extern u_int32_t nextsong,prevsong;
 extern int64_t canswitch,playerready,forward,going,playing,pausepls;
 extern int8_t volume;
-extern metadata* metastruct;
-extern int64_t duration;
-void menu();
+extern metadata* meta;
+int duration=0;
+void menu(char c);
 
 static int playMusicMEM(void* args){
 
 
-u_int64_t initduration=0;
+int initduration=0;
 	SDL_mutexP(playmtx);
 	while(!acessVar(&playerready,varmtx,GET,0)){
 		SDL_CondWait(condswitching,playmtx);
@@ -31,22 +31,20 @@ while(acessVar(&playing,varmtx,GET,0)){
 	SDL_mutexP(playmtx);
 	while((acessVar(&canswitch,varmtx,GET,0)||!acessVar((int64_t*)&music,varmtx,GET,0))&&acessVar(&playing,varmtx,GET,0)){
 
-		SDL_CondSignal(condswitching);
-		SDL_CondWaitTimeout(condswitched,playmtx,1);
+		SDL_CondWait(condswitched,playmtx);
+
 	}
-	if(!acessVar(&playing,varmtx,GET,0)){
 	SDL_mutexV(playmtx);
+	if(!acessVar(&playing,varmtx,GET,0)){
 		break;
 	}
-	acessVar(&duration,varmtx,CHANGE,(u_int64_t)getChunkTimeMilliseconds(music)*10);
+	initduration=duration=getChunkTimeMilliseconds(music)*10;
 	if(Mix_PlayChannel(0,music,0)<0){
-	SDL_mutexV(playmtx);
-	
-	        printf("\nERRO!!!!!: Duraçao: %ld %s\n",duration,SDL_GetError());
+
+	        printf("\nERRO!!!!!: Duraçao: %d %s\n",duration,SDL_GetError());
                 exit(-1);
 
         }
-	SDL_mutexV(playmtx);
 	while(acessVar(&playing,varmtx,GET,0)&&!acessVar(&canswitch,varmtx,GET,0)&&acessVar(&duration,varmtx,GET,0)){
 	
 	SDL_mutexP(playmtx);
@@ -58,13 +56,13 @@ while(acessVar(&playing,varmtx,GET,0)){
 		Mix_Resume(0);
 	}
 	SDL_Delay(1);
-	acessVar(&duration,varmtx,DEC,0);
+	acessVar(&duration,varmtx,DEC--;
 	SDL_mutexV(playmtx);
 	}
 	Mix_HaltChannel(0);
-	if(!acessVar(&duration,varmtx,GET,0)){
+	if(!duration){
 		acessVar(&canswitch,varmtx,CHANGE,1);
-		acessVar(&forward,varmtx,CHANGE,1);
+		SDL_CondSignal(condswitching);
 	}
 }
 
@@ -74,8 +72,8 @@ return 0;
 
 static void selectsongMEM(int fd,int numofsong){
 
-int numOfSong=numofsong% metastruct->numofpairs;
-u_int64_t start= metastruct->pairs[numOfSong].start,end= metastruct->pairs[numOfSong].end;
+int numOfSong=numofsong% meta->numofpairs;
+u_int64_t start= meta->pairs[numOfSong].start,end= meta->pairs[numOfSong].end;
 lseek(fd,start,SEEK_SET);
 buff=malloc(end-start);
 memset(buff,0,end-start);
@@ -110,15 +108,17 @@ static void waitswitchSongMEM(int fd){
 		}
 		
 		free(buff);
-		if(acessVar(&forward,varmtx,GET,0)>0){
-		currsong=nextsong%metastruct->numofpairs;
+                u_int32_t tmpvar;
+		if(acessVar(&forward,varmtx,GET,0)){
+		tmpvar=nextsong%meta->numofpairs;
 		}
-		else if(acessVar(&forward,varmtx,GET,0)<0){
-		currsong=prevsong%metastruct->numofpairs;
+		else{
+		tmpvar=prevsong%meta->numofpairs;
 		}
-		prevsong=currsong-1;
-		nextsong=currsong+1;
-		selectsongMEM(fd,currsong);
+		prevsong=tmpvar-1;
+		nextsong=tmpvar+1;
+		selectsongMEM(fd,tmpvar);
+		snprintf(filename,STRING_SIZE,"Song number: %d\nTitle: %s\n",abs(tmpvar),meta->pairs[abs(tmpvar)].filename);
 		if(!music){
 		printf("ERRO NA MUSICA!!!!\n");
 		exit(-1);
@@ -141,6 +141,14 @@ waitswitchSongMEM(argv->fd);
 
 return 0;
 }
+static void displayMenu(void* args){
+
+while(!acessVar(&playing,varmtx,GET,0)){
+        int displayedvolume=(int)(100*Mix_Volume(0,-1)/128.0);
+        printf("%s%s\nMusica: %s\nTempo passado: 0 s de %d s\nVolume: %d de %d\n",screenclearer,filename,acessVar(&duration,varmtx,GET,0));
+}
+
+}
 
 void initMEMplayer(int fd){
 songWaiterArgs sargs;
@@ -152,28 +160,27 @@ songWaiterArgs sargs;
 	condswitched=SDL_CreateCond();
 	condswitching=SDL_CreateCond();
 	condpause=SDL_CreateCond();
-	prevsong=metastruct->numofpairs-1;
-	currsong=nextsong=0;
-	sargs.metastruct=metastruct;
+	prevsong=meta->numofpairs-1;
+	nextsong=0;
+	sargs.meta=meta;
 	sargs.fd=fd;
 	sthread=SDL_CreateThread(songWaiterAndSwitcherMEM,NULL,(void*)&sargs);
 	thread=SDL_CreateThread(playMusicMEM,NULL,NULL);
+	char c;
 	
 	do{
-	int64_t displayedvolume=(int64_t)(100*Mix_Volume(0,-1)/128.0);
-	erase();
-	printw("%s\nMusica: Song number: %d\nTitle: %s\n\nTempo passado: 0 s de %ld s\nVolume: %ld de %d\n",helpmenu,currsong,metastruct->pairs[currsong].filename,acessVar(&duration,varmtx,GET,0),displayedvolume,100);
-	refresh();
+	if(scanf("%c",&c)<1){
+		int ch;
+		while((ch=getc(stdin))!=EOF && ch != '\n');
+		continue;
+	}
+	menu(c);
 
-		menu();
 
 
-
-	}while(acessVar(&playing,varmtx,GET,0));
-	
+	}while(c!='s');
 	SDL_WaitThread(thread,NULL);
 	SDL_WaitThread(sthread,NULL);
-
 	if(music){
 		Mix_FreeChunk(music);
 	}

@@ -1,21 +1,26 @@
 #include "../../Includes/preprocessor.h"
-#include "../Includes/common.h"
 #include "../Includes/playerMEM.h"
 #include "../Includes/player.h"
 #include "../Includes/maestro.h"
 
-char* buff,filename[STRING_SIZE],*pleasesiryouhavetounpauseitfirst="\e[2JDespausa essa merda!!!\n",
-		*helpmenu="-------------------------------------------------\nChoose one of the following characters and press enter:\nn -> next song\np -> previous song\ns -> exit rampplayer\nw -> Increase volume.\nq -> Decrease volume\n(SPACE) -> pause (Just like real music players omg im so cool)\n-------------------------------------------------";
+char* buff,*pleasesiryouhavetounpauseitfirst="Despausa essa merda!!!\n",
+		*helpmenu="-------------------------------------------------\nChoose one of the following characters and press enter:\nn -> next song\np -> previous song\ns -> exit rampplayer\nw -> Increase volume.\nq -> Decrease volume\n(SPACE) -> pause (Just like real music players omg im so cool)\n-------------------------------------------------",
+		*screenclearer="\e[1;1H\e[2J";
 
 SDL_Thread* thread,*sthread;
 SDL_mutex* varmtx,* playmtx;
 SDL_cond*condswitching,* condplay,*condswitched,*condpause;
-u_int32_t nextsong,prevsong;
+u_int32_t nextsong,prevsong,currsong;
 int64_t canswitch=0,playerready=0,forward=0,going=1,playing=1,pausepls=0;
+int64_t duration=0;
 int16_t volume=0;
 u_int8_t mode;
-void menu(char c){
-switch(c){
+
+extern metadata* metastruct;
+
+void menu(){
+int c=(int) getch();
+     	switch(c){
 	
 	case ' ':{
 		int value=acessVar(&going,varmtx,GET,0);
@@ -38,8 +43,6 @@ switch(c){
 	}
 	case 'n':{
 		if(!acessVar(&going,varmtx,GET,0)){
-			
-			printf("%s\n",pleasesiryouhavetounpauseitfirst);
 			break;
 		}
 		acessVar(&canswitch,varmtx,CHANGE,1);
@@ -57,12 +60,10 @@ switch(c){
 	case 'p':{
 		
 		if(!acessVar(&going,varmtx,GET,0)){
-
-			printf("%s\n",pleasesiryouhavetounpauseitfirst);
 			break;
 		}
 		acessVar(&canswitch,varmtx,CHANGE,1);
-		acessVar(&forward,varmtx,CHANGE,0);
+		acessVar(&forward,varmtx,CHANGE,-1);
 		SDL_CondSignal(condswitching);
 		SDL_mutexP(playmtx);
 		while(acessVar(&canswitch,varmtx,GET,0)){
@@ -124,30 +125,35 @@ switch(c){
 }
 
 
-void musicPlayingMaestro(metadata* meta,int fd){
+void musicPlayingMaestro(int fd){
 
-char c;
 printf("Queres com ficheiro(f) ou memoria(m)?\n");
+char c;
 scanf("%c",&c);
 
+initscr();
+start_color();
+timeout(10);
+curs_set(0);
+noecho();
 switch(c){
 
 	case 'm':{
 	mode=1;
-	initMEMplayer(meta,fd);
+	initMEMplayer(fd);
 	break;
 	}
 	case 'f':{
 	mode=0;
-	initplayer(meta,fd);
+	initplayer(fd);
 	break;
 	}
 
 
 
 }
-
-
+nocbreak();
+endwin();
 
 }
 

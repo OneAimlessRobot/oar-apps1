@@ -4,20 +4,20 @@
 
 
 Mix_Music* music;
-extern char* buff,filename[STRING_SIZE],*helpmenu;
+extern char* buff,*helpmenu,*screenclearer;
 extern SDL_Thread* thread,*sthread;
 extern SDL_mutex* varmtx,* playmtx;
 extern SDL_cond*condswitching,* condplay,*condswitched,*condpause;
-extern u_int32_t nextsong,prevsong;
+extern u_int32_t nextsong,prevsong,currsong;
 extern int64_t canswitch,playerready,forward,going,playing,pausepls;
 extern int8_t volume;
-
-void menu(char c);
-
+extern metadata* metastruct;
+extern int64_t duration;
+void menu();
 
 static int playMusic(void* args){
 
-int duration=0,musicisover=0;
+int musicisover=0;
 	SDL_mutexP(playmtx);
 	while(!acessVar(&playerready,varmtx,GET,0)){
 		SDL_CondWait(condswitching,playmtx);
@@ -26,27 +26,31 @@ int duration=0,musicisover=0;
 	SDL_CondSignal(condswitching);
 	SDL_mutexV(playmtx);
 while(acessVar(&playing,varmtx,GET,0)){
-
+	
 	SDL_mutexP(playmtx);
 	while((acessVar(&canswitch,varmtx,GET,0)||!acessVar((int64_t*)&music,varmtx,GET,0))&&acessVar(&playing,varmtx,GET,0)){
-		SDL_CondWait(condswitched,playmtx);
 		
+		SDL_CondSignal(condswitching);
+		SDL_CondWaitTimeout(condswitched,playmtx,1);
+		SDL_CondSignal(condswitching);
+	
 	}
 	if(!acessVar(&playing,varmtx,GET,0)){
 	SDL_mutexV(playmtx);
 		break;
 	}
 	
-	duration=((int)(Mix_MusicDuration(music)*1000.0));
+	acessVar(&duration,varmtx,CHANGE,((u_int64_t)(Mix_MusicDuration(music)*1000.0)));
 	if(Mix_PlayMusic(music,0)<0){
 	SDL_mutexV(playmtx);
 		
-                printf("\nERRO!!!!!: Duraçao: %d %s\n",duration,SDL_GetError());
+                printf("\nERRO!!!!!: Duraçao: %ld %s\n",duration,SDL_GetError());
         	exit(-1);
 
         }
 	SDL_mutexV(playmtx);
-	while(acessVar(&playing,varmtx,GET,0)&&!acessVar(&canswitch,varmtx,GET,0)&&(!(musicisover=(int)(Mix_GetMusicPosition(music)*1000.0)==duration))){
+	while(acessVar(&playing,varmtx,GET,0)&&!acessVar(&canswitch,varmtx,GET,0)&&((musicisover=(int64_t)(Mix_GetMusicPosition(music)*1000.0)<acessVar(&duration,varmtx,GET,0)))){
+	
 	SDL_mutexP(playmtx);
 	while(acessVar(&playing,varmtx,GET,0)&&!acessVar(&going,varmtx,GET,0)){
 		Mix_PauseMusic();
@@ -55,16 +59,12 @@ while(acessVar(&playing,varmtx,GET,0)){
 		SDL_CondWait(condplay,playmtx);
 		Mix_ResumeMusic();
 	}
-	int displayedvolume=(int)(100*Mix_VolumeMusic(-1)/128.0);
-	printf("\e[2J%s\nMusica: %s\nTempo passado: %d s de %d s\nVolume: %d de %d\n",helpmenu,filename,(int)(Mix_GetMusicPosition(music)),duration/1000,displayedvolume,100);
-	SDL_Delay(1);
 	SDL_mutexV(playmtx);
-	
 	}
 	Mix_HaltMusic();
-	if(musicisover){
+	if(!musicisover){
 		acessVar(&canswitch,varmtx,CHANGE,1);
-		SDL_CondSignal(condswitching);
+		acessVar(&forward,varmtx,CHANGE,1);
 	}
 	
 }
@@ -73,11 +73,11 @@ return 0;
 
 
 
-static void selectsong(metadata* meta,int fd,int numofsong){
+static void selectsong(int fd,int numofsong){
 	
 
-int numOfSong=numofsong% meta->numofpairs;
-u_int64_t start= meta->pairs[numOfSong].start,end= meta->pairs[numOfSong].end;
+int numOfSong=numofsong% metastruct->numofpairs;
+u_int64_t start= metastruct->pairs[numOfSong].start,end= metastruct->pairs[numOfSong].end;
 lseek(fd,start,SEEK_SET);
 char* tmpfilepath=strcat(INITDIR,"/tmp");
 int tmpfd= creat(tmpfilepath,0777);
@@ -88,11 +88,9 @@ write(tmpfd,buff,end-start);
 close(tmpfd);
 
         SDL_RWops *io = SDL_RWFromFile(tmpfilepath, "rb");
-        if (io != NULL) {
-        char name[256];
-        if (io->read(io, name, sizeof (name), 1) > 0) {
-                printf("Hello! Music loaded!\n");
-        }
+        if (io == NULL) {
+		perror("Erro a carregar musica!!!!\n");
+		exit(-1);
         }
         remove(tmpfilepath);
 	free(tmpfilepath);
@@ -107,7 +105,7 @@ close(tmpfd);
 
 
 }
-static void waitswitchSong(metadata* meta,int fd){
+static void waitswitchSong(int fd ){
 
                  SDL_mutexP(playmtx);
                  while(!acessVar(&canswitch,varmtx,GET,0)&&acessVar(&playing,varmtx,GET,0)){
@@ -129,17 +127,15 @@ static void waitswitchSong(metadata* meta,int fd){
 		
 		}
  		free(buff);
-                u_int32_t tmpvar;
-		if(acessVar(&forward,varmtx,GET,0)){
-		tmpvar=nextsong%meta->numofpairs;
+		if(acessVar(&forward,varmtx,GET,0)>0){
+		currsong=nextsong%metastruct->numofpairs;
 		}
-		else{
-		tmpvar=prevsong%meta->numofpairs;
+		else if(acessVar(&forward,varmtx,GET,0)<0){
+		currsong=prevsong%metastruct->numofpairs;
 		}
-		prevsong=tmpvar-1;
-		nextsong=tmpvar+1;
-		selectsong(meta,fd,tmpvar);
-		snprintf(filename,STRING_SIZE,"Song number: %d\nTitle: %s\n",abs(tmpvar),meta->pairs[abs(tmpvar)].filename);
+		prevsong=currsong-1;
+		nextsong=currsong+1;
+		selectsong(fd,currsong);
 		if(!(music)){
 		SDL_mutexV(playmtx);
 		
@@ -159,7 +155,7 @@ static int songWaiterAndSwitcher(void* args){
 	SDL_CondSignal(condswitching);
 while(acessVar(&playing,varmtx,GET,0)){
 
-waitswitchSong(argv->meta,argv->fd);
+waitswitchSong(argv->fd);
 		
 
 }
@@ -167,7 +163,7 @@ return 0;
 
 }
 
-void initplayer(metadata* meta,int fd){
+void initplayer(int fd){
 
 songWaiterArgs* sargs=malloc(sizeof(songWaiterArgs));
 
@@ -179,26 +175,25 @@ songWaiterArgs* sargs=malloc(sizeof(songWaiterArgs));
 	condswitched=SDL_CreateCond();
 	condswitching=SDL_CreateCond();
 	condpause=SDL_CreateCond();
-	prevsong=meta->numofpairs-1;
-	nextsong=0;
-	sargs->meta=meta;
+	prevsong=metastruct->numofpairs-1;
+	currsong=nextsong=0;
 	sargs->fd=fd;
 	sthread=SDL_CreateThread(songWaiterAndSwitcher,NULL,(void*)sargs);
 	thread=SDL_CreateThread(playMusic,NULL,NULL);
-	char c;
+	
 	
 	do{
-	if(scanf("%c",&c)<1){
-		int ch;
-		while((ch=getc(stdin))!=EOF && ch != '\n');
-		continue;
-	}
-	fflush(stdin);
-	menu(c);
+	int64_t displayedvolume=(int64_t)(100*Mix_VolumeMusic(-1)/128.0);
+	erase();
+	printw("%s\nMusica: Song number: %d\nTitle: %s\n\nTempo passado: %lu s de %ld s\nVolume: %ld de %d\n",helpmenu,currsong,metastruct->pairs[currsong].filename,(u_int64_t)Mix_GetMusicPosition(music),acessVar(&duration,varmtx,GET,0)/1000,displayedvolume,100);
+	refresh();
+
+		menu();
 
 
 
-	}while(c!='s');
+	}while(acessVar(&playing,varmtx,GET,0));
+	
 	SDL_WaitThread(thread,NULL);
 	SDL_WaitThread(sthread,NULL);
 	if((music)){

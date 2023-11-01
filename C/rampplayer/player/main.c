@@ -1,5 +1,7 @@
 #include "../Includes/preprocessor.h"
 #include "Includes/maestro.h"
+metadata* metastruct;
+
 
 
 int main(int argc, char ** argv){
@@ -16,21 +18,21 @@ int main(int argc, char ** argv){
 
 	}
 	
-	metadata* meta=parseheader(argv[1]);
-	printheader(meta);
+	metastruct=parseheader(argv[1]);
+	printheader(metastruct);
 	int fd=open(argv[1],O_RDWR,0777);
 
-	musicPlayingMaestro(meta,fd);
+	musicPlayingMaestro(fd);
 	close(fd);
 	Mix_CloseAudio();
         Mix_Quit();
         SDL_Quit();
-	for(int i=0;i<meta->numofpairs;i++){
+	for(int i=0;i<metastruct->numofpairs;i++){
 
-        	free(meta->pairs[i].filename);
+        	free(metastruct->pairs[i].filename);
 	}
-	free(meta->pairs);
-	free(meta);
+	free(metastruct->pairs);
+	free(metastruct);
 
 
 	return 0;

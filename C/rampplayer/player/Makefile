@@ -1,6 +1,6 @@
 BINARY= player
 
-LDLIBS := `pkg-config --libs   SDL2_mixer`
+LDLIBS := -lncurses `pkg-config --libs   SDL2_mixer`
 LDLIBS += `pkg-config --libs  sdl2`
 
 INCLUDE= ./Includes .
@@ -9,7 +9,7 @@ RESDIR= ./resources
  
 CURRDIR=echo `pwd`
  
-CC= clang
+CC= gcc
 DEPFLAGS= -MP -MD
 
 CFLAGS= -Wall  -DPROGRAMPATHAUX="$(CURRDIR)"  -Wextra -g $(foreach D, $(INCLUDE), -I$(D)) $(DEPFLAGS)
