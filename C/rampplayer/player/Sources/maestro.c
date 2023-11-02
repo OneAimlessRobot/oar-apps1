@@ -4,7 +4,7 @@
 #include "../Includes/maestro.h"
 
 char* buff,*pleasesiryouhavetounpauseitfirst="Despausa essa merda!!!\n",
-		*helpmenu="-------------------------------------------------\nChoose one of the following characters and press enter:\nn -> next song\np -> previous song\ns -> exit rampplayer\nw -> Increase volume.\nq -> Decrease volume\n(SPACE) -> pause (Just like real music players omg im so cool)\n-------------------------------------------------",
+		*helpmenu="-------------------------------------------------\nChoose one of the following characters and press enter:\nn -> next song\np -> previous song\ns -> exit rampplayer\nw -> Increase volume.\nq -> Decrease volume\n(SPACE) -> pause (Just like real music players omg im so cool)\n(if it jams, spam...)\nr -> until it starts playing\n-------------------------------------------------",
 		*screenclearer="\e[1;1H\e[2J";
 
 SDL_Thread* thread,*sthread;
@@ -64,6 +64,23 @@ int c=(int) getch();
 		}
 		acessVar(&canswitch,varmtx,CHANGE,1);
 		acessVar(&forward,varmtx,CHANGE,-1);
+		SDL_CondSignal(condswitching);
+		SDL_mutexP(playmtx);
+		while(acessVar(&canswitch,varmtx,GET,0)){
+
+		SDL_CondWait(condswitched,playmtx);
+
+		}
+		SDL_mutexV(playmtx);
+		break;
+	}
+	case 'r':{
+		
+		if(!acessVar(&going,varmtx,GET,0)){
+			break;
+		}
+		acessVar(&canswitch,varmtx,CHANGE,1);
+		acessVar(&forward,varmtx,CHANGE,0);
 		SDL_CondSignal(condswitching);
 		SDL_mutexP(playmtx);
 		while(acessVar(&canswitch,varmtx,GET,0)){

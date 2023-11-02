@@ -1,6 +1,6 @@
-#include <ncurses.h>
-#include <SDL2/SDL.h>
-#include <SDL2/SDL_mixer.h>
+#include "../ncurses/include/ncurses.h"
+#include "../SDL2/include/SDL.h"
+#include "../SDL2/include/SDL_mixer.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
