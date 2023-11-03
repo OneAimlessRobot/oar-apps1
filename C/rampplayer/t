@@ -1,5 +1,0 @@
--L/usr/local/lib /usr/local/lib/libSDL2.a /usr/local/lib/libSDL2_mixer.a -lm -ldl -lpthread
--I/usr/local/include/SDL2 -D_REENTRANT
--L/usr/local/lib -Wl,-rpath,/usr/local/lib -Wl,--enable-new-dtags -lSDL2 -lSDL2_mixer
--L/lib/x86_64-linux-gnu l:libncurses.a l:libncursesw.a l:libtinfo.a
-

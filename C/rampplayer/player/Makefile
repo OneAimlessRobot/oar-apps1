@@ -6,8 +6,7 @@ CURRDIR = $(shell pwd)
 LDLIBS := -L$(CURRDIR)/../SDL2/lib $(CURRDIR)/../SDL2/lib/libSDL2.a  $(CURRDIR)/../SDL2/lib/libSDL2_mixer.a -lm -ldl -lpthread
 LDLIBS += -I$(CURRDIR)/../SDL2/include -Wl,-rpath,$(CURRDIR)/../SDL2/lib -Wl,--enable-new-dtags -lSDL2 -lSDL2_mixer
 LDLIBS += -L$(CURRDIR)/../ncurses/lib $(CURRDIR)/../ncurses/lib/libncurses.a $(CURRDIR)/../ncurses/lib/libncursesw.a $(CURRDIR)/../ncurses/lib/libtinfo.a
-
-
+LDLIBS += -I$(CURRDIR)/../ncurses/include -Wl,-rpath,$(CURRDIR)/../ncurses/lib -Wl,--enable-new-dtags -lncurses -lncursesw -ltinfo
 
 
 
