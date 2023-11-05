@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+#include <math.h>
+#include <fcntl.h>
+#include <pthread.h>
+#include <string.h>
+#include <unistd.h>
+#include <limits.h>
+#include <time.h>
+#include <semaphore.h>
+#include "queue.h"
+#include "compressor.h"
