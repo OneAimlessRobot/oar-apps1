@@ -1,15 +1,7 @@
 package playGround.auxPackage.smallAlgorithms;
 
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-
-import playGround.adt.Iterator;
-import playGround.adt.collections.List;
-import playGround.adt.exceptions.CollectionEmptyException;
+import playGround.ds.interfaces.Iterator;
+import playGround.ds.interfaces.List;
 
 public class ListConcatenatorWithRAM implements ListConcatenator{
 

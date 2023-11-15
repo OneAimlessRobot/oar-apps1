@@ -1,16 +1,16 @@
 package playGround.ds.prototypes;
 
-import playGround.adt.Collection;
-import playGround.adt.InvIterator;
-import playGround.adt.Iterator;
-import playGround.adt.TwoWayIterator;
-import playGround.adt.abstractClasses.AbstractCollection;
-import playGround.adt.collections.MySet;
-import playGround.ds.DoubleLinkedList;
-import playGround.ds.Vector;
+import playGround.ds.implem.AbstractCollection;
+import playGround.ds.implem.Vector;
+import playGround.ds.interfaces.Collection;
+import playGround.ds.interfaces.InvIterator;
+import playGround.ds.interfaces.Iterator;
+import playGround.ds.interfaces.MySet;
+import playGround.ds.interfaces.TwoWayIterator;
 
 public class VectorHashSet<T> extends AbstractCollection<T> implements MySet<T> {
 
+	private static final long serialVersionUID = 1L;
 	private static class VectorHashSetIterator<T> implements TwoWayIterator<T>{
 		
 		private int mainPos,first,last;
@@ -55,44 +55,27 @@ public class VectorHashSet<T> extends AbstractCollection<T> implements MySet<T> 
 		
 		private void skipEmptyListsForward() {
 			while(entries[mainPos].isEmpty()) {mainPos++;}
-			if(current!=null) {
-				current.close();
-			}
+			
 					this.current =entries[mainPos].twoWayIterator();
 					
 		}
 		private void skipEmptyListsBackwards() {
 			while(entries[mainPos].isEmpty()) {mainPos--;}
-			if(current!=null) {
-				current.close();
-			}
+			
 						this.current=entries[mainPos].twoWayIterator();
 					
 					
 		}
 		private void skipOneListForward() {
-			if(current!=null) {
-				current.close();
-			}
-
+			
 			this.current=entries[++mainPos].twoWayIterator();	
 		}
 
 		private void skipOneListBackwards() {
 			if(current!=null) {
-				current.close();
 			}
 
 			this.current=entries[--mainPos].twoWayIterator();
-		}
-		@Override
-		public void close() {
-
-			if(current!=null) {
-				current.close();
-			}
-			entries=null;
-			
 		}
 
 		@Override
@@ -185,7 +168,8 @@ public void add(T elem) {
 	numOfStoredElems++;
 	
 }
-private void addNoChecks(T elem) {
+@Override
+public void addNoChecks(T elem) {
 	int pos= Math.abs(elem.hashCode() % spineSize);
 	((Vector<T>) entries[pos]).add(elem);
 	
@@ -274,12 +258,10 @@ private int computeElemPos(T elem,int size) {
 			Iterator<T> it = list.iterator();
 				while(it.hasNext()) {
 					if(it.next().equals(elem)) {
-						it.close();
 						list=null;
 						return true;
 					}
 				}
-				it.close();
 			
 			
 			return false;

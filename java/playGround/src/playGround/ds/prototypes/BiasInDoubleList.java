@@ -1,6 +1,6 @@
 package playGround.ds.prototypes;
-import playGround.adt.Bias;
-import playGround.adt.exceptions.StackEmptyException;
+import playGround.ds.exceptions.StackEmptyException;
+import playGround.ds.interfaces.Bias;
 
 public class BiasInDoubleList<T> implements Bias<T>{
 

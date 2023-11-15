@@ -19,7 +19,7 @@ public class AuxNumeric {
 		String result="";
 		for(int i=0;i<size;i++) {
 			
-			char c= (char) boundedRandNum(32, 127);
+			char c= (char) boundedRandNum(95, 121);
 			result+=c;
 		}
 		return result;

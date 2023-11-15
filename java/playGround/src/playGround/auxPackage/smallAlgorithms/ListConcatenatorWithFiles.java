@@ -1,8 +1,8 @@
 package playGround.auxPackage.smallAlgorithms;
 
-import playGround.adt.Iterator;
-import playGround.adt.collections.List;
-import playGround.adt.exceptions.CollectionEmptyException;
+import playGround.ds.exceptions.CollectionEmptyException;
+import playGround.ds.interfaces.Iterator;
+import playGround.ds.interfaces.List;
 
 import java.io.*;
 import java.nio.file.Files;

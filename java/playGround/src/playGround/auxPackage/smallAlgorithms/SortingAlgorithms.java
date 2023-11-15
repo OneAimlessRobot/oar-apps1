@@ -1,10 +1,10 @@
 package playGround.auxPackage.smallAlgorithms;
 
-import playGround.adt.collections.List;
-import playGround.ds.Vector;
+import playGround.ds.implem.Vector;
+import playGround.ds.interfaces.List;
 
 public class SortingAlgorithms extends CollectionAlgorithms {
-	public class myQuickSort{
+	public static class myQuickSort{
 		
 
 		private static class Partition<T extends Comparable<T>> {
@@ -86,9 +86,9 @@ public class SortingAlgorithms extends CollectionAlgorithms {
 		
 	}
 	
-	public class QuickSort{
+	public static class QuickSort{
 		
-	private static <T extends Comparable<T>> int splitList(List<T> list,int start,int end){
+	private  static <T extends Comparable<T>> int splitList(List<T> list,int start,int end){
 		
 		T pivot= list.get(end);
 		int balancePoint=start;
@@ -118,7 +118,7 @@ public class SortingAlgorithms extends CollectionAlgorithms {
 		
 		
 	}
-	private static <T extends Comparable<T>> void sortAux(List<T> list,int init,int end){
+	private static  <T extends Comparable<T>> void sortAux(List<T> list,int init,int end){
 		
 		if(init>=end) {
 			
@@ -137,7 +137,7 @@ public class SortingAlgorithms extends CollectionAlgorithms {
 	
 	
 }
-	public class BubbleSort{
+	public static class BubbleSort{
 	
 
 	public static <T extends Comparable<T>> void sort(List<T> list){

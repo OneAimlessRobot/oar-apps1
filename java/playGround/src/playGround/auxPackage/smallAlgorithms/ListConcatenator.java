@@ -1,6 +1,6 @@
 package playGround.auxPackage.smallAlgorithms;
 
-import playGround.adt.collections.List;
+import playGround.ds.interfaces.List;
 
 public interface ListConcatenator {
 	

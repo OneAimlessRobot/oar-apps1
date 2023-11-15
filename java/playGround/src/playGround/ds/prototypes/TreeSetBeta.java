@@ -1,17 +1,18 @@
 package playGround.ds.prototypes;
 
-import playGround.adt.Collection;
-import playGround.adt.InvIterator;
-import playGround.adt.Iterator;
-import playGround.adt.Stack;
-import playGround.adt.TwoWayIterator;
-import playGround.adt.abstractClasses.AbstractSet;
-import playGround.adt.collections.MySet;
-import playGround.adt.exceptions.StackEmptyException;
-import playGround.ds.StackInArray;
+import playGround.ds.exceptions.StackEmptyException;
+import playGround.ds.implem.AbstractSet;
+import playGround.ds.implem.StackInArray;
+import playGround.ds.interfaces.Collection;
+import playGround.ds.interfaces.InvIterator;
+import playGround.ds.interfaces.Iterator;
+import playGround.ds.interfaces.MySet;
+import playGround.ds.interfaces.Stack;
+import playGround.ds.interfaces.TwoWayIterator;
 
 public class TreeSetBeta<T extends Comparable<T>> extends AbstractSet<T> implements MySet<T>{
 
+	private static final long serialVersionUID = 1L;
 	private static class TreeSetIterator<T extends Comparable<T>> implements TwoWayIterator<T>{
 
 		private TreeNode<T> root;
@@ -141,7 +142,6 @@ public class TreeSetBeta<T extends Comparable<T>> extends AbstractSet<T> impleme
 					it.next();
 				}
 			}
-			this.close();
 			copyIterator(it);
 			it=null;
 		}
@@ -157,16 +157,6 @@ public class TreeSetBeta<T extends Comparable<T>> extends AbstractSet<T> impleme
 		@Override
 		public boolean hasPrev() {
 			return next!=smallest;
-		}
-		@Override
-		public void close() {
-			next=null;
-			trail.destroy();
-			trail=null;
-			root=null;
-			smallest=null;
-			biggest=null;
-			
 		}
 		
 		
@@ -380,7 +370,6 @@ public class TreeSetBeta<T extends Comparable<T>> extends AbstractSet<T> impleme
 			
 		}
 		str+=" ]";
-		it.close();
 		return str;
 	}
 	@Override
@@ -424,6 +413,11 @@ public class TreeSetBeta<T extends Comparable<T>> extends AbstractSet<T> impleme
 	}
 	@Override
 	public void remove(T elem) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void addNoChecks(T elem) {
 		// TODO Auto-generated method stub
 		
 	}

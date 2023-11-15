@@ -1,17 +1,19 @@
 package playGround.ds.prototypes;
 
-import playGround.adt.Collection;
-import playGround.adt.InvIterator;
-import playGround.adt.Iterator;
-import playGround.ds.*;
-import playGround.adt.TwoWayIterator;
-import playGround.adt.abstractClasses.AbstractCollection;
-import playGround.adt.abstractClasses.AbstractSet;
-import playGround.adt.collections.MySet;
-import playGround.adt.collections.MySortedSet;
+import playGround.ds.implem.AbstractCollection;
+import playGround.ds.implem.AbstractSet;
+import playGround.ds.implem.DoubleLinkedList;
+import playGround.ds.implem.TreeSet;
+import playGround.ds.interfaces.Collection;
+import playGround.ds.interfaces.InvIterator;
+import playGround.ds.interfaces.Iterator;
+import playGround.ds.interfaces.MySet;
+import playGround.ds.interfaces.MySortedSet;
+import playGround.ds.interfaces.TwoWayIterator;
 
 public class ProtoHashSet<T extends Comparable<T>> extends AbstractSet<T> implements MySet<T>,MySortedSet<T> {
 
+	private static final long serialVersionUID = 1L;
 	private static class HashSetIterator<T extends Comparable<T>> implements TwoWayIterator<T>{
 		
 		private int mainPos,first,last;
@@ -56,44 +58,25 @@ public class ProtoHashSet<T extends Comparable<T>> extends AbstractSet<T> implem
 		
 		private void skipEmptyListsForward() {
 			while(entries[mainPos].isEmpty()) {mainPos++;}
-			if(current!=null) {
-				current.close();
-			}
+		
 					this.current =entries[mainPos].twoWayIterator();
 					
 		}
 		private void skipEmptyListsBackwards() {
 			while(entries[mainPos].isEmpty()) {mainPos--;}
-			if(current!=null) {
-				current.close();
-			}
+			
 						this.current=entries[mainPos].twoWayIterator();
 					
 					
 		}
 		private void skipOneListForward() {
-			if(current!=null) {
-				current.close();
-			}
-
+			
 			mainPos++;	
 		}
 
 		private void skipOneListBackwards() {
-			if(current!=null) {
-				current.close();
-			}
-
-			mainPos--;
-		}
-		@Override
-		public void close() {
-
-			if(current!=null) {
-				current.close();
-			}
-			entries=null;
 			
+			mainPos--;
 		}
 
 		@Override
@@ -184,7 +167,8 @@ public class ProtoHashSet<T extends Comparable<T>> extends AbstractSet<T> implem
 		}
 		
 	}
-	private void addNoChecks(T elem) {
+	@Override
+	public void addNoChecks(T elem) {
 		int pos= computeElemPos(elem,spineSize);
 		Collection<T> collection=((Collection<T>)entries[pos]);
 		collection.add(elem);

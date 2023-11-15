@@ -1,15 +1,30 @@
 package playGround.auxPackage.smallAlgorithms;
-import playGround.adt.Iterator;
-import playGround.adt.*;
-import playGround.adt.collections.List;
-import playGround.adt.collections.MySet;
-import playGround.adt.exceptions.CollectionEmptyException;
-import playGround.adt.exceptions.StackEmptyException;
-import playGround.ds.*;
+import playGround.ds.exceptions.CollectionEmptyException;
+import playGround.ds.exceptions.StackEmptyException;
+import playGround.ds.implem.DoubleLinkedList;
+import playGround.ds.implem.Graph;
+import playGround.ds.implem.LinkedList;
+import playGround.ds.implem.StackInLinkedList;
+import playGround.ds.implem.TreeSet;
+import playGround.ds.implem.Vector;
+import playGround.ds.interfaces.Iterator;
+import playGround.ds.interfaces.List;
+import playGround.ds.interfaces.MySet;
+import playGround.ds.interfaces.Stack;
 import playGround.auxPackage.numeric.*;
 public class CollectionAlgorithms {
 	
-	
+	public static Integer[] orderedIntArrAux(int min,int size) {
+		Integer[] arr= new Integer[size];
+		for(int i=0;i<arr.length;i++) {
+			
+			arr[i]=min+i;
+			
+		}
+		return arr;
+		
+		
+	}
 	public static Integer[] randIntArrAux(int max,int min,int size) {
 		Integer[] arr= new Integer[size];
 		for(int i=0;i<arr.length;i++) {
@@ -21,6 +36,45 @@ public class CollectionAlgorithms {
 		
 		
 	}
+	
+	public static Graph<Integer> genGraph(int size) throws CollectionEmptyException{
+		Graph<Integer> graph=new Graph<>();
+//		MySet<Integer> ints=CollectionAlgorithms.toTSet(CollectionAlgorithms.toVList(randIntArrAux(0,25,10)));
+//		List<Integer> list=new DoubleLinkedList<>();
+//		Iterator<Integer> it= ints.iterator();
+//		while(it.hasNext()) {
+//			graph.addNode(it.next());
+//		}
+//		it.rewind();
+//		while(it.hasNext()) {
+//			graph.addNode(it.next());
+//		}
+		
+//		dsConverter<Integer> conv= new dsConverter<>(ints,list);
+//		System.out.println("Lista:\n"+list+"Tree:\n"+ints);
+		List<Integer> list=CollectionAlgorithms.toDList(randIntArrAux(0,25,10));
+		for(int i=0;i<list.size();i++) {
+			
+			graph.addNode(list.get(i));
+		}
+ 		while(true) {
+			if(list.isEmpty()) {
+				System.out.println("Vazio!!!\n");
+				break;
+			}
+			int first=((List<Integer>)list).get(0);
+			
+			((List<Integer>)list).remove((int)(0));
+
+			if(list.isEmpty()) {
+				break;
+			}
+			int second=((List<Integer>)list).get(0);
+			graph.addEdge(first, second);
+		}
+		return graph;
+		}
+	
 
 	public static String[] randStringArrAux(int minSize,int maxSize,int size) {
 		String[] arr= new String[size];
@@ -70,7 +124,6 @@ public class CollectionAlgorithms {
 			
 			set.add(it.next());
 		}
-		it.close();
 		return set;
 		
 		
