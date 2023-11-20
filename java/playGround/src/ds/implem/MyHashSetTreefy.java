@@ -57,7 +57,7 @@ public class MyHashSetTreefy<T extends Comparable<T>> extends AbstractSet<T> imp
 		}
 		
 		private void skipEmptyListsForward() {
-			while(entries[mainPos].isEmpty()&&mainPos<entries.length-1) {mainPos++;}
+			while(entries[mainPos].isEmpty()&&mainPos<entries.length) {mainPos++;}
 			
 					this.current =entries[mainPos].twoWayIterator();
 					
