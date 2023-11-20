@@ -49,7 +49,7 @@ public class SortingAlgorithms extends CollectionAlgorithms {
 				return null;
 			}
 				T pivot= list.get(list.size()-1);
-				list.remove();
+				list.remove(list.size()-1);
 				Partition<T> p=splitList(elem,list);
 				if(pivot.compareTo(elem)<=0) {
 

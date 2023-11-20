@@ -4,7 +4,6 @@ import java.io.Serializable;
 
 import playGround.ds.exceptions.StackEmptyException;
 import playGround.ds.interfaces.Collection;
-import playGround.ds.interfaces.InvIterator;
 import playGround.ds.interfaces.Iterator;
 import playGround.ds.interfaces.Stack;
 import playGround.ds.interfaces.TwoWayIterator;
@@ -50,22 +49,10 @@ public class HashTableBucket<T extends Comparable<T>> extends AbstractCollection
 				this.prev=trail;
 			}
 			
-			
-			public void setElem(T elem) {
-				
-				this.elem= elem;
-			}
-			
 			public T getElem() {
 				
 				return this.elem;
 				
-			}
-			public void destroy() {
-				
-				this.elem=null;
-				this.prev=null;
-				this.next=null;
 			}
 			
 			
@@ -357,7 +344,7 @@ public class HashTableBucket<T extends Comparable<T>> extends AbstractCollection
 	}
 	
 	private BucketNode<T> head,trail,root;
-	private int currSize,treefylimit;
+	private int currSize,currListSize,treefylimit;
 	private boolean treeMode;
 	public HashTableBucket(int treefylimit) {
 		clear();
@@ -389,6 +376,7 @@ public class HashTableBucket<T extends Comparable<T>> extends AbstractCollection
 			}
 			else {
 			addLast((BucketListNode<T>)node);
+			currListSize++;
 			}
 		}
 		else {
@@ -443,11 +431,6 @@ public class HashTableBucket<T extends Comparable<T>> extends AbstractCollection
 		
 		
 	}
-	@Override
-	public void addNoChecks(T elem) {
-		// TODO Auto-generated method stub
-
-	}
 
 	@Override
 	public Collection<T> copy() {
@@ -459,32 +442,33 @@ public class HashTableBucket<T extends Comparable<T>> extends AbstractCollection
 	public void clear() {
 		root=trail=head=null;
 		currSize=0;
+		currListSize=0;
 		treeMode=false;
 	}
 
-	private boolean existsRec(T elem, BucketNode<T> aux) {
+	private BucketTreeNode<T> existsRec(T elem, BucketNode<T> aux) {
 
 		if(aux==null) {
-			return false;
+			return null;
 		}
 		else if(aux==root) {
 			if(((BucketTreeNode<T>) aux).getElem()==null) {
 				
-				return false;	
+				return null;	
 			}
 		}
 		else if( ((BucketTreeNode<T>) aux).getElem().compareTo(elem)<0) {
 			
-			return false || existsRec(elem,(BucketTreeNode<T>) ((BucketTreeNode<T>) aux).getLeft());
+			return  existsRec(elem,(BucketTreeNode<T>) ((BucketTreeNode<T>) aux).getLeft());
 		}
 		else if(((BucketTreeNode<T>) aux).getElem().compareTo(elem)>0) {
 			
-			return false || existsRec(elem,(BucketTreeNode<T>) ((BucketTreeNode<T>) aux).getRight());
+			return  existsRec(elem,(BucketTreeNode<T>) ((BucketTreeNode<T>) aux).getRight());
 		}
 		else if(((BucketTreeNode<T>) aux).getElem().compareTo(elem)==0) {
-			return true;
+			return (BucketTreeNode<T>) aux;
 		}
-		return false;
+		return null;
 	}
 	@Override
 	public boolean contains(T elem) {
@@ -507,7 +491,7 @@ public class HashTableBucket<T extends Comparable<T>> extends AbstractCollection
 				return false;
 			}
 			else {
-				return (existsRec(elem, (BucketTreeNode<T>)root));
+				return (existsRec(elem, (BucketTreeNode<T>)root))!=null;
 			}
 		}
 		return true;
@@ -515,8 +499,143 @@ public class HashTableBucket<T extends Comparable<T>> extends AbstractCollection
 
 	@Override
 	public void remove(T elem) {
-		// TODO Auto-generated method stub
+		if(!treeMode) {
+			removeList(getIndex(elem));
+			
+			
+		}
+		else {
+			removeTree(existsRec(elem,root));
+			currSize--;
+			
+		}
 
+	}
+	
+	private void removeTree(BucketTreeNode<T> node) {
+		T storedInRoot=null;
+		BucketTreeNode<T> original =node;
+		if(node.getLeft()!=null) {
+			
+			BucketTreeNode<T> leftone=node=(BucketTreeNode<T>) node.getLeft();
+			node=maxNodeRec(node);
+			storedInRoot=node.getElem();
+			original.setElem(storedInRoot);
+			while(leftone.getRight()!=node) {
+				
+				leftone=(BucketTreeNode<T>) leftone.getRight();
+			}
+			leftone.setRight(null);
+			return;
+		}
+		else if(node.getRight()!=null) {
+			
+			BucketTreeNode<T> rightone=node=(BucketTreeNode<T>) node.getRight();
+			node=minNodeRec(node);
+			storedInRoot=node.getElem();
+			original.setElem(storedInRoot);
+			while(rightone.getLeft()!=node) {
+				
+				rightone=(BucketTreeNode<T>) rightone.getLeft();
+			}
+			rightone.setLeft(null);
+		}
+		else {
+			node=null;
+		}
+		
+		
+		
+	}
+	private BucketTreeNode<T> maxNodeRec( BucketTreeNode<T> node )
+    {                                                                   
+        if ( node.getRight() == null )                            
+            return node;                                             
+        else                                                     
+            return this.maxNodeRec( (BucketTreeNode<T>) node.getRight() );                       
+    }                               
+
+    private BucketTreeNode<T> minNodeRec( BucketTreeNode<T> node )
+	   {                                                                   
+	       if ( node.getRight() == null )                            
+	           return node;                                             
+	       else                                                     
+	           return this.minNodeRec( (BucketTreeNode<T>) node.getLeft() );                       
+	   }   
+	private void removeList(int index) {
+		if(isEmpty()) {
+			
+			return;
+		
+		}
+		if(index <=0) {
+			
+			removeListFirst();
+		}
+		else if(index >=currListSize-1) {
+
+			removeListLast();
+		}
+		else {
+			
+			removeListMiddle(index);
+		
+		}
+		currSize--;
+		currListSize--;
+	}
+
+	private int getIndex(T elem) {
+		if(isEmpty()) {
+			return -1;
+		}
+		BucketListNode<T> node=(BucketListNode<T>)head;
+		int i=0;
+		while(node!=null&&!node.getElem().equals(elem)) {
+			node=node.getNext();
+			i++;
+			}
+		if(node==null) {
+			return -1;
+		}
+		return i;
+	}
+private void removeListLast() {
+		
+	BucketListNode<T> node=((BucketListNode<T>)trail).getPrev();
+		trail=node;
+		
+		
+	}
+	private void removeListFirst() {
+		
+		BucketListNode<T> node=((BucketListNode<T>)head).getNext();
+		head=node;
+		
+		
+	}
+	private void removeListMiddle(int index) {
+		
+
+		BucketListNode<T> j = null;
+		int i;
+		if(index>currListSize/2) {
+			
+			i=currListSize-1;
+			j=(BucketListNode<T>) trail;
+			for(;i>index;i--,j=j.getPrev());
+				
+		}
+		else if(index<=currListSize/2) {
+			
+			i=0;
+			j=(BucketListNode<T>) head;
+			for(;i<index;i++,j=j.getNext());
+		}
+
+		j.getNext().setPrev(j.getPrev());
+		j.getPrev().setNext(j.getNext());
+		
 	}
 
 
@@ -551,15 +670,5 @@ public class HashTableBucket<T extends Comparable<T>> extends AbstractCollection
 		return (Iterator<T>)new HashTableBucketIterator<>(head,trail,root);
 	}
 
-	@Override
-	public InvIterator<T> backwardIterator() {
-		return (InvIterator<T>)new HashTableBucketIterator<>(head,trail,root);
-	}
-
-	@Override
-	public void remove() {
-		// TODO Auto-generated method stub
-
-	}
 
 }

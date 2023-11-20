@@ -1,6 +1,9 @@
-package customClasses;
+package customClasses.implem;
 
 import java.io.Serializable;
+
+import playGround.ds.implem.DoubleLinkedList;
+import playGround.ds.interfaces.List;
 
 public class IntegerPoint implements Serializable {
 
@@ -26,6 +29,19 @@ public class IntegerPoint implements Serializable {
 			
 			return ((IntegerPoint)anotherPoint).getX()==getX()&&((IntegerPoint)anotherPoint).getY()==getY();
 		}
+		return result;
+	}
+	public List<IntegerPoint> neighbours(){
+		
+		List<IntegerPoint> result= new DoubleLinkedList<>();
+		for(int i=x-1;i<=x+1;i++) {
+			for(int j=y-1;j<y+1;j++) {
+				
+				result.add(new IntegerPoint(i,j));
+			}
+		}
+		result.remove(new IntegerPoint(x,y));
+		
 		return result;
 	}
 

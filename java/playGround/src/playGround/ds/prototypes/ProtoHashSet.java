@@ -5,7 +5,6 @@ import playGround.ds.implem.AbstractSet;
 import playGround.ds.implem.DoubleLinkedList;
 import playGround.ds.implem.TreeSet;
 import playGround.ds.interfaces.Collection;
-import playGround.ds.interfaces.InvIterator;
 import playGround.ds.interfaces.Iterator;
 import playGround.ds.interfaces.MySet;
 import playGround.ds.interfaces.MySortedSet;
@@ -167,8 +166,7 @@ public class ProtoHashSet<T extends Comparable<T>> extends AbstractSet<T> implem
 		}
 		
 	}
-	@Override
-	public void addNoChecks(T elem) {
+	private void addNoChecks(T elem) {
 		int pos= computeElemPos(elem,spineSize);
 		Collection<T> collection=((Collection<T>)entries[pos]);
 		collection.add(elem);
@@ -200,12 +198,7 @@ public class ProtoHashSet<T extends Comparable<T>> extends AbstractSet<T> implem
 	}
 
 	@Override
-	public InvIterator<T> backwardIterator() {
-		return (InvIterator<T>) new HashSetIterator<>(this);
-	}
-
-	@Override
-	public void finalize() {
+	public void clear() {
 		if(!isEmpty()) {
 		for(int i=0;i<spineSize;i++) {
 			entries[i]=null;
@@ -218,11 +211,6 @@ public class ProtoHashSet<T extends Comparable<T>> extends AbstractSet<T> implem
 	public int size() {
 		
 		return numOfStoredElems;
-	}
-	@Override
-	public void remove() {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
@@ -299,15 +287,6 @@ public class ProtoHashSet<T extends Comparable<T>> extends AbstractSet<T> implem
 		}
 		
 		
-	}
-	@Override
-	public void clear() {
-		if(!isEmpty()) {
-		for(int i=0;i<spineSize;i++) {
-			entries[i]=null;
-		}
-		numOfStoredElems=0;
-		}
 	}
 
 

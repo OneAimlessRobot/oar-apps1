@@ -1,16 +1,21 @@
 
 import playGround.ds.exceptions.CollectionEmptyException;
+import playGround.ds.exceptions.StackEmptyException;
+
 import java.io.*;
 import playGround.ds.implem.*;
+import playGround.ds.interfaces.Graph;
+import playGround.ds.interfaces.Iterator;
+import playGround.ds.interfaces.List;
 import playGround.auxPackage.smallAlgorithms.CollectionAlgorithms;
 import java.util.Scanner;
 
-import customClasses.IntegerPoint;
-import customClasses.MapExplorer;
+import customClasses.implem.*;
+import customClasses.interfaces.MapExplorer;
 
 public class dsRunner {
 	
-	public static void main(String[] args) throws IOException, CollectionEmptyException {
+	public static void main(String[] args) throws IOException, CollectionEmptyException, StackEmptyException {
 
 		initFiles();
 		ObjectSaverLoader<Graph<Integer>> graphload= new ObjectSaverLoader<>(FilePaths.GRAPHFILE.getValue());
@@ -22,7 +27,7 @@ public class dsRunner {
 		
 		String option=null;
 		do {
-			System.out.println("Queres:\nsair(sair)\ngravar(save)\nprintar(print)\ngerar(gen)\ncarregar(load)\ncarregarMapa(loadMap)\nsalvarExplorado(saveExp)\n?");
+			System.out.println("Queres:\nsair(sair)\ngravar(save)\nprintar(print)\ngerar(gen)\ngerarcomplexo(cmplxgen)\ncarregar(load)\nObter forma de arvore(treeform)\ncarregarMapa(loadMap)\nsalvarExplorado(saveExp)\nMostrar caminhos curtos(showspaths)\nVer ilhas do mapa (sislands)\nVer todos os caminhos(showpaths)\nMostrar mapa(showmap)\nIlhas do grafo normal(nislands)\n?");
 		
 			option= optionReader.next();
 			System.out.flush();
@@ -38,7 +43,7 @@ public class dsRunner {
 				if((graph=graphload.load())==null) {
 
 					System.out.print("\033[H\033[2J");
-					graph=new Graph<Integer>();
+					graph=new GraphClass<Integer>();
 					System.out.println("Nova arvore carregada!!!!!!");
 				}
 				else {
@@ -49,11 +54,63 @@ public class dsRunner {
 			case "loadMap":
 
 				System.out.print("\033[H\033[2J");
-					graphmap=new MapExplorer(FilePaths.MAPFILE.getValue(),FilePaths.EXPLOREDFILE.getValue());
-//
-//						graphmap=new MapExplorer(null,null);
-//						System.out.println("Nova arvore carregada!!!!!!");
-//					}
+					graphmap=new MapExplorerClass(FilePaths.MAPFILE2.getValue(),FilePaths.EXPLOREDFILE.getValue());
+
+					break;
+			case "showspaths":
+				
+				if(graphmap==null) {
+					
+					System.out.print("\033[H\033[2J");
+
+					System.out.println("Tough luck. no goodies 4 u");
+				}
+				else {
+					System.out.print("\033[H\033[2J");
+
+					graphmap.showShortestPaths();
+						
+				}
+					break;
+			case "showmap":
+				
+				if(graphmap==null) {
+					System.out.print("\033[H\033[2J");
+					System.out.println("Tough luck. no goodies 4 u");
+					
+				}
+				else {
+					System.out.print("\033[H\033[2J");
+					graphmap.showMap();
+				}
+					break;
+			case "showpaths":
+				
+				if(graphmap==null) {
+
+					System.out.print("\033[H\033[2J");
+					System.out.println("Tough luck. no goodies 4 u");
+					
+				}
+				else {
+					System.out.print("\033[H\033[2J");
+					graphmap.showPaths();
+						
+				}
+					break;
+			case "sislands":
+				
+				if(graphmap==null) {
+
+					System.out.print("\033[H\033[2J");
+					System.out.println("Tough luck. no goodies 4 u");
+					
+				}
+				else {
+					System.out.print("\033[H\033[2J");
+					graphmap.showIslands();
+						
+				}
 					break;
 			case "saveExp":
 
@@ -64,9 +121,16 @@ public class dsRunner {
 				System.out.println("Saidas encontradas:\n "+graphmap.explore(option1));
 					
 							break;
+			case "treeform":
+
+				System.out.print("\033[H\033[2J");
+				System.out.println("Forma de Arvore do grafo normal:\n "+graph.getTreeForm().toString());
+					
+							break;
 			case "print":
 				System.out.print("\033[H\033[2JCarregado:\n");
-				System.out.println(graph);
+				System.out.println(graph.toString());
+				System.out.println(graph.getTreeForm().turnIntoGraph().toString());
 				System.out.println("Mapa:");
 				System.out.println(graphmap);
 				break;
@@ -82,6 +146,46 @@ public class dsRunner {
 						System.out.println("Grafo tem ciclos seu toto!\nN obtens grafo novo so memo pq tiveste azar");
 						
 					}
+				}
+				else {
+					System.out.print("\033[H\033[2J");
+					System.out.println("Não carregaste nada para memoria!!!\n(Faz 'load' primeiro)\n");
+					
+				}
+				break;
+			case "cmplxgen":
+				if(graph!=null) {
+					Graph<Integer> newGraph=CollectionAlgorithms.genRadialGraph(4,2,3);
+					graph= newGraph;
+				}
+				else {
+					System.out.print("\033[H\033[2J");
+					System.out.println("Não carregaste nada para memoria!!!\n(Faz 'load' primeiro)\n");
+					
+				}
+				break;
+			case "nislands":
+				if(graph!=null) {
+					
+					String allIslands="[\n";
+					System.out.println("Ilhas do grafo normal:\n");
+					Iterator<Iterator<Integer>> it=graph.getIslands();
+					while(it.hasNext()) {
+						Iterator<Integer> curr= it.next();
+						String thisIsland= "\n[";
+						while(curr.hasNext()) {
+							Integer currint=curr.next();
+							
+							thisIsland+=" "+currint+" ";
+							
+							
+						}
+						thisIsland+="]\n";
+						allIslands+=thisIsland;
+					}
+					allIslands+="]\n";
+					System.out.println(allIslands);
+					
 				}
 				else {
 					System.out.print("\033[H\033[2J");

@@ -1,9 +1,10 @@
 package playGround.ds.implem;
 
 import playGround.ds.exceptions.QueueEmptyException;
-import playGround.ds.interfaces.Queue;
+import playGround.ds.interfaces.Iterator;
+import playGround.ds.interfaces.QueueIterable;
 
-public class QueueInDoubleLinkedList<T> implements Queue<T> {
+public class QueueInDoubleLinkedList<T> implements QueueIterable<T> {
 	private T front;
 	private DoubleLinkedList<T> struct;
 	
@@ -27,6 +28,11 @@ public class QueueInDoubleLinkedList<T> implements Queue<T> {
 		
 		
 		
+	}
+	@Override
+	public Iterator<T> iterator(){
+		
+		return this.struct.iterator();
 	}
 	
 	
@@ -67,6 +73,12 @@ public class QueueInDoubleLinkedList<T> implements Queue<T> {
 	@Override
 	public int size() {
 		return struct.size();
+	}
+
+
+	@Override
+	public boolean contains(T elem) {
+		return struct.contains(elem);
 	}
 
 }

@@ -92,6 +92,18 @@ public abstract class HashTable<K,V> implements Dictionary<K,V>
     };
 
 
+    public String toString() {
+    	if(isEmpty()) {
+    		return "[ ]";
+    	}
+    	IteratorEntries<K,V> it= iterator();
+    	String result="[";
+    	while(it.hasNext()) {
+    		result+=" "+it.next()+" ";    		
+    	}
+    	result+="]";
+    	return result;
+    }
     //
     // Public Instance Methods
     //

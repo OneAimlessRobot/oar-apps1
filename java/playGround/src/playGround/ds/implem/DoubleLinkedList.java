@@ -4,7 +4,6 @@ import java.io.Serializable;
 
 import playGround.ds.exceptions.StackEmptyException;
 import playGround.ds.interfaces.Collection;
-import playGround.ds.interfaces.InvIterator;
 import playGround.ds.interfaces.Iterator;
 import playGround.ds.interfaces.Stack;
 import playGround.ds.interfaces.TwoWayIterator;
@@ -51,7 +50,7 @@ public class DoubleLinkedList<T> extends AbstractList<T> implements Serializable
 			while(this.hasPrev()) {
 				this.prev();
 			}
-			
+			status=1;
 		}
 		@Override
 		public T prev() {
@@ -73,7 +72,7 @@ public class DoubleLinkedList<T> extends AbstractList<T> implements Serializable
 			while(this.hasNext()) {
 				this.next();
 			}
-			
+			status=1;
 		}
 		@Override
 		public boolean hasPrev() {
@@ -281,7 +280,6 @@ public class DoubleLinkedList<T> extends AbstractList<T> implements Serializable
 			System.out.println("Stack vazia(????????)");
 		}
 		stck.destroy();
-		this.finalize();
 		this.head=aux.head;
 	}
 	@Override
@@ -316,25 +314,31 @@ public class DoubleLinkedList<T> extends AbstractList<T> implements Serializable
 		}
 		return result;
 	}
-	public void finalize() {
-		trail=head=null;
-		length=0;
-	}
+	
+	
 	@Override
-	public void remove() {
+	public void remove(int index) {
 		if(isEmpty()) {
 			
 			return;
+		
+		}
+		if(index <=0) {
+			
+			removeFirst();
+		}
+		else if(index >=length-1) {
+
+			removeLast();
 		}
 		else {
 			
-			removeLast();
-			
+			removeMiddle(index);
+		
 		}
 		length--;
 	}
-	
-	private void removeLast() {
+private void removeLast() {
 		
 		Node<T> node=trail.getPrev();
 		trail=node;
@@ -372,34 +376,7 @@ public class DoubleLinkedList<T> extends AbstractList<T> implements Serializable
 		j.destroy();
 		
 	}
-	@Override
-	public void remove(int index) {
-		if(isEmpty()) {
-		
-			return;
-		
-		}
-		if(index <=0) {
-			
-			removeFirst();
-		}
-		else if(index >=length-1) {
-
-			removeLast();
-		}
-		else {
-			
-			removeMiddle(index);
-		
-		}
-		length--;
-	}
-
-	@Override
-	public InvIterator<T> backwardIterator() {
-		return (InvIterator<T>) new DLLIterator<>(head);
-	}
-
+	
 	@Override
 	public Collection<T> copy() {
 		Collection<T> collection= new DoubleLinkedList<>();
@@ -447,7 +424,7 @@ public class DoubleLinkedList<T> extends AbstractList<T> implements Serializable
 	}
 	@Override
 	public void clear() {
-		this.finalize();
+		head=trail=null;
 		
 	}
 	@Override
@@ -506,11 +483,6 @@ public class DoubleLinkedList<T> extends AbstractList<T> implements Serializable
 		
 		trail.setElem(elem);
 		
-	}
-	@Override
-	public void addNoChecks(T elem) {
-
-		add(elem);
 	}
 	
 	

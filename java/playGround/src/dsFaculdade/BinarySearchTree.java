@@ -9,7 +9,7 @@ import java.io.Serializable;
  * @param <K> Generic type Key, must extend comparable
  * @param <V> Generic type Value 
  */
-abstract class BinarySearchTree<K extends Comparable<K>, V> 
+public abstract class BinarySearchTree<K extends Comparable<K>, V> 
     implements OrderedDictionary<K,V>, Serializable
 {                                                                   
 
@@ -361,7 +361,7 @@ protected static class BSTBreadthIterator<K,V> implements IteratorEntries<K,V>{
     @Override
     public V find( K key )                             
     {    
-        BSTNode<K,V> node = this.findNode(root, key);
+        BSTNode<K,V> node = this.findNodeRec(root, key);
         if ( node == null )                                   
             return null;                                    
         else                                                     
@@ -377,7 +377,7 @@ protected static class BSTBreadthIterator<K,V> implements IteratorEntries<K,V>{
      * @param key to be found
      * @return the found node, when the search is successful
      */
-    protected BSTNode<K,V> findNode( BSTNode<K,V> node, K key )
+    protected BSTNode<K,V> findNodeRec( BSTNode<K,V> node, K key )
     {                                                                   
         if ( node == null )
             return null;
@@ -387,9 +387,9 @@ protected static class BSTBreadthIterator<K,V> implements IteratorEntries<K,V>{
             if ( compResult == 0 )
                 return node;                                         
             else if ( compResult < 0 )
-                return this.findNode(node.getLeft(), key);
+                return this.findNodeRec(node.getLeft(), key);
             else                                                     
-                return  this.findNode(node.getRight(), key); 
+                return  this.findNodeRec(node.getRight(), key); 
         }                 
     }
 
@@ -401,17 +401,32 @@ protected static class BSTBreadthIterator<K,V> implements IteratorEntries<K,V>{
 	   if ( this.isEmpty() )                              
 		   throw new EmptyDictionaryException();           
 
-	   		return this.minNode(root).getEntry();   
+	   		return this.minNodeRec(root).getEntry();   
 	   
 	   
    }
+
+
+   /**
+    * Returns the node with the smallest key 
+    * in the tree rooted at the specified node.
+    * Moreover, stores the last step of the path in lastStep.
+    * Requires: theRoot != null.
+    * @param theRoot - node that roots the tree
+    * @param lastStep - Pathstep object to refer to the parent of theRoot
+    * @return node containing the entry with the minimum key
+    */
+   abstract protected BSTNode<K,V> maxNode( BSTNode<K,V> theRoot);
    
-   protected BSTNode<K,V> minNode( BSTNode<K,V> node )
+   abstract protected BSTNode<K,V> minNode( BSTNode<K,V> theRoot);
+   
+   
+   protected BSTNode<K,V> minNodeRec( BSTNode<K,V> node )
    {                                                                   
        if ( node.getRight() == null )                            
            return node;                                             
        else                                                     
-           return this.maxNode( node.getLeft() );                       
+           return this.minNodeRec( node.getLeft() );                       
    }      
 
     @Override
@@ -420,7 +435,7 @@ protected static class BSTBreadthIterator<K,V> implements IteratorEntries<K,V>{
         if ( this.isEmpty() )                              
             throw new EmptyDictionaryException();           
 
-        return this.maxNode(root).getEntry();                    
+        return this.maxNodeRec(root).getEntry();                    
     }
 
 
@@ -431,12 +446,12 @@ protected static class BSTBreadthIterator<K,V> implements IteratorEntries<K,V>{
      * @param node that roots the tree
      * @return node with the largest key in the tree
      */
-    protected BSTNode<K,V> maxNode( BSTNode<K,V> node )
+    protected BSTNode<K,V> maxNodeRec( BSTNode<K,V> node )
     {                                                                   
         if ( node.getRight() == null )                            
             return node;                                             
         else                                                     
-            return this.maxNode( node.getRight() );                       
+            return this.maxNodeRec( node.getRight() );                       
     }                               
 
 
@@ -491,24 +506,13 @@ protected static class BSTBreadthIterator<K,V> implements IteratorEntries<K,V>{
      * @param node - root of the subtree
      * @param lastStep - PathStep object referring to the parent of the old subtree
      */
-    protected void linkSubtree( BSTNode<K,V> node, PathStep<K,V> lastStep ) {
-    
-    	        if ( lastStep.parent == null )
-    	            // Change the root of the tree.
-    	            root = node;
-    	        else
-    	            // Change a child of parent.
-    	            if ( lastStep.isLeftChild )
-    	                lastStep.parent.setLeft(node);
-    	            else
-    	                lastStep.parent.setRight(node);
-
-
-    	
-    }
+    abstract protected void linkSubtree( BSTNode<K,V> node);
 
     public String toString() {
-    	
+
+    	if(isEmpty()) {
+    		return "[ ]";
+    	}
     	String result="[";
     	TwoWayIteratorEntries<K,V> it= iterator();
     	while(it.hasNext()) {
@@ -522,7 +526,10 @@ protected static class BSTBreadthIterator<K,V> implements IteratorEntries<K,V>{
     }
 
     public String toStringDepth() {
-    	
+
+    	if(isEmpty()) {
+    		return "[ ]";
+    	}
     	String result="[";
     	IteratorEntries<K,V> it= depthIterator();
     	while(it.hasNext()) {
@@ -536,7 +543,10 @@ protected static class BSTBreadthIterator<K,V> implements IteratorEntries<K,V>{
     }
 
     public String toStringBreadth() {
-    	
+
+    	if(isEmpty()) {
+    		return "[ ]";
+    	}
     	String result="[";
     	IteratorEntries<K,V> it= breadthIterator();
     	while(it.hasNext()) {
@@ -549,6 +559,7 @@ protected static class BSTBreadthIterator<K,V> implements IteratorEntries<K,V>{
     	
     }
 
+    abstract protected BSTNode<K,V> findNode( K key);
 
     @Override
     public abstract V remove( K key ); 

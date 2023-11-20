@@ -3,7 +3,6 @@ package playGround.ds.implem;
 import java.io.Serializable;
 
 import playGround.ds.interfaces.Collection;
-import playGround.ds.interfaces.InvIterator;
 import playGround.ds.interfaces.Iterator;
 import playGround.ds.interfaces.TwoWayIterator;
 import playGround.ds.interfaces.MySet;
@@ -140,7 +139,7 @@ public class MyHashSet<T extends Comparable<T>> extends AbstractSet<T> implement
 	}
 	private void init() {
 		
-		entries=(Collection<T>[])new DoubleLinkedList<?>[spineSize];
+		entries=(Collection<T>[])new Collection<?>[spineSize];
 
 		for(int i=0;i<spineSize;i++) {
 			
@@ -150,7 +149,7 @@ public class MyHashSet<T extends Comparable<T>> extends AbstractSet<T> implement
 		
 	}
 	private boolean isFull() {
-		
+
 		return getLoadFactor()<LOAD_FACTOR;
 		
 		
@@ -175,8 +174,7 @@ public class MyHashSet<T extends Comparable<T>> extends AbstractSet<T> implement
 		}
 		
 	}
-	@Override
-	public void addNoChecks(T elem) {
+	private void addNoChecks(T elem) {
 		int pos= computeElemPos(elem,spineSize);
 		((Collection<T>) entries[pos]).add(elem);
 //		if(((Collection<T>) entries[pos]).size()>=TREEFY_AMMOUNT) {
@@ -211,11 +209,7 @@ public class MyHashSet<T extends Comparable<T>> extends AbstractSet<T> implement
 	}
 
 	@Override
-	public InvIterator<T> backwardIterator() {
-		return (InvIterator<T>) new HashSetIterator<>(this);
-	}
-
-	public void finalize() {
+	public void clear() {
 		if(!isEmpty()) {
 		for(int i=0;i<spineSize;i++) {
 			
@@ -230,11 +224,6 @@ public class MyHashSet<T extends Comparable<T>> extends AbstractSet<T> implement
 
 		
 		return numOfStoredElems;
-	}
-	@Override
-	public void remove() {
-		// TODO Auto-generated method stub
-		
 	}
 	@Override
 	public boolean contains(T elem) {
@@ -291,18 +280,11 @@ public class MyHashSet<T extends Comparable<T>> extends AbstractSet<T> implement
 			int pos=computeElemPos(elem,spineSize);
 			Collection<T> list=(Collection<T>) this.entries[pos];
 			list.remove(elem);
-			list=null;
 			numOfStoredElems--;
 		}
 		
 	}
 
-
-
-	@Override
-	public void clear() {
-		finalize();
-	}
 
 
 }

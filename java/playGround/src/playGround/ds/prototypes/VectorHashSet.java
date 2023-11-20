@@ -3,7 +3,6 @@ package playGround.ds.prototypes;
 import playGround.ds.implem.AbstractCollection;
 import playGround.ds.implem.Vector;
 import playGround.ds.interfaces.Collection;
-import playGround.ds.interfaces.InvIterator;
 import playGround.ds.interfaces.Iterator;
 import playGround.ds.interfaces.MySet;
 import playGround.ds.interfaces.TwoWayIterator;
@@ -168,8 +167,7 @@ public void add(T elem) {
 	numOfStoredElems++;
 	
 }
-@Override
-public void addNoChecks(T elem) {
+private void addNoChecks(T elem) {
 	int pos= Math.abs(elem.hashCode() % spineSize);
 	((Vector<T>) entries[pos]).add(elem);
 	
@@ -206,21 +204,6 @@ private int computeElemPos(T elem,int size) {
 		return new VectorHashSetIterator<>(this);
 	}
 
-	@Override
-	public InvIterator<T> backwardIterator() {
-		return (InvIterator<T>) new VectorHashSetIterator<>(this);
-	}
-
-	@Override
-	public void finalize() {
-		if(!isEmpty()) {
-		for(int i=0;i<spineSize;i++) {
-			
-			entries[i]=null;
-		}
-		numOfStoredElems=0;
-		}
-	}
 	private void reHash() {
 	    int oldSize = spineSize;
 	    spineSize *= GROW_FACTOR;
@@ -239,12 +222,7 @@ private int computeElemPos(T elem,int size) {
 	    set.entries = null;
 	    set = null;
 	}
-	@Override
-	public void remove() {
-		// TODO Auto-generated method stub
-		
-	}
-
+	
 	@Override
 	public boolean contains(T elem) {
 
@@ -304,7 +282,7 @@ private int computeElemPos(T elem,int size) {
 	public void clear() {
 		if(!isEmpty()) {
 		for(int i=0;i<spineSize;i++) {
-			((Vector<T>) entries[i]).finalize();
+			((Vector<T>) entries[i]).clear();
 		}
 		numOfStoredElems=0;
 		}

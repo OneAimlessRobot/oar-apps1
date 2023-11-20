@@ -2,23 +2,25 @@ package playGround.auxPackage.smallAlgorithms;
 import playGround.ds.exceptions.CollectionEmptyException;
 import playGround.ds.exceptions.StackEmptyException;
 import playGround.ds.implem.DoubleLinkedList;
-import playGround.ds.implem.Graph;
+import playGround.ds.implem.GraphClass;
 import playGround.ds.implem.LinkedList;
 import playGround.ds.implem.StackInLinkedList;
 import playGround.ds.implem.TreeSet;
 import playGround.ds.implem.Vector;
+import playGround.ds.interfaces.Graph;
 import playGround.ds.interfaces.Iterator;
 import playGround.ds.interfaces.List;
 import playGround.ds.interfaces.MySet;
 import playGround.ds.interfaces.Stack;
 import playGround.auxPackage.numeric.*;
 public class CollectionAlgorithms {
-	
-	public static Integer[] orderedIntArrAux(int min,int size) {
+
+	public static Integer[] orderedIntArrAux(int min,int size,int step) {
 		Integer[] arr= new Integer[size];
-		for(int i=0;i<arr.length;i++) {
+		int j=0,i=0;
+		for(;i<arr.length;j+=step,i++) {
 			
-			arr[i]=min+i;
+			arr[i]=min+j;
 			
 		}
 		return arr;
@@ -36,24 +38,11 @@ public class CollectionAlgorithms {
 		
 		
 	}
-	
+
 	public static Graph<Integer> genGraph(int size) throws CollectionEmptyException{
-		Graph<Integer> graph=new Graph<>();
-//		MySet<Integer> ints=CollectionAlgorithms.toTSet(CollectionAlgorithms.toVList(randIntArrAux(0,25,10)));
-//		List<Integer> list=new DoubleLinkedList<>();
-//		Iterator<Integer> it= ints.iterator();
-//		while(it.hasNext()) {
-//			graph.addNode(it.next());
-//		}
-//		it.rewind();
-//		while(it.hasNext()) {
-//			graph.addNode(it.next());
-//		}
-		
-//		dsConverter<Integer> conv= new dsConverter<>(ints,list);
-//		System.out.println("Lista:\n"+list+"Tree:\n"+ints);
 		List<Integer> list=CollectionAlgorithms.toDList(randIntArrAux(0,25,10));
-		for(int i=0;i<list.size();i++) {
+		Graph<Integer> graph=new GraphClass<>(list.get(0));
+		for(int i=1;i<list.size();i++) {
 			
 			graph.addNode(list.get(i));
 		}
@@ -74,6 +63,40 @@ public class CollectionAlgorithms {
 		}
 		return graph;
 		}
+	public static Graph<Integer> genRadialGraph(int upperDegree,int lowerDegree,int numLayers) throws CollectionEmptyException{
+		int currStart=AuxNumeric.boundedRandNum(0, 10000);
+		Graph<Integer> graph=new GraphClass<>(currStart);
+		genRadialGraphExpand(graph,currStart,upperDegree,lowerDegree,numLayers);
+		return graph;
+		}
+	private static void genRadialGraphExpand(Graph<Integer> graph,int currStart,int upperDegree,int lowerDegree,int numLayers) throws CollectionEmptyException{
+			if(numLayers==0) {
+				
+				return;
+			}
+			graph.addNode(currStart);
+			List<Integer> list=CollectionAlgorithms.toDList(randIntArrAux(0,1000,AuxNumeric.boundedRandNum(lowerDegree, upperDegree)));
+			for(int j=0;j<list.size();j++) {
+				
+				graph.addNode(list.get(j));
+			}
+	 		while(true) {
+				if(list.isEmpty()) {
+					System.out.println("Vazio!!!\n");
+					break;
+				}
+				int first=((List<Integer>)list).get(0);
+				
+				((List<Integer>)list).remove((int)(0));
+
+				if(list.isEmpty()) {
+					break;
+				}
+				graph.addEdge(currStart, first);
+				graph.addEdge( first,currStart);
+				genRadialGraphExpand(graph,first,upperDegree,lowerDegree,numLayers-1);
+			}
+			}
 	
 
 	public static String[] randStringArrAux(int minSize,int maxSize,int size) {

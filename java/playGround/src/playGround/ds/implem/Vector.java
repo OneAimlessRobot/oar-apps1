@@ -3,7 +3,6 @@ package playGround.ds.implem;
 import java.io.Serializable;
 
 import playGround.ds.interfaces.Collection;
-import playGround.ds.interfaces.InvIterator;
 import playGround.ds.interfaces.Iterator;
 import playGround.ds.interfaces.TwoWayIterator;
 
@@ -102,15 +101,6 @@ public class Vector<T> extends AbstractList<T> implements Serializable {
 	}
 	@Override
 	
-	//Isto so faz o objeto invisivel para a stack. A responsabilidade de libertar
-	//A memoria é de quem mete cenas lá dentro.
-	public void remove() {
-		if(isEmpty()) {
-			return;
-		}
-		arr[currPos--]=null;
-		
-	}
 	
 	public boolean isEmpty() {
 		
@@ -120,14 +110,7 @@ public class Vector<T> extends AbstractList<T> implements Serializable {
 	public int size() {
 		return currPos+1;
 	}
-	@Override
-	public void finalize() {
-		while(currPos!=-1) {
-			
-			this.remove();
-		}
-		this.arr=null;
-	}
+	
 	@Override
 	public TwoWayIterator<T> twoWayIterator()  {
 		return new VectorIterator<>(this);
@@ -186,10 +169,6 @@ public class Vector<T> extends AbstractList<T> implements Serializable {
 		currPos--;
 		
 	}
-	@Override
-	public InvIterator<T> backwardIterator() {
-		return (InvIterator<T>) new VectorIterator<>(this);
-	}
 
 	@Override
 	public Collection<T> copy() {
@@ -229,7 +208,7 @@ public class Vector<T> extends AbstractList<T> implements Serializable {
 	public void clear() {
 		while(currPos!=-1) {
 			
-			this.remove();
+			this.remove(currPos--);
 		}
 	}
 	@Override
@@ -242,9 +221,5 @@ public class Vector<T> extends AbstractList<T> implements Serializable {
 		int i=0;
 		for(;i<currPos&&i<index&&index>-1;i++);
 		arr[i]=elem;
-	}
-	@Override
-	public void addNoChecks(T elem) {
-		add(elem);
 	}
 }

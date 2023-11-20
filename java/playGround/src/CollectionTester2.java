@@ -13,7 +13,6 @@ public class CollectionTester2 {
 
 	private static final String PATH_TO_DS=System.getProperty("user.dir")+"/SecondDsResults";
 	
-	private static final String HEADER_PATH=System.getProperty("user.dir")+"/sTestHeader";
 	
 
 	private static final int DEFAULT_SIZE=2000;

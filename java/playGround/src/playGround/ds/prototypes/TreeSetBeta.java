@@ -4,7 +4,6 @@ import playGround.ds.exceptions.StackEmptyException;
 import playGround.ds.implem.AbstractSet;
 import playGround.ds.implem.StackInArray;
 import playGround.ds.interfaces.Collection;
-import playGround.ds.interfaces.InvIterator;
 import playGround.ds.interfaces.Iterator;
 import playGround.ds.interfaces.MySet;
 import playGround.ds.interfaces.Stack;
@@ -299,10 +298,6 @@ public class TreeSetBeta<T extends Comparable<T>> extends AbstractSet<T> impleme
 	}
 
 	@Override
-	public InvIterator<T> backwardIterator() {
-		return (InvIterator<T>)new TreeSetIterator<T>(root);
-	}
-	@Override
 	public void finalize() {
 		if(isEmpty()) {
 			return;
@@ -346,11 +341,6 @@ public class TreeSetBeta<T extends Comparable<T>> extends AbstractSet<T> impleme
 			aux.setRight(null);
 			aux.destroy();
 		}
-		
-	}
-	@Override
-	public void remove() {
-		// TODO Auto-generated method stub
 		
 	}
 	public String toString() {
@@ -413,11 +403,6 @@ public class TreeSetBeta<T extends Comparable<T>> extends AbstractSet<T> impleme
 	}
 	@Override
 	public void remove(T elem) {
-		// TODO Auto-generated method stub
-		
-	}
-	@Override
-	public void addNoChecks(T elem) {
 		// TODO Auto-generated method stub
 		
 	}

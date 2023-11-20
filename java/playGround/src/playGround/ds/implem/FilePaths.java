@@ -6,6 +6,7 @@ public enum FilePaths {
 	TREEFILE("tree.res"),
 	GRAPHFILE("graph.res"),
 	MAPFILE("graph.grph"),
+	MAPFILE2("graph2.grph"),
 	EXPLOREDFILE("graphexp.grph"),
 	QUEUEFILETWO("bomDia.res");
 

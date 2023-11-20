@@ -1,9 +1,10 @@
 package playGround.ds.implem;
 
 import playGround.ds.exceptions.StackEmptyException;
-import playGround.ds.interfaces.Stack;
+import playGround.ds.interfaces.Iterator;
+import playGround.ds.interfaces.StackIterable;
 
-public class StackInLinkedList<T> implements Stack<T> {
+public class StackInLinkedList<T> implements StackIterable<T> {
 
 	private LinkedList<T> support;
 	private int topPos;
@@ -24,6 +25,12 @@ public class StackInLinkedList<T> implements Stack<T> {
 			this.push(elems[i]);
 		}
 		
+		
+	}
+	@Override
+	public boolean contains(T elem){
+		
+		return support.contains(elem);
 		
 	}
 	@Override
@@ -92,6 +99,10 @@ public class StackInLinkedList<T> implements Stack<T> {
 			System.out.println("Stack empty????????");
 		}
 		
+	}
+	@Override
+	public Iterator<T> iterator() {
+		return this.support.iterator();
 	}
 	
 	

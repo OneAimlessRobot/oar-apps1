@@ -4,6 +4,7 @@ public enum FilePaths {
 
 	QUEUEFILE("ola.res"),
 	TREEFILE("tree.res"),
+	GENTREEFILE("gentree.res"),
 	GRAPHFILE("graph.res"),
 	MAPFILE("graph.grph"),
 	EXPLOREDFILE("graphexp.grph"),

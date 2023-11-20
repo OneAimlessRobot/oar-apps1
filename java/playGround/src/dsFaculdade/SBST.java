@@ -3,10 +3,13 @@ package dsFaculdade;
 import java.io.Serializable;
 
 
+
 public class SBST<K extends Comparable<K>, V> extends BinarySearchTree<K, V> implements Dictionary<K, V>, Serializable {
 
 	private static final long serialVersionUID = 1L;
 
+
+    private PathStep<K,V> lastStep;
 	
 	public SBST() {
 		
@@ -16,13 +19,12 @@ public class SBST<K extends Comparable<K>, V> extends BinarySearchTree<K, V> imp
 
     @Override
     public V insert( K key, V value )
-    {                                                                   
-        PathStep<K,V> lastStep = new PathStep<K,V>(null, false);
-        BSTNode<K,V> node = this.findNode(key, lastStep);
+    {                                                             
+        BSTNode<K,V> node = this.findNode(key);
         if ( node == null )
         {
             BSTNode<K,V> newLeaf = new SBSTNode<K,V>(key, value);
-            this.linkSubtree(newLeaf, lastStep);
+            linkSubtree(newLeaf);
             currentSize++;
             return null;   
         }                                 
@@ -37,8 +39,7 @@ public class SBST<K extends Comparable<K>, V> extends BinarySearchTree<K, V> imp
 
 	@Override
 	public V remove(K key) {
-		PathStep<K,V> lastStep = new PathStep<K,V>(null, false);
-        SBSTNode<K,V> node = (SBSTNode<K, V>) this.findNode(key, (PathStep<K,V>)lastStep);
+        SBSTNode<K,V> node = (SBSTNode<K, V>) this.findNode(key);
         if ( node == null )
             return null;
         else
@@ -46,26 +47,27 @@ public class SBST<K extends Comparable<K>, V> extends BinarySearchTree<K, V> imp
             V oldValue = node.getValue();
             if ( node.getLeft() == null )
                 // The left subtree is empty.
-                this.linkSubtree((SBSTNode<K, V>) node.getRight(), lastStep);
+                this.linkSubtree((SBSTNode<K, V>) node.getRight());
             else if ( node.getRight() == null )
                 // The right subtree is empty.
-                this.linkSubtree((SBSTNode<K, V>) node.getLeft(), lastStep);
+                this.linkSubtree((SBSTNode<K, V>) node.getLeft());
             else
             {
                 // Node has 2 children. Replace the node's entry with
                 // the 'minEntry' of the right subtree.
                 lastStep.set(node, false);
-                SBSTNode<K,V> minNode = (SBSTNode<K, V>) this.minNode((AVLBSTNode<K, V>) node.getRight(), lastStep);
+                SBSTNode<K,V> minNode = (SBSTNode<K, V>) this.minNode((AVLBSTNode<K, V>) node.getRight());
                 node.setEntry( minNode.getEntry() );
                 // Remove the 'minEntry' of the right subtree.
-                this.linkSubtree((SBSTNode<K, V>) minNode.getRight(), lastStep);
+                this.linkSubtree((SBSTNode<K, V>) minNode.getRight());
             }
             currentSize--;
             return oldValue;
         }   
 	}
-	 protected BSTNode<K,V> findNode( K key, PathStep<K,V> lastStep )
+	 protected BSTNode<K,V> findNode( K key )
 	    {      
+			lastStep = new PathStep<K,V>(null, false);
 	        BSTNode<K,V> node = root;
 	        while ( node != null )
 	        {
@@ -95,15 +97,38 @@ public class SBST<K extends Comparable<K>, V> extends BinarySearchTree<K, V> imp
 	     * @param lastStep - Pathstep object to refer to the parent of theRoot
 	     * @return node containing the entry with the minimum key
 	     */
-	    protected BSTNode<K,V> minNode( BSTNode<K,V> theRoot, 
-	        PathStep<K,V> lastStep ){                                                       
-	            BSTNode<K,V> node =(BSTNode<K,V>) theRoot;
-	            while ( node.getLeft() != null ) 
-	            {                      
-	                lastStep.set(node, true);
-	                node =  node.getLeft();
-	            }                                       
-	            return node;
-	    }
+	 protected BSTNode<K,V> minNode( BSTNode<K,V> theRoot){                                                       
+         BSTNode<K,V> node =(BSTNode<K,V>) theRoot;
+         while ( node.getLeft() != null ) 
+         {                      
+             lastStep.set(node, true);
+             node =  node.getLeft();
+         }                                       
+         return node;
+ }
+	 protected BSTNode<K,V> maxNode( BSTNode<K,V> theRoot){                                                       
+	     BSTNode<K,V> node =(BSTNode<K,V>) theRoot;
+	     while ( node.getRight() != null ) 
+	     {                      
+	         lastStep.set(node, false);
+	         node =  node.getRight();
+	     }                                       
+	     return node;
+	}
+	    protected void linkSubtree( BSTNode<K,V> node ) {
+	        
+	        if ( lastStep.parent == null )
+	            // Change the root of the tree.
+	            root = node;
+	        else
+	            // Change a child of parent.
+	            if ( lastStep.isLeftChild )
+	                lastStep.parent.setLeft(node);
+	            else
+	                lastStep.parent.setRight(node);
+
+
+	
+}
 
 }

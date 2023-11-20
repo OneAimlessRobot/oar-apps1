@@ -4,7 +4,6 @@ import java.io.Serializable;
 
 import playGround.ds.exceptions.StackEmptyException;
 import playGround.ds.interfaces.Collection;
-import playGround.ds.interfaces.InvIterator;
 import playGround.ds.interfaces.Iterator;
 import playGround.ds.interfaces.Stack;
 import playGround.ds.interfaces.TwoWayIterator;
@@ -180,15 +179,6 @@ public class TreeSet<T extends Comparable<T>>  extends AbstractCollection<T> imp
 			addRec(elem,root);
 		
 	}
-	@Override
-	public void addNoChecks(T elem) {
-		if(isEmpty()) {
-			root=new TreeNode<>(elem,null,null);
-			return;
-		}
-			addRec(elem,root);
-		
-	}
 	private void addRec(T elem, TreeNode<T> aux) {
 		if(aux.allChildren()) {
 			
@@ -259,10 +249,6 @@ public class TreeSet<T extends Comparable<T>>  extends AbstractCollection<T> imp
 	}
 
 	@Override
-	public InvIterator<T> backwardIterator(){
-		return (InvIterator<T>)new TreeSetIterator<T>(root);
-	}
-	@Override
 	public void finalize() {
 		
 		root=null;
@@ -273,11 +259,7 @@ public class TreeSet<T extends Comparable<T>>  extends AbstractCollection<T> imp
 		finalize();
 		
 	}
-	@Override
-	public void remove() {
-		// TODO Auto-generated method stub
-		
-	}
+	
 	
 	@Override
 	public  boolean contains(T elem) {

@@ -40,9 +40,9 @@ public class AVLBST<K extends Comparable<K>,V> extends BinarySearchTree<K, V> im
         if ( node == null )
         {
             AVLBSTNode<K,V> newLeaf = new AVLBSTNode<K,V>(key, value,NodeType.E);
-            this.linkSubtree(newLeaf, path.top());
-            
-            rotateNodes();
+            this.linkSubtree(newLeaf);
+
+            rotateNodesInsertion();
             currentSize++;
         }
         else {
@@ -54,7 +54,7 @@ public class AVLBST<K extends Comparable<K>,V> extends BinarySearchTree<K, V> im
     }
 
 
-	private void rotateNodes() {
+	private void rotateNodesInsertion() {
 		boolean grew= true;
 		PathStep<K,V> lastStep = path.pop();
 		AVLBSTNode<K,V> parent= (AVLBSTNode<K,V>)lastStep.parent;
@@ -116,6 +116,9 @@ public class AVLBST<K extends Comparable<K>,V> extends BinarySearchTree<K, V> im
 		case L:
 			doubleRightRot(parent,node);
 			break;
+		case E:
+			simpleRightRot(parent,node);
+			break;
 		case R:
 			simpleRightRot(parent,node);
 			break;
@@ -129,6 +132,9 @@ public class AVLBST<K extends Comparable<K>,V> extends BinarySearchTree<K, V> im
 		AVLBSTNode<K,V> node= (AVLBSTNode<K,V>) parent.getLeft();
 		switch(node.getType()) {
 		case L:
+			simpleLeftRot(parent,node);
+			break;
+		case E:
 			simpleLeftRot(parent,node);
 			break;
 		case R:
@@ -161,7 +167,7 @@ protected void doubleLeftRot( AVLBSTNode<K,V> theRoot, AVLBSTNode<K,V> leftChild
 	theRoot.setLeft( rightGrandchild.getRight() ); 
     rightGrandchild.setLeft(leftChild); 
     rightGrandchild.setRight(theRoot);
-	linkSubtree(rightGrandchild,path.top());
+	linkSubtree(rightGrandchild);
     }
 
 protected void doubleRightRot( AVLBSTNode<K,V> theRoot, AVLBSTNode<K,V> rightChild) { 
@@ -186,7 +192,7 @@ protected void doubleRightRot( AVLBSTNode<K,V> theRoot, AVLBSTNode<K,V> rightChi
 	rightChild.setLeft( leftGrandchild.getRight() ); 
 	leftGrandchild.setLeft(theRoot);
 	leftGrandchild.setRight(rightChild);
-	linkSubtree(leftGrandchild,path.top());
+	linkSubtree(leftGrandchild);
     }
 
 protected void simpleLeftRot(AVLBSTNode<K,V> theRoot, AVLBSTNode<K,V> leftChild) {
@@ -194,7 +200,7 @@ protected void simpleLeftRot(AVLBSTNode<K,V> theRoot, AVLBSTNode<K,V> leftChild)
 	leftChild.setType(NodeType.E);
 theRoot.setLeft( leftChild.getRight() ); 
 leftChild.setRight(theRoot); 
-this.linkSubtree(leftChild, path.top());
+this.linkSubtree(leftChild);
 }
 
 protected void simpleRightRot(AVLBSTNode<K,V> theRoot, AVLBSTNode<K,V> rightChild) {
@@ -202,9 +208,9 @@ theRoot.setType(NodeType.E);
 rightChild.setType(NodeType.E);
 theRoot.setRight( rightChild.getLeft() ); 
 rightChild.setLeft(theRoot); 
-this.linkSubtree(rightChild, path.top());
+this.linkSubtree(rightChild);
 }
-    protected AVLBSTNode<K,V> findNode( K key)
+protected AVLBSTNode<K,V> findNode( K key)
     {    
 
         path=new StackInList<>();
@@ -247,11 +253,27 @@ this.linkSubtree(rightChild, path.top());
                 node =  node.getLeft();
             }                                       
             return node;
+    }/**
+     * Returns the node with the smallest key 
+     * in the tree rooted at the specified node.
+     * Moreover, stores the last step of the path in lastStep.
+     * Requires: theRoot != null.
+     * @param theRoot - node that roots the tree
+     * @param lastStep - Pathstep object to refer to the parent of theRoot
+     * @return node containing the entry with the minimum key
+     */
+    protected BSTNode<K,V> maxNode( BSTNode<K,V> theRoot){                                                       
+            BSTNode<K,V> node =(BSTNode<K,V>) theRoot;
+            while ( node.getRight() != null ) 
+            {                      
+                path.push(new PathStep<>(node,false));
+                node =  node.getRight();
+            }                                       
+            return node;
     }
     @Override
     public V remove( K key )
     {
-        PathStep<K,V> lastStep = new PathStep<K,V>(null, false);
         AVLBSTNode<K,V> node = (AVLBSTNode<K, V>) this.findNode(key);
         if ( node == null )
             return null;
@@ -260,19 +282,20 @@ this.linkSubtree(rightChild, path.top());
             V oldValue = node.getValue();
             if ( node.getLeft() == null )
                 // The left subtree is empty.
-                this.linkSubtree((AVLBSTNode<K, V>) node.getRight(), lastStep);
+                this.linkSubtree((AVLBSTNode<K, V>) node.getRight());
             else if ( node.getRight() == null )
                 // The right subtree is empty.
-                this.linkSubtree((AVLBSTNode<K, V>) node.getLeft(), lastStep);
+                this.linkSubtree((AVLBSTNode<K, V>) node.getLeft());
             else
             {
                 // Node has 2 children. Replace the node's entry with
                 // the 'minEntry' of the right subtree.
-                lastStep.set(node, false);
+                path.push(new PathStep<>(node, false));
                 AVLBSTNode<K,V> minNode = (AVLBSTNode<K, V>) this.minNode((AVLBSTNode<K, V>) node.getRight());
                 node.setEntry( minNode.getEntry() );
-                // Remove the 'minEntry' of the right subtree.
-                this.linkSubtree((AVLBSTNode<K, V>) minNode.getRight(), lastStep);
+                this.linkSubtree((AVLBSTNode<K, V>) minNode.getRight());
+                rotateNodesRemove();
+                currentSize--;
             }
             currentSize--;
             return oldValue;
@@ -280,5 +303,73 @@ this.linkSubtree(rightChild, path.top());
     }                                
 
 
-    
+    private void rotateNodesRemove() {
+    		boolean shrunk= true;
+    		PathStep<K,V> lastStep = path.pop();
+    		AVLBSTNode<K,V> parent= (AVLBSTNode<K,V>)lastStep.parent;
+    		while(shrunk && parent!=null) {
+    			if(lastStep.isLeftChild) {
+    				switch(parent.getType()) {
+    				case E:
+    					parent.setType(NodeType.R);
+      					shrunk=false;
+    					break;
+    				case R:
+    					rotateNodesRight(parent);
+    					shrunk=false;
+    					break;
+    				case L:
+    					parent.setType(NodeType.E);
+    					break;
+    				default:
+    					break;
+    				
+    				
+    				}
+    				
+    				
+    			}else {
+    				
+    				switch(parent.getType()) {
+    				case E:
+    					parent.setType(NodeType.L);
+    					shrunk=false;
+    					break;
+    				case L:
+    					rotateNodesLeft(parent);
+    					shrunk=false;
+    					break;
+    				case R:
+    					parent.setType(NodeType.E);
+    					break;
+    				default:
+    					break;
+    				
+    				
+    				}
+    				
+    			}
+
+    			lastStep = path.pop();
+    			parent= (AVLBSTNode<K,V>)lastStep.parent;
+    			
+    		}
+		
+	}
+
+	protected void linkSubtree( BSTNode<K,V> node) {
+        
+        if ( path.top().parent == null )
+            // Change the root of the tree.
+            root = node;
+        else
+            // Change a child of parent.
+            if ( path.top().isLeftChild )
+                path.top().parent.setLeft(node);
+            else
+                path.top().parent.setRight(node);
+
+
+
+}
 }

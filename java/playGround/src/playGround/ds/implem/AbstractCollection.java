@@ -3,7 +3,6 @@ package playGround.ds.implem;
 import java.io.Serializable;
 
 import playGround.ds.interfaces.Collection;
-import playGround.ds.interfaces.InvIterator;
 import playGround.ds.interfaces.Iterator;
 import playGround.ds.interfaces.TwoWayIterator;
 
@@ -28,13 +27,7 @@ public abstract class AbstractCollection<T> implements Collection<T>,Serializabl
 	@Override
 	abstract public Iterator<T> iterator();
 
-	@Override
-	abstract public InvIterator<T> backwardIterator();
 
-
-	@Override
-	abstract public void remove();
-	
 	public String toString() {
 
 		if(isEmpty()) {

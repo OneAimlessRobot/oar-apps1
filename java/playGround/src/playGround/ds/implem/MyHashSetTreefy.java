@@ -3,7 +3,6 @@ package playGround.ds.implem;
 import java.io.Serializable;
 
 import playGround.ds.interfaces.Collection;
-import playGround.ds.interfaces.InvIterator;
 import playGround.ds.interfaces.Iterator;
 import playGround.ds.interfaces.TwoWayIterator;
 import playGround.ds.interfaces.MySet;
@@ -141,7 +140,7 @@ public class MyHashSetTreefy<T extends Comparable<T>> extends AbstractSet<T> imp
 	}
 	private void init() {
 		
-		entries=(Collection<T>[])new HashTableBucket<?>[spineSize];
+		entries=(Collection<T>[])new Collection<?>[spineSize];
 
 		for(int i=0;i<spineSize;i++) {
 			
@@ -176,8 +175,7 @@ public class MyHashSetTreefy<T extends Comparable<T>> extends AbstractSet<T> imp
 		}
 		
 	}
-	@Override
-	public void addNoChecks(T elem) {
+	private void addNoChecks(T elem) {
 		int pos= computeElemPos(elem,spineSize);
 		((Collection<T>) entries[pos]).add(elem);
 //		if(((Collection<T>) entries[pos]).size()>=TREEFY_AMMOUNT) {
@@ -210,13 +208,9 @@ public class MyHashSetTreefy<T extends Comparable<T>> extends AbstractSet<T> imp
 	public Iterator<T> iterator()  {
 		return (Iterator<T>) new HashSetIterator<>(this);
 	}
-
+	
 	@Override
-	public InvIterator<T> backwardIterator() {
-		return (InvIterator<T>) new HashSetIterator<>(this);
-	}
-
-	public void finalize() {
+	public void clear() {
 		if(!isEmpty()) {
 		for(int i=0;i<spineSize;i++) {
 			
@@ -231,11 +225,6 @@ public class MyHashSetTreefy<T extends Comparable<T>> extends AbstractSet<T> imp
 
 		
 		return numOfStoredElems;
-	}
-	@Override
-	public void remove() {
-		// TODO Auto-generated method stub
-		
 	}
 	@Override
 	public boolean contains(T elem) {
@@ -299,11 +288,6 @@ public class MyHashSetTreefy<T extends Comparable<T>> extends AbstractSet<T> imp
 	}
 
 
-
-	@Override
-	public void clear() {
-		finalize();
-	}
 
 
 }

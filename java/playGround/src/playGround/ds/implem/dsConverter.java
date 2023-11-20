@@ -10,14 +10,14 @@ public class dsConverter<T> {
 		rebuild(collectionSrc,collectionDst);
 	}
 
-	public Collection<T> rebuild(Collection<T> collectionSrc,Collection<T> collectionDst){
+	public static <T> Collection<T> rebuild(Collection<T> collectionSrc,Collection<T> collectionDst){
 		
 		Iterator<T> it;
 			collectionDst.clear();
 			it = collectionSrc.iterator();
 			while(it.hasNext()) {
 				
-				collectionDst.addNoChecks(it.next());
+				collectionDst.add(it.next());
 			}
 		return collectionDst;
 		

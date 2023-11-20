@@ -2,7 +2,6 @@ package playGround.ds.implem;
 
 import playGround.ds.exceptions.StackEmptyException;
 import playGround.ds.interfaces.Collection;
-import playGround.ds.interfaces.InvIterator;
 import playGround.ds.interfaces.Iterator;
 import playGround.ds.interfaces.Stack;
 import playGround.ds.interfaces.TwoWayIterator;
@@ -30,7 +29,7 @@ public class LinkedList<T> extends AbstractList<T>{
 
 		@Override
 		public boolean hasNext() {
-			return next.getNext()!=null;
+			return next!=null;
 		}
 
 		@Override
@@ -258,20 +257,6 @@ public class LinkedList<T> extends AbstractList<T>{
 		}
 	}
 
-	@Override
-	public void remove() {
-		if(isEmpty()) {
-			
-			return;
-		}
-		else {
-			
-			removeLast();
-			
-		}
-		length--;
-	}
-
 	private void removeLast() {
 
 		Node<T> j = null;
@@ -325,10 +310,6 @@ public class LinkedList<T> extends AbstractList<T>{
 		length--;
 	}
 	@Override
-	public InvIterator<T> backwardIterator() {
-		return null;
-	}
-	@Override
 	public Collection<T> copy() {
 		Collection<T> collection= new LinkedList<>();
 		if(isEmpty()) {
@@ -349,7 +330,10 @@ public class LinkedList<T> extends AbstractList<T>{
 		}
 		Node<T> node=this.head;
 		int i=0;
-		while(node!=null&&!node.getElem().equals(elem)) {i++;}
+		while(node!=null&&!node.getElem().equals(elem)) {
+			node=node.getNext();
+			i++;
+			}
 		if(node==null) {
 			return -1;
 		}
@@ -410,10 +394,6 @@ public class LinkedList<T> extends AbstractList<T>{
 		for(;i<index;j=j.getNext(),i++);
 		j.setElem(elem);
 		
-	}
-	@Override
-	public void addNoChecks(T elem) {
-		add(elem);
 	}
 	
 	
