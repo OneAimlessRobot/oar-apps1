@@ -3,10 +3,10 @@
 import java.io.File;
 import java.io.IOException;
 
-import playGround.ds.implem.TreeSet;
-import playGround.ds.interfaces.List;
-import playGround.ds.interfaces.MySet;
-import playGround.auxPackage.smallAlgorithms.*;
+import auxPackage.smallAlgorithms.*;
+import ds.implem.TreeSet;
+import ds.interfaces.List;
+import ds.interfaces.MySet;
 public class CollectionTester2 {
 
 

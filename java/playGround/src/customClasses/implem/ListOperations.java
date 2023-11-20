@@ -2,10 +2,10 @@ package customClasses.implem;
 
 import java.io.Serializable;
 
-import playGround.ds.implem.DoubleLinkedList;
-import playGround.ds.implem.dsConverter;
-import playGround.ds.interfaces.Iterator;
-import playGround.ds.interfaces.List;
+import ds.implem.DoubleLinkedList;
+import ds.implem.dsConverter;
+import ds.interfaces.Iterator;
+import ds.interfaces.List;
 
 public class ListOperations<T> implements Serializable {
 

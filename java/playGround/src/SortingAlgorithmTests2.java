@@ -1,6 +1,6 @@
 
-import playGround.ds.interfaces.List;
-import playGround.auxPackage.smallAlgorithms.*;
+import auxPackage.smallAlgorithms.*;
+import ds.interfaces.List;
 public class SortingAlgorithmTests2 {
 	private static final String PATH_TO_SA="/home/k/oar-apps1/java/playGround/src/testStuff/stringFiles/SecondSortingResults";
 

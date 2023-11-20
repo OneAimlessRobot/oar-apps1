@@ -1,12 +1,12 @@
 
 
 
-import playGround.auxPackage.smallAlgorithms.CollectionAlgorithms;
-import playGround.ds.implem.HashTableBucket;
-import playGround.ds.implem.MyHashSet;
-import playGround.ds.implem.MyHashSetTreefy;
-import playGround.ds.interfaces.Collection;
-import playGround.ds.interfaces.List;
+import auxPackage.smallAlgorithms.CollectionAlgorithms;
+import ds.implem.HashTableBucket;
+import ds.implem.MyHashSet;
+import ds.implem.MyHashSetTreefy;
+import ds.interfaces.Collection;
+import ds.interfaces.List;
 public class CollectionPlayground {
 
 	public static void main(String[] args) {

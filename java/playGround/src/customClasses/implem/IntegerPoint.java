@@ -2,8 +2,8 @@ package customClasses.implem;
 
 import java.io.Serializable;
 
-import playGround.ds.implem.DoubleLinkedList;
-import playGround.ds.interfaces.List;
+import ds.implem.DoubleLinkedList;
+import ds.interfaces.List;
 
 public class IntegerPoint implements Serializable {
 

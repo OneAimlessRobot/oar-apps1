@@ -357,10 +357,6 @@ this.linkSubtree(rightChild);
 		
 	}
 
-	private void rotateNodesRightR(AVLBSTNode<K, V> parent) {
-		// TODO Auto-generated method stub
-		
-	}
 
 	protected void linkSubtree( BSTNode<K,V> node) {
         

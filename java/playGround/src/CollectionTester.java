@@ -4,10 +4,10 @@
 import java.io.File;
 import java.io.IOException;
 
-import playGround.ds.implem.MyHashSet;
-import playGround.ds.interfaces.List;
-import playGround.ds.interfaces.MySet;
-import playGround.auxPackage.smallAlgorithms.*;
+import auxPackage.smallAlgorithms.*;
+import ds.implem.MyHashSet;
+import ds.interfaces.List;
+import ds.interfaces.MySet;
 public class CollectionTester {
 
 	private static final String PATH_TO_DS=System.getProperty("user.dir")+"/FirstDsResults";

@@ -1,7 +1,7 @@
 
 
-import playGround.auxPackage.smallAlgorithms.*;
-import playGround.ds.interfaces.List;
+import auxPackage.smallAlgorithms.*;
+import ds.interfaces.List;
 public class SortingAlgorithmTests1 {
 	private static final String PATH_TO_SA=System.getProperty("user.dir")+"/src/testStuff/stringFiles/FirstSortingResults";
 

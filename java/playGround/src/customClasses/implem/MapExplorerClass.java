@@ -9,12 +9,12 @@ import java.io.Serializable;
 import java.util.Scanner;
 
 import customClasses.interfaces.MapExplorer;
-import playGround.ds.implem.DoubleLinkedList;
-import playGround.ds.implem.GraphClass;
-import playGround.ds.implem.Vector;
-import playGround.ds.interfaces.Graph;
-import playGround.ds.interfaces.Iterator;
-import playGround.ds.interfaces.List;
+import ds.implem.DoubleLinkedList;
+import ds.implem.GraphClass;
+import ds.implem.Vector;
+import ds.interfaces.Graph;
+import ds.interfaces.Iterator;
+import ds.interfaces.List;
 
 public class MapExplorerClass implements Serializable, MapExplorer {
 

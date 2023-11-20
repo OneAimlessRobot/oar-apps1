@@ -1,16 +1,15 @@
 
-import playGround.ds.exceptions.CollectionEmptyException;
-import playGround.ds.exceptions.StackEmptyException;
-
 import java.io.*;
-import playGround.ds.implem.*;
-import playGround.ds.interfaces.Graph;
-import playGround.ds.interfaces.Iterator;
-import playGround.auxPackage.smallAlgorithms.CollectionAlgorithms;
 import java.util.Scanner;
 
+import auxPackage.smallAlgorithms.CollectionAlgorithms;
 import customClasses.implem.*;
 import customClasses.interfaces.MapExplorer;
+import ds.exceptions.CollectionEmptyException;
+import ds.exceptions.StackEmptyException;
+import ds.implem.*;
+import ds.interfaces.Graph;
+import ds.interfaces.Iterator;
 
 public class dsRunner {
 	

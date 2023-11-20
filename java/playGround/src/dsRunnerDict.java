@@ -1,10 +1,11 @@
 import dsFaculdade.*;
-import playGround.ds.interfaces.List;
-import playGround.ds.exceptions.CollectionEmptyException;
-import playGround.auxPackage.smallAlgorithms.CollectionAlgorithms;
 
 import java.io.*;
 import java.util.Scanner;
+
+import auxPackage.smallAlgorithms.CollectionAlgorithms;
+import ds.exceptions.CollectionEmptyException;
+import ds.interfaces.List;
 
 public class dsRunnerDict {
 	public static void main(String[] args) throws IOException, CollectionEmptyException {

@@ -1,4 +1,4 @@
-//package dataStructures;
+//package dsFaculdade;
 //
 //import static org.junit.Assert.*;
 //
@@ -44,6 +44,4 @@
 //		assertTrue(od.remove(7) == null);
 //	}
 //}
-package dsFaculdade;
-
-
+//

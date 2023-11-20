@@ -2,7 +2,7 @@ package customClasses.implem;
 
 import java.io.Serializable;
 
-import playGround.ds.interfaces.Graph;
+import ds.interfaces.Graph;
 
 public class GraphTools implements Serializable {
 

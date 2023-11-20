@@ -4,11 +4,11 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.util.Scanner;
 
+import auxPackage.smallAlgorithms.*;
+import ds.exceptions.CollectionEmptyException;
+import ds.implem.DoubleLinkedList;
+import ds.interfaces.List;
 import dsFaculdade.FilePaths2;
-import playGround.auxPackage.smallAlgorithms.*;
-import playGround.ds.exceptions.CollectionEmptyException;
-import playGround.ds.implem.DoubleLinkedList;
-import playGround.ds.interfaces.List;
 public class NumberFileGenerator implements Serializable {
 	
 	private static final long serialVersionUID = 1L;

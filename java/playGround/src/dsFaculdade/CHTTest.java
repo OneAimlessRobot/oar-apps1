@@ -1,4 +1,4 @@
-//package dataStructures;
+//package dsFaculdade;
 //
 //import static org.junit.Assert.*;
 //import org.junit.Test;
@@ -113,7 +113,7 @@
 //		public void removeTest() {
 //			Dictionary<Integer, Integer> cht = new SepChainHashTable<Integer, Integer>();
 //
-//			//assertTrue(cht.insert(5, 5) == null);
+//			assertTrue(cht.insert(5, 5) == null);
 //			System.out.println(cht.insert(5, 5) );
 //			assertTrue(cht.insert(10, 10) == null);
 //			assertTrue(cht.insert(-3, -3) == null);
@@ -179,5 +179,3 @@
 //	}
 //	
 //}
-package dsFaculdade;
-
