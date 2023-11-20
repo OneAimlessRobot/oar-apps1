@@ -97,24 +97,15 @@ public class SBST<K extends Comparable<K>, V> extends BinarySearchTree<K, V> imp
 	     * @param lastStep - Pathstep object to refer to the parent of theRoot
 	     * @return node containing the entry with the minimum key
 	     */
-	 protected BSTNode<K,V> minNode( BSTNode<K,V> theRoot){                                                       
-         BSTNode<K,V> node =(BSTNode<K,V>) theRoot;
-         while ( node.getLeft() != null ) 
-         {                      
-             lastStep.set(node, true);
-             node =  node.getLeft();
-         }                                       
-         return node;
- }
-	 protected BSTNode<K,V> maxNode( BSTNode<K,V> theRoot){                                                       
-	     BSTNode<K,V> node =(BSTNode<K,V>) theRoot;
-	     while ( node.getRight() != null ) 
-	     {                      
-	         lastStep.set(node, false);
-	         node =  node.getRight();
-	     }                                       
-	     return node;
-	}
+	    protected BSTNode<K,V> minNode( BSTNode<K,V> theRoot){                                                       
+	            BSTNode<K,V> node =(BSTNode<K,V>) theRoot;
+	            while ( node.getLeft() != null ) 
+	            {                      
+	                lastStep.set(node, true);
+	                node =  node.getLeft();
+	            }                                       
+	            return node;
+	    }
 	    protected void linkSubtree( BSTNode<K,V> node ) {
 	        
 	        if ( lastStep.parent == null )

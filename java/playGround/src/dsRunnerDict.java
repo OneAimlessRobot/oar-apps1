@@ -19,7 +19,7 @@ public class dsRunnerDict {
 		
 		String option=null;
 		do {
-			System.out.println("Queres:\nsair(sair)\napagar(del)\ngravar(save)\nprintar(print)\ngerar(gen)\nremover(rem)\nloadns(Carregar arvore sem ser de cena serializada)\nadicionar(add)\n?");
+			System.out.println("Queres:\nsair(sair)\napagar(del)\ngravar(save)\nprintar(print)\ngerar(gen)\nremover(rem)\nload(load a sério)\nloadns(Carregar arvore sem ser de cena serializada)\nadicionar(add)\n?");
 		
 			option= optionReader.next();
 			System.out.flush();

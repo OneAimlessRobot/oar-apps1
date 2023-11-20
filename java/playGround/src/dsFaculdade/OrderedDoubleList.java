@@ -1,4 +1,5 @@
 package dsFaculdade;
+;
 
 /**
  * Doubly linked list Implementation 
@@ -52,6 +53,7 @@ public class OrderedDoubleList<K extends Comparable<K>, V>
         DoubleListNode<Entry<K,V>> newNode = new DoubleListNode<Entry<K,V>>(element, prevNode, after);
         prevNode.setNext(newNode);
         after.setPrevious(newNode);
+	  	currentSize++;
 	}
 	
     /**
@@ -66,6 +68,8 @@ public class OrderedDoubleList<K extends Comparable<K>, V>
         else
             head.setPrevious(newNode);
         head = newNode;
+
+	  	currentSize++;
     }
 
 
@@ -81,6 +85,7 @@ public class OrderedDoubleList<K extends Comparable<K>, V>
         else
             tail.setNext(newNode);
         tail = newNode;
+	  	currentSize++;
     }
 
 	@Override
@@ -102,17 +107,10 @@ public class OrderedDoubleList<K extends Comparable<K>, V>
      */
 	protected DoubleListNode<Entry<K,V>> findNode (K key){
 		DoubleListNode<Entry<K,V>> node = head;
-		while(node!=null) {
-			if(key.compareTo(node.getElement().getKey())<=0) {
-				
-				break;
-			}
-			else {
-				
+		while(node!=null && key.compareTo(node.getElement().getKey())>0) {
+			
 
 				node=node.getNext();
-			}
-			
 		}
 		return node;
 	}
@@ -120,7 +118,7 @@ public class OrderedDoubleList<K extends Comparable<K>, V>
     @Override
 	public V find(K key) {
 		DoubleListNode<Entry<K,V>> node = findNode(key);
-		if(node==null) {
+		if(node==null || key.compareTo(node.getElement().getKey())<0) {
 			
 			return null;
 		}
@@ -132,28 +130,26 @@ public class OrderedDoubleList<K extends Comparable<K>, V>
 	public V insert(K key, V value) {
 		 Entry<K,V> newNode=new EntryClass<K,V> (key, value);
 		DoubleListNode<Entry<K,V>> node = findNode(key);
-		if ((node!=null) && (node.getElement().getKey().compareTo(key)==0)){
-
-			  return newNode.getValue();
+		if ((node!=null) &&(key.compareTo(node.getElement().getKey())==0)){
+			V oldValue= node.getElement().getValue();	
+			node.setElement(newNode);
+			  return oldValue;
 		}
 		else { 
-			if(node==null) {
+			if (node==head){
+		  	addFirst(newNode);
+			}
+			else if(node==null) {
 			  	addLast(newNode);
 				
 				
 			}
-			else if (node==head){
-			  	addFirst(newNode);
-			}
-		  else {	
-			  if(key.compareTo(node.getElement().getKey())<0) {
-			  addBeforeNode(newNode,node);
-			  }
+			else {
+				addBeforeNode(newNode,node);
 			}
 
-		  	currentSize++;
 		}
-		  return newNode.getValue();
+		  return null;
 	}
 	
 	@Override
@@ -232,9 +228,10 @@ public class OrderedDoubleList<K extends Comparable<K>, V>
     protected void removeMiddleNode( DoubleListNode<Entry<K,V>> node )
     {
 
-    	currentSize--;
 		node.getNext().setPrevious(node.getPrevious());
 		node.getPrevious().setNext(node.getNext());
+
+	  	currentSize--;
 
     }
 
@@ -255,25 +252,24 @@ public class OrderedDoubleList<K extends Comparable<K>, V>
     public V remove(K key) {
 		DoubleListNode<Entry<K,V>> node = findNode(key);
 		V result=null;
-		if ((node == null) || (node.getElement().getKey().compareTo(key)!=0))
-			return null;
-		else {
-			 if( node!=null) {
-				 if(node==head) {
-					 
-					 return removeFirst();
-				 }
-				 else if(node==tail) {
-					 
-					 return removeLast();
-				 }
-				 else {
-					 
-					 removeMiddleNode(node);
-					 result= node.getElement().getValue();
-				 }
-				 
-			 }
+		if ((node == null) || (key.compareTo(node.getElement().getKey())<0)) {
+			
+			return result;
+		}
+
+		else { 
+			if (node==head){
+		  	result=removeFirst();
+			}
+			else if(node==tail) {
+			  	result=removeLast();
+				
+				
+			}
+			else {
+				result= node.getElement().getValue();
+				removeMiddleNode(node);
+			}
 		}
 		return result;
 	}

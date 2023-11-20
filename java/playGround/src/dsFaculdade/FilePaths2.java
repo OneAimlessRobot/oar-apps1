@@ -4,7 +4,7 @@ public enum FilePaths2 {
 
 	GENTREEFILE("gentree.res");
 
-	private String resourcesPath=System.getProperty("user.dir")+"/resources/";
+	private String resourcesPath=System.getProperty("user.dir")+"/../resources/";
 	
 	private String value; 
 

@@ -6,7 +6,6 @@ import java.io.*;
 import playGround.ds.implem.*;
 import playGround.ds.interfaces.Graph;
 import playGround.ds.interfaces.Iterator;
-import playGround.ds.interfaces.List;
 import playGround.auxPackage.smallAlgorithms.CollectionAlgorithms;
 import java.util.Scanner;
 

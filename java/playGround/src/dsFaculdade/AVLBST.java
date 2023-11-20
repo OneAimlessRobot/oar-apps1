@@ -210,7 +210,7 @@ theRoot.setRight( rightChild.getLeft() );
 rightChild.setLeft(theRoot); 
 this.linkSubtree(rightChild);
 }
-protected AVLBSTNode<K,V> findNode( K key)
+    protected AVLBSTNode<K,V> findNode( K key)
     {    
 
         path=new StackInList<>();
@@ -290,7 +290,7 @@ protected AVLBSTNode<K,V> findNode( K key)
             {
                 // Node has 2 children. Replace the node's entry with
                 // the 'minEntry' of the right subtree.
-                path.push(new PathStep<>(node, false));
+                path.top().set(node, false);
                 AVLBSTNode<K,V> minNode = (AVLBSTNode<K, V>) this.minNode((AVLBSTNode<K, V>) node.getRight());
                 node.setEntry( minNode.getEntry() );
                 this.linkSubtree((AVLBSTNode<K, V>) minNode.getRight());
@@ -354,6 +354,11 @@ protected AVLBSTNode<K,V> findNode( K key)
     			parent= (AVLBSTNode<K,V>)lastStep.parent;
     			
     		}
+		
+	}
+
+	private void rotateNodesRightR(AVLBSTNode<K, V> parent) {
+		// TODO Auto-generated method stub
 		
 	}
 

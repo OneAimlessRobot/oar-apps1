@@ -70,7 +70,7 @@ public class SepChainHashTable<K extends Comparable<K>, V>
 		}
 
 		private void skipEmptyListsBackwards() {
-			while(entries[mainPos].isEmpty()&&mainPos>-1) {mainPos--;}
+			while(entries[mainPos].isEmpty()&&mainPos>0) {mainPos--;}
 			
 					this.current =entries[mainPos].iterator();
 					
@@ -103,7 +103,7 @@ public class SepChainHashTable<K extends Comparable<K>, V>
     @SuppressWarnings("unchecked")
     public SepChainHashTable( int capacity )
     {
-        int arraySize = HashTable.nextPrime((int) (1.1 * capacity));
+        int arraySize = HashTable.nextPrime((int) (1.1*capacity));
         // Compiler gives a warning.
         table = (Dictionary<K,V>[]) new Dictionary[arraySize];
         for ( int i = 0; i < arraySize; i++ )
@@ -141,28 +141,21 @@ public class SepChainHashTable<K extends Comparable<K>, V>
              this.rehash();
 
         }
-        if(find(key)!=null) {
-        	
-        	return value;
-        }
-        Dictionary<K,V> targetBucket =table[ this.hash(key) ];
-        targetBucket.insert(key, value);
-        currentSize++;
-        return value;
+
+    	V  oldValue=table[ this.hash(key) ].insert(key,value);
+        if(oldValue==null) {
+            currentSize++;
+            }
+        return oldValue;
     }
 
     @Override
     public V remove( K key )
     {
-    	V value=null;
-    	if((value=table[ this.hash(key) ].find(key))==null) {
-    		
-    		return null;
-    	}
-        Dictionary<K,V> targetBucket =table[ this.hash(key) ];
-        targetBucket.remove(key);
-
-        currentSize--;
+    	V value=table[ this.hash(key) ].remove(key);
+        if(value!=null) {
+            currentSize--;
+           }
         return value;
     }
 
@@ -183,6 +176,7 @@ public class SepChainHashTable<K extends Comparable<K>, V>
     		
     	}
     	this.table=newdict.table;
+    	this.maxSize=newSize;
     	
     }
    

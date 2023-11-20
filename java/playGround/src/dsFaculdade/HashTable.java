@@ -1,4 +1,4 @@
-package dsFaculdade;  
+package dsFaculdade;
 
 /**
  * Hash table implementation
@@ -92,6 +92,11 @@ public abstract class HashTable<K,V> implements Dictionary<K,V>
     };
 
 
+    //
+    // Public Instance Methods
+    //
+
+
     public String toString() {
     	if(isEmpty()) {
     		return "[ ]";
@@ -104,11 +109,6 @@ public abstract class HashTable<K,V> implements Dictionary<K,V>
     	result+="]";
     	return result;
     }
-    //
-    // Public Instance Methods
-    //
-
-
     @Override
     public boolean isEmpty( )
     {    
