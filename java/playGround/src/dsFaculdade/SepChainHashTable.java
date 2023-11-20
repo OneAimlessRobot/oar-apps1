@@ -179,6 +179,14 @@ public class SepChainHashTable<K extends Comparable<K>, V>
     	this.maxSize=newSize;
     	
     }
+    protected boolean isFull( )
+    {    
+        return getLoadFactor()<LOAD_FACTOR;
+    }
+    public double getLoadFactor() {
+    	
+    	return (double)maxSize/(double)currentSize;
+    }
    
 }
 

@@ -25,6 +25,7 @@ public abstract class HashTable<K,V> implements Dictionary<K,V>
 	 */
     protected int currentSize;
 
+    protected static final double LOAD_FACTOR= 0.8;
 	/**
 	 * Maximum number of entries.
 	 */
