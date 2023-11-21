@@ -126,6 +126,9 @@ public class dsRunner {
 					
 							break;
 			case "print":
+				if(graph==null||graphmap==null){
+					System.exit(-1);
+				}
 				System.out.print("\033[H\033[2JCarregado:\n");
 				System.out.println(graph.toString());
 				System.out.println(graph.getTreeForm().turnIntoGraph().toString());

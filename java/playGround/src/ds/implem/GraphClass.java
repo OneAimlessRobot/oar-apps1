@@ -254,10 +254,10 @@ public void addEdge(T firstData,T secondData) {
  public String toString() {
 	 String result="";
 	 if(graphNodes.isEmpty()) {
-		 result+= "[ ]";
+		 return  "[ ]";
 	 }
 	 else if(graphEdges.isEmpty()) {
-		 result+= "[ "+graphNodes.get(0)+" ]";
+		 return "[ "+graphNodes.get(0)+" ]";
 	 }
 	 else{
 		 result+="[";

@@ -9,6 +9,7 @@
 ./CollectionTester3.java
 ./codeFromInternet/InstrumentationAgent.java
 ./dsRunnerDict.java
+./Main.java
 ./CollectionTester2.java
 ./SortingAlgorithmTests1.java
 ./SortingAlgorithmTests2.java
