@@ -57,7 +57,7 @@ public class MyHashSet<T extends Comparable<T>> extends AbstractSet<T> implement
 		}
 		
 		private void skipEmptyListsForward() {
-			while(entries[mainPos].isEmpty()&&mainPos<entries.length) {mainPos++;}
+			while(entries[mainPos].isEmpty()&&mainPos<entries.length-1) {mainPos++;}
 			
 					this.current =entries[mainPos].twoWayIterator();
 					
