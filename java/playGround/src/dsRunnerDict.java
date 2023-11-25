@@ -1,11 +1,10 @@
-import dsFaculdade.*;
-
 import java.io.*;
 import java.util.Scanner;
 
 import auxPackage.smallAlgorithms.CollectionAlgorithms;
 import ds.exceptions.CollectionEmptyException;
 import ds.interfaces.List;
+import dsFaculdad.*;
 
 public class dsRunnerDict {
 	public static void main(String[] args) throws IOException, CollectionEmptyException {
@@ -101,7 +100,7 @@ public class dsRunnerDict {
 			case "print":
 				if(odint!=null) {
 					System.out.print("\033[H\033[2JCarregado:\n");
-//				System.out.println("Infixo:\n"+odint+"\nDepth:\n"+((AVLBST<?,?>)odint).toStringDepth()+"\nBreadth\n:"+((AVLBST<?,?>)odint).toStringBreadth());
+				System.out.println("Infixo:\n"+odint+"\nDepth:\n"+((AVLBST<?,?>)odint).toStringDepth()+"\nBreadth\n:"+((AVLBST<?,?>)odint).toStringBreadth());
 //				System.out.println("Dicionario:\n"+odint+"\n\nTamanho: "+odint.size());
 				System.out.println("\n\nTamanho: "+odint.size());
 										
@@ -154,7 +153,7 @@ public class dsRunnerDict {
 		
 	}
 	private static Dictionary<Integer,Integer> initTree() {
-		return new SepChainHashTable<>();
+		return new AVLBST<>();
 		
 		
 	}

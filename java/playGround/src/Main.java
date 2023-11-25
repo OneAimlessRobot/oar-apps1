@@ -1,10 +1,11 @@
 import java.util.Scanner;
-import java.io.FileNotFoundException;
 
-import dsFaculdade.Dictionary;
-import dsFaculdade.Entry;
-import dsFaculdade.IteratorEntries;
-import dsFaculdade.SepChainHashTable;
+import dsFaculdad.Dictionary;
+import dsFaculdad.Entry;
+import dsFaculdad.IteratorEntries;
+import dsFaculdad.SepChainHashTable;
+
+import java.io.FileNotFoundException;
 
 
 public class Main {
