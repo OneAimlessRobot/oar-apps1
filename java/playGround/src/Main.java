@@ -15,7 +15,6 @@ public class Main {
     private static final String ALL = "all";
     private static final String ADD = "add";
     private static final String QUIT = "quit";
-    private static final String CHRISTMAS = "Merry Christmas!!";
 
 
 
@@ -53,12 +52,9 @@ public class Main {
         System.out.println(END);
     }
 
-    @SuppressWarnings("unchecked")
     private static void add(Scanner in, Dictionary<String, String> table, int maxSize) {
         String key = in.next().trim();
         String val = in.nextLine().trim();
-        SepChainHashTable<String,String> t = (SepChainHashTable<String, String>) table;
-        
 //        if (t.getLoadFactor() <(double)0.8) System.out.println(CHRISTMAS);
 //        System.out.println(t.getLoadFactor());
         table.insert(key, val);

@@ -177,6 +177,7 @@ public class CollectionAlgorithms {
 			list.add(arr[i]);
 			
 		}
+		System.out.println(list);
 		return list;
 		
 		

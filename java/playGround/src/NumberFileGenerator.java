@@ -50,7 +50,7 @@ public class NumberFileGenerator implements Serializable {
 				System.out.println("Erro a escrever lista!!!!");
 			}
 			break;
-		case "nord":
+		case "ord":
 			int r=in.nextInt(),s=in.nextInt(),t=in.nextInt();
 			list= CollectionAlgorithms.toVList(CollectionAlgorithms.orderedIntArrAux(r, s, t));
 			try {

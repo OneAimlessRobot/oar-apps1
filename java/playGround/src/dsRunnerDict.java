@@ -2,6 +2,7 @@ import java.io.*;
 import java.util.Scanner;
 
 import auxPackage.smallAlgorithms.CollectionAlgorithms;
+import dsFaculdad.BinarySearchTree;
 import ds.exceptions.CollectionEmptyException;
 import ds.interfaces.List;
 import dsFaculdad.*;
@@ -19,7 +20,7 @@ public class dsRunnerDict {
 		
 		String option=null;
 		do {
-			System.out.println("Queres:\nsair(sair)\napagar(del)\ngravar(save)\nprintar(print)\ngerar(gen)\nremover(rem)\nload(load a sério)\nloadns(Carregar arvore sem ser de cena serializada)\nadicionar(add)\n?");
+			System.out.println("Queres:\nsair(sair)\napagar(del)\ngravar(save)\ndiff(ver se arvore e valida)\nprintar(print)\ngerar(gen)\nremover(rem)\nload(load a sério)\nloadns(Carregar arvore sem ser de cena serializada)\nadicionar(add)\n?");
 		
 			option= optionReader.next();
 			System.out.flush();
@@ -100,10 +101,21 @@ public class dsRunnerDict {
 			case "print":
 				if(odint!=null) {
 					System.out.print("\033[H\033[2JCarregado:\n");
-				System.out.println("Infixo:\n"+odint+"\nDepth:\n"+((AVLBST<?,?>)odint).toStringDepth()+"\nBreadth\n:"+((AVLBST<?,?>)odint).toStringBreadth());
+				System.out.println("Infixo:\n"+odint+"\nDepth:\n"+((BinarySearchTree<?,?>)odint).toStringDepth()+"\nBreadth\n:"+((BinarySearchTree<?,?>)odint).toStringBreadth());
 //				System.out.println("Dicionario:\n"+odint+"\n\nTamanho: "+odint.size());
 				System.out.println("\n\nTamanho: "+odint.size());
 										
+				}
+				else {
+					System.out.print("\033[H\033[2JNull!!! carrega primeiro:\n");
+					
+				}
+				break;
+			case "diff":
+				if(odint!=null) {
+					System.out.print("\033[H\033[2JCarregado:\n");
+					
+					((BinarySearchTree<?,?>)odint).printHeightDifferences();
 				}
 				else {
 					System.out.print("\033[H\033[2JNull!!! carrega primeiro:\n");
