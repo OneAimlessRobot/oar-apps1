@@ -138,6 +138,7 @@ public class MyHashSetTreefy<T extends Comparable<T>> extends AbstractSet<T> imp
 		
 		
 	}
+	@SuppressWarnings("unchecked")
 	private void init() {
 		
 		entries=(Collection<T>[])new Collection[spineSize];
@@ -275,6 +276,11 @@ public class MyHashSetTreefy<T extends Comparable<T>> extends AbstractSet<T> imp
 			numOfStoredElems--;
 		}
 		
+	}
+	@Override
+	public T find(T key) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 

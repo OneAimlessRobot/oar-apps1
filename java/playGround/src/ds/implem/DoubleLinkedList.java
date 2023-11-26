@@ -7,9 +7,10 @@ import ds.interfaces.Collection;
 import ds.interfaces.Iterator;
 import ds.interfaces.Stack;
 import ds.interfaces.TwoWayIterator;
+import ds.interfaces.List;
 
 
-public class DoubleLinkedList<T> extends AbstractList<T> implements Serializable {
+public class DoubleLinkedList<T> extends AbstractList<T> implements Serializable,List<T> {
 
 	private static final long serialVersionUID = 1L;
 	private static class DLLIterator<T> implements TwoWayIterator<T>{
@@ -151,7 +152,7 @@ public class DoubleLinkedList<T> extends AbstractList<T> implements Serializable
 	}
 	@Override
 	public boolean isEmpty() {
-		return length==0;
+		return head==null;
 	}
 	@Override
 	public void add(T elem) {
@@ -341,6 +342,9 @@ public class DoubleLinkedList<T> extends AbstractList<T> implements Serializable
 private void removeLast() {
 		
 		Node<T> node=trail.getPrev();
+		if(node!=null) {
+			node.setNext(null);
+			}
 		trail=node;
 		
 		
@@ -348,6 +352,9 @@ private void removeLast() {
 	private void removeFirst() {
 		
 		Node<T> node=head.getNext();
+		if(node!=null) {
+		node.setPrev(null);
+		}
 		head=node;
 		
 		
@@ -425,6 +432,7 @@ private void removeLast() {
 	@Override
 	public void clear() {
 		head=trail=null;
+		length=0;
 		
 	}
 	@Override

@@ -17,6 +17,7 @@ public class ObjectSaverLoader<E> {
 		try {
 			ObjectInputStream ois= new ObjectInputStream(new FileInputStream(filepath));
 			
+			@SuppressWarnings("unchecked")
 			E e= (E) ois.readObject();
 			ois.close();
 			return e;

@@ -137,6 +137,7 @@ public class MyHashSet<T extends Comparable<T>> extends AbstractSet<T> implement
 		
 		
 	}
+	@SuppressWarnings("unchecked")
 	private void init() {
 		
 		entries=(Collection<T>[])new Collection[spineSize];
@@ -273,6 +274,11 @@ public class MyHashSet<T extends Comparable<T>> extends AbstractSet<T> implement
 			numOfStoredElems--;
 		}
 		
+	}
+	@Override
+	public T find(T key) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 

@@ -72,7 +72,6 @@ public class VarAryTree<T> implements Serializable {
 	}
 		private List<VarAryTree<T>> children;
 		private T elem;
-		private int size;
 		public VarAryTree(T stored) {
 			
 			elem=stored;

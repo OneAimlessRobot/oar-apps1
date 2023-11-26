@@ -9,6 +9,7 @@ public class StackInArray<T> implements  Stack<T>{
 	private static final int INIT_SIZE=1;
 	private int topPos,size;
 	//Constroi uma stack vazia
+	@SuppressWarnings("unchecked")
 	public StackInArray() {
 		
 		arr= (T[])new Object[INIT_SIZE];
@@ -18,6 +19,7 @@ public class StackInArray<T> implements  Stack<T>{
 	}
 	//Constroi uma stack com elementos de um Array ordenados pela ordem em
 	//que estao nele (ultimo elemento em cima, primeiro em baixo)
+	@SuppressWarnings("unchecked")
 	public StackInArray(T[] elems) {
 		
 		arr= (T[])new Object[INIT_SIZE];
@@ -40,6 +42,7 @@ public class StackInArray<T> implements  Stack<T>{
 	}
 	private void grow() {
 		
+		@SuppressWarnings("unchecked")
 		T[] aux= (T[]) new Object[size*2];
 		
 		for(int i=0;i<size;i++) {

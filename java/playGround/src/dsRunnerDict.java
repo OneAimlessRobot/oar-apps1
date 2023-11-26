@@ -2,9 +2,11 @@ import java.io.*;
 import java.util.Scanner;
 
 import auxPackage.smallAlgorithms.CollectionAlgorithms;
-import dsFaculdad.BinarySearchTree;
+import dsFaculdad.implem.BinarySearchTree;
 import ds.exceptions.CollectionEmptyException;
 import ds.interfaces.List;
+import dsFaculdad.implem.*;
+import dsFaculdad.interfaces.*;
 import dsFaculdad.*;
 
 public class dsRunnerDict {

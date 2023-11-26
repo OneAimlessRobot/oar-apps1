@@ -288,6 +288,11 @@ public class ProtoHashSet<T extends Comparable<T>> extends AbstractSet<T> implem
 		
 		
 	}
+	@Override
+	public T find(T key) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 
 

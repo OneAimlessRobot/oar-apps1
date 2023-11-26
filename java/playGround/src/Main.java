@@ -1,9 +1,9 @@
 import java.util.Scanner;
 
-import dsFaculdad.Dictionary;
-import dsFaculdad.Entry;
-import dsFaculdad.IteratorEntries;
-import dsFaculdad.SepChainHashTable;
+import dsFaculdad.interfaces.Dictionary;
+import dsFaculdad.interfaces.Entry;
+import dsFaculdad.interfaces.Iterator;
+import dsFaculdad.implem.SepChainHashTable;
 
 import java.io.FileNotFoundException;
 
@@ -44,7 +44,7 @@ public class Main {
 
     private static void all(Scanner in, Dictionary<String, String> table) {
         in.nextLine();
-        IteratorEntries<String, String> it = table.iterator();
+        Iterator<Entry<String, String>> it = table.iterator();
         while(it.hasNext()){
             Entry<String, String> curr = it.next();
             System.out.printf(ENTRY_PRINT, curr.getKey(), curr.getValue());

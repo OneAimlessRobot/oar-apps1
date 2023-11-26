@@ -288,5 +288,11 @@ private int computeElemPos(T elem,int size) {
 		}
 	}
 
+	@Override
+	public T find(T key) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 }

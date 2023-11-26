@@ -406,4 +406,9 @@ public class TreeSetBeta<T extends Comparable<T>> extends AbstractSet<T> impleme
 		// TODO Auto-generated method stub
 		
 	}
+	@Override
+	public T find(T key) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

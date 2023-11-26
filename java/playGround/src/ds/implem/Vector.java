@@ -51,6 +51,7 @@ public class Vector<T> extends AbstractList<T> implements Serializable {
 	private static final int INIT_SIZE=10;
 	private int currPos,size;
 	//Constroi uma stack vazia
+	@SuppressWarnings("unchecked")
 	public Vector() {
 		
 		arr= (T[])new Object[INIT_SIZE];
@@ -60,6 +61,7 @@ public class Vector<T> extends AbstractList<T> implements Serializable {
 	}
 	//Constroi uma stack com elementos de um Array ordenados pela ordem em
 	//que estao nele (ultimo elemento em cima, primeiro em baixo)
+	@SuppressWarnings("unchecked")
 	public Vector(T[] elems) {
 		
 		arr= (T[])new Object[INIT_SIZE];
@@ -82,6 +84,7 @@ public class Vector<T> extends AbstractList<T> implements Serializable {
 	}
 	private void grow() {
 		
+		@SuppressWarnings("unchecked")
 		T[] aux= (T[]) new Object[size*2];
 		
 		for(int i=0;i<size;i++) {

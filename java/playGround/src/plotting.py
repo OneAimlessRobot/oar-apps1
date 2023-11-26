@@ -24,7 +24,7 @@ plt.title('Insertions', fontsize = 20)
 plt.grid() 
 plt.legend() 
 
-with open('TreeDsResults','r') as csvfile: 
+with open('SecondDsResults','r') as csvfile: 
     plots2 = csv.reader(csvfile, delimiter = ',') 
       
     for row in plots2: 

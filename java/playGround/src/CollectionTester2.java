@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.IOException;
 
 import auxPackage.smallAlgorithms.*;
-import ds.implem.TreeSet;
+import ds.implem.TreeSetAVL;
 import ds.interfaces.List;
 import ds.interfaces.MySet;
 public class CollectionTester2 {
@@ -20,6 +20,7 @@ public class CollectionTester2 {
 	//Teste de coleçoes
 	public static void main(String[] args){
 		initFiles();
+		System.out.println(PATH_TO_DS);
 		int intValue=DEFAULT_SIZE;
         String arg1 = "";
 		if (args.length > 0) {
@@ -34,7 +35,7 @@ public class CollectionTester2 {
             System.out.println("No command-line arguments provided.");
         }
 		List<String> list= CollectionAlgorithms.toVList(CollectionAlgorithms.randStringArrAux(99, 0,intValue));
-		MySet<String> set= new TreeSet<>();
+		MySet<String> set= new TreeSetAVL<>();
 		System.out.println("Cheguei!! Init");
 		
 		System.out.println("Warming-up VM");
@@ -50,11 +51,11 @@ public class CollectionTester2 {
 			set.add(list.get(i));
 			
 		}
-		System.out.println(set.size());
 		long time2=System.nanoTime()/1000;		
-		FileOperations.printToFile(PATH_TO_DS,arg1+","+(time2-time1)+"\n");
+		FileOperations.printToFile(PATH_TO_DS,(time2-time1)+","+arg1+"\n");
 		list=null;
 		set.clear();
+		System.out.println(set.size());
 		set=null;
 	}
 

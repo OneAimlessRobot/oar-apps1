@@ -1,72 +1,53 @@
 
 
 
-import auxPackage.smallAlgorithms.CollectionAlgorithms;
-import ds.implem.HashTableBucket;
-import ds.implem.MyHashSet;
-import ds.implem.MyHashSetTreefy;
-import ds.interfaces.Collection;
-import ds.interfaces.List;
+import ds.implem.QueueInCircularArray;
+import ds.interfaces.Queue;
+import java.util.concurrent.*;
 public class CollectionPlayground {
 
 	public static void main(String[] args) {
-
-		List<Integer> list= CollectionAlgorithms.toVList(CollectionAlgorithms.randIntArrAux(10000,0,1000));
 //
+//		List<Integer> list= CollectionAlgorithms.toVList(CollectionAlgorithms.randIntArrAux(1000,0,10));
+//
+//		
+
+		Queue<Integer> queue= new QueueInCircularArray<>();
+		System.out.println("Set1 tamanho:\n"+" "+queue.size());
+//		for(int i=0;i<list.size();i++) {
+//			queue.enqueue(list.get(i));
+//			
+//		}
+		int curr=0;
+		while(curr<6) {
+			System.out.println(queue);
+			try {
+				TimeUnit.MICROSECONDS.sleep(1000000);
+			} catch (InterruptedException e) {
+			}
+			queue.enqueue(5);
+			curr++;
+		}
+		curr=0;
+		while(true) {
+			queue.dequeue();
+			System.out.println(queue);
+			try {
+				TimeUnit.MICROSECONDS.sleep(500000);
+			} catch (InterruptedException e) {
+			}
+			queue.enqueue(5);
+			System.out.println(queue);
+			try {
+				TimeUnit.MICROSECONDS.sleep(500000);
+			} catch (InterruptedException e) {
+			}
+		}
+
+
 		
-		
 
-		System.out.println("List1 tamanho:\n"+" "+list.size()+"\n lista:\n"+list);
-		
-		Collection<Integer> col= new MyHashSetTreefy<>();
-		Collection<Integer> col2= new MyHashSet<>();
-		Collection<Integer> col3= new HashTableBucket<>(100);
 
-		col.clear();
-		System.out.println("Set1 tamanho:\n"+" "+col.size());
-		System.out.println("Set2 tamanho:\n"+" "+col2.size());
-		System.out.println("Bucket tamanho:\n"+" "+col3.size());
-		for(int i=0;i<list.size();i++) {
-			col.add(list.get(i));
-			
-		}
-		for(int i=0;i<list.size();i++) {
-			col2.add(list.get(i));
-			
-		}
-
-		for(int i=0;i<list.size();i++) {
-			col3.add(list.get(i));
-			
-		}
-	
-		
-
-		System.out.println("Set1 tamanho:\n"+" "+col.size());
-		System.out.println("Set2 tamanho:\n"+" "+col2.size());
-		System.out.println("Bucket tamanho:\n"+" "+col3.size());
-		col.clear();
-		col2.clear();
-		col3.clear();
-		System.out.println("Set1 tamanho:\n"+" "+col.size());
-		System.out.println("Set2 tamanho:\n"+" "+col2.size());
-		System.out.println("Bucket tamanho:\n"+" "+col3.size());
-		for(int i=0;i<list.size();i++) {
-			col.add(list.get(i));
-			
-		}
-		for(int i=0;i<list.size();i++) {
-			col2.add(list.get(i));
-			
-		}
-
-		for(int i=0;i<list.size();i++) {
-			col3.add(list.get(i));
-			
-		}
-		System.out.println("Set1 tamanho:\n"+" "+col.size());
-		System.out.println("Set2 tamanho:\n"+" "+col2.size());
-		System.out.println("Bucket tamanho:\n"+" "+col3.size());
 		}
 
 }
