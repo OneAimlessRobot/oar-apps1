@@ -1,10 +1,7 @@
 package dsFaculdad.implem;
 
+import dsFaculdad.interfaces.*;
 import java.io.Serializable;
-
-import dsFaculdad.interfaces.Dictionary;
-import dsFaculdad.interfaces.Entry;
-import dsFaculdad.interfaces.Iterator;
 
 
 /**
@@ -112,7 +109,7 @@ public class SepChainHashTable<K extends Comparable<K>, V>
     @SuppressWarnings("unchecked")
     public SepChainHashTable( int capacity )
     {
-        int arraySize = HashTable.nextPrime((int) (capacity));
+        int arraySize =(int)1.1* HashTable.nextPrime((int) (capacity));
         // Compiler gives a warning.
         table = (Dictionary<K,V>[]) new Dictionary[arraySize];
         for ( int i = 0; i < arraySize; i++ )
@@ -175,7 +172,7 @@ public class SepChainHashTable<K extends Comparable<K>, V>
     } 
     
     private void rehash() {
-    	int newSize=(int)(maxSize*2);
+    	int newSize=(int)( HashTable.nextPrime((int) (1.1*2*maxSize)));
     	this.maxSize=newSize;
     	SepChainHashTable<K,V> newdict = new SepChainHashTable<>(newSize);
     	Iterator<Entry<K,V>> it= iterator();
