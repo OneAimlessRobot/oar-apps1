@@ -10,6 +10,7 @@ import ds.interfaces.MySet;
 import ds.interfaces.MySortedSet;
 import ds.interfaces.TwoWayIterator;
 
+@SuppressWarnings("unchecked")
 public class ProtoHashSet<T extends Comparable<T>> extends AbstractSet<T> implements MySet<T>,MySortedSet<T> {
 
 	private static final long serialVersionUID = 1L;

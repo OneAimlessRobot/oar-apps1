@@ -1,6 +1,6 @@
 package dsFaculdad.implem;
 import java.io.*;
-
+@SuppressWarnings("unchecked")
 public class ObjectSaverLoader<E> {
 
 	

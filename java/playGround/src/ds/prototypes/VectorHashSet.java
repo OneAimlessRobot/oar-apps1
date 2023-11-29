@@ -7,6 +7,7 @@ import ds.interfaces.Iterator;
 import ds.interfaces.MySet;
 import ds.interfaces.TwoWayIterator;
 
+@SuppressWarnings("unchecked")
 public class VectorHashSet<T> extends AbstractCollection<T> implements MySet<T> {
 
 	private static final long serialVersionUID = 1L;
@@ -167,11 +168,11 @@ public void add(T elem) {
 	numOfStoredElems++;
 	
 }
-private void addNoChecks(T elem) {
-	int pos= Math.abs(elem.hashCode() % spineSize);
-	((Vector<T>) entries[pos]).add(elem);
-	
-}
+//private void addNoChecks(T elem) {
+//	int pos= Math.abs(elem.hashCode() % spineSize);
+//	((Vector<T>) entries[pos]).add(elem);
+//	
+//}
 private int computeElemPos(T elem,int size) {
 
 	return Math.abs(elem.hashCode() % size);

@@ -46,7 +46,7 @@ public class ListConcatenatorWithFiles implements ListConcatenator {
 		System.out.println(fileName1);
 		List<Integer> list=null;
 		try {
-			File f1= new File(fileName1);
+			new File(fileName1);
 			FileOperations.loadListIntoFile(l1, fileName1);
 			FileOperations.loadListIntoFile(l2, fileName1);
 			list =FileOperations.loadFileIntoList(fileName1);

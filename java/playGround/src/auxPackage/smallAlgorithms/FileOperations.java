@@ -8,6 +8,7 @@ import ds.implem.Vector;
 import ds.interfaces.Iterator;
 import ds.interfaces.List;
 
+@SuppressWarnings("unchecked")
 public class FileOperations {
 	
 
@@ -37,7 +38,7 @@ public class FileOperations {
 	public static <T> void serializeObjectList(List<T> list,String fileName) throws CollectionEmptyException{
 		
 		
-		File file= new File(fileName);
+		new File(fileName);
 		try {
 			Iterator<T> it= list.iterator();				
 			ObjectOutputStream stream= new ObjectOutputStream(new FileOutputStream(fileName,true));
@@ -60,16 +61,17 @@ public class FileOperations {
 	public static <T> List<T> deserializeObjectList(String fileName) throws CollectionEmptyException{
 		
 		
-		File file= new File(fileName);
+		new File(fileName);
 		List<T> list =new Vector<>();
 		try {				
 			ObjectInputStream stream= new ObjectInputStream(new FileInputStream(fileName));
-	
-			while(true) {
-				
+			int counter=0;
+			while(counter<6) {
+				counter++;
 				list.add((T)stream.readObject());
 				
 			}
+			stream.close();
 		} catch (FileNotFoundException e) {
 			System.out.println("Ficheiro nao encontrado!!!!\n");
 		} catch (IOException e) {

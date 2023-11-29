@@ -11,6 +11,7 @@ import dsFaculdad.interfaces.Queue;
  * @param <E> Generic Element
  * 
  */
+@SuppressWarnings("unchecked")
 public class QueueInArray<E> implements Queue<E>
 {                                     
 

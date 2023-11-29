@@ -223,20 +223,20 @@ public class dsRunner {
 		
 		
 	}
-
-	private static void deleteFiles() {
-		
-		for(FilePaths filepath: FilePaths.values()) {
-			
-			File file= new File(filepath.getValue());
-
-	        if (!file.delete()) {
-	            System.out.println("Problemas ao apagar este ficheiro (talvez já não exista?):\n"+filepath.getValue()+"\n");
-		        
-	        }
-		}
-		
-		
-		
-	}
+//
+//	private static void deleteFiles() {
+//		
+//		for(FilePaths filepath: FilePaths.values()) {
+//			
+//			File file= new File(filepath.getValue());
+//
+//	        if (!file.delete()) {
+//	            System.out.println("Problemas ao apagar este ficheiro (talvez já não exista?):\n"+filepath.getValue()+"\n");
+//		        
+//	        }
+//		}
+//		
+//		
+//		
+//	}
 }
