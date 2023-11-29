@@ -12,14 +12,15 @@ public class QueueInCircularArray<T> implements Queue<T>, Serializable {
 	private static final long serialVersionUID = 1L;
 
 
-	private T[] arr;
-	private static final int DEFAULT_SIZE=10;
-	private int front,back,size;
+	protected T[] arr;
+	protected static final int DEFAULT_SIZE=10;
+	protected int front,back,size,capacity;
 	@SuppressWarnings("unchecked")
 	public QueueInCircularArray() {
 		
 		arr= (T[])new Object[DEFAULT_SIZE];
 		front=back=size=0;
+		capacity=DEFAULT_SIZE;
 		
 	}
 	@SuppressWarnings("unchecked")
@@ -27,7 +28,7 @@ public class QueueInCircularArray<T> implements Queue<T>, Serializable {
 		
 		arr= (T[])new Object[capacity];
 		front=back=size=0;
-		size=0;
+		this.capacity=capacity;
 		
 	}
 	public String toString() {
@@ -38,8 +39,14 @@ public class QueueInCircularArray<T> implements Queue<T>, Serializable {
 		else {
 			TwoWayIterator<T> it= new ArrayIterator<>(arr);
 			while(it.hasNext()) {
-				result+=it.next()+" ";
-			}
+				T next= it.next();
+				if(next==null) {
+				result+="  ";
+				}
+				else {
+				result+=next+" ";
+				}
+				}
 			
 		}
 		result+="]";
@@ -47,7 +54,7 @@ public class QueueInCircularArray<T> implements Queue<T>, Serializable {
 	}
 	@Override
 	public void enqueue(T elem) {
-		if(!isEmpty()&&front==back) {
+		if(size==capacity) {
 			throw new FullQueueException();
 		}
 		size++;
@@ -62,8 +69,8 @@ public class QueueInCircularArray<T> implements Queue<T>, Serializable {
 		}
 		size--;
 		T result=arr[front];
-		arr[front++]=null;
-		front=front%arr.length;
+		arr[front]=null;
+		front=(front+1)%arr.length;
 		return result;
 	}
 

@@ -41,7 +41,8 @@ public class BiasInDoubleList<T> implements Bias<T>{
 	}
 
 	@Override
-	public void popBack() throws StackEmptyException {
+	public T popBack() throws StackEmptyException {
+		return null;
 		// TODO Auto-generated method stub
 		
 	}

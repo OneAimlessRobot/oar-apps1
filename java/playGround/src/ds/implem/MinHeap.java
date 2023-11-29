@@ -6,24 +6,38 @@ package ds.implem;
  */
 import java.io.Serializable;
 
+import ds.interfaces.List;
 import ds.interfaces.MinPriorityQueue;
 import dsFaculdad.exceptions.EmptyQueueException;
 @SuppressWarnings("unchecked")
 public class MinHeap<T extends Comparable<T>> implements MinPriorityQueue<T>, Serializable {
 
 	private static final long serialVersionUID = 1L;
-	private T[] arr;
-	private int currentSize;
-	private static final int GROWTH_FACTOR=2;
+	protected T[] arr;
+	protected int currentSize;
+	protected static final int GROWTH_FACTOR=2;
 	public MinHeap(int capacity) {
 		
 		arr= (T[]) new Object[capacity];
 		currentSize=0;
 	}
+	protected MinHeap() {
+		
+	}
+	
 	protected void buildArray( int capacity, T[] contents ){
 		// Compiler gives a warning.
 		T[] newArray = (T[]) new Object[capacity];
 		System.arraycopy(contents, 0, newArray, 0, contents.length);
+		arr=newArray;
+	}
+	protected void buildArrayFromList( List<T> contents ){
+		// Compiler gives a warning.
+		T[] newArray = (T[]) new Object[contents.size()];
+		for(int i=0;i<contents.size();i++) {
+			
+			newArray[i]=contents.get(i);
+		}
 		arr=newArray;
 	}
 	protected void percolateDown( int firstPos ){
@@ -80,7 +94,7 @@ public class MinHeap<T extends Comparable<T>> implements MinPriorityQueue<T>, Se
 		arr[hole] = value;
 		currentSize++;
 	}
-	private boolean isFull() {
+	protected boolean isFull() {
 		return currentSize==arr.length;
 	}
 	public T dequeue( ) throws EmptyQueueException{
@@ -105,4 +119,12 @@ public class MinHeap<T extends Comparable<T>> implements MinPriorityQueue<T>, Se
 		for ( int i = (currentSize - 2) / 2; i >= 0; i-- )
 		this.percolateDown(i);
 		}
+
+		public MinHeap( List<T> theArray ) {
+			// Build a complete tree.
+			this.buildArrayFromList(theArray);
+			currentSize = theArray.size();
+			// Build a priority tree.
+			this.buildPriorityTree();
+			}
 }

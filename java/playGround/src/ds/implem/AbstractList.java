@@ -13,4 +13,5 @@ public abstract class AbstractList<T> extends AbstractCollection<T> implements L
 		
 		this.remove(this.getIndex(elem));
 	}
+	abstract public void append(List<T> list);
 }

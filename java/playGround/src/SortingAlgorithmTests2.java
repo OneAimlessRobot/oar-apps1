@@ -2,7 +2,7 @@
 import auxPackage.smallAlgorithms.*;
 import ds.interfaces.List;
 public class SortingAlgorithmTests2 {
-	private static final String PATH_TO_SA="/home/k/oar-apps1/java/playGround/src/testStuff/stringFiles/SecondSortingResults";
+	private static final String PATH_TO_SA=System.getProperty("user.dir")+"/SecondSortingResults";
 
 
 	private static final String HEADER_PATH="/home/k/oar-apps1/java/playGround/src/playGround/res/sTestHeader";
@@ -23,7 +23,7 @@ public class SortingAlgorithmTests2 {
 	        } else {
 	            System.out.println("No command-line arguments provided.");
 	        }
-			List<String> list= CollectionAlgorithms.toVList(CollectionAlgorithms.randStringArrAux(99, 0,intValue));
+			List<String> list= CollectionAlgorithms.toDList(CollectionAlgorithms.randStringArrAux(99, 0,intValue));
 
 			List<String> list2= (List<String>)list.copy();
 			
@@ -33,16 +33,15 @@ public class SortingAlgorithmTests2 {
 
 			System.out.println("Warming-up VM");
 
-			SortingAlgorithms.BubbleSort.sort(list);
+			SortingAlgorithms.HeapSort.sort(list);
 			
 			System.out.println("Finished warming-up VM");
 			long time1= System.nanoTime()/1000;
-			SortingAlgorithms.BubbleSort.sort(list2);
+			SortingAlgorithms.HeapSort.sort(list2);
 			long time2=System.nanoTime()/1000;
 			FileOperations.printToFile(PATH_TO_SA,intValue+","+(time2-time1)+"\n");
 
 
-			System.out.println("Done! This is the list:"+list2);
 		
 	}
 }

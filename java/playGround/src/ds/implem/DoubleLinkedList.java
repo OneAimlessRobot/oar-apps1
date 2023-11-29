@@ -398,14 +398,15 @@ private void removeLast() {
 		return collection;
 		
 	}
-	void append(DoubleLinkedList<T> doubleLinkedList) {
+	@Override
+	public void append(List<T> doubleLinkedList) {
 		if(isEmpty()) {
-			this.head=doubleLinkedList.head;
+			this.head=((DoubleLinkedList<T>)doubleLinkedList).head;
 		}
 		else{
-			this.trail.setNext(doubleLinkedList.head);
+			((DoubleLinkedList<T>)this).trail.setNext(((DoubleLinkedList<T>)doubleLinkedList).head);
 		}
-		this.trail=doubleLinkedList.trail;
+		this.trail=((DoubleLinkedList<T>)doubleLinkedList).trail;
 		this.length+=doubleLinkedList.size();
 		
 	}

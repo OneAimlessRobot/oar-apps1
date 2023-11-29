@@ -3,7 +3,7 @@
 import auxPackage.smallAlgorithms.*;
 import ds.interfaces.List;
 public class SortingAlgorithmTests1 {
-	private static final String PATH_TO_SA=System.getProperty("user.dir")+"/src/testStuff/stringFiles/FirstSortingResults";
+	private static final String PATH_TO_SA=System.getProperty("user.dir")+"/FirstSortingResults";
 
 
 	private static final String HEADER_PATH=System.getProperty("user.dir")+"/src/playGround/res/sTestHeader";
@@ -24,8 +24,8 @@ public class SortingAlgorithmTests1 {
 	        } else {
 	            System.out.println("No command-line arguments provided.");
 	        }
-			List<Integer> list= CollectionAlgorithms.toVList(CollectionAlgorithms.randIntArrAux(99, 0,intValue));
-			
+			List<Integer> list= CollectionAlgorithms.toDList(CollectionAlgorithms.randIntArrAux(1000, 0,intValue));
+
 			List<Integer> list2= (List<Integer>)list.copy();
 			
 			System.out.println("Cheguei!! Init");
@@ -37,12 +37,12 @@ public class SortingAlgorithmTests1 {
 			
 			System.out.println("Finished warming-up VM");
 			long time1= System.nanoTime()/1000;
-			SortingAlgorithms.myQuickSort.sort(list2);
+			List<Integer> list3=SortingAlgorithms.myQuickSort.sort(list2);
 			long time2=System.nanoTime()/1000;
 			FileOperations.printToFile(PATH_TO_SA,intValue+","+(time2-time1)+"\n");
-			
 
-			System.out.println("Done! This is the list:"+list2);
+			System.out.println(list3);
+
 		
 	}
 

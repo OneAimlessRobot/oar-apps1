@@ -1,8 +1,8 @@
 
 
 
-import ds.implem.QueueInCircularArray;
-import ds.interfaces.Queue;
+import ds.implem.DEqueInCircularArray;
+import ds.interfaces.DEque;
 import java.util.concurrent.*;
 public class CollectionPlayground {
 
@@ -12,7 +12,7 @@ public class CollectionPlayground {
 //
 //		
 
-		Queue<Integer> queue= new QueueInCircularArray<>();
+		DEque<Integer> queue= new DEqueInCircularArray<>();
 		System.out.println("Set1 tamanho:\n"+" "+queue.size());
 //		for(int i=0;i<list.size();i++) {
 //			queue.enqueue(list.get(i));
@@ -25,18 +25,18 @@ public class CollectionPlayground {
 				TimeUnit.MICROSECONDS.sleep(1000000);
 			} catch (InterruptedException e) {
 			}
-			queue.enqueue(5);
+			queue.enqueueFront(5);
 			curr++;
 		}
 		curr=0;
 		while(true) {
-			queue.dequeue();
+			queue.enqueue(5);
 			System.out.println(queue);
 			try {
 				TimeUnit.MICROSECONDS.sleep(500000);
 			} catch (InterruptedException e) {
 			}
-			queue.enqueue(5);
+			queue.dequeue();
 			System.out.println(queue);
 			try {
 				TimeUnit.MICROSECONDS.sleep(500000);

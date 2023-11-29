@@ -65,6 +65,7 @@
 ./NumberFileGenerator.java
 ./CollectionTester.java
 ./myClasses/AlphabeticalString.java
+./LoadingBar.java
 ./CollectionPlayground.java
 ./customClasses/interfaces/MapExplorer.java
 ./customClasses/implem/MapExplorerClass.java
@@ -78,6 +79,9 @@
 ./ds/interfaces/Stack.java
 ./ds/interfaces/Collection.java
 ./ds/interfaces/Queue.java
+./ds/interfaces/Comparator.java
+./ds/interfaces/DEque.java
+./ds/interfaces/MinPriorityQueue.java
 ./ds/interfaces/Bias.java
 ./ds/interfaces/DEQueue.java
 ./ds/interfaces/MySortedSet.java
@@ -95,6 +99,8 @@
 ./ds/implem/TreeSet.java
 ./ds/implem/Vector.java
 ./ds/implem/StackInArray.java
+./ds/implem/MinHeapComparable.java
+./ds/implem/DEqueInCircularArray.java
 ./ds/implem/StackInLinkedList.java
 ./ds/implem/DoubleLinkedList.java
 ./ds/implem/ArrayIterator.java
@@ -106,6 +112,7 @@
 ./ds/implem/AbstractSet.java
 ./ds/implem/HashTableBucket.java
 ./ds/implem/QueueInDoubleLinkedList.java
+./ds/implem/MinHeap.java
 ./ds/implem/AbstractList.java
 ./ds/implem/LinkedList.java
 ./ds/implem/dsConverter.java
@@ -113,4 +120,5 @@
 ./ds/implem/MyHashSet.java
 ./ds/implem/AbstractCollection.java
 ./ds/implem/QueueInCircularArray.java
+./ds/implem/BiasInCircularArray.java
 ./ds/implem/MyHashSetTreefy.java

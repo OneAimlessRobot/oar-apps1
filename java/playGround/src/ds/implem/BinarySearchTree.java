@@ -6,7 +6,6 @@ import ds.interfaces.MySet;
 import ds.exceptions.StackEmptyException;
 import ds.interfaces.Collection;
 import ds.interfaces.Iterator;
-import ds.implem.QueueInDoubleLinkedList;
 import ds.interfaces.QueueIterable;
 import ds.interfaces.Stack;
 import ds.interfaces.TwoWayIterator;

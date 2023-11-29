@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import ds.interfaces.Collection;
 import ds.interfaces.Iterator;
+import ds.interfaces.List;
 import ds.interfaces.TwoWayIterator;
 
 public class Vector<T> extends AbstractList<T> implements Serializable {
@@ -202,6 +203,27 @@ public class Vector<T> extends AbstractList<T> implements Serializable {
             }
             return -1;
     }
+	@Override
+	public void append(List<T> doubleLinkedList) {
+		if(isEmpty()) {
+			this.arr=((Vector<T>)doubleLinkedList).arr;
+		}
+		else{
+			@SuppressWarnings("unchecked")
+			T[] aux= (T[]) new Object[size+doubleLinkedList.size()];
+			
+			for(int i=0;i<size;i++) {
+				
+				aux[i]=arr[i];
+			}
+			for(int i=0;i<doubleLinkedList.size();i++) {
+				aux[i+size]=doubleLinkedList.get(i);
+			}
+			size+=doubleLinkedList.size();
+			arr=aux;	
+			
+		}
+	}
 
 	@Override
 	public boolean contains(T elem) {

@@ -3,6 +3,7 @@ package ds.implem;
 import ds.exceptions.StackEmptyException;
 import ds.interfaces.Collection;
 import ds.interfaces.Iterator;
+import ds.interfaces.List;
 import ds.interfaces.Stack;
 import ds.interfaces.TwoWayIterator;
 
@@ -151,6 +152,22 @@ public class LinkedList<T> extends AbstractList<T>{
 			
 		}
 		
+		
+	}
+	@Override
+	public void append(List<T> doubleLinkedList) {
+		if(isEmpty()) {
+			this.head=((LinkedList<T>)doubleLinkedList).head;
+		}
+		else{
+			Node<T> node= head;
+			while(node.getNext()!=null) {
+				
+				node=node.getNext();
+			}
+			node.setNext(((LinkedList<T>)doubleLinkedList).head);
+		}
+		this.length+=doubleLinkedList.size();
 		
 	}
 	private void addLast(Node<T> node) {

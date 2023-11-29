@@ -1,5 +1,6 @@
 package auxPackage.smallAlgorithms;
 
+import ds.implem.DoubleLinkedList;
 import ds.implem.Vector;
 import ds.interfaces.List;
 
@@ -26,14 +27,8 @@ public class SortingAlgorithms extends CollectionAlgorithms {
 			public List<T> getFirst() {
 				return first;
 			}
-			public void setFirst(List<T> first) {
-				this.first = first;
-			}
 			public List<T> getSecond() {
 				return second;
-			}
-			public void setSecond(List<T> second) {
-				this.second = second;
 			}
 			
 			
@@ -42,11 +37,7 @@ public class SortingAlgorithms extends CollectionAlgorithms {
 		private static <T extends Comparable<T>> Partition<T> splitList(T elem,List<T> list){
 			if(list.isEmpty()) {
 				
-				return new Partition<T>(new Vector<>(),new Vector<>());
-			}
-			if(!list.contains(elem)) {
-				
-				return null;
+				return new Partition<T>(new DoubleLinkedList<>(),new DoubleLinkedList<>());
 			}
 				T pivot= list.get(list.size()-1);
 				list.remove(list.size()-1);
@@ -71,14 +62,15 @@ public class SortingAlgorithms extends CollectionAlgorithms {
 			
 			if(list.isEmpty()) {
 				
-				return (List<T>) list.copy();
+				return list;
 			}
 			T elem=list.get(0);
 			list.remove(0);
-			Partition<T> p=splitList(elem,(List<T>) list.copy());
+			Partition<T> p=splitList(elem,list);
 			List<T> l1=p.getFirst(),l2=p.getSecond(),l3=new Vector<>();
+			l3.add(elem);
 			ListConcatenator lc= new ListConcatenatorWithRAM();
-			return 	 lc.concatenate(sort(l1), lc.concatenate(l3,sort(l2)));
+			return 	 lc.concatenate(sort(l1),lc.concatenate(l3,  sort(l2)));
 
 			
 			
@@ -137,50 +129,103 @@ public class SortingAlgorithms extends CollectionAlgorithms {
 	
 	
 }
-	public static class BubbleSort{
+	public static class HeapSort{
+
+		public static <T extends Comparable<T>> void sort(List<T> arr){
+			
+			
+			
+			
+	        int N = arr.size();
+	 
+	        // Build heap (rearrange array)
+	        for (int i = N / 2 - 1; i >= 0; i--)
+	            heapify(arr, N, i);
+	 
+	        // One by one extract an element from heap
+	        for (int i = N - 1; i > 0; i--) {
+	            // Move current root to end
+	            T temp = arr.get(0);
+	            arr.update(arr.get(i),0);
+	            arr.update(temp,i);
+	 
+	            // call max heapify on the reduced heap
+	            heapify(arr, i, 0);
+	        }
+		}
+		 // To heapify a subtree rooted with node i which is
+	    // an index in arr[]. n is size of heap
+	    static <T extends Comparable<T>>  void heapify(List<T> arr, int N, int i)
+	    {
+	        int largest = i; // Initialize largest as root
+	        int l = 2 * i + 1; // left = 2*i + 1
+	        int r = 2 * i + 2; // right = 2*i + 2
+	 
+	        // If left child is larger than root
+	        if (l < N && arr.get(l).compareTo( arr.get(largest))>0)
+	            largest = l;
+	 
+	        // If right child is larger than largest so far
+	        if (r < N && arr.get(r).compareTo( arr.get(largest))>0)
+	            largest = r;
+	 
+	        // If largest is not root
+	        if (largest != i) {
+	            T swap = arr.get(i);
+	            arr.update(arr.get(largest),i);
+	            arr.update(swap,largest);
+	 
+	            // Recursively heapify the affected sub-tree
+	            heapify(arr, N, largest);
+	        }
+	    }
+	 
+	}
 	
-
-	public static <T extends Comparable<T>> void sort(List<T> list){
+	public static class BubbleSort{
 		
-		for(int i=0;i<list.size()-1;i++) {
 
-			for(int j=i+1;j<list.size();j++) {
-				
-				if(list.get(i).compareTo(list.get(j))>0) {
-					T tmp=list.get(i);
+		public static <T extends Comparable<T>> void sort(List<T> list){
+			
+			for(int i=0;i<list.size()-1;i++) {
 
-					list.update(list.get(j),i);
-					list.update(tmp,j);
+				for(int j=i+1;j<list.size();j++) {
 					
+					if(list.get(i).compareTo(list.get(j))>0) {
+						T tmp=list.get(i);
+
+						list.update(list.get(j),i);
+						list.update(tmp,j);
+						
+						
+					}
 					
 				}
 				
 			}
 			
-		}
-		
-		
-		
-	}
-	}
-	
-	public static <T extends Comparable<T>> boolean isSorted(List<T> list,int index,boolean orientation) {
-		if(list.isEmpty()||list.size()==1) {
 			
-			return true;
-		}
-		if(index==list.size()-1) {
-			
-			return true;
-		}
-		if(orientation) {
-		return list.get(index).compareTo(list.get(index+1))<=0 && isSorted(list,index+1,orientation);
-		}
-		else {
-			return list.get(index).compareTo(list.get(index+1))>=0 && isSorted(list,index+1,orientation);
-		
 			
 		}
-	}
+		
+		public static <T extends Comparable<T>> boolean isSorted(List<T> list,int index,boolean orientation) {
+			if(list.isEmpty()||list.size()==1) {
+				
+				return true;
+			}
+			if(index==list.size()-1) {
+				
+				return true;
+			}
+			if(orientation) {
+			return list.get(index).compareTo(list.get(index+1))<=0 && isSorted(list,index+1,orientation);
+			}
+			else {
+				return list.get(index).compareTo(list.get(index+1))>=0 && isSorted(list,index+1,orientation);
+			
+				
+			}
+		}
 
+}
 }
