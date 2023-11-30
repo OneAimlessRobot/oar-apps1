@@ -2,12 +2,12 @@ import java.io.*;
 import java.util.Scanner;
 
 import auxPackage.smallAlgorithms.CollectionAlgorithms;
-import dsFaculdad.implem.BinarySearchTree;
+import dsFaculdade.implem.BinarySearchTree;
 import ds.exceptions.CollectionEmptyException;
 import ds.interfaces.List;
-import dsFaculdad.implem.*;
-import dsFaculdad.interfaces.*;
-import dsFaculdad.*;
+import dsFaculdade.implem.*;
+import dsFaculdade.interfaces.*;
+import dsFaculdade.*;
 
 public class dsRunnerDict {
 	public static void main(String[] args) throws IOException, CollectionEmptyException {

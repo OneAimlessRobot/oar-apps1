@@ -1,9 +1,9 @@
 import java.util.Scanner;
 
-import dsFaculdad.interfaces.Dictionary;
-import dsFaculdad.interfaces.Entry;
-import dsFaculdad.interfaces.Iterator;
-import dsFaculdad.implem.SepChainHashTable;
+import dsFaculdade.interfaces.Dictionary;
+import dsFaculdade.interfaces.Entry;
+import dsFaculdade.interfaces.Iterator;
+import dsFaculdade.implem.SepChainHashTable;
 
 import java.io.FileNotFoundException;
 

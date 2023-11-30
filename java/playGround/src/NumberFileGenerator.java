@@ -8,7 +8,7 @@ import auxPackage.smallAlgorithms.*;
 import ds.exceptions.CollectionEmptyException;
 import ds.implem.DoubleLinkedList;
 import ds.interfaces.List;
-import dsFaculdad.FilePaths2;
+import dsFaculdade.FilePaths2;
 public class NumberFileGenerator implements Serializable {
 	
 	private static final long serialVersionUID = 1L;

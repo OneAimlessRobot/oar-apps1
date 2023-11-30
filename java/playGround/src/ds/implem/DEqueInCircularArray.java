@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 import ds.exceptions.QueueEmptyException;
 import ds.interfaces.DEque;
-import dsFaculdad.exceptions.FullQueueException;
+import dsFaculdade.exceptions.FullQueueException;
 
 public class DEqueInCircularArray<T> extends QueueInCircularArray<T> implements DEque<T>, Serializable {
 

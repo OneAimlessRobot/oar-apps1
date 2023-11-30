@@ -1,48 +1,27 @@
 
 
 
-import ds.implem.DEqueInCircularArray;
-import ds.interfaces.DEque;
-import java.util.concurrent.*;
+import ds.implem.BiasInDoubleLinkedList;
+import ds.interfaces.Bias;
+import ds.interfaces.List;
+
+
+import auxPackage.smallAlgorithms.CollectionAlgorithms;
 public class CollectionPlayground {
 
 	public static void main(String[] args) {
-//
-//		List<Integer> list= CollectionAlgorithms.toVList(CollectionAlgorithms.randIntArrAux(1000,0,10));
-//
-//		
 
-		DEque<Integer> queue= new DEqueInCircularArray<>();
-		System.out.println("Set1 tamanho:\n"+" "+queue.size());
-//		for(int i=0;i<list.size();i++) {
-//			queue.enqueue(list.get(i));
-//			
-//		}
-		int curr=0;
-		while(curr<6) {
-			System.out.println(queue);
-			try {
-				TimeUnit.MICROSECONDS.sleep(1000000);
-			} catch (InterruptedException e) {
-			}
-			queue.enqueueFront(5);
-			curr++;
+		List<Integer> list= CollectionAlgorithms.toVList(CollectionAlgorithms.randIntArrAux(10000,0,200));
+
+		Bias<Integer> bias= new BiasInDoubleLinkedList<>(5000);
+		
+		for(int i=0;i<list.size();i++) {
+			
+			bias.insert(list.get(i));
 		}
-		curr=0;
-		while(true) {
-			queue.enqueue(5);
-			System.out.println(queue);
-			try {
-				TimeUnit.MICROSECONDS.sleep(500000);
-			} catch (InterruptedException e) {
-			}
-			queue.dequeue();
-			System.out.println(queue);
-			try {
-				TimeUnit.MICROSECONDS.sleep(500000);
-			} catch (InterruptedException e) {
-			}
-		}
+		
+		System.out.println(bias.getBias());
+		
 
 
 		

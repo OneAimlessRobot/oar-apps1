@@ -5,7 +5,7 @@ import java.io.Serializable;
 import ds.exceptions.QueueEmptyException;
 import ds.interfaces.Queue;
 import ds.interfaces.TwoWayIterator;
-import dsFaculdad.exceptions.FullQueueException;
+import dsFaculdade.exceptions.FullQueueException;
 
 public class QueueInCircularArray<T> implements Queue<T>, Serializable {
 

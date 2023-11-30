@@ -80,6 +80,7 @@
 ./ds/interfaces/Collection.java
 ./ds/interfaces/Queue.java
 ./ds/interfaces/Comparator.java
+./ds/interfaces/DEStack.java
 ./ds/interfaces/DEque.java
 ./ds/interfaces/MinPriorityQueue.java
 ./ds/interfaces/Bias.java
@@ -94,7 +95,6 @@
 ./ds/interfaces/List.java
 ./ds/prototypes/TreeSetBeta.java
 ./ds/prototypes/ProtoHashSet.java
-./ds/prototypes/BiasInDoubleList.java
 ./ds/prototypes/VectorHashSet.java
 ./ds/implem/TreeSet.java
 ./ds/implem/Vector.java
@@ -105,6 +105,7 @@
 ./ds/implem/DoubleLinkedList.java
 ./ds/implem/ArrayIterator.java
 ./ds/implem/BinarySearchTree.java
+./ds/implem/DEStackInDoubleList.java
 ./ds/implem/GraphClass.java
 ./ds/implem/ObjectSaverLoader.java
 ./ds/implem/TreeSetAVL.java
@@ -115,10 +116,12 @@
 ./ds/implem/MinHeap.java
 ./ds/implem/AbstractList.java
 ./ds/implem/LinkedList.java
+./ds/implem/DEStackInCircularArray.java
+./ds/implem/BiasInDoubleLinkedList.java
 ./ds/implem/dsConverter.java
 ./ds/implem/VarAryTree.java
 ./ds/implem/MyHashSet.java
 ./ds/implem/AbstractCollection.java
+./ds/implem/StackInDoubleLinkedList.java
 ./ds/implem/QueueInCircularArray.java
-./ds/implem/BiasInCircularArray.java
 ./ds/implem/MyHashSetTreefy.java

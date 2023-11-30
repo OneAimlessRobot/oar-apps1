@@ -1,11 +1,11 @@
 import ds.exceptions.StackEmptyException;
-import ds.implem.BiasInDoubleList;
+import ds.implem.DEStackInDoubleList;
 //import ds.implem.DEqueInCircularArray;
 import ds.interfaces.*;
 
 import java.util.concurrent.*;
 public class LoadingBar implements Runnable {
- private static Bias<Character> bias;
+ private static DEStack<Character> dEStack;
  	public static void main(String[] args) throws InterruptedException {
  		LoadingBar load= new LoadingBar();
  		Thread t= new Thread(load);
@@ -16,7 +16,7 @@ public class LoadingBar implements Runnable {
  	}
 	@Override
 	public void run() {
-		bias= new BiasInDoubleList<>();
+		dEStack= new DEStackInDoubleList<>();
 //		for(int i=0;i<10;i++) {
 //			
 //			queue.enqueue('-');
@@ -27,16 +27,16 @@ public class LoadingBar implements Runnable {
 //		}
 		for(int i=0;i<10;i++) {
 
-			bias.pushBack('#');
+			dEStack.pushBack('#');
 		}
 		while(true) {
-			bias.pushBack('#');
+			dEStack.pushBack('#');
 			try {
-				bias.pop();
+				dEStack.pop();
 			} catch (StackEmptyException e) {
 			}
 			System.out.print("\033[H\033[2J");
-			System.out.println(bias);
+			System.out.println(dEStack);
 			try {
 				TimeUnit.MICROSECONDS.sleep(50000);
 			} catch (InterruptedException e) {

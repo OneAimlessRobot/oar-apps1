@@ -8,7 +8,7 @@ import java.io.Serializable;
 
 import ds.interfaces.List;
 import ds.interfaces.MinPriorityQueue;
-import dsFaculdad.exceptions.EmptyQueueException;
+import dsFaculdade.exceptions.EmptyQueueException;
 @SuppressWarnings("unchecked")
 public class MinHeap<T extends Comparable<T>> implements MinPriorityQueue<T>, Serializable {
 
