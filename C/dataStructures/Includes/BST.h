@@ -1,23 +1,6 @@
 #ifndef BST_H
 #define BST_H
 
-#include "comparator.h"
-
-typedef struct BSTNode{
-
-void* mem;
-struct BSTNode* left,*right;
-
-}BSTNode;
-typedef struct pathStep{
-
-BSTNode* parent;
-int isLeft;
-
-
-}pathStep;
-
-
 typedef struct BSTree{
 
 u_int64_t currSize, elemSize;
@@ -39,17 +22,7 @@ void destroyBSTree(BSTree* tree);
 
 void* findInBSTree(BSTree* tree, void* data);
 
-void* getBSTNodeMem(BSTNode* node);
 
-void setBSTNodeMem(BSTNode* node, void* mem);
-
-void setLeft(BSTNode* node, BSTNode**newLeft);
-
-void setRight(BSTNode* node, BSTNode**newRight);
-
-int isLeaf(BSTNode* node);
-
-void destroyBSTNode(BSTNode* node);
 
 
 void printIntBSTreeBreadth(BSTree*tree);

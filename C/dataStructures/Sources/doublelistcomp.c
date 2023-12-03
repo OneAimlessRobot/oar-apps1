@@ -1,5 +1,5 @@
 #include "../Includes/preprocessor.h"
-#include "../Includes/doublelist.h"
+#include "../Includes/doublelistcomp.h"
 #include "../Includes/auxFuncs.h"
 static DNode* initNakedDNode(void*initmem){
 
@@ -27,18 +27,19 @@ return newNode;
 
 }
 
-DListW* initDList(u_int64_t elemSize){
+DListWComp* initDListComp(u_int64_t elemSize,comparator*comp){
 
-DListW* result= malloc(sizeof(DListW));
+DListWComp* result= malloc(sizeof(DListWComp));
 
 result->head=result->trail=NULL;
 result->currSize=0;
 result->elemSize=elemSize;
+result->comp=comp;
 return result;
 
 }
 //pre: node->mem ==NULL and node->mem is free
-static DList destroyHEADDNode(DNode* node){
+DList destroyHEADDNode(DNode* node){
 if(!node){
 return node;
 
@@ -75,8 +76,8 @@ return node;
 }
 
 
-DListW* makeIntList(int arr[],int size){
-DListW* list= malloc(sizeof(DListW));
+DListWComp* makeIntListComp(int arr[],int size,comparator*comp){
+DListWComp* list= malloc(sizeof(DListWComp));
 
 DList dummyHead=initNakedDNode(arr+0);
 list->head=dummyHead;
@@ -88,12 +89,13 @@ dummyHead=dummy;
 list->trail=dummy;
 }
 list->elemSize=sizeof(int);
+list->comp=comp;
 list->currSize=size;
 return list;
 
 }
 
-static DList findNode(DListW*list,void* data){
+static DList findNode(DListWComp*list,void* data){
 	
 	if(!list->head){
 
@@ -101,7 +103,7 @@ static DList findNode(DListW*list,void* data){
 	}
 	DList curr= list->head;
 
-	while(curr&&memcmp(data,curr->mem,list->elemSize)<0){
+	while(curr&&list->comp->func(data,curr->mem)<0){
 
 	curr=curr->next;
 
@@ -109,7 +111,7 @@ static DList findNode(DListW*list,void* data){
 	if(!curr){
 		return NULL;
 	}
-	if(memcmp(data,curr->mem,list->elemSize)>=0){
+	if(list->comp->func(data,curr->mem)>=0){
 		
 		return curr;
 
@@ -120,7 +122,7 @@ static DList findNode(DListW*list,void* data){
 }
 
 
-void* findElemListComp(DListW* list,void* data){
+void* findElemListCompComp(DListWComp* list,void* data){
 
 		if(list->currSize){
                          return findNode(list,data)->mem;
@@ -140,7 +142,7 @@ static void addBeforeNode(DList addedNode, DList nodeAfter){
 
 }
 
-void printIntList(DListW* list){
+void printIntListComp(DListWComp* list){
 
 for(DList head=list->head;head;head=head->next){
 
@@ -150,7 +152,7 @@ for(DList head=list->head;head;head=head->next){
 
 
 }
-void printIntListBack(DListW* list){
+void printIntListBackComp(DListWComp* list){
 
 
 DList head=list->head;
@@ -168,7 +170,7 @@ while(head);
 
 }
 
-void destroyDList(DListW* list){
+void destroyDListComp(DListWComp* list){
 if(list==NULL){
 
 	return;
@@ -180,12 +182,11 @@ head=destroyHEADDNode(head);
 
 
 }while(head);
-
 free(list);
 list=NULL;
 
 }
-static DList getNodeFromIndex(DListW* list, u_int64_t index){
+static DList getNodeFromIndex(DListWComp* list, u_int64_t index){
 
 
 	        DList j = NULL;
@@ -209,7 +210,7 @@ static DList getNodeFromIndex(DListW* list, u_int64_t index){
 
 
 }
-void* getElemAtIndex(DListW*list,u_int64_t index){
+void* getElemAtIndexComp(DListWComp*list,u_int64_t index){
 	
 		if(list->currSize){
                          return getNodeFromIndex(list,index)->mem;
@@ -218,7 +219,7 @@ void* getElemAtIndex(DListW*list,u_int64_t index){
 
 }
 
-static void addMiddleOfList(DListW* list,DList node,u_int64_t index){
+static void addMiddleOfList(DListWComp* list,DList node,u_int64_t index){
 		
 		if(node) {
                         DList j = NULL;
@@ -246,7 +247,7 @@ static void addMiddleOfList(DListW* list,DList node,u_int64_t index){
 
 
 }
-static void addEndOfList(DListW* list,DList node){
+static void addEndOfList(DListWComp* list,DList node){
 		
 		if(node) {
 
@@ -259,7 +260,7 @@ static void addEndOfList(DListW* list,DList node){
 
 
 }
-static void addStartOfList(DListW* list,DList node){
+static void addStartOfList(DListWComp* list,DList node){
 
 	if(node){
                         node->next=list->head;
@@ -271,7 +272,7 @@ static void addStartOfList(DListW* list,DList node){
 
 }
 
-void addElemToList(DListW* list,void* data,u_int64_t index){
+void addElemToList2(DListWComp* list,void* data,u_int64_t index){
 
 DList node= initNakedDNode(data);
 
@@ -300,7 +301,7 @@ DList node= initNakedDNode(data);
 
 
 }
-static void remFirstNodeFromList(DListW*list){
+static void remFirstNodeFromList(DListWComp*list){
 
 	DList tmp=list->head->next;
 	tmp->prev=NULL;
@@ -311,7 +312,7 @@ static void remFirstNodeFromList(DListW*list){
 	
 
 }
-static void remLastNodeFromList(DListW*list){
+static void remLastNodeFromList(DListWComp*list){
 
 	DList tmp=list->trail->prev;
 	tmp->next=NULL;
@@ -321,7 +322,7 @@ static void remLastNodeFromList(DListW*list){
 	list->trail=tmp;
 
 }
-void remMiddleNodeFromListComp(DListW*list,void* data){
+static void remMiddleNodeFromListComp(DListWComp*list,void* data){
 
 
 	DList node=findNode(list, data);
@@ -337,7 +338,22 @@ void remMiddleNodeFromListComp(DListW*list,void* data){
 		
 }
 
-void remElemFromListComp(DListW* list,void* data){
+static void remMiddleNodeFromList(DListWComp*list,u_int64_t index){
+
+	DList node=getNodeFromIndex(list, index);
+	if(node){
+		DList next=node->next;
+		DList prev= node->prev;
+		prev->next=next;
+		next->prev=prev;
+		node->next=NULL;
+		node->prev=NULL;
+		destroyHEADDNode(node);
+	}
+		
+
+}
+void remElemFromListComp2(DListWComp* list,void* data){
 
 
                 if(!list->head) {
@@ -348,7 +364,7 @@ void remElemFromListComp(DListW* list,void* data){
 		DList removedNode= findNode(list,data);
                 
 		if(list->currSize==1){
-		if(!memcmp(list->head->mem,removedNode->mem,list->elemSize)){
+		if(!list->comp->func(list->head->mem,removedNode->mem)){
 		list->head=destroyHEADDNode(list->head);
 		list->currSize--;
 		return;
@@ -373,22 +389,7 @@ void remElemFromListComp(DListW* list,void* data){
 
 
 }
-void remMiddleNodeFromList(DListW*list,u_int64_t index){
-
-	DList node=getNodeFromIndex(list, index);
-	if(node){
-		DList next=node->next;
-		DList prev= node->prev;
-		prev->next=next;
-		next->prev=prev;
-		node->next=NULL;
-		node->prev=NULL;
-		destroyHEADDNode(node);
-	}
-		
-
-}
-void remElemFromList(DListW* list,u_int64_t index){
+void remElemFromList2(DListWComp* list,u_int64_t index){
 	if(list->currSize){
 	if(list->currSize==1){
 
@@ -424,7 +425,7 @@ void remElemFromList(DListW* list,u_int64_t index){
 
 }
 
-void addElemToListComp(DListW* list,void* data){
+void addElemToListComp2(DListWComp* list,void* data){
 
 
 DList node= initNakedDNode(data);

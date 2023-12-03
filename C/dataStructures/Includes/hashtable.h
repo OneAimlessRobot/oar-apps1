@@ -4,7 +4,6 @@
 #define GROWFACTOR 2
 #define MIN_LOAD_FACTOR 0.75
 #include "doublelist.h"
-#include "comparator.h"
 typedef struct hashtable{
 
 DListW **spine;
