@@ -13,3 +13,4 @@
 #include "queueList.h"
 #include "BST.h"
 #include "hashtable.h"
+#include "hashtablecomp.h"

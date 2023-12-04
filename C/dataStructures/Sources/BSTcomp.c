@@ -208,7 +208,7 @@ BSTNode* node= initNakedBSTNode(elem);
 	}
 	else{
 		void* result=NULL;
-		if(!(result=findInBSTree(tree,elem))){
+		if(!(result=findInBSTreeComp(tree,elem))){
 		linkSubtree(tree,node);
 		tree->currSize++;
 		}

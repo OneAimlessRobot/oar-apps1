@@ -19,8 +19,9 @@ int main(int argc, char ** argv){
         clock_gettime(CLOCK_REALTIME, &time);
         srand(time.tv_nsec);
 
-
-	hashtable* tree= initHashTable(STRSIZE);
+	comparator* comp=malloc(sizeof(comparator));
+	comp->func=compareStrings;
+	hashtablecomp* tree= initHashTableComp(STRSIZE,comp);
 	
 	char** arr=randStrArr(STRSIZE, ARRSIZE);
 	
@@ -28,7 +29,7 @@ int main(int argc, char ** argv){
 	for(int i=0;i<ARRSIZE;i++){
 
 
-		addToHT(&tree,strdup(arr[i]));
+		addToHTComp(&tree,strdup(arr[i]));
 
 	}
 	
@@ -48,13 +49,14 @@ int main(int argc, char ** argv){
 		switch(option){
 
 		case 's':
+		free(comp);
 		freeStrArr(arr,ARRSIZE);
-		destroyHashTable(tree);
+		destroyHashTableComp(tree);
 		free(value);
 		return 0;
 		case 'p':
 		
-		printHashTable(tree);
+		printHashTableComp(tree);
 
 		printf("Tamanho: %lu\n",tree->currSize);
 		
@@ -68,7 +70,7 @@ int main(int argc, char ** argv){
 		value=malloc(STRSIZE+1);
 		memset(value,0,STRSIZE+1);
 		memcpy(value,var,STRSIZE);
-		addToHT(&tree,value);
+		addToHTComp(&tree,value);
 		break;
 		case 'r':
 		
@@ -80,7 +82,7 @@ int main(int argc, char ** argv){
 		char value2[STRSIZE+1];
 		memset(value2,0,STRSIZE+1);
 		memcpy(value2,var,STRSIZE);
-		removeFromHT(tree,value2);
+		removeFromHTComp(tree,value2);
 		break;
 		}
 	
@@ -90,8 +92,7 @@ int main(int argc, char ** argv){
 		
 
 	}while(1);
-	       	
-
+	
 
 
 	return 0;

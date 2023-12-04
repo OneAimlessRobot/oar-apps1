@@ -130,7 +130,7 @@ void addToHTComp(hashtablecomp** table,void* mem){
 	
 	u_int64_t pos=getTablePosForElem(*table,mem);
 	DListWComp* list= (*table)->spine[pos];
-	addElemToListComp(list,mem);
+	addElemToListComp2(list,mem);
 	(*table)->currSize++;
 
 
@@ -145,8 +145,8 @@ void removeFromHTComp(hashtablecomp* table,void * mem){
 		return;
 	}
 	u_int64_t pos=getTablePosForElem(table,mem);
-	DListW* list= table->spine[pos];
-	remElemFromListComp(list,mem);
+	DListWComp* list= table->spine[pos];
+	remElemFromListComp2(list,mem);
 	table->currSize--;
 
 
@@ -157,13 +157,11 @@ void destroyHashTableComp(hashtablecomp* table){
 
 	for(u_int64_t i=0;i<table->currSpineSize;i++){
 	
-		destroyDList(table->spine[i]);
+		destroyDListComp(table->spine[i]);
 		table->spine[i]=NULL;
 	}
 	free(table->spine);
 	free(table);
-	free(table->comp);
-	table->comp=NULL;
 	table=NULL;
 
 
