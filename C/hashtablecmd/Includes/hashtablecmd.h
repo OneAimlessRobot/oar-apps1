@@ -1,8 +1,6 @@
 #ifndef HASHTABLECMD_H
 #define HASHTABLECMD_H
 
-#define NOFCOMMANDS 6
-
 
 hashtablecomp* initCmdLine();
 

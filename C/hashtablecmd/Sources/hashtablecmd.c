@@ -6,13 +6,14 @@
 #include "../Includes/cmdfuncexmpl.h"
 
 
-cmdstruct commands[NOFCOMMANDS]={
+cmdstruct commands[]={
 			{"add",2,addNums,"printa a soma dos dois numeros que deres."},
 			{"mult",2,multNums,"printa o produto dos dois numeros que deres."},
 			{"whoami",1,myname,"Faz echo da string fornecida"},
 			{"sair",0,sair,"Sair do programa"},
 			{"myiq",0,myiq,"Mostra o teu qi"},
-			{"showall",0,showall,"Mostra este menu"}
+			{"showall",0,showall,"Mostra este menu"},
+			{"",0,0,0}
 		};
 
 
@@ -23,12 +24,11 @@ hashtablecomp* initCmdLine(){
 
 	
 	hashtablecomp* result= initHashTableComp(sizeof(cmdstruct),&cmdcomparator,&cmdhasher);
-
-	for(int i=0;i<NOFCOMMANDS;i++){
-
+	int i=0;
+	while(commands[i].cmdname[0]){
 		cmdstruct* newcmd= spawnCmdStruct(commands[i].cmdname,commands[i].numOfArgs,commands[i].cmd,commands[i].helpdesc);
 		addToHTComp(&result,newcmd);
-
+		i++;
 	}
 
 	return result;

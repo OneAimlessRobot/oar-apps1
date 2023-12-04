@@ -4,7 +4,7 @@
 
 
 extern hashtablecomp* cmdLine;
-extern cmdstruct commands[NOFCOMMANDS];
+extern cmdstruct commands[];
 void addNums(u_int64_t argc, void** argv){
 
 	if(argc!=2){
@@ -70,11 +70,10 @@ void sair(u_int64_t argc, void** argv){
 void showall(u_int64_t argc, void** argv){
 
 
-
-			for(u_int64_t j=0;j<NOFCOMMANDS;j++){
-			
+			int j=0;
+			while(commands[j].cmdname[0]){
 			printf("%s- %s\n",(char*)commands[j].cmdname,(char*)commands[j].helpdesc);
-			
+			j++;
 			
 			}
 			printf("\n");
