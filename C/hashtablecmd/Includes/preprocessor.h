@@ -8,10 +8,12 @@
 #include <limits.h>
 #include <time.h>
 #include "auxFuncs.h"
-#include "comparator.h"
-#include "nodes.h"
 #include "hasher.h"
+#include "comparator.h"
+#include "cmdstruct.h"
+#include "nodes.h"
 #include "doublelistcomp.h"
 #include "hashtablecomp.h"
 #include "hashtablecmd.h"
+#include "cmdfuncexmpl.h"
 

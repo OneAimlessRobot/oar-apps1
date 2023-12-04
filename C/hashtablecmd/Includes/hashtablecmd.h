@@ -2,8 +2,8 @@
 #define HASHTABLECMD_H
 
 
-hashtablecomp* initCmdLine();
+hashtablecomp* initCmdLine(cmdstruct commands[]);
 
-int runCmdLine(hashtablecomp* cmdLookupTable);
+void runCmdLine(hashtablecomp* cmdLookupTable);
 
 #endif

@@ -2,10 +2,10 @@
 hashtablecomp* cmdLine=NULL;
 int main(int argc, char ** argv){
 
-cmdLine=initCmdLine();
+cmdLine=initCmdLine(commands);
 
 runCmdLine(cmdLine);
 
-
+destroyHashTableComp(cmdLine);
 	return 0;
 }

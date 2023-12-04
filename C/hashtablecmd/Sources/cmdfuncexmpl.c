@@ -3,9 +3,20 @@
 #include "../Includes/cmdstruct.h"
 
 
+
+cmdstruct commands[]={
+			{"add",2,addNums,"printa a soma dos dois numeros que deres."},
+			{"mult",2,multNums,"printa o produto dos dois numeros que deres."},
+			{"whoami",1,myname,"Faz echo da string fornecida"},
+			{"sair",0,sair,"Sair do programa"},
+			{"myiq",0,myiq,"Mostra o teu qi"},
+			{"showall",0,showall,"Mostra este menu"},
+			{"",0,0,0}
+		};
+
+
 extern hashtablecomp* cmdLine;
-extern cmdstruct commands[];
-void addNums(u_int64_t argc, void** argv){
+void addNums(u_int64_t argc,int* toExit, void** argv){
 
 	if(argc!=2){
 
@@ -22,7 +33,7 @@ void addNums(u_int64_t argc, void** argv){
 
 }
 
-void multNums(u_int64_t argc, void** argv){
+void multNums(u_int64_t argc,int* toExit, void** argv){
 
 
 	if(argc!=2){
@@ -38,7 +49,7 @@ void multNums(u_int64_t argc, void** argv){
 	}
 
 }
-void myname(u_int64_t argc, void** argv){
+void myname(u_int64_t argc,int* toExit, void** argv){
 
 	if(argc!=1){
 
@@ -51,7 +62,7 @@ void myname(u_int64_t argc, void** argv){
 
 }
 
-void myiq(u_int64_t argc, void** argv){
+void myiq(u_int64_t argc,int* toExit, void** argv){
 
 	
 	printf("O teu qi neste momento e: %d\n",genRandInt(0,10000));
@@ -59,15 +70,12 @@ void myiq(u_int64_t argc, void** argv){
 
 }
 
-void sair(u_int64_t argc, void** argv){
-	destroyHashTableComp(cmdLine);
-	freeStrArr((char**)argv,argc);
-	exit(-1);
-
+void sair(u_int64_t argc,int* toExit, void** argv){
+	*toExit=1;
 }
 
 
-void showall(u_int64_t argc, void** argv){
+void showall(u_int64_t argc,int* toExit, void** argv){
 
 
 			int j=0;

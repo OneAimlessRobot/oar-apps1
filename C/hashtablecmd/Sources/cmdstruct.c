@@ -1,7 +1,12 @@
 #include "../Includes/preprocessor.h"
+#include "../Includes/comparator.h"
+#include "../Includes/hasher.h"
 #include "../Includes/cmdstruct.h"
 
 
+
+comparator cmdcomparator = {compareCmds};
+hasher cmdhasher = {hashCmd};
 
 
 int compareCmds(void* cmd1,void*cmd2){
@@ -30,7 +35,7 @@ return hash;
 
 
 }
-cmdstruct* spawnCmdStruct(char* name, u_int64_t numOfArgs, void(*cmd)(u_int64_t, void**),char* helpdesc){
+cmdstruct* spawnCmdStruct(char* name, u_int64_t numOfArgs, void(*cmd)(u_int64_t,int*, void**),char* helpdesc){
 
 cmdstruct* result= malloc(sizeof(cmdstruct));
 

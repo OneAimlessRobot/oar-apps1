@@ -5,24 +5,13 @@
 #include "../Includes/cmdstruct.h"
 #include "../Includes/cmdfuncexmpl.h"
 
-
-cmdstruct commands[]={
-			{"add",2,addNums,"printa a soma dos dois numeros que deres."},
-			{"mult",2,multNums,"printa o produto dos dois numeros que deres."},
-			{"whoami",1,myname,"Faz echo da string fornecida"},
-			{"sair",0,sair,"Sair do programa"},
-			{"myiq",0,myiq,"Mostra o teu qi"},
-			{"showall",0,showall,"Mostra este menu"},
-			{"",0,0,0}
-		};
+hashtablecomp* initCmdLine(cmdstruct commands[]){
 
 
-comparator cmdcomparator = {compareCmds};
-hasher cmdhasher = {hashCmd};
+	if(!commands){
 
-hashtablecomp* initCmdLine(){
-
-	
+		return NULL;
+	}
 	hashtablecomp* result= initHashTableComp(sizeof(cmdstruct),&cmdcomparator,&cmdhasher);
 	int i=0;
 	while(commands[i].cmdname[0]){
@@ -65,8 +54,11 @@ static char** buildArgv(int numOfAllowedArgs){
 
 }
 
-int runCmdLine(hashtablecomp* cmdLookupTable){
+void runCmdLine(hashtablecomp* cmdLookupTable){
 	
+
+	char** argv=NULL;
+	int toExit=0;
 	do{
 		printf("HashShell (input goes here): ");
 		char var[CMDMAXLENGTH+1]={0};
@@ -79,11 +71,9 @@ int runCmdLine(hashtablecomp* cmdLookupTable){
 		if(!result){
 		continue;
 		}
-		char** argv= buildArgv(result->numOfArgs);
-		result->cmd(result->numOfArgs,(void**)argv);
+		argv= buildArgv(result->numOfArgs);
+		result->cmd(result->numOfArgs,&toExit,(void**)argv);
 		freeStrArr(argv,result->numOfArgs);
-	}while(1);
-
-
+	}while(!toExit);
 
 }
