@@ -2,7 +2,7 @@
 #define ARRSIZE 40
 #define STRSIZE 5
 
-static const char* menu="\nEstas sao as opcoes:\na- adicionar elemento\nr- remover elemento\np- imprimir hashtable\ns- sair\n";
+static const char* menu="\nEstas sao as opcoes:\na- adicionar elemento\nr- remover elemento\np- imprimir hashtable\ns- sair\ng- obter elemento\n";
 
 
 int compareStrings(char* a, char* b){
@@ -83,6 +83,24 @@ int main(int argc, char ** argv){
 		memset(value2,0,STRSIZE+1);
 		memcpy(value2,var,STRSIZE);
 		removeFromHTComp(tree,value2);
+		break;
+		case 'g':
+		
+		if(scanf("%s",&var)<1){
+                int ch;
+                while((ch=getc(stdin))!=EOF && ch != '\n');
+        	continue;
+		}
+		char value3[STRSIZE+1];
+		memset(value3,0,STRSIZE+1);
+		memcpy(value3,var,STRSIZE);
+		char* elem=(char*)getHTElemComp(tree,value3);
+		if(elem){
+		printf("%s\n",elem);
+		}
+		else{
+		printf("null!");
+		}
 		break;
 		}
 	

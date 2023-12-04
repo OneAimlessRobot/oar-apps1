@@ -41,7 +41,7 @@ void addToHTComp(hashtablecomp** table,void* mem);
 
 void removeFromHTComp(hashtablecomp* table,void * mem);
 
-void* getElemComp(hashtablecomp* table,void* mem);
+void* getHTElemComp(hashtablecomp* table,void* mem);
 
 void destroyHashTableComp(hashtablecomp* table);
 

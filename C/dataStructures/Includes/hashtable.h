@@ -40,7 +40,7 @@ void addToHT(hashtable** table,void* mem);
 
 void removeFromHT(hashtable* table,void * mem);
 
-void* getElem(hashtable* table,void* mem);
+void* getHTElem(hashtable* table,void* mem);
 
 void destroyHashTable(hashtable* table);
 

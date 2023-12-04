@@ -164,3 +164,12 @@ void destroyHashTable(hashtable* table){
 
 
 }
+
+void* getHTElem(hashtable* table,void* mem){
+
+u_int64_t pos=getTablePosForElem(table,mem);
+	
+	return findElemListComp(table->spine[pos],mem);
+
+
+}
