@@ -1,4 +1,5 @@
 #include "../Includes/preprocessor.h"
+#include "../Includes/nodes.h"
 #include "../Includes/BST.h"
 
 static pathStep* initLastStep(BSTNode* node, int isLeft){

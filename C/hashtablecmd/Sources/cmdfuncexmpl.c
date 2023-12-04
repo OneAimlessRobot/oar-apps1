@@ -1,7 +1,8 @@
 #include "../Includes/preprocessor.h"
 #include "../Includes/cmdfuncexmpl.h"
 #include "../Includes/cmdstruct.h"
-#include "../Includes/globals.h"
+
+
 extern hashtablecomp* cmdLine;
 extern cmdstruct commands[NOFCOMMANDS];
 void addNums(u_int64_t argc, void** argv){

@@ -1,8 +1,5 @@
 #ifndef BSTCOMP_H
 #define BSTCOMP_H
-
-#include "comparator.h"
-#include "nodes.h"
 typedef struct BSTreeComp{
 
 u_int64_t currSize, elemSize;

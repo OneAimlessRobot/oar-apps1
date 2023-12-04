@@ -1,4 +1,6 @@
 #include "../Includes/preprocessor.h"
+#include "../Includes/nodes.h"
+#include "../Includes/doublelist.h"
 #include "../Includes/hashtable.h"
 
 

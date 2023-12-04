@@ -1,12 +1,12 @@
 #include "../Includes/preprocessor.h"
+#include "../Includes/comparator.h"
+#include "../Includes/nodes.h"
 #include "../Includes/doublelistcomp.h"
 #include "../Includes/auxFuncs.h"
 static DNode* initNakedDNode(void*initmem){
 
 DNode* newNode= malloc(sizeof(DNode));
 
-//newNode->mem=malloc(newNode->memSize);
-//memcpy(newNode->mem,initmem, memSize);
 newNode->mem=initmem;
 newNode->prev=NULL;
 newNode->next=NULL;
@@ -38,7 +38,6 @@ result->comp=comp;
 return result;
 
 }
-//pre: node->mem ==NULL and node->mem is free
 DList destroyHEADDNode(DNode* node){
 if(!node){
 return node;

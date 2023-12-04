@@ -1,6 +1,8 @@
 #include "../Includes/preprocessor.h"
+#include "../Includes/nodes.h"
 #include "../Includes/doublelist.h"
 #include "../Includes/auxFuncs.h"
+
 static DNode* initNakedDNode(void*initmem){
 
 DNode* newNode= malloc(sizeof(DNode));

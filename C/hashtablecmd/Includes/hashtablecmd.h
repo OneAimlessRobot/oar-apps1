@@ -1,7 +1,8 @@
 #ifndef HASHTABLECMD_H
 #define HASHTABLECMD_H
 
-#define MAXARGVSIZE 100
+#define NOFCOMMANDS 6
+
 
 hashtablecomp* initCmdLine();
 

@@ -1,4 +1,7 @@
 #include "../Includes/preprocessor.h"
+#include "../Includes/doublelistcomp.h"
+#include "../Includes/comparator.h"
+#include "../Includes/hasher.h"
 #include "../Includes/hashtablecomp.h"
 #include "../Includes/cmdstruct.h"
 static u_int64_t getTablePosForElem(hashtablecomp * table, void* mem){

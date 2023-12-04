@@ -1,5 +1,6 @@
 #include "../Includes/preprocessor.h"
 #include "../Includes/comparator.h"
+#include "../Includes/nodes.h"
 #include "../Includes/BSTcomp.h"
 
 static pathStep* initLastStep(BSTNode* node, int isLeft){

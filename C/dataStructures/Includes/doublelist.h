@@ -1,6 +1,5 @@
 #ifndef DOUBLELIST_H
 #define DOUBLELIST_H
-#include "nodes.h"
 typedef struct DListW{
 
 DList head,trail;

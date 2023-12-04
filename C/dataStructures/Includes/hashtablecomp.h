@@ -3,8 +3,6 @@
 #define STARTSIZE 7
 #define GROWFACTOR 2
 #define MIN_LOAD_FACTOR 0.75
-#include "doublelistcomp.h"
-#include "comparator.h"
 typedef struct hashtablecomp{
 
 DListWComp **spine;

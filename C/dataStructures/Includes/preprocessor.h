@@ -8,7 +8,10 @@
 #include <limits.h>
 #include <time.h>
 #include "auxFuncs.h"
+#include "nodes.h"
+#include "comparator.h"
 #include "doublelist.h"
+#include "doublelistcomp.h"
 #include "stackList.h"
 #include "queueList.h"
 #include "BST.h"

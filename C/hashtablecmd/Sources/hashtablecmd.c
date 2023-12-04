@@ -3,11 +3,22 @@
 #include "../Includes/hashtablecmd.h"
 #include "../Includes/auxFuncs.h"
 #include "../Includes/cmdstruct.h"
-#include "../Includes/globals.h"
+#include "../Includes/cmdfuncexmpl.h"
 
-extern cmdstruct commands[NOFCOMMANDS];
-extern comparator cmdcomparator;
-extern hasher cmdhasher;
+
+cmdstruct commands[NOFCOMMANDS]={
+			{"add",2,addNums,"printa a soma dos dois numeros que deres."},
+			{"mult",2,multNums,"printa o produto dos dois numeros que deres."},
+			{"whoami",1,myname,"Faz echo da string fornecida"},
+			{"sair",0,sair,"Sair do programa"},
+			{"myiq",0,myiq,"Mostra o teu qi"},
+			{"showall",0,showall,"Mostra este menu"}
+		};
+
+
+comparator cmdcomparator = {compareCmds};
+hasher cmdhasher = {hashCmd};
+
 hashtablecomp* initCmdLine(){
 
 	

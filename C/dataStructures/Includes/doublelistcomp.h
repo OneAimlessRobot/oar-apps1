@@ -1,7 +1,5 @@
 #ifndef DOUBLELISTCOMP_H
 #define DOUBLELISTCOMP_H
-#include "comparator.h"
-#include "nodes.h"
 
 typedef struct DListWComp{
 

@@ -1,4 +1,7 @@
 #include "../Includes/preprocessor.h"
+#include "../Includes/comparator.h"
+#include "../Includes/nodes.h"
+#include "../Includes/doublelistcomp.h"
 #include "../Includes/hashtablecomp.h"
 
 
