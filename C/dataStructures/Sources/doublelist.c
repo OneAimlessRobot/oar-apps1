@@ -121,10 +121,16 @@ static DList findNode(DListW*list,void* data){
 
 
 void* findElemListComp(DListW* list,void* data){
-
-		if(list->currSize){
-                         return findNode(list,data)->mem;
-		}
+	
+                 if(list->currSize){
+                          DList node=findNode(list,data);
+                         if(node){
+                         return node->mem;
+                         }
+                         else{
+                         return NULL;
+                         }
+                 }
 		return NULL;
 
 
