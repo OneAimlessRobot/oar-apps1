@@ -17,3 +17,4 @@
 #include "BST.h"
 #include "hashtable.h"
 #include "hashtablecomp.h"
+#include "minHeap.h"

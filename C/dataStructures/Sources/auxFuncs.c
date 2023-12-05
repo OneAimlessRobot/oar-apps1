@@ -87,11 +87,11 @@ int* getRandIntArr(int min,int max,int size){
 
 }
 
-void swap(void* var1, void* var2){
+void swap(void** var1, void** var2){
 
-void* tmp=var1;
-var1=var2;
-var2=tmp;
+void* tmp=*var1;
+*var1=*var2;
+*var2=tmp;
 
 
 
