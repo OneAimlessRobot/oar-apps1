@@ -27,7 +27,7 @@ u_int64_t hash= 5381;
 
 	u_int64_t count=0;
 
-for(;count<CMDMAXLENGTH+1;count++){
+for(;mem[count];count++){
 
 hash= ((hash << 5) + hash) +mem[count];
 }
@@ -35,12 +35,13 @@ return hash;
 
 
 }
-cmdstruct* spawnCmdStruct(char* name, u_int64_t numOfArgs, void(*cmd)(u_int64_t,int*, void**),char* helpdesc){
+
+cmdstruct* spawnCmdStruct(char* name, int64_t numOfArgs, void(*cmd)(int64_t,int*, void**),char* helpdesc){
 
 cmdstruct* result= malloc(sizeof(cmdstruct));
 
 memset(result->cmdname,0,CMDMAXLENGTH+1);
-memcpy(result->cmdname,name,CMDMAXLENGTH);
+memcpy(result->cmdname,name,min(strlen(name),CMDMAXLENGTH));
 
 result->numOfArgs=numOfArgs;
 result->helpdesc=helpdesc;

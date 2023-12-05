@@ -24,56 +24,51 @@ hashtablecomp* initCmdLine(cmdstruct commands[]){
 
 
 }
+static int makeargv(char *s, char *argv[ARGVMAX]) {
+    int ntokens = 0;
 
-static char** buildArgv(int numOfAllowedArgs){
-	if(!numOfAllowedArgs){
-
-		return NULL;
-
-	}
-	int numOfArgs=0;
-	char** args= malloc(sizeof(char*)*( numOfAllowedArgs));
-	
-	memset(args,0,sizeof(char*)*( numOfAllowedArgs));
-	
-	char cmdBuff[CMDMAXLENGTH+1]={0};
-	
-	while(numOfArgs<numOfAllowedArgs){
-		scanf("%s",&cmdBuff);
-                args[numOfArgs]=malloc(CMDMAXLENGTH+1);
-                memset(args[numOfArgs],0,CMDMAXLENGTH+1);
-                memcpy(args[numOfArgs],cmdBuff,CMDMAXLENGTH);
-		memset(cmdBuff,0,CMDMAXLENGTH+1);
-		numOfArgs++;
-	
-	}
-	
-	return args;
-
-
-
+    if (s == NULL || argv == NULL || ARGVMAX == 0)
+        return -1;
+    argv[ntokens] = strtok(s, " \t\n");
+    while ((argv[ntokens] != NULL) && (ntokens < ARGVMAX)) {
+        ntokens++;
+        argv[ntokens] = strtok(NULL, " \t\n");
+    }
+    argv[ntokens] = NULL; // it must terminate with NULL
+    return ntokens;
 }
+
 
 void runCmdLine(hashtablecomp* cmdLookupTable){
 	
-
-	char** argv=NULL;
 	int toExit=0;
 	do{
+	char line[LINESIZE]; //[LINESIZE];
+        memset(line,0,LINESIZE);
+ 	char* argv[ARGVMAX];
+      memset(argv,0,ARGVMAX*sizeof(char*));
+
 		printf("HashShell (input goes here): ");
-		char var[CMDMAXLENGTH+1]={0};
-		scanf("%s",&var);
-        	char cmdBuff[CMDMAXLENGTH+1]={0};
-                memcpy(cmdBuff,var,CMDMAXLENGTH);
-		cmdstruct* cmd =spawnCmdStruct(cmdBuff,0,NULL,NULL);
+		fflush(stdout);
+		if (fgets(line, LINESIZE, stdin) == NULL){ 
+
+			break;
+
+		}
+		
+                line[strlen(line)-1]=0;
+		int64_t numOfArgs=  makeargv(line, argv);
+		if(argv[0]){
+		cmdstruct* cmd =spawnCmdStruct(argv[0],0,NULL,NULL);
 		cmdstruct* result= getHTElemComp(cmdLookupTable,(void*)cmd);
 		free(cmd);
+		
 		if(!result){
-		continue;
+			break;
 		}
-		argv= buildArgv(result->numOfArgs);
-		result->cmd(result->numOfArgs,&toExit,(void**)argv);
-		freeStrArr(argv,result->numOfArgs);
+		
+		result->cmd(numOfArgs,&toExit,(void**)argv);
+		}
 	}while(!toExit);
 
 }

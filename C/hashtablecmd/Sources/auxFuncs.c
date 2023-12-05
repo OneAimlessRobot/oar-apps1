@@ -97,3 +97,16 @@ var2=tmp;
 
 
 }
+
+
+int64_t min(int64_t arg1, int64_t arg2){
+
+	if(arg1<arg2){
+
+		return arg1;
+
+	}
+	return arg2;
+
+
+}
