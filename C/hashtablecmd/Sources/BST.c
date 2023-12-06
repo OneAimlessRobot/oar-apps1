@@ -1,9 +1,9 @@
-#include "../../Includes/preprocessor.h"
 #include "../Includes/preprocessor.h"
-
-#include "../../Includes/comparator.h"
-#include "../../Includes/nodes.h"
-#include "../Includes/BSTcomp.h"
+#include "../Includes/doublelist.h"
+#include "../Includes/stackList.h"
+#include "../Includes/queueList.h"
+#include "../Includes/nodes.h"
+#include "../Includes/BST.h"
 
 static pathStep* initLastStep(BSTNode* node, int isLeft){
 
@@ -49,6 +49,8 @@ return node;
 
 }
 
+
+
 static int isLeaf(BSTNode* node){
 
 	return !node->left && !node->right;
@@ -74,7 +76,6 @@ static void clearBSTNode(BSTNode* node){
 	node->mem=NULL;
 
 }
-
 
 static void printBSTreePrettyAux(BSTNode*node, int numOfSpaces){
 
@@ -120,7 +121,7 @@ static void printBSTreePrettyAux(BSTNode*node, int numOfSpaces){
 
 	}
 
-void printBSTreePrettyComp(BSTreeComp*tree){
+void printBSTreePretty(BSTree*tree){
 
 
 
@@ -134,7 +135,7 @@ void printBSTreePrettyComp(BSTreeComp*tree){
 }
 
 
-static BSTNode* findNodeInBSTree(BSTreeComp* tree,void* data){
+static BSTNode* findNodeInBSTree(BSTree* tree,void* data){
 	
 	BSTNode* result=tree->root;
 	tree->lastStep=setLastStep(tree->lastStep,result,0);
@@ -142,15 +143,15 @@ static BSTNode* findNodeInBSTree(BSTreeComp* tree,void* data){
 		return NULL;
 
 	}
-	while(result&&tree->comp->func(data,result->mem)){
-	if(tree->comp->func(data,result->mem)<0){
+	while(result&&memcmp(data,result->mem,tree->elemSize)){
+	if(memcmp(data,result->mem,tree->elemSize)<0){
 
 	tree->lastStep=setLastStep(tree->lastStep,result,1);
 		
 	result=result->left;
 
 	}
-	else if(tree->comp->func(data,result->mem)>0){
+	else if(memcmp(data,result->mem,tree->elemSize)>0){
 
 		
 	tree->lastStep=setLastStep(tree->lastStep,result,0);
@@ -162,21 +163,19 @@ static BSTNode* findNodeInBSTree(BSTreeComp* tree,void* data){
 
 }
 
+BSTree* initBSTree(u_int64_t elemSize){
 
-BSTreeComp* initBSTreeComp(u_int64_t elemSize,comparator*comp){
-
-BSTreeComp* tree= malloc(sizeof(BSTreeComp));
+BSTree* tree= malloc(sizeof(BSTree));
 tree->root=NULL;
 tree->currSize=0;
 tree->elemSize=elemSize;
-tree->comp=comp;
 tree->lastStep=initLastStep(NULL,0);
 return tree;
 
 
 }
 
-static void linkSubtree(BSTreeComp*tree,BSTNode* node){
+static void linkSubtree(BSTree*tree,BSTNode* node){
 	if(!tree->lastStep){
 		
 		return;
@@ -201,7 +200,7 @@ static void linkSubtree(BSTreeComp*tree,BSTNode* node){
 
 
 }
-void addToBSTreeComp(BSTreeComp* tree,void* elem){
+void addToBSTree(BSTree* tree,void* elem){
 BSTNode* node= initNakedBSTNode(elem);
 	if(!tree->root){
 
@@ -211,7 +210,7 @@ BSTNode* node= initNakedBSTNode(elem);
 	}
 	else{
 		void* result=NULL;
-		if(!(result=findInBSTreeComp(tree,elem))){
+		if(!(result=findInBSTree(tree,elem))){
 		linkSubtree(tree,node);
 		tree->currSize++;
 		}
@@ -224,7 +223,7 @@ BSTNode* node= initNakedBSTNode(elem);
 
 }
 
-static BSTNode* minNode(BSTreeComp* tree,BSTNode* node){
+static BSTNode* minNode(BSTree* tree,BSTNode* node){
 
 	BSTNode* result= node;
 	
@@ -237,7 +236,7 @@ static BSTNode* minNode(BSTreeComp* tree,BSTNode* node){
 
 
 }
-void removeFromBSTreeComp(BSTreeComp* tree,void* elem){
+void removeFromBSTree(BSTree* tree,void* elem){
 
 	if(tree->root){
 		BSTNode* node=NULL;
@@ -290,7 +289,7 @@ void removeFromBSTreeComp(BSTreeComp* tree,void* elem){
 }
 
 
-void printIntBSTreeDepthComp(BSTreeComp*tree){
+void printIntBSTreeDepth(BSTree*tree){
 
 
 	if(!tree->root){
@@ -330,7 +329,7 @@ void printIntBSTreeDepthComp(BSTreeComp*tree){
 }
 
 
-void printIntBSTreeInfixComp(BSTreeComp*tree){
+void printIntBSTreeInfix(BSTree*tree){
 
 
 
@@ -371,7 +370,7 @@ void printIntBSTreeInfixComp(BSTreeComp*tree){
 	destroyDLStack(stck);
 
 }
-void printIntBSTreeBreadthComp(BSTreeComp*tree){
+void printIntBSTreeBreadth(BSTree*tree){
 
 	if(!tree->root){
 
@@ -427,7 +426,7 @@ static void destroyBSTreeAux(BSTNode* node){
 	destroyBSTNode(node);
 
 }
-void destroyBSTreeComp(BSTreeComp* tree){
+void destroyBSTree(BSTree* tree){
 
 	destroyBSTreeAux(tree->root);
 	free(tree->lastStep);
@@ -438,7 +437,7 @@ void destroyBSTreeComp(BSTreeComp* tree){
 
 
 
-void* findInBSTreeComp(BSTreeComp* tree, void* data){
+void* findInBSTree(BSTree* tree, void* data){
 
 	BSTNode* result=NULL;
 	if((result=findNodeInBSTree(tree,data))){
@@ -455,14 +454,14 @@ static int compareInts(int* a, int* b){
 	return (*a)-(*b);
 }
 
-BSTreeComp* makeIntTreeComp(int arr[],int arrSize,comparator*comp){
+BSTree* makeIntTree(int arr[],int arrSize){
 
-	BSTreeComp* tree= initBSTreeComp(sizeof(int),comp);
+	BSTree* tree= initBSTree(sizeof(int));
 	
 	for(int i=0;i<arrSize;i++){
 	int * ptr=malloc(sizeof(int));
 	*ptr=i;
-	addToBSTreeComp(tree,ptr);
+	addToBSTree(tree,ptr);
 		
 	}
 	return tree;
