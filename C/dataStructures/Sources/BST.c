@@ -1,5 +1,8 @@
 #include "../Includes/preprocessor.h"
 #include "../Includes/nodes.h"
+#include "../Includes/doublelist.h"
+#include "../Includes/queueList.h"
+#include "../Includes/stackList.h"
 #include "../Includes/BST.h"
 
 static pathStep* initLastStep(BSTNode* node, int isLeft){
@@ -28,7 +31,7 @@ step=NULL;
 }
 
 
-static BSTNode* initNakedBSTNode(void*initmem){
+static BSTNode* initNakedBSTNode(BSTree*tree,void*initmem){
 BSTNode* node= malloc(sizeof(BSTNode));
 node->left=NULL;
 node->right=NULL;
@@ -37,15 +40,6 @@ memcpy(node->mem,initmem,tree->elemSize);
 return node;
 }
 
-
-static BSTNode* initBSTNode(void*initmem,BSTNode* left, BSTNode* right){
-BSTNode* node= initNakedBSTNode(initmem);
-node->left=left;
-node->right=right;
-return node;
-
-
-}
 
 
 

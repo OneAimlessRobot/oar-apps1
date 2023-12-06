@@ -10,8 +10,8 @@ DNode* newNode= malloc(sizeof(DNode));
 //newNode->mem=malloc(newNode->memSize);
 //memcpy(newNode->mem,initmem, memSize);
 
-node->mem= malloc(list->elemSize);
-memcpy(node->mem,initmem,list->elemSize);
+newNode->mem= malloc(list->elemSize);
+memcpy(newNode->mem,initmem,list->elemSize);
 newNode->prev=NULL;
 newNode->next=NULL;
 
@@ -20,16 +20,6 @@ return newNode;
 
 }
 
-static DNode* initDNode(void*initmem,DNode* prev, DNode* next){
-
-DNode* newNode= initNakedDNode(initmem);
-
-newNode->prev=prev;
-newNode->next=next;
-
-return newNode;
-
-}
 
 DListW* initDList(u_int64_t elemSize){
 
@@ -81,20 +71,20 @@ return node;
 
 DListW* makeIntList(int arr[],int size){
 DListW* list= malloc(sizeof(DListW));
-
-DList dummyHead=initNakedDNode(sizeof(int),arr+0);
+list->elemSize=sizeof(int);
+DList dummyHead=initNakedDNode(list,arr+0);
 list->head=dummyHead;
 for(int i=1;i<size;i++){
 
-DList dummy=initDNode(arr+i,dummyHead,NULL);
+DList dummy=initNakedDNode(list,arr+i);
+dummy->prev=dummyHead;
+dummy->next=NULL;
 dummyHead->next= dummy;
 dummyHead=dummy;
 list->trail=dummy;
 }
-list->elemSize=sizeof(int);
 list->currSize=size;
 return list;
-
 }
 
 static DList findNode(DListW*list,void* data){

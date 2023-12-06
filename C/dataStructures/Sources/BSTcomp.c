@@ -1,6 +1,9 @@
 #include "../Includes/preprocessor.h"
 #include "../Includes/comparator.h"
 #include "../Includes/nodes.h"
+#include "../Includes/doublelist.h"
+#include "../Includes/queueList.h"
+#include "../Includes/stackList.h"
 #include "../Includes/BSTcomp.h"
 
 static pathStep* initLastStep(BSTNode* node, int isLeft){
@@ -38,15 +41,6 @@ memcpy(node->mem,initmem,tree->elemSize);
 return node;
 }
 
-
-static BSTNode* initBSTNode(void*initmem,BSTNode* left, BSTNode* right){
-BSTNode* node= initNakedBSTNode(initmem);
-node->left=left;
-node->right=right;
-return node;
-
-
-}
 
 static int isLeaf(BSTNode* node){
 

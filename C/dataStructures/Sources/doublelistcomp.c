@@ -5,31 +5,20 @@
 #include "../Includes/auxFuncs.h"
 
 
-static DNode* initNakedDNode(DListW*list,void*initmem){
+static DNode* initNakedDNode(DListWComp*list,void*initmem){
 
 DNode* newNode= malloc(sizeof(DNode));
 
 //newNode->mem=malloc(newNode->memSize);
 //memcpy(newNode->mem,initmem, memSize);
 
-node->mem= malloc(list->elemSize);
-memcpy(node->mem,initmem,list->elemSize);
+newNode->mem= malloc(list->elemSize);
+memcpy(newNode->mem,initmem,list->elemSize);
 newNode->prev=NULL;
 newNode->next=NULL;
 
 return newNode;
 
-
-}
-
-static DNode* initDNode(void*initmem,DNode* prev, DNode* next){
-
-DNode* newNode= initNakedDNode(initmem);
-
-newNode->prev=prev;
-newNode->next=next;
-
-return newNode;
 
 }
 
@@ -84,17 +73,18 @@ return node;
 
 DListWComp* makeIntListComp(int arr[],int size,comparator*comp){
 DListWComp* list= malloc(sizeof(DListWComp));
-
-DList dummyHead=initNakedDNode(arr+0);
+list->elemSize=sizeof(int);
+DList dummyHead=initNakedDNode(list,arr+0);
 list->head=dummyHead;
 for(int i=1;i<size;i++){
 
-DList dummy=initDNode(arr+i,dummyHead,NULL);
+DList dummy=initNakedDNode(list,arr+i);
+dummy->prev=dummyHead;
+dummy->next=NULL;
 dummyHead->next= dummy;
 dummyHead=dummy;
 list->trail=dummy;
 }
-list->elemSize=sizeof(int);
 list->comp=comp;
 list->currSize=size;
 return list;
