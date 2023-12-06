@@ -1,6 +1,6 @@
 #ifndef MINHEAP_H
 #define MINHEAP_H
-#define DEFAULT_HEAP_SIZE 10
+#define DEFAULT_HEAP_SIZE 7
 #define HEAP_GROW_FACTOR 2
 typedef struct minHeap{
 

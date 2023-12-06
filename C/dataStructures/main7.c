@@ -21,7 +21,7 @@ int main(int argc, char ** argv){
         srand(time.tv_nsec);
 
 	comparator* comp=malloc(sizeof(comparator));
-	comp->func=compareInts;
+	comp->func=(int(*)(void*,void*))compareInts;
 	int*arr= getRandIntArr(0,1000,40);
 	minHeap* tree=initMinHeap(comp,sizeof(int));
 	
