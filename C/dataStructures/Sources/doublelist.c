@@ -3,13 +3,15 @@
 #include "../Includes/doublelist.h"
 #include "../Includes/auxFuncs.h"
 
-static DNode* initNakedDNode(void*initmem){
+static DNode* initNakedDNode(DListW*list,void*initmem){
 
 DNode* newNode= malloc(sizeof(DNode));
 
 //newNode->mem=malloc(newNode->memSize);
 //memcpy(newNode->mem,initmem, memSize);
-newNode->mem=initmem;
+
+node->mem= malloc(list->elemSize);
+memcpy(node->mem,initmem,list->elemSize);
 newNode->prev=NULL;
 newNode->next=NULL;
 
@@ -80,7 +82,7 @@ return node;
 DListW* makeIntList(int arr[],int size){
 DListW* list= malloc(sizeof(DListW));
 
-DList dummyHead=initNakedDNode(arr+0);
+DList dummyHead=initNakedDNode(sizeof(int),arr+0);
 list->head=dummyHead;
 for(int i=1;i<size;i++){
 
@@ -281,7 +283,7 @@ static void addStartOfList(DListW* list,DList node){
 
 void addElemToList(DListW* list,void* data,u_int64_t index){
 
-DList node= initNakedDNode(data);
+DList node= initNakedDNode(list,data);
 
                 if(!list->head) {
 
@@ -435,7 +437,7 @@ void remElemFromList(DListW* list,u_int64_t index){
 void addElemToListComp(DListW* list,void* data){
 
 
-DList node= initNakedDNode(data);
+DList node= initNakedDNode(list,data);
 
                 if(!list->head) {
 

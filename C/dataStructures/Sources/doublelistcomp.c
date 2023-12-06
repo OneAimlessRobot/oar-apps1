@@ -5,13 +5,15 @@
 #include "../Includes/auxFuncs.h"
 
 
-static DNode* initNakedDNode(void*initmem){
+static DNode* initNakedDNode(DListW*list,void*initmem){
 
 DNode* newNode= malloc(sizeof(DNode));
 
 //newNode->mem=malloc(newNode->memSize);
 //memcpy(newNode->mem,initmem, memSize);
-newNode->mem=initmem;
+
+node->mem= malloc(list->elemSize);
+memcpy(node->mem,initmem,list->elemSize);
 newNode->prev=NULL;
 newNode->next=NULL;
 
@@ -285,7 +287,7 @@ static void addStartOfList(DListWComp* list,DList node){
 
 void addElemToList2(DListWComp* list,void* data,u_int64_t index){
 
-DList node= initNakedDNode(data);
+DList node= initNakedDNode(list,data);
 
                 if(!list->head) {
 
@@ -439,7 +441,7 @@ void remElemFromList2(DListWComp* list,u_int64_t index){
 void addElemToListComp2(DListWComp* list,void* data){
 
 
-DList node= initNakedDNode(data);
+DList node= initNakedDNode(list,data);
 
                 if(!list->head) {
 

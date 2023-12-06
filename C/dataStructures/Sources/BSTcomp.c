@@ -29,11 +29,12 @@ step=NULL;
 }
 
 
-static BSTNode* initNakedBSTNode(void*initmem){
+static BSTNode* initNakedBSTNode(BSTreeComp*tree,void*initmem){
 BSTNode* node= malloc(sizeof(BSTNode));
 node->left=NULL;
 node->right=NULL;
-node->mem= initmem;
+node->mem= malloc(tree->elemSize);
+memcpy(node->mem,initmem,tree->elemSize);
 return node;
 }
 
@@ -200,7 +201,7 @@ static void linkSubtree(BSTreeComp*tree,BSTNode* node){
 
 }
 void addToBSTreeComp(BSTreeComp* tree,void* elem){
-BSTNode* node= initNakedBSTNode(elem);
+BSTNode* node= initNakedBSTNode(tree,elem);
 	if(!tree->root){
 
 		tree->root=node;
@@ -316,9 +317,10 @@ void printIntBSTreeDepthComp(BSTreeComp*tree){
 			pushDLStack(stck,node->right);
 			}
 			
-		
 		}
-		}
+	
+		destroyBSTNode(node);
+	}
 
 	}
 	destroyDLStack(stck);
@@ -363,6 +365,8 @@ void printIntBSTreeInfixComp(BSTreeComp*tree){
 			
 		
 		}
+		
+		destroyBSTNode(node);
 		}
 
 	}
@@ -398,6 +402,8 @@ void printIntBSTreeBreadthComp(BSTreeComp*tree){
 			
 		
 		}
+		
+		destroyBSTNode(node);
 		}
 
 	}
