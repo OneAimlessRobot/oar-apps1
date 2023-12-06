@@ -21,19 +21,20 @@ int main(int argc, char ** argv){
         srand(time.tv_nsec);
 
 	comparator* comp=malloc(sizeof(comparator));
-	comp->func=(int(*)(void*,void*))compareInts;
+	comp->func=compareInts;
 	int*arr= getRandIntArr(0,1000,40);
 	minHeap* tree=initMinHeap(comp,sizeof(int));
 	
 
 	for(int i=0;i<ARRSIZE;i++){
 
-		insertMinHeap(tree,arr+i);
+		int* ptr= malloc(sizeof(int));
+		memcpy(ptr,arr+i,sizeof(int));
+		insertMinHeap(tree,ptr);
 
 	}
 		
 		free(arr);
-	
 		printMinHeapPretty(tree);
 
 	do{
@@ -76,6 +77,7 @@ int main(int argc, char ** argv){
 			break;
 		}
 		printf("Elemento %d\n",*ptr);
+		free(ptr);
 		break;
 		}
 	

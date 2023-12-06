@@ -3,7 +3,6 @@
 #include "../Includes/hashtablecmd.h"
 #include "../Includes/auxFuncs.h"
 #include "../Includes/cmdstruct.h"
-#include "../Includes/cmdfuncexmpl.h"
 
 hashtablecomp* initCmdLine(cmdstruct commands[]){
 

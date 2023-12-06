@@ -1,6 +1,7 @@
-#include "../Includes/preprocessor.h"
+#include "../../Includes/preprocessor.h"
 #include "../Includes/cmdfuncexmpl.h"
-#include "../Includes/cmdstruct.h"
+#include "../Includes/cmdds.h"
+#include "../../Includes/cmdstruct.h"
 
 
 
@@ -14,6 +15,7 @@ cmdstruct commands[]={
 			{"quote",0,showRandomQuote,"Inspirador"},
 			{"fact",1,factorial,"Factorial"},
 			{"sumarr",-1,sumarr,"somar array de numeros"},
+			{"dsplay",0,dsplay,"brinca com uma estrutura de dados (minHeap)"},
 			{"",0,0,0}
 		};
 
@@ -172,3 +174,14 @@ void sumarr(int64_t argc, int* toExit, void** argv){
 
 }
 
+void dsplay(int64_t argc,int* toExit, void** argv){
+
+hashtablecomp*cmdLine=initCmdLine(dscmds);
+
+runCmdLine(cmdLine);
+
+destroyHashTableComp(cmdLine);
+
+
+
+}

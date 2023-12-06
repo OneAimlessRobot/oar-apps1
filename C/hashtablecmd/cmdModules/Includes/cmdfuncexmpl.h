@@ -23,4 +23,6 @@ void showRandomQuote(int64_t argc,int* toExit, void** argv);
 void factorial(int64_t argc,int* toExit, void** argv);
 
 void sumarr(int64_t argc,int* toExit, void** argv);
+
+void dsplay(int64_t argc,int* toExit, void** argv);
 #endif

@@ -15,5 +15,6 @@
 #include "doublelistcomp.h"
 #include "hashtablecomp.h"
 #include "hashtablecmd.h"
-#include "cmdfuncexmpl.h"
+#include "../cmdModules/Includes/cmdfuncexmpl.h"
+#include "../cmdModules/Includes/cmdds.h"
 

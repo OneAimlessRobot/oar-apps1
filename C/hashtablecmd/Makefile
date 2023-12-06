@@ -1,10 +1,9 @@
 BINARY= hashtablecmd
 
 LDLIBS=  -lm
-INCLUDE= ./Includes .
-SOURCES= . ./Sources
-RESDIR= ./resources
- 
+INCLUDE= ./Includes ./cmdModules/Includes .
+SOURCES= . ./Sources ./cmdModules/Sources
+RESDIR= ./resources 
 CURRDIR=echo `pwd`
  
 CC= cc
