@@ -1,6 +1,11 @@
 #include "../../Includes/preprocessor.h"
 #include "../Includes/cmdfuncexmpl.h"
 #include "../Includes/cmdds.h"
+#include "../Includes/cmdsstack.h"
+#include "../Includes/cmdsbst.h"
+#include "../Includes/cmdsqueue.h"
+#include "../Includes/cmdsdlist.h"
+#include "../Includes/cmdshashtable.h"
 #include "../../Includes/cmdstruct.h"
 
 
@@ -16,7 +21,12 @@ cmdstruct commands[]={
 			{"fact",1,factorial,"Factorial"},
 			{"sumarr",-1,sumarr,"somar array de numeros"},
 			{"dsplay",0,dsplay,"brinca com uma estrutura de dados (minHeap)"},
-			{"",0,0,0}
+			{"stackplay",0,stackplay,"brinca com uma estrutura de dados (stack)"},
+			{"bstplay",0,bstplay,"brinca com uma estrutura de dados (bst)"},
+			{"queueplay",0,queueplay,"brinca com uma estrutura de dados (queue)"},
+			{"dlistplay",0,dlistplay,"brinca com uma estrutura de dados (double linked list)"},
+			{"hashtableplay",0,hashtableplay,"brinca com uma estrutura de dados (hashtable)"},
+			{"",0,0,""}
 		};
 
 #define NUMOFQUOTES 8
@@ -177,6 +187,65 @@ void sumarr(int64_t argc, int* toExit, void** argv){
 void dsplay(int64_t argc,int* toExit, void** argv){
 
 hashtablecomp*cmdLine=initCmdLine(dscmds);
+
+runCmdLine(cmdLine);
+
+destroyHashTableComp(cmdLine);
+
+
+
+}
+
+void stackplay(int64_t argc,int* toExit, void** argv){
+
+hashtablecomp*cmdLine=initCmdLine(stackcmds);
+
+runCmdLine(cmdLine);
+
+destroyHashTableComp(cmdLine);
+
+
+
+}
+
+void queueplay(int64_t argc,int* toExit, void** argv){
+
+hashtablecomp*cmdLine=initCmdLine(queuecmds);
+
+runCmdLine(cmdLine);
+
+destroyHashTableComp(cmdLine);
+
+
+
+}
+
+void dlistplay(int64_t argc,int* toExit, void** argv){
+
+hashtablecomp*cmdLine=initCmdLine(dlistcmds);
+
+runCmdLine(cmdLine);
+
+destroyHashTableComp(cmdLine);
+
+
+
+}
+void bstplay(int64_t argc,int* toExit, void** argv){
+
+hashtablecomp*cmdLine=initCmdLine(bstcmds);
+
+runCmdLine(cmdLine);
+
+destroyHashTableComp(cmdLine);
+
+
+
+}
+
+void hashtableplay(int64_t argc,int* toExit, void** argv){
+
+hashtablecomp*cmdLine=initCmdLine(hashtablecmds);
 
 runCmdLine(cmdLine);
 

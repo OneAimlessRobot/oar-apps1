@@ -5,8 +5,7 @@
 #include "../Includes/hashtablecomp.h"
 #include "../Includes/cmdstruct.h"
 static u_int64_t getTablePosForElem(hashtablecomp * table, void* mem){
-
-
+	
 	return table->hfunc->func((char*)mem)%table->currSpineSize;
 
 
@@ -76,7 +75,7 @@ static hashtablecomp* rehash(hashtablecomp* table){
 			DList node=(table)->spine[i]->head;
 			for(u_int64_t j=0;j<(table)->spine[i]->currSize;j++){
 			
-			 addToHTComp(&newTable,strndup((char*)node->mem,newTable->sizeOfElem));
+			 addToHTComp(&newTable,node->mem);
 
 			node=node->next;
 

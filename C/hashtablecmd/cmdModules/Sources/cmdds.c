@@ -7,11 +7,11 @@
 cmdstruct dscmds[]={
 			{"addelem",1,addElem,"Adiciona elemento"},
 			{"print",0,printElems,"Mostra elementos"},
-			{"remelem",0,remElem,"remove elemento da queue"},
+			{"remelem",1,remElem,"remove elemento da queue"},
 			{"sairds",0,sairds,"sair"},
 			{"showallds",0,showallds,"mostrar comandos disponiveis"},
 			{"destroyds",0,destroyds,"destroy queue"},
-			{"",0,0,0}
+			{"",0,0,""}
 		};
 static int compareInts(int* a,int*b){
 
@@ -20,8 +20,8 @@ static int compareInts(int* a,int*b){
 
 }
 
-minHeap* heap=NULL;
-comparator* comp=NULL;
+static minHeap* heap=NULL;
+static comparator* comp=NULL;
 void addElem(int64_t argc,int* toExit, void** argv){
 	if(!comp){
 		comp=malloc(sizeof(comparator));

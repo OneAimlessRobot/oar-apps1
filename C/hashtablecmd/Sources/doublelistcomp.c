@@ -442,7 +442,8 @@ DList node= initNakedDNode(list,data);
                 }
 
 		DList nodeAfter=findNode(list,data);
-                if(!nodeAfter){
+                
+		if(!nodeAfter){
 			
 			addEndOfList(list,node);
                 

@@ -25,4 +25,14 @@ void factorial(int64_t argc,int* toExit, void** argv);
 void sumarr(int64_t argc,int* toExit, void** argv);
 
 void dsplay(int64_t argc,int* toExit, void** argv);
+
+void stackplay(int64_t argc,int* toExit, void** argv);
+
+void queueplay(int64_t argc,int* toExit, void** argv);
+
+void dlistplay(int64_t argc,int* toExit, void** argv);
+void bstplay(int64_t argc,int* toExit, void** argv);
+void hashtableplay(int64_t argc,int* toExit, void** argv);
+
+
 #endif

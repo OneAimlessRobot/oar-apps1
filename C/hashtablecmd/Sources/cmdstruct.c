@@ -44,7 +44,9 @@ memset(result->cmdname,0,CMDMAXLENGTH+1);
 memcpy(result->cmdname,name,min(strlen(name),CMDMAXLENGTH));
 
 result->numOfArgs=numOfArgs;
-result->helpdesc=helpdesc;
+
+memset(result->helpdesc,0,CMDDESCLENGTH+1);
+memcpy(result->helpdesc,helpdesc,min(strlen(helpdesc),CMDDESCLENGTH));
 result->cmd=cmd;
 
 return result;

@@ -1,6 +1,6 @@
 #ifndef HASHTABLECOMP_H
 #define HASHTABLECOMP_H
-#define STARTSIZE 7
+#define STARTSIZE 3
 #define GROWFACTOR 2
 #define MIN_LOAD_FACTOR 0.75
 typedef struct hashtablecomp{

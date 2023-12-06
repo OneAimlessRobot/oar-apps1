@@ -295,26 +295,24 @@ void printIntBSTreeDepthComp(BSTreeComp*tree){
 	pushDLStack(stck,tree->root);
 	
 	while(!isEmptyDLStack(stck)){
-
+	
 		BSTNode* node=popDLStack(stck);
 		printf("%d\n",*(int*)(node->mem));
+		BSTNode*it=node;
+		if(it){
+			if(it->right){
+			pushDLStack(stck,it->right);
+			it=it->right;
+			while(it->left){
+				
+				pushDLStack(stck,it->left);
+				it=it->left;
+			}
+			
 		
-		if(node){
-		if(!isLeaf(node)){
-			if(node->left){
-
-			pushDLStack(stck,node->left);
-			}
-			
-			if(node->right){
-
-			pushDLStack(stck,node->right);
-			}
-			
 		}
-	
-		destroyBSTNode(node);
-	}
+		free(node);
+		}
 
 	}
 	destroyDLStack(stck);
@@ -343,26 +341,24 @@ void printIntBSTreeInfixComp(BSTreeComp*tree){
 		
 	}
 	while(!isEmptyDLStack(stck)){
-
 		BSTNode* node=popDLStack(stck);
 		printf("%d\n",*(int*)(node->mem));
-		
-		if(node){
-			if(node->right){
-			pushDLStack(stck,node->right);
-			node=node->right;
-			while(node->left){
+		BSTNode*it=node;
+		if(it){
+			if(it->right){
+			pushDLStack(stck,it->right);
+			it=it->right;
+			while(it->left){
 				
-				pushDLStack(stck,node->left);
-				node=node->left;
+				pushDLStack(stck,it->left);
+				it=it->left;
 			}
 			
 		
 		}
-		
-		destroyBSTNode(node);
+		free(node);
 		}
-
+	
 	}
 	destroyDLStack(stck);
 
@@ -378,26 +374,21 @@ void printIntBSTreeBreadthComp(BSTreeComp*tree){
 	enqueueDLQueue(q,tree->root);
 	
 	while(!isEmptyDLQueue(q)){
-
 		BSTNode* node=dequeueDLQueue(q);
 		printf("%d\n",*(int*)(node->mem));
-		
-		if(node){
-		if(!isLeaf(node)){
-			if(node->left){
+		BSTNode*it=node;
+		if(it){
+			if(it->right){
+			enqueueDLQueue(q,it->left);
+			it=it->right;
+			while(it->left){
+				enqueueDLQueue(q,it->right);
 
-			enqueueDLQueue(q,node->left);
+				it=it->left;
 			}
-			
-			if(node->right){
 
-			enqueueDLQueue(q,node->right);
-			}
-			
-		
 		}
-		
-		destroyBSTNode(node);
+		free(node);
 		}
 
 	}

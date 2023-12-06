@@ -1,12 +1,13 @@
 #ifndef CMDSTRUCT_H
 #define CMDSTRUCT_H
 #define CMDMAXLENGTH 127
+#define CMDDESCLENGTH 1024
 typedef struct cmdstruct{
 
 char cmdname[CMDMAXLENGTH+1];
 int64_t numOfArgs;
 void (*cmd)(int64_t,int*,void**);
-char* helpdesc;
+char helpdesc[CMDDESCLENGTH+1];
 
 }cmdstruct;
 
