@@ -28,7 +28,8 @@ stck=NULL;
 void* popDLStack(stackList *stck){
 if(stck){
 if(!isEmptyDLStack(stck)){
-void* mem= stck->list->head->mem;
+void* mem=malloc(stck->list->elemSize);
+memcpy(mem,stck->list->head->mem,stck->list->elemSize);
 remElemFromList(stck->list,0);
 return mem;
 }

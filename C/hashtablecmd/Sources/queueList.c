@@ -29,7 +29,8 @@ q=NULL;
 void* dequeueDLQueue(queueList *q){
 if(q){
 if(!isEmptyDLQueue(q)){
-void* mem=q->list->head->mem;
+void* mem=malloc(q->list->elemSize);
+memcpy(mem,q->list->head->mem,q->list->elemSize);
 remElemFromList(q->list,0);
 return mem;
 }

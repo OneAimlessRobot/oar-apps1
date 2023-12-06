@@ -3,27 +3,22 @@
 #include "../Includes/nodes.h"
 #include "../Includes/doublelistcomp.h"
 #include "../Includes/auxFuncs.h"
-static DNode* initNakedDNode(void*initmem){
+
+
+static DNode* initNakedDNode(DListWComp*list,void*initmem){
 
 DNode* newNode= malloc(sizeof(DNode));
 
-newNode->mem=initmem;
+//newNode->mem=malloc(newNode->memSize);
+//memcpy(newNode->mem,initmem, memSize);
+
+newNode->mem= malloc(list->elemSize);
+memcpy(newNode->mem,initmem,list->elemSize);
 newNode->prev=NULL;
 newNode->next=NULL;
 
 return newNode;
 
-
-}
-
-static DNode* initDNode(void*initmem,DNode* prev, DNode* next){
-
-DNode* newNode= initNakedDNode(initmem);
-
-newNode->prev=prev;
-newNode->next=next;
-
-return newNode;
 
 }
 
@@ -38,6 +33,7 @@ result->comp=comp;
 return result;
 
 }
+//pre: node->mem ==NULL and node->mem is free
 DList destroyHEADDNode(DNode* node){
 if(!node){
 return node;
@@ -77,17 +73,18 @@ return node;
 
 DListWComp* makeIntListComp(int arr[],int size,comparator*comp){
 DListWComp* list= malloc(sizeof(DListWComp));
-
-DList dummyHead=initNakedDNode(arr+0);
+list->elemSize=sizeof(int);
+DList dummyHead=initNakedDNode(list,arr+0);
 list->head=dummyHead;
 for(int i=1;i<size;i++){
 
-DList dummy=initDNode(arr+i,dummyHead,NULL);
+DList dummy=initNakedDNode(list,arr+i);
+dummy->prev=dummyHead;
+dummy->next=NULL;
 dummyHead->next= dummy;
 dummyHead=dummy;
 list->trail=dummy;
 }
-list->elemSize=sizeof(int);
 list->comp=comp;
 list->currSize=size;
 return list;
@@ -123,16 +120,16 @@ static DList findNode(DListWComp*list,void* data){
 
 void* findElemListCompComp(DListWComp* list,void* data){
 
-		
-		if(list->currSize){
-                         DList node=findNode(list,data);
-			if(node){
-			return node->mem;
-			}
-			else{
-			return NULL;
-			}
-		}
+	
+                 if(list->currSize){
+                          DList node=findNode(list,data);
+                         if(node){
+                         return node->mem;
+                         }
+                         else{
+                         return NULL;
+                         }
+                 }
 		return NULL;
 
 
@@ -280,7 +277,7 @@ static void addStartOfList(DListWComp* list,DList node){
 
 void addElemToList2(DListWComp* list,void* data,u_int64_t index){
 
-DList node= initNakedDNode(data);
+DList node= initNakedDNode(list,data);
 
                 if(!list->head) {
 
@@ -434,7 +431,7 @@ void remElemFromList2(DListWComp* list,u_int64_t index){
 void addElemToListComp2(DListWComp* list,void* data){
 
 
-DList node= initNakedDNode(data);
+DList node= initNakedDNode(list,data);
 
                 if(!list->head) {
 
