@@ -45,8 +45,8 @@ static int64_t factorialAux(int64_t num){
 void factorial(int64_t argc, int* toExit, void** argv){
 	if(argc!=2){
 
-	printf("Numero de argumenetos errado!!!");
-
+	printf("Numero de argumenetos errado!!!\n");
+		return;
 	}
 	int64_t arg1;
 	sscanf((char*)argv[1],"%ld",&arg1);
@@ -64,8 +64,7 @@ void addNums(int64_t argc,int* toExit, void** argv){
 
 	if(argc!=3){
 
-	printf("Numero de argumentos errado!!");
-
+	printf("Numero de argumentos errado!!\n");
 	}
 	else{
 	int64_t arg1,arg2;
@@ -98,7 +97,7 @@ void multNums(int64_t argc,int* toExit, void** argv){
 
 	if(argc!=3){
 
-	printf("Numero de argumentos errado!!");
+	printf("Numero de argumentos errado!!\n");
 	}
 	else{
 	
@@ -113,7 +112,7 @@ void myname(int64_t argc,int* toExit, void** argv){
 
 	if(argc!=2){
 
-	printf("Numero de argumentos errado!!");
+	printf("Numero de argumentos errado!!\n");
 	}
 	else{
 	
@@ -172,3 +171,4 @@ void sumarr(int64_t argc, int* toExit, void** argv){
 
 
 }
+

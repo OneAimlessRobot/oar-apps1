@@ -27,7 +27,7 @@ u_int64_t hash= 5381;
 
 	u_int64_t count=0;
 
-for(;mem[count];count++){
+for(;count<CMDMAXLENGTH+1;count++){
 
 hash= ((hash << 5) + hash) +mem[count];
 }

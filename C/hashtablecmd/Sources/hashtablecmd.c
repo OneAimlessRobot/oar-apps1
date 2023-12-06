@@ -64,7 +64,7 @@ void runCmdLine(hashtablecomp* cmdLookupTable){
 		free(cmd);
 		
 		if(!result){
-			break;
+	  		continue;
 		}
 		
 		result->cmd(numOfArgs,&toExit,(void**)argv);
