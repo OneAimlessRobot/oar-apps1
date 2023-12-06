@@ -365,7 +365,11 @@ void remElemFromListComp2(DListWComp* list,void* data){
 
                 }
 		DList removedNode= findNode(list,data);
-                
+                if(!removedNode){
+
+			return;
+
+		}
 		if(list->currSize==1){
 		if(!list->comp->func(list->head->mem,removedNode->mem)){
 		list->head=destroyHEADDNode(list->head);

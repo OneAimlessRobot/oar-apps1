@@ -27,7 +27,7 @@ void addElemBST(int64_t argc,int* toExit, void** argv){
 	if(!comp){
 
 		comp=malloc(sizeof(comparator));
-		comp->func=compareInts;
+		comp->func=(int(*)(void*,void*))compareInts;
 
 	}
 	if(!tree){
