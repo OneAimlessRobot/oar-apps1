@@ -10,6 +10,7 @@
 #include "auxFuncs.h"
 #include "nodes.h"
 #include "comparator.h"
+#include "hasher.h"
 #include "doublelist.h"
 #include "doublelistcomp.h"
 #include "stackList.h"

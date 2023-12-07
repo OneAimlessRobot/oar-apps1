@@ -296,23 +296,20 @@ void printIntBSTreeDepth(BSTree*tree){
 
 		BSTNode* node=popDLStack(stck);
 		printf("%d\n",*(int*)(node->mem));
-		
-		if(node){
-		if(!isLeaf(node)){
-			if(node->left){
-
-			pushDLStack(stck,node->left);
-			}
-			
-			if(node->right){
-
-			pushDLStack(stck,node->right);
+		BSTNode*it=node;
+		if(it){
+			if(it->right){
+			pushDLStack(stck,it->right);
+			it=it->right;
+			while(it->left){
+				
+				pushDLStack(stck,it->left);
+				it=it->left;
 			}
 			
 		
 		}
-		destroyBSTNode(node);
-
+		free(node);
 		}
 
 	}
@@ -333,8 +330,8 @@ void printIntBSTreeInfix(BSTree*tree){
 	}
 
 	stackList*stck= initDLStack(sizeof(BSTNode));
+	pushDLStack(stck,(tree->root));
 	BSTNode* node=tree->root;
-	pushDLStack(stck,(node=tree->root));
 	while(node->left){
 	
 		pushDLStack(stck,node->left);
@@ -345,22 +342,22 @@ void printIntBSTreeInfix(BSTree*tree){
 
 		BSTNode* node=popDLStack(stck);
 		printf("%d\n",*(int*)(node->mem));
-		
-		if(node){
-			if(node->right){
-			pushDLStack(stck,node->right);
-			node=node->right;
-			while(node->left){
+		BSTNode*it=node;
+		if(it){
+			if(it->right){
+			pushDLStack(stck,it->right);
+			it=it->right;
+			while(it->left){
 				
-				pushDLStack(stck,node->left);
-				node=node->left;
+				pushDLStack(stck,it->left);
+				it=it->left;
 			}
 			
 		
 		}
-		destroyBSTNode(node);
-
+		free(node);
 		}
+		
 
 	}
 	destroyDLStack(stck);
@@ -377,27 +374,24 @@ void printIntBSTreeBreadth(BSTree*tree){
 	enqueueDLQueue(q,tree->root);
 	
 	while(!isEmptyDLQueue(q)){
-
 		BSTNode* node=dequeueDLQueue(q);
 		printf("%d\n",*(int*)(node->mem));
-		
-		if(node){
-		if(!isLeaf(node)){
-			if(node->left){
-
-			enqueueDLQueue(q,node->left);
-			}
+		BSTNode*it=node;
+		if(it){
+			if(it->right){
+			enqueueDLQueue(q,it->left);
+			it=it->right;
+			while(it->left){
+				enqueueDLQueue(q,it->right);
 			
-			if(node->right){
-
-			enqueueDLQueue(q,node->right);
+				it=it->left;
 			}
 			
 		
 		}
-		destroyBSTNode(node);
-
+		free(node);
 		}
+		
 
 	}
 	destroyDLQueue(q);

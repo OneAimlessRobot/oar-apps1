@@ -42,8 +42,8 @@ static int isFull(hashtable* table){
 hashtable* initHashTable(u_int64_t sizeOfElem){
 	
 	hashtable* result= malloc(sizeof(hashtable));
-	result->spine= malloc(sizeof(DListW*)*STARTSIZE);
-	for(u_int64_t i=0;i<STARTSIZE;i++){
+	result->spine= malloc(sizeof(DListW*)*HTSTARTSIZE);
+	for(u_int64_t i=0;i<HTSTARTSIZE;i++){
 		
 		result->spine[i]= initDList(sizeOfElem);
 
@@ -51,7 +51,7 @@ hashtable* initHashTable(u_int64_t sizeOfElem){
 	}
 	result->sizeOfElem=sizeOfElem;
 	result->currSize=0;
-	result->currSpineSize=STARTSIZE;
+	result->currSpineSize=HTSTARTSIZE;
 	
 	return result;
 

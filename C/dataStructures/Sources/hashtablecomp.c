@@ -1,28 +1,12 @@
 #include "../Includes/preprocessor.h"
-#include "../Includes/comparator.h"
-#include "../Includes/nodes.h"
 #include "../Includes/doublelistcomp.h"
+#include "../Includes/comparator.h"
+#include "../Includes/hasher.h"
 #include "../Includes/hashtablecomp.h"
 
-
-static u_int64_t hashCode(hashtablecomp* table,char* mem){
-
-u_int64_t hash= 5381;
-
-	u_int64_t count=0;
-
-for(;count<table->sizeOfElem;count++){
-
-hash= ((hash << 5) + hash) +mem[count];
-}
-return hash;
-
-}
-
 static u_int64_t getTablePosForElem(hashtablecomp * table, void* mem){
-
-
-	return hashCode(table,(char*)mem)%table->currSpineSize;
+	
+	return table->hfunc->func((char*)mem)%table->currSpineSize;
 
 
 }
@@ -40,11 +24,11 @@ static int isFull(hashtablecomp* table){
 
 }
 
-hashtablecomp* initHashTableComp(u_int64_t sizeOfElem,comparator*comp){
+hashtablecomp* initHashTableComp(u_int64_t sizeOfElem,comparator*comp,hasher*hfunc){
 	
 	hashtablecomp* result= malloc(sizeof(hashtablecomp));
-	result->spine= malloc(sizeof(DListWComp*)*STARTSIZE);
-	for(u_int64_t i=0;i<STARTSIZE;i++){
+	result->spine= malloc(sizeof(DListWComp*)*HTCSTARTSIZE);
+	for(u_int64_t i=0;i<HTCSTARTSIZE;i++){
 		
 		result->spine[i]= initDListComp(sizeOfElem,comp);
 
@@ -53,14 +37,15 @@ hashtablecomp* initHashTableComp(u_int64_t sizeOfElem,comparator*comp){
 	result->sizeOfElem=sizeOfElem;
 	result->currSize=0;
 	result->comp=comp;
-	result->currSpineSize=STARTSIZE;
+	result->hfunc=hfunc;
+	result->currSpineSize=HTCSTARTSIZE;
 	
 	return result;
 
 
 }
 
-static hashtablecomp* initHashTableInitSizeComp(u_int64_t sizeOfElem,u_int64_t size,comparator*comp){
+static hashtablecomp* initHashTableInitSizeComp(u_int64_t sizeOfElem,u_int64_t size,comparator*comp,hasher*hfunc){
 	
 	hashtablecomp* result= malloc(sizeof(hashtablecomp));
 	result->spine= malloc(sizeof(DListWComp*)*size);
@@ -73,6 +58,7 @@ static hashtablecomp* initHashTableInitSizeComp(u_int64_t sizeOfElem,u_int64_t s
 	result->sizeOfElem=sizeOfElem;
 	result->currSize=0;
 	result->comp=comp;
+	result->hfunc=hfunc;
 	result->currSpineSize=size;
 
 	return result;
@@ -82,14 +68,14 @@ static hashtablecomp* initHashTableInitSizeComp(u_int64_t sizeOfElem,u_int64_t s
 
 static hashtablecomp* rehash(hashtablecomp* table){
 	u_int64_t newTableSize= (table)->currSpineSize*GROWFACTOR;
-	hashtablecomp* newTable= initHashTableInitSizeComp((table)->sizeOfElem,newTableSize,table->comp);	
+	hashtablecomp* newTable= initHashTableInitSizeComp((table)->sizeOfElem,newTableSize,table->comp,table->hfunc);	
 	for(u_int64_t i=0;i<(table)->currSpineSize;i++){
 
 		if((table)->spine[i]->head){
 			DList node=(table)->spine[i]->head;
 			for(u_int64_t j=0;j<(table)->spine[i]->currSize;j++){
 			
-			 addToHTComp(&newTable,strndup((char*)node->mem,newTable->sizeOfElem));
+			 addToHTComp(&newTable,node->mem);
 
 			node=node->next;
 
@@ -111,12 +97,11 @@ for(u_int64_t i=0;i<table->currSpineSize;i++){
 			for(u_int64_t j=0;j<table->spine[i]->currSize;j++){
 			
 			printf("%s ",(char*)(node->mem));
-
+			
 			node=node->next;
 
 			}
 			printf("\n");
-
 		}
 
 	}
