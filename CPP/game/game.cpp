@@ -1,6 +1,10 @@
 #include <SDL2/SDL.h>
 #include <stdlib.h>
-#include "entities.hpp"
+#include "Includes/entity.hpp"
+#include "Includes/projectile.hpp"
+#include "Includes/projIterator.hpp"
+#include "Includes/volleyGen.hpp"
+#include "Includes/player.hpp"
 #include <iostream>
 
 using namespace std;
@@ -91,25 +95,26 @@ void detetarRicochete(VolleyGenerator*gun){
                 if(r->getXpos()<=0){
                     r->updatePosition(1,r->getYpos());
                 r->setTarget(-r->getTarget()->x,r->getTarget()->y);
-                    r->speedDown(1);
+                    r->speedDown(r->getSpeed()*0.5);
                 }
                 else if(r->getXpos()>=WIDTH){
                     r->updatePosition(WIDTH-1,r->getYpos());
                 r->setTarget(-r->getTarget()->x,r->getTarget()->y);
-                    r->speedDown(1);
+                    r->speedDown(r->getSpeed()*0.5);
                 
                 }
                 else if(r->getYpos()<=0){
 
                     r->updatePosition(r->getXpos(),1);
                 r->setTarget(r->getTarget()->x,-r->getTarget()->y);
-                    r->speedDown(1);
+                    r->speedDown(r->getSpeed()*0.5);
+                
                 }
                 else if(r->getYpos()>=HEIGHT){
                      r->updatePosition(r->getXpos(),HEIGHT-1);
 
                 r->setTarget(r->getTarget()->x,-r->getTarget()->y);
-                    r->speedDown(1);
+                    r->speedDown(r->getSpeed()*0.5);
                      }
                     } 
 }

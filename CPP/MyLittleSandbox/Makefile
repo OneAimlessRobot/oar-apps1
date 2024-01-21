@@ -1,16 +1,18 @@
 
-LDLIBS= -lSDL2 -lpthread -lm
 
-INCLUDE= .
+LDLIBS=-lSDL2 -lSDL2_ttf -lpthread -lm -lSDL2_image
+
+
+INCLUDE= ./Includes .
 BINARY= MyLittleSandbox
-SOURCES= .
+SOURCES= ./Sources .
 
 CURRDIR=echo `pwd`
 
 CXX= g++
 DEPFLAGS= -MP -MD
 
-CXXFLAGS= -Wall -DPROGRAMPATHAUX="$(CURRDIR)" -std=gnu++11 -Wextra -g $(foreach D, $(INCLUDE), -I$(D)) $(DEPFLAGS) `sdl2-config --libs`
+CXXFLAGS= -Wall -std=gnu++11 -Wextra -g $(foreach D, $(INCLUDE), -I$(D)) $(DEPFLAGS) `sdl2-config --libs`
 
 SOURCEFILES=$(foreach D,$(SOURCES), $(wildcard $(D)/*.cpp))
 
@@ -26,14 +28,10 @@ all: $(BINARY)
 
 $(BINARY): $(OBJECTS)
 	$(CXX) -g  $(CXXFLAGS) -o $@ $^ $(LDLIBS)
-
+	
 
 %.o:%.c
 	$(CXX)  $(CXXFLAGS) -c -o $@ $<  $(LDLIBS)
 	echo $(CXXFLAGS)
 clean:
 	rm -rf $(BINARY) $(OBJECTS) $(DEPFILES)
-
-
-
-

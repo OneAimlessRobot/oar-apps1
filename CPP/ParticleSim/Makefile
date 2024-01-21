@@ -2,9 +2,10 @@
 
 LDLIBS=-lSDL2 -lpthread -lm
 
-INCLUDE=./Systems ./Types ./Factorized ./constantHeaders.
+
+INCLUDE= ./Includes .
 BINARY=ParticleSim
-SOURCES=./Factorized ./resourcePaths  .  ./Systems  ./Types
+SOURCES= ./Sources .
 
 CURRDIR=echo `pwd`
 

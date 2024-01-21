@@ -1,11 +1,11 @@
 #include <SDL2/SDL.h>
 #include <stdlib.h>
 #include <iostream>
-#include "entities.hpp"
-#include "Projectile.hpp"
-#include "ProjectileIterator.hpp"
-#include "VolleyGenerator.hpp"
-#include "Player.hpp"
+#include "../Includes/entities.hpp"
+#include "../Includes/Projectile.hpp"
+#include "../Includes/ProjectileIterator.hpp"
+#include "../Includes/VolleyGenerator.hpp"
+#include "../Includes/Player.hpp"
 
 using namespace std;
 #define WIDTH 1000

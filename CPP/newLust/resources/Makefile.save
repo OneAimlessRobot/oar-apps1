@@ -1,0 +1,28 @@
+
+
+LDLIBS=
+
+
+SOURCES= ./embeded
+
+CURRDIR=echo `pwd`
+
+CXX= g++
+DEPFLAGS= -MP -MD
+
+SOURCEFILES=$(foreach D,$(SOURCES), $(wildcard $(D)/*.cpp))
+
+OBJECTS=$(patsubst %.cpp,%.o,$(SOURCEFILES))
+
+
+
+
+$(BINARY): $(OBJECTS)
+	$(CXX) -g  $(CXXFLAGS) -o $@ $^ $(LDLIBS)
+	ld -r -b binary -o some_file.o some_file.jpg
+
+%.o:%.c
+	$(CXX)  $(CXXFLAGS) -c -o $@ $<  $(LDLIBS)
+	echo $(CXXFLAGS)
+clean:
+	rm -rf $(BINARY) $(OBJECTS) $(DEPFILES)
