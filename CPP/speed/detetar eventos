@@ -1,9 +1,0 @@
-
-            while(SDL_PollEvent(&e)){
-                if(e.type==SDL_QUIT){
-                    gameState&=N_RUN_MASK;
-                }
-
-
-                handleKeyboard(e,KEYBOARD,&x1,&y1,&gravity,jumper,&fps,&initSpeed,&currentJumpTick,gameState);
-            }
