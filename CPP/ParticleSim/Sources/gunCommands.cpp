@@ -16,6 +16,8 @@
 #include "../Includes/Gun.h"
 #include "../Includes/Grenade.h"
 #include "../Includes/GLauncher.h"
+#include "../Includes/Missile.h"
+#include "../Includes/MLauncher.h"
 #include "../Includes/physicsAux.h"
 #include "../Includes/physicsCommands.h"
 #include "../Includes/EntityMgmnt.h"
@@ -23,8 +25,8 @@
 
 
 
-void gunCommands::monitorGuns(std::list<Gun*> &gunList,std::list<GLauncher*> &gLauncherList,float xtarget,float ytarget){
 
+void gunCommands::monitorGuns(std::list<Gun*> &gunList,std::list<GLauncher*> &gLauncherList,std::list<MLauncher*> &mLauncherList,float xtarget,float ytarget){
 
 
      std::list<Gun*>::iterator it;
@@ -38,11 +40,17 @@ void gunCommands::monitorGuns(std::list<Gun*> &gunList,std::list<GLauncher*> &gL
     (*it2)->setTarget(xtarget,ytarget);
     (*it2)->updateGLauncher();
     }
+     
+	std::list<MLauncher*>::iterator it3;
+    for (it3 = mLauncherList.begin(); it3 != mLauncherList.end(); ++it3) {
+    (*it3)->setTarget(xtarget,ytarget);
+    (*it3)->updateMLauncher();
+    }
 
 
 }
 
-void gunCommands::shootGuns(std::list<Gun*> &gunList,std::list<GLauncher*> &gLauncherList,std::list<Entity*> &entList,std::list<Grenade*> &grenadeList){
+void gunCommands::shootGuns(std::list<Gun*> &gunList,std::list<GLauncher*> &gLauncherList,std::list<MLauncher*> &mLauncherList,std::list<Entity*> &entList,std::list<Grenade*> &grenadeList,std::list<Missile*> &missileList){
        
  std::list<Gun*>::iterator it;
     for (it = gunList.begin(); it != gunList.end(); ++it) {
@@ -56,6 +64,13 @@ void gunCommands::shootGuns(std::list<Gun*> &gunList,std::list<GLauncher*> &gLau
     if(((*it2)->canShoot())){
 
         grenadeList.emplace(grenadeList.begin(),(*it2)->shoot());
+    }
+    }
+    std::list<MLauncher*>::iterator it3;
+    for (it3= mLauncherList.begin(); it3 != mLauncherList.end(); ++it3) {
+    if(((*it3)->canShoot())){
+
+        missileList.emplace(missileList.begin(),(*it3)->shoot());
     }
     }
 }
@@ -75,6 +90,13 @@ void gunCommands::spawnGLauncher(std::list<GLauncher*> &gLauncherList,float x, f
     GLauncher*gLauncher=GLauncher::defaultGLauncher();
     gLauncher->setPos((SDL_FPoint){x,y});
     gLauncherList.emplace(gLauncherList.begin(),gLauncher);
+}
+
+
+void gunCommands::spawnMLauncher(std::list<MLauncher*> &mLauncherList,float x, float y){
+    MLauncher*mLauncher=MLauncher::defaultMLauncher();
+    mLauncher->setPos((SDL_FPoint){x,y});
+    mLauncherList.emplace(mLauncherList.begin(),mLauncher);
 }
 
 

@@ -13,12 +13,13 @@
 #include "../Includes/Collider.h"
 #include "../Includes/physicsAux.h"
 #include "../Includes/Grenade.h"
+#include "../Includes/Missile.h"
 #include "../Includes/physicsConstants.h"
 #include "../Includes/physicsCommands.h"
 
 
 
-void PhysicsCommands::handleCollisions(int collisionsEnabled,std::list<Entity*>& entList,std::list<Gun*>& gunList,std::list<Grenade*>& grenadeList,Collider* arena){
+void PhysicsCommands::handleCollisions(int collisionsEnabled,std::list<Entity*>& entList,std::list<Grenade*>& grenadeList,std::list<Missile*>& missileList,Collider* arena){
 
     //broken. Maybe will fix
     if(collisionsEnabled){
@@ -26,23 +27,26 @@ void PhysicsCommands::handleCollisions(int collisionsEnabled,std::list<Entity*>&
     deleteFreaks<Grenade>(grenadeList);
       handleInterparticleCollisions<Entity>(entList);
       handleInterparticleCollisions<Grenade>(grenadeList);
+      handleInterparticleCollisions<Missile>(missileList);
     }
 
     deleteFreaks<Entity>(entList);
     deleteFreaks<Grenade>(grenadeList);
-    deleteFreaks<Gun>(gunList);
+    deleteFreaks<Missile>(missileList);
      handleCollisionsWithArena<Entity>(entList,arena);
-    handleCollisionsWithArena<Gun>(gunList,arena);
     handleCollisionsWithArena<Grenade>(grenadeList,arena);
+    handleCollisionsWithArena<Missile>(missileList,arena);
 
 }
-void PhysicsCommands::handleForces(int gravityEnabled,int dragEnabled,std::list<Entity*>& entList,std::list<Grenade*>& grenadeList,Collider* arena,Entity*worldParticle,int electricity){
+void PhysicsCommands::handleForces(int gravityEnabled,int dragEnabled,std::list<Entity*>& entList,std::list<Grenade*>& grenadeList,std::list<Missile*>& missileList,Collider* arena,Entity*worldParticle,int electricity){
 	
     if(gravityEnabled){
     deleteFreaks<Entity>(entList);
     deleteFreaks<Grenade>(grenadeList);
+    deleteFreaks<Missile>(missileList);
       handleInterparticleGravity<Entity>(entList);
       handleInterparticleGravity<Grenade>(grenadeList);
+      handleInterparticleGravity<Missile>(missileList);
 
 
 
@@ -54,6 +58,8 @@ void PhysicsCommands::handleForces(int gravityEnabled,int dragEnabled,std::list<
     deleteFreaks<Grenade>(grenadeList);
     handleDrag<Grenade>(grenadeList, arena);
 
+    deleteFreaks<Missile>(missileList);
+    handleDrag<Missile>(missileList, arena);
     }
     if(gravityEnabled){
     deleteFreaks<Entity>(entList);
@@ -62,22 +68,26 @@ void PhysicsCommands::handleForces(int gravityEnabled,int dragEnabled,std::list<
 
     deleteFreaks<Grenade>(grenadeList);
     handleGroundGravity<Grenade>(grenadeList,worldParticle);
+    deleteFreaks<Missile>(missileList);
+    handleGroundGravity<Missile>(missileList,worldParticle);
 
     }
     if(electricity){
     deleteFreaks<Entity>(entList);
     deleteFreaks<Grenade>(grenadeList);
+    deleteFreaks<Missile>(missileList);
       handleInterparticleElectricity<Entity>(entList);
       handleInterparticleElectricity<Grenade>(grenadeList);
+      handleInterparticleElectricity<Missile>(missileList);
 
     }
 
 }
-void PhysicsCommands::handleMovements(int collisionsEnabled,int gravityEnabled,int dragEnabled,std::list<Entity*>& entList,Collider* arena,std::list<Gun*>& gunList,std::list<Grenade*>& grenadeList,Entity* worldMassParticle,int electricity){
+void PhysicsCommands::handleMovements(int collisionsEnabled,int gravityEnabled,int dragEnabled,std::list<Entity*>& entList,Collider* arena,std::list<Grenade*>& grenadeList,std::list<Missile*>& missileList,Entity* worldMassParticle,int electricity){
 
-    handleForces(gravityEnabled,dragEnabled,entList,grenadeList,arena,worldMassParticle,electricity);
+    handleForces(gravityEnabled,dragEnabled,entList,grenadeList,missileList,arena,worldMassParticle,electricity);
 
-    handleCollisions(collisionsEnabled,entList,gunList,grenadeList,arena);
+    handleCollisions(collisionsEnabled,entList,grenadeList,missileList,arena);
 
 
 

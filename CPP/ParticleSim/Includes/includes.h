@@ -16,8 +16,12 @@
 #include "Collider.h"
 #include "Grenade.h"
 #include "GLauncher.h"
+#include "Missile.h"
+#include "MLauncher.h"
 #include "physicsAux.h"
 #include <list>
 #include "physicsCommands.h"
 #include "EntityMgmnt.h"
+#include "entityBox.h"
+#include "arsenal.h"
 #include "InteractiveSim.h"

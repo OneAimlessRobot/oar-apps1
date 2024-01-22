@@ -3,23 +3,27 @@
 class InteractiveSim{
 private:
 SDL_Window* win;
-Collider* arena;
 SDL_Renderer* ren;
 SDL_Texture * bgr,*ents;
+/*
+Collider* arena;
+std::list<Grenade*> grenadeList;
+std::list<Missile*> missileList;
 std::list<Entity*> entList;
+Entity* worldMassParticle;
+*/
 std::list<Gun*> gunList;
 std::list<GLauncher*> gLauncherList;
-std::list<Grenade*> grenadeList;
-std::list<GLauncher*> mLauncherList;
-std::list<Grenade*> missileList;
-Entity* worldMassParticle;
+std::list<MLauncher*> mLauncherList;
+
+Arsenal* playground;
 SDL_Color bgrclr;
 float maxSpeed, maxSize, ammount,maxMass, airDensity,maxcharge;
-int thetime,mouseX,mouseY,genCount;
+int genCount;
+int thetime,mouseX,mouseY;
+
 int pause,rendering,collisions,selection,gravity,drag,electricity;
 void keyboard(SDL_Event event);
-void populateEntityList(int ammount);
-void makeSelection();
 void generationHandling();
 
 
@@ -27,7 +31,6 @@ int processBulletChoice(caliber* caliber);
 
 void processGunChoice(float x,float y);
 void printGunMenu();
-void printSpeedsAndPos();
 
 void printSimVarsAndStats();
 void printKeyboardHelp();
@@ -37,17 +40,21 @@ void destroyEntities();
 void destroyGuns();
 void processDeletion();
 
+
+void handleToggles(const Uint8* KEYS);
+void handleContPresses(const Uint8* KEYS);
+void doRendering();
+
+void handleEntities();
+
+
 public:
 InteractiveSim(float maxSpeed,float maxSize,int ammount,float maxMass,float maxcharge);
 InteractiveSim();
 ~InteractiveSim();
-int init(float maxSpeed,float maxSize,int ammount,float maxMass,float maxcharge);
 void mainLoop();
-void handleToggles(const Uint8* KEYS);
-void handleContPresses(const Uint8* KEYS);
-void doRendering();
+int init(float maxSpeed,float maxSize,int ammount,float maxMass,float maxcharge);
 static InteractiveSim* parseGame();
 static InteractiveSim* defaultGame();
-void handleEntities();
 };
 #endif

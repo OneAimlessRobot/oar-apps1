@@ -6,5 +6,5 @@ then
 	exit -1
 fi
 
-touch "Includes/$1.h" "Sources/$1.c"
+touch "Includes/$1.h" "Sources/$1.cpp"
 ./head* "Includes/$1.h"
