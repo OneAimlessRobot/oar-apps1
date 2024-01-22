@@ -18,6 +18,8 @@
 #include "../Includes/GLauncher.h"
 #include "../Includes/physicsAux.h"
 #include "../Includes/physicsCommands.h"
+#include "../Includes/gunCommands.h"
+#include "../Includes/pjtCmds.h"
 #include "../Includes/EntityMgmnt.h"
 #include "../Includes/InteractiveSim.h"
 
@@ -196,7 +198,6 @@ int startTime= SDL_GetTicks();
     handleContPresses(KEYS);
 
     handleEntities();
-    attentionEveryone();
     if(this->rendering){
     doRendering();
     int endTime= SDL_GetTicks();
@@ -213,52 +214,6 @@ SDL_Delay(((1/FRAMERATE)*1000)-(endTime-startTime));
 }
 
 
-void InteractiveSim::attentionEveryone(){
-std::list<Entity*>::iterator it;
-      
-	for (it = this->entList.begin(); it != this->entList.end();) {
-		Entity * next= (*it);
-	if(!this->arena->bodyIsInside(next->getBody())){
-    std::cout<<"ERRO!!!!!\n";
-    delete (*it);
-    it=this->entList.erase(it);
-    }
-    else{
-    ++it;
-
-    }
-}
-
-
-}
-void InteractiveSim::freezeEveryone(){
-std::list<Entity*>::iterator it;
-      
-	for (it = this->entList.begin(); it != this->entList.end();++it) {
-		Entity * next= (*it);
-		next->setVec((SDL_FPoint){0.0f,0.0f});
-
-    }
-}
-
-/*	
-    for (it = this->entList.begin(); it != this->entList.end();it++) {
-		Entity * next= (*it);
-    if(!this->arena->bodyIsInside(next->getBody())){
-	
-	next->setVec((SDL_FPoint){
-}
-}*/
-void InteractiveSim::teleportEntityList(float x, float y){
-std::list<Entity*>::iterator it;
-           
-        for (it = this->entList.begin(); it != this->entList.end(); it++) {
-		Entity * next= (*it);
-		next->setPos((SDL_FPoint){x,y});
-	
-	}
-
-}
 void InteractiveSim::populateEntityList(int ammount){
 
 
@@ -272,34 +227,18 @@ for(int i =0;i<ammount;i++){
 
 }
 
-void InteractiveSim::cleanGrenades(){
-
-    std::list<Grenade*>::iterator it;
-    for (it = grenadeList.begin(); it != grenadeList.end();) {
-        if(!(*it)->isActive()){
-    delete (*it);
-    it=grenadeList.erase(it);
-    }
-    else{
-    ++it;
-
-    }
-
-
-
-}
-}
 void InteractiveSim::handleEntities(){
 
     if(!this->pause){
     PhysicsCommands::handleMovements(this->collisions,this->gravity,this->drag,this->entList,this->arena,this->gunList,this->grenadeList,this->worldMassParticle,this->electricity);
-    monitorGuns();
-    monitorGrenades();
-    cleanGrenades();
+    gunCommands::monitorGuns(this->gunList,this->gLauncherList,(float)this->mouseX,(float)this->mouseY);
+    projCommands::monitorGrenades(this->grenadeList,this->entList);
+    projCommands::cleanGrenades(this->grenadeList);
     if(this->selection){
     generationHandling();
     }
     }
+    projCommands::attentionEveryone(this->entList,this->arena);
 
 
 }
@@ -400,7 +339,7 @@ void InteractiveSim::handleContPresses(const Uint8*KEYS){
         blastingWorker.detach();
     }
     if(KEYS[SDL_SCANCODE_DOWN]) {
-        std::thread shootingWorker(&InteractiveSim::shootGuns,this);
+        std::thread shootingWorker(&gunCommands::shootGuns,std::ref(this->gunList),std::ref(this->gLauncherList),std::ref(this->entList),std::ref(this->grenadeList));
         shootingWorker.detach();
     //std::cout<<"Mouse (X,Y): ("<<this->mouseX<<" , "<<this->mouseY<<")\n";
 }
@@ -419,59 +358,6 @@ void InteractiveSim::destroyEntities(){
 
     EntityManagement::clearList<Entity>(this->entList);
     EntityManagement::clearList<Grenade>(this->grenadeList);
-
-}
-void InteractiveSim::monitorGuns(){
-
-
-     std::list<Gun*>::iterator it;
-    for (it = this->gunList.begin(); it != this->gunList.end(); ++it) {
-    (*it)->setTarget(this->mouseX*1.0f,this->mouseY*1.0f);
-    (*it)->updateGun();
-    }
-
-     std::list<GLauncher*>::iterator it2;
-    for (it2 = this->gLauncherList.begin(); it2 != this->gLauncherList.end(); ++it2) {
-    (*it2)->setTarget(this->mouseX*1.0f,this->mouseY*1.0f);
-    (*it2)->updateGLauncher();
-    }
-
-
-}
-void InteractiveSim::monitorGrenades(){
-
-     std::list<Grenade*>::iterator it2;
-    for (it2 = this->grenadeList.begin(); it2 != this->grenadeList.end(); ++it2) {
-    if((*it2)->blowingUp()){
-
-        PhysicsCommands::doBlast<Entity>(this->entList,(*it2)->getCenter().x,(*it2)->getCenter().y,(*it2)->getForce());
-    }
-    (*it2)->update();
-    }
-
-
-}
-void InteractiveSim::shootGuns(){
-
-
-     std::list<Gun*>::iterator it;
-    for (it = this->gunList.begin(); it != this->gunList.end(); ++it) {
-    if(((*it)->canShoot())){
-
-        this->entList.emplace(this->entList.begin(),(*it)->shoot());
-    }
-    }
-    std::list<GLauncher*>::iterator it2;
-    for (it2= this->gLauncherList.begin(); it2 != this->gLauncherList.end(); ++it2) {
-    if(((*it2)->canShoot())){
-
-        this->grenadeList.emplace(this->grenadeList.begin(),(*it2)->shoot());
-    }
-    }
-
-
-
-
 
 }
 
@@ -523,20 +409,6 @@ void InteractiveSim::printKeyboardHelp(){
 
 
 
-}
-void InteractiveSim::spawnGun(std::string filePath,float x, float y,caliber bType){
-
-    Gun* gun=EntityManagement::parseGun(filePath);
-    gun->setPos((SDL_FPoint){x,y});
-    gun->setCaliber(bType);
-    this->gunList.emplace(this->gunList.begin(),gun);
-}
-
-
-void InteractiveSim::spawnGLauncher(float x, float y){
-	GLauncher*gLauncher=GLauncher::defaultGLauncher();
-    gLauncher->setPos((SDL_FPoint){x,y});
-    this->gLauncherList.emplace(this->gLauncherList.begin(),gLauncher);
 }
 void InteractiveSim::handleToggles(const Uint8*KEYS){
 
@@ -626,7 +498,7 @@ void InteractiveSim::handleToggles(const Uint8*KEYS){
 
     if(KEYS[SDL_SCANCODE_V]) {
 
-        spawnGLauncher(this->mouseX*1.0f,this->mouseY*1.0f);
+        gunCommands::spawnGLauncher(this->gLauncherList,this->mouseX*1.0f,this->mouseY*1.0f);
 
     }
     if(KEYS[SDL_SCANCODE_D]) {
@@ -643,7 +515,7 @@ void InteractiveSim::handleToggles(const Uint8*KEYS){
     }
     if(KEYS[SDL_SCANCODE_B]) {
 
-     	freezeEveryone();
+     	projCommands::freezeEveryone(this->entList);
 	
     }
     if(KEYS[SDL_SCANCODE_W]) {
@@ -740,7 +612,7 @@ std::cout<<"2- Sair do menu\n";
 
 				return;
 		}
-		spawnGun(path,x,y,chosenCaliber);
+		gunCommands::spawnGun(this->gunList,path,x,y,chosenCaliber);
                 }
                 else if(whatToDo==1){
                 EntityManagement::printGunInfo(path);

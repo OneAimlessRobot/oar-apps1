@@ -19,29 +19,15 @@ int thetime,mouseX,mouseY,genCount;
 int pause,rendering,collisions,selection,gravity,drag,electricity;
 void keyboard(SDL_Event event);
 void populateEntityList(int ammount);
-void teleportEntityList(float x, float y);
 void makeSelection();
 void generationHandling();
 
 
 int processBulletChoice(caliber* caliber);
 
-void shootGuns();
-void monitorGuns();
-void monitorGrenades();
-void monitorMissiles();
-void cleanGrenades();
-void explodeGrenades();
-void attentionEveryone();
-void freezeEveryone();
 void processGunChoice(float x,float y);
 void printGunMenu();
 void printSpeedsAndPos();
-void spawnGun(std::string filePath,float x,float y,caliber bType);
-
-void spawnGLauncher(float x,float y);
-
-void spawnMLauncher(GLauncher* mlauncher,float x,float y);
 
 void printSimVarsAndStats();
 void printKeyboardHelp();
